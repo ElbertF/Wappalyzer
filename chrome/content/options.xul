@@ -192,6 +192,16 @@
 										<checkbox preference="wappalyzer-cat23" id="wappalyzer-option-cat23" label="&wappalyzer.cat23;"/>
 									</hbox>
 								</row>
+								<row>
+									<hbox align="center">
+										<checkbox preference="wappalyzer-cat24" id="wappalyzer-option-cat24" label="&wappalyzer.cat24;"/>
+									</hbox>
+								</row>
+								<row>
+									<hbox align="center">
+										<checkbox preference="wappalyzer-cat25" id="wappalyzer-option-cat25" label="&wappalyzer.cat25;"/>
+									</hbox>
+								</row>
 							</rows>
 						</grid>
 					</groupbox>

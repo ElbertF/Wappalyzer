@@ -237,8 +237,8 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'Yahoo! Web Analytics':  { cats: { 1: 10 }, html: /<script[^>]* src=("|')[^>]*http:\/\/d\.yimg\.com\/mi\/ywa\.js/ },
 		'Yandex.Metrika':        { cats: { 1: 10 }, html: /<script[^>]* src=("|')[^"']+mc\.yandex\.ru\/metrika\/watch\.js("|')/ },
 		'YouTube':               { cats: { 1: 14 }, html: /<(param|embed)[^>]+youtube\.com\/v/i },
-		'YUI Doc':               { cats: { 1: 12 }, html: /<html[^>]* yuilibrary\.com\/rdf\/[0-9.]+\/yui\.rdf/i },
-		'YUI':                   { cats: { 1:  4 }, html: /<script[^>]* src=("|')[^'"]*(\/yui\/|yui\.yahooapis\.com)[^'"]*("|')/, env: /^YAHOO$/ },
+		'YUI Doc':               { cats: { 1:  4 }, html: /<html[^>]* yuilibrary\.com\/rdf\/[0-9.]+\/yui\.rdf/i },
+		'YUI':                   { cats: { 1: 12 }, html: /<script[^>]* src=("|')[^'"]*(\/yui\/|yui\.yahooapis\.com)[^'"]*("|')/, env: /^YAHOO$/ },
 		'Zen Cart':              { cats: { 1:  6 }, html: /<meta name=("|')generator("|') [^>]+Zen Cart/i },
 		'Zend':                  { cats: { 1: 18 }, headers: { 'X-Powered-By': /Zend/ } }
 		};

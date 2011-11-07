@@ -109,6 +109,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'JS Charts':             { cats: { 1: 25 }, html: /<script[^>]*src=[^>]+jscharts[^>]*\.js/i, env: '/^JSChart$/' },
 		'JTL Shop':              { cats: { 1:  6 }, html: /(<input[^>]+name=('|")JTLSHOP|<a href=('|")jtl\.php)/i },
 		'K2':                    { cats: { 1: 19 }, html: /<!\-\- JoomlaWorks "K2"/ },
+		'NOIX':  		 { cats: { 1: 19 }, html: /<!\-\- NOIX / },		
 		'Kampyle':               { cats: { 1: 10 }, html: /<script[^>]* src=("|')http:\/\/cf\.kampyle\.com\/k_button\.js("|')/ },
 		'Kentico CMS':           { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Kentico CMS/i },
 		'Koego':                 { cats: { 1: 10 }, html: /<script[^>]* src=("|')http\:\/\/tracking\.koego\.com\/end\/ego\.js("|')/ },

@@ -144,6 +144,7 @@ if ( typeof wappalyzer != 'undefined' ) {
 		'Mynetcap':              { cats: { 1:  1 }, html: /<meta name=("|')generator("|') [^>]+Mynetcap/i },
 		'Nedstat':               { cats: { 1: 10 }, html: /sitestat\(("|')http:\/\/nl\.sitestat\.com/ },
 		'Nginx':                 { cats: { 1: 22 }, headers: { 'Server': /nginx/i } },
+		'NOIX':                  { cats: { 1: 19 }, html: /(src|href)=\"(\/media\/noix|\/media\/skeleton|\/components\/com_util).*"|\<\!\-\- NOIX.*/i },
 		'nopCommerce':           { cats: { 1:  6 }, html: /(<!\-\-Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)/i },
 		'OneStat':               { cats: { 1: 10 }, html: /var p=("|')http("|')\+\(d\.URL\.indexOf\('https:'\)==0\?'s':''\)\+("|'):\/\/stat\.onestat\.com\/stat\.aspx\?tagver/i },
 		'OpenCart':              { cats: { 1:  6 }, html: /(Powered By <a href=("|')[^>]+OpenCart|route = getURLVar\(("|')route)/i },

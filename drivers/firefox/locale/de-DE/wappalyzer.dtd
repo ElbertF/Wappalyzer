@@ -1,0 +1,47 @@
+<!ENTITY wappalyzer.name        "Wappalyzer">
+<!ENTITY wappalyzer.help        "Wappalyzer - klicken für Details und Einstellungen">
+
+<!ENTITY wappalyzer.showIcons   "Applikations-Icons zeigen">
+<!ENTITY wappalyzer.preferences "Weitere Optionen ...">
+<!ENTITY wappalyzer.addonBar    "In Addon-Leiste platzieren">
+<!ENTITY wappalyzer.categories  "Kategorienverwaltung">
+<!ENTITY wappalyzer.tracking    "Tracken">
+<!ENTITY wappalyzer.research    "Anonymously send reports on detected applications to wappalyzer.com for research">
+<!ENTITY wappalyzer.research    "Sende anonyme Reports über gefundene Applikationen zu Forschungszwecken an wappalyzer.com">
+
+<!ENTITY wappalyzer.donate      "Spenden!">
+<!ENTITY wappalyzer.feedback    "Feedback">
+<!ENTITY wappalyzer.github      "Github">
+<!ENTITY wappalyzer.twitter     "Twitter">
+<!ENTITY wappalyzer.gplus       "Google Plus">
+<!ENTITY wappalyzer.website     "Zu wappalyzer.com browsen">
+
+<!ENTITY wappalyzer.cat1        "CMS">
+<!ENTITY wappalyzer.cat2        "Webforen">
+<!ENTITY wappalyzer.cat3        "Datenbankverwaltung">
+<!ENTITY wappalyzer.cat4        "Dokumentationstools">
+<!ENTITY wappalyzer.cat5        "Widgets">
+<!ENTITY wappalyzer.cat6        "Webshops">
+<!ENTITY wappalyzer.cat7        "Bildergalerien">
+<!ENTITY wappalyzer.cat8        "Wikis">
+<!ENTITY wappalyzer.cat9        "Hosting Panels">
+<!ENTITY wappalyzer.cat10       "Analyse">
+<!ENTITY wappalyzer.cat11       "Blogs">
+<!ENTITY wappalyzer.cat12       "JavaScript-Bibliotheken">
+<!ENTITY wappalyzer.cat13       "Bugtracking-Systeme">
+<!ENTITY wappalyzer.cat14       "Videoplattformen">
+<!ENTITY wappalyzer.cat15       "Kommentarsysteme">
+<!ENTITY wappalyzer.cat16       "CAPTCHAs">
+<!ENTITY wappalyzer.cat17       "Font-Skripte">
+<!ENTITY wappalyzer.cat18       "Web-Frameworks">
+<!ENTITY wappalyzer.cat19       "Vermischtes">
+<!ENTITY wappalyzer.cat20       "Editoren">
+<!ENTITY wappalyzer.cat21       "LMS">
+<!ENTITY wappalyzer.cat22       "Webserver">
+<!ENTITY wappalyzer.cat23       "Cachetools">
+<!ENTITY wappalyzer.cat24       "Rich-Text-Editoren">
+<!ENTITY wappalyzer.cat25       "Javascript Graphics">
+<!ENTITY wappalyzer.cat26       "Mobile Frameworks">
+<!ENTITY wappalyzer.cat27       "Programmiersprachen">
+<!ENTITY wappalyzer.cat28       "Betriebssysteme">
+<!ENTITY wappalyzer.cat29       "Suchmaschinen">

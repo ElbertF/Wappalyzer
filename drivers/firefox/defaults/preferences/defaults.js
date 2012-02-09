@@ -32,3 +32,5 @@ pref('extensions.wappalyzer.cat25',     true);
 pref('extensions.wappalyzer.cat26',     true);
 pref('extensions.wappalyzer.cat27',     true);
 pref('extensions.wappalyzer.cat28',     true);
+pref('extensions.wappalyzer.cat29',     true);
+

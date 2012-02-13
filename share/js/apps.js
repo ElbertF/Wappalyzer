@@ -320,7 +320,7 @@
 		'YaBB':                  { cats: { 1:  2 }, html: /Powered by <a href=("|')[^>]+yabbforum/i },
 		'Yahoo! Web Analytics':  { cats: { 1: 10 }, script: /d\.yimg\.com\/mi\/ywa\.js/ },
 		'Yandex.Metrika':        { cats: { 1: 10 }, script: /mc\.yandex\.ru\/metrika\/watch\.js/ },
-		'YouTube':               { cats: { 1: 14 }, html: /<(param|embed)[^>]+youtube\.com\/v/i },
+		'YouTube':               { cats: { 1: 14 }, html: /<(param|embed|iframe)[^>]+youtube(-nocookie)?\.com\/(v|embed)/i },
 		'YUI Doc':               { cats: { 1:  4 }, html: /<html[^>]* yuilibrary\.com\/rdf\/[0-9.]+\/yui\.rdf/i },
 		'YUI':                   { cats: { 1: 12 }, script: /\/yui\/|yui\.yahooapis\.com/, env: /^YAHOO$/ },
 		'Zen Cart':              { cats: { 1:  6 }, meta: { 'generator': /Zen Cart/i } },

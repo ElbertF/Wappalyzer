@@ -243,7 +243,7 @@
 		'RequireJS':             { cats: { 1: 12 }, script: /require.*\.js/ , env: /^requirejs$/},
 		'Ruby':                  { cats: { 1: 27 }, headers: { 'Server': /(Mongrel|WEBrick|Ruby|mod_rails|mod_rack|Phusion.Passenger)/i, 'X-Powered-By': /(mod_rails|mod_rack|Phusion.Passenger)/i } },
 		'S.Builder':             { cats: { 1:  1 }, meta: { 'generator': /S\.Builder/i } },
-		's9y':                   { cats: { 1:  1 }, meta: { 'generator': /Serendipity/i } },
+		's9y':                   { cats: { 1:  1 }, meta: { 'generator': /Serendipity/i, 'Powered-By': /Serendipity/i } },
 		'script.aculo.us':       { cats: { 1: 12 }, script: /(scriptaculous|protoaculous)\.js/, env: /^Scriptaculous$/ },
 		'Sencha Touch':          { cats: { 1: 26, 2: 12}, script: /sencha\-touch.*\.js/ },
 		'Seoshop':               { cats: { 1:  6 }, html: /http:\/\/www\.getseoshop\.com/ },

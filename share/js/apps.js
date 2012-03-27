@@ -214,6 +214,7 @@
 		'openEngine':            { cats: { 1:  1 }, html: /<meta[^>]+openEngine/i },
 		'OpenGSE':               { cats: { 1: 22 }, headers: { 'Server': /GSE/i } },
 		'OpenLayers':            { cats: { 1:  5 }, script: /openlayers/, env:/^OpenLayers$/ },
+		'OpenNemas':             { cats: { 1: 22 }, headers: { 'X-Powered-By': /OpenNemas/ } },
 		'Open Web Analytics':    { cats: { 1: 10 }, html: /<!-- (Start|End) Open Web Analytics Tracker -->/, env: /^_?owa_/i },
 		'Optimizely':            { cats: { 1: 10 }, env: /^optimizely/ },
 		'Oracle Recommendations On Demand': { cats: { 1: 10 }, script: /atgsvcs.+atgsvcs\.js/ },

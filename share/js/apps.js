@@ -97,6 +97,7 @@
 		'Dancer':                { cats: { 1: 18 }, headers: { 'X-Powered-By': /Perl Dancer/, 'Server': /Perl Dancer/ }, implies: [ 'Perl' ] },
 		'Danneo CMS':            { cats: { 1:  1 }, meta: { 'generator': /Danneo/i } },
 		'DataLife Engine':       { cats: { 1:  1 }, meta: { 'generator': /DataLife Engine/i } },
+		'David Webbox':          { cats: { 1: 22 }, headers: { 'Server': /David-WebBox/i } },
 		'Debian':                { cats: { 1: 28 }, headers: { 'Server': /Debian/i, 'X-Powered-By': /(Debian|dotdeb|etch|lenny|squeeze|wheezy)/i } },
 		'DedeCMS':               { cats: { 1:  1 }, env: /^Dede/, script: /dedeajax/ },
 		'Demandware':            { cats: { 1:  6 }, html: /<[^>]+demandware.edgesuite/, env: /^dwAnalytics/ },

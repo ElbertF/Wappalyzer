@@ -57,7 +57,7 @@
 		'Backbone.js':           { cats: { 1: 12 }, script: /backbone.*\.js/, env: /^Backbone$/ },
 		'BIGACE':                { cats: { 1:  1 }, meta: { 'generator': /BIGACE/ }, html: /Powered by <a href=("|')[^>]+BIGACE|<!--\s+Site is running BIGACE/i },
 		'BigDump':               { cats: { 1:  3 }, html: /<!-- <h1>BigDump: Staggered MySQL Dump Importer/ },
-		'Bigware':               { cats: { 1:  6 }, html: /bigware/i },
+		'Bigware':               { cats: { 1:  6 }, html: /<center>[^<]+<a href="http:\/\/www.bigware.de[^"]*" target="_blank">\s*<u>Shopsoftware\s*<\/u>\s*<\/a>[^<]+<\/center>/i, headers: { 'Set-Cookie': /bigwareCsid/ }, implies: [ 'PHP' ] },
 		'blip.tv':               { cats: { 1: 14 }, html: /<(param|embed)[^>]+blip\.tv\/play/i },
 		'Blogger':               { cats: { 1: 11 }, meta: { 'generator': /blogger/i }, url: /^(www.)?.+\.blogspot\.com/i },
 		'Bugzilla':              { cats: { 1: 13 }, html: /<[^>]+(id|title|name)=("|')bugzilla/i },

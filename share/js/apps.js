@@ -213,7 +213,7 @@
 		'OneStat':               { cats: { 1: 10 }, html: /var p=("|')http("|')\+\(d\.URL\.indexOf\('https:'\)==0\?'s':''\)\+("|'):\/\/stat\.onestat\.com\/stat\.aspx\?tagver/i },
 		'OpenCart':              { cats: { 1:  6 }, html: /(Powered By <a href=("|')[^>]+OpenCart|route = getURLVar\(("|')route)/i },
 		'openEngine':            { cats: { 1:  1 }, html: /<meta[^>]+openEngine/i },
-		'OpenGSE':               { cats: { 1: 22 }, headers: { 'Server': /GSE/i } },
+		'OpenGSE':               { cats: { 1: 22 }, headers: { 'Server': /GSE/i }, implies: [ 'Java' ] },
 		'OpenLayers':            { cats: { 1:  5 }, script: /openlayers/, env:/^OpenLayers$/ },
 		'OpenNemas':             { cats: { 1:  1 }, headers: { 'X-Powered-By': /OpenNemas/ } },
 		'Open Web Analytics':    { cats: { 1: 10 }, html: /<!-- (Start|End) Open Web Analytics Tracker -->/, env: /^_?owa_/i },

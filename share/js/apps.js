@@ -42,6 +42,7 @@
 		'AddThis':               { cats: { 1:  5 }, script: /addthis\.com\/js/, env: /^addthis$/ },
 		'Adobe GoLive':          { cats: { 1: 20 }, meta: { 'generator': /Adobe GoLive/i } },
 		'Advanced Web Stats':    { cats: { 1: 10 }, html: /aws.src = [^<]+caphyon\-analytics/i },
+		'Ametys':                { cats: { 1:  1 }, meta: { 'generator': /(Ametys|Anyware Technologies)/i }, script: /STools.js/ },
 		'Amiro.CMS':             { cats: { 1:  1 }, meta: { 'generator': /Amiro/i } },
 		'AOLserver':             { cats: { 1: 22 }, headers: { 'Server': /AOLserver/i } },
 		'Apache':                { cats: { 1: 22 }, headers: { 'Server': /(Apache($|[^-])|HTTPD)/i } },

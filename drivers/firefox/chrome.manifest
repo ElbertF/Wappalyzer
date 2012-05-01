@@ -1,5 +1,7 @@
 content wappalyzer content/
 locale  wappalyzer en-US locale/en-US/
+locale  wappalyzer de-DE locale/de-DE/
+locale  wappalyzer fr-FR locale/fr-FR/
 skin    wappalyzer classic/1.0 skin/
 
 overlay chrome://browser/content/browser.xul chrome://wappalyzer/content/xul/wappalyzer.xul

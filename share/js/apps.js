@@ -133,6 +133,7 @@
 		'Gallery':               { cats: { 1:  7 }, env: /galleryAuthToken/, html: /<div id="gsNavBar" class="gcBorder1">/ },
 		'Gambio':                { cats: { 1:  6 }, html: /brought to you by XT-Commerce|[Gg]ambio|content\.php\?coID=\d/},
 		'Gauges':                { cats: { 1: 10 }, html: /t\.src = '\/\/secure\.gaug\.es\/track\.js/, env: /^_gauges$/ },
+		'Gentoo' :               { cats: { 1:  28}, headers: { 'X-Powered-By': /-?gentoo/} },
 		'Get Satisfaction':      { cats: { 1: 13 }, html: /var feedback_widget = new GSFN\.feedback_widget\(feedback_widget_options\)/ },
 		'Google Analytics':      { cats: { 1: 10 }, script: /(\.google\-analytics\.com\/ga\.js|google-analytics\.com\/urchin\.js)/, env: /^gaGlobal$/ },
 		'Google App Engine':     { cats: { 1: 22 }, headers: { 'Server': /Google Frontend/i } },

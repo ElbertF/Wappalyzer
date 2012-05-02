@@ -1,14 +1,14 @@
 ﻿<!ENTITY wappalyzer.name        "Wappalyzer">
 <!ENTITY wappalyzer.help        "Wappalyzer - Cliquer pour plus de détails et options">
 
-<!ENTITY wappalyzer.showIcons   "Montrer les icones des applications">
+<!ENTITY wappalyzer.showIcons   "Montrer les icônes des applications">
 <!ENTITY wappalyzer.preferences "Plus d'options...">
 <!ENTITY wappalyzer.addonBar    "Placer dans la barre des modules">
 <!ENTITY wappalyzer.categories  "Gérer les catégories">
 <!ENTITY wappalyzer.tracking    "Traçage">
 <!ENTITY wappalyzer.research    "Envoyer anonymement des rapports sur les applications détectées à wappalyzer.com pour la recherche">
 
-<!ENTITY wappalyzer.donate      "Faire un don!">
+<!ENTITY wappalyzer.donate      "Faire un don !">
 <!ENTITY wappalyzer.feedback    "Donner votre avis">
 <!ENTITY wappalyzer.github      "Github">
 <!ENTITY wappalyzer.twitter     "Twitter">
@@ -38,9 +38,9 @@
 <!ENTITY wappalyzer.cat21       "LMS">
 <!ENTITY wappalyzer.cat22       "Serveurs web">
 <!ENTITY wappalyzer.cat23       "Outils de cache">
-<!ENTITY wappalyzer.cat24       "Editeur WYSIWYG">
+<!ENTITY wappalyzer.cat24       "Editeurs WYSIWYG">
 <!ENTITY wappalyzer.cat25       "Graphismes JavaScript">
 <!ENTITY wappalyzer.cat26       "Frameworks pour mobiles">
 <!ENTITY wappalyzer.cat27       "Languages de programmation">
-<!ENTITY wappalyzer.cat28       "Systéme d'exploitation">
+<!ENTITY wappalyzer.cat28       "Systèmes d'exploitation">
 <!ENTITY wappalyzer.cat29       "Moteurs de recherche">

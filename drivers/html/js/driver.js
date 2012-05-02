@@ -31,7 +31,7 @@
 			document.getElementById('apps').innerHTML = '';
 
 			args.apps.map(function(app) {
-				document.getElementById('apps').innerHTML += '<img src="images/icons/' + app + '.ico" width="16" height="16"/> ' + app + '<br/>';
+				document.getElementById('apps').innerHTML += '<img src="images/icons/' + app + '.png" width="16" height="16"/> ' + app + '<br/>';
 			});
 		},
 

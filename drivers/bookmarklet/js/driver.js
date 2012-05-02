@@ -45,7 +45,7 @@
 						'<div class="app' + ( i == 0 ? ' first' : '' ) + '">' +
 							'<a target="_blank" class="application" href="' + w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
 								'<strong>' +
-									'<img src="images/icons/' + app + '.ico" width="16" height="16"/> ' + app +
+									'<img src="images/icons/' + app + '.png" width="16" height="16"/> ' + app +
 								'</strong>' +
 							'</a>'
 							;

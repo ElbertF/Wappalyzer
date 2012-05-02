@@ -108,7 +108,7 @@
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
 					var image = w$('<image/>')
-						.attr('src', 'chrome://wappalyzer/skin/images/icon16x16_hot.ico')
+						.attr('src', 'chrome://wappalyzer/skin/images/icon16x16_hot.png')
 						;
 
 					w$('#wappalyzer-container').prepend(image);
@@ -128,7 +128,7 @@
 					if ( display ) {
 						if ( prefs.getBoolPref('showIcons') ) {
 							var image = w$('<image/>')
-								.attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.ico')
+								.attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
 								;
 
 							w$('#wappalyzer-container').prepend(image);
@@ -140,7 +140,7 @@
 
 						var menuItem = w$('<menuitem/>')
 							.attr('class', 'wappalyzer-application menuitem-iconic')
-							.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.ico')
+							.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
 							.attr('label', app)
 							;
 
@@ -153,7 +153,7 @@
 						for ( cat in w.apps[app].cats ) {
 							var menuItem = w$('<menuitem/>')
 								.attr('class', 'wappalyzer-category')
-								.attr('label', w.categories[w.apps[app].cats[cat]].name)
+								.attr('label', strings.getString('wappalyzer.cat' + w.apps[app].cats[cat]))
 								;
 
 							menuItem.bind('command', function() {
@@ -166,7 +166,7 @@
 				});
 			} else {
 				var image = w$('<image/>')
-					.attr('src', 'chrome://wappalyzer/skin/images/icon16x16.ico')
+					.attr('src', 'chrome://wappalyzer/skin/images/icon16x16.png')
 					;
 
 				w$('#wappalyzer-container').prepend(image);
@@ -285,11 +285,6 @@
 				w$(this).attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false');
 
 				container();
-			});
-
-		w$(prefix + 'categories')
-			.bind('command', function() {
-				w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/categories.xul' })
 			});
 
 		w$(prefix + 'donate')

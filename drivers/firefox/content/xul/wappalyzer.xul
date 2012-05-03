@@ -24,15 +24,15 @@
 
 						<menuseparator/>
 
-						<menuitem id="wappalyzer-menu-donate"     label="&wappalyzer.donate;"   class="menuitem-iconic"/>
-						<menuitem id="wappalyzer-menu-feedback"   label="&wappalyzer.feedback;" class="menuitem-iconic"/>
-						<menuitem id="wappalyzer-menu-website"    label="&wappalyzer.website;"  class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-donate"     label="&wappalyzer.donate;"  	image="chrome://wappalyzer/skin/images/donate.png" 			class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-feedback"   label="&wappalyzer.feedback;" image="chrome://wappalyzer/skin/images/feedback.png"		class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-website"    label="&wappalyzer.website;"  image="chrome://wappalyzer/skin/images/icon16x16_hot.png" 	class="menuitem-iconic"/>
 
 						<menuseparator/>
 
-						<menuitem id="wappalyzer-menu-github"     label="&wappalyzer.github;"  image="chrome://wappalyzer/skin/images/github.ico"  class="menuitem-iconic"/>
-						<menuitem id="wappalyzer-menu-twitter"    label="&wappalyzer.twitter;" image="chrome://wappalyzer/skin/images/twitter.ico" class="menuitem-iconic"/>
-						<menuitem id="wappalyzer-menu-gplus"      label="&wappalyzer.gplus;"   image="chrome://wappalyzer/skin/images/gplus.ico"   class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-github"     label="&wappalyzer.github;"  image="chrome://wappalyzer/skin/images/github.png"  class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-twitter"    label="&wappalyzer.twitter;" image="chrome://wappalyzer/skin/images/twitter.png" class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-gplus"      label="&wappalyzer.gplus;"   image="chrome://wappalyzer/skin/images/gplus.png"   class="menuitem-iconic"/>
 					</menupopup>
 				</menu>
 

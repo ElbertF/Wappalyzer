@@ -32,7 +32,8 @@
 		26: { name: 'Mobile Framework',     plural: 'Mobile Frameworks' },
 		27: { name: 'Programming Language', plural: 'Programming Languages' },
 		28: { name: 'Operating System',     plural: 'Operating Systems' },
-		29: { name: 'Search Engine',        plural: 'Search Engines'}
+		29: { name: 'Search Engine',        plural: 'Search Engines'},
+		30: { name: 'Job Script',        	plural: 'Job Scripts'}
 	};
 
 	w.apps = {
@@ -160,6 +161,7 @@
 		'Java':                  { cats: { 1: 27 } },
 		'Javascript Infovis Toolkit': { cats: { 1: 25 }, script: /jit.*\.js/, env: /^\$jit$/ },
 		'Jo':                    { cats: { 1: 26, 2: 12 }, env: /^jo(Cache|DOM|Event)$/ },
+		'JobberBase':            { cats: { 1:  30 }, html: /Jobber\.jobber_url/i },
 		'Joomla':                { cats: { 1:  1 }, meta: { 'generator': /Joomla/i }, html: /(<!\-\- JoomlaWorks "K2"|<[^>]+(feed|components)\/com_)/i, headers: { 'X-Content-Encoded-By': /Joomla/ }, env: /^(jcomments)$/i },
 		'jqPlot':                { cats: { 1: 25 }, script: /jqplot.*\.js/, env: /^jQuery.jqplot$/ },
 		'jQTouch':               { cats: { 1: 26 }, script: /jqtouch.*\.js/i, env:/^jQT$/ },

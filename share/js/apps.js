@@ -160,6 +160,7 @@
 		'Java':                  { cats: { 1: 27 } },
 		'Javascript Infovis Toolkit': { cats: { 1: 25 }, script: /jit.*\.js/, env: /^\$jit$/ },
 		'Jo':                    { cats: { 1: 26, 2: 12 }, env: /^jo(Cache|DOM|Event)$/ },
+		'JobberBase':            { cats: { 1:  19 }, meta: { 'generator': /Jobberbase/i }, html: /Jobber\.jobber_url = "http:\/\//i },
 		'Joomla':                { cats: { 1:  1 }, meta: { 'generator': /Joomla/i }, html: /(<!\-\- JoomlaWorks "K2"|<[^>]+(feed|components)\/com_)/i, headers: { 'X-Content-Encoded-By': /Joomla/ }, env: /^(jcomments)$/i },
 		'jqPlot':                { cats: { 1: 25 }, script: /jqplot.*\.js/, env: /^jQuery.jqplot$/ },
 		'jQTouch':               { cats: { 1: 26 }, script: /jqtouch.*\.js/i, env:/^jQT$/ },

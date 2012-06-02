@@ -40,6 +40,7 @@
 		'1C-Bitrix':                        { cats: [  1 ], headers: { 'X-Powered-CMS': /Bitrix Site Manager/, 'Set-Cookie': /BITRIX_/i}, html: /<link[^>]+components\/bitrix|(src|href)=("|')\/bitrix\/(js|templates)/i, script: /1c\-bitrix/i, implies: [ 'PHP' ] },
 		'2z Project':                       { cats: [  1 ], meta: { 'generator': /2z project/i } },
 		'AddThis':                          { cats: [  5 ], script: /addthis\.com\/js/, env: /^addthis$/ },
+		'Adobe CQ5':			 			{ cats: { 1:  1 }, html: /<div class="[^"]*parbase/ },
 		'Adobe GoLive':                     { cats: [ 20 ], meta: { 'generator': /Adobe GoLive/i } },
 		'Advanced Web Stats':               { cats: [ 10 ], html: /aws.src = [^<]+caphyon\-analytics/i, implies: [ 'Java' ] },
 		'Ametys':                           { cats: [  1 ], meta: { 'generator': /(Ametys|Anyware Technologies)/i }, script: /STools.js/, implies: [ 'Java' ]  },

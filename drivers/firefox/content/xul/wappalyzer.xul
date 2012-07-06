@@ -26,7 +26,7 @@
 
 						<menuitem id="wappalyzer-menu-donate"     label="&wappalyzer.donate;"  	image="chrome://wappalyzer/skin/images/donate.png" 			class="menuitem-iconic"/>
 						<menuitem id="wappalyzer-menu-feedback"   label="&wappalyzer.feedback;" image="chrome://wappalyzer/skin/images/feedback.png"		class="menuitem-iconic"/>
-						<menuitem id="wappalyzer-menu-website"    label="&wappalyzer.website;"  image="chrome://wappalyzer/skin/images/icon16x16_hot.png" 	class="menuitem-iconic"/>
+						<menuitem id="wappalyzer-menu-website"    label="&wappalyzer.website;"  image="chrome://wappalyzer/skin/images/icon_hot.png" 	class="menuitem-iconic"/>
 
 						<menuseparator/>
 

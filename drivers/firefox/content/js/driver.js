@@ -110,7 +110,7 @@
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
 					var image = w$('<image/>')
-						.attr('src', 'chrome://wappalyzer/skin/images/icon16x16_hot.png')
+						.attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png')
 						;
 
 					w$('#wappalyzer-container').prepend(image);
@@ -170,7 +170,7 @@
 				});
 			} else {
 				var image = w$('<image/>')
-					.attr('src', 'chrome://wappalyzer/skin/images/icon16x16.png')
+					.attr('src', 'chrome://wappalyzer/skin/images/icon.png')
 					;
 
 				w$('#wappalyzer-container').prepend(image);

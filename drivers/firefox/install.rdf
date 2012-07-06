@@ -22,7 +22,7 @@
 
 		<em:name>Wappalyzer</em:name>
 		<em:description>Identifies software on the web.</em:description>
-		<em:iconURL>chrome://wappalyzer/skin/images/icon128x128.png</em:iconURL>
+		<em:iconURL>chrome://wappalyzer/icon.png</em:iconURL>
 		<em:creator>Elbert Foo</em:creator>
 		<em:homepageURL>http://wappalyzer.com</em:homepageURL>
 	</Description>

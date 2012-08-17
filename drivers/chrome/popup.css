@@ -1,59 +1,55 @@
 body {
-	background: #fff;
-	color: #000;
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	line-height: 16px;
-	min-width: 200px;
+	background:#fff;
+	color:#000;
+	font-family:Helvetica, Arial, sans-serif;
+	font-size:13px;
+	line-height:16px;
+	min-width:200px
 }
 
 img {
-	display: inline-block;
-	height: 16px;
-	margin-right: 8px;
-	vertical-align: top;
-	width: 16px;
+	display:inline-block;
+	height:16px;
+	margin-right:8px;
+	vertical-align:top;
+	width:16px
 }
 
 .detected-app {
-	padding: 7px 0;
+	padding:7px 0
 }
 
 .detected-app:first-child {
-	padding-top: 0;
+	padding-top:0
 }
 
 .detected-app:last-child {
-	border: none;
-	padding-bottom: 0;
+	border:none;
+	padding-bottom:0
 }
 
-	.detected-app a {
-		color: #000;
-		display: block;
-		text-decoration: none;
-	}
-
-	.detected-app a:hover .label {
-		text-decoration: underline;
-	}
-
-	.detected-app a:hover .category {
-		text-decoration: underline;
-	}
+.detected-app a {
+	color:#000;
+	display:block;
+	text-decoration:none
+}
 
 .label {
-	font-weight: bold;
+	font-weight:bold
 }
 
 .category {
-	color: #999;
-	display: block;
-	margin: 5px 0 0 24px;
+	color:#999;
+	display:block;
+	margin:5px 0 0 24px
 }
 
 .empty {
-	color: #999;
-	font-style: italic;
-	text-align: center;
+	color:#999;
+	font-style:italic;
+	text-align:center
+}
+
+.detected-app a:hover .label,.detected-app a:hover .category {
+	text-decoration:underline
 }

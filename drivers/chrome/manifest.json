@@ -9,9 +9,9 @@
 	"browser_action": {
 		"default_icon": "images/icon_32.png",
 		"default_title": "Wappalyzer - click for details",
-		"popup": "popup.html"
+		"default_popup": "popup.html"
 	},
-	"background_page": "bg.html",
+	"background": {"page": "bg.html"},
 	"content_scripts": [{
 		"matches": [ "http://*/*", "https://*/*" ],
 		"js": [ 

@@ -41,10 +41,7 @@
 		</hbox>
 	</hbox>
 
-	<statusbar id="status-bar">
-		<statusbarpanel
-			id="wappalyzer-addonbar"
-			popup="wappalyzer-menu"
-			/>
-	</statusbar>
+	<toolbar id="addon-bar">
+		<toolbarbutton id="wappalyzer-addonbar" popup="wappalyzer-menu"/>
+	</toolbar>
 </overlay>

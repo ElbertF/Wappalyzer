@@ -7,19 +7,18 @@
 
 	if ( wappalyzer == null ) return;
 
-	var w = wappalyzer;
-
-	var w$, prefs, strings;
-
+	var prefs, strings, w = wappalyzer;
+	const Cc = Components.classes, Ci = Components.interfaces;
+	
 	w.driver = {
 		/**
 		 * Log messages to console
 		 */
 		log: function(args) {
 			if ( prefs != null && prefs.getBoolPref('debug') ) {
-				var consoleService = Components.classes['@mozilla.org/consoleservice;1'].getService(Components.interfaces.nsIConsoleService);
-
-				consoleService.logStringMessage(args.message);
+				Cc['@mozilla.org/consoleservice;1']
+					.getService(Ci.nsIConsoleService)
+					.logStringMessage(args.message);
 			}
 		},
 
@@ -37,18 +36,14 @@
 				AddonManager.getAddonByID('wappalyzer@crunchlabz.com', function(addon) {
 					// Load jQuery
 					(function () {
-						var window;
-
-						Components.classes['@mozilla.org/moz/jssubscript-loader;1']
-							.getService(Components.interfaces.mozIJSSubScriptLoader)
+						Cc['@mozilla.org/moz/jssubscript-loader;1']
+							.getService(Ci.mozIJSSubScriptLoader)
 							.loadSubScript('chrome://wappalyzer/content/js/lib/jquery.min.js')
 							;
-
-						w$ = jQuery.noConflict(true);
 					})();
 
 					// Preferences
-					prefs = Components.classes['@mozilla.org/preferences-service;1'].getService(Components.interfaces.nsIPrefService).getBranch('extensions.wappalyzer.');
+					prefs = Cc['@mozilla.org/preferences-service;1'].getService(Ci.nsIPrefService).getBranch('extensions.wappalyzer.');
 
 					container();
 
@@ -77,7 +72,7 @@
 
 						// Get response headers
 						onStateChange: function(progress, request, flags, status) {
-							if ( request && request.nsIHttpChannel && flags & Components.interfaces.nsIWebProgressListener.STATE_STOP ) {
+							if ( request && request.nsIHttpChannel && flags & Ci.nsIWebProgressListener.STATE_STOP ) {
 								var headers = new Object();
 
 								request.nsIHttpChannel.visitResponseHeaders(function(header, value) {
@@ -105,86 +100,80 @@
 		displayApps: function() {
 			var url = gBrowser.currentURI.spec.split('#')[0];
 
-			w$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').remove();
+			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').remove();
 
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
-					var image = w$('<image/>')
+					var image = $('<image/>')
 						.attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png')
 						;
 
-					w$('#wappalyzer-container').prepend(image);
+					$('#wappalyzer-container').prepend(image);
 				}
 
 				w.detected[url].map(function(app, i) {
-					var display = false;
 
 					for ( var i in w.apps[app].cats ) {
 						if ( prefs.getBoolPref('cat' + w.apps[app].cats[i]) ) {
-							display = true;
-
-							break;
-						}
-					}
-
-					if ( display ) {
-						if ( prefs.getBoolPref('showIcons') ) {
-							var image = w$('<image/>')
+							if ( prefs.getBoolPref('showIcons') ) {
+								var image = $('<image/>')
 								.attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
 								;
 
-							w$('#wappalyzer-container').prepend(image);
-						}
+								$('#wappalyzer-container').prepend(image);
+							}
 
-						var menuSeparator = w$('<menuseparator/>');
+							var menuSeparator = $('<menuseparator/>');
 
-						w$('#wappalyzer-menu').append(menuSeparator);
+							$('#wappalyzer-menu').append(menuSeparator);
 
-						var menuItem = w$('<menuitem/>')
-							.attr('class', 'wappalyzer-application menuitem-iconic')
-							.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
-							.attr('label', app)
-							;
-
-						menuItem.bind('command', function() {
-							w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') });
-						});
-
-						w$('#wappalyzer-menu').append(menuItem);
-
-						for ( var i in w.apps[app].cats ) {
-							var cat = w.apps[app].cats[i];
-
-							var menuItem = w$('<menuitem/>')
-								.attr('class', 'wappalyzer-category')
-								.attr('label', strings.getString('wappalyzer.cat' + cat))
+							var menuItem = $('<menuitem/>')
+								.attr('class', 'wappalyzer-application menuitem-iconic')
+								.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
+								.attr('label', app)
 								;
 
 							menuItem.bind('command', function() {
-								w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat] });
+								w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w]/g, '') });
 							});
 
-							w$('#wappalyzer-menu').append(menuItem);
+							$('#wappalyzer-menu').append(menuItem);
+
+							for ( var i in w.apps[app].cats ) {
+								var cat = w.apps[app].cats[i];
+
+								var menuItem = $('<menuitem/>')
+									.attr('class', 'wappalyzer-category')
+									.attr('label', strings.getString('wappalyzer.cat' + cat))
+									;
+
+								menuItem.bind('command', function() {
+									w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat] });
+								});
+
+								$('#wappalyzer-menu').append(menuItem);
+							}
+							break;
 						}
 					}
 				});
 			} else {
-				var image = w$('<image/>')
+				var image = $('<image/>')
 					.attr('src', 'chrome://wappalyzer/skin/images/icon.png')
 					;
 
-				w$('#wappalyzer-container').prepend(image);
+				$('#wappalyzer-container').prepend(image);
 
-				var menuSeparator = w$('<menuseparator/>');
+				var menuSeparator = $('<menuseparator/>');
 
-				w$('#wappalyzer-menu').append(menuSeparator);
+				$('#wappalyzer-menu').append(menuSeparator);
 
-				var menuItem = w$('<menuitem/>')
+				var menuItem = $('<menuitem/>')
 					.attr('disabled', 'true')
 					.attr('label', strings.getString('wappalyzer.noAppsDetected'))
 					;
 
-				w$('#wappalyzer-menu').append(menuItem);
+				$('#wappalyzer-menu').append(menuItem);
 			}
 		},
 
@@ -218,7 +207,7 @@
 
 					request.open('POST', w.config.websiteURL + '_track.php', true);
 
-					request.channel.loadFlags |= Components.interfaces.nsIRequest.LOAD_BYPASS_CACHE;
+					request.channel.loadFlags |= Ci.nsIRequest.LOAD_BYPASS_CACHE;
 
 					request.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
 
@@ -259,34 +248,34 @@
 	 * Move container to address or addon bar
 	 */
 	function container() {
-		w$('#wappalyzer-container')
+		$('#wappalyzer-container')
 			.remove()
-			.prependTo(prefs.getBoolPref('addonBar') ? w$('#wappalyzer-addonbar') : w$('#urlbar-icons'));
+			.prependTo(prefs.getBoolPref('addonBar') ? $('#wappalyzer-addonbar') : $('#urlbar-icons'));
 
 		// Menu items
 		var prefix = '#wappalyzer-menu-';
 
-		w$(prefix + 'icons')
+		$(prefix + 'icons')
 			.attr('checked', prefs.getBoolPref('showIcons') ? 'true' : 'false')
 			.bind('command', function() {
 				prefs.setBoolPref('showIcons', !prefs.getBoolPref('showIcons'));
 
-				w$(this).attr('checked', prefs.getBoolPref('showIcons') ? 'true' : 'false');
+				$(this).attr('checked', prefs.getBoolPref('showIcons') ? 'true' : 'false');
 
 				w.driver.displayApps();
 			});
 
-		w$(prefix + 'preferences'  )
+		$(prefix + 'preferences'  )
 			.bind('command', function() {
 				w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/preferences.xul' })
 			});
 
-		w$(prefix + 'addonbar'  )
+		$(prefix + 'addonbar'  )
 			.attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false')
 			.bind('command', function() {
 				prefs.setBoolPref('addonBar', !prefs.getBoolPref('addonBar'));
 
-				w$(this).attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false');
+				$(this).attr('checked', prefs.getBoolPref('addonBar') ? 'true' : 'false');
 
 				container();
 
@@ -295,32 +284,32 @@
 				}
 			});
 
-		w$(prefix + 'donate')
+		$(prefix + 'donate')
 			.bind('command', function() {
 				w.driver.goToURL({ url: w.config.websiteURL + 'donate' })
 			});
 
-		w$(prefix + 'feedback')
+		$(prefix + 'feedback')
 			.bind('command', function() {
 				w.driver.goToURL({ url: w.config.websiteURL + 'contact' })
 			});
 
-		w$(prefix + 'website')
+		$(prefix + 'website')
 			.bind('command', function() {
 				w.driver.goToURL({ url: w.config.websiteURL })
 			});
 
-		w$(prefix + 'github' )
+		$(prefix + 'github' )
 			.bind('command', function() {
 				w.driver.goToURL({ url: w.config.githubURL })
 			});
 
-		w$(prefix + 'twitter')
+		$(prefix + 'twitter')
 			.bind('command', function() {
 				w.driver.goToURL({ url: w.config.twitterURL})
 			});
 
-		w$(prefix + 'gplus')
+		$(prefix + 'gplus')
 			.bind('command', function() {
 				w.driver.goToURL({ url: w.config.gplusURL })
 			});

@@ -195,6 +195,7 @@
 		'LEPTON':                           { cats: [  1 ], meta: { 'generator': /LEPTON/i }, implies: [ 'PHP' ] },
 		'Liferay':                          { cats: [  1 ], env: /^Liferay$/, headers: { 'Liferay-Portal': /.*/i } },
 		'lighttpd':                         { cats: [ 22 ], headers: { 'Server': /lighttpd/i } },
+		'LimeSurvey':                       { cats: [ 19 ], headers: { 'generator': /LimeSurvey/i } },
 		'LiveJournal':                      { cats: [ 11 ], url: /^(www.)?.+\.livejournal\.com/i },
 		'Lotus Domino':                     { cats: [ 22 ], headers: { 'Server': /Lotus\-Domino/i } },
 		'Magento':                          { cats: [  6 ], script: /\/(js\/mage|skin\/frontend\/(default|enterprise))\//, env: /^(Mage|VarienForm)$/, implies: [ 'PHP '] },

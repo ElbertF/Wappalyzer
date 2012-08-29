@@ -275,6 +275,7 @@
 		'Quantcast':                        { cats: [ 10 ], script: /edge\.quantserve\.com\/quant\.js/, env: /^quantserve$/ },
 		'Quick.Cart':                       { cats: [  6 ], html: /<a href="[^>]+opensolution\.org\/">Powered by/i },
 		'Raphael':                          { cats: [ 25 ], script: /raphael.*\.js/, env: /^Raphael$/ },
+		'RBS Change':                       { cats: [ 1, 6 ], html: /xmlns:change=/, meta: { 'generator': /RBS Change/i }, implies: [ 'PHP' ] },
 		'ReallyCMS':                        { cats: [  1 ], meta: { 'generator': /ReallyCMS/ } },
 		'reCAPTCHA':                        { cats: [ 16 ], script: /(api\-secure\.recaptcha\.net|recaptcha_ajax\.js)/, html: /<div[^>]+id=("|')recaptcha_image/, env: /^Recaptcha$/ },
 		'Red Hat':                          { cats: [ 28 ], headers: { 'Server': /(Red Hat|rhel[0-9]+)/i, 'X-Powered-By': /Red Hat/i } },

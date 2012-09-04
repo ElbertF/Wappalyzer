@@ -813,10 +813,9 @@
 			env: /^Liferay$/,
 			headers: { 'Liferay-Portal': /.*/i }
 		},
-		'LightMon': {
+		'LightMon Engine': {
 			cats: [ 1 ],
-			meta: { 'generator': /LightMon/i },
-			headers: { 'X-Powered-By': /LightMon/i },
+			html: /<!-- Lightmon Engine Copyright Lightmon/i,
 			implies: [ 'PHP' ]
 		},
 		'lighttpd': {

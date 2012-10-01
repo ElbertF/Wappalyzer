@@ -1046,6 +1046,12 @@
 			cats: [ 6 ],
 			html: /<body onload=("|')window\.defaultStatus='oscss templates';("|')/i
 		},
+		'Outbrain': { 
+		    cats:    [ 5 ],
+		    html: 	/var OB_langJS = 'http:\/\/widgets.outbrain.com\/lang_/,
+		    script: /http:\/\/widgets.outbrain.com\/outbrain.js/, 
+		    env:     /OutbrainPermaLink/
+	    },
 		'OXID eShop': {
 			cats: [ 6 ],
 			html: /<!--.*OXID eShop/,

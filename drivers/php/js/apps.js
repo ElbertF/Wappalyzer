@@ -158,6 +158,13 @@
 			html: /Powered by <a href=("|')[^>]+BIGACE|<!--\s+Site is running BIGACE/i,
 			implies: [ 'PHP' ]
 		},
+		'Bigcommerce': {
+			cats: 	[ 6 ],
+			url:    /.+\.mybigcommerce\.com/,
+			html: 	/<link href="http\:\/\/cdn[0-9]+\.bigcommerce\.com\/v/,
+			script: /^http\:\/\/cdn[0-9]+\.bigcommerce\.com\/v/,
+			env: 	/compareProducts/
+		},
 		'BigDump': {
 			cats: [ 3 ],
 			html: /<!-- <h1>BigDump: Staggered MySQL Dump Importer/,
@@ -1523,6 +1530,10 @@
 			cats: [ 1 ],
 			headers: { 'Set-Cookie': /VivvoSessionId/,
 			env: /^vivvo/i }
+		},
+		'Volusion': {
+			cats: [ 6 ],
+			html: /\/v\/vspfiles(\/.)*\/css\/.+\.css/
 		},
 		'Vox': {
 			cats: [ 11 ],

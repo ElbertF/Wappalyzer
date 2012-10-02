@@ -1048,9 +1048,9 @@
 		},
 		'Outbrain': { 
 		    cats:    [ 5 ],
-		    html: 	/var OB_langJS = 'http:\/\/widgets.outbrain.com\/lang_/,
-		    script: /http:\/\/widgets.outbrain.com\/outbrain.js/, 
-		    env:     /OutbrainPermaLink/
+		    html: 	/var OB_langJS = 'http\:\/\/widgets\.outbrain\.com\/lang_/,
+		    script: /http\:\/\/widgets\.outbrain\.com\/outbrain\.js/,
+		    env:     /^OutbrainPermaLink$/
 	    },
 		'OXID eShop': {
 			cats: [ 6 ],
@@ -1367,6 +1367,11 @@
 			cats: [ 6 ],
 			html: /Shopsystem von <a href="http:\/\/www\.store-systems\.de"|\.mws_boxTop/
 		},
+		'SublimeVideo': { 
+		    cats:    [ 14, 31 ],
+		    script:  /http\:\/\/cdn\.sublimevideo\.net\/js\/[a-z0-9]+\.js/,
+		    env:     /^sublimevideo$/
+	    },
 		'SWFObject': {
 			cats: [ 19 ],
 			script: /swfobject.*\.js/i,

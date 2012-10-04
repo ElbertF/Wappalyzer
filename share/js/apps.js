@@ -1194,6 +1194,11 @@
 			cats: [ 6 ],
 			html: /<a href="[^>]+opensolution\.org\/">Powered by/i
 		},
+		'Rack::Cache': {
+			cats: [ 22 ],
+			headers: { 'X-Rack-Cache': /.+/ },
+			implies: [ 'Ruby' ]
+		},
 		'Raphael': {
 			cats: [ 25 ],
 			script: /raphael.*\.js/,

@@ -39,7 +39,8 @@
 		sendAsyncMessage('wappalyzer', {
 			hostname: content.location.hostname,
 			html:     html,
-			url:      content.location.href
-			});
+			url:      content.location.href,
+			env: 	  Object.keys(content.wrappedJSObject)
+		});
 	}
 })();

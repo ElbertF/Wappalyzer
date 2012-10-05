@@ -56,6 +56,11 @@
 			cats: [ 1 ],
 			meta: { 'generator': /2z project/i }
 		},
+		'Accessible Portal': { 
+		    cats:    [ 1 ],
+		    meta:    { 'generator': /Accessible Portal/i },
+		    implies: [ 'PHP' ]
+	    },
 		'AddThis': {
 			cats: [ 5 ],
 			script: /addthis\.com\/js/,
@@ -357,6 +362,11 @@
 			cats: [ 10 ],
 			env: /CE2/,
 			script: /cetrk\.com\/pages\/scripts\/[0-9]+\/[0-9]+\.js/
+		},
+		'Cross Pixel': {
+			cats: [ 10 ],
+			env: /^crsspxl$/,
+			script: /http\:\/\/tag\.crsspxl\.com\/s1\.js/i
 		},
 		'CS Cart': {
 			cats: [ 6 ],
@@ -880,6 +890,10 @@
 			cats: [ 1 ],
 			meta: { 'generator': /MaxSite CMS/i }
 		},
+		'MediaElement.js': {
+			cats: [ 14 ],
+			env: /^mejs$/
+		},
 		'MediaWiki': {
 			cats: [ 8 ],
 			meta: { 'generator': /MediaWiki/i },
@@ -1154,6 +1168,10 @@
 			cats: [ 19 ],
 			html: /<iframe src="http:\/\/pluraserver\.com/
 		},
+		'Po.st': {
+			cats: [ 5 ],
+			env: /^pwidget_config$/
+		},		
 		'Posterous': {
 			cats: [ 1, 11 ],
 			html: /<div class=("|')posterous/i,
@@ -1375,7 +1393,7 @@
 			html: /Shopsystem von <a href="http:\/\/www\.store-systems\.de"|\.mws_boxTop/
 		},
 		'SublimeVideo': { 
-		    cats:    [ 14, 31 ],
+		    cats:    [ 14 ],
 		    script:  /http\:\/\/cdn\.sublimevideo\.net\/js\/[a-z0-9]+\.js/,
 		    env:     /^sublimevideo$/
 	    },

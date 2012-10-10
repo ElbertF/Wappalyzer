@@ -547,6 +547,7 @@
 		},
 		'eZ Publish': {
 			cats: [ 1, 6 ],
+			headers: { 'X-Powered-By': /^eZ Publish$/i },
 			meta: { 'generator': /eZ Publish/i },
 			implies: [ 'PHP' ]
 		},

@@ -533,6 +533,7 @@
 		"eZ Publish": {
 			"cats": [ "1", "6" ],
 			"meta": { "generator": "eZ Publish" },
+			"headers": {  "X-Powered-By": "^eZ Publish$" },
 			"implies": [ "PHP" ]
 		},
 		"Fact Finder": {

@@ -45,7 +45,7 @@ platform specific code in `drivers/`. The sections below describe how to set up
 a development environment for the various existing drivers.
 
 To keep files synchronised between drivers, run the `links.sh` script (UNIX-like 
-system only, Windows user will have to manually copy the files across.)
+systems only, Windows users can use `links.cmd`.)
 
 
 **Mozilla Firefox**

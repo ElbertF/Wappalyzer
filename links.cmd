@@ -79,11 +79,6 @@ mklink /h drivers\chrome\js\wappalyzer.js share\js\wappalyzer.js
 if exist drivers\bookmarklet\images\icons rmdir /q /s drivers\bookmarklet\images\icons
 mklink /j drivers\bookmarklet\images\icons share\images\icons
 
-::Sync lib folder
-::ln -f share\js\lib\jquery.min.js drivers\bookmarklet\js\lib
-if exist drivers\bookmarklet\js\lib rmdir /q /s drivers\bookmarklet\js\lib
-mklink /j drivers\bookmarklet\js\lib share\js\lib
-
 ::Sync apps JSON
 ::ln -f share\apps.json            drivers\bookmarklet\json
 if exist drivers\bookmarklet\json del drivers\bookmarklet\json
@@ -102,11 +97,6 @@ mklink /h drivers\bookmarklet\js\wappalyzer.js share\js\wappalyzer.js
 ::ln -f share\images\icons\*       drivers\html\images\icons
 if exist drivers\html\images\icons rmdir /q /s drivers\html\images\icons
 mklink /j drivers\html\images\icons share\images\icons
-
-::Sync lib folder
-::ln -f share\js\lib\jquery.min.js drivers\html\js\lib
-if exist drivers\html\js\lib rmdir /q /s drivers\html\js\lib
-mklink /j drivers\html\js\lib share\js\lib
 
 ::Sync apps JSON
 ::ln -f share\apps.json            drivers\html

@@ -150,8 +150,8 @@
 				if ( w.driver.lastDisplayed === 'empty' ) { return; }
 			}
 
-			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').addClass('wappalyzer-remove');
-
+			$('#wappalyzer-container > image, #wappalyzer-menu > menuitem, #wappalyzer-menu > menuseparator').attr('class', 'wappalyzer-remove');
+			
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
 					image = $('<image/>').attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png');

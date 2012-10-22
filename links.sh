@@ -15,12 +15,10 @@ ln -f share/apps.json            drivers/chrome
 ln -f share/js/wappalyzer.js     drivers/chrome/js
 
 ln -f share/images/icons/*       drivers/bookmarklet/images/icons
-ln -f share/js/lib/jquery.min.js drivers/bookmarklet/js/lib
 ln -f share/apps.json            drivers/bookmarklet/json
 ln -f share/js/wappalyzer.js     drivers/bookmarklet/js
 
 ln -f share/images/icons/*       drivers/html/images/icons
-ln -f share/js/lib/jquery.min.js drivers/html/js/lib
 ln -f share/apps.json            drivers/html
 ln -f share/js/wappalyzer.js     drivers/html/js
 

@@ -41,7 +41,7 @@ $(function() {
 				localStorage[option] = options.opts[option];
 			}
 
-			$('#options-saved').stop().show().fadeOut(2000);
+			//$('#options-saved').stop().show().fadeOut(2000);
 		}
 	};
 

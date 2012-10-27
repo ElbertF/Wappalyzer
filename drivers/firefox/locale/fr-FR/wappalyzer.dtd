@@ -9,9 +9,9 @@
 <!ENTITY wappalyzer.interface         "Interface">
 <!ENTITY wappalyzer.tracking          "Traçage">
 <!ENTITY wappalyzer.research          "Envoyer anonymement des rapports sur les applications détectées à wappalyzer.com pour la recherche">
-<!ENTITY wappalyzer.analyzeHeaders    "Analyze response headers">
-<!ENTITY wappalyzer.analyzeJavaScript "Analyze JavaScript">
-<!ENTITY wappalyzer.analyzeOnload     "Analyze onLoad events">
+<!ENTITY wappalyzer.analyzeHeaders    "Analyser les headers">
+<!ENTITY wappalyzer.analyzeJavaScript "Analyser le JavaScript">
+<!ENTITY wappalyzer.analyzeOnload     "Analyser les évènements au chargement">
 
 <!ENTITY wappalyzer.feedback          "Donner votre avis">
 <!ENTITY wappalyzer.github            "Github">
@@ -49,4 +49,4 @@
 <!ENTITY wappalyzer.cat29             "Moteurs de recherche">
 <!ENTITY wappalyzer.cat30             "Web Mail">
 <!ENTITY wappalyzer.cat31             "CDN">
-<!ENTITY wappalyzer.cat32             "Marketing Automation">
+<!ENTITY wappalyzer.cat32             "Logiciel de marketing">

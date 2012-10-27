@@ -50,6 +50,11 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "2z project" }
 		},
+		"3dCart": {
+			"cats": [ 1, 6 ],
+			"headers": { "X-Powered-By": "3DCART" },
+			"script": "(twlh(track)?\\.asp|3d_upsell.js)"
+		},
 		"Accessible Portal": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Accessible Portal" },
@@ -58,7 +63,7 @@
 		"AddThis": {
 			"cats": [ 5 ],
 			"script": "addthis\\.com/js",
-			"env": "^addthis$"
+			"env": "^addthis"
 		},
 		"Adobe CQ5": {
 			"cats": [ 1 ],
@@ -855,6 +860,10 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "Kentico CMS" }
 		},
+		"KISSmetrics": {
+			"cats": [ 10 ],
+			"env": "^KM_COOKIE_DOMAIN$"
+		},
 		"Koego": {
 			"cats": [ 10 ],
 			"script": "tracking\\.koego\\.com/end/ego\\.js"
@@ -1369,6 +1378,10 @@
 			"cats": [ 5 ],
 			"script": "w\\.sharethis\\.com/",
 			"env": "^SHARETHIS$"
+		},
+		"Shopalize": {
+			"cats": [ 5, 10 ],
+			"env": "^Shopalize$"
 		},
 		"Shopify": {
 			"cats": [ 6 ],

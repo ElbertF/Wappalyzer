@@ -40,8 +40,9 @@ $(function() {
 			for ( option in options.opts ) {
 				localStorage[option] = options.opts[option];
 			}
+			document.getElementById('options-saved').style.display = 'inline';
+			setTimeout(function(){document.getElementById('options-saved').style.display = 'none';},2000);
 
-			//$('#options-saved').stop().show().fadeOut(2000);
 		}
 	};
 

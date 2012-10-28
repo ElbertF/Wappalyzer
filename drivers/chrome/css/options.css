@@ -43,6 +43,7 @@ a:active {
 
 #options-saved {
 	display: none;
+	-webkit-animation: fadeout 2s;
 }
 
 #about {
@@ -57,3 +58,8 @@ a:active {
 	#about button {
 		line-height: 30px;
 	}
+
+@-webkit-keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}

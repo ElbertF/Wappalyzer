@@ -191,7 +191,7 @@
 		},
 		"Blip.tv": {
 			"cats": [ 14 ],
-			"html": "<(param|embed)[^>]+blip\\.tv/play"
+			"html": "<(param|embed|iframe)[^>]+blip\\.tv/play"
 		},
 		"Blogger": {
 			"cats": [ 11 ],

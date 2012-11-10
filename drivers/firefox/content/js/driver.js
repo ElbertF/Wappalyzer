@@ -154,9 +154,7 @@
 			
 			if ( w.detected[url] != null && w.detected[url].length ) {
 				if ( !prefs.getBoolPref('showIcons') ) {
-					image = $('<image/>').attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png');
-
-					$('#wappalyzer-container').prepend(image);
+					$('<image>').attr('src', 'chrome://wappalyzer/skin/images/icon_hot.png').prependTo(document.getElementById('wappalyzer-container'));
 				}
 
 				w.detected[url].map(function(app, i) {
@@ -171,40 +169,31 @@
 
 						if ( showCat ) {
 							if ( prefs.getBoolPref('showIcons') ) {
-								image = $('<image/>').attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.png');
-
-								$('#wappalyzer-container').prepend(image);
+								$('<image>').attr('src', 'chrome://wappalyzer/skin/images/icons/' + app + '.png').attr('tooltiptext', app + ' - ' + strings.getString('wappalyzer.cat' + w.apps[app].cats[i])).prependTo(document.getElementById('wappalyzer-container'));
 							}
+							
+							$('<menuseparator>').appendTo(document.getElementById('wappalyzer-menu'));
 
-							menuSeparator = $('<menuseparator/>');
-
-							$('#wappalyzer-menu').append(menuSeparator);
-
-							menuItem = $('<menuitem/>')
+							$('#wappalyzer-menu')
+								.append($('<menuitem>')
 								.attr('class', 'wappalyzer-application menuitem-iconic')
 								.attr('image', 'chrome://wappalyzer/skin/images/icons/' + app + '.png')
 								.attr('label', app)
-								;
-
-							menuItem.bind('command', function() {
-								w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') });
-							});
-
-							$('#wappalyzer-menu').append(menuItem);
+								.attr('name', app)
+								.on('command', function() {
+									w.driver.goToURL({ url: w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') });
+								}));
 
 							for ( j in w.apps[app].cats ) {
 								var cat = w.apps[app].cats[j];
 
-								menuItem = $('<menuitem/>')
+								$('#wappalyzer-menu')
+									.append($('<menuitem>')
 									.attr('class', 'wappalyzer-category')
 									.attr('label', strings.getString('wappalyzer.cat' + cat))
-									;
-
-								menuItem.bind('command', function() {
-									w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat] });
-								});
-
-								$('#wappalyzer-menu').append(menuItem);
+									.on('command', function() {
+										w.driver.goToURL({ url: w.config.websiteURL + 'categories/' + w.categories[cat] });
+									}));
 							}
 
 							break;
@@ -214,20 +203,16 @@
 
 				w.driver.lastDisplayed = JSON.stringify(w.detected[url]);
 			} else {
-				image = $('<image/>').attr('src', 'chrome://wappalyzer/skin/images/icon.png');
+				$('<image>')
+					.attr('src', 'chrome://wappalyzer/skin/images/icon.png')
+					.prependTo(document.getElementById('wappalyzer-container'));
+				
+				$('<menuseparator>').appendTo(document.getElementById('wappalyzer-menu'));
 
-				$('#wappalyzer-container').prepend(image);
-
-				menuSeparator = $('<menuseparator/>');
-
-				$('#wappalyzer-menu').append(menuSeparator);
-
-				menuItem = $('<menuitem/>')
+				$('<menuitem>')
 					.attr('disabled', 'true')
 					.attr('label', strings.getString('wappalyzer.noAppsDetected'))
-					;
-
-				$('#wappalyzer-menu').append(menuItem);
+					.appendTo(document.getElementById('wappalyzer-menu'));
 
 				w.driver.lastDisplayed = 'empty';
 			}
@@ -295,11 +280,10 @@
 	 */
 	function container() {
 		if ( prefs.getBoolPref('addonBar') ) {
-			$('#wappalyzer-container').prependTo($('#wappalyzer-addonbar'));
+			$('#wappalyzer-container').prependTo(document.getElementById('wappalyzer-addonbar'));
 
-			$('#wappalyzer-addonbar').attr('collapsed', 'false');
 		} else {
-			$('#wappalyzer-container').prependTo($('#urlbar-icons'));
+			$('#wappalyzer-container').prependTo(document.getElementById('urlbar-icons'));
 
 			$('#wappalyzer-addonbar').attr('collapsed', 'true');
 		}
@@ -310,32 +294,27 @@
 	 */
 	function bindings() {
 		// Menu items
-		var prefix = '#wappalyzer-menu-';
+		var prefix = 'wappalyzer-menu-';
 
-		$(prefix + 'preferences'  )
-			.bind('command', function() {
+		document.getElementById(prefix + 'preferences').onclick = function() {
 				w.driver.goToURL({ url: 'chrome://wappalyzer/content/xul/preferences.xul' })
-			});
+			};
 
-		$(prefix + 'feedback')
-			.bind('command', function() {
+		document.getElementById(prefix + 'feedback').onclick = function() {
 				w.driver.goToURL({ url: w.config.websiteURL + 'contact' })
-			});
+			};
 
-		$(prefix + 'website')
-			.bind('command', function() {
+		document.getElementById(prefix + 'website').onclick = function() {
 				w.driver.goToURL({ url: w.config.websiteURL })
-			});
+			};
 
-		$(prefix + 'github' )
-			.bind('command', function() {
+		document.getElementById(prefix + 'github').onclick = function() {
 				w.driver.goToURL({ url: w.config.githubURL })
-			});
-
-		$(prefix + 'twitter')
-			.bind('command', function() {
-				w.driver.goToURL({ url: w.config.twitterURL})
-			});
+			};
+			
+		document.getElementById(prefix + 'twitter').onclick = function() {
+				w.driver.goToURL({ url: w.config.twitterURL })
+			};
 	}
 
 	w.init();

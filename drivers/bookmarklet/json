@@ -984,12 +984,6 @@
 			"cats": [ 1 ],
 			"html": "(<a[^>]+>Powered by MODx</a>|var el= \\$\\('modxhost'\\);|<script type=\\\"text/javascript\\\">var MODX_MEDIA_PATH = \\\"media\\\";)|<(link|script)[^>]+assets/snippets/"
 		},
-		"MoinMoin": {
-			"cats": [ 8 ],
-			"script": "moin.+/common/js/common.js",
-			"env": "show_switch2gui",
-			"implies":[ "Python" ]
-		},
 		"Mojolicious": {
 			"cats": [ 18 ],
 			"headers": { "x-powered-by": "mojolicious" },
@@ -1163,11 +1157,6 @@
 			"cats": [ 27 ],
 			"headers": { "Server": "php", "X-Powered-By": "php", "Set-Cookie": "PHPSESSID" },
 			"url": "\\.php$"
-		},
-		"phpAlbum":	{
-			"cats":	[ 7 ],
-			"html":	"<!--phpalbum [\.\d\s]+-->",
-			"implies": [ "PHP" ]
 		},
 		"phpBB": {
 			"cats": [ 2 ],
@@ -1439,11 +1428,6 @@
 			"cats": [ 19 ],
 			"html": "(<!-- start of Sigsiu Online Business Index|<div[^>]* class=\\\"sobi2)"
 		},
-		"SobiPro": {
-			"cats":	[ 19 ],
-			"env":	"SobiProUrl",
-			"html":	" <(script|link)[^>].*com_sobipro.*>"
-		},
 		"SoundManager": {
 			"cats": [ 12 ],
 			"env": "^(SoundManager|BaconPlayer)$"
@@ -1620,12 +1604,6 @@
 			"cats": [ 2 ],
 			"meta": { "generator": "vBulletin" },
 			"env": "^(vBulletin|vB_[^g])"
-		},
-		"VideoJS": {
-			"cats": [ 14 ],
-			"env": "VideoJS",
-			"html": "<div+class=\\\"video-js+\\\">",
-			"script": ".zencdn\.net/c/video\.js"
 		},
 		"viennaCMS": {
 			"cats": [ 1 ],
@@ -1826,11 +1804,6 @@
 			"cats": [ 11 ],
 			"meta": { "generator": "Zinnia" },
 			"implies": [ "Django" ]
-		},
-		"ZK": {
-			"cats": [ 18 ],
-			"script": "zkau/",
-			"html": "<!-- ZK [\.\d\s]+-->",
-			"implies": [ "Java" ]
+		}
 	}
 }

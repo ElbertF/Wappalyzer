@@ -1,0 +1,19 @@
+# End-of-line normalization
+* text=auto
+
+*.cmd			text eol=lf
+*.sh			text eol=lf
+*.md			text eol=lf
+*.json			text eol=lf
+*.js			text eol=lf
+*.html			text eol=lf
+*.css			text eol=lf
+*.manifest		text eol=lf
+*.rdf			text eol=lf
+*.xul			text eol=lf
+*.dtd			text eol=lf
+*.properties	text eol=lf
+*.php			text eol=lf
+
+*.png			binary
+*.gif			binary

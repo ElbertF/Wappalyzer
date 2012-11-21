@@ -53,7 +53,7 @@
 		"3dCart": {
 			"cats": [ 1, 6 ],
 			"headers": { "X-Powered-By": "3DCART" },
-			"script": "(twlh(track)?\\.asp|3d_upsell.js)"
+			"script": "(twlh(track)?\\.asp|3d_upsell\\.js)"
 		},
 		"Accessible Portal": {
 			"cats": [ 1 ],
@@ -77,7 +77,7 @@
 		},
 		"Advanced Web Stats": {
 			"cats": [ 10 ],
-			"html": "aws.src = [^<]+caphyon-analytics",
+			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"implies": [ "Java" ]
 		},
 		"Alloy": {
@@ -87,7 +87,7 @@
 		"Ametys": {
 			"cats": [ 1 ],
 			"meta": { "generator": "(Ametys|Anyware Technologies)" },
-			"script": "STools.js",
+			"script": "STools\\.js",
 			"implies": [ "Java" ]
 		},
 		"Amiro.CMS": {
@@ -99,7 +99,7 @@
 		"AMPcms": {
 			"cats": [ 1 ],
 			"headers": { "X-AMP-Version": ".*", "Set-Cookie": "AMP=" },
-			"env": "amp_js_init",
+			"env": "^amp_js_init$",
 			"implies": [ "PHP" ]
 		},
 		"AngularJS": {
@@ -112,7 +112,7 @@
 		},
 		"Apache": {
 			"cats": [ 22 ],
-			"headers": { "Server": "(Apache($|[^-])|HTTPD)" } 
+			"headers": { "Server": "(Apache($|[^-])|HTTPD)" }
 		},
 		"Apache JSPWiki": {
 			"cats": [ 8 ],
@@ -122,7 +122,7 @@
 		},
 		"Apache Tomcat": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Apache-Coyote" } 
+			"headers": { "Server": "Apache-Coyote" }
 		},
 		"Apache Traffic Server": {
 			"cats": [ 22 ],
@@ -131,6 +131,11 @@
 		"Arc Forum": {
 			"cats": [ 2 ],
 			"html": "ping\\.src = node\\.href;"
+		},
+		"AsciiDoc": {
+			"cats": [ 1, 20, 27 ],
+			"meta": { "generator": "^AsciiDoc" },
+			"env": "^asciidoc$"
 		},
 		"ATG Web Commerce": {
 			"cats": [ 6 ],
@@ -171,11 +176,11 @@
 			"implies": [ "PHP" ]
 		},
 		"Bigcommerce": {
-			"cats":	[ 6 ],
+			"cats": [ 6 ],
 			"url": ".+\\.mybigcommerce\\.com",
 			"html": "<link href=+cdn\\d+\\.bigcommerce\\.com/v",
 			"script": "cdn\\d+\\.bigcommerce\\.com/v",
-			"env": "compareProducts"
+			"env": "^compareProducts$"
 		},
 		"BigDump": {
 			"cats": [ 3 ],
@@ -195,8 +200,7 @@
 		},
 		"Blogger": {
 			"cats": [ 11 ],
-			"meta": { "generator": "blogger"
-			},
+			"meta": { "generator": "blogger" },
 			"url": "^(www.)?.+\\.blogspot\\.com"
 		},
 		"BrowserCMS": {
@@ -227,7 +231,7 @@
 		},
 		"Cargo": {
 			"cats": [ 1 ],
-			"meta": {"cargo_title": ".*" },
+			"meta": { "cargo_title": ".*" },
 			"script": "/cargo\\.",
 			"html": "<link [^>]+Cargo feed",
 			"implies": [ "PHP" ]
@@ -250,7 +254,8 @@
 		},
 		"Chamilo": {
 			"cats": [ 21 ],
-			"meta": { "generator": "Chamilo" }, "headers": { "X-Powered-By": "Chamilo" },
+			"meta": { "generator": "Chamilo" },
+			"headers": { "X-Powered-By": "Chamilo" },
 			"implies": [ "PHP" ]
 		},
 		"Chartbeat": {
@@ -259,7 +264,8 @@
 		},
 		"Cherokee": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Cherokee" } },
+			"headers": { "Server": "Cherokee" }
+		},
 		"CKEditor": {
 			"cats": [ 24 ],
 			"env": "^CKEDITOR$",
@@ -314,7 +320,7 @@
 			"cats": [ 1 ],
 			"script": "concrete/js/",
 			"meta": { "generator": "concrete5" },
-			"env": "CCM_IMAGE_PATH",
+			"env": "^CCM_IMAGE_PATH$",
 			"implies": [ "PHP" ]
 		},
 		"Connect": {
@@ -324,7 +330,7 @@
 		},
 		"Contao": {
 			"cats": [ 1, 6 ],
-			"html": "(<!--.+powered by (TYPOlight|Contao)-->|<link[^>]+(typolight|contao).css)",
+			"html": "(<!--.+powered by (TYPOlight|Contao)-->|<link[^>]+(typolight|contao)\\.css)",
 			"implies": [ "PHP" ]
 		},
 		"Contenido": {
@@ -372,7 +378,7 @@
 		},
 		"Crazy Egg": {
 			"cats": [ 10 ],
-			"env": "CE2",
+			"env": "^CE2$",
 			"script": "cetrk\\.com/pages/scripts/\\d+/\\d+\\.js"
 		},
 		"Cross Pixel": {
@@ -382,7 +388,7 @@
 		},
 		"CS Cart": {
 			"cats": [ 6 ],
-			"env": "fn_compare_strings",
+			"env": "^fn_compare_strings$",
 			"html": "&nbsp;Powered by (<a href=.+cs-cart\\.com|CS-Cart)",
 			"implies": [ "PHP" ]
 		},
@@ -408,7 +414,7 @@
 		},
 		"Danneo CMS": {
 			"cats": [ 1 ],
-			"headers": {"X-Powered-By": "CMS Danneo.*"},
+			"headers": { "X-Powered-By": "CMS Danneo.*" },
 			"meta": { "generator": "Danneo" },
 			"implies": [ "Apache", "PHP" ]
 		},
@@ -418,7 +424,7 @@
 		},
 		"DataLife Engine": {
 			"cats": [ 1 ],
-			"env": "dle_root",
+			"env": "^dle_root$",
 			"meta": { "generator": "DataLife Engine" },
 			"implies": [ "PHP", "Apache" ]
 		},
@@ -438,9 +444,9 @@
 		},
 		"Demandware": {
 			"cats": [ 6 ],
-			"headers": { "Server" : "Demandware eCommerce Server" },
+			"headers": { "Server": "Demandware eCommerce Server" },
 			"html": "<[^>]+demandware.edgesuite",
-			"env": "^dwAnalytics"
+			"env": "^dwAnalytics$"
 		},
 		"DHTMLX": {
 			"cats": [ 12 ],
@@ -455,7 +461,7 @@
 			"cats": [ 15 ],
 			"script": "disqus_url",
 			"html": "<div[^>]+id=\\\"disqus_thread\\\"",
-			"env": "^DISQUS"
+			"env": "^DISQUS$"
 		},
 		"Django": {
 			"cats": [ 18 ],
@@ -490,7 +496,7 @@
 			"meta": { "generator": "DotNetNuke" },
 			"headers": { "X-Compressed-By": "DotNetNuke", "Set-Cookie": "DotNetNukeAnonymous=.+" },
 			"html": "<!-- by DotNetNuke Corporation",
-			"env": "^DotNetNuke",
+			"env": "^DotNetNuke$",
 			"implies": [ "Microsoft ASP.NET" ]
 		},
 		"Doxygen": {
@@ -523,7 +529,7 @@
 		"e107": {
 			"cats": [ 1 ],
 			"script": "e107\\.js",
-			"implies": [ "PHP"]
+			"implies": [ "PHP" ]
 		},
 		"EdgeCast": {
 			"cats": [ 31 ],
@@ -562,7 +568,7 @@
 		"eZ Publish": {
 			"cats": [ 1, 6 ],
 			"meta": { "generator": "eZ Publish" },
-			"headers": {  "X-Powered-By": "^eZ Publish" },
+			"headers": { "X-Powered-By": "^eZ Publish" },
 			"implies": [ "PHP" ]
 		},
 		"Fact Finder": {
@@ -591,7 +597,7 @@
 		},
 		"Flyspray": {
 			"cats": [ 13 ],
-			"html": "(<a[^>]+>Powered by Flyspray|<map id=\\\"projectsearchform|Powered by <a href=.+flyspray\\.org/\\\")"
+			"html": "(<a[^>]+>Powered by Flyspray|<map id=\\\"projectsearchform|Powered by <a href=.+flyspray\\.org)"
 		},
 		"FreeBSD": {
 			"cats": [ 28 ],
@@ -604,11 +610,11 @@
 		},
 		"FWP": {
 			"cats": [ 6 ],
-			"meta": {"generator": "FWP Shop" }
+			"meta": { "generator": "FWP Shop" }
 		},
 		"Gallery": {
 			"cats": [ 7 ],
-			"env": "galleryAuthToken",
+			"env": "^galleryAuthToken$",
 			"html": "<div id=\\\"gsNavBar\\\" class=\\\"gcBorder1\\\">"
 		},
 		"Gambio": {
@@ -623,7 +629,7 @@
 		},
 		"Gentoo": {
 			"cats": [ 28 ],
-			"headers": { "X-Powered-By": "-?gentoo"}
+			"headers": { "X-Powered-By": "-?gentoo" }
 		},
 		"Get Satisfaction": {
 			"cats": [ 13 ],
@@ -631,7 +637,7 @@
 		},
 		"GetSimple CMS": {
 			"cats": [ 1 ],
-			"meta": {"generator": "GetSimple" },
+			"meta": { "generator": "GetSimple" },
 			"implies": [ "PHP" ]
 		},
 		"Google Analytics": {
@@ -653,7 +659,7 @@
 			"cats": [ 17 ],
 			"script": "googleapis.com/.+webfont",
 			"html": "<link[^>]* href=.+fonts\\.googleapis\\.com",
-			"env": "^WebFont"
+			"env": "^WebFonts$"
 		},
 		"Google Maps": {
 			"cats": [ 5 ],
@@ -766,7 +772,7 @@
 		"IPB": {
 			"cats": [ 2 ],
 			"script": "jscripts/ips_",
-			"env": "^IPBoard",
+			"env": "^IPBoard$",
 			"html": "<link[^>]+ipb_[^>]+\\.css"
 		},
 		"iWeb": {
@@ -804,9 +810,9 @@
 			"cats": [ 1 ],
 			"url": "option=com_",
 			"meta": { "generator": "Joomla" },
-			"html": "(<div[^>]+id=\\\"wrapper_r\\\"|<[^>]+(feed|components)/com_|<table[^>]+class=\\\"pill\\\")",
+			"html": "(<div[^>]+id=\\\"wrapper_r\\\"|<[^>]+(feed|components)/com_|<table[^>]+class=\\\"pill)",
 			"headers": { "X-Content-Encoded-By": "Joomla" },
-			"env": "^(jcomments)$",
+			"env": "^jcomments$",
 			"implies": [ "PHP" ]
 		},
 		"jqPlot": {
@@ -910,13 +916,18 @@
 			"cats": [ 11 ],
 			"url": "^(www.)?.+\\.livejournal\\.com"
 		},
+		"Lockerz Share": {
+			"cats": [ 5 ],
+			"script": "addtoany\\.com/menu/page\\.js",
+			"env": "^a2apage_init$"
+		},
 		"Lotus Domino": {
 			"cats": [ 22 ],
 			"headers": { "Server": "Lotus-Domino" }
 		},
 		"Magento": {
 			"cats": [ 6 ],
-			"script": "/(js/mage|skin/frontend/(default|enterprise))/",
+			"script": "(js/mage|skin/frontend/(default|enterprise))",
 			"headers": { "Set-Cookie": "frontend=" },
 			"env": "^(Mage|VarienForm)$",
 			"implies": [ "PHP" ]
@@ -974,7 +985,7 @@
 		"Mixpanel": {
 			"cats": [ 10 ],
 			"script": "api\\.mixpanel\\.com/track",
-			"env": "^Mixpanel"
+			"env": "^Mixpanel$"
 		},
 		"MochiKit": {
 			"cats": [ 12 ],
@@ -997,7 +1008,7 @@
 			"cats": [ 8 ],
 			"script": "moin.+/common/js/common\\.js",
 			"env": "^show_switch2gui$",
-			"implies":[ "Python" ]
+			"implies": [ "Python" ]
 		},
 		"Mojolicious": {
 			"cats": [ 18 ],
@@ -1044,8 +1055,8 @@
 		},
 		"MyBB": {
 			"cats": [ 2 ],
-			"html": "(<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\\\"Powered By MyBB)",
-			"env": "^MyBB"
+			"html": "<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\\\"Powered By MyBB",
+			"env": "^MyBB$"
 		},
 		"MyBlogLog": {
 			"cats": [ 5 ],
@@ -1062,7 +1073,7 @@
 		"Netmonitor": {
 			"cats": [ 10 ],
 			"script": "netmonitor\\.fi/nmtracker\\.js",
-			"env": "^netmonitor"
+			"env": "^netmonitor$"
 		},
 		"New Relic": {
 			"cats": [ 10 ],
@@ -1123,7 +1134,7 @@
 		},
 		"Optimizely": {
 			"cats": [ 10 ],
-			"env": "^optimizely"
+			"env": "^optimizely$"
 		},
 		"Oracle Recommendations On Demand": {
 			"cats": [ 10 ],
@@ -1222,6 +1233,12 @@
 			"meta": { "generator": "^phpSQLiteCMS" },
 			"implies": [ "PHP" ]
 		},
+		"phpwind": {
+			"cats": [ 1, 2 ],
+			"meta": { "generator": "^phpwind" },
+			"html": "Powered by <a href=\\\".+phpwind\\.net",
+			"implies": [ "PHP" ]
+		},
 		"Piwik": {
 			"cats": [ 10 ],
 			"html": "var piwikTracker = Piwik\\.getTracker\\(",
@@ -1229,7 +1246,7 @@
 		},
 		"Plentymarkets": {
 			"cats": [ 6 ],
-			"meta": { "generator": "www\\.plentyMarkets\\." }
+			"meta": { "generator": "^www\\.plentyMarkets" }
 		},
 		"Plesk": {
 			"cats": [ 9 ],
@@ -1240,7 +1257,7 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "Pligg" },
 			"html": "<span[^>]+id=\\\"xvotes-0",
-			"env": "pligg_"
+			"env": "^pligg_"
 		},
 		"Plone": {
 			"cats": [ 1 ],
@@ -1352,7 +1369,7 @@
 		"RoundCube": {
 			"cats": [ 30 ],
 			"html": "<title>RoundCube",
-			"env": "(rcmail|rcube_|roundcube)",
+			"env": "^(rcmail|rcube_|roundcube)",
 			"implies": [ "PHP" ]
 		},
 		"Ruby": {
@@ -1363,7 +1380,7 @@
 			"cats": [ 18 ],
 			"script": "/assets/application-[a-z\\d]{32}/\\.js",
 			"meta": { "csrf-param": "authenticity_token" },
-			"headers": { "Server": "(mod_rails|mod_rack|Phusion.Passenger)", "X-Powered-By": "(mod_rails|mod_rack|Phusion.Passenger)" },
+			"headers": { "Server": "(mod_rails|mod_rack|Phusion\\.Passenger)", "X-Powered-By": "(mod_rails|mod_rack|Phusion\\.Passenger)" },
 			"implies": [ "Ruby" ]
 		},
 		"S.Builder": {
@@ -1384,7 +1401,7 @@
 			"html": "mfinfo\\.application='Tridion"
 		},
 		"Sencha Touch": {
-			"cats": [ 26, 12 ],
+			"cats": [ 12, 26 ],
 			"script": "sencha-touch.*\\.js"
 		},
 		"Seoshop": {
@@ -1422,7 +1439,7 @@
 		},
 		"Site Meter": {
 			"cats": [ 10 ],
-			"script": "sitemeter.com/js/counter\\.js\\?site="
+			"script": "sitemeter\\.com/js/counter\\.js\\?site="
 		},
 		"SiteCatalyst": {
 			"cats": [ 10 ],
@@ -1459,8 +1476,8 @@
 			"implies": [ "Joomla" ]
 		},
 		"SobiPro": {
-			"cats":	[ 19 ],
-			"env":	"^SobiProUrl$",
+			"cats": [ 19 ],
+			"env": "^SobiProUrl$",
 			"html":	" <(script|link)[^>].*com_sobipro.*>",
 			"implies": [ "Joomla" ]
 		},
@@ -1480,8 +1497,7 @@
 		"SPIP": {
 			"cats": [ 1 ],
 			"meta": { "generator": "SPIP" },
-			"headers": {
-				"X-Spip-Cache": ".*" }
+			"headers": { "X-Spip-Cache": ".*" }
 		},
 		"SQL Buddy": {
 			"cats": [ 3 ],
@@ -1532,7 +1548,7 @@
 		},
 		"three.js": {
 			"cats": [ 25 ],
-			"script": "three.js",
+			"script": "three\\.js",
 			"env": "^THREE$"
 		},
 		"Tiki Wiki CMS Groupware": {
@@ -1560,7 +1576,7 @@
 		},
 		"Trac": {
 			"cats": [ 13 ],
-			"html": "(<a id=\\\"tracpowered)",
+			"html": "<a id=\\\"tracpowered",
 			"implies": [ "Python" ]
 		},
 		"Tumblr": {
@@ -1581,7 +1597,7 @@
 		},
 		"Typekit": {
 			"cats": [ 17 ],
-			"script": "use.typekit.com",
+			"script": "use\\.typekit\\.com",
 			"env": "^Typekit$"
 		},
 		"TypePad": {
@@ -1662,7 +1678,7 @@
 		},
 		"Vimeo": {
 			"cats": [ 14 ],
-			"html": "(<(param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)"
+			"html": "<(param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com"
 		},
 		"VirtueMart": {
 			"cats": [ 6 ],
@@ -1674,8 +1690,8 @@
 		},
 		"VIVVO": {
 			"cats": [ 1 ],
-			"headers": { "Set-Cookie": "VivvoSessionId",
-				"env": "^vivvo" }
+			"headers": { "Set-Cookie": "VivvoSessionId" },
+			"env": "^vivvo"
 		},
 		"Volusion": {
 			"cats": [ 6 ],
@@ -1754,7 +1770,7 @@
 		},
 		"Wolf CMS": {
 			"cats": [ 1 ],
-			"html": "(<a href=\\\"[^>]+wolfcms.org.+Wolf CMS.+inside|Thank you for using <a[^>]+>Wolf CMS)"
+			"html": "(<a href=\\\"[^>]+wolfcms\\.org.+Wolf CMS.+inside|Thank you for using <a[^>]+>Wolf CMS)"
 		},
 		"Woopra": {
 			"cats": [ 10 ],
@@ -1782,11 +1798,11 @@
 		},
 		"XenForo": {
 			"cats": [ 2 ],
-			"html": "(jQuery\\.extend\\(true, XenForo|Forum software by XenForo&trade;|<!--XF:branding)"
+			"html": "jQuery\\.extend\\(true, XenForo|Forum software by XenForo&trade;|<!--XF:branding"
 		},
 		"XiTi": {
 			"cats": [ 10 ],
-			"html": "<[^>]+src=\\\"[^>]+xiti.com/hit.xiti",
+			"html": "(<[^>]+src=\\\"[^>]+xiti\\.com/hit\\.xiti)",
 			"env": "^Xt_"
 		},
 		"XMB": {
@@ -1844,7 +1860,7 @@
 		},
 		"Zepto": {
 			"cats": [ 12 ],
-			"script": "zepto.*.js",
+			"script": "zepto.*\\.js",
 			"env": "^Zepto$"
 		},
 		"Zinnia": {

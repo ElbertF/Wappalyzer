@@ -17,8 +17,8 @@ Contributing
 
 **Adding a new application**
 
-* Edit `share/apps.json`
-* Add a 16x16 PNG image to `share/images/icons` matching the application name.
+* Edit `share/apps.json` and use a validator like http://jsonformatter.curiousconcept.com/ to verify your modification.
+* Add a 16x16 PNG image to `share/images/icons` matching the application name and compressed with a loss-less tools like http://www.smushit.com/ or optipng http://optipng.sourceforge.net/.
 * Provide the URL to the application's website when submitting a pull request.
 
 Example:

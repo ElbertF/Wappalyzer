@@ -178,7 +178,7 @@
 		"Bigcommerce": {
 			"cats": [ 6 ],
 			"url": ".+\\.mybigcommerce\\.com",
-			"html": "<link href=+cdn\\d+\\.bigcommerce\\.com/v",
+			"html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/v",
 			"script": "cdn\\d+\\.bigcommerce\\.com/v",
 			"env": "^compareProducts$"
 		},

@@ -299,7 +299,7 @@
 		},
 		"CO2Stats": {
 			"cats": [ 10 ],
-			"html": "src=.+co2stats\\.com/propres\\.php"
+			"html": "src=[^>]+co2stats\\.com/propres\\.php"
 		},
 		"CodeIgniter": {
 			"cats": [ 18 ],
@@ -389,12 +389,12 @@
 		"CS Cart": {
 			"cats": [ 6 ],
 			"env": "^fn_compare_strings$",
-			"html": "&nbsp;Powered by (<a href=.+cs-cart\\.com|CS-Cart)",
+			"html": "&nbsp;Powered by (<a href=[^>]+cs-cart\\.com|CS-Cart)",
 			"implies": [ "PHP" ]
 		},
 		"CubeCart": {
 			"cats": [ 6 ],
-			"html": "(Powered by <a href=.+cubecart\\.com|<p[^>]+>Powered by CubeCart)",
+			"html": "(Powered by <a href=[^>]+cubecart\\.com|<p[^>]+>Powered by CubeCart)",
 			"meta": { "generator": "cubecart" },
 			"implies": [ "PHP" ]
 		},
@@ -597,7 +597,7 @@
 		},
 		"Flyspray": {
 			"cats": [ 13 ],
-			"html": "(<a[^>]+>Powered by Flyspray|<map id=\\\"projectsearchform|Powered by <a href=.+flyspray\\.org)"
+			"html": "(<a[^>]+>Powered by Flyspray|<map id=\\\"projectsearchform|Powered by <a href=[^>]+flyspray\\.org)"
 		},
 		"FreeBSD": {
 			"cats": [ 28 ],
@@ -619,7 +619,7 @@
 		},
 		"Gambio": {
 			"cats": [ 6 ],
-			"html": "<link[^>] href=\\\"templates/gambio/|<a[^>]content\\.php\\?coID=\\d|<!-- gambio eof -->",
+			"html": "<link[^>]* href=\\\"templates/gambio/|<a[^>]content\\.php\\?coID=\\d|<!-- gambio eof -->",
 			"implies": [ "PHP" ]
 		},
 		"Gauges": {
@@ -658,7 +658,7 @@
 		"Google Font API": {
 			"cats": [ 17 ],
 			"script": "googleapis.com/.+webfont",
-			"html": "<link[^>]* href=.+fonts\\.googleapis\\.com",
+			"html": "<link[^>]* href=[^>]+fonts\\.googleapis\\.com",
 			"env": "^WebFonts$"
 		},
 		"Google Maps": {
@@ -1266,7 +1266,7 @@
 		},
 		"Plura": {
 			"cats": [ 19 ],
-			"html": "<iframe src=\\\".+pluraserver\\.com"
+			"html": "<iframe src=\\\"[^>]+pluraserver\\.com"
 		},
 		"Po.st": {
 			"cats": [ 5 ],
@@ -1519,7 +1519,7 @@
 		},
 		"Store Systems": {
 			"cats": [ 6 ],
-			"html": "Shopsystem von <a href=.+store-systems\\.de\\\"|\\.mws_boxTop"
+			"html": "Shopsystem von <a href=[^>]+store-systems\\.de\\\"|\\.mws_boxTop"
 		},
 		"SublimeVideo": {
 			"cats": [ 14 ],
@@ -1581,8 +1581,8 @@
 		},
 		"Tumblr": {
 			"cats": [ 11 ],
-			"html": "<iframe src=\\\".+tumblr\\.com",
-			"url": "^(www.)?.+\\.tumblr\\.com",
+			"html": "<iframe src=\\\"[^>]+tumblr\\.com",
+			"url": "^https?://(www\\.)?[^/]+\\.tumblr\\.com/"
 			"headers": { "X-Tumblr-Usec": ".*" }
 		},
 		"Twilight CMS": {
@@ -1665,7 +1665,7 @@
 		"VideoJS": {
 			"cats": [ 14 ],
 			"env": "^VideoJS$",
-			"html": "<div.+class=\\\"video-js+\\\">",
+			"html": "<div[^>]+class=\\\"video-js+\\\">",
 			"script": "zencdn\\.net/c/video\\.js"
 		},
 		"viennaCMS": {

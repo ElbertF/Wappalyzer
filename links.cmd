@@ -1,3 +1,13 @@
+::	Copyright (c) 2012 q-- <https://github.com/q-->
+::	
+::	Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+::	
+::	The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+::	
+::	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
 :: ln == mklink /h
 :: hard link folders (dir junction) = mklink /j dir1 dir2
 :: hard link files = mklink /h
@@ -11,11 +21,6 @@
 ::ln -f share\images\icons\*       drivers\firefox\skin\images\icons
 if exist drivers\firefox\skin\images\icons rmdir /q /s drivers\firefox\skin\images\icons
 mklink /j drivers\firefox\skin\images\icons share\images\icons\
-
-::Sync lib folder
-::ln -f share\js\lib\jquery.min.js drivers\firefox\content\js\lib
-if exist drivers\firefox\content\js\lib rmdir /q /s drivers\firefox\content\js\lib
-mklink /j drivers\firefox\content\js\lib share\js\lib\
 
 ::Sync apps JSON
 ::ln -f share\apps.json            drivers\firefox\content
@@ -54,11 +59,6 @@ mklink /h drivers\firefox-jetpack\lib\wappalyzer.js share\js\wappalyzer.js
 ::ln -f share\images\icons\*       drivers\chrome\images\icons
 if exist drivers\chrome\images\icons rmdir /q /s drivers\chrome\images\icons
 mklink /j drivers\chrome\images\icons share\images\icons
-
-::Sync lib folder
-::ln -f share\js\lib\jquery.min.js drivers\chrome\js\lib
-if exist drivers\chrome\js\lib rmdir /q /s drivers\chrome\js\lib
-mklink /j drivers\chrome\js\lib share\js\lib
 
 ::Sync apps JSON
 ::ln -f share\apps.json            drivers\chrome

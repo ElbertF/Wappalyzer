@@ -484,7 +484,7 @@
 			"meta": { "generator": "Dokeos" },
 			"html": "Portal <a[^>]+>Dokeos|@import \\\"[^\\\"]+dokeos_blue",
 			"headers": { "X-Powered-By": "Dokeos" },
-			"implies": [ "PHP", "xajax", "jQuery", "CKEditor" ]
+			"implies": [ "PHP", "Xajax", "jQuery", "CKEditor" ]
 		},
 		"DokuWiki": {
 			"cats": [ 8 ],
@@ -1026,7 +1026,7 @@
 		"Mojolicious": {
 			"cats": [ 18 ],
 			"headers": { "x-powered-by": "mojolicious" },
-			"implies": [ "PERL" ]
+			"implies": [ "Perl" ]
 		},
 		"Mollom": {
 			"cats": [ 16 ],
@@ -1156,7 +1156,7 @@
 		"osCommerce": {
 			"cats": [ 6 ],
 			"html": "(<a[^>]*(\\?|&)osCsid|Powered by (<[^]+>)?osCommerce</a>|<[^]+class=\\\"[^>]*infoBoxHeading)",
-			"header": { "Set-Cookie": "osCsid=|utmcct=/applications/oscommerce" }
+			"headers": { "Set-Cookie": "osCsid=|utmcct=/applications/oscommerce" }
 		},
 		"osCSS": {
 			"cats": [ 6 ],
@@ -1523,7 +1523,8 @@
 		"Squiz Matrix": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Squiz Matrix" },
-			"html": "  Running (MySource|Squiz) Matrix", "X-Powered-By": "Squiz Matrix",
+			"html": "  Running (MySource|Squiz) Matrix", 
+			"headers": { "X-Powered-By": "Squiz Matrix" },
 			"implies": [ "PHP" ]
 		},
 		"StatCounter": {

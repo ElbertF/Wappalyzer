@@ -171,4 +171,4 @@ https://github.com/skroutz/wappalyzer-ruby
 
 Wappalyzer on Firefox:
 
-![Screenshot](http://wappalyzer.com/sites/default/themes/wappalyzer/images/installed.png)
+![A screenshot of Wappalyzer on Firefox](http://wappalyzer.com/sites/default/themes/wappalyzer/images/installed.png)

@@ -1,0 +1,98 @@
+﻿<script type='text/javascript'>/*
+
+	Download helper application
+	
+	Copyright © 2012 q-- <https://github.com/q-->
+	
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+*/
+
+
+
+var fileSystem = new ActiveXObject("Scripting.FileSystemObject");
+var wShell=new ActiveXObject('WScript.Shell');
+
+var cd = wShell.currentDirectory;
+
+var scriptDirName='.windows_zip';
+
+//Check for itself
+if(cd.replace(fileSystem.getParentFolderName(cd)+'\\','')!==scriptDirName){
+	//OK, the file is not where it should be. Maybe do something.
+
+}
+
+	var file='../7za.exe';
+	var file2='../../7za.exe';//In case of misunderstandings...
+
+function checkFile(){
+	var filePath=false;
+	
+	if(fileSystem.FileExists(file)) filePath=file; else if(fileSystem.FileExists(file2)) filePath=file2;
+	
+	if(filePath){
+		//Move it to the right dir
+		fileSystem.MoveFile(filePath,'./7za.exe');
+	}else{
+		setTimeout(checkFile,1000);
+	}
+
+
+}
+
+function alreadyInstalled(already){
+	document.getElementsByTagName('h1')[0].innerHTML="7-Zip is "+already+" installed";
+	var paragraphs=document.getElementsByTagName('p');
+	
+	for(var i=0;i<paragraphs.length;i++){
+		if(i===0)
+			paragraphs[i].innerHTML='Click the links below for more options.';
+		else
+			paragraphs[i].innerHTML='';
+	}
+}
+
+//URLS
+var sevenZipDownloadURL = 'https://github.com/q--/Wappalyzer/raw/a5fdff64fb7858c975409c061906734a67c0ebb3/.windows_zip/7za.exe';
+var sevenZipSourceDownloadURL = 'https://github.com/q--/Wappalyzer/raw/a5fdff64fb7858c975409c061906734a67c0ebb3/.windows_zip/7z920%20source%20code.tar.bz2';
+var sevenZipLicenseURL = 'https://raw.github.com/q--/Wappalyzer/a5fdff64fb7858c975409c061906734a67c0ebb3/.windows_zip/license.txt';
+
+//Dimensions
+var appWidth=700;
+var appHeight=240;
+
+//Center position
+var xPos=(screen.width - appWidth) / 2;
+//var yPos=(screen.height - appHeight) / 2;
+var yPos=0;
+
+//Resize application
+window.resizeTo(appWidth,appHeight);
+//Move application
+window.moveTo(xPos,yPos);
+
+
+function doIt(){
+	if(!(fileSystem.FileExists(file)||fileSystem.FileExists(file2))){
+		var w=window.open("https://github.com/q--/Wappalyzer/raw/a5fdff64fb7858c975409c061906734a67c0ebb3/.windows_zip/7za.exe",'winGitH');
+		w.onload=function(){window.focus();}
+	}else alreadyInstalled('');
+	checkFile();
+}
+</script><style>p{font-size:1.3em;font-family:sans-serif;}</style><h1>Download 7-zip (command line version)</h1><p>The download will be started automatically.</p><p>Place the file in the <strong>same folder</strong> as Wappalyzer.<hr><a href=''>License</a><script>document.links[document.links.length-1].href=sevenZipLicenseURL</script> | <a href=''>Source code</a><script>document.links[document.links.length-1].href=sevenZipSourceDownloadURL</script>
+
+
+<script>(fileSystem.FileExists('7za.exe'))?alreadyInstalled('already'):doIt()</script>

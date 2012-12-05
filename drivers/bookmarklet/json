@@ -865,6 +865,12 @@
 			"headers": { "Set-Cookie": "k_visit" },
 			"env": "^k_track$"
 		},
+		"Kendo UI": {
+			"cats": [ 18 ],
+			"env": "^kendo$",
+			"html": "<link[^>]*\\s+href=['\"]?[^'\"\\s>]*styles/kendo\\.common(\\.min)?\\.css['\"\\s/>]",
+			"implies": [ "jQuery" ]
+		},
 		"Kentico CMS": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Kentico CMS" }
@@ -885,6 +891,11 @@
 		"Kolibri CMS": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Kolibri" }
+		},
+		"Komodo CMS": {
+			"cats": [ 1 ],
+			"meta": { "generator": "^Komodo CMS" },
+			"implies": [ "PHP" ]
 		},
 		"Koobi": {
 			"cats": [ 1 ],

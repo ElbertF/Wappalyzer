@@ -13,6 +13,7 @@ if exist %windir%\SysWOW64\mshta.exe goto hta64
 if exist %windir%\System32\mshta.exe goto hta32
 :hta32
 set hta=%windir%\System32\mshta.exe 
+goto endDetection
 :hta64
 set hta=%windir%\SysWOW64\mshta.exe 
 goto endDetection

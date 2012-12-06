@@ -1339,8 +1339,8 @@
 		},
 		"RBS Change": {
 			"cats": [ 1, 6 ],
-			"html": "<html[^>]+xmlns:change=",
-			"meta": { "generator": "RBS Change" },
+			"html": "<html[^>]*\\s+xmlns:change=",
+			"meta": { "generator": "^RBS Change" },
 			"implies": [ "PHP" ]
 		},
 		"RCMS": {
@@ -1426,6 +1426,12 @@
 			"cats": [ 5 ],
 			"script": "w\\.sharethis\\.com/",
 			"env": "^SHARETHIS$"
+		},
+		"ShinyStat": {
+			"cats": [ 10 ],
+			"env": "^SSsdk$",
+			"html": "<img[^>]*\\s+src=['\"]?https?://www\\.shinystat\\.com/cgi-bin/shinystat\\.cgi\\?[^'\"\\s>]*['\"\\s/>]",
+			"script": "^https?://codice(business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi"
 		},
 		"Shopalize": {
 			"cats": [ 5, 10 ],

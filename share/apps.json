@@ -680,6 +680,10 @@
 			"cats": [ 5 ],
 			"script": "(maps\\.google\\.com/maps\\?file=api(&v=([\\d\\.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\3"
 		},
+               "Google PageSpeed": {
+                      "cats": [ 23, 33 ],
+                      "headers": { "X-Mod-Pagespeed": ".*" }
+               },
 		"Google Sites": {
 			"cats": [ 1 ],
 			"url": "sites.google.com"

@@ -1709,7 +1709,7 @@
 		},
 		"Twitter Bootstrap": {
 			"cats": [ 18 ],
-			"script": "twitter\\.github\\.com/bootstrap",
+			"script": "(twitter\\.github\\.com/bootstrap|bootstrap(.js|.min.js))",
 			"html": "<link[^>]+bootstrap[^>]+css",
 			"env": "^Twipsy$\\;confidence:50"
 		},

@@ -178,14 +178,14 @@ Work in progress, experimental. See https://wiki.mozilla.org/Jetpack.
 
 ### Python
 
-A Python port by [SebastianLopienski](https://github.com/SebastianLopienski).
+A Python port by [SebastianLopienski](https://github.com/SebastianLopienski). Part of a research project at [CERN](http://cern.ch).
 
 https://github.com/SebastianLopienski/WAD
 
 
 ### Python
 
-A Python driver by [@ebradbury](https://github.com/ebradbury). Part of a research project at [CERN](http://cern.ch).
+A Python driver by [@ebradbury](https://github.com/ebradbury). 
 
 https://github.com/ebradbury/Wappalyzer/tree/master/drivers/python
 

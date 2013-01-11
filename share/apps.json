@@ -866,7 +866,7 @@
 		},
 		"jQuery": {
 			"cats": [ 12 ],
-			"scripts": [ "jquery(\\-|\\.)([\\d\\.]*\\d)[^/]*\\.js\\;version:\\2", "([\\d\\.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ], 			
+			"script": [ "jquery(\\-|\\.)([\\d\\.]*\\d)[^/]*\\.js\\;version:\\2", "([\\d\\.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ], 			
 			"env": "^jQuery$"
 		},
 		"jQuery Mobile": {

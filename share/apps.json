@@ -117,7 +117,7 @@
 		},
 		"Apache": {
 			"cats": [ 22 ],
-			"headers": { "Server": "(Apache($|/([\\d\\.]+)|[^/-])|HTTPD)\\;version:\\3" }
+			"headers": { "Server": "(Apache($|/([\\d\\.]+)|[^/-])|(^|[^g])HTTPD)\\;version:\\3" }
 		},
 		"Apache JSPWiki": {
 			"cats": [ 8 ],
@@ -961,7 +961,7 @@
 		},
 		"lighttpd": {
 			"cats": [ 22 ],
-			"headers": { "Server": "lighttpd" }
+			"headers": { "Server": "lighttpd(/([\\d\\.]+))?\\;version:\\2" }
 		},
 		"LimeSurvey": {
 			"cats": [ 19 ],

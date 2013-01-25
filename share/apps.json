@@ -117,7 +117,7 @@
 		},
 		"Apache": {
 			"cats": [ 22 ],
-			"headers": { "Server": "(Apache($|/([\\d\\.]+)|[^/-])|(^|[^g])HTTPD)\\;version:\\3" }
+			"headers": { "Server": "(Apache($|/([\\d\\.]+)|[^/-])|(^|\\b)HTTPD)\\;version:\\3" }
 		},
 		"Apache JSPWiki": {
 			"cats": [ 8 ],
@@ -550,6 +550,10 @@
 			"cats": [ 31 ],
 			"headers": { "Server": "^ECS " }
 		},
+		"Embedthis-http": {
+			"cats": [ 22 ],
+			"headers": { "Server": "Embedthis-http" }
+		},				
 		"EPiServer": {
 			"cats": [ 1 ],
 			"meta": { "generator": "EPiServer" },
@@ -655,6 +659,10 @@
 			"meta": { "generator": "GetSimple" },
 			"implies": [ "PHP" ]
 		},
+		"GoAhead": {
+			"cats": [ 22 ],
+			"headers": { "Server": "GoAhead" }
+		},				
 		"Google Analytics": {
 			"cats": [ 10 ],
 			"html": "_gaq\\.push\\(\\['_setAccount",

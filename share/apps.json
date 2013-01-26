@@ -158,7 +158,7 @@
 			"cats": [ 13 ],
 			"env": "^jira$",
 			"script": "/jira/s/",
-			"url": "/secure/Dashboard.jspa",			
+			"url": "/secure/Dashboard.jspa",
 			"html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA([^v]*v(ersion: )?(\\d+\\.\\d+(\\.\\d+)?))?\\;version:\\4",
 			"implies": [ "Java" ]
 		},
@@ -526,7 +526,7 @@
 			"cats": [ 1 ],
 			"script": "drupal\\.js",
 			"html": "Drupal(\\.extend)?.+settings|<(link|style)[^>]+sites/(default|all)/(themes|modules)/",
-			"headers": { "X-Drupal-Cache": ".*", "X-Generator": "Drupal(\\s([\\d\\.]+))?\\;version:\\2", "Expires": "19 Nov 1978" },			
+			"headers": { "X-Drupal-Cache": ".*", "X-Generator": "Drupal(\\s([\\d\\.]+))?\\;version:\\2", "Expires": "19 Nov 1978" },
 			"env": "^Drupal$",
 			"implies": [ "PHP" ]
 		},
@@ -553,7 +553,7 @@
 		"Embedthis-http": {
 			"cats": [ 22 ],
 			"headers": { "Server": "Embedthis-http" }
-		},				
+		},
 		"EPiServer": {
 			"cats": [ 1 ],
 			"meta": { "generator": "EPiServer" },
@@ -662,7 +662,7 @@
 		"GoAhead": {
 			"cats": [ 22 ],
 			"headers": { "Server": "GoAhead" }
-		},				
+		},
 		"Google Analytics": {
 			"cats": [ 10 ],
 			"html": "_gaq\\.push\\(\\['_setAccount",
@@ -809,7 +809,7 @@
 		"JAlbum": {
 			"cats": [ 7 ],
 			"meta": { "generator": "JAlbum( [\\d\\.]+)?\\;version:\\1" },
-			"implies": [ "Java" ]			
+			"implies": [ "Java" ]
 		},
 		"Jalios": {
 			"cats": [ 1 ],
@@ -827,17 +827,17 @@
 		"JavaServer Faces": {
 			"cats": [ 18 ],
 			"headers": { "X-Powered-By": "JSF(/([\\d\\.]+))?\\;version:\\2" },
-			"implies": [ "Java" ]			
+			"implies": [ "Java" ]
 		},
 		"JavaServer Pages": {
 			"cats": [ 18 ],
 			"headers": { "X-Powered-By": "JSP(/([\\d\\.]+))?\\;version:\\2" },
-			"implies": [ "Java" ]			
+			"implies": [ "Java" ]
 		},
 		"Java Servlet": {
 			"cats": [ 18 ],
 			"headers": { "X-Powered-By": "Servlet(/([\\d\\.]+))?\\;version:\\2" },
-			"implies": [ "Java" ]			
+			"implies": [ "Java" ]
 		},
 		"Jirafe": {
 			"cats": [ 10, 32 ],
@@ -874,7 +874,7 @@
 		},
 		"jQuery": {
 			"cats": [ 12 ],
-			"script": [ "jquery(\\-|\\.)([\\d\\.]*\\d)[^/]*\\.js\\;version:\\2", "([\\d\\.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ], 			
+			"script": [ "jquery(\\-|\\.)([\\d\\.]*\\d)[^/]*\\.js\\;version:\\2", "([\\d\\.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ],
 			"env": "^jQuery$"
 		},
 		"jQuery Mobile": {
@@ -925,7 +925,7 @@
 		"KineticJS": {
 			"cats": [ 25 ],
 			"script": "kinetic(-v?([\\d\\.]+))?\\.js\\;version:\\2"
-		},		
+		},
 		"KISSmetrics": {
 			"cats": [ 10 ],
 			"env": "^KM_COOKIE_DOMAIN$"
@@ -984,6 +984,11 @@
 			"script": "addtoany\\.com/menu/page\\.js",
 			"env": "^a2apage_init$"
 		},
+    "Locomotive": {
+      "cats": [ 1 ],
+      "html": "\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/",
+      "implies": [ "Ruby", "Ruby on Rails" ]
+    },
 		"Lotus Domino": {
 			"cats": [ 22 ],
 			"headers": { "Server": "Lotus-Domino" }
@@ -1066,16 +1071,16 @@
 			"env": "^MODX_MEDIA_PATH$",
 			"headers": { "X-Powered-By": "^MODx", "Set-Cookie": "SN4[a-f\\d]{12}|utmcct=/applications/modx" },
 			"implies": [ "PHP" ]
-		},		
+		},
 		"mod_fastcgi": {
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_fastcgi(/([\\d\\.]+))?\\;version:\\2" },			
-			"implies": [ "Apache" ]		
-		},		
+			"headers": { "Server": "mod_fastcgi(/([\\d\\.]+))?\\;version:\\2" },
+			"implies": [ "Apache" ]
+		},
 		"mod_python": {
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_python(/([\\d\\.]+))?\\;version:\\2" },			
-			"implies": [ "Python", "Apache" ]		
+			"headers": { "Server": "mod_python(/([\\d\\.]+))?\\;version:\\2" },
+			"implies": [ "Python", "Apache" ]
 		},
 		"mod_rack": {
 			"cats": [ 33 ],
@@ -1089,14 +1094,14 @@
 		},
 		"mod_ssl": {
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_ssl(/([\\d\\.]+))?\\;version:\\2" },			
-			"implies": [ "Apache" ]		
+			"headers": { "Server": "mod_ssl(/([\\d\\.]+))?\\;version:\\2" },
+			"implies": [ "Apache" ]
 		},
 		"mod_wsgi": {
 			"cats": [ 33 ],
 			"headers": { "Server": "mod_wsgi(/([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "mod_wsgi(/([\\d\\.]+))?\\;version:\\2" },
 			"implies": [ "Python", "Apache" ]
-		},						
+		},
 		"MoinMoin": {
 			"cats": [ 8 ],
 			"script": "moin(_static(\\d)(\\d)(\\d)|.+)/common/js/common\\.js\\;version:\\2.\\3.\\4",
@@ -1209,7 +1214,7 @@
 		"OpenGrok": {
 			"cats": [ 19 ],
 			"headers": { "Set-Cookie": "OpenGrok" },
-			"meta": { "generator": "OpenGrok( v?([\\d\\.]+))?\\;version:\\2" },			
+			"meta": { "generator": "OpenGrok( v?([\\d\\.]+))?\\;version:\\2" },
 			"implies": [ "Java" ]
 		},
 		"OpenGSE": {
@@ -1228,8 +1233,8 @@
 		},
 		"OpenSSL": {
 			"cats": [ 33 ],
-			"headers": { "Server": "OpenSSL(/([\\d\\.]+[a-z]?))?\\;version:\\2" }			
-		},				
+			"headers": { "Server": "OpenSSL(/([\\d\\.]+[a-z]?))?\\;version:\\2" }
+		},
 		"OpenText Web Solutions": {
 			"cats": [ 1 ],
 			"html": "<!--[^>]+published by Open Text Web Solutions",
@@ -1241,7 +1246,7 @@
 		},
 		"Oracle Application Server": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Oracle(-| )Application(-| )Server((-| )(\\d+[a-z]?))?\\;version:\\5" }		
+			"headers": { "Server": "Oracle(-| )Application(-| )Server((-| )(\\d+[a-z]?))?\\;version:\\5" }
 		},
 		"Oracle Recommendations On Demand": {
 			"cats": [ 10 ],
@@ -1398,7 +1403,7 @@
 			"cats": [ 12 ],
 			"script": "(prototype|protoaculous)(-([\\d\\.]*[\\d]))?.*\\.js\\;version:\\3",
 			"env": "^Prototype$"
-		},		
+		},
 		"Protovis": {
 			"cats": [ 25 ],
 			"script": "protovis.*\\.js",
@@ -1411,7 +1416,7 @@
 		},
 		"Python": {
 			"cats": [ 27 ],
-			"headers": { "Server": "(^|\\s)Python(/([\\d\\.]+))?\\;version:\\3" }					
+			"headers": { "Server": "(^|\\s)Python(/([\\d\\.]+))?\\;version:\\3" }
 		},
 		"Quantcast": {
 			"cats": [ 10 ],
@@ -1625,7 +1630,7 @@
 		"Squiz Matrix": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Squiz Matrix" },
-			"html": "  Running (MySource|Squiz) Matrix", 
+			"html": "  Running (MySource|Squiz) Matrix",
 			"headers": { "X-Powered-By": "Squiz Matrix" },
 			"implies": [ "PHP" ]
 		},
@@ -1643,17 +1648,17 @@
 			"env": "^sublimevideo$"
 		},
 		"Supersized": {
-			"cats": [ 7, 25 ],			
+			"cats": [ 7, 25 ],
 			"script": "supersized(\\.([\\d\\.]*[\\d]))?.*\\.js\\;version:\\2"
-		},			
+		},
 		"SUSE": {
 			"cats": [ 28 ],
 			"headers": { "Server": "SUSE(/?\\s?-?([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "SUSE(/?\\s?-?([\\d\\.]+))?\\;version:\\2" }
-		},		
+		},
 		"Scientific Linux": {
 			"cats": [ 28 ],
 			"headers": { "Server": "Scientific Linux", "X-Powered-By": "Scientific Linux" }
-		},				
+		},
 		"SWFObject": {
 			"cats": [ 19 ],
 			"script": "swfobject.*\\.js",

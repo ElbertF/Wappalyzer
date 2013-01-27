@@ -997,7 +997,7 @@
 		},
     "Locomotive": {
       "cats": [ 1 ],
-      "html": "\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/",
+      "html": "<.*\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/.*>",
       "implies": [ "Ruby", "Ruby on Rails", "MongoDB" ]
     },
 		"Lotus Domino": {
@@ -1637,6 +1637,12 @@
 			"meta": { "generator": "(^|\\s)SPIP(\\s([\\d\\.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
 			"headers": { "X-Spip-Cache": ".*" }
 		},
+    "Spree": {
+      "cats": [ 6 ],
+      "html": "<.+\/spree\/products\/[0-9]+\/.+>",
+      "html": "<.+href=.\/assets\/store\/all\-[a-zA-Z0-9]{32}\.css.+>",
+      "implies": [ "Ruby", "Ruby on Rails"]
+    },
 		"SQL Buddy": {
 			"cats": [ 3 ],
 			"html": "(<title>SQL Buddy</title>|<[^>]+onclick=\\\"sideMainClick\\(\\\"home\\.php)"

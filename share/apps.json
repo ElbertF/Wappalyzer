@@ -997,8 +997,8 @@
 		},
     "Locomotive": {
       "cats": [ 1 ],
-      "html": "<.*\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/.*>",
-      "implies": [ "Ruby", "Ruby on Rails", "MongoDB" ]
+      "html": "<link[^>]*\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/.*>",
+      "implies": [ "Ruby on Rails", "MongoDB" ]
     },
 		"Lotus Domino": {
 			"cats": [ 22 ],
@@ -1639,9 +1639,9 @@
 		},
     "Spree": {
       "cats": [ 6 ],
-      "html": "<.+\/spree\/products\/[0-9]+\/.+>",
-      "html": "<.+href=.\/assets\/store\/all\-[a-zA-Z0-9]{32}\.css.+>",
-      "implies": [ "Ruby", "Ruby on Rails"]
+      "html": "<img[^>]*\/spree\/products\/[0-9]+\/.+>",
+      "html": "<link[^>]*\/assets\/store\/all\-[a-zA-Z0-9]{32}\.css.+>",
+      "implies": [ "Ruby on Rails"]
     },
 		"SQL Buddy": {
 			"cats": [ 3 ],

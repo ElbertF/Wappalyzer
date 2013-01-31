@@ -568,6 +568,11 @@
 			"meta": { "generator": "EPrints" },
 			"implies": "Perl"
 		},
+		"eSyndiCat": {
+			"cats": [ 1 ],
+			"headers": { "X-Drectory-Script": "^eSyndiCat" },
+			"implies": [ "PHP" ]
+		},
 		"Exhibit": {
 			"cats": [ 25 ],
 			"script": "exhibit.*\\.js",

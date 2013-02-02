@@ -52,7 +52,7 @@
 		},
 		"2z Project": {
 			"cats": [ 1 ],
-			"meta": { "generator": "2z project" }
+			"meta": { "generator": "2z project ([\\d\\.]+);version:\\1" }
 		},
 		"3dCart": {
 			"cats": [ 1, 6 ],
@@ -66,7 +66,7 @@
 		},
 		"AddThis": {
 			"cats": [ 5 ],
-			"script": "addthis\\.com/js",
+			"script": "addthis\\.com/js/(\d+)?;version:\\1",
 			"env": "^addthis"
 		},
 		"Adobe CQ5": {
@@ -101,12 +101,12 @@
 		"Amiro.CMS": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Amiro" },
-			"html": "system_js\\.php\\?script=",
+			"html": "system_(js\\.php\\?script=|css\\.php\\?styles)[^"]+cv=([\d\.]+)\\;version:\\2",
 			"implies": "PHP"
 		},
 		"AMPcms": {
 			"cats": [ 1 ],
-			"headers": { "X-AMP-Version": ".*", "Set-Cookie": "AMP=" },
+			"headers": { "X-AMP-Version": "([\\d\\.]+)\\;version=\\1", "Set-Cookie": "^AMP=" },
 			"env": "^amp_js_init$",
 			"implies": "PHP"
 		},
@@ -116,7 +116,7 @@
 		},
 		"AOLserver": {
 			"cats": [ 22 ],
-			"headers": { "Server": "AOLserver" }
+			"headers": { "Server": "AOLserver/?([\d\.]+)?\\;version:\\1" }
 		},
 		"Apache": {
 			"cats": [ 22 ],
@@ -130,11 +130,11 @@
 		},
 		"Apache Tomcat": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Apache-Coyote" }
+			"headers": { "Server": "Apache-Coyote/?([\\d\\.]+)?\\;version:\\1" }
 		},
 		"Apache Traffic Server": {
 			"cats": [ 22 ],
-			"headers": { "Server": "YTS" }
+			"headers": { "Server": "ATS/?([\\d\\.]+)?\\;version:\\1" }
 		},
 		"Arc Forum": {
 			"cats": [ 2 ],
@@ -142,12 +142,12 @@
 		},
 		"AsciiDoc": {
 			"cats": [ 1, 20, 27 ],
-			"meta": { "generator": "^AsciiDoc" },
+			"meta": { "generator": "^AsciiDoc ([\\d\\.]+)\\;version:\\1" },
 			"env": "^asciidoc$"
 		},
 		"ATG Web Commerce": {
 			"cats": [ 6 ],
-			"headers": { "X-ATG-Version": "ATG" },
+			"headers": { "X-ATG-Version": "(ATGPlatform/([\\d\\.]+))?\\;version:\\2" },
 			"html": "<[^>]+_DARGS"
 		},
 		"Atlassian Confluence": {
@@ -167,7 +167,7 @@
 		},
 		"AWStats": {
 			"cats": [ 10 ],
-			"meta": { "generator": "AWStats" },
+			"meta": { "generator": "AWStats ([\\d\\.]+( \\(build [\\d\\.]+\\))?)\\;version:\\1" },
 			"implies": "Perl"
 		},
 		"Backbone.js": {
@@ -178,12 +178,12 @@
 		},
 		"Banshee": {
 			"cats": [ 1, 18 ],
-			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org",
+			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(v([\\d\\.]+))?\\;version:\\2",
 			"implies": "PHP"
 		},
 		"BIGACE": {
 			"cats": [ 1 ],
-			"meta": { "generator": "BIGACE" },
+			"meta": { "generator": "BIGACE ([\\d\\.]+)\\;version:\\1" },
 			"html": "Powered by <a href=\"[^>]+BIGACE|<!--\\s+Site is running BIGACE",
 			"implies": "PHP"
 		},
@@ -196,7 +196,7 @@
 		},
 		"BigDump": {
 			"cats": [ 3 ],
-			"html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer",
+			"html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\. ([\\d\\.b]+)\\;version:\\1",
 			"implies": "PHP"
 		},
 		"Bigware": {
@@ -217,7 +217,7 @@
 		},
 		"BrowserCMS": {
 			"cats": [ 1 ],
-			"meta": { "generator": "BrowserCMS" },
+			"meta": { "generator": "BrowserCMS ([\\d\\.]+)\\;version:\\1" },
 			"implies": "Ruby"
 		},
 		"Bugzilla": {
@@ -266,17 +266,19 @@
 		},
 		"Chamilo": {
 			"cats": [ 21 ],
-			"meta": { "generator": "Chamilo" },
-			"headers": { "X-Powered-By": "Chamilo" },
+			"html": "\">Chamilo ([\\d\\.]+)</a>\\;version:\\1",
+			"meta": { "generator": "Chamilo ([\\d\\.]+)\\;version:\\1" },
+			"headers": { "X-Powered-By": "Chamilo ([\\d\\.]+)\\;version:\\1" },
 			"implies": "PHP"
 		},
 		"Chartbeat": {
 			"cats": [ 10 ],
-			"html": "function loadChartbeat\\(\\) {"
+			"html": "function loadChartbeat\\(\\) {",
+			"script": "chartbeat.js"
 		},
 		"Cherokee": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Cherokee" }
+			"headers": { "Server": "Cherokee/([\\d\\.]+)\\;version:\\1" }
 		},
 		"CKEditor": {
 			"cats": [ 24 ],
@@ -286,7 +288,7 @@
 		"ClickHeat": {
 			"cats": [ 10 ],
 			"script": "clickheat.*\\.js",
-			"env": "^clickHeatBrowser$",
+			"env": "^clickHeat",
 			"implies": "PHP"
 		},
 		"ClickTale": {
@@ -336,7 +338,7 @@
 		"Concrete5": {
 			"cats": [ 1 ],
 			"script": "concrete/js/",
-			"meta": { "generator": "concrete5" },
+			"meta": { "generator": "concrete5 - ([\\d\\.ab]+)\\;version:\\1" },
 			"env": "^CCM_IMAGE_PATH$",
 			"implies": "PHP"
 		},
@@ -352,12 +354,12 @@
 		},
 		"Contenido": {
 			"cats": [ 1 ],
-			"meta": { "generator": "Contenido" },
+			"meta": { "generator": "Contenido ([\\d\\.]+)\\;version:\\1" },
 			"implies": "PHP"
 		},
 		"Contens": {
 			"cats": [ 1 ],
-			"meta": { "generator": "contens" },
+			"meta": { "generator": "Contensis CMS Version ([\\d\\.]+)\\;version:\\1" },
 			"implies": [ "Java", "CFML" ]
 		},
 		"ConversionLab": {
@@ -366,7 +368,7 @@
 		},
 		"Coppermine": {
 			"cats": [ 7 ],
-			"html": "<!--Coppermine Photo Gallery",
+			"html": "<!--Coppermine Photo Gallery ([\\d\\.]+)\\;version:\\1",
 			"implies": "PHP"
 		},
 		"Cosmoshop": {
@@ -380,11 +382,11 @@
 		},
 		"CouchDB": {
 			"cats": [ 22 ],
-			"headers": { "Server": "CouchDB" }
+			"headers": { "Server": "CouchDB/([\\d\\.]+)\\;version:\\1" }
 		},
 		"cPanel": {
 			"cats": [ 9 ],
-			"headers": { "Server": "cpsrvd" },
+			"headers": { "Server": "cpsrvd/([\\d\\.]+)\\;version:\\1" },
 			"html": "<!-- cPanel"
 		},
 		"CPG Dragonfly": {
@@ -426,13 +428,13 @@
 		},
 		"Dancer": {
 			"cats": [ 18 ],
-			"headers": { "X-Powered-By": "Perl Dancer", "Server": "Perl Dancer" },
+			"headers": { "X-Powered-By": "Perl Dancer ([\\d\\.]+)\\;version:\\1", "Server": "Perl Dancer ([\\d\\.]+)\\;version:\\1" },
 			"implies": "Perl"
 		},
 		"Danneo CMS": {
 			"cats": [ 1 ],
-			"headers": { "X-Powered-By": "CMS Danneo.*" },
-			"meta": { "generator": "Danneo" },
+			"headers": { "X-Powered-By": "CMS Danneo ([\\d\\.]+)\\;version:\\1" },
+			"meta": { "generator": "Danneo CMS ([\\d\\.]+)\\;version:\\1" },
 			"implies": [ "Apache", "PHP" ]
 		},
 		"dashCommerce": {
@@ -447,7 +449,7 @@
 		},
 		"David Webbox": {
 			"cats": [ 22 ],
-			"headers": { "Server": "David-WebBox" }
+			"headers": { "Server": "David-WebBox/([\\d\\.a]+ \(\d+\))\\;version:\\1" }
 		},
 		"Debian": {
 			"cats": [ 28 ],
@@ -455,7 +457,7 @@
 		},
 		"DedeCMS": {
 			"cats": [ 1 ],
-			"env": "^Dede",
+			"env": "^DedeContainer",
 			"script": "dedeajax",
 			"implies": "PHP"
 		},
@@ -472,6 +474,7 @@
 		"DirectAdmin": {
 			"cats": [ 9 ],
 			"html": "<a[^>]+>DirectAdmin</a> Web Control Panel",
+			"headers": { "Server": "DirectAdmin Daemon v([\\d\\.]+)\\;version:\\1" },
 			"implies": [ "PHP", "Apache" ]
 		},
 		"Disqus": {
@@ -482,19 +485,19 @@
 		},
 		"Django": {
 			"cats": [ 18 ],
-			"html": "powered by <a[^>]+>Django|<div style=\"display:none\"><input name=\"csrfmiddlewaretoken\" value=\"[a-z0-9]{32}\" type=\"hidden\"></div>",
+			"html": "(powered by <a[^>]+>Django ?([\\d\\.]+)?|<div style=\"display:none\"><input name=\"csrfmiddlewaretoken\" value=\"[a-z0-9]{32}\" type=\"hidden\"></div>)\\;version:\\2",
 			"env": "__admin_media_prefix__",
 			"implies": "Python"
 		},
 		"Django CMS": {
 			"cats": [ 1 ],
 			"script": "media/cms/js/csrf\\.js",
-			"headers": { "Set-Cookie": "django" },
+			"headers": { "Set-Cookie": "django[^\\;]=" },
 			"implies": "Django"
 		},
 		"Dojo": {
 			"cats": [ 12 ],
-			"script": "dojo(\\.xd)?\\.js",
+			"script": "([\\d\\.]+)/dojo/dojo(\\.xd)?\\.js\\;version:\\1",
 			"env": "^dojo$"
 		},
 		"Dokeos": {

@@ -1008,11 +1008,11 @@
 			"script": "addtoany\\.com/menu/page\\.js",
 			"env": "^a2apage_init$"
 		},
-    "Locomotive": {
-      "cats": [ 1 ],
-      "html": "<link[^>]*/sites/[a-zA-Z0-9]{24}/theme/stylesheets/.*>",
-      "implies": [ "Ruby on Rails", "MongoDB" ]
-    },
+		"Locomotive": {
+			"cats": [ 1 ],
+			"html": "<link[^>]*/sites/[a-zA-Z0-9]{24}/theme/stylesheets/.*>",
+			"implies": [ "Ruby on Rails", "MongoDB" ]
+		},
 		"Lotus Domino": {
 			"cats": [ 22 ],
 			"headers": { "Server": "Lotus-Domino" }
@@ -1192,7 +1192,7 @@
 			"meta": { "generator": "Mynetcap" }
 		},
 		"MySQL": {
-			"cats": [ 24 ]
+			"cats": [ 34 ]
 		},
 		"Nedstat": {
 			"cats": [ 10 ],

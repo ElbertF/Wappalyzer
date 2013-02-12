@@ -912,7 +912,7 @@
 		},
 		"jQuery Mobile": {
 			"cats": [ 26 ],
-			"script": "jquery\\.mobile(-([\\d\\.]+rc\\d))?.*\\.js(\\?ver=([\\d\\.]+)?\\;version:\\2",
+			"script": "jquery\\.mobile(-([\\d\\.]+rc\\d))?.*\\.js(\\?ver=([\\d\\.]+))?\\;version:\\2",
 			"implies": "jQuery"
 		},
 		"jQuery Sparklines": {
@@ -922,7 +922,7 @@
 		},
 		"jQuery UI": {
 			"cats": [ 12 ],
-			"script": "jqueryui/([\\d\\]+).js\\;version:\\1",
+			"script": "jqueryui/([\\d\\.]+).js\\;version:\\1",
 			"implies": "jQuery"
 		},
 		"JS Charts": {
@@ -1667,11 +1667,11 @@
 			"headers": { "X-Spip-Cache": ".*" }
 		},
 		"Spree": {
-		  "cats": [ 6 ],
-		  "html": "<img[^>]*/spree/products/[0-9]+/.+>",
-		  "html": "<link[^>]*/assets/store/all-[a-zA-Z0-9]{32}\\.css.+>",
-		  "implies": "Ruby on Rails"
-		},
+      "cats": [ 6 ],
+      "html": "<img[^>]*/spree/products/[0-9]+/.+>",
+      "html": "<link[^>]*/assets/store/all-[a-zA-Z0-9]{32}\\.css.+>",
+      "implies": "Ruby on Rails"
+    },
 		"SQL Buddy": {
 			"cats": [ 3 ],
 			"html": "(<title>SQL Buddy</title>|<[^>]+onclick=\"sideMainClick\\(\"home\\.php)"

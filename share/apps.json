@@ -52,7 +52,7 @@
 		},
 		"2z Project": {
 			"cats": [ 1 ],
-			"meta": { "generator": "2z project ([\\d\\.]+);version:\\1" }
+			"meta": { "generator": "2z project ([\\d.]+);version:\\1" }
 		},
 		"3dCart": {
 			"cats": [ 1, 6 ],
@@ -77,7 +77,7 @@
 		},
 		"Adobe GoLive": {
 			"cats": [ 20 ],
-			"meta": { "generator": "Adobe GoLive(\\s([\\d\\.]+))?\\;version:\\2" }
+			"meta": { "generator": "Adobe GoLive(\\s([\\d.]+))?\\;version:\\2" }
 		},
 		"Advanced Web Stats": {
 			"cats": [ 10 ],
@@ -90,7 +90,7 @@
 		},
 		"Amaya": {
 			"cats": [ 20 ],
-			"meta": { "generator": "Amaya( V?([\\d\\.]+[a-z]))?\\;version:\\2" }
+			"meta": { "generator": "Amaya( V?([\\d.]+[a-z]))?\\;version:\\2" }
 		},
 		"Ametys": {
 			"cats": [ 1 ],
@@ -101,12 +101,12 @@
 		"Amiro.CMS": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Amiro" },
-			"html": "system_(js\\.php\\?script=|css\\.php\\?styles)[^\"]+cv=([\\d\\.]+)\\;version:\\2",
+			"html": "system_(js\\.php\\?script=|css\\.php\\?styles)[^\"]+cv=([\\d.]+)\\;version:\\2",
 			"implies": "PHP"
 		},
 		"AMPcms": {
 			"cats": [ 1 ],
-			"headers": { "X-AMP-Version": "([\\d\\.]+)\\;version:\\1", "Set-Cookie": "^AMP=" },
+			"headers": { "X-AMP-Version": "([\\d.]+)\\;version:\\1", "Set-Cookie": "^AMP=" },
 			"env": "^amp_js_init$",
 			"implies": "PHP"
 		},
@@ -116,11 +116,11 @@
 		},
 		"AOLserver": {
 			"cats": [ 22 ],
-			"headers": { "Server": "AOLserver/?([\\d\\.]+)?\\;version:\\1" }
+			"headers": { "Server": "AOLserver/?([\\d.]+)?\\;version:\\1" }
 		},
 		"Apache": {
 			"cats": [ 22 ],
-			"headers": { "Server": "(Apache($|/([\\d\\.]+)|[^/-])|(^|\\b)HTTPD)\\;version:\\3" }
+			"headers": { "Server": "(Apache($|/([\\d.]+)|[^/-])|(^|\\b)HTTPD)\\;version:\\3" }
 		},
 		"Apache JSPWiki": {
 			"cats": [ 8 ],
@@ -130,11 +130,11 @@
 		},
 		"Apache Tomcat": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Apache-Coyote/?([\\d\\.]+)?\\;version:\\1" }
+			"headers": { "Server": "Apache-Coyote/?([\\d.]+)?\\;version:\\1" }
 		},
 		"Apache Traffic Server": {
 			"cats": [ 22 ],
-			"headers": { "Server": "ATS/?([\\d\\.]+)?\\;version:\\1" }
+			"headers": { "Server": "ATS/?([\\d.]+)?\\;version:\\1" }
 		},
 		"Arc Forum": {
 			"cats": [ 2 ],
@@ -142,17 +142,17 @@
 		},
 		"AsciiDoc": {
 			"cats": [ 1, 20, 27 ],
-			"meta": { "generator": "^AsciiDoc ([\\d\\.]+)\\;version:\\1" },
+			"meta": { "generator": "^AsciiDoc ([\\d.]+)\\;version:\\1" },
 			"env": "^asciidoc$"
 		},
 		"ATG Web Commerce": {
 			"cats": [ 6 ],
-			"headers": { "X-ATG-Version": "(ATGPlatform/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "X-ATG-Version": "(ATGPlatform/([\\d.]+))?\\;version:\\2" },
 			"html": "<[^>]+_DARGS"
 		},
 		"Atlassian Confluence": {
 			"cats": [ 8 ],
-			"html": "Powered by <a href=[^>]+atlassian\\.com/software/confluence([^>]+>Atlassian Confluence</a> ([\\d\\.]+))?\\;version:\\2",
+			"html": "Powered by <a href=[^>]+atlassian\\.com/software/confluence([^>]+>Atlassian Confluence</a> ([\\d.]+))?\\;version:\\2",
 			"headers": { "X-Confluence-Request-Time": ".*" },
 			"meta": { "confluence-request-time": ".*" },
 			"implies": "Java"
@@ -167,7 +167,7 @@
 		},
 		"AWStats": {
 			"cats": [ 10 ],
-			"meta": { "generator": "AWStats ([\\d\\.]+( \\(build [\\d\\.]+\\))?)\\;version:\\1" },
+			"meta": { "generator": "AWStats ([\\d.]+( \\(build [\\d.]+\\))?)\\;version:\\1" },
 			"implies": "Perl"
 		},
 		"Backbone.js": {
@@ -178,12 +178,12 @@
 		},
 		"Banshee": {
 			"cats": [ 1, 18 ],
-			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(v([\\d\\.]+))?\\;version:\\2",
+			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(v([\\d.]+))?\\;version:\\2",
 			"implies": "PHP"
 		},
 		"BIGACE": {
 			"cats": [ 1 ],
-			"meta": { "generator": "BIGACE ([\\d\\.]+)\\;version:\\1" },
+			"meta": { "generator": "BIGACE ([\\d.]+)\\;version:\\1" },
 			"html": "Powered by <a href=\"[^>]+BIGACE|<!--\\s+Site is running BIGACE",
 			"implies": "PHP"
 		},
@@ -196,7 +196,7 @@
 		},
 		"BigDump": {
 			"cats": [ 3 ],
-			"html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\\. ([\\d\\.b]+)\\;version:\\1",
+			"html": "<!-- <h1>BigDump: Staggered MySQL Dump Importer ver\\. ([\\d.b]+)\\;version:\\1",
 			"implies": "PHP"
 		},
 		"Bigware": {
@@ -217,7 +217,7 @@
 		},
 		"BrowserCMS": {
 			"cats": [ 1 ],
-			"meta": { "generator": "BrowserCMS ([\\d\\.]+)\\;version:\\1" },
+			"meta": { "generator": "BrowserCMS ([\\d.]+)\\;version:\\1" },
 			"implies": "Ruby"
 		},
 		"Bugzilla": {
@@ -266,9 +266,9 @@
 		},
 		"Chamilo": {
 			"cats": [ 21 ],
-			"html": "\">Chamilo ([\\d\\.]+)</a>\\;version:\\1",
-			"meta": { "generator": "Chamilo ([\\d\\.]+)\\;version:\\1" },
-			"headers": { "X-Powered-By": "Chamilo ([\\d\\.]+)\\;version:\\1" },
+			"html": "\">Chamilo ([\\d.]+)</a>\\;version:\\1",
+			"meta": { "generator": "Chamilo ([\\d.]+)\\;version:\\1" },
+			"headers": { "X-Powered-By": "Chamilo ([\\d.]+)\\;version:\\1" },
 			"implies": "PHP"
 		},
 		"Chartbeat": {
@@ -278,7 +278,7 @@
 		},
 		"Cherokee": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Cherokee/([\\d\\.]+)\\;version:\\1" }
+			"headers": { "Server": "Cherokee/([\\d.]+)\\;version:\\1" }
 		},
 		"CKEditor": {
 			"cats": [ 24 ],
@@ -313,7 +313,7 @@
 		},
 		"CMSimple": {
 			"cats": [ 1 ],
-			"meta": { "generator": "CMSimple( [\\d\\.]+)?\\;version:\\1" },
+			"meta": { "generator": "CMSimple( [\\d.]+)?\\;version:\\1" },
 			"implies": "PHP"
 		},
 		"CO2Stats": {
@@ -338,7 +338,7 @@
 		"Concrete5": {
 			"cats": [ 1 ],
 			"script": "concrete/js/",
-			"meta": { "generator": "concrete5 - ([\\d\\.ab]+)\\;version:\\1" },
+			"meta": { "generator": "concrete5 - ([\\d.ab]+)\\;version:\\1" },
 			"env": "^CCM_IMAGE_PATH$",
 			"implies": "PHP"
 		},
@@ -354,12 +354,12 @@
 		},
 		"Contenido": {
 			"cats": [ 1 ],
-			"meta": { "generator": "Contenido ([\\d\\.]+)\\;version:\\1" },
+			"meta": { "generator": "Contenido ([\\d.]+)\\;version:\\1" },
 			"implies": "PHP"
 		},
 		"Contens": {
 			"cats": [ 1 ],
-			"meta": { "generator": "Contensis CMS Version ([\\d\\.]+)\\;version:\\1" },
+			"meta": { "generator": "Contensis CMS Version ([\\d.]+)\\;version:\\1" },
 			"implies": [ "Java", "CFML" ]
 		},
 		"ConversionLab": {
@@ -368,7 +368,7 @@
 		},
 		"Coppermine": {
 			"cats": [ 7 ],
-			"html": "<!--Coppermine Photo Gallery ([\\d\\.]+)\\;version:\\1",
+			"html": "<!--Coppermine Photo Gallery ([\\d.]+)\\;version:\\1",
 			"implies": "PHP"
 		},
 		"Cosmoshop": {
@@ -382,11 +382,11 @@
 		},
 		"CouchDB": {
 			"cats": [ 22 ],
-			"headers": { "Server": "CouchDB/([\\d\\.]+)\\;version:\\1" }
+			"headers": { "Server": "CouchDB/([\\d.]+)\\;version:\\1" }
 		},
 		"cPanel": {
 			"cats": [ 9 ],
-			"headers": { "Server": "cpsrvd/([\\d\\.]+)\\;version:\\1" },
+			"headers": { "Server": "cpsrvd/([\\d.]+)\\;version:\\1" },
 			"html": "<!-- cPanel"
 		},
 		"CPG Dragonfly": {
@@ -428,13 +428,13 @@
 		},
 		"Dancer": {
 			"cats": [ 18 ],
-			"headers": { "X-Powered-By": "Perl Dancer ([\\d\\.]+)\\;version:\\1", "Server": "Perl Dancer ([\\d\\.]+)\\;version:\\1" },
+			"headers": { "X-Powered-By": "Perl Dancer ([\\d.]+)\\;version:\\1", "Server": "Perl Dancer ([\\d.]+)\\;version:\\1" },
 			"implies": "Perl"
 		},
 		"Danneo CMS": {
 			"cats": [ 1 ],
-			"headers": { "X-Powered-By": "CMS Danneo ([\\d\\.]+)\\;version:\\1" },
-			"meta": { "generator": "Danneo CMS ([\\d\\.]+)\\;version:\\1" },
+			"headers": { "X-Powered-By": "CMS Danneo ([\\d.]+)\\;version:\\1" },
+			"meta": { "generator": "Danneo CMS ([\\d.]+)\\;version:\\1" },
 			"implies": [ "Apache", "PHP" ]
 		},
 		"dashCommerce": {
@@ -449,7 +449,7 @@
 		},
 		"David Webbox": {
 			"cats": [ 22 ],
-			"headers": { "Server": "David-WebBox/([\\d\\.a]+ \\(\\d+\\))\\;version:\\1" }
+			"headers": { "Server": "David-WebBox/([\\d.a]+ \\(\\d+\\))\\;version:\\1" }
 		},
 		"Debian": {
 			"cats": [ 28 ],
@@ -474,7 +474,7 @@
 		"DirectAdmin": {
 			"cats": [ 9 ],
 			"html": "<a[^>]+>DirectAdmin</a> Web Control Panel",
-			"headers": { "Server": "DirectAdmin Daemon v([\\d\\.]+)\\;version:\\1" },
+			"headers": { "Server": "DirectAdmin Daemon v([\\d.]+)\\;version:\\1" },
 			"implies": [ "PHP", "Apache" ]
 		},
 		"Disqus": {
@@ -485,7 +485,7 @@
 		},
 		"Django": {
 			"cats": [ 18 ],
-			"html": "(powered by <a[^>]+>Django ?([\\d\\.]+)?|<div style=\"display:none\"><input name=\"csrfmiddlewaretoken\" value=\"[a-z0-9]{32}\" type=\"hidden\"></div>)\\;version:\\2",
+			"html": "(powered by <a[^>]+>Django ?([\\d.]+)?|<div style=\"display:none\"><input name=\"csrfmiddlewaretoken\" value=\"[a-z0-9]{32}\" type=\"hidden\"></div>)\\;version:\\2",
 			"env": "__admin_media_prefix__",
 			"implies": "Python"
 		},
@@ -497,7 +497,7 @@
 		},
 		"Dojo": {
 			"cats": [ 12 ],
-			"script": "([\\d\\.]+)/dojo/dojo(\\.xd)?\\.js\\;version:\\1",
+			"script": "([\\d.]+)/dojo/dojo(\\.xd)?\\.js\\;version:\\1",
 			"env": "^dojo$"
 		},
 		"Dokeos": {
@@ -523,7 +523,7 @@
 		},
 		"Doxygen": {
 			"cats": [ 4 ],
-			"html": "(<!-- Generated by Doxygen ([\\d\\.]+)|<link[^>]+doxygen.css)\\;version:\\1"
+			"html": "(<!-- Generated by Doxygen ([\\d.]+)|<link[^>]+doxygen.css)\\;version:\\1"
 		},
 		"DreamWeaver": {
 			"cats": [ 20 ],
@@ -533,7 +533,7 @@
 			"cats": [ 1 ],
 			"script": "drupal\\.js",
 			"html": "<(link|style)[^>]+sites/(default|all)/(themes|modules)/",
-			"headers": { "X-Drupal-Cache": ".*", "X-Generator": "Drupal(\\s([\\d\\.]+))?\\;version:\\2", "Expires": "19 Nov 1978" },
+			"headers": { "X-Drupal-Cache": ".*", "X-Generator": "Drupal(\\s([\\d.]+))?\\;version:\\2", "Expires": "19 Nov 1978" },
 			"env": "^Drupal$",
 			"implies": "PHP"
 		},
@@ -544,14 +544,14 @@
 		},
 		"Dynamicweb": {
 			"cats": [ 1, 6, 10 ],
-			"meta": { "generator": "Dynamicweb ([\\d\\.]+)\\;version:\\1" },
+			"meta": { "generator": "Dynamicweb ([\\d.]+)\\;version:\\1" },
 			"headers": { "Set-Cookie": "Dynamicweb=" },
 			"implies": "Microsoft ASP.NET"
 		},
 		"e107": {
 			"cats": [ 1 ],
 			"script": "e107\\.js",
-			"headers": { "Set-Cookie": "e107_td[^;]=" },
+			"headers": { "Set-Cookie": "e107_td[^;]+=" },
 			"implies": "PHP"
 		},
 		"EdgeCast": {
@@ -560,7 +560,7 @@
 		},
 		"Embedthis-http": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Embedthis-http(/([\\d\\.]+))?\\;version:\\2" }
+			"headers": { "Server": "Embedthis-http(/([\\d.]+))?\\;version:\\2" }
 		},
 		"EPiServer": {
 			"cats": [ 1 ],
@@ -570,7 +570,7 @@
 		},
 		"EPrints": {
 			"cats": [ 19 ],
-			"meta": { "generator": "EPrints ([\\d\\.]+)\\;version:\\1" },
+			"meta": { "generator": "EPrints ([\\d.]+)\\;version:\\1" },
 			"env": "^EPJS_menu_template$",
 			"implies": "Perl"
 		},
@@ -610,7 +610,7 @@
 			"cats": [ 29 ],
 			"html": "<!-- Factfinder",
 			"script": "Suggest\\.ff",
-			"url": "/ViewParametricSearch|ffsuggest.[a-z]htm"
+			"url": "/ViewParametricSearch|ffsuggest\\.[a-z]htm"
 		},
 		"FAST ESP": {
 			"cats": [ 29 ],
@@ -625,8 +625,8 @@
 		"FlexCMP": {
 			"cats": [ 1 ],
 			"meta": { "generator": "FlexCMP" },
-			"html": "<!--[^>]+FlexCMP[^>v]+v\\. ([\\d\\.]+)\\;version:\\1",
-			"headers": { "X-Powered-By": "FlexCMP.+\\[v\\. ([\\d\\.]+)\\;version:\\1", "X-Flex-Lang": ".+" }
+			"html": "<!--[^>]+FlexCMP[^>v]+v\\. ([\\d.]+)\\;version:\\1",
+			"headers": { "X-Powered-By": "FlexCMP.+\\[v\\. ([\\d.]+)\\;version:\\1", "X-Flex-Lang": ".+" }
 		},
 		"FluxBB": {
 			"cats": [ 2 ],
@@ -639,11 +639,11 @@
 		},
 		"FreeBSD": {
 			"cats": [ 28 ],
-			"headers": { "Server": "FreeBSD( ([\\d\\.]+))?\\;version:\\2" }
+			"headers": { "Server": "FreeBSD( ([\\d.]+))?\\;version:\\2" }
 		},
 		"FrontPage": {
 			"cats": [ 20 ],
-			"meta": { "generator": "Microsoft FrontPage(\\s([\\d\\.]+))?\\;version:\\2" },
+			"meta": { "generator": "Microsoft FrontPage(\\s([\\d.]+))?\\;version:\\2" },
 			"html": "<html[^>]+urn:schemas-microsoft-com:office:office"
 		},
 		"FWP": {
@@ -707,11 +707,11 @@
 		},
 		"Google Maps": {
 			"cats": [ 35 ],
-			"script": "(maps\\.google\\.com/maps\\?file=api(&v=([\\d\\.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\3"
+			"script": "(maps\\.google\\.com/maps\\?file=api(&v=([\\d.]+))?|maps\\.google\\.com/maps/api/staticmap)\\;version:API v\\3"
 		},
 		"Google PageSpeed": {
 			"cats": [ 23, 33 ],
-			"headers": { "X-Mod-Pagespeed": "([\\d\\.]+)\\;version:\\1" }
+			"headers": { "X-Mod-Pagespeed": "([\\d.]+)\\;version:\\1" }
 		},
 		"Google Sites": {
 			"cats": [ 1 ],
@@ -751,7 +751,7 @@
 		},
 		"GX WebManager": {
 			"cats": [ 1 ],
-			"meta": { "generator": "GX WebManager( ([\\d\\.]+))?\\;version:\\2" },
+			"meta": { "generator": "GX WebManager( ([\\d.]+))?\\;version:\\2" },
 			"html": "<!--\\s+Powered by GX"
 		},
 		"Handlebars": {
@@ -760,7 +760,7 @@
 		},
 		"Hiawatha": {
 			"cats": [ 22 ],
-			"headers": { "Server": "Hiawatha v([\\d+\\.]+)\\;version:\\1" }
+			"headers": { "Server": "Hiawatha v([\\d.]+)\\;version:\\1" }
 		},
 		"Highcharts": {
 			"cats": [ 25 ],
@@ -784,7 +784,7 @@
 		},
 		"IBM HTTP Server": {
 			"cats": [ 22 ],
-			"headers": { "Server": "IBM_HTTP_Server(/([\\d\\.]+))?\\;version:\\2" }
+			"headers": { "Server": "IBM_HTTP_Server(/([\\d.]+))?\\;version:\\2" }
 		},
 		"IBM WebSphere Portal": {
 			"cats": [ 1 ],
@@ -799,7 +799,7 @@
 		},
 		"IIS": {
 			"cats": [ 22 ],
-			"headers": { "Server": "IIS(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "IIS(/([\\d.]+))?\\;version:\\2" },
 			"implies": "Windows Server"
 		},
 		"ImpressCMS": {
@@ -811,7 +811,7 @@
 		},
 		"ImpressPages": {
 			"cats": [ 1 ],
-			"meta": { "generator": "ImpressPages CMS ([\\d\\.]+)\\;version:\\1" },
+			"meta": { "generator": "ImpressPages CMS ([\\d.]+)\\;version:\\1" },
 			"implies": "PHP"
 		},
 		"Indexhibit": {
@@ -837,11 +837,11 @@
 		},
 		"iWeb": {
 			"cats": [ 20 ],
-			"meta": { "generator": "^iWeb( [\\d\\.]+)?\\;version:\\1" }
+			"meta": { "generator": "^iWeb( [\\d.]+)?\\;version:\\1" }
 		},
 		"JAlbum": {
 			"cats": [ 7 ],
-			"meta": { "generator": "JAlbum( [\\d\\.]+)?\\;version:\\1" },
+			"meta": { "generator": "JAlbum( [\\d.]+)?\\;version:\\1" },
 			"implies": "Java"
 		},
 		"Jalios": {
@@ -859,17 +859,17 @@
 		},
 		"JavaServer Faces": {
 			"cats": [ 18 ],
-			"headers": { "X-Powered-By": "JSF(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "X-Powered-By": "JSF(/([\\d.]+))?\\;version:\\2" },
 			"implies": "Java"
 		},
 		"JavaServer Pages": {
 			"cats": [ 18 ],
-			"headers": { "X-Powered-By": "JSP(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "X-Powered-By": "JSP(/([\\d.]+))?\\;version:\\2" },
 			"implies": "Java"
 		},
 		"Java Servlet": {
 			"cats": [ 18 ],
-			"headers": { "X-Powered-By": "Servlet(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "X-Powered-By": "Servlet(/([\\d.]+))?\\;version:\\2" },
 			"implies": "Java"
 		},
 		"Jirafe": {
@@ -889,9 +889,9 @@
 		"Joomla": {
 			"cats": [ 1 ],
 			"url": "option=com_",
-			"meta": { "generator": "Joomla!( ([\\d\\.]+))?\\;version:\\2" },
+			"meta": { "generator": "Joomla!( ([\\d.]+))?\\;version:\\2" },
 			"html": "(<div[^>]+id=\"wrapper_r\"|<[^>]+(feed|components)/com_|<table[^>]+class=\"pill)\\;confidence:50",
-			"headers": { "X-Content-Encoded-By": "Joomla! ([\\d\\.]+)\\;version:\\1" },
+			"headers": { "X-Content-Encoded-By": "Joomla! ([\\d.]+)\\;version:\\1" },
 			"env": "^jcomments$",
 			"implies": "PHP"
 		},
@@ -907,12 +907,12 @@
 		},
 		"jQuery": {
 			"cats": [ 12 ],
-			"script": [ "jquery(\\-|\\.)([\\d\\.]*\\d)[^/]*\\.js\\;version:\\2", "([\\d\\.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ],
+			"script": [ "jquery(\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\2", "([\\d.]+)/jquery(\\.min)?\\.js\\;version:\\1", "jquery.*\\.js" ],
 			"env": "^jQuery$"
 		},
 		"jQuery Mobile": {
 			"cats": [ 26 ],
-			"script": "jquery\\.mobile(-([\\d\\.]+rc\\d))?.*\\.js(\\?ver=([\\d\\.]+))?\\;version:\\2",
+			"script": "jquery\\.mobile(-([\\d.]+rc\\d))?.*\\.js(\\?ver=([\\d.]+))?\\;version:\\2",
 			"implies": "jQuery"
 		},
 		"jQuery Sparklines": {
@@ -922,7 +922,7 @@
 		},
 		"jQuery UI": {
 			"cats": [ 12 ],
-			"script": "jqueryui/([\\d\\.]+).js\\;version:\\1",
+			"script": "jqueryui/([\\d.]+)\\.js\\;version:\\1",
 			"implies": "jQuery"
 		},
 		"JS Charts": {
@@ -955,12 +955,12 @@
 		},
 		"Kentico CMS": {
 			"cats": [ 1 ],
-			"meta": { "generator": "Kentico CMS ([\\d\\.R]+ \\(build [\\d\\.]+\\))\\;version:\\1" },
+			"meta": { "generator": "Kentico CMS ([\\d.R]+ \\(build [\\d.]+\\))\\;version:\\1" },
 			"headers": { "Set-Cookie": "CMSPreferredCulture=" }
 		},
 		"KineticJS": {
 			"cats": [ 25 ],
-			"script": "kinetic(-v?([\\d\\.]+))?\\.js\\;version:\\2"
+			"script": "kinetic(-v?([\\d.]+))?\\.js\\;version:\\2"
 		},
 		"KISSmetrics": {
 			"cats": [ 10 ],
@@ -973,7 +973,7 @@
 		},
 		"Kohana": {
 			"cats": [ 18 ],
-			"headers": { "Set-Cookie": "kohanasession", "X-Powered-By": "Kohana Framework ([\\d\\.]+)\\;version:\\1" },
+			"headers": { "Set-Cookie": "kohanasession", "X-Powered-By": "Kohana Framework ([\\d.]+)\\;version:\\1" },
 			"implies": "PHP"
 		},
 		"Kolibri CMS": {
@@ -989,7 +989,7 @@
 		"Koobi": {
 			"cats": [ 1 ],
 			"meta": { "generator": "Koobi" },
-			"html": "<!--[^K>-]+Koobi ([a-z\\d\\.]+)\\;version:\\1"
+			"html": "<!--[^K>-]+Koobi ([a-z\\d.]+)\\;version:\\1"
 		},
 		"LEPTON": {
 			"cats": [ 1 ],
@@ -1000,7 +1000,7 @@
 		"Liferay": {
 			"cats": [ 1 ],
 			"env": "^Liferay$",
-			"headers": { "Liferay-Portal": "[a-z\\s]+([\\d\\.]+)\\;version:\\1" }
+			"headers": { "Liferay-Portal": "[a-z\\s]+([\\d.]+)\\;version:\\1" }
 		},
 		"LightMon Engine": {
 			"cats": [ 1 ],
@@ -1009,7 +1009,7 @@
 		},
 		"lighttpd": {
 			"cats": [ 22 ],
-			"headers": { "Server": "lighttpd(/([\\d\\.]+))?\\;version:\\2" }
+			"headers": { "Server": "lighttpd(/([\\d.]+))?\\;version:\\2" }
 		},
 		"LimeSurvey": {
 			"cats": [ 19 ],
@@ -1102,7 +1102,7 @@
 		},
 		"Modernizr": {
 			"cats": [ 12 ],
-			"script": "modernizr(-([\\d\\.]*[\\d]))?.*\\.js\\;version:\\2",
+			"script": "modernizr(-([\\d.]*[\\d]))?.*\\.js\\;version:\\2",
 			"env": "^Modernizr$"
 		},
 		"MODx": {
@@ -1114,32 +1114,32 @@
 		},
 		"mod_fastcgi": {
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_fastcgi(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_fastcgi(/([\\d.]+))?\\;version:\\2" },
 			"implies": "Apache"
 		},
 		"mod_python": {
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_python(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_python(/([\\d.]+))?\\;version:\\2" },
 			"implies": [ "Python", "Apache" ]
 		},
 		"mod_rack": {
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_rack(/([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "mod_rack(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_rack(/([\\d.]+))?\\;version:\\2", "X-Powered-By": "mod_rack(/([\\d.]+))?\\;version:\\2" },
 			"implies": [ "Ruby on Rails\\;confidence:50", "Apache" ]
 		},
 		"mod_rails": {
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_rails(/([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "mod_rails(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_rails(/([\\d.]+))?\\;version:\\2", "X-Powered-By": "mod_rails(/([\\d.]+))?\\;version:\\2" },
 			"implies": [ "Ruby on Rails\\;confidence:50", "Apache" ]
 		},
 		"mod_ssl": {
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_ssl(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_ssl(/([\\d.]+))?\\;version:\\2" },
 			"implies": "Apache"
 		},
 		"mod_wsgi": {
 			"cats": [ 33 ],
-			"headers": { "Server": "mod_wsgi(/([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "mod_wsgi(/([\\d\\.]+))?\\;version:\\2" },
+			"headers": { "Server": "mod_wsgi(/([\\d.]+))?\\;version:\\2", "X-Powered-By": "mod_wsgi(/([\\d.]+))?\\;version:\\2" },
 			"implies": [ "Python\\;confidence:50", "Apache" ]
 		},
 		"MoinMoin": {
@@ -1263,7 +1263,7 @@
 		"OpenGrok": {
 			"cats": [ 19 ],
 			"headers": { "Set-Cookie": "OpenGrok" },
-			"meta": { "generator": "OpenGrok( v?([\\d\\.]+))?\\;version:\\2" },
+			"meta": { "generator": "OpenGrok( v?([\\d.]+))?\\;version:\\2" },
 			"implies": "Java"
 		},
 		"OpenGSE": {
@@ -1282,7 +1282,7 @@
 		},
 		"OpenSSL": {
 			"cats": [ 33 ],
-			"headers": { "Server": "OpenSSL(/([\\d\\.]+[a-z]?))?\\;version:\\2" }
+			"headers": { "Server": "OpenSSL(/([\\d.]+[a-z]?))?\\;version:\\2" }
 		},
 		"OpenText Web Solutions": {
 			"cats": [ 1 ],
@@ -1343,7 +1343,7 @@
 		},
 		"PHP": {
 			"cats": [ 27 ],
-			"headers": { "Server": "php/?([\\d\\.]+)?\\;confidence:50\\;version:\\1", "X-Powered-By": "php/?([\\d\\.]+)?\\;version:\\1", "Set-Cookie": "PHPSESSID" },
+			"headers": { "Server": "php/?([\\d.]+)?\\;confidence:50\\;version:\\1", "X-Powered-By": "php/?([\\d.]+)?\\;version:\\1", "Set-Cookie": "PHPSESSID" },
 			"url": "\\.php$"
 		},
 		"phpAlbum":	{
@@ -1450,7 +1450,7 @@
 		},
 		"Prototype": {
 			"cats": [ 12 ],
-			"script": "(prototype|protoaculous)(-([\\d\\.]*[\\d]))?.*\\.js\\;version:\\3",
+			"script": "(prototype|protoaculous)(-([\\d.]*[\\d]))?.*\\.js\\;version:\\3",
 			"env": "^Prototype$"
 		},
 		"Protovis": {
@@ -1465,7 +1465,7 @@
 		},
 		"Python": {
 			"cats": [ 27 ],
-			"headers": { "Server": "(^|\\s)Python(/([\\d\\.]+))?\\;version:\\3" }
+			"headers": { "Server": "(^|\\s)Python(/([\\d.]+))?\\;version:\\3" }
 		},
 		"Quantcast": {
 			"cats": [ 10 ],
@@ -1559,7 +1559,7 @@
 		},
 		"Sarka-SPIP": {
 			"cats": [ 1 ],
-			"meta": { "generator": "(^|\\s)Sarka-SPIP(\\s([\\d\\.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
+			"meta": { "generator": "(^|\\s)Sarka-SPIP(\\s([\\d.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
 			"headers": { "X-Spip-Cache": ".*" },
 			"implies": "SPIP"
 		},
@@ -1667,7 +1667,7 @@
 		},
 		"SPIP": {
 			"cats": [ 1 ],
-			"meta": { "generator": "(^|\\s)SPIP(\\s([\\d\\.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
+			"meta": { "generator": "(^|\\s)SPIP(\\s([\\d.]+(\\s\\[\\d+\\])?))?\\;version:\\3" },
 			"headers": { "X-Spip-Cache": ".*" }
 		},
     "Spree": {
@@ -1713,11 +1713,11 @@
 		},
 		"Supersized": {
 			"cats": [ 7, 25 ],
-			"script": "supersized(\\.([\\d\\.]*[\\d]))?.*\\.js\\;version:\\2"
+			"script": "supersized(\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\2"
 		},
 		"SUSE": {
 			"cats": [ 28 ],
-			"headers": { "Server": "SUSE(/?\\s?-?([\\d\\.]+))?\\;version:\\2", "X-Powered-By": "SUSE(/?\\s?-?([\\d\\.]+))?\\;version:\\2" }
+			"headers": { "Server": "SUSE(/?\\s?-?([\\d.]+))?\\;version:\\2", "X-Powered-By": "SUSE(/?\\s?-?([\\d.]+))?\\;version:\\2" }
 		},
 		"Scientific Linux": {
 			"cats": [ 28 ],
@@ -1979,7 +1979,7 @@
 		},
 		"WordPress": {
 			"cats": [ 1, 11 ],
-			"meta": { "generator": "WordPress( [\\d\\.]+)?\\;version:\\1" },
+			"meta": { "generator": "WordPress( [\\d.]+)?\\;version:\\1" },
 			"html": "<link rel=\"stylesheet\" [^>]+wp-content",
 			"env": "^wp_username$",
 			"implies": "PHP"

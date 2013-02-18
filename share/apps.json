@@ -1039,6 +1039,11 @@
 			"cats": [ 19 ],
 			"headers": { "generator": "LimeSurvey" }
 		},
+		"Livefyre": {
+			"cats": [ 15 ],
+			"html": "var fyre = LF",
+			"script": "livefyre_init\\.js"
+		}
 		"LiveJournal": {
 			"cats": [ 11 ],
 			"url": "^(www.)?.+\\.livejournal\\.com"

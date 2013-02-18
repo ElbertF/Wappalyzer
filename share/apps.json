@@ -2122,6 +2122,11 @@
 			"script": "zkau/",
 			"html": "<!-- ZK [\\.\\d\\s]+-->",
 			"implies": "Java"
+		},
+		"ZURB Foundation": {
+			"cats": [ 18 ],
+			"html": "<link[^>]+foundation[^>\"]+css",
+			"env": "^Twipsy$\\;confidence:50"
 		}
 	}
 }

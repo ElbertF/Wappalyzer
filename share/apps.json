@@ -569,8 +569,9 @@
 		},
 		"eSyndiCat": {
 			"cats": [ 1 ],
-			"headers": { "X-Drectory-Script": "^eSyndiCat" },
-			"implies": [ "PHP" ]
+			"headers": { "X-Directory-Script": "^eSyndiCat" },
+			"implies": [ "PHP" ],
+			"meta": { "generator": "^eSyndiCat" }
 		},
 		"Exhibit": {
 			"cats": [ 25 ],
@@ -1681,7 +1682,8 @@
 		"Subrion": {
 			"cats": [ 1 ],
 			"headers": { "X-Powered-CMS": "Subrion CMS" },
-			"implies": [ "PHP" ]
+			"implies": [ "PHP" ],
+			"meta": { "generator": "^Subrion" }
 		},
 		"Supersized": {
 			"cats": [ 7, 25 ],

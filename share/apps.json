@@ -571,7 +571,7 @@
 			"cats": [ 1 ],
 			"headers": { "X-Directory-Script": "^eSyndiCat" },
 			"implies": [ "PHP" ],
-			"meta": { "generator": "^eSyndiCat" }
+			"meta": { "generator": "^eSyndiCat " }
 		},
 		"Exhibit": {
 			"cats": [ 25 ],
@@ -1683,7 +1683,7 @@
 			"cats": [ 1 ],
 			"headers": { "X-Powered-CMS": "Subrion CMS" },
 			"implies": [ "PHP" ],
-			"meta": { "generator": "^Subrion" }
+			"meta": { "generator": "^Subrion " }
 		},
 		"Supersized": {
 			"cats": [ 7, 25 ],

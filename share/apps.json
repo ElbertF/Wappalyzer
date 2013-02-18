@@ -850,6 +850,10 @@
 			"meta": { "generator": "InstantCMS" },
 			"headers": { "Set-Cookie": "InstantCMS\\[logdate\\]=" }
 		},
+		"IntenseDebate": {
+			"cats": [ 15 ],
+			"html": "<script[^>]+src=\"http://www.intensedebate.com\""
+		},
 		"Intershop": {
 			"cats": [ 6 ],
 			"script": "is-bin|INTERSHOP"

@@ -238,7 +238,7 @@
 								image = d.createElement('image');
 
 								image.setAttribute('src',         'chrome://wappalyzer/skin/images/icons/' + app + '.png');
-								image.setAttribute('tooltiptext', app + ' - ' + categories.join(', '));
+								image.setAttribute('tooltiptext', app + ( version ? ' ' + version : '' ) + ' - ' + categories.join(', '));
 
 								container.appendChild(image);
 							}

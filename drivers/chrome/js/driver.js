@@ -5,7 +5,10 @@
 (function() {
 	if ( wappalyzer == null ) { return; }
 
-	var w = wappalyzer, tab, tabCache = {};
+	var w = wappalyzer,
+		firstRun = false,
+		upgraded = false,
+		tab, tabCache = {};
 
 	w.driver = {
 		/**

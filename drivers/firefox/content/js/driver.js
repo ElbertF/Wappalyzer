@@ -7,7 +7,10 @@
 
 	if ( wappalyzer == null ) return;
 
-	var w = wappalyzer, prefs, strings;
+	var w = wappalyzer,
+		firstRun = false,
+		upgraded = false,
+		prefs, strings;
 
 	const
 		d  = document,
@@ -30,7 +33,7 @@
 		/**
 		 * Initialize
 		 */
-		init: function(callback) {
+		init: function() {
 			var handler = function() {
 				window.removeEventListener('load', handler, false);
 
@@ -68,9 +71,9 @@
 					addon.version = addon.version;
 
 					if ( !prefs.getCharPref('version') ) {
-						w.config.firstRun = true;
+						firstRun = true;
 					} else if ( prefs.getCharPref('version') != addon.version ) {
-						w.config.upgraded = true;
+						upgraded = true;
 					}
 
 					prefs.setCharPref('version', addon.version);
@@ -109,7 +112,17 @@
 
 					gBrowser.tabContainer.addEventListener('TabSelect', w.driver.displayApps, false);
 
-					callback();
+					if ( firstRun ) {
+						driver('goToURL', { url: w.config.websiteURL + 'installed', medium: 'install' });
+
+						firstRun = false;
+					}
+
+					if ( upgraded ) {
+						driver('goToURL', { url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+
+						upgraded = false;
+					}
 				});
 			};
 

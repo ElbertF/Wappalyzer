@@ -18,7 +18,7 @@
 		/**
 		 * Initialize
 		 */
-		init: function(callback) {
+		init: function() {
 			w.log('init');
 
 			chrome.browserAction.setBadgeBackgroundColor({ color: [255, 102, 0, 255] });
@@ -44,14 +44,14 @@
 				var version = chrome.app.getDetails().version;
 
 				if ( localStorage['version'] == null ) {
-					w.config.firstRun = true;
+					firstRun = true;
 
 					// Set defaults
 					for ( option in defaults ) {
 						localStorage[option] = defaults[option];
 					}
 				} else if ( version !== localStorage['version'] && localStorage['upgradeMessage'] ) {
-					w.config.upgraded = true;
+					upgraded = true;
 				}
 
 				localStorage['version'] = version;
@@ -112,7 +112,14 @@
 				tabCache[tabId] = null;
 			});
 
-			callback();
+			if ( firstRun ) {
+				driver('goToURL', { url: w.config.websiteURL + 'installed', medium: 'install' });
+					firstRun = false;
+				}
+			if ( upgraded ) {
+				driver('goToURL', { url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
+				upgraded = false;
+			}
 		},
 
 		goToURL: function(args) {

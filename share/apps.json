@@ -201,7 +201,7 @@
 			"cats": [ 13 ],
 			"env": "^jira$",
 			"script": "\/jira\/s\/",
-			"url": "\/secure\/Dashboard.jspa",
+			"url": "\/secure\/Dashboard\\.jspa",
 			"html": "Powered by\\s+<a href=[^>]+atlassian\\.com\/(software\/jira|jira-bug-tracking\/)[^>]+>Atlassian\\s+JIRA([^v]*v(ersion: )?(\\d+\\.\\d+(\\.\\d+)?))?\\;version:\\4",
 			"implies": "Java"
 		},
@@ -341,7 +341,7 @@
 			"website": "chartbeat.com",
 			"cats": [ 10 ],
 			"html": "function loadChartbeat\\(\\) {",
-			"script": "chartbeat.js"
+			"script": "chartbeat\\.js"
 		},
 		"Cherokee": {
 			"website": "www.cherokee-project.com",
@@ -563,7 +563,7 @@
 			"website": "demandware.com",
 			"cats": [ 6 ],
 			"headers": { "Server": "Demandware eCommerce Server" },
-			"html": "<[^>]+demandware.edgesuite",
+			"html": "<[^>]+demandware\\.edgesuite",
 			"env": "^dwAnalytics$"
 		},
 		"DHTMLX": {
@@ -687,7 +687,7 @@
 		"E-Merchant": {
 			"website": "e-merchant.com",
 			"cats": [ 6 ],
-			"script": "cdn.e-merchant.com"
+			"script": "cdn\\.e-merchant\\.com"
 		},
 		"Enyo": {
 			"website": "enyojs.com",
@@ -867,7 +867,7 @@
 		"Google Font API": {
 			"website": "code.google.com\/apis\/webfonts",
 			"cats": [ 17 ],
-			"script": "googleapis.com\/.+webfont",
+			"script": "googleapis\\.com\/.+webfont",
 			"html": "<link[^>]* href=[^>]+fonts\\.googleapis\\.com",
 			"env": "^WebFonts$"
 		},
@@ -884,7 +884,7 @@
 		"Google Sites": {
 			"website": "sites.google.com",
 			"cats": [ 1 ],
-			"url": "sites.google.com"
+			"url": "sites\\.google\\.com"
 		},
 		"Google Tag Manager": {
 			"website": "www.google.com\/tagmanager",
@@ -906,7 +906,7 @@
 			"website": "graffiticms.codeplex.com",
 			"cats": [ 1 ],
 			"meta": { "generator": "Graffiti CMS ([^\"]+)\\;version:\\1" },
-			"script": "\/graffiti.js",
+			"script": "\/graffiti\\.js",
 			"headers": { "Set-Cookie": "graffitibot[^;]=" }
 		},
 		"Gravatar": {
@@ -1476,7 +1476,7 @@
 		"Moogo": {
 			"website": "www.moogo.com",
 			"cats": [ 1 ],
-			"script": "kotisivukone.js"
+			"script": "kotisivukone\\.js"
 		},
 		"MooTools": {
 			"website": "mootools.net",
@@ -1695,7 +1695,7 @@
 			"website": "phpbb.com",
 			"cats": [ 2 ],
 			"meta": { "copyright": "phpBB Group" },
-			"html": "(Powered by <a[^>]+phpbb|<a[^>]+phpbb[^>]+class=.copyright|\tphpBB style name|<[^>]+styles\/(sub|pro)silver\/theme|<img[^>]+i_icon_mini|<table class=\"forumline)",
+			"html": "(Powered by <a[^>]+phpbb|<a[^>]+phpbb[^>]+class=\\.copyright|\tphpBB style name|<[^>]+styles\/(sub|pro)silver\/theme|<img[^>]+i_icon_mini|<table class=\"forumline)",
 			"env": "^(style_cookie_settings|phpbb_)",
 			"headers": { "Set-Cookie": "^phpbb" },
 			"implies": "PHP"

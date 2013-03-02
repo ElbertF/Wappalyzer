@@ -234,7 +234,7 @@
 		"Bigcommerce": {
 			"website": "www.bigcommerce.com",
 			"cats": [ 6 ],
-			"url": ".+\\.mybigcommerce\\.com",
+			"url": "mybigcommerce\\.com",
 			"html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com\/v",
 			"script": "cdn\\d+\\.bigcommerce\\.com\/v",
 			"env": "^compareProducts$"
@@ -248,8 +248,8 @@
 		"Bigware": {
 			"website": "bigware.de",
 			"cats": [ 6 ],
-			"html": "(Diese <a href=.+bigware\\.de|<a href=[^>]+\/main_bigware_\\d+\\.php)",
-			"url": "(\\?|&)bigWAdminID=[a-z\\d]+(&|$)",
+			"html": "(Diese <a href=[^>]+bigware\\.de|<a href=[^>]+\/main_bigware_\\d+\\.php)",
+			"url": "(\\?|&)bigWAdminID=",
 			"headers": { "Set-Cookie": "(bigwareCsid|bigWAdminID)" },
 			"implies": "PHP"
 		},
@@ -268,7 +268,7 @@
 			"website": "www.blogger.com",
 			"cats": [ 11 ],
 			"meta": { "generator": "blogger" },
-			"url": "^(www.)?.+\\.blogspot\\.com"
+			"url": "blogspot\\.com"
 		},
 		"BrowserCMS": {
 			"website": "browsercms.org",
@@ -364,7 +364,6 @@
 		"ClickTale": {
 			"website": "www.clicktale.com",
 			"cats": [ 10 ],
-			"html": "if\\(typeof ClickTale(Tag)*==\"function\"\\)",
 			"env": "^ClickTale"
 		},
 		"Clicky": {
@@ -411,7 +410,7 @@
 		"comScore": {
 			"website": "comscore.com",
 			"cats": [ 10 ],
-			"html": "<i{1}frame[^>]* (id=\"comscore\"|scr=[^>]+comscore)",
+			"html": "<iframe[^>]* (id=\"comscore\"|scr=[^>]+comscore)",
 			"env": "^_?COMSCORE$"
 		},
 		"Concrete5": {
@@ -431,7 +430,7 @@
 		"Contao": {
 			"website": "contao.org",
 			"cats": [ 1 ],
-			"html": "(<!--.+powered by (TYPOlight|Contao)-->|<link[^>]+(typolight|contao)\\.css)",
+			"html": "(<!--[^>]+powered by (TYPOlight|Contao)-->|<link[^>]+(typolight|contao)\\.css)",
 			"implies": "PHP"
 		},
 		"Contenido": {
@@ -521,7 +520,7 @@
 		"d3": {
 			"website": "mbostock.github.com\/d3",
 			"cats": [ 25 ],
-			"script": "d3(\\.v2)(\\.min)?\\.js"
+			"script": "d3(\\.v2)?(\\.min)?\\.js"
 		},
 		"Dancer": {
 			"website": "perldancer.org",
@@ -535,11 +534,6 @@
 			"headers": { "X-Powered-By": "CMS Danneo ([\\d.]+)\\;version:\\1" },
 			"meta": { "generator": "Danneo CMS ([\\d.]+)\\;version:\\1" },
 			"implies": [ "Apache", "PHP" ]
-		},
-		"dashCommerce": {
-			"website": "dashcommerce.org",
-			"cats": [ 6 ],
-			"implies": [ "Microsoft ASP.NET", "IIS", "Windows Server" ]
 		},
 		"DataLife Engine": {
 			"website": "dle-news.ru",
@@ -630,7 +624,7 @@
 			"website": "dotnetnuke.com",
 			"cats": [ 1 ],
 			"meta": { "generator": "DotNetNuke" },
-			"headers": { "X-Compressed-By": "DotNetNuke", "Set-Cookie": "DotNetNukeAnonymous=.+" },
+			"headers": { "X-Compressed-By": "DotNetNuke", "Set-Cookie": "DotNetNukeAnonymous=" },
 			"html": "<!-- by DotNetNuke Corporation",
 			"env": "^DotNetNuke$",
 			"implies": "Microsoft ASP.NET"
@@ -829,13 +823,12 @@
 			"website": "get.gaug.es",
 			"cats": [ 10 ],
 			"headers": { "Set-Cookie": "_gauges_[^;]+=" },
-			"html": "t\\.src = '\/\/secure\\.gaug\\.es\/track\\.js",
 			"env": "^_gauges$"
 		},
 		"Gentoo": {
 			"website": "www.gentoo.org",
 			"cats": [ 28 ],
-			"headers": { "X-Powered-By": "-?gentoo" }
+			"headers": { "X-Powered-By": "gentoo" }
 		},
 		"Get Satisfaction": {
 			"website": "getsatisfaction.com",
@@ -924,7 +917,6 @@
 		"Gravity Insights": {
 			"website": "insights.gravity.com",
 			"cats": [ 10 ],
-			"html": "gravityInsightsParams\\.site_guid = '",
 			"env": "^GravityInsights$"
 		},
 		"G-WAN": {
@@ -999,7 +991,8 @@
 		"iCongo": {
 			"website": "hybris.com\/icongo",
 			"cats": [ 6 ],
-			"html": "<meta[^>]+\"iCongo", "implies": "Adobe ColdFusion" },
+			"meta":	"iCongo",
+			"implies": "Adobe ColdFusion" },
 		"IIS": {
 			"website": "www.iis.net",
 			"cats": [ 22 ],
@@ -1125,8 +1118,7 @@
 		"jqPlot": {
 			"website": "www.jqplot.com",
 			"cats": [ 25 ],
-			"script": "jqplot.*\\.js",
-			"env": "^jQuery.jqplot$"
+			"script": "jqplot.*\\.js"
 		},
 		"jQTouch": {
 			"website": "jqtouch.com",
@@ -1188,7 +1180,7 @@
 			"website": "www.kendoui.com",
 			"cats": [ 18 ],
 			"env": "^kendo$",
-			"html": "<link[^>]*\\s+href=['\"]?[^'\"\\s>]*styles\/kendo\\.common(\\.min)?\\.css['\"\\s\/>]",
+			"html": "<link[^>]*\\s+href=[^>]*styles\/kendo\\.common(\\.min)?\\.css[^>]*\/>",
 			"implies": "jQuery"
 		},
 		"Kentico CMS": {
@@ -1287,7 +1279,7 @@
 		"LiveJournal": {
 			"website": "www.livejournal.com",
 			"cats": [ 11 ],
-			"url": "^(www.)?.+\\.livejournal\\.com"
+			"url": "livejournal\\.com"
 		},
 		"Lockerz Share": {
 			"website": "share.lockerz.com",
@@ -1298,7 +1290,7 @@
 		"Locomotive": {
 			"website": "www.locomotivecms.com",
 			"cats": [ 1 ],
-			"html": "<link[^>]*\/sites\/[a-zA-Z0-9]{24}\/theme\/stylesheets\/.*>",
+			"html": "<link[^>]*\/sites\/[a-z0-9]{24}\/theme\/stylesheets\/.*>",
 			"implies": [ "Ruby on Rails", "MongoDB" ]
 		},
 		"Lotus Domino": {
@@ -1476,7 +1468,7 @@
 		"Moodle": {
 			"website": "moodle.org",
 			"cats": [ 21 ],
-			"html": "(var moodleConfigFn = function\\(me\\)|<img[^>]+moodlelogo)",
+			"html": "<img[^>]+moodlelogo",
 			"headers": { "Set-Cookie": "MoodleSession" },
 			"env": "^moodle",
 			"implies": "PHP"
@@ -1536,7 +1528,6 @@
 		"New Relic": {
 			"website": "newrelic.com",
 			"cats": [ 10 ],
-			"html": "(<script[^>]+>(var NREUMQ=NREUMQ|if \\(!NREUMQ\\.f))",
 			"env": "^NREUM"
 		},
 		"Nginx": {
@@ -1582,7 +1573,9 @@
 		"openEngine": {
 			"website": "openengine.de\/html\/pages\/de\/",
 			"cats": [ 1 ],
-			"html": "<meta[^>]+openEngine" }, "OpenGrok": {
+			"meta": "openEngine"
+			},
+		"OpenGrok": {
 			"website": "hub.opensolaris.org\/bin\/view\/Project+opengrok\/WebHome",
 			"cats": [ 19 ],
 			"headers": { "Set-Cookie": "OpenGrok" },
@@ -1628,7 +1621,7 @@
 			"headers": { "Server": "Oracle(-| )Application(-| )Server((-| )(\\d+[a-z]?))?\\;version:\\5" }
 		},
 		"Oracle Recommendations On Demand": {
-			"website": "www.oracle.com\/us\/products\/applications\/commerce\/recommendations-on-demand\/index.html?",
+			"website": "www.oracle.com\/us\/products\/applications\/commerce\/recommendations-on-demand\/index.html",
 			"cats": [ 10 ],
 			"script": "atgsvcs.+atgsvcs\\.js"
 		},
@@ -1646,14 +1639,13 @@
 		"Outbrain": {
 			"website": "outbrain.com",
 			"cats": [ 5 ],
-			"html": "var OB_langJS = '.+widgets\\.outbrain\\.com\/lang_",
 			"script": "widgets\\.outbrain\\.com\/outbrain\\.js",
-			"env": "^OutbrainPermaLink$"
+			"env": "^(OutbrainPermaLink|OB_releaseVer)$"
 		},
 		"OXID eShop": {
 			"website": "oxid-esales.com",
 			"cats": [ 6 ],
-			"html": "<!--.*OXID eShop",
+			"html": "<!--[^-]*OXID eShop",
 			"env": "^ox(TopMenu|ModalPopup|LoginBox|InputValidator)"
 		},
 		"PANSITE": {
@@ -1729,7 +1721,8 @@
 		"phpMyAdmin": {
 			"website": "www.phpmyadmin.net",
 			"cats": [ 3 ],
-			"html": "(var pma_absolute_uri = '|PMA_sendHeaderLocation\\(|<title>phpMyAdmin<\/title>)",
+			"html": "(PMA_sendHeaderLocation\\(|<title>phpMyAdmin<\/title>)",
+			"env":	"pma_absolute_uri",
 			"implies": [ "PHP", "MySQL" ]
 		},
 		"PHP-Nuke": {
@@ -1760,7 +1753,6 @@
 		"Piwik": {
 			"website": "piwik.org",
 			"cats": [ 10 ],
-			"html": "var piwikTracker = Piwik\\.getTracker\\(",
 			"env": "^Piwik$"
 		},
 		"Plentymarkets": {
@@ -1806,7 +1798,7 @@
 		"Powergap": {
 			"website": "powergap.de",
 			"cats": [ 6 ],
-			"html": "(s\\d\\d)\\.php\\?shopid=\\1"
+			"html": "s\\d\\d\\.php\\?shopid=\\1"
 		},
 		"Prestashop": {
 			"website": "www.prestashop.com",
@@ -1888,7 +1880,7 @@
 		"Reddit": {
 			"website": "code.reddit.com",
 			"cats": [ 2 ],
-			"html": "(<script[^>]+>var reddit = {|<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)",
+			"html": "(<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)",
 			"url": "^(www\\.)?reddit\\.com",
 			"env": "^reddit$",
 			"implies": "Python"
@@ -1903,7 +1895,6 @@
 		"Reinvigorate": {
 			"website": "www.reinvigorate.net",
 			"cats": [ 10 ],
-			"html": "reinvigorate\\.track\\(\"",
 			"env": "^reinvigorate$"
 		},
 		"RequireJS": {
@@ -1921,7 +1912,7 @@
 		"RiteCMS": {
 			"website": "ritecms.com",
 			"cats": [ 1 ],
-			"meta": { "generator": "^RiteCMS(?: ([0-9.ab]+))?\\;version:\\1" },
+			"meta": { "generator": "^RiteCMS( (.+))?\\;version:\\2" },
 			"implies": [ "PHP", "SQLite\\;confidence:50" ]
 		},
 		"RoundCube": {
@@ -2038,7 +2029,6 @@
 		"SiteCatalyst": {
 			"website": "www.omniture.com\/en\/products\/online_analytics\/sitecatalyst",
 			"cats": [ 10 ],
-			"html": "var s_code=s\\.t\\(\\);if\\(s_code\\)document\\.write\\(s_code\\)",
 			"env": "^s_account$"
 		},
 		"SiteEdit": {
@@ -2054,7 +2044,6 @@
 		"SMF": {
 			"website": "www.simplemachines.org",
 			"cats": [ 2 ],
-			"html": "<script [^>]+\\s+var smf_",
 			"env": "^smf_",
 			"implies": "PHP"
 		},
@@ -2107,7 +2096,7 @@
 		"Spree": {
 			"website": "spreecommerce.com",
 			"cats": [ 6 ],
-			"html": "<link[^>]*\/assets\/store\/all-[a-zA-Z0-9]{32}\\.css.+>",
+			"html": "<link[^>]*\/assets\/store\/all-[a-z0-9]{32}\\.css[^>]+>",
 			"implies": "Ruby on Rails"
 		},
 		"SQL Buddy": {
@@ -2122,7 +2111,6 @@
 		"Squarespace": {
 			"website": "www.squarespace.com",
 			"cats": [ 1 ],
-			"html": "Squarespace\\.Constants\\.CURRENT_MODULE_ID",
 			"headers": { "X-ServedBy": "squarespace" },
 			"env": "^Squarespace"
 		},
@@ -2265,7 +2253,7 @@
 			"website": "www.typepad.com",
 			"cats": [ 11 ],
 			"meta": { "generator": "typepad" },
-			"url": "^(www.)?.+\\.typepad\\.com"
+			"url": "typepad\\.com"
 		},
 		"TYPO3": {
 			"website": "typo3.com",
@@ -2308,7 +2296,6 @@
 		"UserRules": {
 			"website": "www.userrules.com",
 			"cats": [ 13 ],
-			"html": "var _usrp =",
 			"env": "^_usrp$"
 		},
 		"UserVoice": {
@@ -2350,7 +2337,7 @@
 		"Vignette": {
 			"website": "www.vignette.com",
 			"cats": [ 1 ],
-			"html": "<[^>]+?=\"(vgn-ext|vgnext)"
+			"html": "<[^>]+=\"vgn-?ext"
 		},
 		"Vimeo": {
 			"website": "vimeo.com",
@@ -2381,7 +2368,7 @@
 		"Vox": {
 			"website": "www.vox.com",
 			"cats": [ 11 ],
-			"url": "^(www.)?.+\\.vox\\.com"
+			"url": "vox\\.com"
 		},
 		"VP-ASP": {
 			"website": "www.vpasp.com",
@@ -2441,7 +2428,7 @@
 		"Webtrekk": {
 			"website": "www.webtrekk.com",
 			"cats": [ 10 ],
-			"html": "var webtrekk = new Object"
+			"env": "^webtrekk"
 		},
 		"Webtrends": {
 			"website": "worldwide.webtrends.com",
@@ -2549,7 +2536,7 @@
 		"xui": {
 			"website": "xuijs.com",
 			"cats": [ 26, 12 ],
-			"script": "[^a-zA-Z]xui.*\\.js",
+			"script": "[^a-z]xui.*\\.js",
 			"env": "^xui$"
 		},
 		"YaBB": {

@@ -505,6 +505,12 @@
 			"env": "^_cfEmails$",
 			"implies": "CFML"
 		},
+		"ContentBox": {
+			"website": "www.gocontentbox.org",
+			"cats": [ 1, 11 ],
+			"meta": { "generator": "ContentBox powered by ColdBox" },
+			"implies": "Adobe ColdFusion"
+		},
 		"CubeCart": {
 			"website": "www.cubecart.com",
 			"cats": [ 6 ],
@@ -1531,6 +1537,12 @@
 		"MySQL": {
 			"website": "mysql.com",
 			"cats": [ 34 ]
+		},
+		"Mura CMS": {
+			"website": "www.getmura.com",
+			"cats": [ 1, 11 ],
+			"meta": { "generator": "Mura CMS ([\\d\\.]+)" },
+			"implies": "Adobe ColdFusion"
 		},
 		"Nedstat": {
 			"website": "www.nedstat.com",

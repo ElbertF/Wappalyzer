@@ -445,6 +445,12 @@
 			"meta": { "generator": "Contensis CMS Version ([\\d.]+)\\;version:\\1" },
 			"implies": [ "Java", "CFML" ]
 		},
+		"ContentBox": {
+			"website": "www.gocontentbox.org",
+			"cats": [ 1, 11 ],
+			"meta": { "generator": "ContentBox powered by ColdBox" },
+			"implies": "Adobe ColdFusion"
+		},
 		"ConversionLab": {
 			"website": "www.trackset.it/conversionlab",
 			"cats": [ 10 ],
@@ -1489,6 +1495,12 @@
 			"website": "movabletype.org",
 			"cats": [ 1 ],
 			"meta": { "generator": "Movable Type" }
+		},
+		"Mura CMS": {
+			"website": "www.getmura.com",
+			"cats": [ 1, 11 ],
+			"meta": { "generator": "Mura CMS ([\\d]+)\\;version:\\1" },
+			"implies": "Adobe ColdFusion"
 		},
 		"Mustache": {
 			"website": "mustache.github.com",

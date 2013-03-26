@@ -5,3 +5,4 @@ locale  wappalyzer fr-FR locale/fr-FR/
 skin    wappalyzer classic/1.0 skin/
 
 overlay chrome://browser/content/browser.xul chrome://wappalyzer/content/xul/wappalyzer.xul
+overlay chrome://navigator/content/navigator.xul chrome://wappalyzer/content/xul/wappalyzer.xul

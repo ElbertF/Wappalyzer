@@ -1038,6 +1038,11 @@
 			"cats": [ 15 ],
 			"script": "intensedebate\\.com"
 		},
+		"Intercom": {
+			"website": "intercom.io",
+			"cats": [ 10 ],
+			"script": "api\\.intercom\\.io/api"
+		},
 		"Intershop": {
 			"website": "intershop.com",
 			"cats": [ 6 ],

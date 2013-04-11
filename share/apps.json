@@ -1255,6 +1255,11 @@
 			"headers": { "Set-Cookie": "lep\\d+sessionid=" },
 			"implies": "PHP"
 		},
+		"LESS": {
+			"website": "lesscss.org",
+			"cats": [ 19 ],
+			"html": "<link[^>]+ rel=\"stylesheet/less\""
+		},
 		"Liferay": {
 			"website": "www.liferay.com",
 			"cats": [ 1 ],
@@ -1817,6 +1822,12 @@
 			"website": "powergap.de",
 			"cats": [ 6 ],
 			"html": "s\\d\\d\\.php\\?shopid=\\1"
+		},
+		"Prefix-Free": {
+			"website": "http://leaverou.github.io/prefixfree/",
+			"cats": [ 19 ],
+			"script": "prefixfree\\.js",
+			"env": "^PrefixFree$"
 		},
 		"Prestashop": {
 			"website": "www.prestashop.com",

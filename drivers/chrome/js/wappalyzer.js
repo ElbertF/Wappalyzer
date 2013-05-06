@@ -172,15 +172,9 @@ var wappalyzer = (function() {
 
 		config: {
 			environment: 'dev', // dev | live
-
-			version: false,
-
 			websiteURL: 'http://wappalyzer.com/',
 			twitterURL: 'https://twitter.com/Wappalyzer',
 			githubURL:  'https://github.com/ElbertF/Wappalyzer',
-
-			firstRun: false,
-			upgraded: false
 		},
 
 		/**
@@ -214,19 +208,7 @@ var wappalyzer = (function() {
 			}
 
 			// Initialize driver
-			driver('init', function() {
-				if ( w.config.firstRun ) {
-					driver('goToURL', { url: w.config.websiteURL + 'installed', medium: 'install' });
-
-					w.config.firstRun = false;
-				}
-
-				if ( w.config.upgraded ) {
-					driver('goToURL', { url: w.config.websiteURL + 'upgraded', medium: 'upgrade' });
-
-					w.config.upgraded = false;
-				}
-			});
+			driver('init');
 		},
 
 		/**

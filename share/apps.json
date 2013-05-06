@@ -401,6 +401,11 @@
 			"headers": { "Set-Cookie": "(?:exp_last_activity|exp_tracker|ci_session)" },
 			"implies": "PHP"
 		},
+		"CodeMirror": {
+			"website": "codemirror.net",
+			"cats": [ 19 ],
+			"env": "^CodeMirror$"
+		},	
 		"Commerce Server": {
 			"website": "commerceserver.net",
 			"cats": [ 6 ],

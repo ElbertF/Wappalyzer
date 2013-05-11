@@ -405,7 +405,7 @@
 			"website": "codemirror.net",
 			"cats": [ 19 ],
 			"env": "^CodeMirror$"
-		},	
+		},
 		"Commerce Server": {
 			"website": "commerceserver.net",
 			"cats": [ 6 ],
@@ -1485,7 +1485,7 @@
 		},
 		"MongoDB": {
 			"website": "www.mongodb.org",
-			"cats": [ 24 ]
+			"cats": [ 34 ]
 		},
 		"Mono": {
 			"website": "mono-project.com",

@@ -2651,6 +2651,11 @@
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
 			"html": "<link[^>]+foundation[^>\"]+css"
+		},
+		"LiveStreet CMS": {
+			"website": "livestreetcms.com",
+			"cats": [ 1 ],
+			"headers": { "X-Powered-By": "LiveStreet CMS" }
 		}
 	}
 }

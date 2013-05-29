@@ -16,6 +16,15 @@
 			</Description>
 		</em:targetApplication>
 
+		<em:targetApplication>
+			<!-- Seamonkey -->
+			<Description>
+				<em:id>{92650c4d-4b8e-4d2a-b7eb-24ecf4f6b63a}</em:id>
+				<em:minVersion>2.0</em:minVersion>
+				<em:maxVersion>3.*</em:maxVersion>
+			</Description>
+		</em:targetApplication>
+
 		<em:optionsURL>chrome://wappalyzer/content/xul/preferences.xul</em:optionsURL>
 		<em:optionsType>3</em:optionsType>
 

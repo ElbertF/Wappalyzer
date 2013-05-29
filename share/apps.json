@@ -682,7 +682,8 @@
 		"EdgeCast": {
 			"website": "www.edgecast.com",
 			"cats": [ 31 ],
-			"headers": { "Server": "^ECS" }
+			"headers": { "Server": "^EC(?:S|Acc)" },
+			"url": "https?://(?:[^/]+\\.)?edgecastcdn\\.net/"
 		},
 		"Eloqua": {
 			"website": "eloqua.com",

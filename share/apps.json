@@ -676,7 +676,7 @@
 			"website": "e107.org",
 			"cats": [ 1 ],
 			"script": "e107\\.js",
-			"headers": { "Set-Cookie": "e107_td[^;]+=" },
+			"headers": { "Set-Cookie": "e107_tz[^;]+=", "X-Powered-By": "e107" },
 			"implies": "PHP"
 		},
 		"EdgeCast": {

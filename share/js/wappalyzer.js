@@ -127,7 +127,7 @@ var wappalyzer = (function() {
 				this.slowest.type     = type;
 				this.slowest.regex    = regex;
 			}
-
+			this.regexCount++;
 			this.lastTime = new Date().getTime();
 
 			this.timedOut = this.getDuration() > 1000;
@@ -286,11 +286,11 @@ var wappalyzer = (function() {
 					switch ( type ) {
 						case 'url':
 							parse(w.apps[app][type]).map(function(pattern) {
-								profiler.checkPoint(app, type, pattern.regex);
 
 								if ( pattern.regex.test(url) ) {
 									apps[app].setDetected(pattern, type, url);
 								}
+							profiler.checkPoint(app, type, pattern.regex);
 							});
 
 							break;
@@ -300,11 +300,11 @@ var wappalyzer = (function() {
 							}
 
 							parse(w.apps[app][type]).map(function(pattern) {
-								profiler.checkPoint(app, type, pattern.regex);
 
 								if ( pattern.regex.test(data[type]) ) {
 									apps[app].setDetected(pattern, type, data[type]);
 								}
+							profiler.checkPoint(app, type, pattern.regex);
 							});
 
 							break;
@@ -316,15 +316,13 @@ var wappalyzer = (function() {
 							regexScript = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
 
 							parse(w.apps[app][type]).map(function(pattern) {
-								profiler.checkPoint(app, type, pattern.regex);
 
 								while ( match = regexScript.exec(data.html) ) {
-									profiler.checkPoint(app, type, pattern.regex);
-
 									if ( pattern.regex.test(match[2]) ) {
 										apps[app].setDetected(pattern, type, match[2]);
 									}
 								}
+							profiler.checkPoint(app, type, pattern.regex);
 							});
 
 							break;
@@ -343,11 +341,11 @@ var wappalyzer = (function() {
 										content = match.toString().match(/content=("|')([^"']+)("|')/i);
 
 										parse(w.apps[app].meta[meta]).map(function(pattern) {
-											profiler.checkPoint(app, type, pattern.regex);
 
 											if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
 												apps[app].setDetected(pattern, type, content[2], meta);
 											}
+										profiler.checkPoint(app, type, pattern.regex);
 										});
 									}
 								}
@@ -361,11 +359,11 @@ var wappalyzer = (function() {
 
 							for ( header in w.apps[app].headers ) {
 								parse(w.apps[app][type][header]).map(function(pattern) {
-									profiler.checkPoint(app, type, pattern.regex);
 
 									if ( typeof data[type][header] === 'string' && pattern.regex.test(data[type][header]) ) {
 										apps[app].setDetected(pattern, type, data[type][header], header);
 									}
+									profiler.checkPoint(app, type, pattern.regex);
 								});
 							}
 
@@ -377,12 +375,12 @@ var wappalyzer = (function() {
 
 							parse(w.apps[app][type]).map(function(pattern) {
 								for ( i in data[type] ) {
-									profiler.checkPoint(app, type, pattern.regex);
 
 									if ( pattern.regex.test(data[type][i]) ) {
 										apps[app].setDetected(pattern, type, data[type][i]);
 									}
 								}
+							profiler.checkPoint(app, type, pattern.regex);
 							});
 
 							break;

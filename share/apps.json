@@ -1142,7 +1142,7 @@
 		"iCongo": {
 			"website": "hybris.com/icongo",
 			"cats": [ 6 ],
-			"meta":	"iCongo",
+			"meta": { "iCongo": ".*" },
 			"implies": "Adobe ColdFusion"
 		},
 		"IIS": {
@@ -1816,7 +1816,7 @@
 		"openEngine": {
 			"website": "openengine.de/html/pages/de/",
 			"cats": [ 1 ],
-			"meta": "openEngine"
+			"meta": { "openEngine": ".*" }
 		},
 		"OpenGrok": {
 			"website": "hub.opensolaris.org/bin/view/Project+opengrok/WebHome",

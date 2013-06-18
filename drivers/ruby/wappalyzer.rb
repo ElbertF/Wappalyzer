@@ -4,6 +4,8 @@ require 'net/http'
 require 'v8'
 require 'json'
 
+Encoding.default_external = Encoding::UTF_8
+
 class Wappalyzer
   def initialize
     @realdir = File.dirname(File.realpath(__FILE__))

@@ -39,7 +39,7 @@
 		"37": "network-devices",
 		"38": "media-servers",
 		"39": "webcams",
-		"40": "printers"		
+		"40": "printers"
 	},
 	"apps": {
 		"1C-Bitrix": {
@@ -68,10 +68,10 @@
 			"script": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)"
 		},
 		"3DM": {
-			"website": "www.3ware.com",		
+			"website": "www.3ware.com",
 			"cats": [ 19 ],
 			"html": "<title>3ware 3DM([\\d\\.]+)?\\;version:\\1",
-			"implies": "3ware"			
+			"implies": "3ware"
 		},
 		"3ware": {
 			"website": "www.3ware.com",
@@ -341,7 +341,7 @@
 		},
 		"Canon": {
 			"website": "www.canon.com",
-			"cats": [ 40 ]		
+			"cats": [ 40 ]
 		},
 		"CakePHP": {
 			"website": "cakephp.org",
@@ -407,7 +407,7 @@
 			"website": "www.cherrypy.org",
 			"cats": [ 18, 22 ],
 			"headers": { "Server": "CherryPy\\/?([\\d\\.]+)?\\;version:\\1" },
-			"implies": "Python"		
+			"implies": "Python"
 		},
 		"CKEditor": {
 			"website": "ckeditor.com",
@@ -419,7 +419,7 @@
 			"website": "www.cloudera.com",
 			"cats": [ 34 ],
 			"headers": { "Server": "cloudera" }
-		},		
+		},
 		"ClickHeat": {
 			"website": "www.labsmedia.com/clickheat/index.html",
 			"cats": [ 10 ],
@@ -430,7 +430,7 @@
 		"ClickTale": {
 			"website": "www.clicktale.com",
 			"cats": [ 10 ],
-			"html": "if\\(typeof ClickTale(Tag)*==\\\"function\\\"\\)",			
+			"html": "if\\(typeof ClickTale(Tag)*==\\\"function\\\"\\)",
 			"env": "^ClickTale"
 		},
 		"Clicky": {
@@ -655,7 +655,7 @@
 		},
 		"Dell": {
 			"website": "dell.com",
-			"cats": [ 40 ]		
+			"cats": [ 40 ]
 		},
 		"Demandware": {
 			"website": "demandware.com",
@@ -781,7 +781,7 @@
 			"website": "???",
 			"cats": [ 22 ],
 			"headers": { "Server": "\\beHTTP( v?([\\d\\.]+))?\\;version:\\2" },
-			"implies": [ "HP ProCurve"]			
+			"implies": [ "HP ProCurve"]
 		},
 		"ELOG": {
 			"website": "midas.psi.ch/elog",
@@ -907,7 +907,7 @@
 		"FlashCom": {
 			"website": "???",
 			"cats": [ 22 ],
-			"headers": { "Server": "FlashCom\\/?([\\d\\.]+)?\\;version:\\1" }			
+			"headers": { "Server": "FlashCom\\/?([\\d\\.]+)?\\;version:\\1" }
 		},
 		"FlexCMP": {
 			"website": "http://www.flexcmp.com/cms/home",
@@ -1054,7 +1054,7 @@
 		"Grandstream": {
 			"website": "www.grandstream.com",
 			"cats": [ 22, 39 ],
-			"headers": { "Server": "Grandstream\\/?([\\d\\.]+)?\\;version:\\1" }			
+			"headers": { "Server": "Grandstream\\/?([\\d\\.]+)?\\;version:\\1" }
 		},
 		"Gravatar": {
 			"website": "gravatar.com",
@@ -1097,7 +1097,7 @@
 		"Highstock": {
 			"website": "highcharts.com/products/highstock",
 			"cats": [ 25 ],
-			"script": "highstock(\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\2"			
+			"script": "highstock(\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\2"
 		},
 		"Hogan.js": {
 			"website": "twitter.github.com/hogan.js",
@@ -1112,7 +1112,7 @@
 		},
 		"HP ProCurve": {
 			"website": "hp.com/networking",
-			"cats": [ 37 ]		
+			"cats": [ 37 ]
 		},
 		"HubSpot": {
 			"website": "hubspot.com",
@@ -1180,9 +1180,9 @@
 		},
 		"Indico": {
 			"website": "indico-software.org",
-			"cats": [ 1 ],					
+			"cats": [ 1 ],
 			"headers": { "Set-cookie": "MAKACSESSION" },
-			"html": "Powered by\\s+(CERN )?<a href=\"http://(cdsware.cern.ch/indico/|indico-software.org|cern.ch/indico)\">(CDS )?Indico( [\\d\\.]+)?\\;version:\\4"			
+			"html": "Powered by\\s+(CERN )?<a href=\"http://(cdsware.cern.ch/indico/|indico-software.org|cern.ch/indico)\">(CDS )?Indico( [\\d\\.]+)?\\;version:\\4"
 		},
 		"InstantCMS": {
 			"website": "www.instantcms.ru",
@@ -1410,7 +1410,7 @@
 			"website": "www.canon.com",
 			"cats": [ 22 ],
 			"headers": { "Server": "KS_HTTP\\/?([\\d\\.]+)?\\;version:\\1" },
-			"implies": [ "Canon"]			
+			"implies": [ "Canon"]
 		},
 		"LabVIEW": {
 			"website": "ni.com/labview",
@@ -1592,9 +1592,9 @@
 		},
 		"MOBOTIX": {
 			"website": "mobotix.com",
-			"cats": [ 39 ],			
+			"cats": [ 39 ],
 			"meta": { "publisher": "MOBOTIX AG\\;confidence:40", "copyright": "MOBOTIX AG\\;confidence:40", "author": "MOBOTIX AG\\;confidence:40" },
-			"url": "control/userimage.html\\;confidence:70"   
+			"url": "control/userimage.html\\;confidence:70"
 		},
 		"MochiKit": {
 			"website": "mochikit.com",
@@ -1620,7 +1620,7 @@
 			"website": "pam.sourceforge.net/mod_auth_pam",
 			"cats": [ 33 ],
 			"headers": { "Server": "mod_auth_pam(/([\\d\\.]+))?\\;version:\\2" },
-			"implies": "Apache"		
+			"implies": "Apache"
 		},
 		"mod_fastcgi": {
 			"website": "www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html",
@@ -1632,13 +1632,13 @@
 			"website": "tomcat.apache.org/tomcat-3.3-doc/mod_jk-howto.html",
 			"cats": [ 33 ],
 			"headers": { "Server": "mod_jk(/([\\d\\.]+))?\\;version:\\2" },
-			"implies": [ "Apache Tomcat", "Apache" ]		
+			"implies": [ "Apache Tomcat", "Apache" ]
 		},
 		"mod_perl": {
 			"website": "perl.apache.org",
 			"cats": [ 33 ],
 			"headers": { "Server": "mod_perl(/([\\d\\.]+))?\\;version:\\2" },
-			"implies": [ "Perl", "Apache" ]		
+			"implies": [ "Perl", "Apache" ]
 		},
 		"mod_python": {
 			"website": "www.modpython.org",
@@ -2249,8 +2249,8 @@
 		"Sentinel License Monitor": {
 			"website": "www.safenet-inc.com/software-monetization/sentinel-rms/",
 			"cats": [ 19 ],
-			"html": "<title>Sentinel (Keys )?License Monitor</title>"		
-		},		
+			"html": "<title>Sentinel (Keys )?License Monitor</title>"
+		},
 		"Seoshop": {
 			"website": "getseoshop.com",
 			"cats": [ 6 ],
@@ -2426,7 +2426,7 @@
 		"SunOS": {
 			"website": "oracle.com/solaris",
 			"cats": [ 28 ],
-			"headers": { "Server": "SunOS( [\\d\\.]+)?\\;version:\\1", "Servlet-engine": "SunOS( [\\d\\.]+)?\\;version:\\1" } 		
+			"headers": { "Server": "SunOS( [\\d\\.]+)?\\;version:\\1", "Servlet-engine": "SunOS( [\\d\\.]+)?\\;version:\\1" }
 		},
 		"Supersized": {
 			"website": "buildinternet.com/project/supersized",
@@ -2530,7 +2530,7 @@
 			"cats": [ 8 ],
 			"headers": { "Set-cookie": "TWIKISID" },
 			"script": "(TWikiJavascripts|twikilib(\\.js|\\.min\\.js))",
-			"html": "This site is powered by the TWiki collaboration platform" 
+			"html": "This site is powered by the TWiki collaboration platform"
 		},
 		"Twilight CMS": {
 			"website": "www.twilightcms.com",
@@ -2794,7 +2794,7 @@
 			"website": "www.wowza.com",
 			"cats": [ 38 ],
 			"html": "<title>Wowza Media Server \\d+ ((\\w+ Edition )?\\d+\\.[\\d\\.]+( build\\d+)?)?\\;version:\\1"
-		},		
+		},
 		"Xajax": {
 			"website": "xajax-project.org",
 			"cats": [ 12 ],

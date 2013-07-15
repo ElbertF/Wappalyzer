@@ -2303,6 +2303,11 @@
 			"cats": [ 17 ],
 			"script": "sifr\\.js"
 		},
+		"Silva": {
+			"website": "silvacms.org",
+			"cats": [ 1 ],
+			"headers": { "X-Powered-By": "SilvaCMS" }
+		},
 		"SilverStripe": {
 			"website": "www.silverstripe.org",
 			"cats": [ 1 ],

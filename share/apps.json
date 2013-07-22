@@ -2076,7 +2076,7 @@
 			"website": "www.prestashop.com",
 			"cats": [ 6 ],
 			"meta": { "generator": "PrestaShop" },
-			"html": "Powered by <a href=\"[^>]+PrestaShop",
+			"html": "Powered by <a\\s+[^>]+>PrestaShop",
 			"implies": "PHP"
 		},
 		"Prototype": {

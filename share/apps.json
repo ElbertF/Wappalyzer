@@ -1457,6 +1457,12 @@
 			"env": "^Liferay$",
 			"headers": { "Liferay-Portal": "[a-z\\s]+([\\d.]+)\\;version:\\1" }
 		},
+		"Lift": {
+			"website": "liftweb.net",
+			"cats": [ 18 ],
+			"headers": { "X-Lift-Version": "(.+)\\;version:\\1" },
+			"implies": "Scala"
+		},
 		"LightMon Engine": {
 			"website": "en.lightmon.ru",
 			"cats": [ 1 ],
@@ -2229,6 +2235,10 @@
 			"meta": { "generator": "Sarka-SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?\\;version:\\1" },
 			"headers": { "X-Spip-Cache": ".*" },
 			"implies": "SPIP"
+		},
+		"Scala": {
+			"website": "www.scala-lang.org",
+			"cats": [ 27 ]
 		},
 		"script.aculo.us": {
 			"website": "script.aculo.us",

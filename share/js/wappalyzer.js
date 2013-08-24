@@ -14,7 +14,7 @@ var wappalyzer = (function() {
 	 */
 	var Application = function(app, detected) {
 		this.app             = app;
-		this.confidence      = {};
+		this.confidence      = [];
 		this.confidenceTotal = 0;
 		this.detected        = Boolean(detected);
 		this.version         = '';
@@ -39,27 +39,23 @@ var wappalyzer = (function() {
 		 * Resolve version number (find the longest version number that contains all shorter detected version numbers)
 		 */
 		getVersion: function() {
-			var i, next, resolved;
+			var i, resolved;
 
 			if ( !this.versions.length ) {
 				return;
 			}
 
 			this.versions.sort(function(a, b) {
-				return a.length > b.length ? 1 : ( a.length < b.length ? -1 : 0 );
+				return a.length - b.length;
 			});
 
 			resolved = this.versions[0];
 
-			for ( i in this.versions ) {
-				next = parseInt(i) + 1;
-
-				if ( next < this.versions.length ) {
-					if ( this.versions[next].indexOf(this.versions[i]) !== -1 ) {
-						resolved = this.versions[next];
-					} else {
-						break;
-					}
+			for ( i = 1; i < this.versions.length; i++ ) {
+				if ( this.versions[i].indexOf(resolved) !== -1 ) {
+					resolved = this.versions[i];
+				} else {
+					break;
 				}
 			}
 
@@ -70,7 +66,7 @@ var wappalyzer = (function() {
 			this.detected = true;
 
 			// Set confidence level
-			this.confidence[type + ' ' + ( key ? key + ' ' : '' ) + pattern.regex] = pattern.confidence ? pattern.confidence : 100;
+			this.confidence.push(pattern.confidence ? pattern.confidence : 100);
 
 			// Detect version number
 			if ( pattern.version ) {
@@ -129,12 +125,7 @@ var wappalyzer = (function() {
 			}
 			this.regexCount++;
 			this.lastTime = new Date().getTime();
-
-			this.timedOut = this.getDuration() > 1000;
-		},
-
-		getDuration: function() {
-			return new Date().getTime() - this.startTime;
+			this.timedOut = this.lastTime - this.startTime > 1000;
 		}
 	};
 
@@ -252,7 +243,7 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, version,
+				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, checkImplies, version,
 				profiler = new Profiler(),
 				apps     = {}
 				;
@@ -388,7 +379,7 @@ var wappalyzer = (function() {
 				}
 			}
 
-			w.log('[ PROFILER ] Tested ' + profiler.regexCount + ' regular expressions in ' + ( profiler.getDuration() / 1000 ) + 's');
+			w.log('[ PROFILER ] Tested ' + profiler.regexCount + ' regular expressions in ' + ( (new Date().getTime() - profiler.startTime) / 1000 ) + 's');
 			w.log('[ PROFILER ] Slowest pattern took ' + ( profiler.slowest.duration / 1000 ) + 's: ' + profiler.slowest.app + ' | ' + profiler.slowest.type + ' | ' + profiler.slowest.regex);
 
 			for ( app in apps ) {
@@ -399,7 +390,9 @@ var wappalyzer = (function() {
 
 			// Implied applications
 			// Run several passes as implied apps may imply other apps
-			for ( i = 0; i < 3; i ++ ) {
+			checkImplies = true;
+			while ( checkImplies ) {
+				checkImplies = false;
 				for ( app in apps ) {
 					confidence = apps[app].confidence;
 
@@ -420,11 +413,12 @@ var wappalyzer = (function() {
 
 							if ( !apps.hasOwnProperty(implied.string) ) {
 								apps[implied.string] = w.detected[url] && w.detected[url][implied.string] ? w.detected[url][implied.string] : new Application(implied.string, true);
+								checkImplies = true;
 							}
 
 							// Apply app confidence to implied app
 							for ( id in confidence ) {
-								apps[implied.string].confidence[id + ' implied by ' + app] = confidence[id] * ( implied.confidence ? implied.confidence / 100 : 1 );
+								apps[implied.string].confidence.push(confidence[id] * ( implied.confidence ? implied.confidence / 100 : 1 ));
 							}
 						});
 					}

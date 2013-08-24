@@ -325,8 +325,6 @@ var wappalyzer = (function() {
 
 							for ( i in meta_elems ) {
 								for ( meta in w.apps[app][type] ) {
-									profiler.checkPoint(app, type, pattern.regex);
-
 									if (meta_elems[i].name && meta == meta_elems[i].name.toLowerCase() ) {
 										parse(w.apps[app].meta[meta]).map(function(pattern) {
 

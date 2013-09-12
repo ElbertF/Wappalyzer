@@ -254,6 +254,12 @@
 			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(?:v([\\d.]+))?\\;version:\\1",
 			"implies": "PHP"
 		},
+		"basket.js": {
+			"website": "http://addyosmani.github.io/basket.js/",
+			"cats": [ 12 ],
+			"script": "basket.*\\.js",
+			"env": "^basket$"
+		},
 		"BaseHTTP": {
 			"website": "docs.python.org/2/library/basehttpserver.html",
 			"cats": [ 22 ],
@@ -1457,12 +1463,6 @@
 			"env": "^Liferay$",
 			"headers": { "Liferay-Portal": "[a-z\\s]+([\\d.]+)\\;version:\\1" }
 		},
-		"Lift": {
-			"website": "liftweb.net",
-			"cats": [ 18 ],
-			"headers": { "X-Lift-Version": "(.+)\\;version:\\1" },
-			"implies": "Scala"
-		},
 		"LightMon Engine": {
 			"website": "en.lightmon.ru",
 			"cats": [ 1 ],
@@ -2082,7 +2082,7 @@
 			"website": "www.prestashop.com",
 			"cats": [ 6 ],
 			"meta": { "generator": "PrestaShop" },
-			"html": "Powered by <a\\s+[^>]+>PrestaShop",
+			"html": "Powered by <a href=\"[^>]+PrestaShop",
 			"implies": "PHP"
 		},
 		"Prototype": {
@@ -2236,10 +2236,6 @@
 			"headers": { "X-Spip-Cache": ".*" },
 			"implies": "SPIP"
 		},
-		"Scala": {
-			"website": "www.scala-lang.org",
-			"cats": [ 27 ]
-		},
 		"script.aculo.us": {
 			"website": "script.aculo.us",
 			"cats": [ 12 ],
@@ -2312,11 +2308,6 @@
 			"website": "www.mikeindustries.com/blog/sifr",
 			"cats": [ 17 ],
 			"script": "sifr\\.js"
-		},
-		"Silva": {
-			"website": "silvacms.org",
-			"cats": [ 1 ],
-			"headers": { "X-Powered-By": "SilvaCMS" }
 		},
 		"SilverStripe": {
 			"website": "www.silverstripe.org",

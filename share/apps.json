@@ -254,6 +254,12 @@
 			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(?:v([\\d.]+))?\\;version:\\1",
 			"implies": "PHP"
 		},
+		"basket.js": {
+			"website": "http://addyosmani.github.io/basket.js/",
+			"cats": [ 12 ],
+			"script": "basket.*\\.js",
+			"env": "^basket$"
+		},
 		"BaseHTTP": {
 			"website": "docs.python.org/2/library/basehttpserver.html",
 			"cats": [ 22 ],

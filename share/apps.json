@@ -2601,6 +2601,13 @@
 			"cats": [ 28 ],
 			"headers": { "Server": "Ubuntu", "X-Powered-By": "Ubuntu" }
 		},
+		"uCore": {
+			"website": "ucorecms.org",
+			"cats": [ 1, 18 ],
+			"headers": { "Set-Cookie": "ucore" },
+			"meta": { "generator": "uCore PHP Framework" },
+			"implies": "PHP"
+		},
 		"Umbraco": {
 			"website": "umbraco.com",
 			"cats": [ 1 ],

@@ -418,8 +418,7 @@
 		"CKEditor": {
 			"website": "ckeditor.com",
 			"cats": [ 24 ],
-			"env": "^CKEDITOR$",
-			"implies": "PHP"
+			"env": "^CKEDITOR$"
 		},
 		"Cloudera": {
 			"website": "www.cloudera.com",

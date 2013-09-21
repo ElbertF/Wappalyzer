@@ -2571,7 +2571,7 @@
 			"website": "twitter.github.com/bootstrap",
 			"cats": [ 18 ],
 			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
-			"html": "<link[^>]+bootstrap[^>\"]+css",
+			"html": "<link.+?href=\"[^\"]+bootstrap(\\.min)?\\.css",
 			"env": "^Twipsy$\\;confidence:50"
 		},
 		"Typekit": {

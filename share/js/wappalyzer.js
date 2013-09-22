@@ -66,7 +66,7 @@ var wappalyzer = (function() {
 			this.detected = true;
 
 			// Set confidence level
-			this.confidence.push(pattern.confidence ? pattern.confidence : 100);
+			this.confidence[type + ' ' + ( key ? key + ' ' : '' ) + pattern.regex] = pattern.confidence ? pattern.confidence : 100;
 
 			// Detect version number
 			if ( pattern.version ) {
@@ -325,8 +325,6 @@ var wappalyzer = (function() {
 
 							for ( i in meta_elems ) {
 								for ( meta in w.apps[app][type] ) {
-									profiler.checkPoint(app, type, pattern.regex);
-
 									if (meta_elems[i].name && meta == meta_elems[i].name.toLowerCase() ) {
 										parse(w.apps[app].meta[meta]).map(function(pattern) {
 
@@ -415,7 +413,7 @@ var wappalyzer = (function() {
 
 							// Apply app confidence to implied app
 							for ( id in confidence ) {
-								apps[implied.string].confidence.push(confidence[id] * ( implied.confidence ? implied.confidence / 100 : 1 ));
+								apps[implied.string].confidence[id + ' implied by ' + app] = confidence[id] * ( implied.confidence ? implied.confidence / 100 : 1 );
 							}
 						});
 					}

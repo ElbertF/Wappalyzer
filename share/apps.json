@@ -1804,7 +1804,7 @@
 		"Nginx": {
 			"website": "nginx.org",
 			"cats": [ 22 ],
-			"headers": { "Server": "nginx" }
+			"headers": { "Server": "nginx(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"node.js": {
 			"website": "nodejs.org",
@@ -2788,7 +2788,7 @@
 		"Windows Server": {
 			"website": "microsoft.com/windowsserver",
 			"cats": [ 28 ],
-			"headers": { "Server": "Win32" }
+			"headers": { "Server": "Win32|Win64" }
 		},
 		"Wink": {
 			"website": "winktoolkit.org",

@@ -254,6 +254,12 @@
 			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(?:v([\\d.]+))?\\;version:\\1",
 			"implies": "PHP"
 		},
+		"basket.js": {
+			"website": "http://addyosmani.github.io/basket.js/",
+			"cats": [ 12 ],
+			"script": "basket.*\\.js",
+			"env": "^basket$"
+		},
 		"BaseHTTP": {
 			"website": "docs.python.org/2/library/basehttpserver.html",
 			"cats": [ 22 ],
@@ -412,8 +418,7 @@
 		"CKEditor": {
 			"website": "ckeditor.com",
 			"cats": [ 24 ],
-			"env": "^CKEDITOR$",
-			"implies": "PHP"
+			"env": "^CKEDITOR$"
 		},
 		"Cloudera": {
 			"website": "www.cloudera.com",
@@ -1799,7 +1804,7 @@
 		"Nginx": {
 			"website": "nginx.org",
 			"cats": [ 22 ],
-			"headers": { "Server": "nginx" }
+			"headers": { "Server": "nginx(?:/([\\d.]+))?\\;version:\\1" }
 		},
 		"node.js": {
 			"website": "nodejs.org",
@@ -2566,7 +2571,7 @@
 			"website": "twitter.github.com/bootstrap",
 			"cats": [ 18 ],
 			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
-			"html": "<link[^>]+bootstrap[^>\"]+css",
+			"html": "<link.+?href=\"[^\"]+bootstrap(\\.min)?\\.css",
 			"env": "^Twipsy$\\;confidence:50"
 		},
 		"Typekit": {
@@ -2783,7 +2788,7 @@
 		"Windows Server": {
 			"website": "microsoft.com/windowsserver",
 			"cats": [ 28 ],
-			"headers": { "Server": "Win32" }
+			"headers": { "Server": "Win32|Win64" }
 		},
 		"Wink": {
 			"website": "winktoolkit.org",
@@ -2968,6 +2973,10 @@
 			"website": "livestreetcms.com",
 			"cats": [ 1 ],
 			"headers": { "X-Powered-By": "LiveStreet CMS" }
+		},
+		"Ophal": {
+			"website": "ophal.org",
+			"cats": [ 1, 11, 18 ],
+			"headers": { "X-Powered-By": "Ophal.*" }  
 		}
-	}
 }

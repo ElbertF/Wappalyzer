@@ -117,10 +117,12 @@
 			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"implies": "Java"
 		},
-		"Alloy": {
+		"AlloyUI": {
 			"website": "www.alloyui.com",
 			"cats": [ 12 ],
-			"env": "^AUI$"
+			"env": "^AUI$",
+			"url": "^https?://cdn\\.alloyui.com/",
+			"implies": [ "Twitter Bootstrap", "YUI" ]
 		},
 		"Amaya": {
 			"website": "www.w3.org/Amaya",

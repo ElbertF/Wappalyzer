@@ -2975,6 +2975,11 @@
 			"website": "livestreetcms.com",
 			"cats": [ 1 ],
 			"headers": { "X-Powered-By": "LiveStreet CMS" }
+		},
+		"Ophal": {
+			"website": "ophal.org",
+			"cats": [ 1, 11, 18 ],
+			"headers": { "X-Powered-By": "^Ophal/" }
 		}
 	}
 }

@@ -121,7 +121,7 @@
 			"website": "www.alloyui.com",
 			"cats": [ 12 ],
 			"env": "^AUI$",
-			"url": "^https?://cdn\\.alloyui.com/",
+			"script": "^https?://cdn\\.alloyui.com/",
 			"implies": [ "Twitter Bootstrap", "YUI" ]
 		},
 		"Amaya": {

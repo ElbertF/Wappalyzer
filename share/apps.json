@@ -1868,8 +1868,9 @@
 			"env": "^OpenLayers$"
 		},
 		"OpenNemas": {
-			"website": "openhost.es/en/opennemas",
+			"website": "www.opennemas.com",
 			"cats": [ 1 ],
+			"meta": { "generator": "OpenNemas(.*)" },
 			"headers": { "X-Powered-By": "OpenNemas" }
 		},
 		"OpenSSL": {

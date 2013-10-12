@@ -2967,6 +2967,11 @@
 			"html": "<!-- ZK [\\.\\d\\s]+-->",
 			"implies": "Java"
 		},
+		"Zope": {
+			"website": "zope.org",
+			"cats": [ 22 ],
+			"headers": { "Server": "^Zope/" }
+		},
 		"ZURB Foundation": {
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],

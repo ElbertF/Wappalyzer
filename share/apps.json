@@ -2038,7 +2038,7 @@
 		"Plentymarkets": {
 			"website": "plentymarkets.eu",
 			"cats": [ 6 ],
-			"meta": { "generator": "^www\\.plentyMarkets" }
+			"meta": { "generator": "plentymarkets" }
 		},
 		"Plesk": {
 			"website": "parallels.com/products/plesk",

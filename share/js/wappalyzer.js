@@ -253,6 +253,7 @@ var wappalyzer = (function() {
 		analyze: function(hostname, url, data) {
 			var
 				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, version,
+                lowercasedHeaders, normalized,
 				profiler = new Profiler(),
 				apps     = {}
 				;
@@ -270,6 +271,15 @@ var wappalyzer = (function() {
 			if ( typeof w.detected[url] === 'undefined' ) {
 				w.detected[url] = {};
 			}
+            
+            if ( data.headers && typeof data.headers === 'object' ) {
+                // normalize headers to lowercase as per RFC 2616
+                lowercasedHeaders = {};
+                Object.keys(data.headers).forEach(function (rawHeader) {
+                    var lowercased = rawHeader.toLowerCase();
+                    lowercasedHeaders[lowercased] = data.headers[rawHeader];
+                });
+            }
 
 			for ( app in w.apps ) {
 				// Exit loop after one second to prevent CPU hogging
@@ -358,10 +368,12 @@ var wappalyzer = (function() {
 							}
 
 							for ( header in w.apps[app].headers ) {
+                                // compare lowercase verion of the header
+                                normalized = header.toLowerCase();
 								parse(w.apps[app][type][header]).map(function(pattern) {
 
-									if ( typeof data[type][header] === 'string' && pattern.regex.test(data[type][header]) ) {
-										apps[app].setDetected(pattern, type, data[type][header], header);
+									if ( typeof lowercasedHeaders[normalized] === 'string' && pattern.regex.test(lowercasedHeaders[normalized]) ) {
+										apps[app].setDetected(pattern, type, lowercasedHeaders[normalized], header);
 									}
 									profiler.checkPoint(app, type, pattern.regex);
 								});

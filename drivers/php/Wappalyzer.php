@@ -27,7 +27,7 @@ class Wappalyzer
 
 		$this->url = $url;
 
-		$json = json_decode(file_get_contents('apps.json'));
+		$json = json_decode(file_get_contents('../../share/apps.json'));
 
 		$this->apps       = $json->apps;
 		$this->categories = $json->categories;
@@ -80,7 +80,7 @@ class Wappalyzer
 		}
 
 		foreach ( $files as $file ) {
-			$this->v8->executeString(file_get_contents('js/' . $file), $file);
+			$this->v8->executeString(file_get_contents('../../share/js/' . $file), $file);
 		}
 	}
 

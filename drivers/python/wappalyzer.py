@@ -30,8 +30,8 @@ class Wappalyzer(object):
         ctxt = PyV8.JSContext()
         ctxt.enter()
 
-        f1 = open(os.path.join(self.file_dir, '../php/js/wappalyzer.js'))
-        f2 = open(os.path.join(self.file_dir, '../php/js/driver.js'))
+        f1 = open(os.path.join(self.file_dir, '../../share/js/wappalyzer.js'))
+        f2 = open(os.path.join(self.file_dir, '../../share/js/driver.js'))
         ctxt.eval(f1.read())
         ctxt.eval(f2.read())
         f1.close()

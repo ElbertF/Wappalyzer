@@ -1219,7 +1219,7 @@
 		"ImpressPages": {
 			"website": "impresspages.org",
 			"cats": [ 1 ],
-			"meta": { "generator": "ImpressPages CMS ([\\d.]+)\\;version:\\1" },
+			"meta": { "generator": "ImpressPages([\\d.]*)" },
 			"implies": "PHP"
 		},
 		"Incapsula": {

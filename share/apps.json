@@ -910,6 +910,12 @@
 			"headers": { "X-Powered-By": "^Express$" },
 			"implies": [ "node.js" ]
 		},
+		"total.js": {
+			"website": "totaljs.com",
+			"cats": [ 18 ],
+			"headers": { "X-Powered-By": "^total\\.js" },
+			"implies": [ "node.js" ]
+		},
 		"ExpressionEngine": {
 			"website": "expressionengine.com",
 			"cats": [ 1 ],

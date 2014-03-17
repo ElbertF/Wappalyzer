@@ -120,7 +120,7 @@
 			"website": "www.alloyui.com",
 			"cats": [ 12 ],
 			"env": "^AUI$",
-			"script": "^https?://cdn\\.alloyui.com/",
+			"script": "^https?://cdn\\.alloyui\\.com/",
 			"implies": [ "Twitter Bootstrap", "YUI" ]
 		},
 		"Amaya": {
@@ -1015,7 +1015,7 @@
 			"website": "google.com/adsense",
 			"cats": [ 36 ],
 			"env": [ "^google_ad_" ],
-			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad.ca.doubleclick.net" ]
+			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick.net" ]
 		},
 		"Google App Engine": {
 			"website": "code.google.com/appengine",

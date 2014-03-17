@@ -1746,7 +1746,7 @@
 			"website": "mollom.com",
 			"cats": [ 16 ],
 			"script": "mollom\\.js",
-			"html": "<img[^>]+/.mollom/.com"
+			"html": "<img[^>]+\\.mollom\\.com"
 		},
 		"Mondo Media": {
 			"website": "mondo-media.de",

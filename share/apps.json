@@ -1505,6 +1505,14 @@
 			"meta": { "generator": "Koobi" },
 			"html": "<!--[^K>-]+Koobi ([a-z\\d.]+)\\;version:\\1"
 		},
+		"Kooboo CMS": {
+			"website": "http://kooboo.com/",
+			"cats": [ 1 ],
+			"headers": { "X-KoobooCMS-Version": ".+" },
+			"html": ["=[^>]+/Kooboo"],
+			"implies": "Microsoft ASP.NET"
+			"script": ["=[^>]+/Kooboo"]
+		},
 		"KS_HTTP": {
 			"website": "www.canon.com",
 			"cats": [ 22 ],

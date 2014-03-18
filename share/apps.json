@@ -1509,9 +1509,9 @@
 			"website": "http://kooboo.com/",
 			"cats": [ 1 ],
 			"headers": { "X-KoobooCMS-Version": ".+" },
-			"html": ["=[^>]+/Kooboo"],
-			"implies": "Microsoft ASP.NET"
-			"script": ["=[^>]+/Kooboo"]
+			"html": ["=\"/Kooboo"],
+			"implies": "Microsoft ASP.NET",
+			"script": ["=\"/Kooboo"]
 		},
 		"KS_HTTP": {
 			"website": "www.canon.com",

@@ -132,7 +132,7 @@
 			"website": "www.alloyui.com",
 			"cats": [ 12 ],
 			"env": "^AUI$",
-			"script": "^https?://cdn\\.alloyui.com/",
+			"script": "^https?://cdn\\.alloyui\\.com/",
 			"implies": [ "Twitter Bootstrap", "YUI" ]
 		},
 		"Amaya": {
@@ -191,12 +191,12 @@
 		"Apache Hadoop": {
 			"website": "hadoop.apache.org",
 			"cats": [ 34 ],
-			"html": "type=\"text/css\" href=\"/static/hadoop.css\""
+			"html": "type=\"text/css\" href=\"/static/hadoop\\.css\""
 		},
 		"Apache HBase": {
 			"website": "hbase.apache.org",
 			"cats": [ 34 ],
-			"html": "type=\"text/css\" href=\"/static/hbase.css\""
+			"html": "type=\"text/css\" href=\"/static/hbase\\.css\""
 		},
 		"Apache JSPWiki": {
 			"website": "jspwiki.org",
@@ -235,7 +235,7 @@
 		"ATEN": {
 			"website": "www.aten.com",
 			"cats": [ 22 ],
-			"headers": { "Server": "ATEN HTTP Server(?:\\(V?(?:[\\d\\.]+)\\))?\\;version:\\1" }
+			"headers": { "Server": "ATEN HTTP Server(\\(V?([\\d\\.]+)\\))?\\;version:\\2" }
 		},
 		"ATG Web Commerce": {
 			"website": "oracle.com/us/products/applications/web-commerce/atg",
@@ -336,11 +336,6 @@
 			"cats": [ 11 ],
 			"meta": { "generator": "blogger" },
 			"url": "\\.blogspot\\.com"
-		},
-		"BlueKai": {
-			"website": "bluekai.com",
-			"cats": [ 32 ],
-			"env": [ "^BKTAG$", "^bk_doJSTag" ]
 		},
 		"Boa": {
 			"website": "www.boa.org",
@@ -654,13 +649,6 @@
 			"headers": { "X-Powered-By": "CMS Danneo ([\\d.]+)\\;version:\\1" },
 			"meta": { "generator": "Danneo CMS ([\\d.]+)\\;version:\\1" },
 			"implies": [ "Apache", "PHP" ]
-		},
-		"Dart": {
-			"website": "dartlang.org",
-			"cats": [ 27 ],
-			"script": "dart(?:\\.min)?\\.js|interop(?:\\.min)?\\.js",
-			"env": "^DartObject$|^DartProxy$",
-			"html": "(?:<script[^>]+(?:src=\"(?:.*\\.dart)\"|type=\"application/dart\"))"
 		},
 		"Darwin": {
 			"website": "opensource.apple.com",
@@ -1065,7 +1053,7 @@
 			"website": "google.com/analytics",
 			"cats": [ 10 ],
 			"html": "_gaq\\.push\\(\\['_setAccount|i\\['GoogleAnalyticsObject'\\]|ga\\.async = true",
-			"script": "(?:\\.google-analytics\\.com\/ga\\.js|\/urchin\\.js|\\.google-analytics\\.com/analytics\\.js)",
+			"script": "(?:\\.google-analytics\\.com\/ga\\.js|\/urchin\\.js|\\.google-analytics\\.com\/analytics\\.js)",
 			"headers": { "Set-Cookie": "__utma" },
 			"env": "^gaGlobal$"
 		},
@@ -1288,7 +1276,7 @@
 			"website": "indico-software.org",
 			"cats": [ 1 ],
 			"headers": { "Set-cookie": "MAKACSESSION" },
-			"html": "Powered by\\s+(CERN )?<a href=\"http://(cdsware.cern.ch/indico/|indico-software.org|cern.ch/indico)\">(CDS )?Indico( [\\d\\.]+)?\\;version:\\4"
+			"html": "Powered by\\s+(?:CERN )?<a href=\"http://(?:cdsware\\.cern\\.ch/indico/|indico-software\\.org|cern\\.ch/indico)\">(?:CDS )?Indico( [\\d\\.]+)?\\;version:\\1"
 		},
 		"InstantCMS": {
 			"website": "www.instantcms.ru",
@@ -1752,7 +1740,7 @@
 			"website": "mobotix.com",
 			"cats": [ 39 ],
 			"meta": { "publisher": "MOBOTIX AG\\;confidence:40", "copyright": "MOBOTIX AG\\;confidence:40", "author": "MOBOTIX AG\\;confidence:40" },
-			"url": "control/userimage.html\\;confidence:70"
+			"url": "control/userimage\\.html\\;confidence:70"
 		},
 		"MochiKit": {
 			"website": "mochikit.com",
@@ -1845,7 +1833,7 @@
 			"website": "mollom.com",
 			"cats": [ 16 ],
 			"script": "mollom\\.js",
-			"html": "<img[^>]+/.mollom/.com"
+			"html": "<img[^>]+\\.mollom\\.com"
 		},
 		"Mondo Media": {
 			"website": "mondo-media.de",
@@ -2527,7 +2515,7 @@
 		"SiteCatalyst": {
 			"website": "www.omniture.com\/en\/products\/online_analytics\/sitecatalyst",
 			"cats": [ 10 ],
-			"script": "\/s_code.js",
+			"script": "\/s_code\\.js",
 			"html": "var s_code=s\\.t\\(\\);if\\(s_code\\)document\\.write\\(s_code\\)",
 			"env": "^s_account$"
 		},
@@ -3229,7 +3217,7 @@
 			"script": "zepto.*\\.js",
 			"env": "^Zepto$"
 		},
-                "Zeuscart": {
+		"Zeuscart": {
 			"website": "zeuscart.com",
 			"cats": [ 6 ],
 			"url": "\\?do=prodetail&action=show&prodid=\\d+",

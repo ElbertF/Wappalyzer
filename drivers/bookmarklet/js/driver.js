@@ -42,18 +42,6 @@
 			27: 'Programming Language',
 			28: 'Operating System',
 			29: 'Search Engine'
-			30: 'Web Mail',
-			31: 'CDN',
-			32: 'Marketing Automation',
-			33: 'Web Server Extensions',
-			34: 'Databases',
-			35: 'Maps',
-			36: 'Advertising Networks',
-			37: 'Network Devices',
-			38: 'Media Servers',
-			39: 'Webcams',
-			40: 'Printers',
-			41: 'Payment Processors'
 			}
 		;
 
@@ -125,7 +113,6 @@
 			w.log('func: diplayApps');
 
 			var
-				first = true,
 				category,
 				html
 				;
@@ -137,10 +124,10 @@
 				'<div id="wappalyzer-apps">'
 				;
 
-			if ( w.detected[url] != null && Object.keys(w.detected[url]).length ) {
-				for ( app in w.detected[url] ) {
+			if ( w.detected[url] != null && w.detected[url].length ) {
+				w.detected[url].forEach(function(app, i) {
 					html +=
-						'<div class="wappalyzer-app' + ( first ? ' wappalyzer-first' : '' ) + '">' +
+						'<div class="wappalyzer-app' + ( !i ? ' wappalyzer-first' : '' ) + '">' +
 							'<a target="_blank" class="wappalyzer-application" href="' + w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
 								'<strong>' +
 									'<img src="' + w.config.websiteURL + 'bookmarklet/images/icons/' + app + '.png" width="16" height="16"/> ' + app +
@@ -148,16 +135,14 @@
 							'</a>'
 							;
 
-					for ( i in w.apps[app].cats ) {
-						category = w.apps[app].cats[i];
+					for ( cat in w.apps[app].cats ) {
+						category = w.apps[app].cats[cat];
 
 						html += '<a target="_blank" class="wappalyzer-category" href="' + w.config.websiteURL + 'categories/' + w.categories[category] + '">' + categoryNames[category] + '</a>';
 					}
 
 					html += '</div>';
-
-					first = false;
-				}
+				});
 			} else {
 				html += '<div id="wappalyzer-empty">No applications detected</div>';
 			}

@@ -1,0 +1,13 @@
+{
+	"id":          "wappalyzer@crunchlabz.com",
+  "name":        "wappalyzer",
+  "fullName":    "Wappalyzer",
+  "description": "Identifies software on the web",
+	"icon":        "images/icon48.png",
+	"icon64":      "images/icon64.png",
+  "homepage":    "http://wappalyzer.com",
+  "author":      "Elbert Alias",
+  "license":     "GPLv3",
+  "version":     "3.0.0",
+	"main":        "driver"
+}

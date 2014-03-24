@@ -5,8 +5,11 @@
 	"options":                  { "message": "Opciones de Wappalyzer" },
 	"optionsSave":              { "message": "Guardar opciones" },
 	"optionsSaved":             { "message": "Guardado" },
+	"optionAutoAnalyzeHeaders": { "message": "Analizar cabeceras automáticamente al hacer clic" },
 	"optionUpgradeMessage":     { "message": "Indicarme actualizaciones" },
 	"optionTracking":           { "message": "Enviar informes anónimos sobre las aplicaciones detectadas a wappalyzer.com para análisis" },
+	"analyzeHeaders":           { "message": "Analizar cabeceras" },
+	"analyzeHeadersDone":       { "message": "Completado" },
 	"nothingToDo":              { "message": "Nada que hacer aquí." },
 	"noAppsDetected":           { "message": "Aplicaciones no detectadas." },
 	"categoryName1":            { "message": "Gestor de Contenido" },
@@ -44,10 +47,5 @@
 	"categoryName33":           { "message": "Extensión de Servidor Web" },
 	"categoryName34":           { "message": "Base de Datos" },
 	"categoryName35":           { "message": "Mapa" },
-	"categoryName36":           { "message": "Red de Publicidad" },
-	"categoryName37":           { "message": "Network Sevice" },
-	"categoryName38":           { "message": "Media Server" },
-	"categoryName39":           { "message": "Webcam" },
-	"categoryName40":           { "message": "Printer" },
-	"categoryName41":           { "message": "Payment Processor" }
+	"categoryName36":           { "message": "Red de Publicidad" }
 }

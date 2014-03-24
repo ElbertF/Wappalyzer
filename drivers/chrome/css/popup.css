@@ -7,10 +7,6 @@ body {
 	min-width: 200px;
 }
 
-a:focus {
-	outline: 0;
-}
-
 img {
 	display: inline-block;
 	height: 16px;
@@ -62,22 +58,35 @@ img {
 	text-align: center;
 }
 
-#footer {
-	border-top: 1px solid #ccc;
+#buttons {
 	margin-top: 12px;
 	overflow: hidden;
-	padding-top: 6px;
 }
 
-#footer a {
-	color: #999;
-	text-decoration: none;
+	#buttons button {
+		height: 32px;
+	}
+
+#analyze-headers {
+	float: left;
+	width: 158px;
 }
 
-#footer a:hover {
-	color: #333;
-}
+	#analyze-headers.pending {
+		background-image: url('../images/pending2.gif');
+		background-position: center center;
+		background-repeat: no-repeat;
+		text-indent: -999px;
+	}
 
 #options {
+	background-image: url('../images/options.png');
+	background-position: center center;
+	background-repeat: no-repeat;
 	float: right;
+	height: 32px;
+  -webkit-padding-end: 0;
+  -webkit-padding-start: 0;
+	min-width: 32px;
+	width: 32px;
 }

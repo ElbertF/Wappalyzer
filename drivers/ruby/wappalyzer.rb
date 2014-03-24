@@ -23,7 +23,7 @@ class Wappalyzer
     end
 
     cxt = V8::Context.new
-    cxt.load File.join(@realdir, '..', '..', 'share', 'js', 'wappalyzer.js')
+    cxt.load File.join(@realdir, '..', 'php', 'js', 'wappalyzer.js')
     cxt.load File.join(@realdir, '..', 'php', 'js', 'driver.js')
     data = {'host' => uri.hostname, 'url' => url, 'html' => body, 'headers' => headers}
     output = cxt.eval("w.apps = #{@apps.to_json}; w.categories = #{@categories.to_json}; w.driver.data = #{data.to_json}; w.driver.init();")

@@ -34,22 +34,22 @@ mklink /h drivers\firefox\content\js\wappalyzer.js share\js\wappalyzer.js
 
 
 
-::	FIREFOX SKD
+::	FIREFOX JETPACK
 ::
 ::Sync icons folder
-::ln -f share\images\icons         drivers\firefox-sdk\images\icons
-if exist drivers\firefox-sdk\images\icons rmdir /q /s drivers\firefox-jetpack\images\icons
-mklink /j drivers\firefox-sdk\images\icons share\images\icons
+::ln -f share\images\icons         drivers\firefox-jetpack\images\icons
+if exist drivers\firefox-jetpack\images\icons rmdir /q /s drivers\firefox-jetpack\images\icons
+mklink /j drivers\firefox-jetpack\images\icons share\images\icons
 
 ::Sync apps JSON
-::ln -f share\apps.json            drivers\firefox-sdk\data
-if exist drivers\firefox-sdk\data\apps.json del drivers\firefox-jetpack\data\apps.json
-mklink /h drivers\firefox-sdk\data\apps.json share\apps.json
+::ln -f share\apps.json            drivers\firefox-jetpack\data
+if exist drivers\firefox-jetpack\data\apps.json del drivers\firefox-jetpack\data\apps.json
+mklink /h drivers\firefox-jetpack\data\apps.json share\apps.json
 
 ::Sync Wappalyzer.js
-::ln -f share\js\wappalyzer.js     drivers\firefox-sdk\lib
-if exist drivers\firefox-sdk\lib\wappalyzer.js del drivers\firefox-jetpack\lib\wappalyzer.js
-mklink /h drivers\firefox-sdk\lib\wappalyzer.js share\js\wappalyzer.js
+::ln -f share\js\wappalyzer.js     drivers\firefox-jetpack\lib
+if exist drivers\firefox-jetpack\lib\wappalyzer.js del drivers\firefox-jetpack\lib\wappalyzer.js
+mklink /h drivers\firefox-jetpack\lib\wappalyzer.js share\js\wappalyzer.js
 
 
 

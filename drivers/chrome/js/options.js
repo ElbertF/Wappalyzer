@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 			d.getElementById('github'    ).addEventListener('click', function() { window.open(wappalyzer.config.githubURL);  });
 			d.getElementById('twitter'   ).addEventListener('click', function() { window.open(wappalyzer.config.twitterURL); });
-			d.getElementById('wappalyzer').addEventListener('click', function() { window.open(wappalyzer.config.websiteURL + '?pk_campaign=chrome&pk_kwd=options'); });
+			d.getElementById('wappalyzer').addEventListener('click', function() { window.open(wappalyzer.config.websiteURL + '?utm_source=chrome&utm_medium=options&utm_campaign=extensions'); });
 
 			d.getElementById('options-save').addEventListener('click', options.save);
 		},
@@ -21,9 +21,8 @@ document.addEventListener('DOMContentLoaded', function() {
 				}
 			}
 
-			if ( options.opts.autoAnalyzeHeaders === "0" || options.opts.autoAnalyzeHeaders === "1" ) {
-				//Remove old stored option from localStorage because it's no longer needed. This can be entirely removed in future versions
-				delete localStorage['autoAnalyzeHeaders'];
+			if ( parseInt(options.opts.autoAnalyzeHeaders) ) {
+				d.getElementById('option-auto-analyze-headers').setAttribute('checked', 'checked');
 			}
 
 			if ( parseInt(options.opts.upgradeMessage) ) {
@@ -36,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		},
 
 		save: function() {
+			options.opts.autoAnalyzeHeaders = d.getElementById('option-auto-analyze-headers').checked ? 1 : 0;
 			options.opts.upgradeMessage     = d.getElementById('option-upgrade-message'     ).checked ? 1 : 0;
 			options.opts.tracking           = d.getElementById('option-tracking'            ).checked ? 1 : 0;
 

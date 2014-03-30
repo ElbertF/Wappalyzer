@@ -91,6 +91,12 @@
 			"script": "addthis\\.com/js/(\\d+)?\\;version:\\1",
 			"env": "^addthis"
 		},
+		"AdInfinity": {
+			"website": "adinfinity.com.au",
+			"cats": [ 36 ],
+			"env": [ "" ],
+			"script": [ "adinfinity\\.com\\.au" ]
+		},
 		"Adobe ColdFusion": {
 			"website": "adobe.com/products/coldfusion-family.html",
 			"cats": [ 18 ],
@@ -212,7 +218,7 @@
 		"AppNexus": {
 			"website": "appnexus.com",
 			"cats": [ 36 ],
-			"html": "<(?:iframe|img)[^>]+adnxs\\.net",
+			"html": "<(?:iframe|img)[^>]+adnxs\\.(?:net|com)",
 			"script": "adnxs\\.(?:net|com)"
 		},
 		"Arc Forum": {
@@ -330,6 +336,11 @@
 			"cats": [ 11 ],
 			"meta": { "generator": "blogger" },
 			"url": "\\.blogspot\\.com"
+		},
+		"BlueKai": {
+			"website": "bluekai.com",
+			"cats": [ 32 ],
+			"env": [ "^BKTAG$", "^bk_doJSTag" ]
 		},
 		"Boa": {
 			"website": "www.boa.org",
@@ -1054,7 +1065,7 @@
 			"website": "google.com/analytics",
 			"cats": [ 10 ],
 			"html": "_gaq\\.push\\(\\['_setAccount|i\\['GoogleAnalyticsObject'\\]|ga\\.async = true",
-			"script": "(?:\\.google-analytics\\.com\/ga\\.js|\/urchin\\.js|\\.google-analytics\\.com\/analytics\\.js)",
+			"script": "(?:\\.google-analytics\\.com\/ga\\.js|\/urchin\\.js|\\.google-analytics\\.com/analytics\\.js)",
 			"headers": { "Set-Cookie": "__utma" },
 			"env": "^gaGlobal$"
 		},
@@ -1062,7 +1073,7 @@
 			"website": "google.com/adsense",
 			"cats": [ 36 ],
 			"env": [ "^google_ad_", "^__google_ad_", "^Goog_AdSense_" ],
-			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad.ca.doubleclick.net" ]
+			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick\\.net", "2mdn\\.net" ]
 		},
 		"Google App Engine": {
 			"website": "code.google.com/appengine",
@@ -1104,7 +1115,8 @@
 		"Google Tag Manager": {
 			"website": "www.google.com/tagmanager",
 			"cats": [ 19 ],
-			"html": "googletagmanager\\.com/ns\\.html[^>]+></iframe>"
+			"html": "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
+			"env": "^googletag$"
 		},
 		"Google Wallet": {
 			"website": "wallet.google.com",
@@ -1537,7 +1549,7 @@
 			"headers": { "Set-Cookie": "lep\\d+sessionid=" },
 			"implies": "PHP"
 		},
-		"LESS": {
+		"Less": {
 			"website": "lesscss.org",
 			"cats": [ 19 ],
 			"html": "<link[^>]+ rel=\"stylesheet/less\""
@@ -1590,8 +1602,9 @@
 		"Livefyre": {
 			"website": "livefyre.com",
 			"cats": [ 15 ],
+			"html": "<[^>]+(?:id|class)=\"livefyre",
 			"script": "livefyre_init\\.js",
-			"env": "^fyre$"
+			"env": [ "^fyre$", "^FyreLoader$", "^LF$" ]
 		},
 		"LiveJournal": {
 			"website": "www.livejournal.com",
@@ -2722,6 +2735,12 @@
 			"website": "tinymce.com",
 			"cats": [ 24 ],
 			"env": "^tinyMCE$"
+		},
+		"Titan": {
+			"website": "titan360.com",
+			"cats": [ 36 ],
+			"env": [ "^titan$", "^titanEnabled$" ],
+			"html": "<script[^>]+>var titan"
 		},
 		"Tealeaf": {
 			"website": "www.tealeaf.com",

@@ -4,7 +4,9 @@ body {
 	font-family: Helvetica, Arial, sans-serif;
 	font-size: 13px;
 	line-height: 16px;
+	margin: 0;
 	min-width: 200px;
+	padding: 15px;
 }
 
 a:focus {
@@ -38,12 +40,20 @@ img {
 		text-decoration: none;
 	}
 
-	.detected-app a:hover .label {
-		text-decoration: underline;
+	.detected-app a .label .name {
+		border-bottom: 1px dotted #999;
 	}
 
-	.detected-app a:hover .category {
-		text-decoration: underline;
+	.detected-app a:hover .label .name {
+		border-bottom: 1px solid #333;
+	}
+
+	.detected-app a .category .name {
+		border-bottom: 1px solid transparent;
+	}
+
+	.detected-app a:hover .category .name {
+		border-bottom: 1px solid #999;
 	}
 
 .label {
@@ -64,9 +74,9 @@ img {
 
 #footer {
 	border-top: 1px solid #ccc;
-	margin-top: 12px;
+	margin-top: 17px;
 	overflow: hidden;
-	padding-top: 6px;
+	padding-top: 11px;
 }
 
 #footer a {

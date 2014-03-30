@@ -36,13 +36,13 @@ document.addEventListener('DOMContentLoaded', function() {
 								'<div class="detected-app">' +
 									'<a target="_blank" href="https://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?pk_campaign=chrome&pk_kwd=popup">' +
 										'<img src="images/icons/' + appName + '.png"/>' +
-										'<span class="label">' + appName + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
+										'<span class="label"><span class="name">' + appName + '</span>' + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
 									'</a>';
 
 							response.apps[appName].cats.forEach(function(cat) {
 								html +=
 									'<a target="_blank" href="https://wappalyzer.com/categories/' + response.categories[cat] + '?pk_campaign=chrome&pk_kwd=popup">' +
-										'<span class="category">' + chrome.i18n.getMessage('categoryName' + cat) + '</span>' +
+										'<span class="category"><span class="name">' + chrome.i18n.getMessage('categoryName' + cat) + '</span></span>' +
 									'</a>';
 							});
 

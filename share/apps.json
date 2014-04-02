@@ -3215,6 +3215,13 @@
 			"script": "zepto.*\\.js",
 			"env": "^Zepto$"
 		},
+                "Zeuscart": {
+			"website": "zeuscart.com",
+			"cats": [ 6 ],
+			"url": "?do=prodetail&action=show&prodid=\\d+",
+			"html": "<form name=\"product\" method=\"post\" action=\"[^\"]+\\?do=addtocart&prodid=\\d+\"(?:(?!<\\/form>).+)<input type=\"hidden\" name=\"addtocart\" value=\"\\d+\">",
+			"implies": "PHP"
+		},
 		"Zinnia": {
 			"website": "django-blog-zinnia.com",
 			"cats": [ 11 ],

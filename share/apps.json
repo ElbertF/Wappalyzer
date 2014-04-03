@@ -2262,6 +2262,13 @@
 			"html": "Powered by <a\\s+[^>]+>PrestaShop",
 			"implies": "PHP"
 		},
+		"Project Wonderful": {
+			"website": "projectwonderful.com",
+			"cats": [ 36 ],
+			"html": "<div[^>]+id=\"pw_adbox_"
+			"script": "^https?://(?:www\\.)?projectwonderful\\.com/(?:pwa\\.js|gen\\.php)",
+			"env": "^pw_adloader$"
+		},
 		"Prototype": {
 			"website": "www.prototypejs.org",
 			"cats": [ 12 ],

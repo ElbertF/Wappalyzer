@@ -3218,7 +3218,7 @@
                 "Zeuscart": {
 			"website": "zeuscart.com",
 			"cats": [ 6 ],
-			"url": "?do=prodetail&action=show&prodid=\\d+",
+			"url": "\\?do=prodetail&action=show&prodid=\\d+",
 			"html": "<form name=\"product\" method=\"post\" action=\"[^\"]+\\?do=addtocart&prodid=\\d+\"(?:(?!<\\/form>).+)<input type=\"hidden\" name=\"addtocart\" value=\"\\d+\">",
 			"implies": "PHP"
 		},

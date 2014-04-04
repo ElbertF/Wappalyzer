@@ -982,7 +982,7 @@
 			"headers": { "Server": "FlashCom\\/?([\\d\\.]+)?\\;version:\\1" }
 		},
 		"FlexCMP": {
-			"website": "http://www.flexcmp.com/cms/home",
+			"website": "www.flexcmp.com/cms/home",
 			"cats": [ 1 ],
 			"meta": { "generator": "FlexCMP" },
 			"html": "<!--[^>]+FlexCMP[^>v]+v\\. ([\\d.]+)\\;version:\\1",
@@ -1573,7 +1573,7 @@
 			"implies": "Scala"
 		},
 		"Lightbox": {
-			"website": "http://lokeshdhakar.com/projects/lightbox2/",
+			"website": "lokeshdhakar.com/projects/lightbox2/",
 			"cats": [ 7, 12 ],
 			"script": "lightbox.*\\.js",
 			"html": "<link.+?href=\"[^\"]+lightbox(\\.min)?\\.css"
@@ -2227,7 +2227,7 @@
 			"html": "<iframe src=\"[^>]+pluraserver\\.com"
 		},
 		"Po.st": {
-			"website": "http://www.po.st/",
+			"website": "www.po.st/",
 			"cats": [ 5 ],
 			"env": "^pwidget_config$"
 		},
@@ -2250,7 +2250,7 @@
 			"html": "(s\\d\\d)\\.php\\?shopid=\\1"
 		},
 		"Prefix-Free": {
-			"website": "http://leaverou.github.io/prefixfree/",
+			"website": "leaverou.github.io/prefixfree/",
 			"cats": [ 19 ],
 			"script": "prefixfree\\.js",
 			"env": "^PrefixFree$"
@@ -2962,7 +2962,7 @@
 			"implies": "WordPress"
 		},
 		"Web2py": {
-			"website": "http://web2py.com",
+			"website": "web2py.com",
 			"cats": [ 18 ],
 			"script": "web2py\\.js",
 			"headers": { "X-Powered-By": "web2py" },
@@ -3158,7 +3158,7 @@
 			"html": "Powered by <a href=\"[^>]+yabbforum"
 		},
 		"Yahoo Advertising": {
-			"website": "http://advertising.yahoo.com",
+			"website": "advertising.yahoo.com",
 			"cats": [ 36 ],
 			"html": [ "<iframe[^>]+adserver\\.yahoo\\.com", "<img[^>]+clicks\\.beap\\.bc\\.yahoo\\.com" ],
 			"env": [ "^adxinserthtml$" ],

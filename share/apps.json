@@ -1518,12 +1518,11 @@
 			"html": "<!--[^K>-]+Koobi ([a-z\\d.]+)\\;version:\\1"
 		},
 		"Kooboo CMS": {
-			"website": "http://kooboo.com/",
+			"website": "kooboo.com",
 			"cats": [ 1 ],
-			"headers": { "X-KoobooCMS-Version": ".+" },
-			"html": ["=\"/Kooboo"],
-			"implies": "Microsoft ASP.NET",
-			"script": ["=\"/Kooboo"]
+			"headers": { "X-KoobooCMS-Version": "(.*)\\;version:\\1" },
+			"script": "/Kooboo",
+			"implies": "Microsoft ASP.NET"
 		},
 		"KS_HTTP": {
 			"website": "www.canon.com",

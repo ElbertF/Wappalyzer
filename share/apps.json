@@ -3177,6 +3177,14 @@
 			"script": "d\\.yimg\\.com/mi/ywa\\.js",
 			"env": "^YWA$"
 		},
+		"Yandex.Direct": {
+			"website": "partner.yandex.com",
+			"cats": [ 36 ],
+			"env": [ "^yandex_partner_id$", "^yandex_ad_format$", "^yandex_direct_" ],
+			"html": "<yatag class=\"ya-partner__ads\">",
+			"script": [ "https?://an\\.yandex\\.ru/" ]
+		},
+
 		"Yandex.Metrika": {
 			"website": "metrika.yandex.com",
 			"cats": [ 10 ],

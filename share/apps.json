@@ -1060,13 +1060,10 @@
 		"Google AdSense": {
 			"website": "google.com/adsense",
 			"cats": [ 36 ],
-<<<<<<< HEAD
 			"env": [ "^google_ad_", "^__google_ad_", "^Goog_AdSense_" ],
 			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick\\.net", "2mdn\\.net" ]
-=======
 			"env": [ "^google_ad_" ],
 			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick.net" ]
->>>>>>> 96d095b... Escaped dots in AlloyUI and Google Adsense regular expressions.
 		},
 		"Google App Engine": {
 			"website": "code.google.com/appengine",

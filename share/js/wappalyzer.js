@@ -389,7 +389,13 @@ var wappalyzer = (function() {
 				}
 
 				if ( w.apps[app].excludes ) {
-					excludes.push(w.apps[app].excludes)
+					if ( typeof w.apps[app].excludes === 'string' ) {
+						w.apps[app].excludes = [ w.apps[app].excludes ];
+					}
+
+					w.apps[app].excludes.forEach(function(excluded) {
+						excludes.push(excluded);
+					});
 				}
 			}
 

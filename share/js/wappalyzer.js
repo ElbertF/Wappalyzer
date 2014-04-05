@@ -17,6 +17,7 @@ var wappalyzer = (function() {
 		this.confidence      = {};
 		this.confidenceTotal = 0;
 		this.detected        = Boolean(detected);
+		this.excludes        = [];
 		this.version         = '';
 		this.versions        = [];
 	};
@@ -52,11 +53,11 @@ var wappalyzer = (function() {
 			resolved = this.versions[0];
 
 			for ( i = 1; i < this.versions.length; i++ ) {
-				if ( this.versions[i].indexOf(resolved) !== -1 ) {
-					resolved = this.versions[i];
-				} else {
+				if ( this.versions[i].indexOf(resolved) === -1 ) {
 					break;
 				}
+
+				resolved = this.versions[i];
 			}
 
 			return this.version = resolved;
@@ -74,15 +75,12 @@ var wappalyzer = (function() {
 					version = pattern.version,
 					matches = pattern.regex.exec(value);
 
-				w.log({ matches: matches, version: version });
-
 				if ( matches ) {
 					matches.forEach(function(match, i) {
 						// Parse ternary operator
 						var ternary = new RegExp('\\\\' + i + '\\?([^:]+):(.+)$').exec(version);
 
 						if ( ternary && ternary.length === 3 ) {
-
 							w.log({ match: match, i: i, ternary: ternary });
 
 							version = version.replace(ternary[0], match ? ternary[1] : ternary[2]);
@@ -141,7 +139,9 @@ var wappalyzer = (function() {
 			return;
 		}
 
-		if ( func !== 'log' ) { w.log('w.driver.' + func); }
+		if ( func !== 'log' ) {
+			w.log('w.driver.' + func);
+		}
 
 		return w.driver[func](args);
 	};
@@ -178,7 +178,7 @@ var wappalyzer = (function() {
 					} catch (e) {
 						attrs.regex = new RegExp();
 
-						w.log(e + ': ' + attr, 'warn');
+						w.log(e + ': ' + attr, 'error');
 					}
 				}
 			});
@@ -199,7 +199,6 @@ var wappalyzer = (function() {
 		detected: {},
 
 		config: {
-			environment: 'dev', // dev | live
 			websiteURL: 'https://wappalyzer.com/',
 			twitterURL: 'https://twitter.com/Wappalyzer',
 			githubURL:  'https://github.com/ElbertF/Wappalyzer',
@@ -209,17 +208,15 @@ var wappalyzer = (function() {
 		 * Log messages to console
 		 */
 		log: function(message, type) {
-			if ( w.config.environment === 'dev' ) {
-				if ( typeof type === 'undefined' ) {
-					type = 'debug';
-				}
-
-				if ( typeof message === 'object' ) {
-					message = JSON.stringify(message);
-				}
-
-				driver('log', { message: '[wappalyzer ' + type + '] ' + message, type: type });
+			if ( type === undefined ) {
+				type = 'debug';
 			}
+
+			if ( typeof message === 'object' ) {
+				message = JSON.stringify(message);
+			}
+
+			driver('log', { message: '[wappalyzer ' + type + '] ' + message, type: type });
 		},
 
 		/**
@@ -229,7 +226,7 @@ var wappalyzer = (function() {
 			w.log('w.init');
 
 			// Checks
-			if ( typeof w.driver === 'undefined' ) {
+			if ( w.driver === undefined ) {
 				w.log('no driver, exiting');
 
 				return;
@@ -244,21 +241,24 @@ var wappalyzer = (function() {
 		 */
 		analyze: function(hostname, url, data) {
 			var
-				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, checkImplies, version, id,
-				profiler = new Profiler(),
-				apps     = {};
+				i, j, app, confidence, type, regexMeta, regexScript, match, content, meta, header, version, id,
+				profiler     = new Profiler(),
+				apps         = {},
+				excludes     = [],
+				checkImplies = true;
 
 			w.log('w.analyze');
 
+			// Remove hash from URL
 			data.url = url = url.split('#')[0];
 
-			if ( typeof w.apps === 'undefined' || typeof w.categories === 'undefined' ) {
+			if ( w.apps === undefined || w.categories === undefined ) {
 				w.log('apps.json not loaded, check for syntax errors');
 
 				return;
 			}
 
-			if ( typeof w.detected[url] === 'undefined' ) {
+			if ( w.detected[url] === undefined ) {
 				w.detected[url] = {};
 			}
 
@@ -380,19 +380,28 @@ var wappalyzer = (function() {
 				}
 			}
 
-			w.log('[ PROFILER ] Tested ' + profiler.regexCount + ' regular expressions in ' + ( (new Date().getTime() - profiler.startTime) / 1000 ) + 's');
-			w.log('[ PROFILER ] Slowest pattern took ' + ( profiler.slowest.duration / 1000 ) + 's: ' + profiler.slowest.app + ' | ' + profiler.slowest.type + ' | ' + profiler.slowest.regex);
+			w.log('[ profiler ] Tested ' + profiler.regexCount + ' regular expressions in ' + ( (new Date().getTime() - profiler.startTime) / 1000 ) + 's');
+			w.log('[ profiler ] Slowest pattern took ' + ( profiler.slowest.duration / 1000 ) + 's: ' + profiler.slowest.app + ' | ' + profiler.slowest.type + ' | ' + profiler.slowest.regex);
 
 			for ( app in apps ) {
 				if ( !apps[app].detected ) {
+					delete apps[app];
+				}
+
+				if ( w.apps[app].excludes ) {
+					excludes.push(w.apps[app].excludes)
+				}
+			}
+
+			// Remove excluded applications
+			for ( app in apps ) {
+				if ( excludes.indexOf(app) !== -1 ) {
 					delete apps[app];
 				}
 			}
 
 			// Implied applications
 			// Run several passes as implied apps may imply other apps
-			checkImplies = true;
-
 			while ( checkImplies ) {
 				checkImplies = false;
 
@@ -489,10 +498,12 @@ var wappalyzer = (function() {
 					}
 				}
 
-				w.log({ hostname: hostname, ping: w.ping.hostnames[hostname] });
+				//w.log({ hostname: hostname, ping: w.ping.hostnames[hostname] });
 			}
 
-			if ( Object.keys(w.ping.hostnames).length >= 20 ) { driver('ping'); }
+			if ( Object.keys(w.ping.hostnames).length >= 20 ) {
+				driver('ping');
+			}
 
 			apps = null;
 			data = null;

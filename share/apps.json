@@ -94,7 +94,6 @@
 		"AdInfinity": {
 			"website": "adinfinity.com.au",
 			"cats": [ 36 ],
-			"env": [ "" ],
 			"script": [ "adinfinity\\.com\\.au" ]
 		},
 		"Adobe ColdFusion": {
@@ -1061,8 +1060,8 @@
 			"website": "google.com/adsense",
 			"cats": [ 36 ],
 			"env": [ "^google_ad_", "^__google_ad_", "^Goog_AdSense_" ],
-			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick\\.net", "2mdn\\.net" ]
-			"env": [ "^google_ad_" ],
+			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick\\.net", "2mdn\\.net" ],
+			"env": "^google_ad_",
 			"script": [ "googlesyndication\\.com/pagead/show_ads\\.js", "ad\\.ca\\.doubleclick.net" ]
 		},
 		"Google App Engine": {
@@ -1351,8 +1350,20 @@
 		"Java Servlet": {
 			"website": "www.oracle.com/technetwork/java/index-jsp-135475.html",
 			"cats": [ 18 ],
-			"headers": { "X-Powered-By": "Servlet(?:/([\\d.]+))?\\;version:\\1" },
+			"headers": { "X-Powered-By": "Servlet(?:.([\\d.]+))?\\;version:\\1" },
 			"implies": "Java"
+		},
+		"JBoss Application Server": {
+			"website": "jboss.org/jbossas.html",
+			"cats": [ 22 ],
+			"headers": { "X-Powered-By": "JBoss(?:-([\\d.]+))?\\;version:\\1" }
+		},
+		"JBoss Web": {
+			"website": "jboss.org/jbossweb",
+			"cats": [ 22 ],
+			"headers": { "X-Powered-By": "JBossWeb(?:-([\\d.]+))?\\;version:\\1" },
+			"implies": "JBoss Application Server",
+			"excludes": "Apache Tomcat"
 		},
 		"Jetty": {
 			"website": "www.eclipse.org/jetty",
@@ -1786,7 +1797,7 @@
 			"website": "perl.apache.org",
 			"cats": [ 33 ],
 			"headers": { "Server": "mod_perl(?:/([\\d\\.]+))?\\;version:\\1" },
-			"implies": [ "Perl", "Apache" ]
+			"implies": [ "Apache" ]
 		},
 		"mod_python": {
 			"website": "www.modpython.org",
@@ -2254,7 +2265,7 @@
 		"Project Wonderful": {
 			"website": "projectwonderful.com",
 			"cats": [ 36 ],
-			"html": "<div[^>]+id=\"pw_adbox_"
+			"html": "<div[^>]+id=\"pw_adbox_",
 			"script": "^https?://(?:www\\.)?projectwonderful\\.com/(?:pwa\\.js|gen\\.php)",
 			"env": "^pw_adloader$"
 		},
@@ -2339,7 +2350,7 @@
 		"Red Hat": {
 			"website": "redhat.com",
 			"cats": [ 28 ],
-			"headers": { "Server": "(?:.*rhel(\\d+)|Red Hat)\\;version:\\1", "X-Powered-By": "Red Hat" }
+			"headers": { "Server": "Red Hat", "X-Powered-By": "Red Hat" }
 		},
 		"Reddit": {
 			"website": "code.reddit.com",

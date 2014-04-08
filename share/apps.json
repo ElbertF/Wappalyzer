@@ -2105,6 +2105,13 @@
 			"script": "paypalobjects\\.com/js",
 			"env": "^PAYPAL$"
 		},
+		"PDF.js": {
+			"website": "mozilla.github.io/pdf.js/",
+			"cats": [ 19 ],
+			"html": "<\\/div>\\s*<!-- outerContainer -->\\s*<div\\s*id=\"printContainer\"><\\/div>",
+			"url": "/web/viewer\\.html?file=[^&]\\.pdf",
+			"env": "^PDFJS$"
+		},
 		"Percussion": {
 			"website": "percussion.com",
 			"cats": [ 1 ],

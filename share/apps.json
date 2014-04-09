@@ -2486,6 +2486,12 @@
 			"cats": [ 6 ],
 			"html": "http://www\\.getseoshop\\.com"
 		},
+		"Shadow": {
+			"website": "shadow-technologies.co.uk",
+			"cats": [ 18 ],
+			"headers": { "X-Powered-By": "ShadowFramework" },
+			"implies": "PHP"
+		},
 		"ShareThis": {
 			"website": "sharethis.com",
 			"cats": [ 5 ],

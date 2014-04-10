@@ -3210,6 +3210,12 @@
 			"html": "mc\\.yandex\\.ru\/metrika\/watch\\.js|\\b(?:yaParams|yaCounter|yandex_metrika_callbacks)\\b",
 			"script": "mc\\.yandex\\.ru\/metrika\/watch\\.js"
 		},
+		"yepnope.js": {
+			"website": "yepnopejs.com",
+			"cats": [ 12 ],
+			"script": [ "yepnope-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "([\\d.]+)/yepnope(\\.min)?\\.js\\;version:\\1", "yepnope.*\\.js" ],
+			"env": "yepnope"
+		},
 		"YouTube": {
 			"website": "www.youtube.com",
 			"cats": [ 14 ],

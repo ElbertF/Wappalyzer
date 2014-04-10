@@ -3214,7 +3214,7 @@
 			"website": "yepnopejs.com",
 			"cats": [ 12 ],
 			"script": [ "yepnope-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "([\\d.]+)/yepnope(\\.min)?\\.js\\;version:\\1", "yepnope.*\\.js" ],
-			"env": "yepnope"
+			"env": "^yepnope$"
 		},
 		"YouTube": {
 			"website": "www.youtube.com",

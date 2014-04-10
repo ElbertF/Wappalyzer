@@ -3284,6 +3284,16 @@
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
 			"html": "<link[^>]+foundation[^>\"]+css"
+		},
+		"M.R. Inc Webserver": {
+			"website": "mrincworld.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "(?:M.R. Inc Webserver)" }
+		},
+		"M.R. Inc Wild CMS": {
+			"website": "mrincworld.com",
+			"cats": [ 1, 6 ],
+			"headers": { "X-Powered-By": "(?:M.R. Inc Wild CMS)" }
 		}
 	}
 }

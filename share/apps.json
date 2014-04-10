@@ -3103,6 +3103,16 @@
 			"html": "<!--[^>]+WP-Super-Cache",
 			"implies": "WordPress"
 		},
+		"MRIncWebserver": {
+			"website": "mrincworld.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "(?:M.R. Inc Webserver)" }
+		},
+		"MRIncWildCMS": {
+			"website": "mrincworld.com",
+			"cats": [ 1, 6 ],
+			"headers": { "X-Powered-By": "(?:M.R. Inc Wild CMS)" }
+		},
 		"Wowza Media Server": {
 			"website": "www.wowza.com",
 			"cats": [ 38 ],

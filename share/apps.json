@@ -3125,6 +3125,16 @@
 			"cats": [ 6 ],
 			"meta": { "generator": "xanario shopsoftware" }
 		},
+		"X-Cart": {
+			"website": "x-cart.com",
+			"cats": [ 6 ],
+			"meta": { "generator": "X-Cart(?: (\\d+))?\\;version:\\1" },
+			"headers": { "Set-Cookie": "xid=[a-z0-9]{32}(?:;|$)" },
+			"html": [ "Powered by X-Cart(?: (\\d+))? <a[^>]+href=\"http://www\\.x-cart\\.com/\"[^>]*>\\;version:\\1", "<a[^>]+href=\"[^\"]*(?:\\?|&)xcart_form_id=[a-z0-9]{32}(?:&|$)" ],
+			"script": "/skin/common_files/modules/Product_Options/func\\.js",
+			"env": "^(?:xcart_web_dir|xliteConfig)$",
+			"implies": "PHP"
+		},
 		"XenForo": {
 			"website": "xenforo.com",
 			"cats": [ 2 ],

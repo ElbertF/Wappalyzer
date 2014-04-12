@@ -1656,6 +1656,16 @@
 			"cats": [ 27 ],
 			"headers": { "X-Powered-By": "\\bLua(?: ([\\d.]+))?\\;version:\\1" }
 		},
+		"M.R. Inc Webserver": {
+			"website": "mrincworld.com",
+			"cats": [ 22 ],
+			"headers": { "Server": "(?M\.R\. Inc Inc Webserver)" }
+		},
+		"M.R. Inc Wild CMS": {
+			"website": "mrincworld.com",
+			"cats": [ 1, 6 ],
+			"headers": { "X-Powered-By": "(?:M\.R\. Inc Inc Wild CMS)" }
+		},
 		"Magento": {
 			"website": "www.magentocommerce.com",
 			"cats": [ 6 ],
@@ -3308,16 +3318,6 @@
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
 			"html": "<link[^>]+foundation[^>\"]+css"
-		},
-		"M.R. Inc Webserver": {
-			"website": "mrincworld.com",
-			"cats": [ 22 ],
-			"headers": { "Server": "(?:M.R. Inc Webserver)" }
-		},
-		"M.R. Inc Wild CMS": {
-			"website": "mrincworld.com",
-			"cats": [ 1, 6 ],
-			"headers": { "X-Powered-By": "(?:M.R. Inc Wild CMS)" }
 		}
 	}
 }

@@ -1583,7 +1583,7 @@
 			"website": "lokeshdhakar.com/projects/lightbox2/",
 			"cats": [ 7, 12 ],
 			"script": "lightbox.*\\.js",
-			"html": "<link.+?href=\"[^\"]+lightbox(\\.min)?\\.css"
+			"html": "<link [^>]*href=\"[^\"]+lightbox(\\.min)?\\.css"
 		},
 		"LightMon Engine": {
 			"website": "en.lightmon.ru",

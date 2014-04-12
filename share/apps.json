@@ -1659,12 +1659,12 @@
 		"M.R. Inc Webserver": {
 			"website": "mrincworld.com",
 			"cats": [ 22 ],
-			"headers": { "Server": "(?M\.R\. Inc Inc Webserver)" }
+			"headers": { "Server": "M\\.R\\. Inc Inc Webserver" }
 		},
 		"M.R. Inc Wild CMS": {
 			"website": "mrincworld.com",
 			"cats": [ 1, 6 ],
-			"headers": { "X-Powered-By": "(?:M\.R\. Inc Inc Wild CMS)" }
+			"headers": { "X-Powered-By": "M\\.R\\. Inc Inc Wild CMS" }
 		},
 		"Magento": {
 			"website": "www.magentocommerce.com",

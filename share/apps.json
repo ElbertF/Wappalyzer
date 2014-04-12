@@ -2276,6 +2276,14 @@
 			"html": "Powered by <a\\s+[^>]+>PrestaShop",
 			"implies": "PHP"
 		},
+		"prettyPhoto": {
+			"website": "no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/",
+			"cats": [ 7, 12 ],
+			"script": "jquery\\.prettyPhoto\\.js",
+			"html": "(?:<link [^>]*href=\"[^\"]*prettyPhoto(\\.min)?\\.css|<a [^>]*rel=\"prettyPhoto)",
+			"env": "pp_(?:alreadyInitialized|descriptions|images|titles)",
+			"implies": "jQuery"
+		},
 		"Project Wonderful": {
 			"website": "projectwonderful.com",
 			"cats": [ 36 ],

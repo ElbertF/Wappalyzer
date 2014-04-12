@@ -446,6 +446,12 @@
 			"headers": { "Server": "CherryPy\\/?([\\d\\.]+)?\\;version:\\1" },
 			"implies": "Python"
 		},
+		"Chitika"{
+                     "website": "chitika.com",
+                     "cats": [ 36 ],
+		     "script": "https?://scripts\\.chitika\\.net/",
+		     "env": "ch_c(?:lient|olor_site_link)"
+		 },
 		"CKEditor": {
 			"website": "ckeditor.com",
 			"cats": [ 24 ],

@@ -103,6 +103,12 @@
 		panel.port.on('resize', function(height) {
 			panel.height = height;
 		});
+
+		panel.port.on('goToUrl', function(url) {
+			panel.hide();
+
+			w.driver.goToURL({ url: w.config.websiteURL + url, medium: 'panel' });
+		});
 	}
 
 	createWidget = function() {
@@ -266,6 +272,14 @@
 				count = w.detected[url] ? Object.keys(w.detected[url]).length : 0;
 
 			w.log('display apps');
+
+			if ( panel === undefined ) {
+				if ( sp.prefs.urlbar ) {
+					createPanel();
+				} else {
+					createWidget();
+				}
+			}
 
 			if ( tabCache[tabs.activeTab.id] === undefined ) {
 				initTab(tabs.activeTab);

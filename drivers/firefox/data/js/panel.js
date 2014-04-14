@@ -1,40 +1,86 @@
 (function() {
 	self.port.on('displayApps', function(message) {
 		var
-			detectedApps = document.getElementById('detected-apps')
-			empty = document.getElementById('empty');
+			div, a, img, label, name,
+			d = document,
+			detectedApps = d.getElementById('detected-apps'),
+			empty = d.getElementById('empty');
 
-		detectedApps.innerHTML = '';
+		while ( detectedApps.firstChild ) {
+			detectedApps.removeChild(detectedApps.firstChild);
+		}
 
 		if ( message.tabCache.count > 0 ) {
 			empty.style.display = 'none';
 
 			for ( appName in message.tabCache.appsDetected ) {
+				div   = d.createElement('div');
+				a     = d.createElement('a');
+				img   = d.createElement('img');
+				label = d.createElement('span');
+				name  = d.createElement('span');
+
 				confidence = message.tabCache.appsDetected[appName].confidenceTotal;
 				version    = message.tabCache.appsDetected[appName].version;
 
-				html =
-					'<div class="detected-app">' +
-						'<a target="_blank" href="https://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?utm_source=firefox&utm_medium=panel&utm_campaign=extensions">' +
-							'<img src="images/icons/' + appName + '.png" width="16" height="16">' +
-							'<span class="label"><span class="name">' + appName + '</span>' + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
-						'</a>';
+				div.setAttribute('class', 'detected-app');
 
-				message.apps[appName].cats.forEach(function(cat) {
-					html +=
-						'<a target="_blank" href="https://wappalyzer.com/categories/' + message.categories[cat] + '?utm_source=firefox&utm_medium=panel&utm_campaign=extensions">' +
-							'<span class="category"><span class="name">' + message.categoryNames[cat] + '</span></span>' +
-						'</a>';
+				a.setAttribute('href', '#');
+
+				a.addEventListener('click', function(e) {
+					e.preventDefault();
+
+					self.port.emit('goToUrl', 'applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''));
 				});
 
-				html +=
-						'</a>' +
-					'</div>';
+				img.setAttribute('src',    'images/icons/' + appName + '.png');
+				img.setAttribute('height', '16');
+				img.setAttribute('width',  '16');
 
-				detectedApps.innerHTML = detectedApps.innerHTML + html;
+				label.setAttribute('class', 'label');
+
+				name.setAttribute('class', 'name');
+
+				name.appendChild(d.createTextNode(appName));
+
+				label.appendChild(name);
+				label.appendChild(d.createTextNode(( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '')));
+
+				a.appendChild(img)
+				a.appendChild(label)
+
+				div.appendChild(a);
+
+				message.apps[appName].cats.forEach(function(cat) {
+					a     = d.createElement('a');
+					label = d.createElement('span');
+					name  = d.createElement('span');
+
+					a.setAttribute('href', '#');
+
+					a.addEventListener('click', function(e) {
+						e.preventDefault();
+
+						self.port.emit('goToUrl', 'categories/' + message.categories[cat]);
+					});
+
+					label.setAttribute('class', 'category');
+
+					name.setAttribute('class', 'name');
+
+					name.appendChild(d.createTextNode(message.categoryNames[cat]));
+
+					label.appendChild(name);
+
+					a.appendChild(label);
+
+					div.appendChild(a);
+				});
+
+				detectedApps.appendChild(div);
 			}
 		} else {
-			empty.style.display = 'block';
+			empty.style.display = 'inherit';
 		}
 
 		self.port.emit('resize', document.body.offsetHeight);

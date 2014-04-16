@@ -2581,6 +2581,13 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "SiteEdit" }
 		},
+		"Skimlinks": {
+			"website": "skimlinks.com",
+			"cats": [ 36 ],
+			"script": "^https?://(?:[^/]+\\.)?skimresources\\.com/",
+			"html": "<a [^>]*href=\"https?://go\\.redirectingat\\.com/",
+			"env": "^skim(?:links|words)_"
+		},
 		"Smart Ad Server": {
 			"website": "smartadserver.com",
 			"cats": [ 36 ],

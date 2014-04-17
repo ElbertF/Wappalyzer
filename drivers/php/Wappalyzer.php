@@ -131,7 +131,8 @@ class Wappalyzer
 		$result->html = mb_check_encoding($result->html, 'UTF-8') ? $result->html : utf8_encode($result->html);
 		
 		$headers = trim(substr($response, 0, $headerSize));
-		$headers = end(preg_split('/^\s*$/m', $headers));
+		$headers = preg_split('/^\s*$/m', $headers);
+		$headers = end($headers);
 		$lines = array_slice(explode("\r\n", $headers), 1);
 
 		foreach ( $lines as $line ) {

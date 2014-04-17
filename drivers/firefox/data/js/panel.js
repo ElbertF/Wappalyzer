@@ -27,11 +27,13 @@
 
 				a.setAttribute('href', '#');
 
-				a.addEventListener('click', function(e) {
-					e.preventDefault();
+				(function(appName) {
+					a.addEventListener('click', function(e) {
+						e.preventDefault();
 
-					self.port.emit('goToUrl', 'applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''));
-				});
+						self.port.emit('goToUrl', 'applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, ''));
+					});
+				}(appName));
 
 				img.setAttribute('src',    'images/icons/' + appName + '.png');
 				img.setAttribute('height', '16');
@@ -58,11 +60,13 @@
 
 					a.setAttribute('href', '#');
 
-					a.addEventListener('click', function(e) {
-						e.preventDefault();
+					(function(appName) {
+						a.addEventListener('click', function(e) {
+							e.preventDefault();
 
-						self.port.emit('goToUrl', 'categories/' + message.categories[cat]);
-					});
+							self.port.emit('goToUrl', 'categories/' + message.categories[cat]);
+						});
+					}(appName));
 
 					label.setAttribute('class', 'category');
 

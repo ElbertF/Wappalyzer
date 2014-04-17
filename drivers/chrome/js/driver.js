@@ -78,15 +78,15 @@
 						case 'analyze':
 							tab = sender.tab;
 
-							a.href = tab.url;
+							a.href = tab.url.replace(/#.*$/, '');
 
 							hostname = a.hostname;
 
-							if ( headersCache[tab.url] !== undefined ) {
-								request.subject.headers = headersCache[tab.url];
+							if ( headersCache[a.href] !== undefined ) {
+								request.subject.headers = headersCache[a.href];
 							}
 
-							w.analyze(hostname, tab.url, request.subject);
+							w.analyze(hostname, a.href, request.subject);
 
 							break;
 						case 'fetch_headers':
@@ -135,8 +135,8 @@
 					}
 
 					if ( /text\/html/.test(responseHeaders['content-type']) ) {
-						if ( headersCache[details.url] === undefined ) {
-							headersCache[details.url] = {};
+						if ( headersCache[uri] === undefined ) {
+							headersCache[uri] = {};
 						}
 
 						for ( var header in responseHeaders ) {
@@ -171,7 +171,9 @@
 		 * Display apps
 		 */
 		displayApps: function() {
-			var count = w.detected[tab.url] ? Object.keys(w.detected[tab.url]).length.toString() : '0';
+			var
+				url   = tab.url.replace(/#.*$/, ''),
+				count = w.detected[url] ? Object.keys(w.detected[url]).length.toString() : '0';
 
 			if ( tabCache[tab.id] == null ) {
 				tabCache[tab.id] = {
@@ -181,14 +183,14 @@
 			}
 
 			tabCache[tab.id].count        = count;
-			tabCache[tab.id].appsDetected = w.detected[tab.url];
+			tabCache[tab.id].appsDetected = w.detected[url];
 
 			if ( count > 0 ) {
 				// Find the main application to display
 				var i, appName, found = false;
 
 				w.driver.categoryOrder.forEach(function(match) {
-					for ( appName in w.detected[tab.url] ) {
+					for ( appName in w.detected[url] ) {
 						w.apps[appName].cats.forEach(function(cat) {
 							if ( cat == match && !found ) {
 								chrome.browserAction.setIcon({ tabId: tab.id, path: 'images/icons/' + appName + '.png' });

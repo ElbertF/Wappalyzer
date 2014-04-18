@@ -6,4 +6,6 @@ drivers/**/apps.json
 drivers/**/wappalyzer.js
 drivers/**/icons/*.png
 
+!.gitkeep
+
 node_modules/*

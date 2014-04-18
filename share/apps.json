@@ -3346,6 +3346,12 @@
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
 			"html": "<link[^>]+foundation[^>\"]+css"
-		}
+		},
+        "Nette Framework": {
+            "website": "nette.org",
+            "cats": [ 18 ],
+            "headers": {"X-Powered-By": "Nette Framework"},
+            "implies": "PHP"
+        }
 	}
 }

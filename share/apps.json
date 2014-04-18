@@ -1697,7 +1697,8 @@
 		"Mambo": {
 			"website": "mambo-foundation.org",
 			"cats": [ 1 ],
-			"meta": { "generator": "Mambo" }
+			"meta": { "generator": "Mambo" },
+			"excludes": "Joomla"
 		},
 		"MantisBT": {
 			"website": "www.mantisbt.org",

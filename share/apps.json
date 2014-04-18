@@ -2890,6 +2890,19 @@
 			"url": "/typo3/",
 			"implies": "PHP"
 		},
+		"TYPO3 Flow": {
+			"website": "flow.typo3.org",
+			"cats": [ 18 ],
+			"headers": { "X-Flow-Powered": "Flow\\/.+$" },
+			"implies": "PHP"
+		},
+		"TYPO3 Neos": {
+			"website": "neos.typo3.org",
+			"cats": [ 1 ],
+			"html": "xmlns:typo3=\\\"http:\\/\\/www\\.typo3\\.org\\/ns\\/[0-9]{4}\\/Flow\\/Packages\\/Neos\\/Content\\/",
+			"url": "/neos/",
+			"implies": [ "PHP", "TYPO3 Flow" ]
+		},
 		"Ubercart": {
 			"website": "www.ubercart.org",
 			"cats": [ 6 ],

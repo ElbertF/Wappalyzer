@@ -2893,7 +2893,7 @@
 		"TYPO3 Flow": {
 			"website": "flow.typo3.org",
 			"cats": [ 18 ],
-			"headers": { "X-Flow-Powered": "Flow\\/.+$" },
+			"headers": { "X-Flow-Powered": "Flow\\/(.+)?$\\;version:\\1" },
 			"implies": "PHP"
 		},
 		"TYPO3 Neos": {

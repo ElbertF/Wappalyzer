@@ -790,7 +790,7 @@
 		"DTG": {
 			"website": "www.dtg.nl",
 			"cats": [ 1 ],
-			"html": [ "<a href=\"http://www\\.dtg\\.nl/\" target=\"_blank\" rel=\"nofollow\" id=\"poweredBy\" title=\"Site Powered by DTG\">Site Powered by DTG</a>", "var u=\\(\\('https:' == d\\.location\\.protocol\\) \\? 'https://resellerstat\\.mono\\.net/dtg/' : 'http://resellerstat\\.mono\\.net/dtg/'\\);" ],
+			"html": [ "<a href=\"http://www\\.dtg\\.nl/\"[^>]+>Site Powered by DTG", "var u=\\(\\('https:' == d\\.location\\.protocol\\) \\? 'https://resellerstat\\.mono\\.net/dtg/' : 'http://resellerstat\\.mono\\.net/dtg/'\\);" ],
 			"implies": "Mono.net"
 		},
 		"DreamWeaver": {

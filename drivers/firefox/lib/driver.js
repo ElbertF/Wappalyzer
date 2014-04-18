@@ -13,15 +13,35 @@
 		ss = require('sdk/simple-storage'),
 		sp = require("sdk/simple-prefs"),
 		tabs = require('sdk/tabs'),
-		panel,
-		widget,
 		initTab,
-		addIcon,
-		removeIcons,
-		createPanel,
-		createWidget,
-		getUrlBar,
-		getDocument;
+		Panel,
+		panel,
+		Widget,
+		widget,
+		UrlBar,
+		urlBar;
+
+	exports.main = function(options, callbacks) {
+		w.log('main: ' + options.loadReason);
+
+		w.init();
+	};
+
+	exports.onUnload = function(reason) {
+		w.log('unload: ' + reason);
+
+		if ( urlBar ) {
+			urlBar.destroy();
+		}
+
+		if ( widget ) {
+			widget.destroy();
+		}
+
+		if ( panel ) {
+			panel.destroy();
+		}
+	};
 
 	initTab = function(tab) {
 		tabCache[tab.id] = { count: 0, appsDetected: [] };
@@ -34,7 +54,7 @@
 			worker.port.on('analyze', function(message) {
 				var url = message.url.replace(/#.*$/, '');
 
-				if ( headersCache[url] !== undefined ) {
+				if ( typeof headersCache[url] !== 'undefined' ) {
 					message.analyze.headers = headersCache[url];
 				}
 
@@ -57,11 +77,84 @@
 		w.driver.displayApps();
 	});
 
-	addIcon = function(appName) {
+	Panel = function() {
+		var self = this;
+
+		this.panel = require('sdk/panel').Panel({
+			width: 250,
+			height: 50,
+			contentURL: data.url('panel.html'),
+			contentScriptFile: data.url('js/panel.js'),
+			position: { right: 30, top: 30 }
+		});
+
+		this.panel.port.on('resize', function(height) {
+			self.panel.height = height;
+		});
+
+		this.panel.port.on('goToUrl', function(url) {
+			self.panel.hide();
+
+			w.driver.goToURL({ url: w.config.websiteURL + url, medium: 'panel' });
+		});
+	};
+
+	Panel.prototype.get = function() {
+		return this.panel;
+	};
+
+	Panel.prototype.destroy = function() {
+		this.panel.destroy();
+	};
+
+	Widget = function(panel) {
+		this.widget = require('sdk/widget').Widget({
+			id: 'wappalyzer',
+			label: 'Wappalyzer',
+			contentURL: data.url('images/icon32.png'),
+			panel: panel.get()
+		});
+	};
+
+	Widget.prototype.get = function() {
+		return this.widget;
+	};
+
+	Widget.prototype.destroy = function() {
+		this.widget.destroy();
+	};
+
+	UrlBar = function(panel) {
+		var self = this;
+
+		this.panel = panel;
+
+		this.onClick = function() {
+			self.panel.get().show();
+		}
+
+		this.document = mediator.getMostRecentWindow('navigator:browser').document;
+
+		this.urlBar = this.document.createElement('hbox');
+
+		this.urlBar.setAttribute('id',          'wappalyzer-urlbar');
+		this.urlBar.setAttribute('style',       'cursor: pointer; margin: 0 2px;');
+		this.urlBar.setAttribute('tooltiptext', require('sdk/l10n').get('name'));
+
+		this.urlBar.addEventListener('click', this.onClick);
+
+		this.document.getElementById('urlbar-icons').appendChild(this.urlBar);
+	};
+
+	UrlBar.prototype.get = function() {
+		return this.urlBar;
+	};
+
+	UrlBar.prototype.addIcon = function(appName) {
 		var
-			icon        = getDocument().createElement('image'),
-			url         = appName !== undefined ? 'images/icons/' + appName + '.png' : 'images/icon32.png',
-			tooltipText = ( appName !== undefined ? appName + ' - ' + require('sdk/l10n').get('clickForDetails') + ' - ' : '' ) + require('sdk/l10n').get('name');
+			icon        = this.document.createElement('image'),
+			url         = typeof appName !== 'undefined' ? 'images/icons/' + appName + '.png' : 'images/icon32.png',
+			tooltipText = ( typeof appName !== 'undefined' ? appName + ' - ' + require('sdk/l10n').get('clickForDetails') + ' - ' : '' ) + require('sdk/l10n').get('name');
 
 		icon.setAttribute('src',         data.url(url));
 		icon.setAttribute('class',       'wappalyzer-icon');
@@ -70,100 +163,31 @@
 		icon.setAttribute('style',       'margin: 0 1px;');
 		icon.setAttribute('tooltiptext', tooltipText);
 
-		getUrlBar().appendChild(icon);
+		this.get().appendChild(icon);
 
-		return icon;
+		return this;
 	};
 
-	removeIcons = function() {
+	UrlBar.prototype.clear = function() {
 		var icons;
 
 		do {
-			icons = getUrlBar().getElementsByClassName('wappalyzer-icon');
+			icons = this.get().getElementsByClassName('wappalyzer-icon');
 
 			if ( icons.length ) {
-				getUrlBar().removeChild(icons[0]);
+				urlBar.get().removeChild(icons[0]);
 			}
 		} while ( icons.length );
+
+		return this;
 	};
 
-	createPanel = function() {
-		if ( panel ) {
-			panel.destroy();
-		}
+	UrlBar.prototype.destroy = function() {
+		this.urlBar.removeEventListener('click', this.onClick);
 
-		panel = require('sdk/panel').Panel({
-			width: 250,
-			height: 50,
-			contentURL: data.url('panel.html'),
-			contentScriptFile: data.url('js/panel.js'),
-			position: { right: 30, top: 30 }
-		});
+		this.urlBar.remove();
 
-		panel.port.on('resize', function(height) {
-			panel.height = height;
-		});
-
-		panel.port.on('goToUrl', function(url) {
-			panel.hide();
-
-			w.driver.goToURL({ url: w.config.websiteURL + url, medium: 'panel' });
-		});
-	}
-
-	createWidget = function() {
-		createPanel();
-
-		widget = require('sdk/widget').Widget({
-			id: 'wappalyzer',
-			label: 'Wappalyzer',
-			contentURL: data.url('images/icon32.png'),
-			panel: panel
-		});
-	}
-
-	getUrlBar = function() {
-		var
-			urlBar = getDocument().getElementById('wappalyzer-urlbar'),
-			show = true;
-
-		if ( !urlBar ) {
-			urlBar = getDocument().createElement('hbox');
-
-			urlBar.setAttribute('id',          'wappalyzer-urlbar');
-			urlBar.setAttribute('style',       'cursor: pointer; margin: 0 2px;');
-			urlBar.setAttribute('tooltiptext', require('sdk/l10n').get('name'));
-
-			urlBar.addEventListener('mouseover', function() {
-				if ( panel.isShowing ) {
-					show = false;
-				}
-			});
-
-			urlBar.addEventListener('mouseout', function() {
-				show = true;
-			});
-
-			urlBar.addEventListener('click', function() {
-				if ( show ) {
-					panel.show();
-
-					show = false;
-				} else {
-					panel.hide();
-
-					show = true;
-				}
-			}, false);
-
-			getDocument().getElementById('urlbar-icons').appendChild(urlBar);
-		}
-
-		return urlBar;
-	}
-
-	getDocument = function() {
-		return mediator.getMostRecentWindow('navigator:browser').document;
+		return this;
 	}
 
 	w.driver = {
@@ -180,10 +204,14 @@
 		init: function(callback) {
 			var json = JSON.parse(data.load('apps.json'));
 
+			w.log('driver.init');
+
+			panel = new Panel();
+
 			if ( sp.prefs.urlbar ) {
-				createPanel();
+				urlBar = new UrlBar(panel);
 			} else {
-				createWidget();
+				widget = new Widget(panel);
 			}
 
 			try {
@@ -210,14 +238,16 @@
 			}
 
 			sp.on('urlbar', function() {
+				panel = new Panel();
+
 				if ( !sp.prefs.urlbar ) {
-					removeIcons();
+					urlBar.destroy();
 
-					createWidget();
+					widget = new Widget(panel);
 				} else {
-					widget.destroy();
+					urlBar = new UrlBar(panel);
 
-					createPanel();
+					widget.get().destroy();
 				}
 
 				w.driver.displayApps();
@@ -246,7 +276,7 @@
 					}
 
 					if ( subject.contentType === 'text/html' ) {
-						if ( headersCache[uri] === undefined ) {
+						if ( typeof headersCache[uri] === 'undefined' ) {
 							headersCache[uri] = {};
 						}
 
@@ -258,12 +288,14 @@
 			};
 
 			httpRequestObserver.init();
+
+			w.driver.displayApps();
 		},
 
 		goToURL: function(args) {
 			var url = args.url + ( typeof args.medium === 'undefined' ? '' : '?pk_campaign=firefox&pk_kwd=' + args.medium);
 
-			tabs.open({ url: url, inBackground: args.background !== undefined && args.background });
+			tabs.open({ url: url, inBackground: typeof args.background !== 'undefined' && args.background });
 		},
 
 		displayApps: function() {
@@ -273,15 +305,17 @@
 
 			w.log('display apps');
 
-			if ( panel === undefined ) {
+			if ( !panel.get() ) {
+				panel = new Panel();
+
 				if ( sp.prefs.urlbar ) {
-					createPanel();
+					urlBar = new UrlBar(panel);
 				} else {
-					createWidget();
+					widget = new Widget(panel);
 				}
 			}
 
-			if ( tabCache[tabs.activeTab.id] === undefined ) {
+			if ( typeof tabCache[tabs.activeTab.id] === 'undefined' ) {
 				initTab(tabs.activeTab);
 			}
 
@@ -289,18 +323,18 @@
 			tabCache[tabs.activeTab.id].appsDetected = w.detected[url];
 
 			if ( sp.prefs.urlbar ) {
-				removeIcons();
+				urlBar.clear();
 
 				// Add icons
 				if ( count ) {
 					for ( appName in tabCache[tabs.activeTab.id].appsDetected ) {
-						addIcon(appName);
+						urlBar.addIcon(appName);
 					}
 				} else {
-					addIcon();
+					urlBar.addIcon();
 				}
 			} else {
-				widget.contentURL = data.url('images/icon32_hot.png');
+				widget.get().contentURL = data.url('images/icon32_hot.png');
 
 				if ( count ) {
 					// Find the main application to display
@@ -312,7 +346,7 @@
 						for ( appName in w.detected[url] ) {
 							w.apps[appName].cats.forEach(function(cat) {
 								if ( cat == match && !found ) {
-									widget.contentURL = data.url('images/icons/' + appName + '.png'),
+									widget.get().contentURL = data.url('images/icons/' + appName + '.png'),
 
 									found = true;
 								}
@@ -322,7 +356,7 @@
 				}
 			}
 
-			panel.port.emit('displayApps', { tabCache: tabCache[tabs.activeTab.id], apps: w.apps, categories: w.categories, categoryNames: categoryNames });
+			panel.get().port.emit('displayApps', { tabCache: tabCache[tabs.activeTab.id], apps: w.apps, categories: w.categories, categoryNames: categoryNames });
 		},
 
 		ping: function() {
@@ -386,7 +420,5 @@
 			36, // Advertising Network
 			19  // Miscellaneous
 		]
-	}
-
-	w.init();
+	};
 }());

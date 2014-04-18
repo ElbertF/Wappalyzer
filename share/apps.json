@@ -2881,8 +2881,8 @@
 			"meta": { "generator": "typepad" },
 			"url": "typepad\\.com"
 		},
-		"TYPO3": {
-			"website": "typo3.com",
+		"TYPO3 CMS": {
+			"website": "typo3.org",
 			"cats": [ 1 ],
 			"headers": { "Set-Cookie": "fe_typo_user" },
 			"meta": { "generator": "TYPO3\\s?([\\d.]+)?\\;version:\\1" },

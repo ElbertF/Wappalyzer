@@ -24,7 +24,4 @@ ln -f share/apps.json             drivers/php
 ln -f share/js/wappalyzer.js      drivers/php/js
 
 ln -f share/apps.json             drivers/python
-if [ ! -d "drivers/python/js" ];then
-  mkdir drivers/python/js/
-fi
 ln -f share/js/wappalyzer.js      drivers/python/js

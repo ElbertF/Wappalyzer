@@ -2889,11 +2889,9 @@
 			"url": "typepad\\.com"
 		},
 		"TYPO3 CMS": {
-			"website": "typo3.org",
+			"website": "www.typo3.org",
 			"cats": [ 1 ],
-			"headers": { "Set-Cookie": "fe_typo_user" },
-			"meta": { "generator": "TYPO3\\s?([\\d.]+)?\\;version:\\1" },
-			"html": "(?:<(?:script[^>]* src|link[^>]* href)=[^>]*fileadmin|<!--TYPO3SEARCH)",
+			"meta": { "generator": "TYPO3\\s+(?:CMS\\s+)?([\\d.]+)?(?:\\s+CMS)?\\;version:\\1" },
 			"url": "/typo3/",
 			"implies": "PHP"
 		},
@@ -2908,7 +2906,8 @@
 			"cats": [ 1 ],
 			"html": "xmlns:typo3=\\\"http:\\/\\/www\\.typo3\\.org\\/ns\\/[0-9]{4}\\/Flow\\/Packages\\/Neos\\/Content\\/",
 			"url": "/neos/",
-			"implies": [ "PHP", "TYPO3 Flow" ]
+			"implies": [ "PHP", "TYPO3 Flow" ],
+			"excludes": "TYPO3 CMS"
 		},
 		"Ubercart": {
 			"website": "www.ubercart.org",

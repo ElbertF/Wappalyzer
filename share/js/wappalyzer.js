@@ -387,8 +387,11 @@ var wappalyzer = (function() {
 				if ( !apps[app].detected ) {
 					delete apps[app];
 				}
+			}
 
-				if ( w.apps[app].excludes ) {
+			// Exclude app in detected apps only
+			for ( app in apps ) {
+				if (w.apps[app].excludes ) {
 					if ( typeof w.apps[app].excludes === 'string' ) {
 						w.apps[app].excludes = [ w.apps[app].excludes ];
 					}

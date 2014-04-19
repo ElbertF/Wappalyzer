@@ -1463,12 +1463,6 @@
 			"script": "jscharts.*\\.js",
 			"env": "^JSChart$"
 		},
-		"JSON (External File)": {
-			"website": "json.org",
-			"cats": [ 27, 34 ],
-			"headers": { "Content-Type": "(?:application|text)\\/JSON" },
-			"url": "\\.json(?:$|\\?)"
-		},
 		"JTL Shop": {
 			"website": "www.jtl-software.de/produkte/jtl-shop3",
 			"cats": [ 6 ],

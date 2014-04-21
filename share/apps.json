@@ -1005,6 +1005,11 @@
 			"html": "(?:<a[^>]+>Powered by Flyspray|<map id=\"projectsearchform)",
 			"headers": { "Set-Cookie": "flyspray_project=" }
 		},
+		"Font Awesome": {
+			"website": "fontawesome.io",
+			"cats": [ 17 ],
+			"html": "<link[^>]* href=[^>]+font-awesome(?:\\.min)?\\.css"
+		},
 		"FreeBSD": {
 			"website": "freebsd.org",
 			"cats": [ 28 ],
@@ -1179,12 +1184,16 @@
 		"Handlebars": {
 			"website": "handlebarsjs.com",
 			"cats": [ 12 ],
-			"env": "^Handlebars$"
+			"env": "^Handlebars$",
+			"script": "handlebars(?:\\.runtime)(?:-v[\\d.]+)?\\;version:\\1(?:\\.min)?\\.js)",
+			"html": "<[^>]*type=[^>]text\\/x-handlebars-template"
 		},
 		"HeadJS": {
 			"website": "headjs.com",
 			"cats": [ 12 ],
 			"script": "head\\.(?:core|load)(?:\\.min)?\\.js",
+			"html": "<[^>]*data-headjs-load",
+			"env": "^head$\\;confidence:50"
 		},
 		"Hello Bar": {
 			"website": "hellobar.com",
@@ -1325,6 +1334,11 @@
 			"cats": [ 6 ],
 			"script": "(?:is-bin|INTERSHOP)"
 		},
+		"Ionicons": {
+			"website": "ionicons.com",
+			"cats": [ 17 ],
+			"html": "<link[^>]* href=[^>]+ionicons(?:\\.min)?\\.css"
+		},
 		"IPB": {
 			"website": "www.invisionpower.com",
 			"cats": [ 2 ],
@@ -1388,6 +1402,11 @@
 			"headers": { "X-Powered-By": "JBossWeb(?:-([\\d.]+))?\\;version:\\1" },
 			"implies": "JBoss Application Server",
 			"excludes": "Apache Tomcat"
+		},
+		"Jekyll": {
+			"website": "jekyllrb.com",
+			"cats": [ 1, 11],
+			"meta": { "generator": "Jekyll(?:v[\\d.]+)?\\;version:\\1" }
 		},
 		"Jetty": {
 			"website": "www.eclipse.org/jetty",
@@ -1713,6 +1732,12 @@
 			"cats": [ 25 ],
 			"script": "mathjax.js",
 			"env": "^MathJax$"
+		},
+		"math.js": {
+			"website": "mathjs.org",
+			"cats": [ 12 ],
+			"script": "math(?:\\.min)?\\.js",
+			"env": "^mathjs$"
 		},
 		"MaxSite CMS": {
 			"website": "max-3000.com",
@@ -2669,6 +2694,12 @@
 			"cats": [ 4 ],
 			"env": "^DOCUMENTATION_OPTIONS$",
 			"implies": "Python"
+		},
+		"spin.js": {
+			"website": "fgnass.github.io/spin.js/",
+			"cats": [ 12, 25 ],
+			"env": "^Spinner$",
+			"script": "spin(?:\\.min)?\\.js"
 		},
 		"SPIP": {
 			"website": "www.spip.net",

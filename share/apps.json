@@ -2901,8 +2901,8 @@
 			"website": "twiki.org",
 			"cats": [ 8 ],
 			"headers": { "Set-cookie": "TWIKISID" },
-			"script": "(TWikiJavascripts|twikilib(\\.js|\\.min\\.js))",
-			"html": "This site is powered by the TWiki collaboration platform"
+			"script": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
+			"html": "<img [^>]*(?:title|alt)=\"This site is powered by the TWiki collaboration platform"
 		},
 		"Twilight CMS": {
 			"website": "www.twilightcms.com",

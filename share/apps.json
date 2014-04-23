@@ -1187,7 +1187,7 @@
 			"website": "handlebarsjs.com",
 			"cats": [ 12 ],
 			"env": "^Handlebars$",
-			"script": "handlebars(?:\\.runtime)?(?:-([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
+			"script": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
 			"html": "<[^>]*type=[^>]text\\/x-handlebars-template"
 		},
 		"HeadJS": {
@@ -1453,8 +1453,7 @@
 			"website": "jqtouch.com",
 			"cats": [ 26 ],
 			"script": "jqtouch.*\\.js",
-			"env": "^jQT$",
-			"implies": [ "jQuery\\;confidence:50", "Zepto\\;confidence:50" ]
+			"env": "^jQT$"
 		},
 		"jQuery": {
 			"website": "jquery.com",
@@ -1822,7 +1821,7 @@
 		"MochiKit": {
 			"website": "mochikit.com",
 			"cats": [ 12 ],
-			"script": "MochiKit.*\\.js",
+			"script": "MochiKit(\\.min)?\\.js",
 			"env": "^MochiKit$"
 		},
 		"Modernizr": {
@@ -1909,19 +1908,19 @@
 		"Mollom": {
 			"website": "mollom.com",
 			"cats": [ 16 ],
-			"script": "mollom.*\\.js",
+			"script": "mollom(\\.min)?\\.js",
 			"html": "<img[^>]+\\.mollom\\.com"
 		},
 		"Moment.js": {
 			"website": "momentjs.com",
 			"cats": [ 12 ],
-			"script": "moment.*\\.js",
+			"script": "moment(\\.min)?\\.js",
 			"env": "^moment$"
 		},
 		"Moment Timezone": {
 			"website": "momentjs.com/timezone/",
 			"cats": [ 12 ],
-			"script": "moment-timezone.*\\.js",
+			"script": "moment-timezone(\\-data)?(\\.min)?\\.js",
 			"implies": "Moment.js"
 		},
 		"Mondo Media": {
@@ -1947,7 +1946,7 @@
 		"Mono.net": {
 			"website": "www.mono.net",
 			"cats": [ 1 ],
-			"script": "monotracker.*\\.js",
+			"script": "monotracker(\\.min)?\\.js",
 			"env": "_monoTracker",
 			"html": "var u=\\(\\('https:' == d\\.location\\.protocol\\) \\? 'https://resellerstat\\.mono\\.net/mono/' : 'http://resellerstat\\.mono\\.net/mono/'\\);",
 			"implies": "Piwik"
@@ -1963,7 +1962,7 @@
 		"Moogo": {
 			"website": "www.moogo.com",
 			"cats": [ 1 ],
-			"script": "kotisivukone.*\\.js"
+			"script": "kotisivukone(\\.min)?\\.js"
 		},
 		"MooTools": {
 			"website": "mootools.net",
@@ -1985,14 +1984,15 @@
 		"Mustache": {
 			"website": "mustache.github.com",
 			"cats": [ 12 ],
-			"script": "mustache.*\\.js",
+			"script": "mustache(\\.min)?\\.js",
 			"env": "^Mustache$"
 		},
 		"MyBB": {
 			"website": "www.mybboard.net",
 			"cats": [ 2 ],
 			"html": "(?:<script [^>]+\\s+<!--\\s+lang\\.no_new_posts|<a[^>]* title=\"Powered By MyBB)",
-			"env": "^MyBB$"
+			"env": "^MyBB$",
+			"implies": [ "PHP", "MySQL" ]
 		},
 		"MyBlogLog": {
 			"website": "www.mybloglog.com",

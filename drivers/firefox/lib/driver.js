@@ -5,14 +5,9 @@
 		{Cc, Ci} = require('chrome'),
 		main = require('wappalyzer'),
 		w = main.wappalyzer,
-		mediator = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator),
 		tabCache = {},
 		headersCache = {},
 		categoryNames = {},
-		data = require('sdk/self').data,
-		ss = require('sdk/simple-storage'),
-		sp = require("sdk/simple-prefs"),
-		tabs = require('sdk/tabs'),
 		initTab,
 		Panel,
 		panel,
@@ -44,11 +39,13 @@
 	};
 
 	initTab = function(tab) {
+		w.log('initTab');
+
 		tabCache[tab.id] = { count: 0, appsDetected: [] };
 
 		tab.on('ready', function(tab) {
 			var worker = tab.attach({
-				contentScriptFile: data.url('js/tab.js')
+				contentScriptFile: require('sdk/self').data.url('js/tab.js')
 			});
 
 			worker.port.on('analyze', function(message) {
@@ -67,15 +64,10 @@
 		});
 	};
 
-	tabs.on('open', initTab);
-
-	tabs.on('close', function(tab) {
-		tabCache[tab.id] = null;
-	});
-
-	tabs.on('activate', function(tab) {
-		w.driver.displayApps();
-	});
+	require('sdk/tabs')
+		.on('open', initTab)
+		.on('close', function(tab) { tabCache[tab.id] = null; })
+		.on('activate', function(tab) { w.driver.displayApps(); });
 
 	Panel = function() {
 		var self = this;
@@ -83,8 +75,8 @@
 		this.panel = require('sdk/panel').Panel({
 			width: 250,
 			height: 50,
-			contentURL: data.url('panel.html'),
-			contentScriptFile: data.url('js/panel.js'),
+			contentURL: require('sdk/self').data.url('panel.html'),
+			contentScriptFile: require('sdk/self').data.url('js/panel.js'),
 			position: { right: 30, top: 30 }
 		});
 
@@ -111,7 +103,7 @@
 		this.widget = require('sdk/widget').Widget({
 			id: 'wappalyzer',
 			label: 'Wappalyzer',
-			contentURL: data.url('images/icon32.png'),
+			contentURL: require('sdk/self').data.url('images/icon32.png'),
 			panel: panel.get()
 		});
 	};
@@ -133,7 +125,8 @@
 			self.panel.get().show();
 		}
 
-		this.document = mediator.getMostRecentWindow('navigator:browser').document;
+		this.document = Cc['@mozilla.org/appshell/window-mediator;1'].getService(Ci.nsIWindowMediator)
+			.getMostRecentWindow('navigator:browser').document;
 
 		this.urlBar = this.document.createElement('hbox');
 
@@ -156,7 +149,7 @@
 			url         = typeof appName !== 'undefined' ? 'images/icons/' + appName + '.png' : 'images/icon32.png',
 			tooltipText = ( typeof appName !== 'undefined' ? appName + ' - ' + require('sdk/l10n').get('clickForDetails') + ' - ' : '' ) + require('sdk/l10n').get('name');
 
-		icon.setAttribute('src',         data.url(url));
+		icon.setAttribute('src',         require('sdk/self').data.url(url));
 		icon.setAttribute('class',       'wappalyzer-icon');
 		icon.setAttribute('width',       '16');
 		icon.setAttribute('height',      '16');
@@ -202,13 +195,18 @@
 		 * Initialize
 		 */
 		init: function(callback) {
-			var json = JSON.parse(data.load('apps.json'));
+			var
+				id,
+				tab,
+				version,
+				httpRequestObserver,
+				json = JSON.parse(require('sdk/self').data.load('apps.json'));
 
 			w.log('driver.init');
 
 			panel = new Panel();
 
-			if ( sp.prefs.urlbar ) {
+			if ( require('sdk/simple-prefs').prefs.urlbar ) {
 				urlBar = new UrlBar(panel);
 			} else {
 				widget = new Widget(panel);
@@ -217,30 +215,30 @@
 			try {
 				var version = require('sdk/self').version;
 
-				if ( !ss.storage.version ) {
+				if ( !require('sdk/simple-storage').storage.version ) {
 					w.driver.goToURL({ url: w.config.websiteURL + 'installed', medium: 'install' });
-				} else if ( version !== ss.storage.version ) {
+				} else if ( version !== require('sdk/simple-storage').storage.version ) {
 					w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade', background: true });
 				}
 
-				ss.storage.version = version;
+				require('sdk/simple-storage').storage.version = version;
 			} catch(e) { }
 
 			w.apps = json.apps;
 			w.categories = json.categories;
 
-			for ( var id in w.categories ) {
+			for ( id in w.categories ) {
 				categoryNames[id] = require('sdk/l10n').get('cat' + id);
 			}
 
-			for each ( var tab in tabs ) {
+			for each ( tab in require('sdk/tabs') ) {
 				initTab(tab);
 			}
 
-			sp.on('urlbar', function() {
+			require('sdk/simple-prefs').on('urlbar', function() {
 				panel = new Panel();
 
-				if ( !sp.prefs.urlbar ) {
+				if ( !require('sdk/simple-prefs').prefs.urlbar ) {
 					urlBar.destroy();
 
 					widget = new Widget(panel);
@@ -253,7 +251,7 @@
 				w.driver.displayApps();
 			});
 
-			var httpRequestObserver = {
+			httpRequestObserver = {
 				init: function() {
 					var observerService = Cc['@mozilla.org/observer-service;1'].getService(Ci.nsIObserverService);
 
@@ -295,46 +293,51 @@
 		goToURL: function(args) {
 			var url = args.url + ( typeof args.medium === 'undefined' ? '' : '?pk_campaign=firefox&pk_kwd=' + args.medium);
 
-			tabs.open({ url: url, inBackground: typeof args.background !== 'undefined' && args.background });
+			require('sdk/tabs').open({ url: url, inBackground: typeof args.background !== 'undefined' && args.background });
 		},
 
 		displayApps: function() {
-			var
-				url   = tabs.activeTab.url.replace(/#.*$/, ''),
-				count = w.detected[url] ? Object.keys(w.detected[url]).length : 0;
+			var url, count;
 
 			w.log('display apps');
+
+			if ( !require('sdk/tabs').activeTab ) {
+				return;
+			}
+
+			url   = require('sdk/tabs').activeTab.url.replace(/#.*$/, '');
+			count = w.detected[url] ? Object.keys(w.detected[url]).length : 0;
 
 			if ( !panel.get() ) {
 				panel = new Panel();
 
-				if ( sp.prefs.urlbar ) {
+				if ( require('sdk/simple-prefs').prefs.urlbar ) {
 					urlBar = new UrlBar(panel);
 				} else {
 					widget = new Widget(panel);
 				}
 			}
 
-			if ( typeof tabCache[tabs.activeTab.id] === 'undefined' ) {
-				initTab(tabs.activeTab);
+			if ( typeof tabCache[require('sdk/tabs').activeTab.id] === 'undefined' ) {
+				initTab(require('sdk/tabs').activeTab);
 			}
 
-			tabCache[tabs.activeTab.id].count = count;
-			tabCache[tabs.activeTab.id].appsDetected = w.detected[url];
+			tabCache[require('sdk/tabs').activeTab.id].count = count;
+			tabCache[require('sdk/tabs').activeTab.id].appsDetected = w.detected[url];
 
-			if ( sp.prefs.urlbar ) {
+			if ( require('sdk/simple-prefs').prefs.urlbar ) {
 				urlBar.clear();
 
 				// Add icons
 				if ( count ) {
-					for ( appName in tabCache[tabs.activeTab.id].appsDetected ) {
+					for ( appName in tabCache[require('sdk/tabs').activeTab.id].appsDetected ) {
 						urlBar.addIcon(appName);
 					}
 				} else {
 					urlBar.addIcon();
 				}
 			} else {
-				widget.get().contentURL = data.url('images/icon32_hot.png');
+				widget.get().contentURL = require('sdk/self').data.url('images/icon32_hot.png');
 
 				if ( count ) {
 					// Find the main application to display
@@ -346,7 +349,7 @@
 						for ( appName in w.detected[url] ) {
 							w.apps[appName].cats.forEach(function(cat) {
 								if ( cat == match && !found ) {
-									widget.get().contentURL = data.url('images/icons/' + appName + '.png'),
+									widget.get().contentURL = require('sdk/self').data.url('images/icons/' + appName + '.png'),
 
 									found = true;
 								}
@@ -356,13 +359,13 @@
 				}
 			}
 
-			panel.get().port.emit('displayApps', { tabCache: tabCache[tabs.activeTab.id], apps: w.apps, categories: w.categories, categoryNames: categoryNames });
+			panel.get().port.emit('displayApps', { tabCache: tabCache[require('sdk/tabs').activeTab.id], apps: w.apps, categories: w.categories, categoryNames: categoryNames });
 		},
 
 		ping: function() {
 			var Request = require('sdk/request').Request;
 
-			if ( Object.keys(w.ping.hostnames).length && sp.prefs.tracking ) {
+			if ( Object.keys(w.ping.hostnames).length && require('sdk/simple-prefs').prefs.tracking ) {
 				Request({
 					url: w.config.websiteURL + 'ping/v2/',
 					content: { json: encodeURIComponent(JSON.stringify(w.ping)) },

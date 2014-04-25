@@ -10,18 +10,18 @@
 			detectedApps.removeChild(detectedApps.firstChild);
 		}
 
-		if ( message.tabCache.count > 0 ) {
+		if ( message.tabs.count > 0 ) {
 			empty.style.display = 'none';
 
-			for ( appName in message.tabCache.appsDetected ) {
+			for ( appName in message.tabs.appsDetected ) {
 				div   = d.createElement('div');
 				a     = d.createElement('a');
 				img   = d.createElement('img');
 				label = d.createElement('span');
 				name  = d.createElement('span');
 
-				confidence = message.tabCache.appsDetected[appName].confidenceTotal;
-				version    = message.tabCache.appsDetected[appName].version;
+				confidence = message.tabs.appsDetected[appName].confidenceTotal;
+				version    = message.tabs.appsDetected[appName].version;
 
 				div.setAttribute('class', 'detected-app');
 

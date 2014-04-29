@@ -1693,6 +1693,11 @@
 			"html": "<link[^>]*/sites/[a-z\\d]{24}/theme/stylesheets/.*>",
 			"implies": [ "Ruby on Rails", "MongoDB" ]
 		},
+		"Lo-dash": {
+			"website": "www.lodash.com",
+			"cats": [ 12 ],
+			"script": "lodash.*\\.js"
+		},
 		"Logitech Media Server": {
 			"website": "www.mysqueezebox.com",
 			"cats": [ 22, 38 ],

@@ -3438,6 +3438,12 @@
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
 			"html": "<link[^>]+foundation[^>\"]+css"
+		},
+		"October CMS": {
+			"website": "octobercms.com",
+			"cats": [ 1 ],
+			"headers": { "Set-Cookie": "october_session=" },
+			"implies": "Laravel"
 		}
 	}
 }

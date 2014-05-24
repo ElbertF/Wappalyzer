@@ -101,6 +101,7 @@
 			"cats": [ 18 ],
 			"url": "\\.cfm(?:$|\\?)",
 			"html": "<!-- START headerTags\\.cfm",
+			"headers": { "Cookie": "CFTOKEN=" },
 			"script": "/cfajax/",
 			"env": "^_cfEmails$",
 			"implies": "CFML"

@@ -291,6 +291,7 @@
 		"Banshee": {
 			"website": "www.banshee-php.org",
 			"cats": [ 1, 18 ],
+			"meta": { "generator": "Banshee PHP" },
 			"html": "Built upon the <a href=\"[^>]+banshee-php\\.org/\">[a-z]+</a>(?:v([\\d.]+))?\\;version:\\1",
 			"implies": "PHP"
 		},

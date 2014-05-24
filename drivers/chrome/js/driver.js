@@ -89,10 +89,6 @@
 							w.analyze(hostname, a.href, request.subject);
 
 							break;
-						case 'fetch_headers':
-							chrome.tabs.executeScript(request.tab.id, { file: 'js/headers.js' });
-
-							break;
 						case 'get_apps':
 							sendResponse({
 								tabCache:   tabCache[request.tab.id],

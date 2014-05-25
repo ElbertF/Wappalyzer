@@ -2974,7 +2974,8 @@
 			"website": "flow.typo3.org",
 			"cats": [ 18 ],
 			"headers": { "X-Flow-Powered": "Flow\\/(.+)?$\\;version:\\1" },
-			"implies": "PHP"
+			"implies": "PHP",
+			"excludes": "TYPO3 CMS"
 		},
 		"TYPO3 Neos": {
 			"website": "neos.typo3.org",

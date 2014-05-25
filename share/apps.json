@@ -2974,14 +2974,14 @@
 		"TYPO3 Flow": {
 			"website": "flow.typo3.org",
 			"cats": [ 18 ],
-			"headers": { "X-Flow-Powered": "Flow\\/(.+)?$\\;version:\\1" },
+			"headers": { "X-Flow-Powered": "Flow/(.+)?$\\;version:\\1" },
 			"implies": "PHP",
 			"excludes": "TYPO3 CMS"
 		},
 		"TYPO3 Neos": {
 			"website": "neos.typo3.org",
 			"cats": [ 1 ],
-			"html": "xmlns:typo3=\\\"http:\\/\\/www\\.typo3\\.org\\/ns\\/[\\d]{4}\\/Flow\\/Packages\\/Neos\\/Content\\/",
+			"html": "xmlns:typo3=\\\"http://www\\.typo3\\.org/ns/[\\d]{4}/Flow/Packages/Neos/Content/",
 			"url": "/neos/",
 			"implies": [ "PHP", "TYPO3 Flow" ],
 			"excludes": "TYPO3 CMS"

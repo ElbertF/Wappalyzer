@@ -2967,6 +2967,7 @@
 			"website": "www.typo3.org",
 			"cats": [ 1 ],
 			"meta": { "generator": "TYPO3\\s+(?:CMS\\s+)?([\\d.]+)?(?:\\s+CMS)?\\;version:\\1" },
+			"html": "<(?:script[^>]+ src|link[^>]+ href)=[^>]+typo3temp/",
 			"url": "/typo3/",
 			"implies": "PHP"
 		},

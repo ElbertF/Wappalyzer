@@ -2729,6 +2729,7 @@
 		"Solodev": {
 			"website": "www.solodev.com",
 			"cats": [ 1 ],
+			"headers": { "solodev_session": ".*" },
 			"html": "<div class='dynamicDiv' id='dd\\.\\d\\.\\d'>",
 			"implies": "PHP"
 		},		

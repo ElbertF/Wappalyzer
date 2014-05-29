@@ -1069,6 +1069,12 @@
 			"meta": { "generator": "Ghost(?:\\s([\\d.]+))?\\;version:\\1" },
 			"headers": { "X-Ghost-Cache-Status": ".*" }
  		},
+		"Glyphicons": {
+			"website": "glyphicons.com",
+			"cats": [ 17 ],
+			"html": "<link[^>]* href=[^>]+glyphicons(?:\\.min)?\\.css",
+			"url": "glyphicons"
+		},
 		"GoAhead": {
 			"website": "embedthis.com/products/goahead/index.html",
 			"cats": [ 22 ],
@@ -1109,7 +1115,7 @@
 			"website": "code.google.com/apis/webfonts",
 			"cats": [ 17 ],
 			"script": "googleapis\\.com/.+webfont",
-			"html": "<link[^>]* href=[^>]+fonts\\.googleapis\\.com",
+			"html": "<link[^>]* href=[^>]+fonts\\.(googleapis|google)\\.com",
 			"env": "^WebFonts$"
 		},
 		"Google Maps": {
@@ -1521,7 +1527,7 @@
 		"KineticJS": {
 			"website": "kineticjs.com",
 			"cats": [ 25 ],
-			"script": "kinetic(?:-v?([\\d.]+))?\\.js\\;version:\\1",
+			"script": "kinetic(?:-v?([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
 			"env": "^Kinetic$"
 		},
 		"KISSmetrics": {
@@ -2052,6 +2058,14 @@
 			"website": "www.nopcommerce.com",
 			"cats": [ 6 ],
 			"html": "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)"
+		},
+		"NVD3": {
+			"website": "nvd3.org",
+			"cats": [ 25 ],
+			"script": "nv\\.d3(?:\\.min)?\\.js",
+			"html": "<link[^>]* href=[^>]+nv\\.d3(?:\\.min)?\\.css",
+			"env": "^nv$",
+			"implies": "D3"
 		},
 		"Open AdStream": {
 			"website": "xaxis.com",
@@ -2844,6 +2858,13 @@
 			"cats": [ 25 ],
 			"script": "three(?:\\.min)?\\.js",
 			"env": "^THREE$"
+		},
+		"TiddlyWiki": {
+			"website": "tiddlywiki.com",
+			"cats": [ 1, 2, 4, 8 ],
+			"html": "<[^>]*type=[^>]text\\/vnd.tiddlywiki",
+			"env": "tiddler",
+			"meta": { "generator": "^TiddlyWiki$", "application-name": "^TiddlyWiki$", "tiddlywiki-version": ".*\\;version:\\1", "copyright": "^TiddlyWiki created by Jeremy Ruston\\, \\(jeremy \\[at\\] jermolene \\[dot\\] com\\) Copyright © Jeremy Ruston 2004-2007 Copyright &copy UnaMesa Association 2007-2014 Redistribution and use in source and binary forms\\, with or without modification\\, are permitted provided that the following conditions are met: Redistributions of source code must retain the above copyright notice\\, this list of conditions and the following disclaimer\\. Redistributions in binary form must reproduce the above copyright notice\\, this list of conditions and the following disclaimer in the documentation and\\/or other materials provided with the distribution\\. Neither the name of the UnaMesa Association nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission\\. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS 'AS IS' AND ANY EXPRESS OR IMPLIED WARRANTIES\\, INCLUDING\\, BUT NOT LIMITED TO\\, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED\\. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT\\, INDIRECT\\, INCIDENTAL\\, SPECIAL\\, EXEMPLARY\\, OR CONSEQUENTIAL DAMAGES \\(INCLUDING\\, BUT NOT LIMITED TO\\, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE\\, DATA\\, OR PROFITS; OR BUSINESS INTERRUPTION\\) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY\\, WHETHER IN CONTRACT\\, STRICT LIABILITY\\, OR TORT \\(INCLUDING NEGLIGENCE OR OTHERWISE\\) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE\\, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE\\.$" }
 		},
 		"Tiki Wiki CMS Groupware": {
 			"website": "tiki.org",

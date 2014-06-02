@@ -1072,8 +1072,7 @@
 		"Glyphicons": {
 			"website": "glyphicons.com",
 			"cats": [ 17 ],
-			"html": "<link[^>]* href=[^>]+glyphicons(?:\\.min)?\\.css",
-			"url": "glyphicons"
+			"html": "<link[^>]* href=[^>]+glyphicons(?:\\.min)?\\.css"
 		},
 		"GoAhead": {
 			"website": "embedthis.com/products/goahead/index.html",

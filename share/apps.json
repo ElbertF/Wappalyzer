@@ -2863,7 +2863,7 @@
 			"cats": [ 1, 2, 4, 8 ],
 			"html": "<[^>]*type=[^>]text\\/vnd\\.tiddlywiki",
 			"env": "tiddler",
-			"meta": { "generator": "^TiddlyWiki$", "application-name": "^TiddlyWiki$", "tiddlywiki-version": "(.*)\\;version:\\1", "copyright": "^TiddlyWiki created by Jeremy Ruston$" }
+			"meta": { "generator": "^TiddlyWiki$", "application-name": "^TiddlyWiki$", "tiddlywiki-version": "(.*)\\;version:\\1", "copyright": "^TiddlyWiki created by Jeremy Ruston" }
 		},
 		"Tiki Wiki CMS Groupware": {
 			"website": "tiki.org",

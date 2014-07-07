@@ -2177,6 +2177,12 @@
 			"cats": [ 33 ],
 			"headers": { "Server": "OpenSSL(?:/([\\d.]+[a-z]?))?\\;version:\\1" }
 		},
+		"OpenStreetMap": {
+			"website": "openstreetmap.org",
+			"cats": [ 35 ],
+			"html": "<a[^>]+>© OpenStreetMap[^<]*</a>",
+			"implies": {"OpenLayers", "Leaflet"}
+		},
 		"OpenText Web Solutions": {
 			"website": "websolutions.opentext.com",
 			"cats": [ 1 ],

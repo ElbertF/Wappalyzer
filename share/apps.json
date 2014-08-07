@@ -2002,6 +2002,12 @@
 			"headers": { "Server": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1", "X-Powered-By": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1" },
 			"implies": [ "Python\\;confidence:50", "Apache" ]
 		},
+		"Moguta.CMS": {
+			"website": "moguta.ru",
+			"cats": [ 1, 6 ],
+			"html": "<script type=[\"']text\/javascript[\"'] [^>]+mg-(?:core|templates)"
+			"implies": "PHP"
+ 		},
 		"MoinMoin": {
 			"website": "moinmo.in",
 			"cats": [ 8 ],

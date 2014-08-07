@@ -3047,6 +3047,11 @@
 			"headers": { "X-Swiftlet-Cache": ".*", "X-Powered-By": "Swiftlet", "X-Generator": "Swiftlet" },
 			"implies": "PHP"
 		},
+		"SyntaxHighlighter": {
+			"website": "github.com/alexgorbatchev/SyntaxHighlighter",
+			"cats": [ 19 ],
+			"html": "(<script|<link)[^>]*sh(Core|Brush|ThemeDefault)"
+ 		},
 		"Textpattern CMS": {
 			"website": "textpattern.com",
 			"cats": [ 1 ],

@@ -897,6 +897,12 @@
 			"script": "elqCfg\\.js",
 			"env": "^elq(?:SiteID|Load|CurESite)$"
 		},
+		"Eleanor CMS": {
+			"website": "eleanor-cms.ru",
+			"cats": [ 1 ],
+			"meta": { "generator": "Eleanor" },
+			"implies": "PHP"
+		},
 		"Ember.js": {
 			"website": "emberjs.com",
 			"cats": [ 12 ],

@@ -899,6 +899,12 @@
 			"script": "elqCfg\\.js",
 			"env": "^elq(?:SiteID|Load|CurESite)$"
 		},
+		"Eleanor CMS": {
+			"website": "eleanor-cms.ru",
+			"cats": [ 1 ],
+			"meta": { "generator": "Eleanor" },
+			"implies": "PHP"
+		},
 		"Ember.js": {
 			"website": "emberjs.com",
 			"cats": [ 12 ],
@@ -1157,7 +1163,7 @@
 			"website": "google.com/analytics",
 			"cats": [ 10 ],
 			"html": "_gaq\\.push\\(\\['_setAccount|i\\['GoogleAnalyticsObject'\\]|ga\\.async = true",
-			"script": "^https?://[^\/]+\\.google-analytics\\.com\/(?:ga|urchin|(analytics))\\.js\\;version:\\1?Universal Analytics:)",
+			"script": "^https?://[^\/]+\\.google-analytics\\.com\/(?:ga|urchin|(analytics))\\.js)",
 			"headers": { "Set-Cookie": "__utma" },
 			"env": "^gaGlobal$"
 		},
@@ -2010,7 +2016,13 @@
 			"cats": [ 33 ],
 			"headers": { "Server": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1", "X-Powered-By": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1" },
 			"implies": [ "Python\\;confidence:50", "Apache" ]
-		},
+		},				
+		"Moguta.CMS": {
+			"website": "moguta.ru",
+			"cats": [ 1, 6 ],
+			"html": "(<script|link)[^>]*mg-(core|plugins|templates)",
+			"implies": "PHP"
+ 		},
 		"MoinMoin": {
 			"website": "moinmo.in",
 			"cats": [ 8 ],
@@ -3050,6 +3062,11 @@
 			"headers": { "X-Swiftlet-Cache": ".*", "X-Powered-By": "Swiftlet", "X-Generator": "Swiftlet" },
 			"implies": "PHP"
 		},
+		"SyntaxHighlighter": {
+			"website": "github.com/alexgorbatchev/SyntaxHighlighter",
+			"cats": [ 19 ],
+			"html": "(<script|<link)[^>]*sh(Core|Brush|ThemeDefault)"
+ 		},
 		"Textpattern CMS": {
 			"website": "textpattern.com",
 			"cats": [ 1 ],

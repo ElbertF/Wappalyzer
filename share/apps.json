@@ -139,6 +139,11 @@
 			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"implies": "Java"
 		},
+		"Airee": {
+			"website": "xn--80aqc2a.xn--p1ai",
+			"cats": [ 31 ],
+			"headers": { "Server": "Airee" }
+		},
 		"Akamai": {
 			"website": "akamai.com",
 			"cats": [ 31 ],

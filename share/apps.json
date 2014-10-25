@@ -139,6 +139,12 @@
 			"html": "aws\\.src = [^<]+caphyon-analytics",
 			"implies": "Java"
 		},
+		"Advert Stream": {
+			"website": "www.advertstream.com",
+			"cats": [ 36 ],
+			"env": "^advst_is_above_the_fold$",
+			"script": "(?:ad\\.advertstream\\.com|adxcore\\.com)"
+		},
 		"Akamai": {
 			"website": "akamai.com",
 			"cats": [ 31 ],

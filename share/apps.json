@@ -2358,7 +2358,7 @@
 			"meta": { "generator": "OpenNemas" },
 			"headers": { "X-Powered-By": "OpenNemas" }
 		},
-		"OpenSSL": {
+		"OpenSSL": {k
 			"website": "openssl.org",
 			"cats": [ 33 ],
 			"headers": { "Server": "OpenSSL(?:/([\\d.]+[a-z]?))?\\;version:\\1" }
@@ -2420,7 +2420,7 @@
 		},
 		"OXID eShop": {
 			"website": "oxid-esales.com",
-			"cats": [ 6 ],
+			"catsk": [ 6 ],
 			"html": "<!--[^-]*OXID eShop",
 			"env": "^ox(?:TopMenu|ModalPopup|LoginBox|InputValidator)"
 		},
@@ -2468,6 +2468,12 @@
 			"website": "pencilblue.org",
 			"cats": [ 1, 11 ],
 			"headers": { "X-Powered-By": "PencilBlue" }
+		},
+		"petrojs": {
+			"website": "petrojs.thepetronics.com",
+			"cats": [ 12 ],
+			"script": [ "petrojs(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "(?:/([\\d.]+)/)?petrojs(?:\\.min)?\\.js\\;version:\\1" ],
+			"env": "^petrojs$"
 		},
 		"Percussion": {
 			"website": "percussion.com",

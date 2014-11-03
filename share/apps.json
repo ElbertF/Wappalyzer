@@ -3848,6 +3848,12 @@
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
 			"html": "<link[^>]+foundation[^>\"]+css"
-		}
+		},
+		"petrojs.js": {
+			"website": "petrojs.thepetronics.com",
+			"cats": [ 12 ],
+			"script": [ "petrojs(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "/([\\d.]+)/petrojs(\\.min)?\\.js\\;version:\\1", "petrojs.*\\.js" ],
+			"env": "^THEPETRONICS$"
+		},
 	}
 }

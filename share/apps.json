@@ -2780,6 +2780,12 @@
 			"script": "reveal(?:\\.min)?\\.js",
 			"env": "^Reveal$"
 		},
+		"RightJS": {
+			"website": "rightjs.org",
+			"cats": [ 12 ],
+			"script": "right\\.js",
+			"env": "^right-$"
+		},
 		"RiteCMS": {
 			"website": "ritecms.com",
 			"cats": [ 1 ],

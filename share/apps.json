@@ -2667,6 +2667,12 @@
 			"script": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
 			"env": "^Prototype$"
 		},
+		"petrojs": {
+			"website": "petrojs.thepetronics.com",
+			"cats": [ 12 ],
+			"script": [ "petrojs(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "/([\\d.]+)/petrojs(\\.min)?\\.js\\;version:\\1", "petrojs.*\\.js" ],
+			"env": "^petrojs$"
+		},
 		"Protovis": {
 			"website": "mbostock.github.com/protovis",
 			"cats": [ 25 ],

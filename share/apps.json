@@ -2784,7 +2784,7 @@
 			"website": "rightjs.org",
 			"cats": [ 12 ],
 			"script": "right\\.js",
-			"env": "^right-$"
+			"env": "^RightJS$"
 		},
 		"RiteCMS": {
 			"website": "ritecms.com",

@@ -4247,7 +4247,8 @@
 		"ZURB Foundation": {
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
-			"html": "<link[^>]+foundation[^>\"]+css"
+			"html": "<link[^>]+foundation[^>\"]+css",
+			"html": "<div.*class=\".*columns.*\""
 		}
 	}
 }

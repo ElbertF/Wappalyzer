@@ -1937,6 +1937,16 @@
 			"cats": [ 6 ],
 			"html": "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)"
 		},
+		"OpenCms": {
+			"website": "www.opencms.org",
+			"cats": [ 1 ],
+			"html": "^<link href=\"/opencms/\".*$",
+			"script": "opencms",
+			"headers": {
+				"Server": "^OpenCms.*$",
+			},
+			"implies": "Java"
+		},
 		"Open AdStream": {
 			"website": "xaxis.com",
 			"cats": [ 36 ],

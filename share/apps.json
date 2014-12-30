@@ -1083,7 +1083,11 @@
         	"meta": { "generator": "Eleanor" },
         	"implies": "PHP"
 <<<<<<< HEAD
+<<<<<<< HEAD
     	},
+=======
+    	}
+>>>>>>> 946e4049ae61b2e5f63f322f2eab9813f4723f3c
 =======
     	}
 >>>>>>> 946e4049ae61b2e5f63f322f2eab9813f4723f3c
@@ -3549,7 +3553,11 @@
         	"cats": [ 19 ],
         	"html": "(<script|<link)[^>]*sh(Core|Brush|ThemeDefault)"
 <<<<<<< HEAD
+<<<<<<< HEAD
     	},
+=======
+    	}		
+>>>>>>> 946e4049ae61b2e5f63f322f2eab9813f4723f3c
 =======
     	}		
 >>>>>>> 946e4049ae61b2e5f63f322f2eab9813f4723f3c

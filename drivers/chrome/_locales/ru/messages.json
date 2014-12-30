@@ -34,7 +34,11 @@
   "categoryName37" : { "message" : "Сетевая служба" },
   "categoryName38" : { "message" : "Медиа сервер" },
 <<<<<<< HEAD
+<<<<<<< HEAD
   "categoryName39" : { "message" : "Вебкамера" },
+=======
+  "categoryName39" : { "message" : "Вебкамера" },,
+>>>>>>> 946e4049ae61b2e5f63f322f2eab9813f4723f3c
 =======
   "categoryName39" : { "message" : "Вебкамера" },,
 >>>>>>> 946e4049ae61b2e5f63f322f2eab9813f4723f3c

@@ -1077,6 +1077,12 @@
 			"cats": [ 22 ],
 			"headers": { "Server": "Mbedthis-Appweb(?:/([\\d.]+))?\\;version:\\1" }
 		},
+		"Eleanor CMS": {
+        	"website": "eleanor-cms.ru",
+        	"cats": [ 1 ],
+        	"meta": { "generator": "Eleanor" },
+        	"implies": "PHP"
+    	}
 		"Ember.js": {
 			"website": "emberjs.com",
 			"cats": [ 12 ],
@@ -2345,6 +2351,12 @@
 			"headers": { "Server": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1", "X-Powered-By": "mod_wsgi(?:/([\\d.]+))?\\;version:\\1" },
 			"implies": [ "Python\\;confidence:50", "Apache" ]
 		},
+		"Moguta.CMS": {
+			"website": "moguta.ru",
+			"cats": [ 1, 6 ],
+			"html": "(<script|link)[^>]*mg-(core|plugins|templates)",
+			"implies": "PHP"
+ 		},
 		"MoinMoin": {
 			"website": "moinmo.in",
 			"cats": [ 8 ],
@@ -3528,6 +3540,11 @@
 			"cats": [ 48 ],
 			"meta": { "application-name": "Synology DiskStation" }
 		},
+		"SyntaxHighlighter": {
+        	"website": "github.com/syntaxhighlighter",
+        	"cats": [ 19 ],
+        	"html": "(<script|<link)[^>]*sh(Core|Brush|ThemeDefault)"
+    	}		
 		"TeamCity": {
 			"website": "jetbrains.com/teamcity",
 			"cats": [ 44 ],

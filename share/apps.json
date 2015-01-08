@@ -3635,7 +3635,7 @@
 			"website": "trac.edgewall.org",
 			"cats": [ 13 ],
 			"html": "<a id=\"tracpowered",
-			"html": [ "<a id=\"tracpowered", "Powered by <a href=\"[^\"]*\"><strong>Trac(?:[ /]([\\d.]+))?\\;version:\\1" ],
+			"html": [ "<a id=\"tracpowered", "Powered by <a href=\"[^\"]*\"><strong>Trac(?:[ \/]([\\d.]+))?\\;version:\\1" ],
 			"implies": "Python"
 		},
 		"TrackJs": {

@@ -3314,7 +3314,7 @@
 		"Skeleton": {
 			"website": "getskeleton.com/",
 			"cats": [ 18 ],
-			"html": ["<link.+?href=\"[^\"]+skeleton\\.css"]
+			"html": ["<link[^>]+?href=\"[^\"]+skeleton\\.css"]
 		},
 		"Slimbox": {
 			"website": "www.digitalia.be/software/slimbox",

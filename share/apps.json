@@ -3387,7 +3387,7 @@
 		},
 		"Snap": {
 			"website": "snapframework.com",
-			"cats" [ 18, 22 ],
+			"cats": [ 18, 22 ],
 			"headers": { "Server": "Snap/\d+(\.\d+)+" },
 			"implies": "Haskell"
 		},
@@ -4250,7 +4250,7 @@
 		},
 		"Yesod": {
 			"website": "www.yesodweb.com",
-			"cats" [ 18, 22 ],
+			"cats": [ 18, 22 ],
 			"headers": { "Server": "Warp/\d+(\.\d+)+" },
 			"implies": "Haskell"
 		},

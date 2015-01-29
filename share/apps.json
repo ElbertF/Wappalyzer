@@ -1533,8 +1533,7 @@
 		},
 		"Haskell": {
 			"website": "wiki.haskell.org/Haskell",
-			"cats": [ 27 ],
-			"headers": { "Server": "^(?:Snap|Warp)" }
+			"cats": [ 27 ]
 		},
 		"HeadJS": {
 			"website": "headjs.com",
@@ -3388,7 +3387,7 @@
 		"Snap": {
 			"website": "snapframework.com",
 			"cats": [ 18, 22 ],
-			"headers": { "Server": "Snap/\\d+(\\.\\d+)+" },
+			"headers": { "Server": "Snap/(\\d+(?:\\.\\d+)+)\\;version:\\1" },
 			"implies": "Haskell"
 		},
 		"Snap.svg": {
@@ -4251,7 +4250,7 @@
 		"Yesod": {
 			"website": "www.yesodweb.com",
 			"cats": [ 18, 22 ],
-			"headers": { "Server": "^Warp/\\d+(\\.\\d+)+" },
+			"headers": { "Server": "^Warp/(\\d+(?:\\.\\d+)+)\\;version:\\1" },
 			"implies": "Haskell"
 		},
 		"Yieldlab": {

@@ -27,7 +27,7 @@ class Wappalyzer
 
 		$this->url = $url;
 
-		$json = json_decode(file_get_contents('apps.json'));
+		$json = json_decode(file_get_contents('../../share/apps.json'));
 
 		$this->apps       = $json->apps;
 		$this->categories = $json->categories;

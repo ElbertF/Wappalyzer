@@ -3388,7 +3388,7 @@
 		"Snap": {
 			"website": "snapframework.com",
 			"cats": [ 18, 22 ],
-			"headers": { "Server": "Snap/\d+(\.\d+)+" },
+			"headers": { "Server": "Snap/\\d+(\\.\\d+)+" },
 			"implies": "Haskell"
 		},
 		"Snap.svg": {

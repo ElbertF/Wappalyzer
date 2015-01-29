@@ -1531,6 +1531,11 @@
 			"headers": { "Server": "Happy ICS Server(?:/([\\d.]+))?\\;version:\\1" },
 			"implies": "OmniTouch 8660 My Teamwork"
 		},
+		"Haskell": {
+			"website": "wiki.haskell.org/Haskell",
+			"cats": [ 27 ],
+			"headers": { "Server": "^(?:Snap|Warp)" }
+		},
 		"HeadJS": {
 			"website": "headjs.com",
 			"cats": [ 12 ],
@@ -3380,6 +3385,12 @@
 			"cats": [ 1 ],
 			"meta": { "generator": "sNews" }
 		},
+		"Snap": {
+			"website": "snapframework.com",
+			"cats": [ 18, 22 ],
+			"headers": { "Server": "Snap/\\d+(\\.\\d+)+" },
+			"implies": "Haskell"
+		},
 		"Snap.svg": {
 			"website": "snapsvg.io",
 			"cats": [ 12 ],
@@ -4236,6 +4247,12 @@
 			"cats": [ 12 ],
 			"script": [ "yepnope-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1", "([\\d.]+)/yepnope(\\.min)?\\.js\\;version:\\1", "yepnope.*\\.js" ],
 			"env": "^yepnope$"
+		},
+		"Yesod": {
+			"website": "www.yesodweb.com",
+			"cats": [ 18, 22 ],
+			"headers": { "Server": "^Warp/\\d+(\\.\\d+)+" },
+			"implies": "Haskell"
 		},
 		"Yieldlab": {
 			"website": "yieldlab.de",

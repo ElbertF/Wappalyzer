@@ -4251,7 +4251,7 @@
 		"Yesod": {
 			"website": "www.yesodweb.com",
 			"cats": [ 18, 22 ],
-			"headers": { "Server": "Warp/\d+(\.\d+)+" },
+			"headers": { "Server": "^Warp/\\d+(\\.\\d+)+" },
 			"implies": "Haskell"
 		},
 		"Yieldlab": {

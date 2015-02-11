@@ -3360,6 +3360,11 @@
 			"html": "(?:<a [^>]*href=\"[^/]*//[^/]*serving-sys\\.com/|<img [^>]*src=\"[^/]*//[^/]*serving-sys\\.com/)",
 			"script": "[^/]*//[^/]*serving-sys\\.com/"
 		},
+		"Skeleton": {
+			"website": "getskeleton.com/",
+			"cats": [ 18 ],
+			"html": ["<link[^>]+?href=\"[^\"]+skeleton\\.css"]
+		},
 		"Slimbox": {
 			"website": "www.digitalia.be/software/slimbox",
 			"cats": [ 7, 12 ],

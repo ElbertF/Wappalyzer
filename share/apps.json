@@ -74,7 +74,7 @@
 		"3dCart": {
 			"website": "www.3dcart.com",
 			"cats": [ 1, 6 ],
-			"headers": { "X-Powered-By": "3DCART" },
+			"headers": { "X-Powered-By": "3DCART", "Set-Cookie": "3dvisit=" },
 			"script": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)"
 		},
 		"3DM": {
@@ -3144,6 +3144,12 @@
 			"cats": [ 12 ],
 			"script": "reveal(?:\\.min)?\\.js",
 			"env": "^Reveal$"
+		},
+		"RightJS": {
+			"website": "rightjs.org",
+			"cats": [ 12 ],
+			"script": "right\\.js",
+			"env": "^RightJS$"
 		},
 		"RiteCMS": {
 			"website": "ritecms.com",

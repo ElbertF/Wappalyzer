@@ -4345,6 +4345,12 @@
 			"website": "foundation.zurb.com",
 			"cats": [ 18 ],
 			"html": [ "<link[^>]+foundation[^>\"]+css", "<div [^>]*class=\"[^\"]*(?:small|medium|large)-\\d{1,2} columns" ]
-		}
+		},
+		"WooCommerce Quick Donation": {
+			"website": "https://wordpress.org/plugins/woocommerce-quick-donation/",
+			"cats": [ 6 ],
+			"meta": { "generator": "WooCommerce Quick Donation ([\\d.]+)\\;version:\\1" },
+			"implies": [ "WordPress", "PHP", "WooCommerce" ]
+		},
 	}
 }

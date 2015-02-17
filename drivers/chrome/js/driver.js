@@ -88,6 +88,15 @@
 
 							w.analyze(hostname, a.href, request.subject);
 
+							// GXXX addition
+							sendResponse({
+								tab_id: 	tab.index, 
+								taburl: 	tab.url, 								
+								tabCache:   tabCache[tab.id],
+								apps:       w.apps,
+								categories: w.categories
+							});
+							
 							break;
 						case 'get_apps':
 							sendResponse({
@@ -207,7 +216,10 @@
 		 * Anonymously track detected applications for research purposes
 		 */
 		ping: function() {
-			if ( Object.keys(w.ping.hostnames).length && localStorage['tracking'] ) {
+			// GXXX addition
+			return;
+			
+			if ( Object.keys(w.ping.hostnames).length && localStorage['tracking'] ) {				
 				// Make POST request
 				var xhr = new XMLHttpRequest();
 

@@ -199,7 +199,7 @@ var wappalyzer = (function() {
 		detected: {},
 
 		config: {
-			websiteURL: 'https://wappalyzer.com/',
+			websiteURL: 'https://www.wikipedia.org/',
 			twitterURL: 'https://twitter.com/Wappalyzer',
 			githubURL:  'https://github.com/ElbertF/Wappalyzer',
 		},

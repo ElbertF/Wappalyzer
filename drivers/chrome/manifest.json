@@ -1,6 +1,6 @@
-{ "name": "Wappalyzer",
-	"homepage_url": "https://wappalyzer.com?pk_campaign=chrome&pk_kwd=context",
-	"description": "Identifies software on the web",
+{ "name": "WappalyzerG",
+	"homepage_url": "http://en.wikipedia.org/wiki/Glitch",
+	"description": "Identifies (G) software on the web",
 	"version": "2.35",
 	"default_locale": "en",
 	"manifest_version": 2,
@@ -17,7 +17,7 @@
 	"background": { "page": "background.html" },
 	"content_scripts": [{
 		"matches": [ "http://*/*", "https://*/*" ],
-		"js": [ "js/content.js" ],
+		"js": [ "js/jquery-1.8.2.min.js", "js/spotkick-extension-utils.js", "js/content.js" ],
 		"run_at": "document_idle"
 	}],
 	"web_accessible_resources": [

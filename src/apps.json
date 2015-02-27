@@ -2929,6 +2929,28 @@
 			"implies": "PHP",
 			"website": "kohanaframework.org"
 		},
+        "Koken": {
+            "cats": [
+                1
+            ],
+            "env": "^\\$K$",
+            "headers": {
+                "Set-Cookie": "koken_referrer="
+            },
+            "html": [
+                "<html lang=\"en\" class=\"k-source-essays k-lens-essays\">",
+                "<!--\\s+KOKEN DEBUGGING"
+            ],
+            "implies": [
+                "PHP",
+                "MySQL"
+            ],
+            "meta": {
+                "generator": "Koken ([\\d.]+);version:\\1"
+            },
+            "script": "koken(?:\\.js\\?([\\d.]+)|/storage);version:\\1",
+            "website": "koken.me"
+        },
 		"Kolibri CMS": {
 			"cats": [
 				1
@@ -3747,6 +3769,16 @@
 				"Server": "nginx(?:/([\\d.]+))?\\;version:\\1"
 			},
 			"website": "nginx.org"
+		},
+		"OWL Carousel": {
+			"cats": [
+				5,
+				7
+			],
+			"html": "<link [^>]*href=\"[^\"]+owl.carousel(?:\\.min)?\\.css",
+			"implies": "jQuery",
+			"script": "owl.carousel.*\\.js",
+			"website": "http://owlgraphic.com/owlcarousel/"
 		},
 		"OXID eShop": {
 			"cats": [
@@ -5448,7 +5480,7 @@
 			],
 			"env": "^Twipsy$\\;confidence:50",
 			"html": [
-				"<style[^>]*>.*Bootstrap v.* Copyright .* Twitter, Inc\\.\\* Licensed under.*<\/style>",
+				"<style[^>]*>.*Bootstrap v.* Copyright .* Twitter, Inc\\.\\* Licensed under.*<\\/style>",
 				"<link.+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
 				"<div [^>]*class=\"[^\"]*col-(?:xs|sm|md|lg)-\\d{1,2}"
 			],
@@ -7014,16 +7046,6 @@
 			],
 			"website": "yepnopejs.com"
 		},
-        "OWL Carousel": {
-            "cats": [
-                5,
-                7
-            ],
-            "html": "<link [^>]*href=\"[^\"]+owl.carousel(?:\\.min)?\\.css",
-            "script": "owl.carousel.*\\.js",
-            "implies": "jQuery",
-            "website": "http://owlgraphic.com/owlcarousel/"
-        },
 		"Open Classifieds": {
 			"cats": [
 				6

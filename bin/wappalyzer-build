@@ -7,14 +7,9 @@ then
 	exit 1
 fi
 
+set -eu
+
 wappalyzer validate
-
-if [ $? -ne 0 ]
-then
-	echo "Build aborted"
-
-	exit 1
-fi
 
 echo "Prettifying apps.json..."
 

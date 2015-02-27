@@ -14,6 +14,8 @@ then
 	path=$WAPPALYZER_ROOT
 fi
 
+set -eu
+
 if [ ! -d $path/src ]
 then
 	echo "-$(basename $0): Incorrect path"
@@ -55,6 +57,6 @@ ln -f $path/apps.json     $path/drivers/ruby
 ln -f $path/wappalyzer.js $path/drivers/npm
 ln -f $path/apps.json     $path/drivers/npm
 
-echo "Done"
+echo "OK"
 
 exit 0

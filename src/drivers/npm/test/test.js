@@ -6,7 +6,7 @@ describe('wappalyzer', function(){
 
       var wappalyzer = require("../index");
 
-      var expect = ['AngularJS','Font Awesome','Google Font API','jQuery','Twitter Bootstrap'];
+      var expect = ['AngularJS','Font Awesome','Google Font API','Twitter Bootstrap','jQuery'];
 
       var options={
         url : "http://codelanka.github.io/Presentation-Engines",

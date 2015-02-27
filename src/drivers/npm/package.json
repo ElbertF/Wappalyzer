@@ -1,6 +1,6 @@
 {
-  "name": "wrappalyzer",
-  "version": "2.0.0",
+  "name": "wappalyzer",
+  "version": "2.0.2",
   "description": "NPM Module that uncovers the technologies used on websites",
   "main": "index.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/ElbertF/Wappalyze"
+    "url": "https://github.com/AliasIO/Wappalyzer"
   },
   "keywords": [
     "wappalyzer"
@@ -16,9 +16,9 @@
   "author": "Pasindu De Silva",
   "license": "GPLv3",
   "bugs": {
-    "url": "https://github.com/ElbertF/Wappalyze/issues"
+    "url": "https://github.com/AliasIO/Wappalyzer/issues"
   },
-  "homepage": "https://github.com/ElbertF/Wappalyze",
+  "homepage": "https://github.com/AliasIO/Wappalyzer",
   "directories": {
     "test": "test"
   },

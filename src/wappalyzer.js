@@ -201,7 +201,7 @@ var wappalyzer = (function() {
 		config: {
 			websiteURL: 'https://wappalyzer.com/',
 			twitterURL: 'https://twitter.com/Wappalyzer',
-			githubURL:  'https://github.com/ElbertF/Wappalyzer',
+			githubURL:  'https://github.com/AliasIO/Wappalyzer',
 		},
 
 		/**

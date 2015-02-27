@@ -11,6 +11,5 @@ install:
   - npm install jsonlint -g
   - mkdir mozilla && curl -L https://ftp.mozilla.org/pub/mozilla.org/labs/jetpack/jetpack-sdk-latest.tar.gz | tar xvzC mozilla && ln -s $WAPPALYZER_ROOT/mozilla/addon-sdk-*/bin/cfx bin/cfx
   - mkdir phantomjs && curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvjC phantomjs && ln -s $WAPPALYZER_ROOT/phantomjs/phantomjs-*-linux-x86_64/bin/phantomjs bin/phantomjs
-before_script: mkdir build
 script: wappalyzer build
 after_script: ls build

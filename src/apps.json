@@ -2027,12 +2027,16 @@
 		},
 		"GitLab": {
 			"cats": [
-				19,
-				13
+				13,
+				47
 			],
 			"headers": {
 				"Set-cookie": "_gitlab_session"
 			},
+			"implies": [
+				"Ruby",
+				"Ruby on Rails"
+			],
 			"website": "about.gitlab.com"
 		},
 		"GlassFish": {
@@ -2383,6 +2387,10 @@
 				12
 			],
 			"env": "^Hogan$",
+			"script": [
+				"hogan-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+				"([\\d.]+)/hogan(\\.min)?\\.js\\;version:\\1"
+			],
 			"website": "twitter.github.com/hogan.js"
 		},
 		"Hotaru CMS": {

@@ -2027,12 +2027,16 @@
 		},
 		"GitLab": {
 			"cats": [
-				19,
-				13
+				13,
+				47
 			],
 			"headers": {
 				"Set-cookie": "_gitlab_session"
 			},
+			"implies": [
+				"Ruby",
+				"Ruby on Rails"
+			],
 			"website": "about.gitlab.com"
 		},
 		"GlassFish": {
@@ -2383,6 +2387,10 @@
 				12
 			],
 			"env": "^Hogan$",
+			"script": [
+				"hogan-(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+				"([\\d.]+)/hogan(\\.min)?\\.js\\;version:\\1"
+			],
 			"website": "twitter.github.com/hogan.js"
 		},
 		"Hotaru CMS": {
@@ -7015,7 +7023,140 @@
             "script": "owl.carousel.*\\.js",
             "implies": "jQuery",
             "website": "http://owlgraphic.com/owlcarousel/"
-        }
+        },
+		"Open Classifieds": {
+			"cats": [
+				6
+			],
+			"meta": {
+				"author": "open-classifieds\\.com",
+				"copyright": "Open Classifieds ?([0-9.]+)?\\;version:\\1"
+			},
+			"website": "http://open-classifieds.com"
+		},
+		"Open eShop": {
+			"cats": [
+				6
+			],
+			"meta": {
+				"author": "open-eshop\\.com",
+				"copyright": "Open eShop ?([0-9.]+)?\\;version:\\1"
+			},
+			"website": "http://open-eshop.com/"
+		},
+		"Hammer.js": {
+			"cats": [
+				12
+			],
+			"script": "hammer(\\.min)?\\.js",
+			"env": "^Hammer$",
+			"website": "http://hammerjs.github.io"
+		},
+		"Epoch": {
+			"cats": [
+				25
+			],
+			"script": "epoch(\\.min)?\\.js",
+			"html": "<link.+?href=\"[^\"]+epoch(?:\\.min)?\\.css",
+			"implies": "D3",
+			"website": "https://fastly.github.io/epoch/"
+		},
+		"Boba.js": {
+			"cats": [
+				12
+			],
+			"script": "boba(\\.min)?\\.js",
+			"implies": "Google Analytics",
+			"website": "http://boba.space150.com/"
+		},
+		"Lazy.js": {
+			"cats": [
+				12
+			],
+			"script": "lazy(\\.browser)?(\\.min)?\\.js",
+			"website": "http://danieltao.com/lazy.js/"
+		},
+		"SweetAlert": {
+			"cats": [
+				12
+			],
+			"env": "^swal$",
+			"script": "sweet-alert(\\.min)?\\.js",
+			"html": "<link.+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
+			"website": "http://tristanedwards.me/sweetalert"
+		},
+		"vis.js": {
+			"cats": [
+				25
+			],
+			"env": "^vis$",
+			"script": "vis(\\.min)?\\.js",
+			"html": "<link.+?href=\"[^\"]+vis(?:\\.min)?\\.css",
+			"website": "http://visjs.org"
+		},
+		"shine.js": {
+			"cats": [
+				25
+			],
+			"env": "^Shine$",
+			"script": "shine(\\.min)?\\.js",
+			"website": "http://bigspaceship.github.io/shine.js/"
+		},
+		"Paths.js": {
+			"cats": [
+				25
+			],
+			"script": "paths(\\.min)?\\.js",
+			"website": "https://github.com/andreaferretti/paths-js"
+		},
+		"Twitter Flight": {
+			"cats": [
+				12
+			],
+			"env": "^flight$",
+			"implies": "jQuery",
+			"website": "https://flightjs.github.io/"
+		},
+		"Twitter Emoji (Twemoji)": {
+			"cats": [
+				25
+			],
+			"env": "^twemoji$",
+			"script": "twemoji(\\.min)?\\.js",
+			"website": "https://twitter.github.io/twemoji/"
+		},
+		"Twitter typeahead.js": {
+			"cats": [
+				12
+			],
+			"env": "^typeahead$",
+			"script": "(typeahead|bloodhound)(\\.jquery|\\.bundle)?(\\.min)?\\.js",
+			"implies": "jQuery\\;confidence:50",
+			"website": "https://twitter.github.io/typeahead.js/"
+		},
+		"Rickshaw": {
+			"cats": [
+				25
+			],
+			"env": "^Rickshaw$",
+			"script": "rickshaw(\\.min)?\\.js",
+			"implies": "D3",
+			"website": "http://code.shutterstock.com/rickshaw/"
+		},
+		"GitLab CI": {
+			"cats": [
+				44,
+				47
+			],
+			"meta": {
+				"description": "GitLab Continuous Integration"
+			},
+			"implies": [
+				"Ruby",
+				"Ruby on Rails"
+			],
+			"website": "https://about.gitlab.com/gitlab-ci/"
+		}
 	},
 	"categories": {
 		"1": "cms",

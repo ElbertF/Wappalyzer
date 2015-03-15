@@ -3383,12 +3383,14 @@
 				12
 			],
 	  "html": "<script[^>] src="\\/modules\\/aggregated\\.js",
-    "implies": [
-        "Express",
-        "AngularJS"
-      ],
+    			"implies": [
+    			  "MongoDB",	
+			      "Express",
+			      "AngularJS",
+			      "node.js"
+			],
 			"headers": {
-				"X-Powered-CMS": "Mean.io"
+				"X-Powered-CMS": "Mean\\.io"
 			},
 			"website": "mean.io"
 		},

@@ -3397,8 +3397,9 @@
 			"cats": [
 				12
 			],
+			"html": "<script[^>]src=('|\")\\/modules\\/aggregated\\.js",
     			"implies": [
-    			      "MongoDB",	
+    			  "MongoDB",	
 			      "Express",
 			      "AngularJS",
 			      "node.js"

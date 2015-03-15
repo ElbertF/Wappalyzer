@@ -3382,6 +3382,7 @@
 			"cats": [
 				12
 			],
+	  "html": "<script[^>] src="\\/modules\\/aggregated\\.js",
     "implies": [
         "Express",
         "AngularJS"

@@ -2935,13 +2935,8 @@
 			"cats": [
 				1
 			],
-			"headers": {
-				"Set-Cookie": "CMSPreferredCulture="
-			},
-			"meta": {
-				"generator": "Kentico CMS ([\\d.R]+ \\(build [\\d.]+\\))\\;version:\\1"
-			},
-			"website": "www.kentico.comhome.aspx"
+			"html": "<(link|script)[^>]*(href|src)=\"/CMSPages/GetResource.ashx\\?",
+			"website": "www.kentico.com"
 		},
 		"KineticJS": {
 			"cats": [

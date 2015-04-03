@@ -1,0 +1,6 @@
+{
+  "devDependencies": {
+    "file-type": "2.2.*",
+    "read-chunk": "1.0.*"
+  }
+}

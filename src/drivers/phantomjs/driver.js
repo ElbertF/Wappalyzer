@@ -56,16 +56,14 @@
 						});
 
 						apps.push({
-							url:         originalUrl,
-							finalUrl:    url,
-							application: app,
+							name: app,
 							confidence:  wappalyzer.detected[url][app].confidenceTotal,
 							version:     wappalyzer.detected[url][app].version,
 							categories:  cats
 						});
 					}
 
-					console.log(JSON.stringify(apps));
+					console.log(JSON.stringify({ applications: apps }));
 				}
 			},
 
@@ -90,11 +88,28 @@
 
 				page = require('webpage').create();
 
+				page.settings.loadImages      = false;
+				page.settings.userAgent       = 'Mozilla/5.0 (compatible; Wappalyzer; +https://github.com/AliasIO/Wappalyzer)';
+				page.settings.resourceTimeout = 3000;
+
 				page.onConsoleMessage = function(message) {
 					wappalyzer.log(message);
 				};
+
 				page.onError = function(message) {
-					wappalyzer.log('Page error: ' + message);
+					wappalyzer.log(message);
+
+					console.log(JSON.stringify({ applications: [] }));
+
+					phantom.exit(1);
+				};
+
+				page.onResourceTimeout = function() {
+					wappalyzer.log('Resource timeout');
+
+					console.log(JSON.stringify({ applications: [] }));
+
+					phantom.exit(1);
 				};
 
 				page.onResourceReceived = function(response) {
@@ -105,7 +120,7 @@
 							return;
 						}
 
-						if ( response.stage === 'end' && response.contentType.indexOf('text/html') !== -1 ) {
+						if ( response.stage === 'end' && response.status === 200 && response.contentType.indexOf('text/html') !== -1 ) {
 							response.headers.forEach(function(header) {
 								headers[header.name.toLowerCase()] = header.value;
 							});
@@ -116,46 +131,52 @@
 				page.open(url, function(status) {
 					var html, environmentVars;
 
-					if ( status === 'fail' ) {
-						return;
-					}
+					if ( status === 'success' ) {
+						html = page.content;
 
-					html = page.content;
-
-					if ( html.length > 50000 ) {
-						html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-					}
-
-					// Collect environment variables
-					environmentVars = page.evaluate(function() {
-						var i, environmentVars;
-
-						for ( i in window ) {
-							environmentVars += i + ' ';
+						if ( html.length > 50000 ) {
+							html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
 						}
 
-						return environmentVars;
-					});
+						// Collect environment variables
+						environmentVars = page.evaluate(function() {
+							var i, environmentVars;
 
-					wappalyzer.log({ message: 'environmentVars: ' + environmentVars });
+							for ( i in window ) {
+								environmentVars += i + ' ';
+							}
 
-					environmentVars = environmentVars.split(' ').slice(0, 500);
+							return environmentVars;
+						});
 
-					wappalyzer.analyze(hostname, url, {
-						html:    html,
-						headers: headers,
-						env:     environmentVars
-					});
+						wappalyzer.log({ message: 'environmentVars: ' + environmentVars });
 
-					phantom.exit();
+						environmentVars = environmentVars.split(' ').slice(0, 500);
+
+						wappalyzer.analyze(hostname, url, {
+							html:    html,
+							headers: headers,
+							env:     environmentVars
+						});
+
+						phantom.exit(0);
+					} else {
+						wappalyzer.log('Failed to fetch page');
+
+						console.log(JSON.stringify({ applications: [] }));
+
+						phantom.exit(1);
+					}
 				});
 			}
 		};
 
 		wappalyzer.init();
 	} catch ( e ) {
-		console.error(e);
+		wappalyzer.log(e);
 
-		phantom.exit();
+		console.log(JSON.stringify({ applications: [] }));
+
+		phantom.exit(1);
 	}
 })();

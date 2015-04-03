@@ -89,7 +89,7 @@ var wappalyzer = (function() {
 						}
 
 						// Replace back references
-						version = version.replace('\\' + i, match ? match : '');
+						version = version.replace(new RegExp('\\\\' + i, 'g'), match ? match : '');
 					});
 
 					if ( version && this.versions.indexOf(version) < 0 ) {

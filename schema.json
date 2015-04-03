@@ -22,7 +22,7 @@
 					"cats": {
 						"type": "array",
 						"items": {
-							"type": "number"
+							"type": "integer"
 						},
 						"required": true
 					},

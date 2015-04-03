@@ -8,7 +8,7 @@
   "description": "Identifies software on the web",
   "author": "Elbert Alias",
   "license": "GPLv3",
-  "version": "3.0.13",
+  "version": "3.0.15",
 	"main": "driver",
 	"preferences": [{
 		"name": "tracking",

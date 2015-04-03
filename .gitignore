@@ -3,12 +3,9 @@
 
 build/*
 
-npm-debug.log
-
-node_modules/*
-
-drivers/npm/node_modules/
-
+drivers/npm/node_modules
 drivers/npm/npm-debug.log
+
+Thumbs.db
 
 !.gitkeep

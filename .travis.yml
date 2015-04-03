@@ -3,12 +3,14 @@ node_js:
   - "0.10"
 before_install:
   - export WAPPALYZER_ROOT=$TRAVIS_BUILD_DIR
+  - export WAPPALYZER_NODE_PATH=$TRAVIS_BUILD_DIR
   - export PATH=$PATH:$TRAVIS_BUILD_DIR/bin
 install:
   - sudo apt-get update -y
   - sudo apt-get install -y curl zip sudo -y --force-yes
   - sudo apt-get clean
   - npm install jsonlint -g
+  - ln -s docker/node/package.json package.json && npm install
   - mkdir mozilla && curl -L https://ftp.mozilla.org/pub/mozilla.org/labs/jetpack/jetpack-sdk-latest.tar.gz | tar xvzC mozilla && ln -s $WAPPALYZER_ROOT/mozilla/addon-sdk-*/bin/cfx bin/cfx
   - mkdir phantomjs && curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvjC phantomjs && ln -s $WAPPALYZER_ROOT/phantomjs/phantomjs-*-linux-x86_64/bin/phantomjs bin/phantomjs
 script: wappalyzer build

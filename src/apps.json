@@ -2935,7 +2935,7 @@
 			"cats": [
 				1
 			],
-			"html": "(href|src)=\"/CMSPages/GetResource.ashx?",
+			"html": "<(link|script)[^>]*(href|src)=\"/CMSPages/GetResource.ashx\?",
 			"website": "www.kentico.com"
 		},
 		"KineticJS": {

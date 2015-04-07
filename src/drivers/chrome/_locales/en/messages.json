@@ -54,5 +54,6 @@
 	"categoryName47":           { "message": "Development Tool" },
 	"categoryName48":           { "message": "Network Storage" },
 	"categoryName49":           { "message": "Feed Readers" },
-	"categoryName50":           { "message": "Document Management Systems" }
+	"categoryName50":           { "message": "Document Management Systems" },
+	"categoryName51":           { "message": "Identity Management" }
 }

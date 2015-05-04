@@ -4247,6 +4247,15 @@
 			},
 			"website": "pencilblue.org"
 		},
+		"Penguin": {
+			"cats": [
+				18
+			],
+			"env": "^penguin$",
+			"html": "<link[^>]+?href=\"[^\"]+penguin(?:\\.min)?\\.css",
+			"script": "penguin(?:\\.min)?\\.js",
+			"website": "penguin.docs.bqws.io/"
+		},
 		"Percussion": {
 			"cats": [
 				1

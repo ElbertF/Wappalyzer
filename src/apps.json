@@ -1047,6 +1047,13 @@
 			"script": "static\\.getclicky\\.com",
 			"website": "getclicky.com"
 		},
+		"cdnjs": {
+			"cats": [
+				31
+			],
+			"script": "cdnjs\\.cloudflare\\.com",
+			"website": "cdnjs.com"
+		},
 		"CloudFlare": {
 			"cats": [
 				31

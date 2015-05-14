@@ -4131,6 +4131,16 @@
 			},
 			"website": "oracle.com"
 		},
+		"Orchard CMS": {
+			"cats": [
+				1
+			],
+			"implies": "Microsoft ASP.NET",
+			"meta": {
+				"generator": "Orchard"
+			},
+			"website": "orchardproject.net/"
+		},
 		"Outbrain": {
 			"cats": [
 				5

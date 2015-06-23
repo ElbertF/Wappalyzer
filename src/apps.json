@@ -3738,10 +3738,7 @@
 				21
 			],
 			"env": "^moodle",
-			"headers": {
-				"Set-Cookie": "MoodleSession"
-			},
-			"html": "<img[^>]+moodlelogo",
+			"html": "^M.str\\s=\\s.*\"moodle\"",
 			"implies": "PHP",
 			"website": "moodle.org"
 		},

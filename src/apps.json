@@ -637,6 +637,15 @@
 			"script": "bittads\\.com/js/bitt\\.js$",
 			"website": "bittads.com"
 		},
+        "Blackboard": {
+            "cats": [
+                21
+            ],
+			"meta": {
+				"copyright": "^.*Blackboard Inc$"
+			},
+            "website": "blackboard.com" 
+        },
 		"Blip.tv": {
 			"cats": [
 				14
@@ -882,6 +891,13 @@
 			],
 			"website": "www.canon.com"
 		},
+        "Canvas LMS": {
+            "cats": [
+                21
+            ],
+            "html": "id=\\"registration_footer\\".*Instructure",
+            "website": "instructure.com"
+        },
 		"Carbon Ads": {
 			"cats": [
 				36
@@ -1493,6 +1509,16 @@
 			"implies": "Django",
 			"website": "django-cms.org"
 		},
+        "Docebo": {
+            "cats": [
+                21
+            ],
+			"meta": {
+				"Copyright": "Docebo srl"
+			},
+            "implies": "PHP",
+            "website": "docebo.com"
+        },
 		"Dojo": {
 			"cats": [
 				12
@@ -4925,6 +4951,14 @@
 			},
 			"website": "saia-pcd.com"
 		},
+        "Sakai": {
+            "cats": [
+                21
+            ],
+			"html": "sakaiCopyrightInfo",
+            "implies": "Java",
+            "website": "sakaiproject.org" 
+        },
 		"Sarka-SPIP": {
 			"cats": [
 				1

@@ -642,7 +642,7 @@
 				21
 			],
 			"meta": {
-				"copyright": ".*Blackboard Inc$"
+				"copyright": "Blackboard Inc$"
 			},
 			"website": "blackboard.com" 
 		},
@@ -895,7 +895,7 @@
 			"cats": [
 				21
 			],
-			"html": "id=\"registration_footer\".*Instructure",
+			"html": "&copy; 20\\d{2} <a href=\"www\\.instructure\\.com\">Instructure</a>",
 			"website": "instructure.com"
 		},
 		"Carbon Ads": {
@@ -3764,7 +3764,7 @@
 				21
 			],
 			"env": "^moodle",
-			"html": "^M.str\\s=\\s.*\"moodle\"",
+			"html": "^M.str\\s=\\s([^(moodle)])\"moodle\"\:",
 			"implies": "PHP",
 			"website": "moodle.org"
 		},

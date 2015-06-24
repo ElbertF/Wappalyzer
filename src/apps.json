@@ -3764,7 +3764,9 @@
 				21
 			],
 			"env": "^moodle$",
-			"html": "M\\.str\\s=\\s[^(moodle)]*\"moodle\"\:",
+			"html": "M\\.str = [^(moodle)]*\"moodle\"",
+			"html": "(<script|link)[^>]*mg-(core|plugins|templates)",
+			"html": "<link[^>]* href=[^>]+nv\\.d3(?:\\.min)?\\.css",
 			"implies": "PHP",
 			"website": "moodle.org"
 		},

@@ -3763,8 +3763,8 @@
 			"cats": [
 				21
 			],
-			"env": "^moodle",
-			"html": "^M.str\\s=\\s([^(moodle)])\"moodle\"\:",
+			"env": "^moodle$",
+			"html": "M\\.str\\s=\\s[^(moodle)]*\"moodle\"\:",
 			"implies": "PHP",
 			"website": "moodle.org"
 		},

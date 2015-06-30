@@ -2264,6 +2264,15 @@
 			},
 			"website": "developers.google.com/web-toolkit"
 		},
+		"Google Web Server": {
+			"cats": [
+				22
+			],
+			"headers": {
+				"Server": "gws"
+			},
+			"website": "fr.wikipedia.org/wiki/Google_Web_Server"
+		},
 		"Graffiti CMS": {
 			"cats": [
 				1

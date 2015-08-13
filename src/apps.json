@@ -6613,6 +6613,18 @@
 			"script": "mc\\.yandex\\.ru\\/metrika\\/watch\\.js",
 			"website": "metrika.yandex.com"
 		},
+		"Yaws": {
+			"cats": [
+				22
+			],
+			"headers": {
+				"Server": "Yaws(?: ([\\d.]+))?\\;version:\\1"
+			},
+			"implies": [
+				"Erlang"
+			],
+			"website": "yaws.hyber.org"
+		},
 		"Yieldlab": {
 			"cats": [
 				36

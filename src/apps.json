@@ -4261,6 +4261,16 @@
 			},
 			"website": "orchardproject.net"
 		},
+		"osTicket": {
+			"cats": [
+				51
+			],
+			"implies": "PHP",
+			"headers": {
+				"Set-Cookie": "OSTSESSID"
+			},
+			"website": "osticket.com"
+		},
 		"Outbrain": {
 			"cats": [
 				5
@@ -7571,6 +7581,7 @@
 		"47": "dev-tools",
 		"48": "network-storage",
 		"49": "feed-readers",
-		"50": "document-management-systems"
+		"50": "document-management-systems",
+		"51": "helpdesks"
 	}
 }

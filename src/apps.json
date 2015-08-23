@@ -795,6 +795,16 @@
 			],
 			"website": "isocpp.org"
 		},
+		"CA Single Sign-On": {
+			"cats": [
+				51
+			],
+			"headers": {
+				"Set-Cookie": "^(?:SMSESSION|SMIDENTITY)="
+			},
+			"html": "(?i)(?:<!-- SiteMinder Encoding=[^;]*; -->|<title>SiteMinder Password Services</title>|<input type=['\"]?hidden['\"]? name=['\"]?(?:SMENC|SMLOCALE|smquerydata|smauthreason|smagentname|postpreservationdata|SMTOKEN)['\"]? value=['\"]?[^'\"]*['\"]?>)",
+			"website": "www.ca.com/us/securecenter/ca-single-sign-on.aspx"
+		},
 		"CFML": {
 			"cats": [
 				27
@@ -3297,7 +3307,7 @@
 				"^LITHIUM$"
 			],
 			"headers": {
-				"Set-Cookie": "LithiumVisitor="
+				"Set-Cookie": "^(?:LiSESSIONID|LithiumVisitor)="
 			},
 			"html": " <a [^>]+Powered by Lithium",
 			"implies": "PHP",
@@ -7602,6 +7612,7 @@
 		"47": "dev-tools",
 		"48": "network-storage",
 		"49": "feed-readers",
-		"50": "document-management-systems"
+		"50": "document-management-systems",
+		"51": "identity-management"
 	}
 }

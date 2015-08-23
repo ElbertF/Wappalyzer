@@ -660,6 +660,15 @@
 			"script": "bittads\\.com/js/bitt\\.js$",
 			"website": "bittads.com"
 		},
+		"Blackboard": {
+			"cats": [
+				21
+			],
+			"meta": {
+				"copyright": "Blackboard Inc$"
+			},
+			"website": "blackboard.com" 
+		},
 		"Blip.tv": {
 			"cats": [
 				14
@@ -904,6 +913,13 @@
 				"Canon"
 			],
 			"website": "www.canon.com"
+		},
+		"Canvas LMS": {
+			"cats": [
+				21
+			],
+			"html": "&copy; 20\\d{2} <a href=\"www\\.instructure\\.com\">Instructure</a>",
+			"website": "instructure.com"
 		},
 		"Carbon Ads": {
 			"cats": [
@@ -1540,6 +1556,16 @@
 			],
 			"implies": "Django",
 			"website": "django-cms.org"
+		},
+		"Docebo": {
+			"cats": [
+				21
+			],
+			"meta": {
+				"Copyright": "Docebo srl"
+				},
+			"implies": "PHP",
+			"website": "docebo.com"
 		},
 		"Dojo": {
 			"cats": [
@@ -3825,11 +3851,8 @@
 			"cats": [
 				21
 			],
-			"env": "^moodle",
-			"headers": {
-				"Set-Cookie": "MoodleSession"
-			},
-			"html": "<img[^>]+moodlelogo",
+			"env": "^moodle$",
+			"html": "M\\.str = [^(moodle)]*\"moodle\"",
 			"implies": "PHP",
 			"website": "moodle.org"
 		},
@@ -5048,6 +5071,14 @@
 				"Server": "Saia PCD(?:([/a-z\\d.]+))?\\;version:\\1"
 			},
 			"website": "saia-pcd.com"
+		},
+		"Sakai": {
+			"cats": [
+				21
+			],
+			"html": "sakaiCopyrightInfo",
+			"implies": "Java",
+			"website": "sakaiproject.org" 
 		},
 		"Sarka-SPIP": {
 			"cats": [

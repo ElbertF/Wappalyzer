@@ -2637,6 +2637,16 @@
 			},
 			"website": "hotarucms.org"
 		},
+        "HTTP/2": {
+            "cats": [
+                19
+            ],
+            "headers": {
+                "X-Firefox-Spdy": "h2"
+            },
+            "excludes": "SPDY",
+            "website": "https://http2.github.io"
+        },
 		"HubSpot": {
 			"cats": [
 				32
@@ -5132,8 +5142,9 @@
 				19
 			],
 			"headers": {
-				"X-Firefox-Spdy": ""
+				"X-Firefox-Spdy": "\\d\\.\\d"
 			},
+            "excludes": "HTTP/2",
 			"website": "chromium.org/spdy"
 		},
 		"SPIP": {

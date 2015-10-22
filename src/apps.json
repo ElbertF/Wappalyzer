@@ -7774,6 +7774,31 @@
 				"yepnope.*\\.js"
 			],
 			"website": "yepnopejs.com"
+		},
+		"WHMCS": {
+			"cats": [
+				6
+			],
+			"headers": {
+				"Set-Cookie": "^WHMCS.*"
+			},
+			"website": "www.whmcs.com"
+		},
+		"Blesta": {
+			"cats": [
+				6
+			],
+			"headers": {
+				"Set-Cookie": "blesta_sid"
+			},
+			"website": "www.blesta.com"
+		},
+		"Clientexec": {
+			"cats": [
+				6
+			],
+			"html": "clientexec\\..*\\s?=\\s?.*;",
+			"website": "www.clientexec.com"
 		}
 	},
 	"categories": {

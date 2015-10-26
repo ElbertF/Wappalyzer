@@ -2645,7 +2645,8 @@
                 "X-Firefox-Spdy": "h2"
             },
             "excludes": "SPDY",
-            "website": "http2.github.io"
+            "website": "http2.github.io",
+            "icon": "HTTP2.png"
         },
 		"HubSpot": {
 			"cats": [

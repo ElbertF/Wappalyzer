@@ -29,9 +29,9 @@ echo "Validating apps.json..."
 
 jsonlint --quiet -V $WAPPALYZER_ROOT/schema.json $path/apps.json
 
-# echo "Validating regular expressions..."
-#
-# wappalyzer validate-regex
+echo "Validating regular expressions..."
+
+wappalyzer validate-regex
 
 echo "Validating icons..."
 

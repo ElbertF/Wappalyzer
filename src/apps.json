@@ -78,6 +78,17 @@
 			"implies": "PHP",
 			"website": "www.ampcms.org"
 		},
+		"anchorCache": {
+			"cats": [
+				23
+			],
+			"headers": {
+				"X-anchor-Cache": ""
+			},
+			"icon": "anchorCache.png",
+			"implies": "PHP",
+			"website": "anchorcache.eu"
+		},
 		"AOLserver": {
 			"cats": [
 				22

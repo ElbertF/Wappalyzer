@@ -65,17 +65,6 @@
 			"icon": "3ware.png",
 			"website": "www.3ware.com"
 		},
-    "anchorCache": {
-      "cats": [
-        23
-     ],
-     "headers": {
-        "X-anchor-Cache": ""
-      },
-       "icon": "anchorCache.png",
-       "implies": "PHP",
-       "website": "anchorcache.eu"
-    },
 		"AMPcms": {
 			"cats": [
 				1

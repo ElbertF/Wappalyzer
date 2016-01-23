@@ -30,19 +30,23 @@ echo "Creating hard links..."
 ln -f $path/wappalyzer.js $path/drivers/firefox/lib
 ln -f $path/apps.json     $path/drivers/firefox/data
 ln -f $path/icons/*.png   $path/drivers/firefox/data/images/icons
+ln -f $path/icons/*.svg   $path/drivers/firefox/data/images/icons
 ln -f $path/utils/*.js    $path/drivers/firefox/data/js
 
 ln -f $path/wappalyzer.js $path/drivers/chrome/js
 ln -f $path/apps.json     $path/drivers/chrome
 ln -f $path/icons/*.png   $path/drivers/chrome/images/icons
+ln -f $path/icons/*.svg   $path/drivers/chrome/images/icons
 ln -f $path/utils/*.js    $path/drivers/chrome/js
 
 ln -f $path/wappalyzer.js $path/drivers/bookmarklet/js
 ln -f $path/icons/*.png   $path/drivers/bookmarklet/images/icons
+ln -f $path/icons/*.svg   $path/drivers/bookmarklet/images/icons
 
 ln -f $path/wappalyzer.js $path/drivers/html/js
 ln -f $path/apps.json     $path/drivers/html
 ln -f $path/icons/*.png   $path/drivers/html/images/icons
+ln -f $path/icons/*.svg   $path/drivers/html/images/icons
 
 ln -f $path/wappalyzer.js $path/drivers/php/js
 ln -f $path/apps.json     $path/drivers/php

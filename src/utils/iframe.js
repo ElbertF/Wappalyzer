@@ -32,7 +32,7 @@ var exports = {};
 
 			result = a.protocol + '//' + a.hostname + '/';
 
-			if ( a.pathname !== '/' ) {
+			if ( a.pathname && a.pathname !== '/' ) {
 				result += this.hashCode(a.pathname);
 			}
 
@@ -68,7 +68,6 @@ var exports = {};
 		realArray: function(a) {
 			return Array.prototype.slice.apply(a);
 		},
-
 		onDocLoaded: function(doc, callback) {
 			if ( doc.readyState === 'loading' ) {
 				doc.addEventListener('DOMContentLoaded', callback);
@@ -222,12 +221,7 @@ var exports = {};
 		var isImgWithoutSrc = el.tagName === 'IMG' && !el.src;
 		var isImgWithoutAnchor = el.tagName === 'IMG' && !(el.parentNode.tagName === 'A' || el.getAttribute('onclick'));
 
-		return isAdShaped(el) && !isImgWithoutSrc && !isImgWithoutAnchor;
-	}
-
-	function windowMightContainAds(win) {
-		return (win.innerWidth >= MIN_WINDOW_PX &&
-				win.innerHeight >= MIN_WINDOW_PX);
+		return elementIsAdShaped(el) && !isImgWithoutSrc && !isImgWithoutAnchor;
 	}
 
 	function isNewAd(el, win) {
@@ -243,24 +237,17 @@ var exports = {};
 		return friendlyIframes;
 	}
 
-	function isAdShaped(el, opt_win, opt_retMatched) {
-		var rect, width, height, result;
+	function getMatchedAdSize(width, height) {
+		return SIZE_SET[width + 'x' + height];
+	}
 
-		if ( opt_win ) {
-			width = opt_win.innerWidth;
-			height = opt_win.innerHeight;
-		} else {
-			rect = el.getBoundingClientRect();
-			width = rect.width;
-			height = rect.height;
-		}
+	function elementIsAdShaped(el) {
+		return !!getMatchedAdSizeForElement(el);
+	}
 
-		result = SIZE_SET[width + 'x' + height];
-		if ( opt_retMatched ) {
-			return result;
-		} else {
-			return !!result;
-		}
+	function getMatchedAdSizeForElement(el) {
+		var rect = el.getBoundingClientRect();
+		return getMatchedAdSize(rect.width, rect.height);
 	}
 
 	function containsLargeIframes(win) {
@@ -277,7 +264,7 @@ var exports = {};
 	}
 
 	function isValidHTML5Div(div, winSize) {
-		var elSize = isAdShaped(div, null, true);
+		var elSize = getMatchedAdSizeForElement(div);
 
 		if ( typeof div.checks !== 'number' ) {
 			div.checks = 1;
@@ -299,8 +286,8 @@ var exports = {};
 		if ( !body ) {
 			return null;
 		}
+		winSize = getMatchedAdSize(win.innerWidth, win.innerHeight);
 
-		winSize = isAdShaped(null, win, true);
 		if ( !winSize ) {
 			return null;
 		}
@@ -309,7 +296,7 @@ var exports = {};
 
 		for ( i = 0; i < elements.length; i++ ) {
 			el = elements[i];
-			elSize = isAdShaped(el, null, true);
+			elSize = getMatchedAdSizeForElement(el);
 			if ( elSize && elSize[0] === winSize[0] && elSize[1] === winSize[1] ) {
 				return el;
 			}
@@ -324,7 +311,6 @@ var exports = {};
 
 		for ( i = 0; i < divs.length; i++ ) {
 			div = divs[i];
-			elSize = isAdShaped(div, null, true);
 			if ( isValidHTML5Div(div, winSize) ) {
 				return div;
 			}
@@ -347,16 +333,13 @@ var exports = {};
 			i, div;
 		for ( i = 0; i < styles.length; i++ ) {
 			div = styles[i].parentNode;
-			if ( isAdShaped(div) && jumpedOut(div) ) {
+			if ( elementIsAdShaped(div) && jumpedOut(div) ) {
 				return div;
 			}
 		}
 	}
 
 	function findAds(win, opt_ads) {
-		if ( !windowMightContainAds(win) ) {
-			return;
-		}
 
 		if ( typeof win.searches !== 'number' ) {
 			win.searches = 0;
@@ -364,6 +347,11 @@ var exports = {};
 
 		var ads = opt_ads || [];
 		var adsFound = 0;
+
+		if ( win.innerWidth <= MIN_WINDOW_PX || win.innerHeight <= MIN_WINDOW_PX ) {
+			win.searches++;
+			return ads;
+		}
 
 		if ( exports.utils.SCRIPT_IN_WINDOW_TOP || win.searches < MAX_SEARCHES_PER_WINDOW ) {
 			var adCandidates = win.document.querySelectorAll('img, object, embed');
@@ -417,7 +405,7 @@ var exports = {};
 	}
 
 	exports.adfinder = {
-		SIZE_SET: SIZE_SET,
+		getMatchedAdSize: getMatchedAdSize,
 		findAds: findAds
 	};
 })(exports);
@@ -706,7 +694,7 @@ var exports = {};
 	var tagfinder = {
 
 		prepToSend: function(adData) {
-			adData.matchedSize = exports.adfinder.SIZE_SET[adData.width + 'x' + adData.height];
+			adData.matchedSize = exports.adfinder.getMatchedAdSize(adData.width, adData.height);
 			delete adData.width;
 			delete adData.height;
 		},
@@ -821,7 +809,9 @@ var exports = {};
 	}
 
 	function extractAdsWrapper() {
-		extractAds();
+		if ( exports.utils.SCRIPT_IN_WINDOW_TOP || document.readyState === 'complete' ) {
+			extractAds();
+		}
 		setTimeout(function() {
 			extractAdsWrapper();
 		}, INIT_MS_BW_SEARCHES);

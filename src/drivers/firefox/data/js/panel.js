@@ -35,7 +35,7 @@
 					});
 				}(appName));
 
-				img.setAttribute('src',    'images/icons/' + appName + '.png');
+				img.setAttribute('src',    'images/icons/' + message.apps[appName].icon);
 				img.setAttribute('height', '16');
 				img.setAttribute('width',  '16');
 

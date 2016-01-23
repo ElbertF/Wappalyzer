@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
 							html =
 								'<div class="detected-app">' +
 									'<a target="_blank" href="https://wappalyzer.com/applications/' + appName.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '') + '?pk_campaign=chrome&pk_kwd=popup">' +
-										'<img src="images/icons/' + appName + '.png"/>' +
+										'<img src="images/icons/' + response.apps[appName].icon + '"/>' +
 										'<span class="label"><span class="name">' + appName + '</span>' + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + '</span>' +
 									'</a>';
 

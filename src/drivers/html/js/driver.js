@@ -51,7 +51,7 @@
 			document.getElementById('apps').innerHTML = '';
 
 			for ( app in w.detected[url] ) {
-				document.getElementById('apps').innerHTML += '<img src="images/icons/' + app + '.png" width="16" height="16"/> ' + app + '<br/>';
+				document.getElementById('apps').innerHTML += '<img src="images/icons/' + w.apps[app].icon + '" width="16" height="16"/> ' + app + '<br/>';
 			};
 		},
 

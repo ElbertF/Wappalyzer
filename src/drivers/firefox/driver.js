@@ -249,7 +249,7 @@
 	};
 
 	Button.prototype.setIcon = function(appName) {
-		var url = typeof appName === 'undefined' ? './images/icon32.png' : './images/icons/' + appName + '.png';
+		var url = typeof appName === 'undefined' ? './images/icon32.png' : './images/icons/' + w.apps[appName].icon;
 
 		this.button.icon = url;
 	};
@@ -303,7 +303,7 @@
 	UrlBar.prototype.addIcon = function(appName) {
 		var
 			icon = this.document.createElement('image'),
-			url = typeof appName === 'undefined' ? 'images/icon32.png' : 'images/icons/' + appName + '.png',
+			url = typeof appName === 'undefined' ? 'images/icon32.png' : 'images/icons/' + w.apps[appName].icon,
 			tooltipText = ( typeof appName !== 'undefined' ? appName + ' - ' + require('sdk/l10n').get('clickForDetails') + ' - ' : '' ) + require('sdk/l10n').get('name');
 
 		icon.setAttribute('src', require('sdk/self').data.url(url));

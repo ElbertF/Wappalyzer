@@ -5052,6 +5052,16 @@
       "script": "paypalobjects\\.com/js",
       "website": "paypal.com"
     },
+    "PayPlug": {
+      "cats": [
+        41
+      ],
+      "env": "^PayPlug$",
+      "html": "<input[^>]+data-payplug",
+      "script": "payplug\\.js",
+      "website": "payplug.com",
+      "icon": "payplug.png"
+    },
     "PencilBlue": {
       "cats": [
         1,

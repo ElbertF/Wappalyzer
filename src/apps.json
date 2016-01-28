@@ -2636,8 +2636,8 @@
 			"cats": [
 				42
 			],
-			"env": "^googletag$",
-			"html": "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
+			
+			"script": "//www\\.googletagmanager\\.com/gtm\\.js",
 			"icon": "Google Tag Manager.png",
 			"website": "www.google.com/tagmanager"
 		},

@@ -70,9 +70,9 @@
                                 23
                         ],
                         "headers": {
-                                 "X-Powered-By": "anchorCache"
+                                 "X-Powered-By": "anchorCache",
+				 "X-anchor-Cache": ""
                         },
-                        "html": "<!--[^>]+anchorCache",
                         "icon": "anchorCache.png",
                         "implies": "PHP",
                         "website": "anchorcache.eu"

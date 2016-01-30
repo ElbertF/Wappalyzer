@@ -69,13 +69,12 @@
                              "cats": [
                                 23
                         ],
-                        "headers": {
-                                 "X-Powered-By": "anchorCache",
-				 "X-anchor-Cache": ""
-                        },
+                        "meta": {
+	                        "generator": "anchorCache"
+	                },
                         "icon": "anchorCache.png",
                         "implies": "PHP",
-                        "website": "anchorcache.eu"
+                        "website": "www.anchorcache.eu"
                 },
 		"AMPcms": {
 			"cats": [

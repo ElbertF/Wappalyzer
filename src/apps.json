@@ -3933,6 +3933,15 @@
 			"script": "lodash.*\\.js",
 			"website": "www.lodash.com"
 		},
+		"Localytics": {
+			"cats": [
+				10
+			],
+			"env": "^Localytics$",
+			"icon": "Localytics.png",
+			"script": "https?://api\\.localytics\\.com/v1",
+			"website": "localytics.com"
+		},
 		"Lockerz Share": {
 			"cats": [
 				5

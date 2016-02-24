@@ -7837,7 +7837,7 @@
 			],
 			"env": "^yandex_metrika",
 			"icon": "Yandex.Metrika.png",
-			"script": "mc\\.yandex\\.ru\\/metrika\\/watch\\.js",
+			"script": "mc\\.yandex\\.ru\\/metrika\\/watch(_visor)?\\.js",
 			"website": "metrika.yandex.com"
 		},
 		"Yaws": {

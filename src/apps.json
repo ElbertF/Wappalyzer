@@ -2627,7 +2627,7 @@
 				"Set-Cookie": "__utma"
 			},
 			"icon": "Google Analytics.png",
-			"script": "//(ssl\\.|www\\.)?google-analytics\\.com/(analytics|ga)\\.js",
+			"script": "^https?://[^\\/]+\\.google-analytics\\.com\\/(ga|urchin|analytics)\\.js\\;version:\\1?UA:",
 			"website": "google.com/analytics"
 		},
 		"Google App Engine": {

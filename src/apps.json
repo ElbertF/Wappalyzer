@@ -4704,7 +4704,7 @@
 				22
 			],
 			"headers": {
-				"Server": "nginx(?:/([\\d.]+))?\\;version:\\1"
+				"Server": "nginx(?:/([\\d.]+))?(?:\\;version:([\\d.]+))?"
 			},
 			"icon": "Nginx.png",
 			"website": "nginx.org"

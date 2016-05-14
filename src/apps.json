@@ -69,9 +69,14 @@
                              "cats": [
                                 23
                         ],
+                        "headers": {
+				"X-Powered-By": "anchorCache(?:/([\\d.]+))?\\;version:\\1"
+			},
                         "meta": {
-	                        "generator": "anchorCache"
+	                        "generator": "anchorCache",
+	                        "keywords": "anchorCache"
 	                },
+	                "html": "<!--[^>]+anchorCache®",
                         "icon": "anchorCache.png",
                         "implies": "PHP",
                         "website": "www.anchorcache.eu"

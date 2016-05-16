@@ -139,16 +139,21 @@
 			},
 			"website": "www.a-blogcms.jp"
 		},
-               "anchorCache": {
-                             "cats": [
-                                23
-                        ],
-                        "meta": {
-	                        "generator": "anchorCache"
-	                },
-                        "icon": "anchorCache.png",
-                        "implies": "PHP",
-                        "website": "www.anchorcache.eu"
+       "anchorCache": {
+                     "cats": [
+                        23
+                ],
+                "headers": {
+                "X-Powered-By": "anchorCache(?:/([\\d.]+))?\\;version:\\1"
+                      },
+                "meta": {
+                    "generator": "anchorCache",
+                    "keywords": "anchorCache"
+                  },
+            "html": "<!--[^>]+anchorCache",
+                "icon": "anchorCache.png",
+                "implies": "PHP",
+                "website": "www.anchorcache.eu"
                 },
 		"AMPcms": {
 			"cats": [

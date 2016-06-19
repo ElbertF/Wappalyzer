@@ -801,7 +801,7 @@
 			],
 			"env": "^compareProducts$",
 			"html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/v",
-			"icon": "Bigcommerce.png",
+			"icon": "Bigcommerce.svg",
 			"script": "cdn\\d+\\.bigcommerce\\.com/v",
 			"url": "mybigcommerce\\.com",
 			"website": "www.bigcommerce.com"

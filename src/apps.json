@@ -6241,7 +6241,7 @@
 			],
 			"env": "^Shopify$",
 			"html": "<link[^>]+=['\"]//cdn\\.shopify\\.com",
-			"icon": "Shopify.png",
+			"icon": "Shopify.svg",
 			"website": "shopify.com"
 		},
 		"Shoptet": {

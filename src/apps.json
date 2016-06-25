@@ -801,7 +801,7 @@
 			],
 			"env": "^compareProducts$",
 			"html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/v",
-			"icon": "Bigcommerce.png",
+			"icon": "BigCommerce.svg",
 			"script": "cdn\\d+\\.bigcommerce\\.com/v",
 			"url": "mybigcommerce\\.com",
 			"website": "www.bigcommerce.com"
@@ -6252,7 +6252,7 @@
 			],
 			"env": "^Shopify$",
 			"html": "<link[^>]+=['\"]//cdn\\.shopify\\.com",
-			"icon": "Shopify.png",
+			"icon": "Shopify.svg",
 			"website": "shopify.com"
 		},
 		"Shoptet": {

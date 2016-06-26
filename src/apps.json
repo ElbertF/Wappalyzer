@@ -9038,7 +9038,18 @@
 				"Elcodi"
 			],
 			"website": "shopery.com"
-		}
+		},
+		"ArvanCloud": {
+			"cats": [
+				31
+			],
+			"env": "^ArvanCloud$",
+			"headers": {
+				"Server": "ArvanCloud"
+			},
+			"icon": "ArvanCloud.png",
+			"website": "www.ArvanCloud.com"
+		}		
 	},
 	"categories": {
 		"1": "cms",

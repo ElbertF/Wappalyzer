@@ -9045,7 +9045,7 @@
 			],
 			"env": "^ArvanCloud$",
 			"headers": {
-				"AR-PoweredBy": "Arvan Cloud (arvancloud.com)"
+				"Server": "ArvanCloud"
 			},
 			"icon": "ArvanCloud.png",
 			"website": "www.ArvanCloud.com"

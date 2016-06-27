@@ -6655,6 +6655,18 @@
 			"icon": "Store Systems.png",
 			"website": "store-systems.de"
 		},
+    "Strapdown.js": {
+      "cats": [
+        12
+      ],
+      "script":  "strapdown\\.js",
+      "implies": [
+        "Twitter Bootstrap",
+        "Google Code Prettify"
+      ],
+      "icon": "strapdown.js.png",
+      "website": "strapdownjs.com"
+    },
 		"Stripe": {
 			"cats": [
 				41

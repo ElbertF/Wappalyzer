@@ -9038,6 +9038,16 @@
 				"Elcodi"
 			],
 			"website": "shopery.com"
+		},
+		"ArvanCloud": {
+			"cats": [
+				31
+			],
+			"headers": {
+				"Server": "ArvanCloud"
+			},
+			"icon": "ArvanCloud.png",
+			"website": "www.Arvancloud.com"
 		}
 	},
 	"categories": {

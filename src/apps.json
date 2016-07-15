@@ -1,5 +1,14 @@
 {
   "apps": {
+	  "RD Station": {
+      "cats": [
+        32
+      ],
+      "env": "^RDStation$",
+      "icon": "RDStation.png",
+      "script": "d335luupugsy2\\.cloudfront\\.net/js/loader-scripts/82b8e70e-5489-4d8a-8c3d-3cfbd534460e-loader\\.js",
+      "website": "www.rdstation.com.br"
+    },
     "Strato": {
       "cats": [
         6
@@ -801,7 +810,7 @@
 			],
 			"env": "^compareProducts$",
 			"html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/v",
-			"icon": "Bigcommerce.png",
+			"icon": "BigCommerce.svg",
 			"script": "cdn\\d+\\.bigcommerce\\.com/v",
 			"url": "mybigcommerce\\.com",
 			"website": "www.bigcommerce.com"

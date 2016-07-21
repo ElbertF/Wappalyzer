@@ -643,6 +643,22 @@
 			},
 			"website": "www.methods.co.nz/asciidoc"
 		},
+		"Asymptix PHP Framework": {
+			"cats": [
+				18
+			],
+			"headers": {
+				"X-Powered-By": "Asymptix PHP Framework(?:.*)"
+			},
+			"html": [
+				"Powered by <a href=\"http://www.asymptix.com/\" rel=\"external\">Asymptix PHP Framework</a>"
+			],
+			"implies": [
+				"PHP"
+			],
+			"website": "github.com/Asymptix/Framework",
+			"icon": "Asymptix PHP Framework.png"
+		},
 		"Atlassian Bitbucket": {
 			"cats": [
 				47

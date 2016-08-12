@@ -9126,6 +9126,12 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "xuijs.com"
+		},
+		"Bubble": { 
+    			"website": "bubble.is", 
+			"cats":  [ 1, 3, 18, 22 ], 
+			"env":  "^appquery$",
+    			"implies": "Node.js"
 		}
 	},
 	"categories": {

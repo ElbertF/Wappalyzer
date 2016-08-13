@@ -5816,6 +5816,20 @@
 			},
 			"website": "www.redmine.org"
 		},
+		"Refinery CMS": {
+			"cats": [
+				1
+			],
+			"icon": "RefineryCMS.png",
+			"implies": "Ruby",
+			"html": [
+				"<(?:link|a href) [^>]+canonical",
+				"<[a-z]+ [^>]*id=\"page_container\"",
+				"<[a-z]+ [^>]*id=\"body_content\"",
+				"<[a-z]+ [^>]*id=\"side_body\""
+			],
+			"website": "refinerycms.com"
+		},
 		"Reinvigorate": {
 			"cats": [
 				10

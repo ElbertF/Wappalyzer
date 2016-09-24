@@ -47,6 +47,7 @@
   "categoryName50" : { "message" : "Управление документами" },
   "categoryName51" : { "message": "Генератор лендингов" },
   "categoryName52" : { "message": "Live Chat" },
+  "categoryName53" : { "message": "Runtime Environment" },
   "github" : { "message" : "Форкнуть на GitHub!" },
   "noAppsDetected" : { "message" : "Нет данных о сайте" },
   "nothingToDo" : { "message" : "Тут нечего искать" },

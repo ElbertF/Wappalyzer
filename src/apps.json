@@ -5403,6 +5403,22 @@
 			],
 			"website": "petrojs.thepetronics.com"
 		},
+		"Peyvand": {
+			"cats": [
+				1
+			],
+			"headers": {
+				"X-Powered-CMS": "Peyvand"
+			},
+			"icon": "Peyvand.png",
+			"implies": [
+				"Python",
+				"Perl",
+				"Java",
+				"PHP"
+			],
+			"website": "peyvand.ws"
+		},
 		"Phaser": {
 			"cats": [
 				12

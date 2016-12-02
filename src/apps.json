@@ -8213,8 +8213,11 @@
 			],
 			"env": "^YAHOO$",
 			"icon": "YUI.png",
-			"script": "(?:/yui/|yui\\.yahooapis\\.com)",
-			"website": "yuilibrary.com"
+			"script": [
+                "(?:/yui/|yui\\.yahooapis\\.com)",
+                "xregexp(?:(yuilib)\\?(\/|\\)(([0-9]+\.)*[0-9]+))\\;version:\\3"
+                ],
+		    "website": "yuilibrary.com"
 		},
 		"YUI Doc": {
 			"cats": [

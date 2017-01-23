@@ -2483,6 +2483,15 @@
 			"script": "cartjs\\.php\\?(?:.*&)?s=[^&]*myfortune3cart\\.com",
 			"website": "fortune3.com"
 		},
+		"Foswiki": {
+			"cats": [
+				8
+			],
+			"html": "/foswiki/bin/../pub/System/CommentPlugin/comment\\.css",
+			},
+			"script": "foswikiString\\.js",
+			"website": "foswiki.org"
+		},
 		"FreeBSD": {
 			"cats": [
 				28

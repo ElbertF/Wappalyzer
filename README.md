@@ -36,7 +36,7 @@ Run `vagrant ssh` to access the environment and read usage instructions.
 
 ```shell
 $ git clone https://github.com/AliasIO/Wappalyzer.git wappalyzer
-$ cd wappalyzer
+$ cd Wappalyzer
 $ vagrant up
 $ vagrant ssh
 ```

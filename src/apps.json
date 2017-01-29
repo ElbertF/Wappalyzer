@@ -1779,7 +1779,7 @@
 				"Server": "Debian",
 				"X-Powered-By": "(?:Debian|dotdeb|(sarge|etch|lenny|squeeze|wheezy|jessie))\\;version:\\1"
 			},
-			"icon": "Debian.png",
+			"icon": "Debian.svg",
 			"website": "debian.org"
 		},
 		"Decorum": {
@@ -5466,7 +5466,7 @@
 				"Set-Cookie": "PHPSESSID",
 				"X-Powered-By": "php/?([\\d.]+)?\\;confidence:40\\;version:\\1"
 			},
-			"icon": "PHP.png",
+			"icon": "PHP.svg",
 			"url": "\\.php(?:$|\\?)",
 			"website": "php.net"
 		},
@@ -7626,7 +7626,7 @@
 				"Server": "Ubuntu",
 				"X-Powered-By": "Ubuntu"
 			},
-			"icon": "Ubuntu.png",
+			"icon": "Ubuntu.svg",
 			"website": "www.ubuntu.com/server"
 		},
 		"UltraCart": {

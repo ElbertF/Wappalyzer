@@ -7,18 +7,19 @@ var exports = {};
 (function(exports) {
 
 	var utils = {
+		normalizeUrl: function(url) {
+
+			return this.hashUrl(url) || null;
+
+		},
+
 		getReferrer: function() {
-
-			return this.hashUrl(document.referrer) || null;
-
+			return this.normalizeUrl(document.referrer);
 		},
 
 		getPageUrl: function() {
-
-			return this.hashUrl(window.location.href) || null;
-
+			return this.normalizeUrl(window.location.href);
 		},
-
 		hashUrl: function(url) {
 			var a,
 				result;
@@ -121,6 +122,7 @@ var exports = {};
 
 	utils.SCRIPT_IN_FRIENDLY_IFRAME = !utils.SCRIPT_IN_WINDOW_TOP && utils.isFriendlyWindow(window.parent);
 	utils.SCRIPT_IN_HOSTILE_IFRAME = !utils.SCRIPT_IN_WINDOW_TOP && !utils.SCRIPT_IN_FRIENDLY_IFRAME;
+
 	function LogGenerator() {
 		this.msgNum = 0;
 		this.pageMeta = {
@@ -134,11 +136,21 @@ var exports = {};
 
 	LogGenerator.prototype = {
 		log: function(event, opt_assets, opt_pageTags) {
+			var opt_video_assets;
+			if ( event === 'video' ) {
+				opt_video_assets = opt_assets || [];
+				opt_assets = [];
+			} else {
+				opt_video_assets = [];
+				opt_assets = opt_assets || [];
+			}
 			var result = {
 				doc: this.pageMeta,
 				event: event,
-				assets: opt_assets || [],
+				video_assets: opt_video_assets,
+				assets: opt_assets,
 				version: '3',
+				mrev: '5dacb94-c',
 				msgNum: this.msgNum,
 				timestamp: new Date().getTime(),
 				pageVis: document.visibilityState,
@@ -157,75 +169,303 @@ var exports = {};
 
 (function(exports) {
 
-	var VALID_AD_SIZES = [
-		[160, 600],
+	var SizeMatcher = {
+		VALID_AD_SIZES: [
+			[300, 50],
+			[320, 50],
+			[160, 600],
+			[300, 250],
+			[300, 600],
+			[300, 1050],
+			[336, 280],
+			[336, 850],
+			[468, 60],
+			[728, 90],
+			[728, 250],
+			[728, 270],
+			[970, 66],
+			[970, 90],
+			[970, 125],
+			[970, 250],
+			[970, 400],
+			[970, 415],
+			[1280, 100]
+		],
 
-		[300, 250],
-		[300, 600],
-		[300, 1050],
+		PX_SIZE_TOL: 10,
 
-		[336, 280],
-		[336, 850],
-		[468, 60],
-		[728, 90],
-		[728, 270],
-		[970, 66],
-		[970, 90],
-		[970, 125],
-		[970, 250],
-		[970, 400],
-		[970, 415],
-		[1280, 100]
-	];
+		getMatchedAdSize: function(width, height) {
 
-	var PX_SIZE_TOL = 10;
-	var MIN_WINDOW_PX = 10;
-	var MAX_SEARCHES_PER_WINDOW = 10;
-	var MAX_SEARCHES_PER_ELEMENT = 2;
+			if ( !this.set ) {
+				this.set = this._makeSizeSet();
+			}
 
-	function makeSizeSet(validAdSizes, sizeTol) {
-		var set = {};
-		var i;
-		var xfuz;
-		var yfuz;
-		var size;
-		var width;
-		var height;
+			return this.set[Math.round(width) + 'x' + Math.round(height)];
+		},
 
-		for ( i = 0; i < validAdSizes.length; i++ ) {
-			for ( xfuz = -sizeTol; xfuz <= sizeTol; xfuz++ ) {
-				for ( yfuz = -sizeTol; yfuz <= sizeTol; yfuz++ ) {
-					size = validAdSizes[i];
-					width = size[0] + xfuz;
-					height = size[1] + yfuz;
-					set[width + 'x' + height] = size;
+		elementIsAdShaped: function(el) {
+			return !!this.getMatchedAdSizeForElement(el);
+		},
+
+		getMatchedAdSizeForElement: function(el) {
+			var rect = el.getBoundingClientRect();
+			return this.getMatchedAdSize(rect.width, rect.height);
+		},
+
+		_makeSizeSet: function() {
+			var set = {};
+			var i;
+			var xfuz;
+			var yfuz;
+			var size;
+			var width;
+			var height;
+
+			for ( i = 0; i < this.VALID_AD_SIZES.length; i++ ) {
+				for ( xfuz = -this.PX_SIZE_TOL; xfuz <= this.PX_SIZE_TOL; xfuz++ ) {
+					for ( yfuz = -this.PX_SIZE_TOL; yfuz <= this.PX_SIZE_TOL; yfuz++ ) {
+						size = this.VALID_AD_SIZES[i];
+						width = size[0] + xfuz;
+						height = size[1] + yfuz;
+						set[width + 'x' + height] = size;
+					}
 				}
 			}
+			return set;
 		}
-		return set;
-	}
+	};
 
-	var SIZE_SET = makeSizeSet(VALID_AD_SIZES, PX_SIZE_TOL);
+	var Throttler = {
+		MAX_SEARCHES_PER_WINDOW: 10,
+		MAX_SEARCHES_PER_ELEMENT: 2,
 
-	function elementIsAd(el) {
-		if ( typeof el.searches !== 'number' ) {
-			el.searches = 0;
-		}
+		countSearch: function(el) {
+			if ( typeof el.searches !== 'number' ) {
+				el.searches = 0;
+			}
 
-		if ( el.searches >= MAX_SEARCHES_PER_ELEMENT ) {
+			el.searches += 1;
+		},
+
+		throttle: function(el, max) {
+			if ( typeof el.searches === 'number' && el.searches >= max ) {
+				return true;
+			}
 			return false;
+		},
+
+		throttleElement: function(el) {
+			return this.throttle(el, this.MAX_SEARCHES_PER_ELEMENT);
+		},
+
+		throttleWin: function(win) {
+			return this.throttle(win, this.MAX_SEARCHES_PER_WINDOW);
+		},
+
+		getCount: function(el) {
+			return el.searches || 0;
 		}
+	};
 
-		el.searches += 1;
-
-		var isImgWithoutSrc = el.tagName === 'IMG' && !el.src;
-		var isImgWithoutAnchor = el.tagName === 'IMG' && !(el.parentNode.tagName === 'A' || el.getAttribute('onclick'));
-
-		return elementIsAdShaped(el) && !isImgWithoutSrc && !isImgWithoutAnchor;
+	function TopSearcher(win) {
+		this.win = win;
+		this.doc = win.document;
 	}
 
-	function isNewAd(el, win) {
-		return !el.mp_adFound && (win === win.top || !win.mp_adFound);
+	TopSearcher.prototype.search = function() {
+		var candidates = exports.utils.realArray(this.doc.querySelectorAll('img, object, embed')),
+			html5Ad,
+			ads = [];
+
+		ads = ads.concat(candidates.filter(function(el) {
+			if ( !el.mpAdFound && !Throttler.throttleElement(el) ) {
+				Throttler.countSearch(el);
+				if ( (el.tagName !== 'IMG' || isStandardImage(el)) && SizeMatcher.elementIsAdShaped(el) ) {
+					el.mpAdFound = true;
+					return true;
+				}
+			}
+			return false;
+		}));
+
+		html5Ad = this._mainGetHTMLAd();
+		if ( html5Ad ) {
+			html5Ad.html5 = true;
+			html5Ad.mpAdFound = true;
+			ads.push(html5Ad);
+		}
+
+		return ads;
+	};
+
+	TopSearcher.prototype._mainGetHTMLAd = function() {
+		var styles = this.doc.querySelectorAll('div > style, div > link[rel="stylesheet"]'),
+			i, div;
+		for ( i = 0; i < styles.length; i++ ) {
+			div = styles[i].parentNode;
+			if ( !div.mpAdFound && SizeMatcher.elementIsAdShaped(div) && this._jumpedOut(div) ) {
+				return div;
+			}
+		}
+	};
+
+	TopSearcher.prototype._jumpedOut = function(el) {
+		var siblings, ifrs;
+		siblings = exports.utils.realArray(el.parentNode.children);
+		ifrs = siblings.filter(function(el) {
+			return el.tagName === 'IFRAME' && el.offsetWidth === 0 && el.offsetHeight === 0;
+		});
+		return ifrs.length > 0;
+	};
+
+	function IframeSearcher(win) {
+		this.MIN_AD_AREA = 14000;
+		this.MIN_WINDOW_PX = 10;
+
+		this.win = win;
+		this.doc = win.document;
+		this.body = win.document.body;
+		this.winClickTag = win.clickTag;
+		this.adSizeMeta = this._getAdSizeMeta();
+		this.numElementsInBody = (this.body && this.body.querySelectorAll('*').length) || 0;
+
+		this.shouldSearchWindow = false;
+		if ( !this.win.mpAdFound && this.body && !Throttler.throttleWin(this.win) ) {
+			this.winWidth = this.win.innerWidth;
+			this.winHeight = this.win.innerHeight;
+			if ( this._meetsMinAdSize(this.winWidth, this.winHeight) && !this._containsLargeIframes() ) {
+				this.shouldSearchWindow = true;
+			}
+		}
+
+	}
+
+	IframeSearcher.prototype.search = function() {
+		var ad;
+
+		if ( this.shouldSearchWindow ) {
+			ad = this._search();
+			if ( ad ) {
+				ad.mpAdFound = true;
+				win.mpAdFound = true;
+				return ad;
+			}
+			Throttler.countSearch(this.win);
+		}
+
+		return null;
+	};
+
+	IframeSearcher.prototype._search = function() {
+		var _this = this,
+			stdCandidates,
+			html5Candidates,
+			stdEl,
+			html5El;
+
+		stdCandidates = this.body.querySelectorAll('img, object, embed');
+
+		stdEl = getFirst(stdCandidates, function(el) {
+			if ( !el.mpAdFound &&
+				!Throttler.throttleElement(el) &&
+				(el.tagName !== 'IMG' || isStandardImage(el)) &&
+				_this._elementIsAtLeastAsBigAsWindow(el))
+			{
+				return true;
+			}
+			Throttler.countSearch(el);
+			return false;
+		});
+
+		if ( stdEl ) {
+			return stdEl;
+		}
+
+		if ( this._isHTML5Iframe() ) {
+			html5Candidates = this.doc.querySelectorAll('body, canvas, button, video, svg, div');
+			html5El = getFirst(html5Candidates, function(el) {
+
+				if ( _this._elementIsAtLeastAsBigAsWindow(el) ) {
+					return true;
+				}
+				Throttler.countSearch(el);
+				return false;
+			});
+		}
+
+		if ( html5El ) {
+			html5El.html5 = true;
+			html5El.winClickTag = this.winClickTag;
+			html5El.adSizeMeta = this.adSizeMeta;
+			return html5El;
+		}
+
+		return null;
+	};
+
+	IframeSearcher.prototype._isHTML5Iframe = function() {
+		if ( this.winClickTag || this.adSizeMeta ) {
+			return true;
+		}
+
+		if ( this.doc.querySelectorAll('canvas', 'button', 'video', 'svg').length > 0 ) {
+			return true;
+		}
+
+		if ( this.numElementsInBody >= 5 && Throttler.getCount(this.win) > 0 && this.doc.querySelectorAll('div').length > 0 ) {
+			return true;
+		}
+
+		return false;
+	};
+
+	IframeSearcher.prototype._elementIsAtLeastAsBigAsWindow = function(el) {
+		var rect = el.getBoundingClientRect(),
+			tol = 0.95;
+
+		return rect.width >= (tol * this.winWidth) && rect.height >= (tol * this.winHeight);
+	};
+
+	IframeSearcher.prototype._meetsMinAdSize = function(width, height) {
+		return (width * height) >= this.MIN_AD_AREA;
+	};
+
+	IframeSearcher.prototype._containsLargeIframes = function() {
+		var iframes = this.doc.querySelectorAll('iframe');
+		var rect;
+		var i;
+		for ( i = 0; i < iframes.length; i++ ) {
+			rect = iframes[i].getBoundingClientRect();
+			if ( rect.width > this.MIN_WINDOW_PX || rect.height > this.MIN_WINDOW_PX ) {
+				return true;
+			}
+		}
+		return false;
+	};
+
+	IframeSearcher.prototype._getAdSizeMeta = function() {
+		var adSizeMeta = this.doc.querySelectorAll('meta[name="ad.size"]');
+		if ( adSizeMeta.length > 0 ) {
+			return adSizeMeta[0].content;
+		} else {
+			return null;
+		}
+	};
+
+	function getFirst(arr, testFn) {
+		var i, el;
+		for ( i = 0; i < arr.length; i++ ) {
+			el = arr[i];
+			if ( testFn(el) ) {
+				return el;
+			}
+		}
+		return null;
+	}
+
+	function isStandardImage(img) {
+
+		return img.src && (img.parentNode.tagName === 'A' || img.getAttribute('onclick'));
 	}
 
 	function getFriendlyIframes(win) {
@@ -237,175 +477,34 @@ var exports = {};
 		return friendlyIframes;
 	}
 
-	function getMatchedAdSize(width, height) {
-		return SIZE_SET[width + 'x' + height];
-	}
+	function findAds(win) {
+		var i,
+			iframes,
+			searcher,
+			ad,
+			ads = [];
 
-	function elementIsAdShaped(el) {
-		return !!getMatchedAdSizeForElement(el);
-	}
-
-	function getMatchedAdSizeForElement(el) {
-		var rect = el.getBoundingClientRect();
-		return getMatchedAdSize(rect.width, rect.height);
-	}
-
-	function containsLargeIframes(win) {
-		var iframes = win.document.querySelectorAll('iframe');
-		var rect;
-		var i;
-		for ( i = 0; i < iframes.length; i++ ) {
-			rect = iframes[i].getBoundingClientRect();
-			if ( rect.width > 10 || rect.height > 10 ) {
-				return true;
-			}
-		}
-		return false;
-	}
-
-	function isValidHTML5Div(div, winSize) {
-		var elSize = getMatchedAdSizeForElement(div);
-
-		if ( typeof div.checks !== 'number' ) {
-			div.checks = 1;
+		if ( win === win.top ) {
+			searcher = new TopSearcher(win);
+			ads = ads.concat(searcher.search());
 		} else {
-			div.checks += 1;
-		}
-
-		return (elSize &&
-				elSize[0] === winSize[0] && elSize[1] === winSize[1] &&
-				div.checks > 1);
-	}
-
-	var HTML5_SIGNAL_ELEMENTS = 'canvas, button, video, svg, img';
-	function iframeGetHTMLAd(win) {
-		var body = win.document.body,
-			elements, i, el, divs, div, numElements,
-			winSize, elSize;
-
-		if ( !body ) {
-			return null;
-		}
-		winSize = getMatchedAdSize(win.innerWidth, win.innerHeight);
-
-		if ( !winSize ) {
-			return null;
-		}
-
-		elements = body.querySelectorAll(HTML5_SIGNAL_ELEMENTS);
-
-		for ( i = 0; i < elements.length; i++ ) {
-			el = elements[i];
-			elSize = getMatchedAdSizeForElement(el);
-			if ( elSize && elSize[0] === winSize[0] && elSize[1] === winSize[1] ) {
-				return el;
+			searcher = new IframeSearcher(win);
+			ad = searcher.search();
+			if ( ad ) {
+				ads.push(ad);
 			}
 		}
 
-		numElements = body.querySelectorAll('*').length;
-		if ( numElements < 5 ) {
-			return null;
+		iframes = getFriendlyIframes(win);
+		for ( i = 0; i < iframes.length; i++ ) {
+			ads = ads.concat(findAds(iframes[i].contentWindow));
 		}
-
-		divs = body.querySelectorAll('div');
-
-		for ( i = 0; i < divs.length; i++ ) {
-			div = divs[i];
-			if ( isValidHTML5Div(div, winSize) ) {
-				return div;
-			}
-		}
-
-		return null;
-	}
-
-	function jumpedOut(el) {
-		var siblings, ifrs;
-		siblings = exports.utils.realArray(el.parentNode.children);
-		ifrs = siblings.filter(function(el) {
-			return el.tagName === 'IFRAME' && el.offsetWidth === 0 && el.offsetHeight === 0;
-		});
-		return ifrs.length > 0;
-	}
-
-	function mainGetHTMLAd(win) {
-		var styles = win.document.querySelectorAll('div > style, div > link[rel="stylesheet"]'),
-			i, div;
-		for ( i = 0; i < styles.length; i++ ) {
-			div = styles[i].parentNode;
-			if ( elementIsAdShaped(div) && jumpedOut(div) ) {
-				return div;
-			}
-		}
-	}
-
-	function findAds(win, opt_ads) {
-
-		if ( typeof win.searches !== 'number' ) {
-			win.searches = 0;
-		}
-
-		var ads = opt_ads || [];
-		var adsFound = 0;
-
-		if ( win.innerWidth <= MIN_WINDOW_PX || win.innerHeight <= MIN_WINDOW_PX ) {
-			win.searches++;
-			return ads;
-		}
-
-		if ( exports.utils.SCRIPT_IN_WINDOW_TOP || win.searches < MAX_SEARCHES_PER_WINDOW ) {
-			var adCandidates = win.document.querySelectorAll('img, object, embed');
-			adCandidates = exports.utils.realArray(adCandidates);
-
-			adCandidates.forEach(function(el) {
-				if ( elementIsAd(el) && isNewAd(el, win) ) {
-					el.mp_adFound = true;
-					el.inIframe = win !== win.top;
-					win.mp_adFound = true;
-					ads.push(el);
-					adsFound += 1;
-				}
-			});
-
-			var htmlAd, adSizeMeta;
-			if ( win === win.top ) {
-				htmlAd = mainGetHTMLAd(win);
-			} else {
-				if ( adsFound === 0 && !containsLargeIframes(win) ) {
-					htmlAd = iframeGetHTMLAd(win);
-				}
-			}
-
-			if ( htmlAd && isNewAd(htmlAd, win) ) {
-				htmlAd.html5 = true;
-				htmlAd.inIframe = win !== win.top;
-				if ( htmlAd.inIframe ) {
-					adSizeMeta = win.document.querySelectorAll('meta[name="ad.size"]');
-					if ( adSizeMeta.length > 0 ) {
-						htmlAd.adSizeMeta = adSizeMeta[0].content;
-					}
-					if ( win.clickTag ) {
-						htmlAd.winClickTag = win.clickTag;
-					}
-				}
-				htmlAd.mp_adFound = true;
-				win.mp_adFound = true;
-				ads.push(htmlAd);
-			}
-
-			win.searches += 1;
-		}
-
-		var iframes = getFriendlyIframes(win);
-		iframes.forEach(function(ifr) {
-			findAds(ifr.contentWindow, ads);
-		});
 
 		return ads;
 	}
 
 	exports.adfinder = {
-		getMatchedAdSize: getMatchedAdSize,
+		getMatchedAdSize: SizeMatcher.getMatchedAdSize.bind(SizeMatcher),
 		findAds: findAds
 	};
 })(exports);
@@ -463,11 +562,12 @@ var exports = {};
 		getPosition: function(el) {
 			var rect = el.getBoundingClientRect();
 			var win = exports.utils.elementWindow(el);
+
 			return {
-				width: rect.width,
-				height: rect.height,
-				left: rect.left + win.pageXOffset,
-				top: rect.top + win.pageYOffset
+				width: Math.round(rect.width),
+				height: Math.round(rect.height),
+				left: Math.round(rect.left + win.pageXOffset),
+				top: Math.round(rect.top + win.pageYOffset)
 			};
 		},
 
@@ -682,7 +782,7 @@ var exports = {};
 
 			while ( true ) {
 				parentContainer = curContainer.parentElement;
-				if ( this.isValidContainer(parentContainer) ) {
+				if ( parentContainer && this.isValidContainer(parentContainer) ) {
 					curContainer = parentContainer;
 				} else {
 					return curContainer;
@@ -692,12 +792,6 @@ var exports = {};
 	};
 
 	var tagfinder = {
-
-		prepToSend: function(adData) {
-			adData.matchedSize = exports.adfinder.getMatchedAdSize(adData.width, adData.height);
-			delete adData.width;
-			delete adData.height;
-		},
 
 		setPositions: function(adData, opt_el, opt_winPos) {
 			var el = opt_el || adData.context;
@@ -732,10 +826,12 @@ var exports = {};
 			while ( true ) {
 				highestContainer = mgr.highestContainer(curWin, referenceElement);
 				mgr.captureHTML(highestContainer);
-
 				if ( curWin === curWin.top ) {
 					break;
 				} else {
+
+					curWin.mpAdFound = true;
+
 					mgr.adData.serializedIframeContents = mgr.adData.context;
 
 					if ( exports.utils.isFriendlyWindow(curWin.parent) ) {
@@ -763,6 +859,8 @@ var exports = {};
 	var _pageTags;
 	var INIT_MS_BW_SEARCHES = 2000;
 	var PAGE_TAG_RE = new RegExp('gpt|oascentral');
+	var POST_MSG_ID = '1484952787-11883-24071-12354-1549';
+	var AD_SERVER_RE = new RegExp('^(google_ads_iframe|oas_frame|atwAdFrame)');
 
 	function getPageTags(doc) {
 		var scripts = doc.getElementsByTagName('script');
@@ -778,7 +876,7 @@ var exports = {};
 
 	function messageAllParentFrames(adData) {
 
-		adData.dummyId = true;
+		adData.postMessageId = POST_MSG_ID;
 
 		adData = JSON.stringify(adData);
 
@@ -795,16 +893,31 @@ var exports = {};
 			messageAllParentFrames(adData);
 
 		} else if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
-			exports.tagfinder.setPositions(adData);
-			exports.tagfinder.prepToSend(adData);
 
+			exports.tagfinder.setPositions(adData);
+
+			adData.matchedSize = exports.adfinder.getMatchedAdSize(adData.width, adData.height);
+			if ( !adData.matchedSize ) {
+
+				if ( AD_SERVER_RE.exec(results.referenceElement.id) ) {
+					adData.matchedSize = [adData.width, adData.height];
+					adData.oddSize = true;
+				} else {
+
+					return;
+				}
+			}
+			delete adData.width;
+			delete adData.height;
 			adData.curPageUrl = exports.utils.getPageUrl();
 			_pageTags = _pageTags || getPageTags(document);
 			var log = _logGen.log('ad', [adData], _pageTags);
-			if ( _onAdFound ) {
-				_onAdFound(log, results.referenceElement);
-			}
 
+			if ( _onAdFound ) {
+
+					_onAdFound(log, results.referenceElement);
+
+			}
 		}
 	}
 
@@ -819,26 +932,20 @@ var exports = {};
 
 	function extractAds() {
 		var ads = exports.adfinder.findAds(window);
-
-		if ( !ads ) {
-			return;
-		}
-
 		ads.forEach(function(ad) {
 
 			var startTime = new Date().getTime();
 			var adId = startTime + '-' + Math.floor(Math.random() * 10e12);
 
 			var adData = {
-				width: ad.offsetWidth,
-				height: ad.offsetHeight,
+				width: Math.round(ad.offsetWidth),
+				height: Math.round(ad.offsetHeight),
 				startTime: startTime,
 				adId: adId,
-				html5: ad.html5 || false,
-				inIframe: ad.inIframe
+				html5: ad.html5 || false
 			};
 
-			if ( ad.html5 && ad.inIframe ) {
+			if ( ad.html5 ) {
 				adData.adSizeMeta = ad.adSizeMeta || null;
 				adData.winClickTag = ad.winClickTag || null;
 			}
@@ -898,9 +1005,9 @@ var exports = {};
 			return;
 		}
 
-		if ( adData.dummyId ) {
+		if ( adData.postMessageId === POST_MSG_ID ) {
 
-			delete adData.dummyId;
+			delete adData.postMessageId;
 
 			if ( isChildWin(myWin, ifrWin) ) {
 				if ( exports.utils.isFriendlyWindow(ifrWin) ) {
@@ -917,6 +1024,40 @@ var exports = {};
 		}
 	}
 
+	function onVideoMessage(msg, sender, callback) {
+		var log;
+		if ( msg.event === 'new-video-ad' ) {
+			msg.assets.forEach(function(asset) {
+
+			});
+			log = _logGen.log('video', msg.assets);
+		} else {
+			log = _logGen.log('invalid-video', msg.assets);
+		}
+
+		msg.assets.forEach(function(a) {delete a.isVideo;});
+		log.displayAdFound = msg.displayAdFound;
+		log.requests = msg.requests;
+		log.data = msg.event_data;
+
+		log.doc.finalPageUrl = log.doc.url;
+		log.doc.url = exports.utils.normalizeUrl(msg.origUrl);
+
+		_onAdFound(log);
+	}
+
+	function addBackgroundListener(event, callback) {
+		if ( typeof chrome !== 'undefined' ) {
+			chrome.runtime.onMessage.addListener(function(msg) {
+				if ( msg.event === event ) {
+					callback(msg);
+				}
+			});
+		} else if ( window.self.port ) {
+			window.self.port.on(event, callback);
+		}
+	}
+
 	exports.coordinator = {
 		init: function(onAdFound) {
 
@@ -925,19 +1066,21 @@ var exports = {};
 			}
 
 			_onAdFound = onAdFound;
+			window.addEventListener('message', onPostMessage, false);
 
 			if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 				var log = _logGen.log('page');
 				onAdFound(log);
-			}
 
-			window.addEventListener('message', onPostMessage, false);
-			if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 				window.addEventListener('beforeunload', function(event) {
 					var log = _logGen.log('unload');
 					log.timing = window.performance.timing;
 					onAdFound(log);
 				});
+
+				addBackgroundListener('new-video-ad', onVideoMessage);
+				addBackgroundListener('new-invalid-video-ad', onVideoMessage);
+
 			}
 
 			exports.utils.onDocLoaded(document, extractAdsWrapper);

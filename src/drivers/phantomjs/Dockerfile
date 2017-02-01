@@ -1,30 +1,33 @@
-FROM phusion/baseimage
+FROM ubuntu:latest
 
 MAINTAINER Elbert Alias <elbert@alias.io>
 
 ENV DEBIAN_FRONTEND noninteractive
 
+ENV WAPPALYZER_ROOT /usr/local/wappalyzer
+
+RUN sed -i 's/archive\.ubuntu\.com/au.archive.ubuntu.com/g' /etc/apt/sources.list
+
 RUN \
 	apt-get update && apt-get install -y \
-	bzip2 \
 	libfreetype6 \
 	libfontconfig \
+	nodejs \
+	npm \
 	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR /usr/local
+RUN ln -s $(which nodejs) /usr/bin/node
 
-# PhantomJS
-RUN \
-	mkdir phantomjs && \
-	curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-1.9.8-linux-x86_64.tar.bz2 | tar xvjC phantomjs --strip 1
+RUN mkdir "$WAPPALYZER_ROOT"
 
-# Wappalyzer
-RUN \
-	mkdir wappalyzer && \
-	curl -sSL https://github.com/AliasIO/Wappalyzer/archive/master.tar.gz | tar xzC wappalyzer --strip 1
+WORKDIR "$WAPPALYZER_ROOT"
 
-RUN wappalyzer/bin/wappalyzer-links wappalyzer
+ADD apps.json .
+ADD driver.js .
+ADD index.js .
+ADD package.json .
+ADD wappalyzer.js .
 
-WORKDIR wappalyzer/src/drivers/phantomjs
+RUN npm i
 
-ENTRYPOINT ["/usr/local/phantomjs/bin/phantomjs", "--load-images=false", "--ignore-ssl-errors=yes", "--ssl-protocol=any", "driver.js"]
+ENTRYPOINT ["node", "index.js"]

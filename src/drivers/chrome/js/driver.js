@@ -15,6 +15,8 @@
 		headersCache = {};
 
 	w.driver = {
+		timeout: 1000,
+
 		/**
 		 * Log messages to console
 		 */

@@ -4,3 +4,4 @@ images/icons/*.png
 images/icons/*.svg
 js/wappalyzer.js
 js/iframe.js
+js/network.js

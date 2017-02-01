@@ -8,9 +8,10 @@ ENV WAPPALYZER_ROOT /home/wappalyzer/synced
 ENV WAPPALYZER_NODE_PATH /home/wappalyzer/node
 
 # Install packages
+RUN sed -i 's/archive\.ubuntu\.com/au.archive.ubuntu.com/g' /etc/apt/sources.list
 RUN apt-get update && apt-get install -y sudo curl
 RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get install -y nodejs bzip2 zip libfreetype6 libfontconfig
+RUN apt-get install -y nodejs bzip2 zip libfreetype6 libfontconfig rsync
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 

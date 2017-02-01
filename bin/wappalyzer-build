@@ -50,10 +50,6 @@ node $WAPPALYZER_NODE_PATH/node_modules/imagemin-cli/cli.js $WAPPALYZER_ROOT/src
 
 wappalyzer links
 
-# Npm Module
-mkdir -p $WAPPALYZER_ROOT/build/wappalyzer_npm/
-cp -R $WAPPALYZER_ROOT/src/drivers/npm/* $WAPPALYZER_ROOT/build/wappalyzer_npm/
-
 # Mozilla Firefox
 echo "Building Firefox driver..."
 

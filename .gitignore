@@ -4,19 +4,11 @@
 .vagrant
 
 build/*
-
-drivers/npm/node_modules
-drivers/npm/npm-debug.log
-
 src/icons/converted/*
 
-package.json
-node_modules/
+node_modules
 npm-debug.log
 
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
+tags
 
 !.gitkeep

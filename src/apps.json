@@ -65,6 +65,19 @@
 			"icon": "3ware.png",
 			"website": "www.3ware.com"
 		},
+		"AD EBiS": {
+			"cats": [
+				10
+			],
+			"html": [
+				"<!-- EBiS contents tag",
+				"<!--EBiS tag",
+				"<!-- Tag EBiS",
+				"<!-- EBiS common tag"
+			],
+			"icon": "ebis.png",
+			"website": "www.ebis.ne.jp"
+		},
 		"AMPcms": {
 			"cats": [
 				1
@@ -208,6 +221,17 @@
 			"script": "addtoany\\.com/menu/page\\.js",
 			"website": "www.addtoany.com"
 		},
+		"Adminer": {
+			"cats": [
+				3
+			],
+			"html": [
+				"Adminer</a> <span class=\"version\">([\\d.]+)</span>\\;version:\\1",
+				"onclick=\"bodyClick\\(event\\);\" onload=\"verifyVersion\\('([\\d.]+)'\\);\">\\;version:\\1"
+			],
+			"icon": "adminer.png",
+			"website": "www.adminer.org"
+		},
 		"Adnegah": {
 			"cats": [
 				36
@@ -331,6 +355,14 @@
 			"script": "shop-static\\.afterbuy\\.de",
 			"website": "www.afterbuy.de"
 		},
+		"Aircall": {
+			"cats": [
+				52
+			],
+			"icon": "aircall.png",
+			"script": "^https?://cdn\\.aircall\\.io/",
+			"website": "aircall.io"
+		},
 		"Airee": {
 			"cats": [
 				31
@@ -445,7 +477,7 @@
 			"cats": [
 				18
 			],
-			"env": "^angular$",
+			"env": "^ngMaterial$",
 			"icon": "Angular.svg",
 			"implies": [
 				"AngularJS"
@@ -2044,6 +2076,18 @@
 			"script": "cdn\\.e-merchant\\.com",
 			"website": "e-merchant.com"
 		},
+		"EC-CUBE": {
+			"cats": [
+				6
+			],
+			"icon": "ec-cube.png",
+			"implies": "PHP",
+			"script": [
+				"eccube\\.js",
+				"win_op\\.js"
+			],
+			"website": "www.ec-cube.net"
+		},
 		"ELOG": {
 			"cats": [
 				19
@@ -2682,6 +2726,24 @@
 			"icon": "GoStats.png",
 			"website": "gostats.com"
 		},
+		"Gogs": {
+			"cats": [
+				47
+			],
+			"headers": {
+				"Set-Cookie": "i_like_gogits="
+			},
+			"html": [
+				"<div class=\"ui left\">\n\\s+© \\d{4} Gogs Version: ([\\d.]+) Page:\\;version:\\1",
+				"<button class=\"ui basic clone button\" id=\"repo-clone-ssh\" data-link=\"gogs@"
+			],
+			"icon": "gogs.png",
+			"meta": {
+				"keywords": "go, git, self-hosted, gogs"
+			},
+			"script": "js/gogs\\.js",
+			"website": "gogs.io"
+		},
 		"Google AdSense": {
 			"cats": [
 				36
@@ -2875,6 +2937,23 @@
 			"html": "<[^>]+gravatar\\.com/avatar/",
 			"icon": "Gravatar.png",
 			"website": "gravatar.com"
+		},
+		"Gravity Forms": {
+			"cats": [
+				19
+			],
+			"html": [
+				"<div class=(?:\"|')[^>]*gform_wrapper",
+				"<div class=(?:\"|')[^>]*gform_body",
+				"<ul [^>]*class=(?:\"|')[^>]*gform_fields",
+				"<link [^>]*href=(?:\"|')[^>]*wp-content/plugins/gravityforms/css/"
+			],
+			"icon": "gravityforms.svg",
+			"implies": [
+				"WordPress",
+				"PHP"
+			],
+			"website": "gravityforms.com"
 		},
 		"Gravity Insights": {
 			"cats": [
@@ -3338,14 +3417,16 @@
 			"icon": "default.png",
 			"website": "indyproject.org"
 		},
-		"Ink": {
+		"Infusionsoft": {
 			"cats": [
-				18
+				32
 			],
-			"html": "<link [^>]*href=\"[^\"]+ink(?:\\.min)?\\.css",
-			"icon": "Ink.png",
-			"script": "ink.*\\.js",
-			"website": "ink.sapo.pt"
+			"html": [
+				"<input [^>]*name=\"infusionsoft_version\" [^>]*value=\"([^>]*)\" [^>]*\\/>\\;version:\\1",
+				"<input [^>]*value=\"([^>]*)\" [^>]*name=\"infusionsoft_version\" [^>]*\\/>\\;version:\\1"
+			],
+			"icon": "infusionsoft.svg",
+			"website": "infusionsoft.com"
 		},
 		"InstantCMS": {
 			"cats": [
@@ -3665,6 +3746,18 @@
 			"script": "cf\\.kampyle\\.com/k_button\\.js",
 			"website": "www.kampyle.com"
 		},
+		"Kamva": {
+			"cats": [
+				6
+			],
+			"env": "^Kamva$",
+			"icon": "Kamva.svg",
+			"meta": {
+				"generator": "[CK]amva"
+			},
+			"script": "cdn\\.mykamva\\.ir",
+			"website": "kamva.ir"
+		},
 		"Kendo UI": {
 			"cats": [
 				18
@@ -3688,6 +3781,21 @@
 			},
 			"website": "www.kentico.com"
 		},
+		"Kibana": {
+			"cats": [
+				29,
+				25
+			],
+			"headers": {
+				"kbn-name": "kibana",
+				"kbn-version": "^([\\d.]+)$\\;version:\\1"
+			},
+			"html": "<title>Kibana</title>",
+			"icon": "kibana.svg",
+			"implies": "Node.js",
+			"url": "kibana#/dashboard/",
+			"website": "www.elastic.co/products/kibana"
+		},
 		"KineticJS": {
 			"cats": [
 				25
@@ -3696,6 +3804,16 @@
 			"icon": "KineticJS.png",
 			"script": "kinetic(?:-v?([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
 			"website": "kineticjs.com"
+		},
+		"Klarna Checkout": {
+			"cats": [
+				41,
+				6,
+				5
+			],
+			"env": "^_klarnaCheckout$",
+			"icon": "Klarna.svg",
+			"website": "klarna.com"
 		},
 		"Knockout.js": {
 			"cats": [
@@ -4181,22 +4299,24 @@
 			"url": "control/userimage\\.html\\;confidence:70",
 			"website": "mobotix.com"
 		},
-		"MODx": {
+		"MODX": {
 			"cats": [
 				1
 			],
 			"env": "^MODX_MEDIA_PATH$",
 			"headers": {
-				"Set-Cookie": "SN4[a-f\\d]{12}",
-				"X-Powered-By": "^MODx"
+				"Set-Cookie": "SN5[a-f\\d]{12}",
+				"X-Powered-By": "^MODX"
 			},
 			"html": [
-				"<a[^>]+>Powered by MODx</a>",
-				"<(?:link|script)[^>]+assets/snippets/\\;confidence:20"
+				"<a[^>]+>Powered by MODX</a>",
+				"<(?:link|script)[^>]+assets/snippets/\\;confidence:20",
+				"<form[^>]+id=\"ajaxSearch_form\\;confidence:20",
+				"<input[^>]+id=\"ajaxSearch_input\\;confidence:20"
 			],
-			"icon": "MODx.png",
+			"icon": "MODX.png",
 			"implies": "PHP",
-			"website": "modxcms.com"
+			"website": "modx.com"
 		},
 		"MadAdsMedia": {
 			"cats": [
@@ -4230,6 +4350,24 @@
 				"static/frontend\\;confidence:20\\;version:2"
 			],
 			"website": "www.magentocommerce.com"
+		},
+		"Mailchimp": {
+			"cats": [
+				32
+			],
+			"html": [
+				"<form [^>]*data-mailchimp-url",
+				"<form [^>]*id=\"mc-embedded-subscribe-form\"",
+				"<form [^>]*name=\"mc-embedded-subscribe-form\"",
+				"<input [^>]*id=\"mc-email\"\\;confidence:20",
+				"<!-- Begin MailChimp Signup Form -->"
+			],
+			"icon": "mailchimp.svg",
+			"script": [
+				"s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js",
+				"cdn-images.mailchimp.com/[^>]*.css"
+			],
+			"website": "mailchimp.com"
 		},
 		"Mambo": {
 			"cats": [
@@ -4876,6 +5014,15 @@
 			"script": "netmonitor\\.fi/nmtracker\\.js",
 			"website": "netmonitor.fi/en"
 		},
+		"Neto": {
+			"cats": [
+				6
+			],
+			"env": "^NETO$",
+			"icon": "Neto.svg",
+			"script": "jquery\\.neto.*\\.js",
+			"website": "www.neto.com.au"
+		},
 		"Netsuite": {
 			"cats": [
 				6
@@ -5453,6 +5600,22 @@
 			],
 			"website": "petrojs.thepetronics.com"
 		},
+		"Phabricator": {
+			"cats": [
+				13,
+				47
+			],
+			"headers": {
+				"Set-Cookie": "phsid="
+			},
+			"html": "<[^>]+(?:class|id)=\"phabricator-",
+			"icon": "Phabricator.png",
+			"implies": [
+				"PHP"
+			],
+			"script": "/phabricator/[a-f0-9]{8}/rsrc/js/phui/[a-z-]+\\.js$",
+			"website": "phacility.com"
+		},
 		"Phaser": {
 			"cats": [
 				12
@@ -5653,7 +5816,11 @@
 				"^priceDisplayMethod$\\;confidence:25",
 				"^priceDisplayPrecision$\\;confidence:25"
 			],
-			"html": "Powered by <a\\s+[^>]+>PrestaShop",
+			"html": [
+				"Powered by <a\\s+[^>]+>PrestaShop",
+				"<!-- /Block [a-z ]+ module (?:HEADER|TOP)?\\s?-->",
+				"<!-- /Module Block [a-z ]+ -->"
+			],
 			"icon": "PrestaShop.png",
 			"implies": "PHP",
 			"meta": {
@@ -5725,6 +5892,14 @@
 			"html": "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1",
 			"icon": "Pure CSS.png",
 			"website": "purecss.io"
+		},
+		"Pygments": {
+			"cats": [
+				19
+			],
+			"html": "<link[^>]+pygments.css[\"']",
+			"icon": "pygments.png",
+			"website": "pygments.org"
 		},
 		"PyroCMS": {
 			"cats": [
@@ -5879,6 +6054,17 @@
 			"script": "rainloop/v/([^/]+)\\;version:\\1",
 			"website": "rainloop.net"
 		},
+		"Rakuten DBCore": {
+			"cats": [
+				6
+			],
+			"icon": "Rakuten DBCore.png",
+			"meta": {
+				"generator": "Rakuten DBCore",
+				"generator:site": "http://ecservice.rakuten.com.br"
+			},
+			"website": "ecservice.rakuten.com.br"
+		},
 		"Ramda": {
 			"cats": [
 				12
@@ -5990,6 +6176,17 @@
 			"icon": "Reveal.js.png",
 			"script": "reveal(?:\\.min)?\\.js",
 			"website": "lab.hakim.se/reveal-js"
+		},
+		"Revel": {
+			"cats": [
+				18
+			],
+			"headers": {
+				"Set-Cookie": "^REVEL_(?:FLASH|SESSION)="
+			},
+			"icon": "Revel.png",
+			"implies": "Go",
+			"website": "revel.github.io"
 		},
 		"Rickshaw": {
 			"cats": [
@@ -6211,6 +6408,7 @@
 				"X-Spip-Cache": ""
 			},
 			"icon": "SPIP.png",
+			"implies": "PHP",
 			"meta": {
 				"generator": "(?:^|\\s)SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?\\;version:\\1"
 			},
@@ -6966,11 +7164,7 @@
 		"SumoMe": {
 			"cats": [
 				5,
-				10,
-				32,
-				36,
-				47,
-				51
+				32
 			],
 			"icon": "SumoMe.png",
 			"script": "load\\.sumome\\.com",
@@ -8395,6 +8589,14 @@
 			"icon": "Zend.png",
 			"website": "zend.com"
 		},
+		"Zendesk Chat": {
+			"cats": [
+				52
+			],
+			"icon": "Zendesk Chat.png",
+			"script": "v2\\.zopim\\.com",
+			"website": "zopim.com"
+		},
 		"Zepto": {
 			"cats": [
 				12
@@ -8494,9 +8696,15 @@
 			"cats": [
 				19
 			],
-			"html": "<[^>]+id='cgit'",
+			"html": [
+				"<[^>]+id='cgit'",
+				"generated by <a href='http://git.zx2c4.com/cgit/about/'>cgit v([\\d.a-z-]+)</a>\\;version:\\1"
+			],
 			"icon": "cgit.png",
-			"implies": "Perl",
+			"implies": "git",
+			"meta": {
+				"generator": "^cgit v([\\d.a-z-]+)$\\;version:\\1"
+			},
 			"website": "git.zx2c4.com/cgit"
 		},
 		"comScore": {
@@ -8668,6 +8876,18 @@
 			},
 			"website": "hybris.com/icongo"
 		},
+		"iPresta": {
+			"cats": [
+				6
+			],
+			"excludes": "PrestaShop",
+			"icon": "iPresta.png",
+			"implies": "PHP",
+			"meta": {
+				"designer": "iPresta"
+			},
+			"website": "ipresta.ir"
+		},
 		"iWeb": {
 			"cats": [
 				20
@@ -8677,6 +8897,17 @@
 				"generator": "^iWeb( [\\d.]+)?\\;version:\\1"
 			},
 			"website": "apple.com/ilife/iweb"
+		},
+		"ikiwiki": {
+			"cats": [
+				8
+			],
+			"html": [
+				"<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"/ikiwiki\\.cgi",
+				"<a href=\"/ikiwiki\\.cgi\\?do=edit"
+			],
+			"icon": "ikiwiki.png",
+			"website": "ikiwiki.info"
 		},
 		"io4 CMS": {
 			"cats": [

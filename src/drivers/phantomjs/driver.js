@@ -52,6 +52,8 @@
 		}
 
 		wappalyzer.driver = {
+			timeout: 1000,
+
 			/**
 			 * Log messages to console
 			 */
@@ -137,10 +139,6 @@
 
 				page.onError = function(message) {
 					wappalyzer.log(message, 'error');
-
-					wappalyzer.driver.sendResponse();
-
-					phantom.exit(1);
 				};
 
 				page.onResourceTimeout = function() {
@@ -165,6 +163,10 @@
 							});
 						}
 					}
+				};
+
+				page.onResourceError = function(resourceError) {
+					wappalyzer.log(resourceError.errorString, 'error');
 				};
 
 				page.open(url, function(status) {

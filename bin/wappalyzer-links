@@ -27,11 +27,14 @@ path="$path/src"
 
 echo "Creating hard links..."
 
-ln -f $path/wappalyzer.js $path/drivers/firefox/lib
-ln -f $path/apps.json     $path/drivers/firefox/data
-ln -f $path/icons/*.png   $path/drivers/firefox/data/images/icons
-ln -f $path/icons/*.svg   $path/drivers/firefox/data/images/icons
-ln -f $path/utils/*.js    $path/drivers/firefox/data/js
+ln -f $path/wappalyzer.js $path/drivers/phantomjs
+ln -f $path/apps.json     $path/drivers/phantomjs
+
+ln -f $path/wappalyzer.js   $path/drivers/firefox
+ln -f $path/apps.json       $path/drivers/firefox/data
+ln -f $path/icons/*.png     $path/drivers/firefox/data/images/icons
+ln -f $path/icons/*.svg     $path/drivers/firefox/data/images/icons
+ln -f $path/utils/iframe.js $path/drivers/firefox/data/js
 
 ln -f $path/wappalyzer.js $path/drivers/chrome/js
 ln -f $path/apps.json     $path/drivers/chrome
@@ -46,26 +49,6 @@ fi
 ln -f $path/wappalyzer.js $path/drivers/bookmarklet/js
 ln -f $path/icons/*.png   $path/drivers/bookmarklet/images/icons
 ln -f $path/icons/*.svg   $path/drivers/bookmarklet/images/icons
-
-ln -f $path/wappalyzer.js $path/drivers/html/js
-ln -f $path/apps.json     $path/drivers/html
-ln -f $path/icons/*.png   $path/drivers/html/images/icons
-ln -f $path/icons/*.svg   $path/drivers/html/images/icons
-
-ln -f $path/wappalyzer.js $path/drivers/php/js
-ln -f $path/apps.json     $path/drivers/php
-
-ln -f $path/wappalyzer.js $path/drivers/python/js
-ln -f $path/apps.json     $path/drivers/python
-
-ln -f $path/wappalyzer.js $path/drivers/phantomjs
-ln -f $path/apps.json     $path/drivers/phantomjs
-
-ln -f $path/wappalyzer.js $path/drivers/ruby/js
-ln -f $path/apps.json     $path/drivers/ruby
-
-ln -f $path/wappalyzer.js $path/drivers/npm
-ln -f $path/apps.json     $path/drivers/npm
 
 echo "OK"
 

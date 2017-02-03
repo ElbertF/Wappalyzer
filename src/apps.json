@@ -822,10 +822,9 @@
 			"cats": [
 				6
 			],
-			"env": "^compareProducts$",
-			"html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/v",
+			"html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/",
 			"icon": "Bigcommerce.png",
-			"script": "cdn\\d+\\.bigcommerce\\.com/v",
+			"script": "cdn\\d+\\.bigcommerce\\.com/",
 			"url": "mybigcommerce\\.com",
 			"website": "www.bigcommerce.com"
 		},

@@ -2118,7 +2118,7 @@
 				6
 			],
 			"icon": "eCommercePy.png",
-			"script": "cdn\\.e-commerceparaguay\\.com",
+			"url": "cdn\\.e-commerceparaguay\\.com",
 			"website": "e-commerceparaguay.com"
 		},
 		"E-Merchant": {

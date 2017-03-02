@@ -9811,6 +9811,14 @@
 			"icon": "xui.png",
 			"script": "[^a-z]xui.*\\.js",
 			"website": "xuijs.com"
+		},
+		"Cyber": {
+			"cats": [
+				18
+			],
+			"implies": "CSS",
+			"icon": "cyber.png",
+			"website": "drivesoft.co.th/cyber"
 		}
 	},
 	"categories": {

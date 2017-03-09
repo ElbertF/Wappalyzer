@@ -5200,7 +5200,7 @@
 			  "X-Powered-By": "Nette Framework",
 			  "Set-Cookie": "nette-browser="
 			},
-			"env": "Nette",
+			"env": "^Nette$",
 			"html": [
 			  "<input[^>]+data-nette-rules",
 			  "<div[^>]+id=\"snippet-",

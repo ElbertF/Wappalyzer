@@ -3377,6 +3377,15 @@
 			},
 			"website": "http://hotarucms.org"
 		},
+		"Hotjar": {
+			"cats": [
+				10
+			],
+			"env": "^hj$",
+			"html": "h\,o\,t\,j\,a\,r",
+			"icon": "Hotjar.png",
+			"website": "hotjar.com"
+		},
 		"HubSpot": {
 			"cats": [
 				32

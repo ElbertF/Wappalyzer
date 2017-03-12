@@ -56,5 +56,6 @@
 	"categoryName49":           { "message": "Feed Readers" },
 	"categoryName50":           { "message": "Document Management Systems" },
 	"categoryName51":           { "message": "Landing Page Builder" },
-	"categoryName52":           { "message": "Live Chat" }
+	"categoryName52":           { "message": "Live Chat" },
+	"categoryName53":           { "message": "Runtime Environment" }
 }

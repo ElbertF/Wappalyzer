@@ -60,5 +60,6 @@
 	"categoryName49":       { "message": "Lecteur RSS" },
 	"categoryName50":       { "message": "Système de gestion de documents" },
 	"categoryName51":       { "message": "Landing Page Builder" },
-	"categoryName52":       { "message": "Chat en direct" }
+	"categoryName52":       { "message": "Chat en direct" },
+	"categoryName53":       { "message": "Runtime Environment" }
 }

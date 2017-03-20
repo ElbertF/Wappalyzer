@@ -101,6 +101,16 @@
 			"icon": "AOLserver.png",
 			"website": "http://aolserver.com"
 		},
+		"ApexPages": {
+			"cats": [
+				"51"
+			],
+			"headers": {
+				"X-Powered-By": "Salesforce.com ApexPages"
+			},
+			"icon": "ApexPages.png",
+			"website": "https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/apex_intro.htm"
+		},
 		"AT Internet Analyzer": {
 			"cats": [
 				"10"

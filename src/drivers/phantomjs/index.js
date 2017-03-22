@@ -6,7 +6,7 @@ const
 	phantomjs = require('phantomjs-prebuilt');
 
 exports.run = function(args, callback) {
-	args.unshift.apply(args, ['driver.js', '--web-security=false', '--load-images=false', '--ignore-ssl-errors=yes', '--ssl-protocol=any']);
+	args.unshift.apply(args, [__dirname+"/"+'driver.js', '--web-security=false', '--load-images=false', '--ignore-ssl-errors=yes', '--ssl-protocol=any']);
 
 	var driver = phantomjs.exec.apply(this, args);
 

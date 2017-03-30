@@ -9882,6 +9882,19 @@
 			},
 			"website": "http://www.vbulletin.com"
 		},
+		"vibecommerce": {
+			"cats": [
+				6
+			],
+			"excludes": "PrestaShop",
+			"icon": "vibecommerce.png",
+			"implies": "PHP",
+			"meta": {
+				"generator": "vibecommerce",
+				"designer": "vibecommerce"				
+			},
+			"website": "http://vibecommerce.com.br"
+		},
 		"viennaCMS": {
 			"cats": [
 				"1"

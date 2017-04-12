@@ -9,7 +9,6 @@
 			"url": "/shop/catalog/browse\\?sessid=",
 			"website": "http://1and1.com"
 		},
-		
 		"1C-Bitrix": {
 			"cats": [
 				"1"
@@ -4366,17 +4365,6 @@
 			"url": "seoshop.webshopapp.com",
 			"website": "http://www.lightspeedhq.com/products/ecommerce/"
 		},
-		"Lighty": {
-			"cats": [
-				"18"
-			],
-			"headers": {
-				"Set-Cookie": "lighty_version"
-			},
-			"icon": "Lighty.png",
-			"implies": "PHP",
-			"website": "http://gitlab.com/lighty/framework"
-		},
 		"LimeSurvey": {
 			"cats": [
 				"19"
@@ -5467,7 +5455,6 @@
 			"script": "^/nodebb\\.min\\.js\\?",
 			"website": "https://nodebb.org"
 		},
-		
 		"OWL Carousel": {
 			"cats": [
 				"5",
@@ -8404,6 +8391,17 @@
 			"html": "(?:<(?:param|embed)[^>]+vimeo\\.com/moogaloop|<iframe[^>]player\\.vimeo\\.com)",
 			"icon": "Vimeo.png",
 			"website": "http://vimeo.com"
+		},
+		"Vinala": {
+			"cats": [
+				"18"
+			],
+			"headers": {
+				"Set-Cookie": "vinala_version"
+			},
+			"icon": "Vinala.png",
+			"implies": "PHP",
+			"website": "https://github.com/vinala/vinala"
 		},
 		"Virata EmWeb": {
 			"cats": [

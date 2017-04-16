@@ -8473,6 +8473,11 @@
 			"url": "\\.vox\\.com",
 			"website": "http://www.vox.com"
 		},
+		"VTEX Integrated Store": {
+			"website": "lojaintegrada.com.br",
+			"cats": [ 6 ],
+			"headers": { "X-Powered-By": "vtex-integrated-store" }
+		},
 		"Vue.js": {
 			"cats": [
 				"12"

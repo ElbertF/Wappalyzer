@@ -9951,6 +9951,13 @@
 			"script": "(?:api-secure\\.recaptcha\\.net|recaptcha_ajax\\.js)",
 			"website": "http://recaptcha.net"
 		},
+		"Redaxscript": {
+			"cats": [
+				1
+			],
+			"html": "(?:<meta content=\"Redaxscript [0-9\\.]+\" name=\"generator\">",
+			"website": "redaxscript.com"
+		},
 		"sIFR": {
 			"cats": [
 				"17"

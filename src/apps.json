@@ -4661,6 +4661,22 @@
 			"script": "^https?://(?:ads-by|pixel)\\.madadsmedia.com/",
 			"website": "http://madadsmedia.com"
 		},
+		
+		
+		"DMarket": {
+			"cats": [
+				6
+			],
+			"icon": "dmarket.png",
+			"implies": "PHP",
+			"meta": {
+				"generator": "DMarket"
+			},
+			"website": "www.dmarket.ir"
+		},
+		
+		
+		
 		"Magento": {
 			"cats": [
 				"6"

@@ -4685,7 +4685,8 @@
 			},
 			"html": [
 				"<script [^>]+data-requiremodule=\"mage/\\;version:2",
-				"<script [^>]+data-requiremodule=\"Magento_\\;version:2"
+				"<script [^>]+data-requiremodule=\"Magento_\\;version:2",
+				"<!\\[CDATA\\[\n\\s*MAGE_STORE_CODE"
 			],
 			"icon": "Magento.png",
 			"implies": "PHP",

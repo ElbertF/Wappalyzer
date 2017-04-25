@@ -8054,6 +8054,16 @@
 			"script": "TweenMax(?:\\.min)?\\.js",
 			"website": "http://greensock.com/tweenmax"
 		},
+		"Twemoji for WordPress": {
+			"cats": [
+				25
+			],
+			"env": "^_wpemojiSettings$",
+			"excludes": "Twitter Emoji (Twemoji)",
+			"implies": "WordPress",
+			"icon": "Twemoji.png",
+			"website": "twitter.github.io/twemoji/"
+		},
 		"Twilight CMS": {
 			"cats": [
 				"1"

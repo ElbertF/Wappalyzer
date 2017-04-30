@@ -17,10 +17,13 @@
 		quiet           = false; // Don't output errors
 
 	try {
-		// Working directory
-		scriptDir = scriptPath.split('/'); scriptDir.pop(); scriptDir = scriptDir.join('/');
+		var fs = require('fs');
+		if (!fs.isFile(fs.workingDirectory + '/wappalyzer.js')){
+			// Working directory
+			scriptDir = scriptPath.split('/'); scriptDir.pop(); scriptDir = scriptDir.join('/');
 
-		require('fs').changeWorkingDirectory(scriptDir);
+			fs.changeWorkingDirectory(scriptDir);
+		}
 
 		require('system').args.forEach(function(arg) {
 			var
@@ -59,7 +62,7 @@
 		}
 
 		if ( !phantom.injectJs('wappalyzer.js') ) {
-			throw new Error('Unable to open file js/wappalyzer.js');
+			throw new Error('Unable to open file ' + fs.workingDirectory + '/wappalyzer.js');
 		}
 
 		wappalyzer.driver = {
@@ -219,9 +222,13 @@
 
 		wappalyzer.init();
 	} catch ( e ) {
-		wappalyzer.log(e, 'error');
+		if (typeof wappalyzer !== 'undefined'){
+			wappalyzer.log(e, 'error');
 
-		wappalyzer.driver.sendResponse();
+			wappalyzer.driver.sendResponse();
+		} else {
+			require('system').stderr.writeLine(e);
+		}
 
 		phantom.exit(1);
 	}

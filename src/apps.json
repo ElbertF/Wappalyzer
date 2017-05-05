@@ -7820,7 +7820,7 @@
 				"jQuery"
 			], 
 			"icon": "translucide.svg",
-			"script": "lucide\\.init\\.js",
+			"script": "lucide\\.init(?:\\.min)?\\.js",
 			"website": "http://www.translucide.net"
 		},
 		"Tumblr": {

@@ -5005,6 +5005,17 @@
 			"icon": "Milligram.png",
 			"website": "http://milligram.github.io"
 		},
+		"Mindbody": {
+			"cats": [
+				32
+			],
+			"html": [
+				"<a[^>]+?href=\"https://clients.mindbodyonline.com/classic[^>]\"",
+				"<a[^>]+?href=\"http://clients.mindbodyonline.com/[^>]\""
+			],
+			"icon":"mindbody.svg",
+			"website": "www.mindbodyonline.com"
+		},
 		"MiniBB": {
 			"cats": [
 				"2"

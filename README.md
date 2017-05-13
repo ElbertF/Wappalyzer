@@ -27,7 +27,7 @@ which is managed by Vagrant.
 Running this environment is optional but recommended as it provides some helpful tools.
 
 First, install [Docker](https://www.docker.com/) and [Vagrant](https://www.vagrantup.com/)
-on your system.
+on your system. [VirtualBox](https://www.virtualbox.org/) might be needed as well.
 
 Clone the Wappalyzer repository and open the newly created directory in a
 terminal. Run `vagrant up` to start the environment.

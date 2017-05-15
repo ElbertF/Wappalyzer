@@ -8465,6 +8465,19 @@
 			"script": "tracking\\.veoxa\\.com",
 			"website": "http://veoxa.com"
 		},
+		"vibecommerce": {
+			"cats": [
+				"6"
+			],
+			"excludes": "PrestaShop",
+			"icon": "vibecommerce.png",
+			"implies": "PHP",
+			"meta": {
+				"generator": "vibecommerce",
+				"designer": "vibecommerce"				
+			},
+			"website": "http://vibecommerce.com.br"
+		},
 		"VideoJS": {
 			"cats": [
 				"14"

@@ -2673,6 +2673,15 @@
 			},
 			"website": "http://foswiki.org"
 		},
+		"Foswiki": {
+			"cats": [
+				8
+			],
+			"html": "/foswiki/bin/../pub/System/CommentPlugin/comment\\.css",
+			},
+			"script": "foswikiString\\.js",
+			"website": "foswiki.org"
+		},
 		"FreeBSD": {
 			"cats": [
 				"28"

@@ -1467,17 +1467,6 @@
 			"script": "clipboard(?:\\.min)?\\.js",
 			"website": "https://clipboardjs.com/"
 		},
-		"CloudCart": {
-			"cats": [
-				"6"
-			],
-			"icon": "cloudcart.svg",
-			"meta": {
-				"author": "^CloudCart LLC$"
-			},
-			"script": "/cloudcart-(?:assets|storage)/",
-			"website": "http://cloudcart.com"
-		},
 		"CloudFlare": {
 			"cats": [
 				"31"
@@ -1497,7 +1486,18 @@
 				"Server": "cloudera"
 			},
 			"icon": "Cloudera.png",
-			"website": "http://www.cloudera.com"
+			"website": "https://www.cloudera.com/"
+		},
+		"CloudCart": {
+			"cats": [
+				6
+			],
+			"meta": {
+				"author": "^CloudCart LLC$"
+			},
+			"script": "^cdncloudcart$",
+			"website": "https://cloudcart.com",
+			"icon": "cloudcart.svg"
 		},
 		"CodeIgniter": {
 			"cats": [

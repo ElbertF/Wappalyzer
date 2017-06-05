@@ -1539,6 +1539,14 @@
 			"implies": "Microsoft ASP.NET",
 			"website": "http://commerceserver.net"
 		},
+		"Commerzy": {
+			"cats": [
+				"6"
+			],
+			"html": "Engine by <a href=\"http://www.commerzy.com\">Commerzy Co.,Ltd.</a>",
+			"icon": "commerzy.png",
+			"website": "https://www.commerzy.com"
+		},
 		"CompaqHTTPServer": {
 			"cats": [
 				"22"

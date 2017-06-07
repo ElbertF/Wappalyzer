@@ -4833,6 +4833,7 @@
 				"Server": "^NetDNA",
 				"X-CDN-Forward": "^maxcdn$"
 			},
+			"script": "^(?:https?:)?//maxcdn\\.",
 			"icon": "MaxCDN.png",
 			"website": "http://www.maxcdn.com"
 		},

@@ -7211,12 +7211,18 @@
 				"18"
 			],
 			"env": "^Shapecss$",
-			"html": "<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
+			"html": [
+				"<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
+				"shapecss\.(?:min\.)?(?:[a-f\d]+\.)?css",
+				"shapecss.*\\.css"
+			],
 			"icon": "Shapecss.svg",
 			"script": [
 				"shapecss[-.]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
 				"/([\\d.]+)/shapecss(?:\\.min)?\\.js\\;version:\\1",
-				"shapecss.*\\.js"
+				"shapecss.*\\.js",
+				"shapecss\.(?:min\.)?(?:[a-f\d]+\.)?js",
+				"<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.js"
 			],
 			"website": "https://shapecss.com"
 		},

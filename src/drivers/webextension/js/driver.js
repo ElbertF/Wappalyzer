@@ -33,9 +33,17 @@
 		 * Get a value from localStorage
 		 */
 		getOption: function(name, defaultValue, callback) {
-			browser.storage.local.get(name).then(function(item) {
+			var func = function(item) {
 				callback(item.hasOwnProperty(name) ? item[name] : defaultValue);
-			});
+			};
+
+			try {
+				// Chrome, Firefox
+				browser.storage.local.get(name).then(func);
+			} catch ( e ) {
+				// Edge
+				browser.storage.local.get(name, func);
+			}
 		},
 
 		/**
@@ -101,11 +109,7 @@
 				// Do nothing
 			}
 
-      if ( typeof chrome === 'undefined' ) {
-        browser.runtime.onMessage.addListener(w.driver.onMessage);
-      } else {
-        chrome.runtime.onMessage.addListener(w.driver.onMessage);
-      }
+			( chrome || browser ).runtime.onMessage.addListener(w.driver.onMessage);
 
 			var callback = function(tabs) {
 				tabs.forEach(function(tab) {
@@ -261,7 +265,7 @@
 
 								if ( cat === match && !found ) {
 									if ( /\.svg$/i.test(icon) ) {
-										icon = 'converted/' + icon + '.png';
+										icon = 'converted/' + icon.replace(/\.svg$/, '.png');
 									}
 
 									browser.pageAction.setIcon({

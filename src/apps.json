@@ -161,6 +161,21 @@
 			"icon": "ActOn.png",
 			"website": "http://act-on.com"
 		},
+		"Prebid": {
+			"cats": [
+				"36"
+			],
+			"icon": "Prebid.png",
+			"env": [
+				"pbjs",
+				"PREBID_TIMEOUT"
+			],
+			"script": [
+				"/prebid\\.js",
+				"adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
+			],
+			"website": "http://prebid.org"
+		},
 		"AdInfinity": {
 			"cats": [
 				"36"
@@ -813,6 +828,14 @@
 			},
 			"website": "http://bigace.de"
 		},
+		"Bablic": {
+		      "cats": [
+				"3","9"
+			],
+			"website":"https://www.bablic.com/",
+			"env":"^bablic$",
+			"icon":"bablic.png"
+		},
 		"Backbone.js": {
 			"cats": [
 				"12"
@@ -927,7 +950,7 @@
 			],
 			"icon": "Blogger.png",
 			"meta": {
-				"generator": "blogger"
+				"generator": "^Blogger$"
 			},
 			"url": "\\.blogspot\\.com",
 			"website": "http://www.blogger.com"
@@ -1401,8 +1424,11 @@
 				"Python",
 				"Solr",
 				"Java",
-				"PostgreSQL\\;confidence:80"
+				"PostgreSQL"
 			],
+			"meta": {
+				"generator": ".*ckan.*"
+			},
 			"website": "http://ckan.org/"
 		},
 		"ClickHeat": {
@@ -1686,7 +1712,7 @@
 			},
 			"icon": "Craft CMS.png",
 			"implies": "Yii",
-			"website": "http://buildwithcraft.com"
+			"website": "https://craftcms.com"
 		},
 		"Crazy Egg": {
 			"cats": [
@@ -3352,6 +3378,15 @@
 			"implies": "OmniTouch 8660 My Teamwork",
 			"website": "http://example.com"
 		},
+		"Haravan": {
+			"cats": [
+				"6"
+			],
+			"env": "^Haravan$",
+			"icon": "Haravan.png",
+			"script": "haravan.*\\.js",
+			"website": "https://www.haravan.com"
+		},
 		"Haskell": {
 			"cats": [
 				"27"
@@ -4590,6 +4625,15 @@
 			"implies": "Java",
 			"website": "http://lucene.apache.org/core/"
 		},
+		"Luigi’s Box": {
+			"cats": [
+				"10",
+				"29"
+			],
+			"env": "^Luigis$",
+			"icon": "Luigisbox.svg",
+			"website": "https://www.luigisbox.com"
+		},
 		"M.R. Inc BoxyOS": {
 			"cats": [
 				"28"
@@ -4861,7 +4905,7 @@
 			"icon": "MediaWiki.png",
 			"implies": "PHP",
 			"meta": {
-				"generator": "MediaWiki"
+				"generator": "^MediaWiki ?([\\d.]+)$\\;version:\\1"
 			},
 			"website": "http://www.mediawiki.org"
 		},
@@ -4909,8 +4953,7 @@
 			"icon": "Meteor.png",
 			"implies": [
 				"MongoDB",
-				"Node.js",
-				"jQuery"
+				"Node.js"
 			],
 			"website": "http://meteor.com"
 		},
@@ -5355,6 +5398,15 @@
 			"implies": "D3",
 			"script": "nv\\.d3(?:\\.min)?\\.js",
 			"website": "http://nvd3.org"
+		},
+		"Navegg": {
+			"cats": [
+				"10"
+			],
+			"env": "^nvg[0-9]$",
+			"icon": "Navegg.png",
+			"script": "tag.navdmp.com",
+			"website": "https://www.navegg.com/"
 		},
 		"Nedstat": {
 			"cats": [
@@ -6033,7 +6085,6 @@
 				"Server": "\bPerl\b(?: ?/?v?([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "Perl.png",
-			"url": "\\.pl(?:$|\\?)",
 			"website": "http://perl.org"
 		},
 		"Petrojs": {
@@ -6587,6 +6638,12 @@
 			},
 			"icon": "Raspbian.svg",
 			"website": "https://www.raspbian.org/"
+		},
+		"Rdf": {
+			"cats": [
+				"27"
+			],
+			"website": "https://www.w3.org/RDF/"
 		},
 		"React": {
 			"cats": [
@@ -7156,7 +7213,11 @@
 			"env": "^Shapecss$",
 			"html": "<link[^>]* href=\"[^\"]*shapecss(?:\\.min)?\\.css",
 			"icon": "Shapecss.svg",
-			"script": "shapecss(?:\\.min)?\\.js",
+			"script": [
+				"shapecss[-.]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+				"/([\\d.]+)/shapecss(?:\\.min)?\\.js\\;version:\\1",
+				"shapecss.*\\.js"
+			],
 			"website": "https://shapecss.com"
 		},
 		"ShareThis": {
@@ -7522,6 +7583,12 @@
 			"icon": "SoundManager.png",
 			"website": "http://www.schillmania.com/projects/soundmanager2"
 		},
+		"Sparql": {
+			"cats": [
+				"27"
+			],
+			"website": "https://www.w3.org/TR/sparql11-overview/"
+		},
 		"Sphinx": {
 			"cats": [
 				"4"
@@ -7791,6 +7858,7 @@
 			"cats": [
 				"12"
 			],
+			"excludes": "SweetAlert",
 			"html": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
 			"icon": "SweetAlert2.png",
 			"script": "sweetalert2(?:\\.min)?\\.js",
@@ -8177,7 +8245,7 @@
 			"html": [
 				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
 				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
-				"<div[^>]+class=\"[^\"]*col-(?:xs|sm|md|lg)-\\d{1,2}"
+				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
 			],
 			"icon": "Twitter Bootstrap.png",
 			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
@@ -8531,6 +8599,20 @@
 			"icon": "VirtueMart.png",
 			"implies": "Joomla",
 			"website": "http://virtuemart.net"
+		},
+		"Virtuoso": {
+			"cats": [
+				"34"
+			],
+			"website": "https://virtuoso.openlinksw.com/",
+			"meta": {
+				"Keywords": "^OpenLink Virtuoso Sparql",
+				"Copyright": "^Copyright &copy; \\d{4} OpenLink Software"
+			},
+			"url": ".*/sparql\\.*",
+			"headers": {
+				"Server": "Virtuoso\\/?(\\d{2}\\.\\d{2}\\.\\d{4})?\\;version:\\1"
+			}
 		},
 		"Visual WebGUI": {
 			"cats": [
@@ -9625,6 +9707,15 @@
 			},
 			"website": "http://notenbomer.nl/Producten/Content_management/io4_|_cms"
 		},
+		"Jetshop": {
+			"cats": [
+				"6"
+			],
+			"env": "^JetshopData$", 
+			"html":	"<(?:div|aside) id=\"jetshop-branding\">",
+			"icon": "Jetshop.png",
+			"website": "http://jetshop.se"
+		},
 		"jQTouch": {
 			"cats": [
 				"26"
@@ -10070,7 +10161,7 @@
 			"html": "(?:<div[^>]+id=\"recaptcha_image|<link[^>]+recaptcha|document\\.getElementById\\('recaptcha')",
 			"icon": "reCAPTCHA.png",
 			"script": "(?:api-secure\\.recaptcha\\.net|recaptcha_ajax\\.js)",
-			"website": "http://recaptcha.net"
+			"website": "https://www.google.com/recaptcha/"
 		},
 		"sIFR": {
 			"cats": [

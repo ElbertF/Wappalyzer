@@ -6,6 +6,7 @@ body {
 	line-height: 16px;
 	margin: 0;
 	min-width: 200px;
+	overflow-x: hidden;
 	padding: 15px;
 }
 

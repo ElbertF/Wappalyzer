@@ -4,7 +4,7 @@
 	"author": "Elbert Alias",
 	"homepage_url": "https://wappalyzer.com/",
 	"description": "Identify web technologies",
-	"version": "4.0.1",
+	"version": "4.1.4",
 	"default_locale": "en",
 	"manifest_version": 2,
 	"icons": {
@@ -59,6 +59,7 @@
 	],
 	"options_page": "options.html",
 	"permissions": [
+		"storage",
 		"tabs",
 		"webRequest",
 		"webNavigation",
@@ -71,3 +72,4 @@
 		"contentScript": "js/ms_content_scripts_api_bridge.js"
 	}
 }
+

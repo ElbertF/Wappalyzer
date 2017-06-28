@@ -4,67 +4,113 @@
 (function() {
 	var popup = {
 		init: function() {
-			var callback = function(tabs) {
+			popup.update([ 'p', {}, ' ' ], document, {});
+
+			var func = function(tabs) {
 				( chrome || browser ).runtime.sendMessage({ id: 'get_apps', tab: tabs[0], source: 'popup.js' }, function(response) {
-					if ( /complete|interacrive|loaded/.test(document.readyState) ) {
-						popup.displayApps(response)
-					} else {
-						document.addEventListener('DOMContentLoaded', function() { popup.displayApps(response) });
-					}
+					popup.update(popup.appsToDomTemplate(response));
 				});
 			};
 
 			try {
 				// Chrome, Firefox
-				browser.tabs.query({ active: true, currentWindow: true }).then(callback);
+				browser.tabs.query({ active: true, currentWindow: true }).then(func);
 			} catch ( e ) {
 				// Edge
-				browser.tabs.query({ active: true, currentWindow: true }, callback);
+				browser.tabs.query({ active: true, currentWindow: true }, func);
 			}
 		},
 
-		displayApps: function(response) {
+		update: function(dom) {
+			if ( /complete|interactive|loaded/.test(document.readyState) ) {
+				popup.replaceDom(dom);
+			} else {
+				document.addEventListener('DOMContentLoaded', function() {
+					popup.replaceDom(dom);
+				});
+			}
+		},
+
+		replaceDom: function(domTemplate) {
+			var body = document.body;
+
+			while ( body.firstChild ) {
+				body.removeChild(body.firstChild);
+			}
+
+			body.appendChild(jsonToDOM(domTemplate, document, {}));
+		},
+
+		appsToDomTemplate: function(response) {
 			var
 				appName, confidence, version,
-				detectedApps = document.querySelector('#detected-apps');
-				html = '';
+				categories = [],
+				template = [];
 
 			if ( response.tabCache && response.tabCache.count > 0 ) {
 				for ( appName in response.tabCache.appsDetected ) {
 					confidence = response.tabCache.appsDetected[appName].confidenceTotal;
 					version    = response.tabCache.appsDetected[appName].version;
-
-					html +=
-						'<div class="detected-app">' +
-							'<a target="_blank" href="https://wappalyzer.com/applications/' + popup.slugify(appName) + '">' +
-								'<img src="images/icons/' + ( response.apps[appName].icon || 'default.svg' ) + '"/>' +
-								'<span class="label">' +
-									'<span class="name">' + appName + '</span>' +
-									( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) +
-								'</span>' +
-							'</a>';
+					categories = [];
 
 					response.apps[appName].cats.forEach(function(cat) {
-						html +=
-							'<a target="_blank" href="https://wappalyzer.com/categories/' + popup.slugify(response.categories[cat].name) + '">' +
-								'<span class="category"><span class="name">' + browser.i18n.getMessage('categoryName' + cat) + '</span></span>' +
-							'</a>';
+						categories.push(
+							[
+								'a', {
+									target: '_blank',
+									href: 'https://wappalyzer.com/categories/' + popup.slugify(response.categories[cat].name)
+								}, [
+									'span', {
+										class: 'category'
+									}, [
+										'span', {
+											class: 'name'
+										},
+										browser.i18n.getMessage('categoryName' + cat)
+									]
+								]
+							]
+						);
 					});
 
-					html +=
-							'</a>' +
-						'</div>';
+					template.push(
+						[
+							'div', {
+								class: 'detected-app'
+							}, [
+								'a', {
+									target: '_blank',
+									href: 'https://wappalyzer.com/applications/' + popup.slugify(appName)
+								}, [
+									'img', {
+										src: 'images/icons/' + ( response.apps[appName].icon || 'default.svg' )
+									}
+								], [
+									'span', {
+										class: 'label'
+									}, [
+										'span', {
+											class: 'name'
+										},
+									 	appName
+									],
+									( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' )
+								]
+							],
+							categories
+						]
+					);
 				}
 			} else {
-				html = '<div class="empty">' + browser.i18n.getMessage('noAppsDetected') + '</div>';
+				template = [
+					'div', {
+						class: 'empty'
+					},
+					browser.i18n.getMessage('noAppsDetected')
+				];
 			}
 
-			detectedApps.innerHTML = html;
-
-			// Force redraw after popup animation on Mac OS
-			setTimeout(function() {
-				document.body.innerHTML += '<span style="line-height: 1px;"> </span>';
-			}, 600);
+			return template;
 		},
 
 		slugify: function(string) {

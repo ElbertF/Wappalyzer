@@ -57,8 +57,8 @@ cp -r ../src/icons $manifest_dir/Extension/images
 mv $webextension_dir/manifest.json $webextension_dir/manifest.edge.json
 mv $webextension_dir/manifest.webextension.json $webextension_dir/manifest.json
 
-sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-NAME-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
-sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-PUBLISHER-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
+sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-NAME-HERE/1591Wappalyzer.Wappalyzer/' $manifest_dir/appxmanifest.xml
+sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-PUBLISHER-HERE/D240C22F-A6C1-45DF-BF7B-4C835064DF51/' $manifest_dir/appxmanifest.xml
 sed -i 's/INSERT-YOUR-PACKAGE-PROPERTIES-PUBLISHERDISPLAYNAME-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
 sed -i 's/Version="0.\([^"]\+\)/Version="\1.0/' $manifest_dir/appxmanifest.xml
 

@@ -11,13 +11,21 @@
 				html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
 			}
 
-			browser.runtime.sendMessage({ id: 'analyze', subject: { html: html }, source: 'content.js' });
+			browser.runtime.sendMessage({
+				id: 'analyze',
+				subject: { html: html },
+				source: 'content.js'
+			});
 
 			c.getEnvironmentVars();
 		},
 
 		log: function(message) {
-			browser.runtime.sendMessage({ id: 'log', message: message, source: 'content.js' });
+			browser.runtime.sendMessage({
+				id: 'log',
+				message: message,
+				source: 'content.js'
+			});
 		},
 
 		getEnvironmentVars: function() {
@@ -25,7 +33,7 @@
 
 			c.log('Function call: getEnvironmentVars()');
 
-			if ( typeof document.documentElement.innerHTML === 'undefined' ) {
+			if ( typeof document.body === 'undefined' ) {
 				return;
 			}
 
@@ -48,7 +56,11 @@
 
 					environmentVars = environmentVars.split(' ').slice(0, 500);
 
-					browser.runtime.sendMessage({ id: 'analyze', subject: { env: environmentVars }, source: 'content.js' });
+					browser.runtime.sendMessage({
+						id: 'analyze',
+						subject: { env: environmentVars },
+						source: 'content.js'
+					});
 				}), true);
 
 				document.documentElement.appendChild(container);

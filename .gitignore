@@ -10,3 +10,5 @@ Thumbs.db
 Desktop.ini
 *.DS_Store
 ._*
+tags
+tags.*

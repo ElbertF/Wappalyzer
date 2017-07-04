@@ -254,12 +254,14 @@
 		"Adnegah": {
 			"cats": [
 				"36"
-			],
-			"env": "^ados(?:Results)?$",
+			], 
 			"html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
 			"icon": "adnegah.png",
 			"script": "[^a-z]adnegah.*\\.js",
-			"website": "http://Adnegah.net"
+			"website": "http://Adnegah.net",
+			"headers": {
+				"X-Advertising-By": "adnegah.net"
+			},
 		},
 		"Adobe ColdFusion": {
 			"cats": [

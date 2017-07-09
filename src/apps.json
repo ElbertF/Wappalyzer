@@ -3660,7 +3660,9 @@
 			"website": "http://facebook.github.io/immutable-js/"
 		},
 		"imperia CMS": {
-			"cats": "1",
+			"cats": [
+				"1"
+			],
 			"meta": {
 			  "X-Imperia-Live-Info": "",
 			  "GENERATOR": "^IMPERIA ([0-9.]{2,})+$\\;version:\\1"
@@ -6190,7 +6192,9 @@
 			"website": "http://pinterest.com"
 		},
 	    "pirobase CMS": {
-			"cats": "1",
+			"cats": [
+				"1"
+			],
 			"html": "<[^<]+=\"[^\"]*site/[a-z0-9/._-]*/resourceCached/[a-z0-9/._-]*\"[^>]*>|[^<]+cbi:///cms/[^>]+",
 			"icon": "pirobaseCMS.svg",
 			"implies": "Java",

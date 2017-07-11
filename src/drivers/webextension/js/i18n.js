@@ -1,13 +1,9 @@
 /** global: browser */
 
 document.addEventListener('DOMContentLoaded', function() {
-	var
-		i, value,
-		nodes = document.querySelector('*');
+	var nodes = document.querySelectorAll('[data-i18n]');
 
-	for ( i = 0; i < nodes.length; i ++ ) {
-		if ( value = nodes[i].dataset.i18n ) {
-			nodes[i].innerHTML = browser.i18n.getMessage(value);
-		}
-	}
+	Array.prototype.forEach.call(nodes, function (node) {
+		node.childNodes[0].nodeValue = browser.i18n.getMessage(node.dataset.i18n);
+	});
 });

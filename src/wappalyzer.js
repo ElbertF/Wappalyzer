@@ -367,6 +367,12 @@ var wappalyzer = (function() {
 			}
 		},
 
+		checkAdCache: function() {
+			if ( Object.keys(w.ping.hostnames).length >= 50 || w.adCache.length >= 50 ) {
+				driver('ping');
+			}
+		},
+
 		/**
 		 * Track detected applications
 		 */
@@ -404,10 +410,7 @@ var wappalyzer = (function() {
 					w.ping.hostnames[hostname].meta['language'] = match[1];
 				}
 			}
-
-			if ( Object.keys(w.ping.hostnames).length >= 50 || w.adCache.length >= 50 ) {
-				driver('ping');
-			}
+			w.checkAdCache();
 		},
 
 		/**
@@ -452,7 +455,7 @@ var wappalyzer = (function() {
 				patterns.forEach(function(pattern) {
 					var match;
 
-					while ( match = regex.exec(html) ) {
+					while ( (match = regex.exec(html)) ) {
 						if ( pattern.regex.test(match[2]) ) {
 							app.setDetected(pattern, 'script', match[2]);
 						}
@@ -470,8 +473,8 @@ var wappalyzer = (function() {
 				regex = /<meta[^>]+>/ig,
 				patterns = parsePatterns(w.apps[app.app].meta);
 
-			if ( patterns.length ) {
-				while ( match = regex.exec(html) ) {
+			if ( patterns ) {
+				while ( (match = regex.exec(html)) ) {
 					for ( meta in patterns ) {
 						if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
 							content = match.toString().match(/content=("|')([^"']+)("|')/i);

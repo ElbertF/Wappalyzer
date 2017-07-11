@@ -161,21 +161,6 @@
 			"icon": "ActOn.png",
 			"website": "http://act-on.com"
 		},
-		"Prebid": {
-			"cats": [
-				"36"
-			],
-			"icon": "Prebid.png",
-			"env": [
-				"pbjs",
-				"PREBID_TIMEOUT"
-			],
-			"script": [
-				"/prebid\\.js",
-				"adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
-			],
-			"website": "http://prebid.org"
-		},
 		"AdInfinity": {
 			"cats": [
 				"36"
@@ -254,13 +239,13 @@
 		"Adnegah": {
 			"cats": [
 				"36"
-			],  
+			],
 			"headers": {
 				"X-Advertising-By": "adnegah.net"
 			},
 			"html": "<iframe [^>]*src=\"[^\"]+adnegah\\.net",
 			"icon": "adnegah.png",
-			"script": "[^a-z]adnegah.*\\.js$", 
+			"script": "[^a-z]adnegah.*\\.js$",
 			"website": "https://Adnegah.net"
 		},
 		"Adobe ColdFusion": {
@@ -656,7 +641,7 @@
 			"icon": "Arc Forum.png",
 			"website": "http://arclanguage.org"
 		},
-		"ArcGIS API for JavaScript":{
+		"ArcGIS API for JavaScript": {
 			"cats": [
 				"35"
 			],
@@ -842,12 +827,13 @@
 			"website": "http://bigace.de"
 		},
 		"Bablic": {
-		      "cats": [
-				"3","9"
+			"cats": [
+				"3",
+				"9"
 			],
-			"website":"https://www.bablic.com/",
-			"env":"^bablic$",
-			"icon":"bablic.png"
+			"website": "https://www.bablic.com/",
+			"env": "^bablic$",
+			"icon": "bablic.png"
 		},
 		"Backbone.js": {
 			"cats": [
@@ -3659,17 +3645,6 @@
 			"script": "^immutable\\.(?:min\\.)?js$",
 			"website": "http://facebook.github.io/immutable-js/"
 		},
-		"imperia CMS": {
-			"cats": "1",
-			"meta": {
-			  "X-Imperia-Live-Info": "",
-			  "GENERATOR": "^IMPERIA ([0-9.]{2,})+$\\;version:\\1"
-			},
-			"icon": "imperiaCMS.svg",
-			"implies": "Perl",
-		  	"url": "imperia/md/",
-			"website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
-		},
 		"ImpressCMS": {
 			"cats": [
 				"1"
@@ -3987,6 +3962,15 @@
 			"icon": "Jenkins.png",
 			"implies": "Java",
 			"website": "http://jenkins-ci.org"
+		},
+		"Jetshop": {
+			"cats": [
+				"6"
+			],
+			"env": "^JetshopData$",
+			"html": "<(?:div|aside) id=\"jetshop-branding\">",
+			"icon": "Jetshop.png",
+			"website": "http://jetshop.se"
 		},
 		"Jetty": {
 			"cats": [
@@ -6189,13 +6173,6 @@
 			"script": "//assets\\.pinterest\\.com/js/pinit\\.js",
 			"website": "http://pinterest.com"
 		},
-	    "pirobase CMS": {
-			"cats": "1",
-			"html": "<[^<]+=\"[^\"]*site/[a-z0-9/._-]*/resourceCached/[a-z0-9/._-]*\"[^>]*>|[^<]+cbi:///cms/[^>]+",
-			"icon": "pirobaseCMS.svg",
-			"implies": "Java",
-			"website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
-		},
 		"Piwik": {
 			"cats": [
 				"10"
@@ -6345,6 +6322,21 @@
 			],
 			"icon": "Powergap.png",
 			"website": "http://powergap.de"
+		},
+		"Prebid": {
+			"cats": [
+				"36"
+			],
+			"icon": "Prebid.png",
+			"env": [
+				"pbjs",
+				"PREBID_TIMEOUT"
+			],
+			"script": [
+				"/prebid\\.js",
+				"adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
+			],
+			"website": "http://prebid.org"
 		},
 		"Prefix-Free": {
 			"cats": [
@@ -8348,16 +8340,6 @@
 			"script": "use\\.typekit\\.com",
 			"website": "http://typekit.com"
 		},
-		"uCoz": {
-			"cats": [
-				1
-			],
-			"headers": {
-				"Set-Cookie": "uCoz="
-			},
-			"icon": "uCoz.svg",
-			"website": "https://ucoz.ru"
-		},
 		"UIKit": {
 			"cats": [
 				"18"
@@ -9749,6 +9731,19 @@
 			"icon": "ikiwiki.png",
 			"website": "http://ikiwiki.info"
 		},
+		"imperia CMS": {
+			"cats": [
+				"1"
+			],
+			"meta": {
+				"X-Imperia-Live-Info": "",
+				"GENERATOR": "^IMPERIA ([0-9.]{2,})+$\\;version:\\1"
+			},
+			"icon": "imperiaCMS.svg",
+			"implies": "Perl",
+			"url": "imperia/md/",
+			"website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
+		},
 		"io4 CMS": {
 			"cats": [
 				"1"
@@ -9758,15 +9753,6 @@
 				"generator": "GO[ |]+CMS Enterprise"
 			},
 			"website": "http://notenbomer.nl/Producten/Content_management/io4_|_cms"
-		},
-		"Jetshop": {
-			"cats": [
-				"6"
-			],
-			"env": "^JetshopData$",
-			"html":	"<(?:div|aside) id=\"jetshop-branding\">",
-			"icon": "Jetshop.png",
-			"website": "http://jetshop.se"
 		},
 		"jQTouch": {
 			"cats": [
@@ -10195,6 +10181,15 @@
 			},
 			"website": "http://www.phpwind.net"
 		},
+		"pirobase CMS": {
+			"cats": [
+				"1"
+			],
+			"html": "<[^<]+=\"[^\"]*site/[a-z0-9/._-]*/resourceCached/[a-z0-9/._-]*\"[^>]*>|[^<]+cbi:///cms/[^>]+",
+			"icon": "pirobaseCMS.svg",
+			"implies": "Java",
+			"website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
+		},
 		"prettyPhoto": {
 			"cats": [
 				"12"
@@ -10314,6 +10309,16 @@
 				"generator": "uCore PHP Framework"
 			},
 			"website": "http://ucore.io"
+		},
+		"uCoz": {
+			"cats": [
+				"1"
+			],
+			"headers": {
+				"Set-Cookie": "uCoz="
+			},
+			"icon": "uCoz.svg",
+			"website": "https://ucoz.ru"
 		},
 		"uKnowva": {
 			"cats": [

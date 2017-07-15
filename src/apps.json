@@ -7761,7 +7761,7 @@
 			"cats": [
 				"11"
 			],
-			"icon": "typecho.svg",
+			"icon": "typecho.png",
 			"implies": "PHP",
 			"url": "/admin/js/typecho\\.js",
 			"website": "http://typecho.org/"

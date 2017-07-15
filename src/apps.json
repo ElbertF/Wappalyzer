@@ -3194,7 +3194,7 @@
 				"2"
 			],
 			"headers": {
-				"Set-Cookie:": "_homeland_"
+				"Set-Cookie:": "homeland"
 			},
 			"icon": "Homeland.png",
 			"implies": "Ruby on Rails",
@@ -7763,7 +7763,7 @@
 			],
 			"icon": "typecho.svg",
 			"implies": "PHP",
-			"url": "/admin/login\\.php?referer=http%3A%2F%2F",
+			"url": "/admin/js/typecho\\.js",
 			"website": "http://typecho.org/"
 		},
 		"Taiga": {

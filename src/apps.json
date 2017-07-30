@@ -10069,9 +10069,15 @@
 			"cats": [
 				"6"
 			],
+			"headers": {
+				"Set-Cookie": ".Nop.Customer|Nop.customer",
+			},
 			"html": "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)",
 			"icon": "nopCommerce.png",
 			"implies": "Microsoft ASP.NET",
+      "meta": {
+				"generator": "nopCommerce"
+			},
 			"website": "http://www.nopcommerce.com"
 		},
 		"openEngine": {

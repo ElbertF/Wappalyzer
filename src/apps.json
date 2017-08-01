@@ -10076,7 +10076,7 @@
 			"icon": "nopCommerce.png",
 			"implies": "Microsoft ASP.NET",
       "meta": {
- 				"generator": "nopCommerce"
+ 				"generator": "^noCommerce$"
  			},
 			"website": "http://www.nopcommerce.com"
 		},

@@ -138,11 +138,16 @@ var exports = {};
 				'',
 				'tracking_enabled_response',
 				function(message) {
-					if ( message.tracking_enabled ) {
+					var is_tracking_enabled;
+					try {
+						is_tracking_enabled = message.tracking_enabled;
+					} catch (e) {
+						is_tracking_enabled = false;
+					}
 
+					if ( is_tracking_enabled ) {
 						callback();
 					} else {
-
 						elseCallback();
 					}
 				}

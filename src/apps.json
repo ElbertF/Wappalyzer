@@ -9158,6 +9158,15 @@
 			"script": "/wp-includes/",
 			"website": "http://wordpress.org"
 		},
+		"WordPress.com": {
+			"cats": [
+				"1",
+				"11"
+			],
+			"html": "<meta name=\"generator\" content=\"WordPress.com\">",
+			"implies": "WordPress",
+			"website": "http://wordpress.com"
+		},
 		"WordPress Super Cache": {
 			"cats": [
 				"23"

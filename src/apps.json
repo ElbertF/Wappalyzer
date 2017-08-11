@@ -5332,7 +5332,7 @@
 				"12"
 			],
 			"icon": "moon.png",
-			"script": "/moon(?:\\.min)?\\.js$",
+			"env": "^Moon$",
 			"website": "http://moonjs.ga/"
 		},
 		"Motion-httpd": {

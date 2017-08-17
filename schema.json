@@ -78,7 +78,10 @@
 						}
 					},
 					"url": {
-						"type": "string"
+						"type": [ "string", "array"],
+            "items": {
+              "type": "string"
+            }
 					},
 					"website": {
 						"type": "string",

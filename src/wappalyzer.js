@@ -13,6 +13,8 @@ const validation = {
   hostnameBlacklist: /((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/
 };
 
+const {URL} = require('url');
+
 class Wappalyzer {
   constructor() {
     this.apps = {};
@@ -130,15 +132,15 @@ class Wappalyzer {
   /**
    * Parse a URL
    */
-  parseUrl(url) {
-    var a = this.driver.document.createElement('a');
-
-    a.href = url;
-
-    a.canonical = a.protocol + '//' + a.host + a.pathname;
-
-    return a;
-  }
+   /**
+    * Parse a URL
+    */
+   parseUrl(url){
+     let parsed = new URL(url);
+     parsed.href = url;
+     parsed.canonical = parsed.protocol + '//' + parsed.host + parsed.pathname;
+     return parsed;
+   }
 
   /**
    *

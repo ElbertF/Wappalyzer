@@ -10,7 +10,7 @@ const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 const driver = {
   quiet: true,
 
-  analyze: url => {
+  analyze: (url,content) => {
     const wappalyzer = new Wappalyzer();
 
     wappalyzer.apps = json.apps;
@@ -58,23 +58,31 @@ const driver = {
         resolve(apps);
       };
 
-      const browser = new Browser();
+      const hostname = wappalyzer.parseUrl(url).hostname;
 
-      browser.visit(url, error => {
-        wappalyzer.driver.document = browser.document;
+      if (!content) {
+           const browser = new Browser();
+           browser.visit(url, error => {
+                wappalyzer.driver.document = browser.document;
 
-        const headers = browser.resources['0'].response.headers;
-        const vars = Object.getOwnPropertyNames(browser.window);
-        const html = browser.html();
+                const headers = browser.resources['0'].response.headers;
+                const vars = Object.getOwnPropertyNames(browser.window);
+                const html = browser.html();
 
-        const hostname = wappalyzer.parseUrl(url).hostname;
+                wappalyzer.analyze(hostname, url, {
+                     headers,
+                     html,
+                     env: vars
+                });
 
-        wappalyzer.analyze(hostname, url, {
-          headers,
-          html,
-          env: vars
-        });
-      });
+           });
+      } else {
+           wappalyzer.analyze(hostname, content.url, {
+                headers: content.headers,
+                content: content.html,
+                env: content.env
+           });
+      }
 
     });
   }

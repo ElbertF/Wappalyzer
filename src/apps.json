@@ -7097,6 +7097,14 @@
 			"icon": "SPDY.png",
 			"website": "http://chromium.org/spdy"
 		},
+		"Sampa System": {
+			"cats": [
+				"1"
+			],
+			"html": "<link type=\"text\/css\" rel=\"stylesheet\" href=\"\/Sampa\.Web\.WebResources\.axd",
+			"icon": "sampa.svg",
+			"website": "http://sampa.ir"
+		},
 		"SPIP": {
 			"cats": [
 				"1"

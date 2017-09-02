@@ -65,6 +65,34 @@
 			"icon": "3ware.png",
 			"website": "http://www.3ware.com"
 		},
+    "Abbr": {
+			"cats": [
+				"18"
+			],
+			"html": [
+				"<link[^>]* href=\"[^\"]*abbr.css",
+				"<link[^>]* href=\"[^\"]*abbr.min.css",
+				"<link[^>]* href=\"[^\"]*abbr.imp.css",
+				"<link[^>]* href=\"[^\"]*abbr.imp.min.css",
+				"<link[^>]* href=\"[^\"]*abbr.onc.css",
+				"<link[^>]* href=\"[^\"]*abbr.onc.min.css",
+				"<link[^>]* href=\"[^\"]*abbr.onc.imp.css",
+				"<link[^>]* href=\"[^\"]*abbr.onc.imp.min.css"
+				]
+			"icon": "Abbr.png",
+			"implies": "CSS",
+			"script": [
+				"abbr.css",
+				"abbr.min.css",
+				"abbr.imp.css",
+				"abbr.imp.min.css",
+				"abbr.onc.css",
+				"abbr.onc.min.css",
+				"abbr.onc.imp.css",
+				"abbr.onc.imp.min.css"
+				],
+			"website": "http://abbre.ir"
+		},
 		"AD EBiS": {
 			"cats": [
 				"10"

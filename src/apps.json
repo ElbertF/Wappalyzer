@@ -78,9 +78,8 @@
 				"<link[^>]* href=\"[^\"]*abbr.onc.min.css",
 				"<link[^>]* href=\"[^\"]*abbr.onc.imp.css",
 				"<link[^>]* href=\"[^\"]*abbr.onc.imp.min.css"
-				]
+			],
 			"icon": "Abbr.png",
-			"implies": "CSS",
 			"script": [
 				"abbr.css",
 				"abbr.min.css",
@@ -90,7 +89,7 @@
 				"abbr.onc.min.css",
 				"abbr.onc.imp.css",
 				"abbr.onc.imp.min.css"
-				],
+			],
 			"website": "http://abbre.ir"
 		},
 		"AD EBiS": {

@@ -8,7 +8,7 @@ after_success:
   - cat build/SHA256SUMS
 
 script:
-  - run build $(grep -oP 'version": "\K([0-9.]+)' src/drivers/webextension/manifest.json)
+  - run build $(grep -oP 'version": "\\K([0-9.]+)' src/drivers/webextension/manifest.json)
 
 deploy:
   provider: releases

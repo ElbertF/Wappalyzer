@@ -8,7 +8,7 @@ after_success:
   - cat build/SHA256SUMS
 
 script:
-  - version=$(grep '"version":' src/drivers/webextension/manifest.json | sed 's/^.*"version": "\(.*\)".*$/\1/'); ./run build $version
+  - ./run build $(grep '"version"' src/drivers/webextension/manifest.json | tr -d '["a-z ,:\t]')
 
 deploy:
   provider: releases

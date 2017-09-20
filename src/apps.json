@@ -9061,6 +9061,16 @@
 			"script": "cdn\\d+\\.editmysite\\.com",
 			"website": "http://www.weebly.com"
 		},
+		"Wikinggruppen": {
+			"cats": [
+				"6"
+			],
+			"html": [
+				"<!-- WIKINGGRUPPEN"
+			],
+			"icon": "wikinggruppen.png",
+			"website": "https://wikinggruppen.se/"
+			},    
 		"Wikispaces": {
 			"cats": [
 				"8"
@@ -10458,6 +10468,16 @@
 			"icon": "thttpd.png",
 			"website": "http://acme.com/software/thttpd"
 		},
+		"Tictail": {
+			"cats": [
+				"6"
+			],
+			"script": [
+				"https:\\/\\/tictail\\.com"
+			],
+			"icon": "tictail.png",
+			"website": "https://tictail.com"
+		},    
 		"total.js": {
 			"cats": [
 				"18"

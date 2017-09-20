@@ -10472,8 +10472,8 @@
 			"cats": [
 				"6"
 			],
-			"html": [
-				"window.__ttBaseUrl = 'https://tictail.com';"
+			"script": [
+				"https:\\/\\/tictail\\.com"
 			],
 			"icon": "tictail.png",
 			"website": "https://tictail.com"

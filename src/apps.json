@@ -9061,6 +9061,16 @@
 			"script": "cdn\\d+\\.editmysite\\.com",
 			"website": "http://www.weebly.com"
 		},
+		"Wikinggruppen": {
+			"cats": [
+				"6"
+			],
+			"html": [
+				"<!-- WIKINGGRUPPEN"
+			],
+			"icon": "wikinggruppen.png",
+			"website": "https://wikinggruppen.se/"
+			},    
 		"Wikispaces": {
 			"cats": [
 				"8"

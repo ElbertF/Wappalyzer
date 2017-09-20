@@ -10468,6 +10468,16 @@
 			"icon": "thttpd.png",
 			"website": "http://acme.com/software/thttpd"
 		},
+		"Tictail": {
+			"cats": [
+				"6"
+			],
+			"html": [
+				"window.__ttBaseUrl = 'https://tictail.com';"
+			],
+			"icon": "tictail.png",
+			"website": "https://tictail.com"
+		},    
 		"total.js": {
 			"cats": [
 				"18"

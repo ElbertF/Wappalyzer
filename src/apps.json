@@ -4420,6 +4420,18 @@
 			"implies": "PHP",
 			"website": "http://laravel.com"
 		},
+		"Dash": {
+			"cats": [
+				"1",
+				"18"
+			],
+			"headers": {
+				"X-Powered-By": "Dash!"
+			},
+			"icon": "dash.svg",
+			"implies": "PHP",
+			"website": "https://github.com/Ermile/dash"
+		},
 		"Lazy.js": {
 			"cats": [
 				"12"

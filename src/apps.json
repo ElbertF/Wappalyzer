@@ -5391,6 +5391,7 @@
 			],
 			"icon": "moon.svg",
 			"script": "/moon(?:\\.min)?\\.js$",
+			"env": "^Moon$",
 			"website": "http://moonjs.ga/"
 		},
 		"Motion-httpd": {

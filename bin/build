@@ -2,9 +2,23 @@
 
 cd "$(dirname $0)/.."
 
+version="$2"
+
+if [[ -z "$version" ]]; then
+  current=$(grep '"version":' src/drivers/webextension/manifest.json | sed 's/^.*"version": "\(.*\)".*$/\1/')
+
+  echo "No version specified. Current version is $current."
+
+  exit 1;
+fi
+
 set -eu
 
 ./bin/validate
+
+echo "Deleting junk files..."
+
+find . -name ".DS_Store" -exec rm {} \;
 
 echo "Prettifying apps.json..."
 
@@ -12,7 +26,7 @@ jsonlint-cli -ist $'\t' src/apps.json
 
 echo "Converting SVG icons to PNG..."
 
-#svg2png-many -i src/icons/ -o src/icons/converted/ --width=32 --height=32
+svg2png-many -i src/icons/ -o src/icons/converted/ --width=32 --height=32
 
 echo "Compressing PNG icons..."
 
@@ -23,12 +37,17 @@ optipng -quiet "src/icons/converted/*.png"
 
 set -e
 
+# NPM
+sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$version\"/" src/drivers/npm/package.json
+
 # WebExtension
 echo "Building WebExtension..."
 
 webextension_dir=src/drivers/webextension
 
 pushd $webextension_dir > /dev/null
+
+sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$version\"/" manifest.json
 
 zip -qr ../../../build/wappalyzer_webextension.zip .
 
@@ -44,6 +63,8 @@ manifest_dir="Wappalyzer/edgeextension/manifest"
 
 mv $webextension_dir/manifest.json $webextension_dir/manifest.webextension.json
 mv $webextension_dir/manifest.edge.json $webextension_dir/manifest.json
+
+sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$version\"/" $webextension_dir/manifest.json
 
 manifoldjs -l debug -p edgeextension -f edgeextension -m $webextension_dir/manifest.json
 
@@ -74,4 +95,4 @@ rm -rf Wappalyzer
 
 popd > /dev/null
 
-echo "Done."
+echo "Done (v$version)."

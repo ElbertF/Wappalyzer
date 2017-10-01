@@ -1,19 +1,19 @@
 /** global: browser */
 
-if ( document.body !== undefined ) {
+if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
   var html = document.documentElement.outerHTML;
 
   if ( html.length > 50000 ) {
     html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
   }
 
-  browser.runtime.sendMessage({
-    id: 'analyze',
-    subject: { html },
-    source: 'content.js'
-  });
-
   try {
+    browser.runtime.sendMessage({
+      id: 'analyze',
+      subject: { html },
+      source: 'content.js'
+    });
+
     var container = document.createElement('wappalyzerData');
 
     container.setAttribute('id',    'wappalyzerData');
@@ -42,7 +42,7 @@ if ( document.body !== undefined ) {
     document.documentElement.appendChild(container);
     document.documentElement.appendChild(script);
   } catch(e) {
-    log('Error: ' + e);
+    log(e);
   }
 }
 

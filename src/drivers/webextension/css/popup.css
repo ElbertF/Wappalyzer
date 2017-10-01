@@ -1,29 +1,93 @@
 body {
 	background: #fff;
-	color: #4a4a4a;
 	font-family: Helvetica, Arial, sans-serif;
-	font-size: 13px;
-	line-height: 16px;
+  font-size: .8rem;
+  height: 20.8rem;
 	margin: 0;
-	min-width: 200px;
-	overflow-x: hidden;
-	padding: 15px;
+  overflow: hidden;
+  width: 30rem;
 }
 
-a {
-	color: #4a4a4a;
+.header {
+  align-items: center;
+	background: linear-gradient(160deg, #32067c, #150233);
+  height: 4rem;
+  display: flex;
 }
 
-a:focus {
-	outline: 0;
+.header__link:focus {
+  outline: none;
 }
 
-img {
+.header__logo {
+  display: inline-block;
+  margin: .2rem 0 0 1.5rem;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  transform: translateZ(0);
+  height: 2rem;
+}
+
+.container {
+  height: 15.8rem;
+  overflow-y: auto;
+  padding: 1rem 1.5rem 0rem 1.5rem;
+}
+
+.detected {
+  columns: 2;
+  column-gap: 1.5rem;
+  line-height: 1.4rem;
+}
+
+.detected__category {
+  break-inside: avoid-column;
+  padding-bottom: 1rem;
+}
+
+.detected__category-link {
+  border-bottom: 1px solid #dbdbdb;
+  display: block;
+  margin-bottom: .5rem;
+  text-decoration: none;
+}
+
+.detected__category-name {
+  color: #4608ad;
+  display: block;
+  font-weight: bold;
+  line-height: 2rem;
+}
+
+.detected__category-link:hover .detected__category-name {
+  color: #4a4a4a;
+}
+
+.detected__app {
+  display: block;
+  line-height: 1.7rem;
+  text-decoration: none;
+}
+
+.detected__app:focus {
+  display: block;
+  outline: 0;
+}
+
+.detected__app-icon {
 	display: inline-block;
 	height: 16px;
-	margin-right: 8px;
-	vertical-align: top;
+  margin-right: .5rem;
+	vertical-align: -.2rem;
 	width: 16px;
+}
+
+.detected__app-name {
+  color: #4a4a4a;
+}
+
+.detected__app:hover .detected__app-name {
+  border-bottom: 1px solid #4a4a4a;
 }
 
 .detected-app {
@@ -39,40 +103,12 @@ img {
 	padding-bottom: 0;
 }
 
-	.detected-app a {
-		color: #4608ad;
-		display: block;
-		text-decoration: none;
-	}
-
-	.detected-app a .label .name {
-		border-bottom: 1px solid transparent;
-	}
-
-	.detected-app a:hover .label .name {
-		border-bottom: 1px solid #4608ad;
-	}
-
-	.detected-app a .category .name {
-		color: #4a4a4a;
-		border-bottom: 1px solid transparent;
-	}
-
-	.detected-app a:hover .category .name {
-		border-bottom: 1px solid #4a4a4a;
-	}
-
-.label {
-	font-weight: bold;
-}
-
-.category {
-	display: block;
-	margin: 5px 0 0 24px;
-}
-
 .empty {
-	color: #999;
-	font-style: italic;
-	text-align: center;
+  display: flex;
+  height: 16rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.empty__text {
 }

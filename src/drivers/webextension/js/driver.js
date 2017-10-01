@@ -1,7 +1,11 @@
 /**
  * WebExtension driver
  */
-              setOption('robotsTxtCache', {});
+
+/** global: browser */
+/** global: Wappalyzer */
+
+const wappalyzer = new Wappalyzer();
 
 var tabCache = {};
 var headersCache = {};
@@ -24,7 +28,7 @@ function getOption(name, defaultValue) {
       // Chrome, Firefox
       browser.storage.local.get(name)
         .then(callback)
-        .catch(console.error);
+        .catch(error => wappalyzer.log(error, 'driver', 'error'));
     } catch ( e ) {
       // Edge
       browser.storage.local.get(name, callback);
@@ -59,7 +63,7 @@ function openTab(args) {
 function post(url, body) {
   fetch(url, {
     method: 'POST',
-    body
+    body: JSON.stringify(body)
   })
     .then(response => {
       wappalyzer.log('POST ' + url + ': ' + response.status, 'driver');
@@ -121,7 +125,7 @@ var callback = tabs => {
 try {
   browser.tabs.query({})
     .then(callback)
-    .catch(console.error);
+    .catch(error => wappalyzer.log(error, 'driver', 'error'));
 } catch ( e ) {
   browser.tabs.query({}, callback);
 }
@@ -198,6 +202,8 @@ browser.webRequest.onCompleted.addListener(request => {
   }
 });
 
+wappalyzer.driver.document = document;
+
 /**
  * Log messages to console
  */
@@ -226,13 +232,13 @@ wappalyzer.driver.displayApps = (detected, context) => {
             var app = detected[appName];
 
             app.props.cats.forEach(category => {
-              var icon = app.icon || 'default.svg';
-
-              if ( !dynamicIcon ) {
-                icon = 'default.svg';
-              }
-
               if ( category === match && !found ) {
+                var icon = app.props.icon || 'default.svg';
+
+                if ( !dynamicIcon ) {
+                  icon = 'default.svg';
+                }
+
                 if ( /\.svg$/i.test(icon) ) {
                   icon = 'converted/' + icon.replace(/\.svg$/, '.png');
                 }
@@ -275,7 +281,11 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
           fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt')
             .then(response => {
               if ( !response.ok ) {
-                throw 'GET ' + response.url + ' was not ok';
+                if ( response.status === 404 ) {
+                  return '';
+                } else {
+                  throw 'GET ' + response.url + ' was not ok';
+                }
               }
 
               return response.text();
@@ -298,12 +308,19 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
 /**
  * Anonymously track detected applications for research purposes
  */
-wappalyzer.driver.ping = (ping, adCache) => {
+wappalyzer.driver.ping = (hostnameCache, adCache) => {
   getOption('tracking', true)
     .then(tracking => {
       if ( tracking ) {
-        post('http://ping.wappalyzer.com/v2/', ping);
-        post('https://ad.wappalyzer.com/log/wp/', adCache);
+        if ( Object.keys(hostnameCache).length ) {
+          post('http://ping.wappalyzer.com/v2/', hostnameCache);
+        }
+
+        if ( adCache.length ) {
+          post('https://ad.wappalyzer.com/log/wp/', adCache);
+        }
+
+        setOption('robotsTxtCache', {});
       }
     });
 };

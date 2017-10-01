@@ -4,11 +4,11 @@ cd "$(dirname $0)/../src"
 
 echo "Creating links..."
 
-ln -nsf ../../apps.json        drivers/npm
-ln -nsf ../../wappalyzer.js    drivers/npm
+ln -nf  apps.json        drivers/npm
+ln -nf  wappalyzer.js    drivers/npm
 
-ln -nsf ../../apps.json        drivers/webextension
-ln -nsf ../../../wappalyzer.js drivers/webextension/js
-ln -nsf ../../../icons/        drivers/webextension/images/icons
+ln -nf  apps.json        drivers/webextension
+ln -nf  wappalyzer.js    drivers/webextension/js
+ln -nsf ../../../icons/  drivers/webextension/images/icons
 
 echo "Done."

@@ -105,9 +105,9 @@
 				'</a>' +
 				'<div id="wappalyzer-apps">';
 
-			if ( w.detected[url] != null && Object.keys(w.detected[url]).length ) {
-				for ( app in w.detected[url] ) {
-					if ( !hasOwn.call(w.detected[url], app) ) {
+			if ( detected[url] != null && Object.keys(detected[url]).length ) {
+				for ( app in detected[url] ) {
+					if ( !hasOwn.call(detected[url], app) ) {
 						continue;
 					}
 
@@ -154,5 +154,5 @@
 		}
 	};
 
-	w.init();
+	w.driver.init();
 })();

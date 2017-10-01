@@ -2,8 +2,7 @@
   "dependencies": {
     "file-type": "3.8.*",
     "is-svg": "2.0.*",
-    "read-chunk": "2.0.*",
-		"svg2png-many": "*"
+    "read-chunk": "2.0.*"
   }
 }
 

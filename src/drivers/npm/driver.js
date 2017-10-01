@@ -1,228 +1,86 @@
-/**
- * PhantomJS driver
- */
+'use strict';
 
-/** global: phantom */
-/** global: wappalyzer */
+const Wappalyzer = require('./wappalyzer');
+const request = require('request');
+const fs = require('fs');
+const Browser = require('zombie');
 
-(function() {
-	var
-		url,
-		originalUrl,
-		scriptDir,
-		scriptPath      = require('fs').absolute(require('system').args[0]),
-		resourceTimeout = 9000,
-		args            = [],    // TODO: Not used, maybe should be `arg`
-		debug           = false, // Output debug messages
-		quiet           = false; // Don't output errors
+const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 
-	try {
-		// Working directory
-		scriptDir = scriptPath.split('/'); scriptDir.pop(); scriptDir = scriptDir.join('/');
+const driver = {
+  quiet: true,
 
-		require('fs').changeWorkingDirectory(scriptDir);
+  analyze: url => {
+    const wappalyzer = new Wappalyzer();
 
-		require('system').args.forEach(function(arg) {
-			var
-				value,
-				arr = /^(--[^=]+)=(.+)$/.exec(arg);
+    wappalyzer.apps = json.apps;
+    wappalyzer.categories = json.categories;
 
-			if ( arr && arr.length === 3 ) {
-				arg   = arr[1];
-				value = arr[2];
-			}
+    return new Promise((resolve, reject) => {
+      wappalyzer.driver.log = (message, source, type) => {
+        if ( type === 'error' ) {
+          return reject(message);
+        }
 
-			switch ( arg ) {
-				case '-v':
-				case '--verbose':
-					debug = true;
+        if ( !driver.quiet ) {
+          console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+        }
+      };
 
-					break;
-				case '-q':
-				case '--quiet':
-					quiet = true;
+      wappalyzer.driver.displayApps = detected => {
+        var apps = [];
 
-					break;
-				case '--resource-timeout':
-					if ( value ) {
-						resourceTimeout = value;
-					}
+        Object.keys(detected).forEach(appName => {
+          const app = detected[appName];
 
-					break;
-				default:
-					url = originalUrl = arg;
-			}
-		});
+          var categories = [];
 
-		if ( !url ) {
-			throw new Error('Usage: phantomjs ' + require('system').args[0] + ' <url>');
-		}
+          app.props.cats.forEach(id => {
+            var category = {};
 
-		if ( !phantom.injectJs('wappalyzer.js') ) {
-			throw new Error('Unable to open file js/wappalyzer.js');
-		}
+            category[id] = wappalyzer.categories[id].name;
 
-		wappalyzer.driver = {
-			timeout: 1000,
+            categories.push(category)
+          });
 
-			/**
-			 * Log messages to console
-			 */
-			log: function(args) {
-				if ( args.type === 'error' ) {
-					if ( !quiet ) {
-						require('system').stderr.write(args.message + "\n");
-					}
-				} else if ( debug || args.type !== 'debug' ) {
-					require('system').stdout.write(args.message + "\n");
-				}
-			},
+          apps.push({
+            name: app.name,
+            confidence: app.confidenceTotal.toString(),
+            version: app.version,
+            icon: app.props.icon || 'default.svg',
+            website: app.props.website,
+            categories
+          });
+        });
 
-			/**
-			 * Display apps
-			 */
-			displayApps: function() {
-				var
-					app, cats,
-					apps  = [];
+        resolve(apps);
+      };
 
-				wappalyzer.log('driver.displayApps');
+      const browser = new Browser();
 
-				for ( app in wappalyzer.detected[url] ) {
-					cats = [];
+      browser.visit(url, error => {
+        wappalyzer.driver.document = browser.document;
 
-					wappalyzer.apps[app].cats.forEach(function(cat) {
-						cats.push(wappalyzer.categories[cat].name);
-					});
+        const headers = {};
 
-					apps.push({
-						name: app,
-						confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
-						version:    wappalyzer.detected[url][app].version,
-						icon:       wappalyzer.apps[app].icon || 'default.svg',
-						website:    wappalyzer.apps[app].website,
-						categories: cats
-					});
-				}
+        browser.resources['0'].response.headers._headers.forEach(header => {
+          headers[header[0]] = header[1];
+        });
 
-				wappalyzer.driver.sendResponse(apps);
-			},
+        const vars = Object.getOwnPropertyNames(browser.window);
+        const html = browser.html();
 
-			/**
-			 * Send response
-			 */
-			sendResponse: function(apps) {
-				apps = apps || [];
+        const hostname = wappalyzer.parseUrl(url).hostname;
 
-				require('system').stdout.write(JSON.stringify({ url: url, originalUrl: originalUrl, applications: apps }) + "\n");
-			},
+        wappalyzer.analyze(hostname, url, {
+          headers,
+          html,
+          env: vars
+        });
+      });
 
-			/**
-			 * Initialize
-			 */
-			init: function() {
-				var
-					page, hostname,
-					headers = {},
-					a       = document.createElement('a'),
-					json    = JSON.parse(require('fs').read('apps.json'));
+    });
+  }
+}
 
-				wappalyzer.log('driver.init');
-
-				a.href = url.replace(/#.*$/, '');
-
-				hostname = a.hostname;
-
-				wappalyzer.apps       = json.apps;
-				wappalyzer.categories = json.categories;
-
-				page = require('webpage').create();
-
-				page.settings.loadImages      = false;
-				page.settings.userAgent       = 'Mozilla/5.0 (compatible; Wappalyzer; +https://github.com/AliasIO/Wappalyzer)';
-				page.settings.resourceTimeout = resourceTimeout;
-
-				page.onError = function(message) {
-					wappalyzer.log(message, 'error');
-				};
-
-				page.onResourceTimeout = function() {
-					wappalyzer.log('Resource timeout', 'error');
-
-					wappalyzer.driver.sendResponse();
-
-					phantom.exit(1);
-				};
-
-				page.onResourceReceived = function(response) {
-					if ( response.url.replace(/\/$/, '') === url.replace(/\/$/, '') ) {
-						if ( response.redirectURL ) {
-							url = response.redirectURL;
-
-							return;
-						}
-
-						if ( response.stage === 'end' && response.status === 200 && response.contentType.indexOf('text/html') !== -1 ) {
-							response.headers.forEach(function(header) {
-								headers[header.name.toLowerCase()] = header.value;
-							});
-						}
-					}
-				};
-
-				page.onResourceError = function(resourceError) {
-					wappalyzer.log(resourceError.errorString, 'error');
-				};
-
-				page.open(url, function(status) {
-					var html, environmentVars = '';
-
-					if ( status === 'success' ) {
-						html = page.content;
-
-						if ( html.length > 50000 ) {
-							html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-						}
-
-						// Collect environment variables
-						environmentVars = page.evaluate(function() {
-							var i, environmentVars = '';
-
-							for ( i in window ) {
-								environmentVars += i + ' ';
-							}
-
-							return environmentVars;
-						});
-
-						wappalyzer.log({ message: 'environmentVars: ' + environmentVars });
-
-						environmentVars = environmentVars.split(' ').slice(0, 500);
-
-						wappalyzer.analyze(hostname, url, {
-							html:    html,
-							headers: headers,
-							env:     environmentVars
-						});
-
-						phantom.exit(0);
-					} else {
-						wappalyzer.log('Failed to fetch page', 'error');
-
-						wappalyzer.driver.sendResponse();
-
-						phantom.exit(1);
-					}
-				});
-			}
-		};
-
-		wappalyzer.init();
-	} catch ( e ) {
-		wappalyzer.log(e, 'error');
-
-		wappalyzer.driver.sendResponse();
-
-		phantom.exit(1);
-	}
-})();
+module.exports = driver;

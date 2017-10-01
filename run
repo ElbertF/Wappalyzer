@@ -10,13 +10,7 @@ fi
 
 cmd="docker run --rm -v "$(pwd):/opt/wappalyzer" -it wappalyzer/dev"
 
-$cmd yarn install
-
-pushd src/drivers/webextension
-
-$cmd yarn install
-
-popd
+$cmd sh -c "yarn install; cd src/drivers/webextension; yarn install"
 
 $cmd ./bin/run links
 $cmd ./bin/run $@

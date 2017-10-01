@@ -21,7 +21,7 @@ $ npm i wappalyzer
 ## Run from the command line
 
 ```shell
-$ node index.js https://wappalyzer.com --quiet
+$ node index.js https://wappalyzer.com
 ```
 
 
@@ -30,28 +30,11 @@ $ node index.js https://wappalyzer.com --quiet
 ```javascript
 const wappalyzer = require('wappalyzer');
 
-wappalyzer.run(['https://wappalyzer.com', '--quiet'], function(stdout, stderr) {
-	if ( stdout ) {
-		process.stdout.write(stdout);
-	}
-
-	if ( stderr ) {
-		process.stderr.write(stderr);
-	}
-});
+wappalyzer.analyze('https://wappalyzer.com')
+  .then(json => {
+    console.log(JSON.stringify(json, null, 2));
+  })
+  .catch(error => {
+    console.error(error);
+  });
 ```
-
-
-## Arguments
-
-**-v, --verbose**
-
-Display debug output.
-
-**-q, --quiet**
-
-Suppress errors.
-
-**--resource-timeout=ms**
-
-Abort the connection after 'ms' milliseconds.

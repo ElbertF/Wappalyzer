@@ -1,3 +1,6 @@
+/** global: browser */
+/** global: wappalyzer */
+
 function getOption(name, defaultValue, callback) {
   browser.storage.local.get(name)
     .then(item => {

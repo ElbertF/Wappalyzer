@@ -1,32 +1,23 @@
 'use strict';
 
-const
-	path      = require('path'),
-	spawn     = require('child_process').spawn,
-	phantomjs = require('phantomjs-prebuilt');
+const wappalyzer = require('./driver');
 
-exports.run = function(args, callback) {
-	args.unshift.apply(args, [path.join(__dirname, 'driver.js'), '--web-security=false', '--load-images=false', '--ignore-ssl-errors=yes', '--ssl-protocol=any']);
+const args = process.argv.slice(2);
 
-	var driver = phantomjs.exec.apply(this, args);
+const url = args[0] || '';
 
-	driver.stdout.on('data', (data) => {
-		callback(`${data}`, null);
-	});
+if ( !url ) {
+  process.stderr.write('No URL specified\n');
 
-	driver.stderr.on('data', (data) => {
-		callback(null, `${data}`);
-	});
+  process.exit(1);
 }
 
-if ( !module.parent ) {
-	exports.run(process.argv.slice(2), function(stdout, stderr) {
-		if ( stdout ) {
-			process.stdout.write(stdout);
-		}
+wappalyzer.analyze(url)
+  .then(json => {
+    process.stdout.write(JSON.stringify(json) + '\n')
 
-		if ( stderr ) {
-			process.stderr.write(stderr);
-		}
-	});
-}
+    process.exit();
+  })
+  .catch(error => {
+    throw error
+  });

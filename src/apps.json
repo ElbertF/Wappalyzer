@@ -10774,30 +10774,30 @@
 			"script": "[^a-z]xui.*\\.js",
 			"website": "http://xuijs.com"
 		},
-        "Raychat": {
-            "cats": [
-                "52"
-            ],
-            "env": "^Raychat$",
-            "icon": "raychat.svg",
-            "script": "app\\.raychat\\.io/scripts/js",
-            "website": "https://raychat.io"
-        },
+		"Raychat": {
+			"cats": [
+				"52"
+			],
+			"env": "^Raychat$",
+			"icon": "raychat.svg",
+			"script": "app\\.raychat\\.io/scripts/js",
+			"website": "https://raychat.io"
+		},
 		"Akaunting": {
 			"cats": [
 				"54"
 			],
-			"html": {
-                "<link[^>]akaunting-green\\.css",
-                "Powered By Akaunting"
-            },
-            "headers": {
-                "X-Akaunting": ""
-            },
-            "implies": {
-                "PHP",
-                "Laravel"
-            },
+			"html": [
+				"<link[^>]akaunting-green\\.css",
+				"Powered By Akaunting"
+			],
+			"headers": {
+				"X-Akaunting": ""
+			},
+			"implies": [
+				"PHP",
+				"Laravel"
+			],
 			"icon": "akaunting.svg",
 			"website": "https://akaunting.com"
 		}

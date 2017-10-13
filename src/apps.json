@@ -6830,17 +6830,6 @@
 			"script": "rainloop/v/([^/]+)\\;version:\\1",
 			"website": "http://rainloop.net"
 		},
-		"Rakuten DBCore": {
-			"cats": [
-				"6"
-			],
-			"icon": "Rakuten DBCore.png",
-			"meta": {
-				"generator": "Rakuten DBCore",
-				"generator:site": "http://ecservice.rakuten.com.br"
-			},
-			"website": "http://ecservice.rakuten.com.br"
-		},
 		"Ramda": {
 			"cats": [
 				"12"

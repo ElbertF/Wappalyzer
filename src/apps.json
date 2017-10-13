@@ -10789,7 +10789,7 @@
 			],
 			"html": [
 				"<link[^>]akaunting-green\\.css",
-				"Powered By Akaunting"
+				"Powered By Akaunting: <a [^>]*href=\"https?://(?:www\\.)?akaunting\\.com[^>]+>"
 			],
 			"headers": {
 				"X-Akaunting": "Free Accounting Software"

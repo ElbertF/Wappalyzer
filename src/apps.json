@@ -1117,6 +1117,14 @@
 			"icon": "Bugzilla.png",
 			"implies": "Perl",
 			"website": "http://www.bugzilla.org"
+        },
+        "Bulma": {
+			"cats": [
+				"18"
+			],
+			"html": "<link[^>]+?href=\"[^\"]+bulma(?:\\.min)?\\.css",
+			"icon": "Bulma.png",
+			"website": "http://bulma.io"
 		},
 		"Burning Board": {
 			"cats": [
@@ -3696,6 +3704,16 @@
 			"implies": "Windows Server",
 			"website": "http://www.iis.net"
 		},
+		"Includable": {
+			"cats": [
+				"18"
+			],
+			"headers": {
+				"X-Includable-Version": ""
+			},
+			"icon": "Includable.svg",
+			"website": "http://includable.com"
+		},
 		"INFOnline": {
 			"cats": [
 				"10"
@@ -5272,7 +5290,7 @@
 				"1",
 				"6"
 			],
-			"html": "(?:<script|link)[^>]*mg-(?:core|plugins|templates)",
+			"html": "(?:<script|link)[^>]*(?:src=|href=)[\"'][^\"]*mg-(?:core|plugins|templates)",
 			"icon": "Moguta.CMS.png",
 			"implies": "PHP",
 			"website": "http://moguta.ru"
@@ -6870,12 +6888,11 @@
 		},
 		"Rayo": {
 			"cats": [
-				"6"
+				"1"
 			],
 			"env": "^Rayo",
             "icon": "Rayo.png",
-            "implies": [ "AngularJS", "Microsoft ASP.NET", "Twitter Bootstrap", "jQuery", "Underscore.js", "Moment.js",
-            "Font Awesome", "Google Maps", "Modernizr", "Semantic-ui" ],
+            "implies": [ "AngularJS", "Microsoft ASP.NET" ],
             "meta": {
 				"generator": "^Rayo"
 			},
@@ -8360,9 +8377,7 @@
 			"cats": [
 				"6"
 			],
-			"script": [
-				"https:\\/\\/tictail\\.com"
-			],
+      "html": "<link[^>]*tictail\\.com",
 			"icon": "tictail.png",
 			"website": "https://tictail.com"
 		},
@@ -9333,7 +9348,7 @@
 			"cats": [
 				"6"
 			],
-			"env": "woocommerce",
+			"env": "^woocommerce_params$",
 			"html": "<!-- WooCommerce",
 			"icon": "WooCommerce.png",
 			"implies": "WordPress",
@@ -10782,6 +10797,15 @@
 			"icon": "raychat.svg",
 			"script": "app\\.raychat\\.io/scripts/js",
 			"website": "https://raychat.io"
+		},
+		"Mautic": {
+			"cats": [
+				"32"
+			],
+			"env": "^MauticTrackingObject$",
+			"icon": "mautic.svg",
+			"script": "[^a-z]mtc.*\\.js",
+			"website": "https://www.mautic.org/"
 		},
 		"Akaunting": {
 			"cats": [

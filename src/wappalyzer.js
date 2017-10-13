@@ -71,6 +71,7 @@ class Wappalyzer {
       }
 
       if ( data.env ) {
+        console.log(data.env);
         this.analyzeEnv(app, data.env);
       }
 

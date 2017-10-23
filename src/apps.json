@@ -1,5 +1,15 @@
 {
 	"apps": {
+		"aframe": {
+			"cats": [
+				"6"
+			],
+			"icon": "aframe.png",
+			"implies": "JavaScript",
+			"website": "https://aframe.io"
+		},
+{
+	"apps": {
 		"1&1": {
 			"cats": [
 				"6"
@@ -9,6 +19,7 @@
 			"url": "/shop/catalog/browse\\?sessid=",
 			"website": "http://1and1.com"
 		},
+    
 		"1C-Bitrix": {
 			"cats": [
 				"1"

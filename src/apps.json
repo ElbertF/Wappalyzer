@@ -1117,8 +1117,8 @@
 			"icon": "Bugzilla.png",
 			"implies": "Perl",
 			"website": "http://www.bugzilla.org"
-        },
-        "Bulma": {
+		},
+		"Bulma": {
 			"cats": [
 				"18"
 			],
@@ -1962,7 +1962,7 @@
 			"icon": "Debian.png",
 			"website": "http://debian.org"
 		},
-    "PHPDebugBar": {
+		"PHPDebugBar": {
 			"cats": [
 				"47"
 			],
@@ -1972,7 +1972,7 @@
 			],
 			"script": [
 				"debugbar.*\\.js"
-      ],
+			],
 			"icon": "phpdebugbar.png",
 			"website": "http://phpdebugbar.com/"
 		},
@@ -3976,8 +3976,8 @@
 			"icon": "JC-HTTPD.png",
 			"implies": "Canon",
 			"website": "http://canon.com"
-        },
-        "JET Enterprise": {
+		},
+		"JET Enterprise": {
 			"cats": [
 				"6"
 			],
@@ -4017,16 +4017,16 @@
 			},
 			"website": "http://www.jalios.com"
 		},
-    "Jahia DX": {
-      "cats": [
-        "1",
-        "47"
-      ],
-      "html": "<script id=\"staticAssetAggregatedJavascrip",
-      "icon": "JahiaDX.svg",
-      "website": "http://www.jahia.com/dx"
-    },
-    "Java": {
+		"Jahia DX": {
+			"cats": [
+				"1",
+				"47"
+			],
+			"html": "<script id=\"staticAssetAggregatedJavascrip",
+			"icon": "JahiaDX.svg",
+			"website": "http://www.jahia.com/dx"
+		},
+		"Java": {
 			"cats": [
 				"27"
 			],
@@ -4967,15 +4967,15 @@
 			"script": "munchkin\\.marketo\\.net/munchkin\\.js",
 			"website": "http://www.marketo.com"
 		},
-    "Material Design Lite": {
-      "cats": [
-        "18"
-      ],
-      "html": "<link[^>]* href=\"[^\"]*material(?:\\.[\\w]+-[\\w]+)?(?:\\.min)?\\.css",
-      "icon": "Material Design Lite.png",
-      "script": "material(?:\\.min)?\\.js",
-      "website": "https://getmdl.io"
-    },
+		"Material Design Lite": {
+			"cats": [
+				"18"
+			],
+			"html": "<link[^>]* href=\"[^\"]*material(?:\\.[\\w]+-[\\w]+)?(?:\\.min)?\\.css",
+			"icon": "Material Design Lite.png",
+			"script": "material(?:\\.min)?\\.js",
+			"website": "https://getmdl.io"
+		},
 		"Materialize CSS": {
 			"cats": [
 				"18"
@@ -5583,8 +5583,8 @@
 			"env": "^sitestat$",
 			"icon": "Nedstat.png",
 			"website": "http://www.nedstat.com"
-        },
-        "NEO - Omnichannel Commerce Platform": {
+		},
+		"NEO - Omnichannel Commerce Platform": {
 			"cats": [
 				"6"
 			],
@@ -5711,8 +5711,8 @@
 			"headers": {
 				"x-powered-by": "^Next.js ?([0-9.]+)?\\;version:\\1"
 			},
-      "env": "^__NEXT_DATA__$",
-      "icon": "zeit.svg",
+			"env": "^__NEXT_DATA__$",
+			"icon": "zeit.svg",
 			"implies": [
 				"React",
 				"webpack",
@@ -6891,9 +6891,9 @@
 				"1"
 			],
 			"env": "^Rayo",
-            "icon": "Rayo.png",
-            "implies": [ "AngularJS", "Microsoft ASP.NET" ],
-            "meta": {
+			"icon": "Rayo.png",
+			"implies": [ "AngularJS", "Microsoft ASP.NET" ],
+			"meta": {
 				"generator": "^Rayo"
 			},
 			"website": "http://www.rayo.ir"
@@ -8377,7 +8377,7 @@
 			"cats": [
 				"6"
 			],
-      "html": "<link[^>]*tictail\\.com",
+			"html": "<link[^>]*tictail\\.com",
 			"icon": "tictail.png",
 			"website": "https://tictail.com"
 		},
@@ -10789,24 +10789,32 @@
 			"script": "[^a-z]xui.*\\.js",
 			"website": "http://xuijs.com"
 		},
-    "Raychat": {
-      "cats": [
-        "52"
-      ],
-      "env": "^Raychat$",
-      "icon": "raychat.svg",
-      "script": "app\\.raychat\\.io/scripts/js",
-      "website": "https://raychat.io"
-    },
-    "Mautic": {
-      "cats": [
-        "32"
-      ],
-      "env": "^MauticTrackingObject$",
-      "icon": "mautic.svg",
-      "script": "[^a-z]mtc.*\\.js",
-      "website": "https://www.mautic.org/"
-    }
+		"Raychat": {
+			"cats": [
+				"52"
+			],
+			"env": "^Raychat$",
+			"icon": "raychat.svg",
+			"script": "app\\.raychat\\.io/scripts/js",
+			"website": "https://raychat.io"
+		},
+		"Mautic": {
+			"cats": [
+				"32"
+			],
+			"env": "^MauticTrackingObject$",
+			"icon": "mautic.svg",
+			"script": "[^a-z]mtc.*\\.js",
+			"website": "https://www.mautic.org/"
+		},
+		"elm": {
+			"cats": [
+				"27"
+			],
+			"env": "^Elm$",
+			"icon": "elm.svg",
+			"website": "http://elm-lang.org"
+		}
 	},
 	"categories": {
 		"1": {

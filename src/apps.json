@@ -4,7 +4,7 @@
 			"cats": [
 				"6"
 			],
-			"icon": "aframe.png",
+			"icon": "aframe.svg",
 			"implies": "JavaScript",
 			"website": "https://aframe.io"
 		},

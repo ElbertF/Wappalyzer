@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 17.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 432 389.9" enable-background="new 0 0 432 389.9" xml:space="preserve">
+<g id="Sky">
+</g>
+<g id="_Ground">
+	<polygon fill="#1E8376" points="216,143.9 432,266.9 216,389.9 0,266.9 	"/>
+</g>
+<g id="A">
+	<polygon opacity="0.25" fill="#808285" points="245.1,335.6 336.7,283.9 196.3,203.8 104.7,255.5 	"/>
+	<polygon fill="#9E1E3F" points="196.3,203.8 266.2,15.8 336.7,283.9 344.1,288.1 345,287.9 270.1,3.2 261.5,0 187.5,198.9 
+		195.7,203.6 	"/>
+	<path d="M169.8,51.6"/>
+	<path d="M174.5,53.4l-4.7-1.7L174.5,53.4z"/>
+	<polygon fill="#3DC7F4" points="104.7,255.5 196.3,203.8 266.2,15.8 174.6,67.5 	"/>
+	<polygon fill="#F2E646" points="126.8,195.9 216,150.9 316.9,208.3 222.7,250.6 	"/>
+	<g>
+		<polygon fill="none" points="104.7,255.5 104,255.2 245.1,335.6 174.6,67.5 		"/>
+		<polygon fill="#9E1E3F" points="104.7,255.5 174.6,67.5 245.1,335.6 252.5,339.7 253.4,339.5 178.5,54.9 169.8,51.6 95.8,250.6 
+			104,255.2 		"/>
+	</g>
+	<g>
+		<polygon fill="none" points="126.8,195.9 222.7,250.6 174.6,67.5 		"/>
+		<polygon fill="#9E1E3F" points="126.8,195.9 124.4,202.5 225.2,260 222.7,250.6 		"/>
+	</g>
+	<polygon fill="#E62D5C" points="252.5,339.7 345,287.9 270.1,3.2 178.5,54.9 	"/>
+	<polygon fill="#E62D5C" points="169.8,51.6 178.5,54.9 270.1,3.2 261.5,0 	"/>
+</g>
+<g id="Trees">
+	<g id="Tree_3">
+		<ellipse opacity="0.25" fill="#808285" cx="71.4" cy="266.9" rx="13" ry="7.5"/>
+		<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="68.8333" y1="258.9925" x2="74" y2="258.9925">
+			<stop  offset="0" style="stop-color:#6E5146"/>
+			<stop  offset="0.9949" style="stop-color:#B68573"/>
+		</linearGradient>
+		<path fill="url(#SVGID_2_)" d="M68.8,249.8v17.3c0,0.6,1.2,1.2,2.6,1.2c1.4,0,2.6-0.5,2.6-1.2v-17.3H68.8z"/>
+		<polygon fill="#1E7977" points="54,212.6 54,244.6 71.5,253.7 71.5,221.7 		"/>
+		<polygon fill="#32BDB8" points="89,212.6 89,244.6 71.5,253.7 71.5,221.7 		"/>
+		<polygon fill="#26A19B" points="71.5,203.4 54,212.6 71.5,221.7 89,212.6 		"/>
+	</g>
+	<g id="Tree_2">
+		<ellipse opacity="0.25" fill="#808285" cx="362.4" cy="266.9" rx="13" ry="7.5"/>
+		<linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="359.8553" y1="258.9925" x2="365.022" y2="258.9925">
+			<stop  offset="0" style="stop-color:#6E5146"/>
+			<stop  offset="0.9949" style="stop-color:#B68573"/>
+		</linearGradient>
+		<path fill="url(#SVGID_3_)" d="M359.9,249.8v17.3c0,0.6,1.2,1.2,2.6,1.2c1.4,0,2.6-0.5,2.6-1.2v-17.3H359.9z"/>
+		<polygon fill="#1E7977" points="345,212.6 345,244.6 362.5,253.7 362.5,221.7 		"/>
+		<polygon fill="#32BDB8" points="380,212.6 380,244.6 362.5,253.7 362.5,221.7 		"/>
+		<polygon fill="#26A19B" points="362.5,203.4 345,212.6 362.5,221.7 380,212.6 		"/>
+	</g>
+	<g id="Tree_1_1_">
+		<polygon fill="#26A19B" points="187.5,268.2 170,277.4 187.5,286.6 205,277.4 		"/>
+		<g>
+			<ellipse opacity="0.25" fill="#808285" cx="187.4" cy="331.7" rx="13" ry="7.5"/>
+			<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="184.8113" y1="323.8258" x2="189.978" y2="323.8258">
+				<stop  offset="0" style="stop-color:#6E5146"/>
+				<stop  offset="0.9949" style="stop-color:#B68573"/>
+			</linearGradient>
+			<path fill="url(#SVGID_4_)" d="M184.8,314.6v17.3c0,0.6,1.2,1.2,2.6,1.2c1.4,0,2.6-0.5,2.6-1.2v-17.3H184.8z"/>
+			<polygon fill="#1E7977" points="170,277.4 170,309.4 187.5,318.6 187.5,286.6 			"/>
+			<polygon fill="#32BDB8" points="205,277.4 205,309.4 187.5,318.6 187.5,286.6 			"/>
+		</g>
+	</g>
+</g>
+</svg>

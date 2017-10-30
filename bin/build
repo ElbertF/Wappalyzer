@@ -49,7 +49,22 @@ pushd $webextension_dir > /dev/null
 
 sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$version\"/" manifest.json
 
-zip -qr ../../../build/wappalyzer_webextension.zip .
+zip -qr ../../../build/wappalyzer_webextension.zip . \
+  -x images/icon_44.png \
+  -x images/icon_50.png \
+  -x images/icon_150.png \
+  -x js/ms_\*.js \
+  -x manifest.edge.json \
+  -x \*.log \
+  -x \*.lock \
+  -x \*.gitignore \
+  -x \*.gitkeep \
+  -x \*.js.map \
+  -x \*.min.js \
+  -x \*.yarn-integrity \
+  -x \*package.json \
+  -x \*LICENSE \
+  -x \*README.md
 
 popd > /dev/null
 

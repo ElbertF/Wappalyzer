@@ -71,6 +71,7 @@ class Wappalyzer {
       }
 
       if ( data.env ) {
+        console.log(data.env);
         this.analyzeEnv(app, data.env);
       }
 
@@ -296,10 +297,6 @@ class Wappalyzer {
    * Cache detected applications
    */
   cacheDetectedApps(apps, url) {
-    if ( !( this.driver.ping instanceof Function ) ) {
-      return;
-    }
-
     Object.keys(apps).forEach(appName => {
       var app = apps[appName];
 
@@ -311,7 +308,9 @@ class Wappalyzer {
       });
     })
 
-    this.ping();
+    if ( this.driver.ping instanceof Function ) {
+      this.ping();
+    }
   }
 
   /**

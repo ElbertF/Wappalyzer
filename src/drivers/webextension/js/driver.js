@@ -101,7 +101,7 @@ getOption('version')
         .then(upgradeMessage => {
           if ( upgradeMessage ) {
             openTab({
-              url: wappalyzer.config.websiteURL + 'upgraded',
+              url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
               background: true
             });
           }

@@ -1,158 +1,140 @@
 /**
- * WebExtension driver
+ * Bookmarklet driver
  */
 
 /** global: wappalyzer */
 /** global: XMLHttpRequest */
 
 (function() {
-	if ( typeof wappalyzer === 'undefined' ) {
-		return;
-	}
+	const container = document.getElementById('wappalyzer-container');
+	const domain = top.location.host;
+	const url = top.location.href.replace(/#.*$/, '');
+	const hasOwn = Object.prototype.hasOwnProperty;
 
-	var
-		w             = wappalyzer,
-		debug         = true,
-		d             = window.document,
-		container     = d.getElementById('wappalyzer-container'),
-		domain        = window.top.location.host,
-		url           = window.top.location.href.replace(/#.*$/, ''),
-		hasOwn        = Object.prototype.hasOwnProperty;
+  /**
+   * Log messages to console
+   */
+  wappalyzer.driver.log = (message, source, type) => {
+    console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+  };
 
-	w.driver = {
-		timeout: 1000,
+  function getEnvironmentVars() {
+    wappalyzer.log('func: getEnvironmentVars');
 
-		/**
-		 * Log messages to console
-		 */
-		log: function(args) {
-			if ( debug && console != null && console[args.type] != null ) {
-				console[args.type](args.message);
-			}
-		},
+    var env = [];
 
-		/**
-		 * Initialize
-		 */
-		init: function() {
-			w.driver.getEnvironmentVars();
-			w.driver.getResponseHeaders();
-		},
+    for ( let i in window ) {
+      env.push(i);
+    }
 
-		getEnvironmentVars: function() {
-			w.log('func: getEnvironmentVars');
+    wappalyzer.analyze(domain, url, {
+      html: document.documentElement.innerHTML,
+      env: env
+    });
+  }
 
-			var i, env = [];
+	function getResponseHeaders() {
+    wappalyzer.log('func: getResponseHeaders');
 
-			for ( i in window ) {
-				env.push(i);
-			}
+    var xhr = new XMLHttpRequest();
 
-			w.analyze(domain, url, { html: d.documentElement.innerHTML, env: env });
-		},
+    xhr.open('GET', url, true);
 
-		getResponseHeaders: function() {
-			w.log('func: getResponseHeaders');
+    xhr.onreadystatechange = () => {
+      if ( xhr.readyState === 4 && xhr.status ) {
+        var headers = xhr.getAllResponseHeaders().split("\n");
 
-			var xhr = new XMLHttpRequest();
+        if ( headers.length > 0 && headers[0] != '' ) {
+          wappalyzer.log('responseHeaders: ' + xhr.getAllResponseHeaders());
 
-			xhr.open('GET', url, true);
+          var responseHeaders = {};
 
-			xhr.onreadystatechange = function() {
-				if ( xhr.readyState === 4 && xhr.status ) {
-					var headers = xhr.getAllResponseHeaders().split("\n");
+          headers.forEach(line => {
+            var name, value;
 
-					if ( headers.length > 0 && headers[0] != '' ) {
-						w.log('responseHeaders: ' + xhr.getAllResponseHeaders());
+            if ( line ) {
+              name  = line.substring(0, line.indexOf(': '));
+              value = line.substring(line.indexOf(': ') + 2, line.length - 1);
 
-						var responseHeaders = {};
+              responseHeaders[name.toLowerCase()] = value;
+            }
+          });
 
-						headers.forEach(function(line) {
-							var name, value;
+          wappalyzer.analyze(domain, url, {
+            headers: responseHeaders
+          });
+        }
+      }
+    }
 
-							if ( line ) {
-								name  = line.substring(0, line.indexOf(': '));
-								value = line.substring(line.indexOf(': ') + 2, line.length - 1);
+    xhr.send();
+  }
 
-								responseHeaders[name.toLowerCase()] = value;
-							}
-						});
+  /**
+   * Display apps
+   */
+  wappalyzer.driver.displayApps = detected => {
+    wappalyzer.log('func: diplayApps');
 
-						w.analyze(domain, url, { headers: responseHeaders });
-					}
-				}
-			}
+    var first = true;
+    var app;
+    var category;
+    var html;
 
-			xhr.send();
-		},
+    html =
+      '<a id="wappalyzer-close" href="javascript: document.body.removeChild(document.getElementById(\'wappalyzer-container\')); void(0);">' +
+        'Close' +
+      '</a>' +
+      '<div id="wappalyzer-apps">';
 
-		/**
-		 * Display apps
-		 */
-		displayApps: function() {
-			w.log('func: diplayApps');
+    if ( detected != null && Object.keys(detected).length ) {
+      for ( app in detected ) {
+        if ( !hasOwn.call(detected, app) ) {
+          continue;
+        }
 
-			var
-				i,
-				first = true,
-				app,
-				category,
-				html;
+        html +=
+          '<div class="wappalyzer-app' + ( first ? ' wappalyzer-first' : '' ) + '">' +
+            '<a target="_blank" class="wappalyzer-application" href="' + wappalyzer.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
+              '<strong>' +
+                '<img src="' + wappalyzer.config.websiteURL + 'images/icons/' + (wappalyzer.apps[app].icon || 'default.svg') + '" width="16" height="16"/> ' + app +
+              '</strong>' +
+            '</a>';
 
-			html =
-				'<a id="wappalyzer-close" href="javascript: window.document.body.removeChild(window.document.getElementById(\'wappalyzer-container\')); void(0);">' +
-					'Close' +
-				'</a>' +
-				'<div id="wappalyzer-apps">';
+        for ( let i in wappalyzer.apps[app].cats ) {
+          if ( !hasOwn.call(wappalyzer.apps[app].cats, i) ) {
+            continue;
+          }
 
-			if ( detected[url] != null && Object.keys(detected[url]).length ) {
-				for ( app in detected[url] ) {
-					if ( !hasOwn.call(detected[url], app) ) {
-						continue;
-					}
+          category = wappalyzer.categories[wappalyzer.apps[app].cats[i]].name;
 
-					html +=
-						'<div class="wappalyzer-app' + ( first ? ' wappalyzer-first' : '' ) + '">' +
-							'<a target="_blank" class="wappalyzer-application" href="' + w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
-								'<strong>' +
-									'<img src="' + w.config.websiteURL + 'images/icons/' + (w.apps[app].icon || 'default.svg') + '" width="16" height="16"/> ' + app +
-								'</strong>' +
-							'</a>';
+          html += '<a target="_blank" class="wappalyzer-category" href="' + wappalyzer.config.websiteURL + 'categories/' + slugify(category) + '">' + category + '</a>';
+        }
 
-					for ( i in w.apps[app].cats ) {
-						if ( !hasOwn.call(w.apps[app].cats, i) ) {
-							continue;
-						}
+        html += '</div>';
 
-						category = w.categories[w.apps[app].cats[i]].name;
+        first = false;
+      }
+    } else {
+      html += '<div id="wappalyzer-empty">No applications detected</div>';
+    }
 
-						html += '<a target="_blank" class="wappalyzer-category" href="' + w.config.websiteURL + 'categories/' + w.driver.slugify(category) + '">' + category + '</a>';
-					}
+    html += '</div>';
 
-					html += '</div>';
+    container.innerHTML = html;
+  },
 
-					first = false;
-				}
-			} else {
-				html += '<div id="wappalyzer-empty">No applications detected</div>';
-			}
+  /**
+   * Open a tab
+   */
+  function openTab(args) {
+    open(args.url);
+  }
 
-			html += '</div>';
+  function slugify(string) {
+    return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
+  }
 
-			container.innerHTML = html;
-		},
-
-		/**
-		 * Go to URL
-		 */
-		goToURL: function(args) {
-			window.open(args.url);
-		},
-
-		slugify: function(string) {
-			return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '');
-		}
-	};
-
-	w.driver.init();
+  getEnvironmentVars();
+  getResponseHeaders();
 })();

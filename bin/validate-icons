@@ -30,7 +30,7 @@ for (app in json.apps) {
 					} else if ( buffer.mime !== 'image/png' ) {
 						throw new Error('Incorrect mimetype "' + buffer.mime + '" when expected PNG for app "' + app + '": src/icons/' + iconPath);
 					}
-				} else if ( type === 'svg' ) {
+				} else if ( ext === '.svg' ) {
 					if ( !isSvg(fs.readFileSync(path)) ) {
 						throw new Error('Incorrect mimetype when expected SVG for app "' + app + '": src/icons/' + iconPath);
 					}

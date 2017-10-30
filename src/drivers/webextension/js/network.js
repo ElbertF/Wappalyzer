@@ -280,20 +280,19 @@
 		browserProxy.tabs.sendMessage(this.tabId, message);
 	};
 
-	PageNetworkTrafficCollector.prototype.sendToTab = function(assetReq, reqs, curPageUrl, nonAdTrackingEvent) {
+	PageNetworkTrafficCollector.prototype.sendToTab = function(assetReq, reqs, curPageUrl, adTrackingEvent) {
 		var msg = {};
 		msg.assets = [];
 		msg.requests = [];
 		msg.event_data = {};
-		if (  !nonAdTrackingEvent  ) {
-			msg.event = 'new-video-ad';
+		msg.event = adTrackingEvent;
+		if ( adTrackingEvent === 'new-video-ad' ) {
 			msg.requests = reqs;
 			msg.requests.sort(function(reqA, reqB) {return reqA.requestTimestamp - reqB.requestTimestamp;});
 			if ( assetReq ) {
 				msg.assets = [assetReq];
 			}
-		} else if ( nonAdTrackingEvent === 'new-invalid-video-ad' ) {
-			msg.event = nonAdTrackingEvent;
+		} else if ( adTrackingEvent === 'new-invalid-video-ad' ) {
 			msg.requests = reqs.map(function(request) {
 				return parseHostnameFromUrl(request.url);
 			});
@@ -304,8 +303,6 @@
 				contentType: assetReq.contentType,
 				size: assetReq.size
 			}];
-		} else if ( nonAdTrackingEvent === 'robots-txt-no-scraping' ) {
-			msg.event = nonAdTrackingEvent;
 		}
 		msg.origUrl = curPageUrl;
 		msg.displayAdFound = this.displayAdFound;
@@ -635,10 +632,10 @@
 				var tagReqs = _this.grabTagReqs(rawRequests, msgAssetReq);
 
 				if ( _this.isValidVideoAd(msgAssetReq, tagReqs) ) {
-					_this.sendToTab(msgAssetReq, tagReqs, origPageUrl, true);
+					_this.sendToTab(msgAssetReq, tagReqs, origPageUrl, 'new-video-ad');
 				} else {
 
-					_this.sendToTab(msgAssetReq, tagReqs, origPageUrl, false);
+					_this.sendToTab(msgAssetReq, tagReqs, origPageUrl, 'new-invalid-video-ad');
 				}
 
 			} else {

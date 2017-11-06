@@ -6,7 +6,7 @@
 			],
        "env": "aframe",
   "headers": {
-    "X-Powered-By": "Aframe"
+    "X-Powered-By": "ThreeJs"
   },
   "html": "<link[^>]aframe\\.css",
   "implies": "ThreeJS\\;confidence:100",

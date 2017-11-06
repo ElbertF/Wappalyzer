@@ -4,6 +4,19 @@
 			"cats": [
 				"6"
 			],
+       "env": "aframe",
+  "headers": {
+    "X-Powered-By": "Aframe"
+  },
+  "html": "<link[^>]aframe\\.css",
+  "implies": "PHP\\;confidence:50",
+  "meta": {
+    "generator": "(?:Application Name|Alternative Application Name)"
+  },
+  "script": "aframe.min-([0-9.]+)\\.js\\;confidence:50\\;version:\\1",
+  "url": ".+\\.aframe\\.io",
+  "website": "https://aframe.io",
+}
 			"icon": "aframe.svg",
 		"website": "https://aframe.io"
     },

@@ -62,5 +62,6 @@
     "categoryName50":           { "message": "Systémy správy dokumentov" },
     "categoryName51":           { "message": "Nástroj na tvorbu vstupnej stránky" },
     "categoryName52":           { "message": "Živý chat" },
-    "categoryName53":           { "message": "CRM" }
+    "categoryName53":           { "message": "CRM" },
+    "categoryName54":           { "message": "SEO" }
 }

@@ -1,90 +1,97 @@
 'use strict';
 
-const Wappalyzer = require('./wappalyzer');
-const request = require('request');
-const fs = require('fs');
-const Browser = require('zombie');
+const driver = options => {
+  const Wappalyzer = require('./wappalyzer');
+  const request = require('request');
+  const fs = require('fs');
+  const Browser = require('zombie', {
+    userAgent: options.userAgent
+  });
 
-const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
+  const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 
-const driver = {
-  quiet: true,
+  return {
+    quiet: true,
 
-  analyze: url => {
-    const wappalyzer = new Wappalyzer();
+    analyze: url => {
+      const wappalyzer = new Wappalyzer();
 
-    wappalyzer.apps = json.apps;
-    wappalyzer.categories = json.categories;
+      wappalyzer.apps = json.apps;
+      wappalyzer.categories = json.categories;
 
-    return new Promise((resolve, reject) => {
-      wappalyzer.driver.log = (message, source, type) => {
-        if ( type === 'error' ) {
-          return reject(message);
-        }
+      return new Promise((resolve, reject) => {
+        wappalyzer.driver.log = (message, source, type) => {
+          if ( type === 'error' ) {
+            return reject(message);
+          }
 
-        if ( !driver.quiet ) {
-          console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
-        }
-      };
+          if ( !driver.quiet ) {
+            console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+          }
+        };
 
-      wappalyzer.driver.displayApps = detected => {
-        var apps = [];
+        wappalyzer.driver.displayApps = detected => {
+          var apps = [];
 
-        Object.keys(detected).forEach(appName => {
-          const app = detected[appName];
+          Object.keys(detected).forEach(appName => {
+            const app = detected[appName];
 
-          var categories = [];
+            var categories = [];
 
-          app.props.cats.forEach(id => {
-            var category = {};
+            app.props.cats.forEach(id => {
+              var category = {};
 
-            category[id] = wappalyzer.categories[id].name;
+              category[id] = wappalyzer.categories[id].name;
 
-            categories.push(category)
+              categories.push(category)
+            });
+
+            apps.push({
+              name: app.name,
+              confidence: app.confidenceTotal.toString(),
+              version: app.version,
+              icon: app.props.icon || 'default.svg',
+              website: app.props.website,
+              categories
+            });
           });
 
-          apps.push({
-            name: app.name,
-            confidence: app.confidenceTotal.toString(),
-            version: app.version,
-            icon: app.props.icon || 'default.svg',
-            website: app.props.website,
-            categories
-          });
-        });
+          resolve(apps);
+        };
 
-        resolve(apps);
-      };
+        const browser = new Browser();
 
-      const browser = new Browser();
-
-      browser.visit(url, error => {
-        wappalyzer.driver.document = browser.document;
-
-        if ( !browser.resources['0'].response ) {
+        browser.visit(url, error => {
+          if ( !browser.resources['0'].response ) {
             return reject('No response from server');
-        }
+          }
 
-        const headers = {};
+          browser.wait(options.maxWait)
+            .then(() => {
+              wappalyzer.driver.document = browser.document;
 
-        browser.resources['0'].response.headers._headers.forEach(header => {
-          headers[header[0]] = header[1];
-        });
+              const headers = {};
 
-        const vars = Object.getOwnPropertyNames(browser.window);
-        const html = browser.html();
+              browser.resources['0'].response.headers._headers.forEach(header => {
+                headers[header[0]] = header[1];
+              });
 
-        const hostname = wappalyzer.parseUrl(url).hostname;
+              const vars = Object.getOwnPropertyNames(browser.window);
+              const html = browser.html();
 
-        wappalyzer.analyze(hostname, url, {
-          headers,
-          html,
-          env: vars
+              const hostname = wappalyzer.parseUrl(url).hostname;
+
+              wappalyzer.analyze(hostname, url, {
+                headers,
+                html,
+                env: vars
+              });
+            })
+            .catch(error => reject(error));
         });
       });
-
-    });
-  }
-}
+    }
+  };
+};
 
 module.exports = driver;

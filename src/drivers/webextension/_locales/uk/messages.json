@@ -62,5 +62,6 @@
 	"categoryName50":           { "message": "Керування документами" },
 	"categoryName51":           { "message": "Генератор лендінгів" },
 	"categoryName52":           { "message": "Чат реального часу" },
-	"categoryName53":           { "message": "CRM" }
+	"categoryName53":           { "message": "CRM" },
+  "categoryName54":           { "message": "SEO" }
 }

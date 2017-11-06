@@ -62,5 +62,6 @@
 	"categoryName50":       { "message": "Système de gestion de documents" },
 	"categoryName51":       { "message": "Landing Page Builder" },
 	"categoryName52":       { "message": "Chat en direct" },
-	"categoryName53":       { "message": "CRM" }
+	"categoryName53":       { "message": "CRM" },
+  "categoryName54":       { "message": "SEO" }
 }

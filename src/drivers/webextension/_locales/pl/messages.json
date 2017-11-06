@@ -62,5 +62,6 @@
 	"categoryName50":           { "message": "Systemy zarządzania dokumentami" },
 	"categoryName51":           { "message": "Konstruktory stron" },
 	"categoryName52":           { "message": "Czat na żywo" },
-	"categoryName53":           { "message": "Zarządzanie relacjami z klientami" }
+	"categoryName53":           { "message": "Zarządzanie relacjami z klientami" },
+  "categoryName54":           { "message": "SEO" }
 }

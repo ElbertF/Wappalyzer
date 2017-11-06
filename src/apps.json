@@ -78,6 +78,17 @@
 			"icon": "ebis.png",
 			"website": "http://www.ebis.ne.jp"
 		},
+		"Amber": {
+			"cats": [
+				"18",
+				"22"
+			],
+			"headers": {
+				"X-Powered-By": "^Amber$"
+			},
+			"icon": "amber.png",
+			"website": "https://amberframework.org"
+		},
 		"AMPcms": {
 			"cats": [
 				"1"
@@ -947,6 +958,17 @@
 			"icon": "bizweb.png",
 			"website": "https://www.bizweb.vn"
 		},
+		"Blade": {
+			"cats": [
+				"18", "22"
+			],
+			"headers": {
+				"X-Powered-By": "blade-([\\w.]+)?\\;version:\\1"
+			},
+			"icon": "Blade.png",
+			"implies": "Java",
+			"website": "https://lets-blade.com"
+		},
 		"Blesta": {
 			"cats": [
 				"6"
@@ -1429,7 +1451,7 @@
 				"22"
 			],
 			"headers": {
-				"Server": "Cherokee/([\\d.]+)\\;version:\\1"
+				"Server": "Cherokee(?:/([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "Cherokee.png",
 			"website": "http://www.cherokee-project.com"
@@ -1570,6 +1592,25 @@
 			"env": "^CodeMirror$",
 			"icon": "CodeMirror.png",
 			"website": "http://codemirror.net"
+		},
+		"CoinHive": {
+			"cats": [
+				"19"
+			],
+			"env": "^CoinHive$",
+			"script":  "\\/(?:coinhive|(authedmine))(?:\\.min)?\\.js\\;version:\\1?opt-in:",
+			"url": "https?://cnhv.co/",
+			"icon": "CoinHive.svg",
+			"website": "https://coinhive.com"
+		},
+		"CoinHive Captcha": {
+			"cats": [
+				"16"
+			],
+			"html": "(?:<div[^>]+class=\"coinhive-captcha[^>]+data-key|<div[^>]+data-key[^>]+class=\"coinhive-captcha)",
+			"script":  "https?://authedmine.com/(?:lib/captcha|captcha)",
+			"icon": "CoinHive.svg",
+			"website": "https://coinhive.com"
 		},
 		"Comandia": {
 			"cats": [
@@ -1772,7 +1813,7 @@
 			],
 			"env": "^CE2$",
 			"icon": "Crazy Egg.png",
-			"script": "cetrk\\.com/pages/scripts/\\d+/\\d+\\.js",
+			"script": "script\\.crazyegg\\.com/pages/scripts/\\d+/\\d+\\.js",
 			"website": "http://crazyegg.com"
 		},
 		"Criteo": {
@@ -2635,6 +2676,14 @@
 			},
 			"icon": "Fedora.png",
 			"website": "http://fedoraproject.org"
+		},
+		"Fingerprintjs": {
+			"cats": [
+				"12"
+			],
+			"env": "^Fingerprint(\\d)?$\\;version:\\1",
+			"script": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
+			"website": "https://valve.github.io/fingerprintjs2/"
 		},
 		"Firebase": {
 			"cats": [
@@ -4177,7 +4226,7 @@
 				"X-Content-Encoded-By": "Joomla! ([\\d.]+)\\;version:\\1"
 			},
 			"html": "(?:<div[^>]+id=\"wrapper_r\"|<[^>]+(?:feed|components)/com_|<table[^>]+class=\"pill)\\;confidence:50",
-			"icon": "Joomla.png",
+			"icon": "Joomla.svg",
 			"implies": "PHP",
 			"meta": {
 				"generator": "Joomla!(?: ([\\d.]+))?\\;version:\\1"
@@ -4239,6 +4288,17 @@
 			"script": "cdn\\.mykamva\\.ir",
 			"website": "http://kamva.ir"
 		},
+        "Hinza Advanced CMS" : {
+            "cats" : [
+                "1", "6"
+            ],
+            "icon": "hinza_advanced_cms.svg",
+            "meta" : {
+                "generator": "hinzacms"
+            },
+            "implies": "Laravel",
+            "website" : "http://hinzaco.com"
+        },
 		"Kendo UI": {
 			"cats": [
 				"18"
@@ -6352,6 +6412,17 @@
 			"script": "/phenomic.browser.[a-f0-9]+.js",
 			"website": "https://phenomic.io/"
 		},
+		"PHPoole": {
+			"cats": [
+				"1",
+				"11"
+			],
+			"icon": "PHPoole.png",
+			"meta": {
+				"generator": "^PHPoole$"
+			},
+			"website": "https://phpoole.org"
+		},
 		"Phusion Passenger": {
 			"cats": [
 				"22"
@@ -6398,7 +6469,10 @@
 			"cats": [
 				"1"
 			],
-			"html": "<[^<]+=\"[^\"]*site/[a-z0-9/._-]*/resourceCached/[a-z0-9/._-]*\"[^>]*>|[^<]+cbi:///cms/[^>]+",
+			"html": [
+        "<(?:script|link)[^>]/site/[a-z0-9/._-]+/resourceCached/[a-z0-9/._-]+",
+        "<input[^>]+cbi:///cms/"
+      ],
 			"icon": "pirobaseCMS.svg",
 			"implies": "Java",
 			"website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
@@ -6581,7 +6655,7 @@
 				"<!-- /Block [a-z ]+ module (?:HEADER|TOP)?\\s?-->",
 				"<!-- /Module Block [a-z ]+ -->"
 			],
-			"icon": "PrestaShop.png",
+			"icon": "PrestaShop.svg",
 			"implies": "PHP",
 			"meta": {
 				"generator": "PrestaShop"
@@ -6864,7 +6938,7 @@
 			"env": "^Raphael$",
 			"icon": "Raphael.png",
 			"script": "raphael.*\\.js",
-			"website": "http://raphaeljs.com"
+			"website": "http://dmitrybaranovskiy.github.io/raphael/"
 		},
 		"Rapid Logic": {
 			"cats": [
@@ -7196,6 +7270,7 @@
 			"env": "^smf_",
 			"icon": "SMF.png",
 			"implies": "PHP",
+      "html": "credits/?\" title=\"Simple Machines Forum\" target=\"_blank\" class=\"new_win\">SMF ([0-9.]+)</a>\\;version:\\1",
 			"website": "http://www.simplemachines.org"
 		},
 		"SOBI 2": {
@@ -8026,6 +8101,16 @@
 			"script": "statcounter\\.com/counter/counter",
 			"website": "http://www.statcounter.com"
 		},
+		"Storeden": {
+			"cats" : [
+				"6"
+			],
+			"headers" : {
+				"X-Powered-By": "Storeden"
+			},
+			"icon": "storeden.svg",
+			"website": "https://www.storeden.com"
+		},
 		"Store Systems": {
 			"cats": [
 				"6"
@@ -8748,6 +8833,7 @@
 				"X-Unbounce-PageId": ""
 			},
 			"icon": "Unbounce.png",
+			"script": "ubembed\\.com",
 			"website": "http://unbounce.com"
 		},
 		"Underscore.js": {
@@ -9656,7 +9742,7 @@
 		},
 		"Yoast SEO": {
 			"cats": [
-				"32"
+				"54"
 			],
 			"html": [
 				"<!-- This site is optimized with the Yoast"
@@ -10789,27 +10875,35 @@
 			"script": "[^a-z]xui.*\\.js",
 			"website": "http://xuijs.com"
 		},
-		"Raychat": {
-			"cats": [
-				"52"
-			],
-			"env": "^Raychat$",
-			"icon": "raychat.svg",
-			"script": "app\\.raychat\\.io/scripts/js",
-			"website": "https://raychat.io"
-		},
-		"Mautic": {
-			"cats": [
-				"32"
-			],
-			"env": "^MauticTrackingObject$",
-			"icon": "mautic.svg",
-			"script": "[^a-z]mtc.*\\.js",
-			"website": "https://www.mautic.org/"
-		},
+    "Raychat": {
+      "cats": [
+        "52"
+      ],
+      "env": "^Raychat$",
+      "icon": "raychat.svg",
+      "script": "app\\.raychat\\.io/scripts/js",
+      "website": "https://raychat.io"
+    },
+    "Mautic": {
+      "cats": [
+        "32"
+      ],
+      "env": "^MauticTrackingObject$",
+      "icon": "mautic.svg",
+      "script": "[^a-z]mtc.*\\.js",
+      "website": "https://www.mautic.org/"
+    },
+    "Anetwork": {
+    	"cats": [
+     		"36"
+    	],
+    	"icon": "Anetwork.png",
+   		"script": "static-cdn\\.anetwork\\.ir/",
+    	"website": "https://www.anetwork.ir"
+   	},
 		"Akaunting": {
 			"cats": [
-				"54"
+				"55"
 			],
 			"html": [
 				"<link[^>]akaunting-green\\.css",
@@ -10818,10 +10912,7 @@
 			"headers": {
 				"X-Akaunting": "Free Accounting Software"
 			},
-			"implies": [
-				"PHP",
-				"Laravel"
-			],
+			"implies": "Laravel",
 			"icon": "akaunting.svg",
 			"website": "https://akaunting.com"
 		}
@@ -11039,7 +11130,11 @@
 			"name": "CRM",
 			"priority": "9"
 		},
-		"54": {
+    "54": {
+      "name": "SEO",
+      "priority": "9"
+    },
+		"55": {
 			"name": "Accounting",
 			"priority": "1"
 		}

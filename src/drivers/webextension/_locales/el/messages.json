@@ -58,5 +58,6 @@
 	"categoryName50":           { "message": "Συστήματα Διαχειρίσης Εγγράφων" },
 	"categoryName51":           { "message": "Σύστημα Κατασκευής Σελίδων Υποδοχής" },
 	"categoryName52":           { "message": "Live Chat" },
-	"categoryName53":           { "message": "CRM" }
+	"categoryName53":           { "message": "CRM" },
+  "categoryName54":           { "message": "SEO" }
 }

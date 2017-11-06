@@ -62,5 +62,6 @@
     "categoryName50":           { "message": "文档管理系统" },
     "categoryName51":           { "message": "着陆页构建器" },
     "categoryName52":           { "message": "在线聊天" },
-    "categoryName53":           { "message": "客户关系管理（CRM）" }
+    "categoryName53":           { "message": "客户关系管理（CRM）" },
+    "categoryName54":           { "message": "SEO" }
 }

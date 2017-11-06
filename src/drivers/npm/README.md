@@ -28,7 +28,12 @@ $ node index.js https://wappalyzer.com
 ## Run from a script
 
 ```javascript
-const wappalyzer = require('wappalyzer');
+const options = {
+  userAgent: 'Wappalyzer',
+  maxWait: 3000
+};
+
+const wappalyzer = require('wappalyzer')(options);
 
 wappalyzer.analyze('https://wappalyzer.com')
   .then(json => {

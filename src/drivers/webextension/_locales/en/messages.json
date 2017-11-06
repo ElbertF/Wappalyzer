@@ -62,5 +62,7 @@
 	"categoryName50":           { "message": "Document Management Systems" },
 	"categoryName51":           { "message": "Landing Page Builder" },
 	"categoryName52":           { "message": "Live Chat" },
-	"categoryName53":           { "message": "CRM" }
+	"categoryName53":           { "message": "CRM" },
+  "categoryName54":           { "message": "SEO" },
+	"categoryName55":           { "message": "Accounting" }
 }

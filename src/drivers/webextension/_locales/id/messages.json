@@ -62,5 +62,6 @@
 	"categoryName50":           { "message": "Sistem Manajemen Dokumen" },
 	"categoryName51":           { "message": "Pembuat Laman Landas" },
 	"categoryName52":           { "message": "Chat Langsung" },
-	"categoryName53":           { "message": "CRM" }
+	"categoryName53":           { "message": "CRM" },
+  "categoryName54":           { "message": "SEO" }
 }

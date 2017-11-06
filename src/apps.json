@@ -3817,7 +3817,7 @@
 				"1"
 			],
 			"headers": {
-				"Set-Cookie": "ICMSession[^;]+=",
+				"Set-Cookie": "^ICMSSession[^;]*=",
 				"X-Powered-By": "ImpressCMS"
 			},
 			"icon": "ImpressCMS.png",

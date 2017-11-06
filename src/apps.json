@@ -4947,7 +4947,8 @@
 			},
 			"html": [
 				"<script [^>]+data-requiremodule=\"mage/\\;version:2",
-				"<script [^>]+data-requiremodule=\"Magento_\\;version:2"
+				"<script [^>]+data-requiremodule=\"Magento_\\;version:2",
+                               "<script type=\"text/x-magento-init\">"
 			],
 			"icon": "Magento.png",
 			"implies": "PHP",

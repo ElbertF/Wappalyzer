@@ -7359,7 +7359,7 @@
 			],
 			"headers": {
 				"Set-Cookie": "^sails\\.sid$",
-				"X-Powered-By": "^Sails$"
+				"X-Powered-By": "^Sails(?:$|[^a-z0-9])"
 			},
 			"icon": "Sails.js.svg",
 			"implies": "Express",

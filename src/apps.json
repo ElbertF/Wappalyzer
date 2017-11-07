@@ -551,7 +551,7 @@
 				"22"
 			],
 			"headers": {
-				"Server": "^(?:Apache(?:$|/([\\d.]+)|[^/-])|(?:^|\b)HTTPD)\\;version:\\1"
+				"Server": "(?:Apache(?:$|/([\\d.]+)|[^/-])|(?:^|\b)HTTPD)\\;version:\\1"
 			},
 			"icon": "Apache.svg",
 			"website": "http://apache.org"

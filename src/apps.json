@@ -750,6 +750,7 @@
 			"env": "^bitbucket$",
 			"icon": "Atlassian Bitbucket.svg",
 			"implies": "Python",
+      "html": "<li>Atlassian Bitbucket <span title=\"[a-z0-9]+\" id=\"product-version\" data-commitid=\"[a-z0-9+]\" data-system-build-number=\"[a-z0-9]+\"> v([\\d.]+)<\\;version:\\1</span>",
 			"meta": {
 				"application-name": "Bitbucket"
 			},

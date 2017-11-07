@@ -10910,7 +10910,7 @@
 				"Powered By Akaunting: <a [^>]*href=\"https?://(?:www\\.)?akaunting\\.com[^>]+>"
 			],
 			"headers": {
-				"X-Akaunting": "Free Accounting Software"
+				"X-Akaunting": "^Free Accounting Software$"
 			},
 			"implies": "Laravel",
 			"icon": "akaunting.svg",

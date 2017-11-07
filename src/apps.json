@@ -5281,6 +5281,15 @@
 			},
 			"website": "http://sourceforge.net/projects/miniserv"
 		},
+    "MineHoster": {
+			"cats": [
+				"9"
+			],
+			"headers": {
+        "X-Powered-By": "www.minehoster.us"
+			},
+			"website": "www.minehoster.us"
+		},
 		"Mint": {
 			"cats": [
 				"10"

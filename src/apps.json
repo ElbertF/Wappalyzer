@@ -10906,7 +10906,7 @@
 				"55"
 			],
 			"html": [
-				"<link[^>]akaunting-green\\.css",
+				"<link[^>]+akaunting-green\\.css",
 				"Powered By Akaunting: <a [^>]*href=\"https?://(?:www\\.)?akaunting\\.com[^>]+>"
 			],
 			"headers": {

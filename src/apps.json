@@ -10840,16 +10840,6 @@
 			},
 			"website": "http://www.xt-commerce.com"
 		},
-		"xui": {
-			"cats": [
-				"26",
-				"12"
-			],
-			"env": "^xui$",
-			"icon": "xui.png",
-			"script": "[^a-z]xui.*\\.js",
-			"website": "http://xuijs.com"
-		},
     "Raychat": {
       "cats": [
         "52"

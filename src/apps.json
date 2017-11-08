@@ -9015,17 +9015,6 @@
 			"icon": "Vimeo.png",
 			"website": "http://vimeo.com"
 		},
-		"Vinala": {
-			"cats": [
-				"18"
-			],
-			"headers": {
-				"Set-Cookie": "vinala_version"
-			},
-			"icon": "Vinala.png",
-			"implies": "PHP",
-			"website": "https://github.com/vinala/vinala"
-		},
 		"Virata EmWeb": {
 			"cats": [
 				"22"

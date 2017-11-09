@@ -2909,6 +2909,21 @@
 			"implies": "PHP",
 			"script": "gm_javascript\\.js\\.php",
 			"website": "http://gambio.de"
+    },
+    "Gatsby": {
+			"cats": [
+				"12"
+			],
+      "html": [
+        "<div id=\"___gatsby\">",
+        "<style id=\"gatsby-inlined-css\">"
+      ],
+			"icon": "Gatsby.svg",
+			"implies": [
+        "React",
+        "Webpack"
+			],
+			"website": "https://www.gatsbyjs.org/"
 		},
 		"Gauges": {
 			"cats": [

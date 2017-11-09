@@ -5800,7 +5800,7 @@
 				"22"
 			],
 			"headers": {
-				"server": "now"
+				"server": "^now$"
 			},
 			"icon": "zeit.svg",
 			"website": "https://zeit.co/now"

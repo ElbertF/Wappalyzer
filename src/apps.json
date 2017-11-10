@@ -2854,10 +2854,10 @@
 			"cats": [
 				"20"
 			],
-			"html": "<html[^>]+urn:schemas-microsoft-com:office:office",
 			"icon": "FrontPage.png",
 			"meta": {
-				"generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1"
+				"generator": "Microsoft FrontPage(?:\\s((?:Express )?[\\d.]+))?\\;version:\\1",
+				"ProgId": "^FrontPage\\."
 			},
 			"website": "http://office.microsoft.com/frontpage"
 		},

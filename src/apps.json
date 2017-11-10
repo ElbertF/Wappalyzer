@@ -5229,6 +5229,18 @@
 			"icon": "Microsoft.svg",
 			"website": "http://microsoft.com"
 		},
+		"Microsoft Excel": {
+			"cats": [
+				"20"
+			],
+			"icon": "Microsoft Excel.svg",
+			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:excel\"|<!--\\s*(?:START|END) OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD\\s*-->|<div [^>]*x:publishsource=\"?Excel\"?)",
+			"meta": {
+				"generator": "Microsoft Excel( [\\d.]+)?\\;version:\\1",
+				"ProgId": "^Excel\\."
+			},
+			"website": "https://office.microsoft.com/excel"
+		},
 		"Microsoft SharePoint": {
 			"cats": [
 				"1"

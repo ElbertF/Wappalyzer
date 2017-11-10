@@ -5246,6 +5246,18 @@
 			},
 			"website": "http://sharepoint.microsoft.com"
 		},
+		"Microsoft Word": {
+			"cats": [
+				"20"
+			],
+			"icon": "Microsoft Word.svg",
+			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:word\"|<w:WordDocument>|<div [^>]*class=\"?WordSection1[\" >]|<style[^>]*>[^>]*@page WordSection1)",
+			"meta": {
+				"generator": "Microsoft Word( [\\d.]+)?\\;version:\\1",
+				"ProgId": "^Word\\."
+			},
+			"website": "https://office.microsoft.com/word"
+		},
 		"Mietshop": {
 			"cats": [
 				"6"

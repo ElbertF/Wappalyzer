@@ -72,7 +72,10 @@ const driver = options => {
               const headers = {};
 
               browser.resources['0'].response.headers._headers.forEach(header => {
-                headers[header[0]] = header[1];
+                if ( !headers[header[0]] ){
+                  headers[header[0]] = [];
+                }
+                headers[header[0]].push(header[1]);
               });
 
               const vars = Object.getOwnPropertyNames(browser.window);

@@ -138,20 +138,23 @@ browser.webRequest.onCompleted.addListener(request => {
     var url = wappalyzer.parseUrl(request.url);
 
     request.responseHeaders.forEach(function(header) {
-      responseHeaders[header.name.toLowerCase()] = header.value || '' + header.binaryValue;
+      if ( !responseHeaders[header.name.toLowerCase()] ) {
+        responseHeaders[header.name.toLowerCase()] = []
+      }
+      responseHeaders[header.name.toLowerCase()].push(header.value || '' + header.binaryValue);
     });
 
     if ( headersCache.length > 50 ) {
       headersCache = {};
     }
 
-    if ( /text\/html/.test(responseHeaders['content-type']) ) {
+    if ( /text\/html/.test(responseHeaders['content-type'][0]) ) {
       if ( headersCache[url.canonical] === undefined ) {
         headersCache[url.canonical] = {};
       }
 
       Object.keys(responseHeaders).forEach(header => {
-        headersCache[url.canonical][header] = responseHeaders[header];
+        headersCache[url.canonical][header] = responseHeaders[header].slice();
       });
     }
   }

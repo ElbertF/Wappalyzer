@@ -56,7 +56,10 @@
               name  = line.substring(0, line.indexOf(': '));
               value = line.substring(line.indexOf(': ') + 2, line.length - 1);
 
-              responseHeaders[name.toLowerCase()] = value;
+              if ( !responseHeaders[name.toLowerCase()] ){
+                responseHeaders[name.toLowerCase()] = []
+              }
+              responseHeaders[name.toLowerCase()].push(value);
             }
           });
 

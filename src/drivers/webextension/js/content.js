@@ -7,10 +7,21 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
     html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
   }
 
+  var scripts = Array.prototype.slice
+      .apply(document.scripts)
+      .filter(s => s.src)
+      .map(s => s.src);
+
   try {
     browser.runtime.sendMessage({
       id: 'analyze',
       subject: { html },
+      source: 'content.js'
+    });
+
+    browser.runtime.sendMessage({
+      id: 'analyze',
+      subject: { scripts },
       source: 'content.js'
     });
 

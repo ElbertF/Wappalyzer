@@ -62,10 +62,13 @@ class Wappalyzer {
 
       if ( data.html ) {
         this.analyzeHtml(app, data.html);
-        this.analyzeScript(app, data.html);
         this.analyzeMeta(app, data.html);
       }
 
+      if ( data.scripts ) {
+        this.analyzeScripts(app, data.scripts);
+      }
+      
       if ( data.headers ) {
         this.analyzeHeaders(app, data.headers);
       }
@@ -396,19 +399,18 @@ class Wappalyzer {
   /**
    * Analyze script tag
    */
-  analyzeScript(app, html) {
-    var regex = new RegExp('<script[^>]+src=("|\')([^"\']+)', 'ig');
+  analyzeScripts(app, scripts) {
     var patterns = this.parsePatterns(app.props.script);
 
     if ( patterns.length ) {
       patterns.forEach(pattern => {
         var match;
 
-        while ( ( match = regex.exec(html) ) ) {
-          if ( pattern.regex.test(match[2]) ) {
-            this.addDetected(app, pattern, 'script', match[2]);
+        scripts.forEach(uri => {
+          if ( pattern.regex.test(uri) ) {
+            this.addDetected(app, pattern, 'script', uri);
           }
-        }
+        });
       });
     }
   }

@@ -80,13 +80,18 @@ const driver = options => {
 
               const vars = Object.getOwnPropertyNames(browser.window);
               const html = browser.html();
+              const scripts = Array.prototype.slice
+                .apply(browser.document.scripts)
+                .filter(s => s.src)
+                .map(s => s.src);
 
-              const hostname = wappalyzer.parseUrl(url).hostname;
+            const hostname = wappalyzer.parseUrl(url).hostname;
 
               wappalyzer.analyze(hostname, url, {
                 headers,
                 html,
-                env: vars
+                env: vars,
+                scripts
               });
             });
         });

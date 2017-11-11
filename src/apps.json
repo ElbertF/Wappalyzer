@@ -1820,6 +1820,15 @@
 			"script": "tag\\.crsspxl\\.com/s1\\.js",
 			"website": "http://datadesk.crsspxl.com"
 		},
+    "Crypto-Loot": {
+			"cats": [
+				"19"
+			],
+			"env": "^CryptoLoot$",
+			"script": "^(?:https):?//crypto-loot\\.com/lib/",
+			"icon": "Crypto-Loot.png",
+			"website": "https://crypto-loot.com/"
+		},
 		"CubeCart": {
 			"cats": [
 				"6"
@@ -4219,6 +4228,15 @@
 			},
 			"url": "option=com_",
 			"website": "http://joomla.org"
+		},
+		"JSEcoin": {
+			"cats": [
+				"19"
+			],
+			"env": "^jseMine$",
+			"script": "^(?:https):?//load\\.jsecoin\\.com/server/load/",
+			"icon": "JSEcoin.png",
+			"website": "https://jsecoin.com/"
 		},
 		"K2": {
 			"cats": [
@@ -6657,6 +6675,15 @@
 			"icon": "Project Wonderful.png",
 			"script": "^https?://(?:www\\.)?projectwonderful\\.com/(?:pwa\\.js|gen\\.php)",
 			"website": "http://projectwonderful.com"
+		},
+		"ProjectPoi": {
+			"cats": [
+				"19"
+			],
+			"env": "^ProjectPoi$",
+			"script": "^(?:https):?//ppoi\\.org/lib/",
+			"icon": "ProjectPoi.png",
+			"website": "https://ppoi.org/"
 		},
 		"Prospector": {
 			"cats": [

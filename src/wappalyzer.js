@@ -444,12 +444,16 @@ class Wappalyzer {
     var patterns = this.parsePatterns(app.props.headers);
 
     if ( headers ) {
-      Object.keys(patterns).forEach(header => {
-        patterns[header].forEach(pattern => {
-          header = header.toLowerCase();
+      Object.keys(patterns).forEach(headerName => {
+        patterns[headerName].forEach(pattern => {
+          headerName = headerName.toLowerCase();
 
-          if ( header in headers && pattern.regex.test(headers[header]) ) {
-            this.addDetected(app, pattern, 'headers', headers[header], header);
+          if ( headerName in headers ) {
+            headers[headerName].forEach(headerValue => {
+              if ( pattern.regex.test(headerValue) ) {
+                this.addDetected(app, pattern, 'headers', headerValue, headerName);
+              }
+            });
           }
         });
       });

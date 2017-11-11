@@ -18,8 +18,8 @@
     console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
   };
 
-  function getEnvironmentVars() {
-    wappalyzer.log('func: getEnvironmentVars');
+  function getPageContent() {
+    wappalyzer.log('func: getPageContent');
 
     var env = [];
 
@@ -27,9 +27,15 @@
       env.push(i);
     }
 
+    var scripts = Array.prototype.slice
+      .apply(document.scripts)
+      .filter(s => s.src)
+      .map(s => s.src);
+
     wappalyzer.analyze(domain, url, {
       html: document.documentElement.innerHTML,
-      env: env
+      env: env,
+      scripts: scripts
     });
   }
 
@@ -138,6 +144,6 @@
     return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
   }
 
-  getEnvironmentVars();
+  getPageContent();
   getResponseHeaders();
 })();

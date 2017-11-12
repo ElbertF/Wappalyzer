@@ -7522,6 +7522,16 @@
 			"icon": "Scientific Linux.png",
 			"website": "http://scientificlinux.org"
 		},
+		"SeamlessCMS": {
+			"cats": [
+				"1"
+			],
+			"icon": "SeamlessCMS.png",
+			"meta": {
+				"generator": "Seamless\.?CMS"
+			},
+			"website": "http://www.seamlesscms.com"
+		},
 		"Segment": {
 			"cats": [
 				"10"

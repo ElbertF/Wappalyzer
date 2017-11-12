@@ -10223,7 +10223,7 @@
 				"8"
 			],
 			"html": [
-				"<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"[^\\"]*/ikiwiki\\.cgi",
+				"<link rel=\"alternate\" type=\"application/x-wiki\" title=\"Edit this page\" href=\"[^\"]*/ikiwiki\\.cgi",
 				"<a href=\"/(?:cgi-bin/)?ikiwiki\\.cgi\\?do="
 			],
 			"icon": "ikiwiki.png",

@@ -6716,6 +6716,15 @@
 			},
 			"website": "http://www.prestashop.com"
 		},
+		"Prism": {
+			"cats": [
+				"19"
+			],
+			"env": "^Prism$",
+			"icon": "Prism.svg",
+			"script": "prism\\.js",
+			"website": "http://prismjs.com"
+		},
 		"Project Wonderful": {
 			"cats": [
 				"36"

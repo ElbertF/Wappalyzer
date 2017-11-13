@@ -7528,7 +7528,7 @@
 			],
 			"icon": "SeamlessCMS.png",
 			"meta": {
-				"generator": "Seamless\.?CMS"
+				"generator": "^Seamless\\.?CMS"
 			},
 			"website": "http://www.seamlesscms.com"
 		},

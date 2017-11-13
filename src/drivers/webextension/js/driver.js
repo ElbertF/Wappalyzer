@@ -3,324 +3,327 @@
  */
 
 /** global: browser */
-/** global: chrome */
-/** global: wappalyzer */
-/** global: XMLHttpRequest */
+/** global: Wappalyzer */
 
-(function() {
-	if ( wappalyzer == null ) {
-		return;
-	}
+const wappalyzer = new Wappalyzer();
 
-	var w = wappalyzer,
-		firstRun = false,
-		upgraded = false,
-		tab,
-		tabCache = {},
-		headersCache = {};
+var tabCache = {};
+var headersCache = {};
+var categoryOrder = [];
 
-	w.driver = {
-		timeout: 1000,
+browser.tabs.onRemoved.addListener(tabId => {
+  tabCache[tabId] = null;
+});
 
-		/**
-		 * Log messages to console
-		 */
-		log: function(args) {
-			console.log('[wappalyzer ' + args.type + ']', '[' + args.source + ']', JSON.parse(args.message));
-		},
+/**
+ * Get a value from localStorage
+ */
+function getOption(name, defaultValue) {
+  return new Promise((resolve, reject) => {
+    const callback = item => {
+      resolve(item.hasOwnProperty(name) ? item[name] : defaultValue);
+    };
 
-		/**
-		 * Get a value from localStorage
-		 */
-		getOption: function(name, defaultValue, callback) {
-			browser.storage.local.get(name).then(function(item) {
-				callback(item.hasOwnProperty(name) ? item[name] : defaultValue);
-			});
-		},
+    try {
+      // Chrome, Firefox
+      browser.storage.local.get(name)
+        .then(callback)
+        .catch(error => wappalyzer.log(error, 'driver', 'error'));
+    } catch ( e ) {
+      // Edge
+      browser.storage.local.get(name, callback);
+    }
+  });
+}
 
-		/**
-		 * Set a value in localStorage
-		 */
-		setOption: function(name, value) {
-			var option = {};
+/**
+ * Set a value in localStorage
+ */
+function setOption(name, value) {
+  var option = {};
 
-			option[name] = value;
+  option[name] = value;
 
-			browser.storage.local.set(option);
-		},
+  browser.storage.local.set(option);
+}
 
-		/**
-		 * Initialize
-		 */
-		init: function() {
-			w.log('Function call: w.driver.init()', 'driver');
+/**
+ * Open a tab
+ */
+function openTab(args) {
+  browser.tabs.create({
+    url: args.url,
+    active: args.background === undefined || !args.background
+  });
+}
 
-			// Load apps.json
-			var xhr = new XMLHttpRequest();
+/**
+ * Make a POST request
+ */
+function post(url, body) {
+  fetch(url, {
+    method: 'POST',
+    body: JSON.stringify(body)
+  })
+    .then(response => {
+      wappalyzer.log('POST ' + url + ': ' + response.status, 'driver');
+    })
+    .catch(error => {
+      wappalyzer.log('POST ' + url + ': ' + error, 'driver', 'error');
+    });
+}
 
-			xhr.open('GET', 'apps.json', true);
+fetch('../apps.json')
+  .then(response => {
+    return response.json();
+  })
+  .then(json => {
+    wappalyzer.apps = json.apps;
+    wappalyzer.categories = json.categories;
 
-			xhr.overrideMimeType('application/json');
+    categoryOrder = Object.keys(wappalyzer.categories).sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
+  })
+  .catch(error => {
+    wappalyzer.log('GET apps.json: ' + error, 'driver', 'error');
+  });
 
-			xhr.onload = function() {
-				var json = JSON.parse(xhr.responseText);
+// Version check
+var version = browser.runtime.getManifest().version;
 
-				w.categories = json.categories;
-				w.apps       = json.apps;
+getOption('version')
+  .then(previousVersion => {
+    if ( previousVersion === null ) {
+      openTab({
+        url: wappalyzer.config.websiteURL + 'installed'
+      });
+    } else if ( version !== previousVersion ) {
+      getOption('upgradeMessage', true)
+        .then(upgradeMessage => {
+          if ( upgradeMessage ) {
+            openTab({
+              url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
+              background: true
+            });
+          }
+        });
+    }
 
-				w.driver.categoryOrder = Object.keys(w.categories).sort(function(a, b) {
-					return w.categories[a].priority - w.categories[b].priority;
-				});
-			};
+    setOption('version', version);
+  });
 
-			xhr.send(null);
+// Run content script
+var callback = tabs => {
+  tabs.forEach(tab => {
+    if ( tab.url.match(/^https?:\/\//) ) {
+      browser.tabs.executeScript(tab.id, {
+        file: 'js/content.js'
+      });
+    }
+  })
+};
 
-			// Version check
-			try {
-				var version = browser.runtime.getManifest().version;
+try {
+  browser.tabs.query({})
+    .then(callback)
+    .catch(error => wappalyzer.log(error, 'driver', 'error'));
+} catch ( e ) {
+  browser.tabs.query({}, callback);
+}
 
-				w.driver.getOption('version', null, function(previousVersion) {
-					if ( previousVersion === null ) {
-						w.driver.goToURL({
-						 	url: w.config.websiteURL + 'installed'
-						});
-					} else if ( version !== previousVersion ) {
-						w.driver.getOption('upgradeMessage', true, function(upgradeMessage) {
-							if ( upgradeMessage ) {
-								w.driver.goToURL({
-									url: w.config.websiteURL + 'upgraded',
-									background: true
-								});
-							}
-						});
-					}
+// Capture response headers
+browser.webRequest.onCompleted.addListener(request => {
+  var responseHeaders = {};
 
-					w.driver.setOption('version', version);
-				});
-			} catch(e) {
-				// Do nothing
-			}
+  if ( request.responseHeaders ) {
+    var url = wappalyzer.parseUrl(request.url);
 
-      if ( typeof chrome === 'undefined' ) {
-        browser.runtime.onMessage.addListener(w.driver.onMessage);
-      } else {
-        chrome.runtime.onMessage.addListener(w.driver.onMessage);
+    request.responseHeaders.forEach(function(header) {
+      if ( !responseHeaders[header.name.toLowerCase()] ) {
+        responseHeaders[header.name.toLowerCase()] = []
+      }
+      responseHeaders[header.name.toLowerCase()].push(header.value || '' + header.binaryValue);
+    });
+
+    if ( headersCache.length > 50 ) {
+      headersCache = {};
+    }
+
+    if ( /text\/html/.test(responseHeaders['content-type'][0]) ) {
+      if ( headersCache[url.canonical] === undefined ) {
+        headersCache[url.canonical] = {};
       }
 
-			var callback = function(tabs) {
-				tabs.forEach(function(tab) {
-					if ( tab.url.match(/^https?:\/\//) ) {
-						browser.tabs.executeScript(tab.id, { file: 'js/content.js' });
-					}
-				})
-			};
+      Object.keys(responseHeaders).forEach(header => {
+        headersCache[url.canonical][header] = responseHeaders[header].slice();
+      });
+    }
+  }
+}, { urls: [ 'http://*/*', 'https://*/*' ], types: [ 'main_frame' ] }, [ 'responseHeaders' ]);
 
-			try {
-				browser.tabs.query({}).then(callback);
-			} catch ( e ) {
-				browser.tabs.query({}, callback);
-			}
+// Listen for messages
+( chrome || browser ).runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if ( typeof message.id != 'undefined' ) {
+    if ( message.id !== 'log' ) {
+      wappalyzer.log('Message received from ' + message.source + ': ' + message.id, 'driver');
+    }
 
-			browser.tabs.onRemoved.addListener(function(tabId) {
-				tabCache[tabId] = null;
-			});
+    var response;
 
-			// Live intercept headers using webRequest API
-			browser.webRequest.onCompleted.addListener(function(details) {
-				var responseHeaders = {};
+    switch ( message.id ) {
+      case 'log':
+        wappalyzer.log(message.message, message.source);
 
-				if ( details.responseHeaders ) {
-					var uri = details.url.replace(/#.*$/, ''); // Remove hash
+        break;
+      case 'analyze':
+        var url = wappalyzer.parseUrl(sender.tab.url);
 
-					details.responseHeaders.forEach(function(header) {
-						responseHeaders[header.name.toLowerCase()] = header.value || '' + header.binaryValue;
-					});
+        if ( headersCache[url.canonical] !== undefined ) {
+          message.subject.headers = headersCache[url.canonical];
+        }
 
-					if ( headersCache.length > 50 ) {
-						headersCache = {};
-					}
+        wappalyzer.analyze(url.hostname, url.canonical, message.subject, {
+          tab: sender.tab
+        });
 
-					if ( /text\/html/.test(responseHeaders['content-type']) ) {
-						if ( headersCache[uri] === undefined ) {
-							headersCache[uri] = {};
-						}
+        break;
+      case 'ad_log':
+        wappalyzer.cacheDetectedAds(message.subject);
 
-						for ( var header in responseHeaders ) {
-							if ( responseHeaders.hasOwnProperty(header) ) {
-								headersCache[uri][header] = responseHeaders[header];
-							}
-						}
-					}
-				}
-			}, { urls: [ 'http://*/*', 'https://*/*' ], types: [ 'main_frame' ] }, [ 'responseHeaders' ]);
+        break;
+      case 'get_apps':
+        response = {
+          tabCache:   tabCache[message.tab.id],
+          apps:       wappalyzer.apps,
+          categories: wappalyzer.categories
+        };
 
-			if ( firstRun ) {
-				w.driver.goToURL({ url: w.config.websiteURL + 'installed', medium: 'install' });
+        break;
+      default:
+    }
 
-				firstRun = false;
-			}
+    sendResponse(response);
+  }
+});
 
-			if ( upgraded ) {
-				w.driver.goToURL({ url: w.config.websiteURL + 'upgraded', medium: 'upgrade', background: true });
+wappalyzer.driver.document = document;
 
-				upgraded = false;
-			}
-		},
+/**
+ * Log messages to console
+ */
+wappalyzer.driver.log = (message, source, type) => {
+  console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+};
 
-		onMessage: function(message, sender, sendResponse) {
-			var
-				hostname,
-				response,
-				a = document.createElement('a');
+/**
+ * Display apps
+ */
+wappalyzer.driver.displayApps = (detected, context) => {
+  var tab = context.tab;
 
-			if ( typeof message.id != 'undefined' ) {
-				if ( message.id !== 'log' ) {
-					w.log('Message received from ' + message.source + ': ' + message.id, 'driver');
-				}
+  tabCache[tab.id] = tabCache[tab.id] || { detected: [] };
 
-				switch ( message.id ) {
-					case 'log':
-						w.log(message.message, message.source);
+  tabCache[tab.id].detected = detected;
 
-						break;
-					case 'analyze':
-						tab = sender.tab;
+  if ( Object.keys(detected).length ) {
+    getOption('dynamicIcon', true)
+      .then(dynamicIcon => {
+        var appName, found = false;
 
-						a.href = tab.url.replace(/#.*$/, '');
+        // Find the main application to display
+        categoryOrder.forEach(match => {
+          Object.keys(detected).forEach(appName => {
+            var app = detected[appName];
 
-						hostname = a.hostname;
+            app.props.cats.forEach(category => {
+              if ( category === match && !found ) {
+                var icon = app.props.icon || 'default.svg';
 
-						if ( headersCache[a.href] !== undefined ) {
-							message.subject.headers = headersCache[a.href];
-						}
+                if ( !dynamicIcon ) {
+                  icon = 'default.svg';
+                }
 
-						w.analyze(hostname, a.href, message.subject);
+                if ( /\.svg$/i.test(icon) ) {
+                  icon = 'converted/' + icon.replace(/\.svg$/, '.png');
+                }
 
-						break;
-					case 'ad_log':
-						w.adCache.push(message.subject);
+                browser.pageAction.setIcon({
+                  tabId: tab.id,
+                  path: '../images/icons/' + icon
+                });
 
-						break;
-					case 'get_apps':
-						response = {
-							tabCache:   tabCache[message.tab.id],
-							apps:       w.apps,
-							categories: w.categories
-						};
+                found = true;
+              }
+            });
+          });
+        });
 
-						break;
-					default:
-				}
+        if ( typeof chrome !== 'undefined' ) {
+          // Browser polyfill doesn't seem to work here
+          chrome.pageAction.show(tab.id);
+        } else {
+          browser.pageAction.show(tab.id);
+        }
+      });
+  }
+};
 
-				sendResponse(response);
-			}
+/**
+ * Fetch and cache robots.txt for host
+ */
+wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
+  return new Promise((resolve, reject) => {
+    getOption('robotsTxtCache')
+      .then(robotsTxtCache => {
+        robotsTxtCache = robotsTxtCache || {};
 
-		},
+        if ( host in robotsTxtCache ) {
+          resolve(robotsTxtCache[host]);
+        } else {
+          var url = 'http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt';
 
-		/**
-		 * Open a tab
-		 */
-		goToURL: function(args) {
-			browser.tabs.create({
-				url: args.url,
-				active: args.background === undefined || !args.background
-			});
-		},
+          fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt')
+            .then(response => {
+              if ( !response.ok ) {
+                if ( response.status === 404 ) {
+                  return '';
+                } else {
+                  throw 'GET ' + response.url + ' was not ok';
+                }
+              }
 
-		/**
-		 * Display apps
-		 */
-		displayApps: function() {
-			var
-				url   = tab.url.replace(/#.*$/, ''),
-				count = w.detected[url] ? Object.keys(w.detected[url]).length.toString() : '0';
+              return response.text();
+            })
+            .then(robotsTxt => {
+              robotsTxtCache[host] = wappalyzer.parseRobotsTxt(robotsTxt);
 
-			if ( tabCache[tab.id] == null ) {
-				tabCache[tab.id] = {
-					count: 0,
-					appsDetected: []
-					};
-			}
+              setOption('robotsTxtCache', robotsTxtCache);
 
-			tabCache[tab.id].count        = count;
-			tabCache[tab.id].appsDetected = w.detected[url];
+              resolve(robotsTxtCache[host]);
 
-			if ( count > 0 ) {
-				w.driver.getOption('dynamicIcon', true, function(dynamicIcon) {
-					var appName, found = false;
+              var hostname = host.replace(/:[0-9]+$/, '')
+            })
+            .catch(reject);
+        }
+      });
+  });
+};
 
-					// Find the main application to display
-					w.driver.categoryOrder.forEach(function(match) {
-						for ( appName in w.detected[url] ) {
-							w.apps[appName].cats.forEach(function(cat) {
-								var icon = w.apps[appName].icon || 'default.svg';
+/**
+ * Anonymously track detected applications for research purposes
+ */
+wappalyzer.driver.ping = (hostnameCache, adCache) => {
+  getOption('tracking', true)
+    .then(tracking => {
+      if ( tracking ) {
+        if ( Object.keys(hostnameCache).length ) {
+          post('http://ping.wappalyzer.com/v3/', hostnameCache);
+        }
 
-								if ( !dynamicIcon ) {
-									icon = 'default.svg';
-								}
+        if ( adCache.length ) {
+          post('https://ad.wappalyzer.com/log/wp/', adCache);
+        }
 
-								if ( cat === match && !found ) {
-									if ( /\.svg$/i.test(icon) ) {
-										icon = 'converted/' + icon + '.png';
-									}
-
-									browser.pageAction.setIcon({
-										tabId: tab.id,
-										path: 'images/icons/' + icon
-									});
-
-									found = true;
-								}
-							});
-						}
-					});
-
-					if ( typeof chrome !== 'undefined' ) {
-						// Browser polyfill doesn't seem to work here
-						chrome.pageAction.show(tab.id);
-					} else {
-						browser.pageAction.show(tab.id);
-					}
-				});
-			};
-		},
-
-		/**
-		 * Anonymously track detected applications for research purposes
-		 */
-		ping: function() {
-			w.driver.getOption('tracking', true, function(tracking) {
-				if ( Object.keys(w.ping.hostnames).length && tracking ) {
-					w.driver.post('http://ping.wappalyzer.com/v2/', w.ping);
-
-					w.ping = { hostnames: {} };
-
-					w.driver.post('https://ad.wappalyzer.com/log/wp/', w.adCache);
-
-					w.adCache = [];
-				}
-			});
-		},
-
-		/**
-		 * Make POST request
-		 */
-		post: function(url, data) {
-			var xhr = new XMLHttpRequest();
-
-			xhr.open('POST', url, true);
-
-			xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-
-			xhr.onreadystatechange = function() {
-				if ( xhr.readyState == 4 ) {
-					w.log({ 'POST request': { url: url, status: xhr.status, data: data } }, 'driver');
-				}
-			};
-
-			xhr.send('json=' + encodeURIComponent(JSON.stringify(data)));
-		}
-	};
-
-	w.init();
-}());
+        setOption('robotsTxtCache', {});
+      }
+    });
+};

@@ -1,72 +1,67 @@
 /** global: browser */
 /** global: wappalyzer */
 
-document.addEventListener('DOMContentLoaded', function() {
-	var d = document;
+function getOption(name, defaultValue, callback) {
+  browser.storage.local.get(name)
+    .then(item => {
+      callback(item.hasOwnProperty(name) ? item[name] : defaultValue);
+    });
+}
 
-	var options = {
-		init: function() {
-			options.load();
+function setOption(name, value) {
+  var option = {};
 
-			d.querySelector('#github').addEventListener('click', function() {
-				open(wappalyzer.config.githubURL);
-			});
+  option[name] = value;
 
-			d.querySelector('#twitter').addEventListener('click', function() {
-			 	open(wappalyzer.config.twitterURL);
-			});
+  browser.storage.local.set(option);
+}
 
-			d.querySelector('#wappalyzer').addEventListener('click', function() {
-				open(wappalyzer.config.websiteURL);
-			});
-		},
+document.addEventListener('DOMContentLoaded', () => {
+  var nodes = document.querySelectorAll('[data-i18n]');
 
-		get: function(name, defaultValue, callback) {
-			browser.storage.local.get(name).then(function(item) {
-				callback(item.hasOwnProperty(name) ? item[name] : defaultValue);
-			});
-		},
+  Array.prototype.forEach.call(nodes, node => {
+    node.childNodes[0].nodeValue = browser.i18n.getMessage(node.dataset.i18n);
+  });
 
-		set: function(name, value) {
-			var option = {};
+  document.querySelector('#github').addEventListener('click', () => {
+    open(wappalyzer.config.githubURL);
+  });
 
-			option[name] = value;
+  document.querySelector('#twitter').addEventListener('click', () => {
+    open(wappalyzer.config.twitterURL);
+  });
 
-			browser.storage.local.set(option);
-		},
+  document.querySelector('#wappalyzer').addEventListener('click', () => {
+    open(wappalyzer.config.websiteURL);
+  });
 
-		load: function() {
-			options.get('upgradeMessage', true, function(value) {
-				var el = d.querySelector('#option-upgrade-message');
+  getOption('upgradeMessage', true, value => {
+    const el = document.querySelector('#option-upgrade-message');
 
-				el.checked = value;
+    el.checked = value;
 
-				el.addEventListener('change', function() {
-					options.set('upgradeMessage', el.checked);
-				});
-			});
+    el.addEventListener('change', () => {
+      setOption('upgradeMessage', el.checked);
+    });
+  });
 
-			options.get('dynamicIcon', true, function(value) {
-				var el = d.querySelector('#option-dynamic-icon');
+  getOption('dynamicIcon', true, value => {
+    const el = document.querySelector('#option-dynamic-icon');
 
-				el.checked = value;
+    el.checked = value;
 
-				el.addEventListener('change', function() {
-					options.set('dynamicIcon', el.checked);
-				});
-			});
+    el.addEventListener('change', () => {
+      setOption('dynamicIcon', el.checked);
+    });
+  });
 
-			options.get('tracking', true, function(value) {
-				var el = d.querySelector('#option-tracking');
+  getOption('tracking', true, value => {
+    const el = document.querySelector('#option-tracking');
 
-				el.checked = value;
+    el.checked = value;
 
-				el.addEventListener('change', function() {
-					options.set('tracking', el.checked);
-				});
-			});
-		}
-	};
-
-	options.init();
+    el.addEventListener('change', () => {
+      setOption('tracking', el.checked);
+    });
+  });
 });

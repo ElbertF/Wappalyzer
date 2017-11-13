@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title data-i18n="options">Wappalyzer options</title>
+
+		<link rel="icon" href="../images/icon_32.png">
+
+		<link rel="stylesheet" href="../css/options.css">
+
+		<script src="../node_modules/webextension-polyfill/dist/browser-polyfill.js"></script>
+		<script src="../js/wappalyzer.js"></script>
+		<script src="../js/options.js"></script>
+	</head>
+	<body>
+		<div class="hero">
+			<div class="container">
+				<img src="../images/logo-white.svg">
+			</div>
+		</div>
+
+		<div class="content">
+			<div class="container">
+				<h1 data-i18n="options">Options</h1>
+
+				<p>
+					<label for="option-upgrade-message"><input id="option-upgrade-message" type="checkbox"> <span data-i18n="optionUpgradeMessage">Tell me about upgrades</span></label>
+					<label for="option-dynamic-icon"><input id="option-dynamic-icon" type="checkbox"> <span data-i18n="optionDynamicIcon">Use application icon instead of Wappalyzer logo</span></label>
+					<label for="option-tracking"><input id="option-tracking" type="checkbox"> <span data-i18n="optionTracking">Anonymously send reports on detected applications to wappalyzer.com for research</span></label>
+				</p>
+
+				<div id="about">
+					<p>
+						<button id="github"><img src="../images/github.png"  width="16" height="16" alt=""/> <span data-i18n="github" >Fork Wappalyzer on GitHub!</span></button><!--
+						--><button id="twitter"><img src="../images/twitter.png" width="16" height="16" alt=""/> <span data-i18n="twitter">Follow Wappalyzer on Twitter</span></button><!--
+						--><button id="wappalyzer"><img src="../images/icon_16.png" width="16" height="16" alt=""/> <span data-i18n="website">Go to wappalyzer.com</span></button>
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

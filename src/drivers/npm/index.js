@@ -1,32 +1,44 @@
 'use strict';
 
-const
-	path      = require('path'),
-	spawn     = require('child_process').spawn,
-	phantomjs = require('phantomjs-prebuilt');
+const options = {
+  userAgent: null,
+  maxWait: 3000,
+  debug: false
+};
 
-exports.run = function(args, callback) {
-	args.unshift.apply(args, [path.join(__dirname, 'driver.js'), '--web-security=false', '--load-images=false', '--ignore-ssl-errors=yes', '--ssl-protocol=any']);
+const args = process.argv.slice(2);
 
-	var driver = phantomjs.exec.apply(this, args);
+const url = args.shift() || '';
 
-	driver.stdout.on('data', (data) => {
-		callback(`${data}`, null);
-	});
+if ( !url ) {
+  process.stderr.write('No URL specified\n');
 
-	driver.stderr.on('data', (data) => {
-		callback(null, `${data}`);
-	});
+  process.exit(1);
 }
 
-if ( !module.parent ) {
-	exports.run(process.argv.slice(2), function(stdout, stderr) {
-		if ( stdout ) {
-			process.stdout.write(stdout);
-		}
+var arg;
 
-		if ( stderr ) {
-			process.stderr.write(stderr);
-		}
-	});
+while ( arg = args.shift() ) {
+  var matches = /--([^=]+)=(.+)/.exec(arg);
+
+  if ( matches ) {
+    var key = matches[1].replace(/-\w/g, matches => matches[1].toUpperCase());
+    var value = matches[2];
+
+    options.hasOwnProperty(key) && ( options[key] = value );
+  }
 }
+
+const wappalyzer = require('./driver')(options);
+
+wappalyzer.analyze(url)
+  .then(json => {
+    process.stdout.write(JSON.stringify(json) + '\n')
+
+    process.exit(0);
+  })
+  .catch(error => {
+    process.stderr.write(error + '\n')
+
+    process.exit(1);
+  });

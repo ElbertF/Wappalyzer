@@ -1,228 +1,103 @@
-/**
- * PhantomJS driver
- */
+'use strict';
 
-/** global: phantom */
-/** global: wappalyzer */
+const driver = options => {
+  const Wappalyzer = require('./wappalyzer');
+  const request = require('request');
+  const fs = require('fs');
+  const Browser = require('zombie', {
+    userAgent: options.userAgent
+  });
 
-(function() {
-	var
-		url,
-		originalUrl,
-		scriptDir,
-		scriptPath      = require('fs').absolute(require('system').args[0]),
-		resourceTimeout = 9000,
-		args            = [],    // TODO: Not used, maybe should be `arg`
-		debug           = false, // Output debug messages
-		quiet           = false; // Don't output errors
+  const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 
-	try {
-		// Working directory
-		scriptDir = scriptPath.split('/'); scriptDir.pop(); scriptDir = scriptDir.join('/');
+  return {
+    analyze: url => {
+      const wappalyzer = new Wappalyzer();
 
-		require('fs').changeWorkingDirectory(scriptDir);
+      wappalyzer.apps = json.apps;
+      wappalyzer.categories = json.categories;
 
-		require('system').args.forEach(function(arg) {
-			var
-				value,
-				arr = /^(--[^=]+)=(.+)$/.exec(arg);
+      return new Promise((resolve, reject) => {
+        wappalyzer.driver.log = (message, source, type) => {
+          if ( type === 'error' ) {
+            return reject(message);
+          }
 
-			if ( arr && arr.length === 3 ) {
-				arg   = arr[1];
-				value = arr[2];
-			}
+          if ( Boolean(options.debug) ) {
+            console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+          }
+        };
 
-			switch ( arg ) {
-				case '-v':
-				case '--verbose':
-					debug = true;
+        wappalyzer.driver.displayApps = detected => {
+          var apps = [];
 
-					break;
-				case '-q':
-				case '--quiet':
-					quiet = true;
+          Object.keys(detected).forEach(appName => {
+            const app = detected[appName];
 
-					break;
-				case '--resource-timeout':
-					if ( value ) {
-						resourceTimeout = value;
-					}
+            var categories = [];
 
-					break;
-				default:
-					url = originalUrl = arg;
-			}
-		});
+            app.props.cats.forEach(id => {
+              var category = {};
 
-		if ( !url ) {
-			throw new Error('Usage: phantomjs ' + require('system').args[0] + ' <url>');
-		}
+              category[id] = wappalyzer.categories[id].name;
 
-		if ( !phantom.injectJs('wappalyzer.js') ) {
-			throw new Error('Unable to open file js/wappalyzer.js');
-		}
+              categories.push(category)
+            });
 
-		wappalyzer.driver = {
-			timeout: 1000,
+            apps.push({
+              name: app.name,
+              confidence: app.confidenceTotal.toString(),
+              version: app.version,
+              icon: app.props.icon || 'default.svg',
+              website: app.props.website,
+              categories
+            });
+          });
 
-			/**
-			 * Log messages to console
-			 */
-			log: function(args) {
-				if ( args.type === 'error' ) {
-					if ( !quiet ) {
-						require('system').stderr.write(args.message + "\n");
-					}
-				} else if ( debug || args.type !== 'debug' ) {
-					require('system').stdout.write(args.message + "\n");
-				}
-			},
+          resolve(apps);
+        };
 
-			/**
-			 * Display apps
-			 */
-			displayApps: function() {
-				var
-					app, cats,
-					apps  = [];
+        const browser = new Browser();
 
-				wappalyzer.log('driver.displayApps');
+        browser.visit(url, error => {
+          if ( !browser.resources['0'] || !browser.resources['0'].response ) {
+            return wappalyzer.log('No response from server', 'driver', 'error');
+          }
 
-				for ( app in wappalyzer.detected[url] ) {
-					cats = [];
+          browser.wait(options.maxWait)
+            .catch(error => wappalyzer.log(error.message, 'browser'))
+            .finally(() => {
+              wappalyzer.driver.document = browser.document;
 
-					wappalyzer.apps[app].cats.forEach(function(cat) {
-						cats.push(wappalyzer.categories[cat].name);
-					});
+              const headers = {};
 
-					apps.push({
-						name: app,
-						confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
-						version:    wappalyzer.detected[url][app].version,
-						icon:       wappalyzer.apps[app].icon || 'default.svg',
-						website:    wappalyzer.apps[app].website,
-						categories: cats
-					});
-				}
+              browser.resources['0'].response.headers._headers.forEach(header => {
+                if ( !headers[header[0]] ){
+                  headers[header[0]] = [];
+                }
+                headers[header[0]].push(header[1]);
+              });
 
-				wappalyzer.driver.sendResponse(apps);
-			},
+              const vars = Object.getOwnPropertyNames(browser.window);
+              const html = browser.html();
+              const scripts = Array.prototype.slice
+                .apply(browser.document.scripts)
+                .filter(s => s.src)
+                .map(s => s.src);
 
-			/**
-			 * Send response
-			 */
-			sendResponse: function(apps) {
-				apps = apps || [];
+            const hostname = wappalyzer.parseUrl(url).hostname;
 
-				require('system').stdout.write(JSON.stringify({ url: url, originalUrl: originalUrl, applications: apps }) + "\n");
-			},
+              wappalyzer.analyze(hostname, url, {
+                headers,
+                html,
+                env: vars,
+                scripts
+              });
+            });
+        });
+      });
+    }
+  };
+};
 
-			/**
-			 * Initialize
-			 */
-			init: function() {
-				var
-					page, hostname,
-					headers = {},
-					a       = document.createElement('a'),
-					json    = JSON.parse(require('fs').read('apps.json'));
-
-				wappalyzer.log('driver.init');
-
-				a.href = url.replace(/#.*$/, '');
-
-				hostname = a.hostname;
-
-				wappalyzer.apps       = json.apps;
-				wappalyzer.categories = json.categories;
-
-				page = require('webpage').create();
-
-				page.settings.loadImages      = false;
-				page.settings.userAgent       = 'Mozilla/5.0 (compatible; Wappalyzer; +https://github.com/AliasIO/Wappalyzer)';
-				page.settings.resourceTimeout = resourceTimeout;
-
-				page.onError = function(message) {
-					wappalyzer.log(message, 'error');
-				};
-
-				page.onResourceTimeout = function() {
-					wappalyzer.log('Resource timeout', 'error');
-
-					wappalyzer.driver.sendResponse();
-
-					phantom.exit(1);
-				};
-
-				page.onResourceReceived = function(response) {
-					if ( response.url.replace(/\/$/, '') === url.replace(/\/$/, '') ) {
-						if ( response.redirectURL ) {
-							url = response.redirectURL;
-
-							return;
-						}
-
-						if ( response.stage === 'end' && response.status === 200 && response.contentType.indexOf('text/html') !== -1 ) {
-							response.headers.forEach(function(header) {
-								headers[header.name.toLowerCase()] = header.value;
-							});
-						}
-					}
-				};
-
-				page.onResourceError = function(resourceError) {
-					wappalyzer.log(resourceError.errorString, 'error');
-				};
-
-				page.open(url, function(status) {
-					var html, environmentVars = '';
-
-					if ( status === 'success' ) {
-						html = page.content;
-
-						if ( html.length > 50000 ) {
-							html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-						}
-
-						// Collect environment variables
-						environmentVars = page.evaluate(function() {
-							var i, environmentVars = '';
-
-							for ( i in window ) {
-								environmentVars += i + ' ';
-							}
-
-							return environmentVars;
-						});
-
-						wappalyzer.log({ message: 'environmentVars: ' + environmentVars });
-
-						environmentVars = environmentVars.split(' ').slice(0, 500);
-
-						wappalyzer.analyze(hostname, url, {
-							html:    html,
-							headers: headers,
-							env:     environmentVars
-						});
-
-						phantom.exit(0);
-					} else {
-						wappalyzer.log('Failed to fetch page', 'error');
-
-						wappalyzer.driver.sendResponse();
-
-						phantom.exit(1);
-					}
-				});
-			}
-		};
-
-		wappalyzer.init();
-	} catch ( e ) {
-		wappalyzer.log(e, 'error');
-
-		wappalyzer.driver.sendResponse();
-
-		phantom.exit(1);
-	}
-})();
+module.exports = driver;

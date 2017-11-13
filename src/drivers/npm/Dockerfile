@@ -1,24 +1,14 @@
-FROM ubuntu:latest
+FROM alpine
 
 MAINTAINER Elbert Alias <elbert@alias.io>
 
-ENV DEBIAN_FRONTEND noninteractive
+ENV WAPPALYZER_ROOT /opt/wappalyzer
 
-ENV WAPPALYZER_ROOT /usr/local/wappalyzer
-
-RUN sed -i 's/archive\.ubuntu\.com/au.archive.ubuntu.com/g' /etc/apt/sources.list
-
-RUN \
-	apt-get update && apt-get install -y \
-	libfreetype6 \
-	libfontconfig \
+RUN apk update && apk add --no-cache \
 	nodejs \
-	npm \
-	&& apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+	nodejs-npm
 
-RUN ln -s $(which nodejs) /usr/bin/node
-
-RUN mkdir "$WAPPALYZER_ROOT"
+RUN mkdir -p "$WAPPALYZER_ROOT"
 
 WORKDIR "$WAPPALYZER_ROOT"
 

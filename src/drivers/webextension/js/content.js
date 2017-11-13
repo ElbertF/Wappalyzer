@@ -1,63 +1,66 @@
 /** global: browser */
 
-(function() {
-	var c = {
-		init: function() {
-			var html = document.documentElement.outerHTML;
+if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
+  var html = document.documentElement.outerHTML;
 
-			c.log('Function call: init()');
+  if ( html.length > 50000 ) {
+    html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+  }
 
-			if ( html.length > 50000 ) {
-				html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-			}
+  var scripts = Array.prototype.slice
+      .apply(document.scripts)
+      .filter(s => s.src)
+      .map(s => s.src);
 
-			browser.runtime.sendMessage({ id: 'analyze', subject: { html: html }, source: 'content.js' });
+  try {
+    browser.runtime.sendMessage({
+      id: 'analyze',
+      subject: { html },
+      source: 'content.js'
+    });
 
-			c.getEnvironmentVars();
-		},
+    browser.runtime.sendMessage({
+      id: 'analyze',
+      subject: { scripts },
+      source: 'content.js'
+    });
 
-		log: function(message) {
-			browser.runtime.sendMessage({ id: 'log', message: message, source: 'content.js' });
-		},
+    var container = document.createElement('wappalyzerData');
 
-		getEnvironmentVars: function() {
-			var container, script;
+    container.setAttribute('id',    'wappalyzerData');
+    container.setAttribute('style', 'display: none');
 
-			c.log('Function call: getEnvironmentVars()');
+    var script = document.createElement('script');
 
-			if ( typeof document.documentElement.innerHTML === 'undefined' ) {
-				return;
-			}
+    script.setAttribute('id', 'wappalyzerEnvDetection');
+    script.setAttribute('src', browser.extension.getURL('js/inject.js'));
 
-			try {
-				container = document.createElement('wappalyzerData');
+    container.addEventListener('wappalyzerEvent', (event => {
+      var env = event.target.childNodes[0].nodeValue;
 
-				container.setAttribute('id',    'wappalyzerData');
-				container.setAttribute('style', 'display: none');
+      document.documentElement.removeChild(container);
+      document.documentElement.removeChild(script);
 
-				script = document.createElement('script');
+      env = env.split(' ').slice(0, 500);
 
-				script.setAttribute('id', 'wappalyzerEnvDetection');
-				script.setAttribute('src', browser.extension.getURL('js/inject.js'));
+      browser.runtime.sendMessage({
+        id: 'analyze',
+        subject: { env },
+        source: 'content.js'
+      });
+    }), true);
 
-				container.addEventListener('wappalyzerEvent', (function(event) {
-					var environmentVars = event.target.childNodes[0].nodeValue;
+    document.documentElement.appendChild(container);
+    document.documentElement.appendChild(script);
+  } catch(e) {
+    log(e);
+  }
+}
 
-					document.documentElement.removeChild(container);
-					document.documentElement.removeChild(script);
-
-					environmentVars = environmentVars.split(' ').slice(0, 500);
-
-					browser.runtime.sendMessage({ id: 'analyze', subject: { env: environmentVars }, source: 'content.js' });
-				}), true);
-
-				document.documentElement.appendChild(container);
-				document.documentElement.appendChild(script);
-			} catch(e) {
-				c.log('Error: ' + e);
-			}
-		}
-	}
-
-	c.init();
-}());
+function log(message) {
+  browser.runtime.sendMessage({
+    id: 'log',
+    message,
+    source: 'content.js'
+  });
+}

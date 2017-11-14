@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="110.03056"
+   height="107.5"
+   viewBox="0 0 88.024445 86"
+   version="1.1"
+   id="svg2"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"
+   sodipodi:docname="Microsoft_PowerPoint_2013_logo.svg">
+  <metadata
+     id="metadata126">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs124">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath18">
+      <path
+         d="M 0,204 H 250.91 V 0 H 0 Z"
+         id="path16"
+         inkscape:connector-curvature="0" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1360"
+     inkscape:window-height="706"
+     id="namedview122"
+     showgrid="false"
+     inkscape:zoom="4"
+     inkscape:cx="68.378088"
+     inkscape:cy="84.987245"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <g
+     id="g12"
+     transform="matrix(0.48158935,0,0,-0.49500577,-16.645044,93.37089)">
+    <g
+       id="g14"
+       clip-path="url(#clipPath18)">
+      <g
+         id="g20"
+         transform="translate(211.3203,43.75)">
+        <path
+           d="m 0,0 v 0 m -0.01,0 h -72.24 v 15.083 h 56.333 v 7 H -72.25 v 11.833 h 56.333 v 7 H -72.25 v 19.453 c 4.539,-5.322 11.289,-8.702 18.833,-8.702 13.669,0 24.749,11.081 24.749,24.749 h -24.749 v 24.749 c -7.544,0 -14.294,-3.38 -18.833,-8.702 V 120 H 0 Z M 0,126 h -72.25 v 18.874 l -104.5,-18.131 V -10.745 l 104.5,-18.131 V -6 H 0 c 3.309,0 6,2.691 6,6 v 120 c 0,3.309 -2.691,6 -6,6"
+           style="fill:#cb4a32;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path22"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         id="g24"
+         transform="translate(161.7363,148.416)">
+        <path
+           d="M 0,0 V -24.749 H 24.749 C 24.749,-11.081 13.669,0 0,0"
+           style="fill:#cb4a32;fill-opacity:1;fill-rule:nonzero;stroke:none"
+           id="path26"
+           inkscape:connector-curvature="0" />
+      </g>
+      <g
+         id="g28"
+         transform="translate(78.7876,102.8086)">
+        <path
+           d="m 0,0 c 4.169,-0.32 8.241,-1.099 10.773,3.223 1.914,3.261 1.753,9.22 -0.467,11.726 C 7.435,18.189 3.726,17.727 0,17.137 Z m -0.294,-30.68 h -10.467 v 58.422 c 8.075,0 16.109,0.227 24.113,-0.153 2.104,-0.1 4.547,-1.664 6.1,-3.268 5.944,-6.137 5.945,-13.782 4.169,-21.407 -1.583,-6.791 -5.964,-11.569 -12.869,-13.249 -3.44,-0.837 -7.121,-0.683 -11.046,-1.006 z"
+           style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
+           id="path30"
+           inkscape:connector-curvature="0" />
+      </g>
+    </g>
+  </g>
+</svg>

@@ -5259,6 +5259,18 @@
 			},
 			"website": "https://office.microsoft.com/excel"
 		},
+		"Microsoft PowerPoint": {
+			"cats": [
+				"20"
+			],
+			"icon": "Microsoft PowerPoint.svg",
+			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:powerpoint\"|<link rel=\"?Presentation-XML\"? href=\"?[^\"]+.xml\"?>|<o:PresentationFormat>[^<]+</o:PresentationFormat>[^!]+<o:Slides>\\d+</o:Slides>(?:[^!]+<o:Version>([\\d.]+)</o:Version>)?)\\;version:\\1",
+			"meta": {
+				"generator": "Microsoft PowerPoint ( [\\d.]+)?\\;version:\\1",
+				"ProgId": "^PowerPoint\\."
+			},
+			"website": "https://office.microsoft.com/powerpoint"
+		},
 		"Microsoft Publisher": {
 			"cats": [
 				"20"

@@ -5259,6 +5259,18 @@
 			},
 			"website": "https://office.microsoft.com/excel"
 		},
+		"Microsoft Publisher": {
+			"cats": [
+				"20"
+			],
+			"icon": "Microsoft Publisher.svg",
+			"html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:publisher\"|<!--[if pub]><xml>)",
+			"meta": {
+				"generator": "Microsoft Publisher( [\\d.]+)?\\;version:\\1",
+				"ProgId": "^Publisher\\."
+			},
+			"website": "https://office.microsoft.com/publisher"
+		},
 		"Microsoft SharePoint": {
 			"cats": [
 				"1"

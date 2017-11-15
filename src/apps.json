@@ -10135,7 +10135,7 @@
 			"cats": [
 				"47"
 			],
-			"icon": "git.png",
+			"icon": "git.svg",
 			"meta": {
 				"generator": "\bgit/([\\d.]+\\d)\\;version:\\1"
 			},
@@ -10157,7 +10157,7 @@
 				"47"
 			],
 			"html": "<!-- git web interface version ([\\d.]+)?\\;version:\\1",
-			"icon": "git.png",
+			"icon": "git.svg",
 			"implies": [
 				"Perl",
 				"git"

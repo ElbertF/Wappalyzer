@@ -6358,7 +6358,7 @@
 			],
 			"env": "^PAYPAL$",
 			"html": "<input[^>]+_s-xclick",
-			"icon": "PayPal.png",
+			"icon": "PayPal.svg",
 			"script": "paypalobjects\\.com/js",
 			"website": "http://paypal.com"
 		},

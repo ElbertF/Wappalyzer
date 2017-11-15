@@ -4,9 +4,7 @@ const driver = options => {
   const Wappalyzer = require('./wappalyzer');
   const request = require('request');
   const fs = require('fs');
-  const Browser = require('zombie', {
-    userAgent: options.userAgent
-  });
+  const Browser = require('zombie');
 
   const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 
@@ -57,7 +55,7 @@ const driver = options => {
           resolve(apps);
         };
 
-        const browser = new Browser();
+        const browser = new Browser({userAgent: options.userAgent});
 
         browser.visit(url, error => {
           if ( !browser.resources['0'] || !browser.resources['0'].response ) {

@@ -6247,7 +6247,7 @@
 			],
 			"env": "^IsOwaPremiumBrowser$",
 			"html": "<link\\s[^>]*href=\"[^\"]*?([\\d.]+)/themes/resources/owafont\\.css\\;version:\\1",
-			"icon": "Outlook Web App.png",
+			"icon": "Outlook.svg",
 			"implies": "Microsoft ASP.NET",
 			"url": "/owa/auth/log(?:on|off)\\.aspx",
 			"website": "http://help.outlook.com"

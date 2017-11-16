@@ -10973,29 +10973,9 @@
 			"headers": {
 				"X-Akaunting": "^Free Accounting Software$"
 			},
-<<<<<<< HEAD
-			"icon": "Shopery.svg",
-			"implies": [
-				"PHP",
-				"Symfony",
-				"Elcodi"
-			],
-			"website": "shopery.com"
-		},
-		"ArvanCloud": {
-			"cats": [
-				31
-			],
-			"headers": {
-				"Server": "ArvanCloud"
-			},
-			"icon": "ArvanCloud.png",
-			"website": "www.Arvancloud.com"
-=======
 			"implies": "Laravel",
 			"icon": "akaunting.svg",
 			"website": "https://akaunting.com"
->>>>>>> 42226d76220e74d62c91bac810083dc0d4604c9e
 		}
 	},
 	"categories": {

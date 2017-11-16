@@ -4,17 +4,23 @@ var
 	app,
 	fs        = require('fs'),
 	fileType  = require('../node_modules/file-type'),
-	readChunk = require('../node_modules/read-chunk')
-	isSvg     = require('../node_modules/is-svg')
-	json      = require('../src/apps.json');
+	readChunk = require('../node_modules/read-chunk'),
+	isSvg     = require('../node_modules/is-svg'),
+	json      = require('../src/apps.json'),
+
+	basePath = 'src/icons/',
+
+	iconPaths = [];//Will be used to check for stray icons
+
 
 for (app in json.apps) {
 	(function(app) {
 		var
-			basePath = 'src/icons/';
 			iconPath = json.apps[app].icon || 'default.svg';
 			path     = basePath + iconPath,
 			ext      = iconPath.substr(iconPath.length - 4);
+
+		iconPaths.push(iconPath)
 
 		if ( ext !== '.png' && ext !== '.svg' ) {
 			throw err = new Error('Icon file extension specified for app "' + app + '" is not ".png" or ".svg": src/icons/' + iconPath);
@@ -41,3 +47,14 @@ for (app in json.apps) {
 		});
 	}(app));
 }
+
+
+// Check for stray files in icons folder
+  fs.readdirSync(basePath).forEach(function(file) {
+	if (!fs.statSync(basePath + file).isDirectory()) {
+		if(iconPaths.indexOf(file) === -1){
+			throw new Error('Stray file (no associated app): ' + basePath + file);
+		}
+	}
+  });
+

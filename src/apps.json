@@ -4715,7 +4715,7 @@
 			"headers": {
 				"Server": "^LiteSpeed$"
 			},
-			"icon": "LiteSpeed.png",
+			"icon": "LiteSpeed.svg",
 			"website": "http://litespeedtech.com"
 		},
 		"Lithium": {

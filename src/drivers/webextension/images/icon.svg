@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="114px" height="97px" viewBox="0 0 114 97" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>Logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Styleguide" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="wappalyzer_rebrand" transform="translate(-317.000000, -669.000000)">
+            <g id="Logo" transform="translate(317.000000, 669.000000)">
+                <g id="Logo-Mark-Purple">
+                    <polygon id="Fill-1" fill="#1C0172" points="57.0285 74.6616 6.5385 48.4526 0.0015 53.1396 -0.0005 56.0066 57.0285 96.9046 114.0545 56.0086 114.0585 53.1426 107.5185 48.4526"></polygon>
+                    <path d="M57.0285,0.0003 L0.0025,40.8963 L-0.0005,43.7633 L57.0285,84.6623 L114.0545,43.7653 L114.0575,40.8983 L57.0285,0.0003 Z M64.4895,40.3623 L57.5365,30.7743 L63.4645,26.4363 L75.8235,44.7273 L70.8465,48.3703 L57.5555,42.8723 L57.4985,42.9133 L65.0675,52.5983 L60.0905,56.2403 L35.0915,47.1963 L41.0385,42.8443 L54.1065,47.9333 L54.1805,47.8783 L46.9285,38.5343 L51.6075,35.1113 L64.4145,40.4173 L64.4895,40.3623 Z" id="Fill-2" fill="#4608AD"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

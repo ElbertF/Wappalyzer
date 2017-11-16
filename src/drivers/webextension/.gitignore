@@ -1,0 +1,7 @@
+/apps.json
+/images/icons/*
+/images/icons/converted/*
+/js/wappalyzer.js
+/node_modules
+
+!.gitkeep

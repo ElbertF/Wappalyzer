@@ -1,0 +1,14 @@
+#!/bin/bash
+
+cd "$(dirname $0)/../src"
+
+echo "Creating links..."
+
+ln -nf  apps.json        drivers/npm
+ln -nf  wappalyzer.js    drivers/npm
+
+ln -nf  apps.json        drivers/webextension
+ln -nf  wappalyzer.js    drivers/webextension/js
+ln -nsf ../../../icons/  drivers/webextension/images/icons
+
+echo "Done."

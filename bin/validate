@@ -1,0 +1,17 @@
+#!/bin/bash
+
+cd "$(dirname $0)/.."
+
+set -eu
+
+echo "Validating apps.json..."
+
+jsonlint-cli -s schema.json src/apps.json
+
+echo "Validating regular expressions..."
+
+./bin/validate-regex
+
+echo "Validating icons..."
+
+./bin/validate-icons

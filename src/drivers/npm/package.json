@@ -1,39 +1,23 @@
 {
   "name": "wappalyzer",
-  "version": "2.0.3",
-  "description": "NPM Module that uncovers the technologies used on websites",
-  "main": "index.js",
-  "scripts": {
-    "test": "NODE_ENV=testing mocha -t 15000"
-  },
+  "description": "Uncovers the technologies used on websites",
+  "homepage": "https://github.com/AliasIO/Wappalyzer",
+  "version": "5.1.6",
+  "author": "Elbert Alias",
+  "license": "GPL-3.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/AliasIO/Wappalyzer"
   },
-  "keywords": [
-    "wappalyzer",
-    "detect",
-    "stack",
-    "technologies"
+  "main": "driver.js",
+  "files": [
+    "apps.json",
+    "index.js",
+    "driver.js",
+    "wappalyzer.js"
   ],
-  "contributors": [
-    { 
-      "name": "Pasindu De Silva"
-    },
-    { 
-      "name": "Johann du Toit"
-    }
-  ],
-  "author": "Elbert Alias",
-  "license": "GPLv3",
-  "bugs": {
-    "url": "https://github.com/AliasIO/Wappalyzer/issues"
-  },
-  "homepage": "https://github.com/AliasIO/Wappalyzer",
-  "directories": {
-    "test": "test"
-  },
   "dependencies": {
-    "request": "^2.51.0"
+    "request": "^2.81.0",
+    "zombie": "^5.0.7"
   }
 }

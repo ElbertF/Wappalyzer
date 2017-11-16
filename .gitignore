@@ -1,17 +1,15 @@
-.vagrant
-
-build/*
-
-drivers/npm/node_modules
-drivers/npm/npm-debug.log
-
-package.json
-node_modules/
-npm-debug.log
-
-Thumbs.db
-ehthumbs.db
-Desktop.ini
-$RECYCLE.BIN/
+/build/*
+/src/icons/converted/*
+/node_modules
+/npm-debug.log
+/npm-debug.log
 
 !.gitkeep
+
+# Junk files
+Thumbs.db
+Desktop.ini
+*.DS_Store
+._*
+tags
+tags.*

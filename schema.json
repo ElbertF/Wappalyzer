@@ -9,7 +9,16 @@
 			"additionalProperties": false,
 			"patternProperties": {
 				"^[0-9]+$": {
-					"type": "string"
+					"type": "object",
+					"required": true,
+					"properties": {
+						"priority": {
+							"type": "string"
+						},
+						"name": {
+							"type": "string"
+						}
+					}
 				}
 			}
 		},
@@ -22,7 +31,7 @@
 					"cats": {
 						"type": "array",
 						"items": {
-							"type": "integer"
+							"type": "string"
 						},
 						"required": true
 					},
@@ -76,8 +85,7 @@
 						"required": true
 					},
 					"icon": {
-						"type": "string",
-						"required": true
+						"type": "string"
 					}
 				}
 			}

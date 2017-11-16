@@ -1,0 +1,11 @@
+#!/bin/bash
+
+cat << 'EOF'
+usage: ./run <command> [<args>]
+
+The following commands are available:
+  build		Package drivers
+  help		This help text
+  links		Create symlinks to shared files in each driver
+  validate	Validate apps.json
+EOF

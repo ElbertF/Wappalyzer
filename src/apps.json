@@ -5376,7 +5376,7 @@
 				"12"
 			],
 			"env": "^Modernizr$",
-			"icon": "Modernizr.png",
+			"icon": "Modernizr.svg",
 			"script": "modernizr(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
 			"website": "http://www.modernizr.com"
 		},

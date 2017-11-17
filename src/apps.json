@@ -9698,6 +9698,23 @@
 			"icon": "XenForo.png",
 			"website": "http://xenforo.com"
 		},
+		"Xeora": {
+			"cats": [
+				"18",
+				"22",
+				"27"
+			],
+			"html": [
+				"<input type=\"hidden\" name=\"_sys_bind_*\" id=\"_sys_bind_*\" />"
+			],
+			"headers": {
+				"Server": "XeoraEngine",
+				"X-Powered-By": "XeoraCube"
+			},
+			"icon": "xeora.png",
+			"script": "/_bi_sps_v*\\.js",
+			"website": "http://www.xeora.org"
+		},
 		"Xitami": {
 			"cats": [
 				"22"

@@ -7495,6 +7495,7 @@
 				"Server": "Demandware eCommerce Server"
 			},
 			"html": "<[^>]+demandware\\.edgesuite",
+			"script": "/demandware\\.static/",
 			"icon": "Salesforce.svg",
 			"website": "http://demandware.com"
 		},

@@ -8350,10 +8350,10 @@
 			],
 			"icon": "svbtle.png",
 			"meta": {
-				"generator": "^Svbtle.com$"
+				"generator": "^Svbtle\\.com$"
 			},
 			"url": "\\.svbtle\\.com",
-			"website": "http://www.svbtle.com"
+			"website": "https://www.svbtle.com"
 		},
 		"SweetAlert": {
 			"cats": [

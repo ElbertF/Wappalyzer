@@ -461,7 +461,7 @@
 			"env": "^AUI$",
 			"icon": "AlloyUI.png",
 			"implies": [
-				"Twitter Bootstrap",
+				"Bootstrap",
 				"YUI"
 			],
 			"script": "^https?://cdn\\.alloyui\\.com/",
@@ -8258,7 +8258,7 @@
 			],
 			"icon": "strapdown.js.png",
 			"implies": [
-				"Twitter Bootstrap",
+				"Bootstrap",
 				"Google Code Prettify"
 			],
 			"script": "strapdown\\.js",
@@ -8785,19 +8785,18 @@
 			"script": "//platform\\.twitter\\.com/widgets\\.js",
 			"website": "http://twitter.com"
 		},
-		"Twitter Bootstrap": {
+		"Bootstrap": {
 			"cats": [
 				"18"
 			],
-			"env": "^Twipsy$\\;confidence:50",
 			"html": [
 				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
 				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
 				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
 			],
-			"icon": "Twitter Bootstrap.png",
-			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.js|\\.min\\.js))",
-			"website": "http://getbootstrap.com"
+			"icon": "Bootstrap.png",
+			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.min)?\\.js)",
+			"website": "https://getbootstrap.com"
 		},
 		"Twitter Emoji (Twemoji)": {
 			"cats": [

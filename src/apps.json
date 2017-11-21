@@ -8344,6 +8344,17 @@
 			"script": "supersized(?:\\.([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
 			"website": "http://buildinternet.com/project/supersized"
 		},
+		"Svbtle": {
+			"cats": [
+				"11"
+			],
+			"icon": "svbtle.png",
+			"meta": {
+				"generator": "^Svbtle.com$"
+			},
+			"url": "\\.svbtle\\.com",
+			"website": "http://www.svbtle.com"
+		},
 		"SweetAlert": {
 			"cats": [
 				"12"

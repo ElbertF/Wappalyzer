@@ -9138,6 +9138,18 @@
 			"script": "zencdn\\.net/c/video\\.js",
 			"website": "http://videojs.com"
 		},
+		"Vigbo": {
+			"cats": [
+				"1"
+			],
+			"headers": {
+				"Set-Cookie": "_gphw_mode="
+			},
+			"icon": "vigbo.png",
+      "html": "<link[^>]* href=[^>]+(?:.vigbo.com|.gophotoweb.com)",
+      "script": "(?:.vigbo.com|.gophotoweb.com)",
+			"website": "https://vigbo.com"
+		},
 		"VigLink": {
 			"cats": [
 				"36"

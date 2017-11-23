@@ -9564,7 +9564,7 @@
 			"meta": {
 				"generator": "WooCommerce ([\\d.]+)\\;version:\\1"
 			},
-			"script": "woocommerce",
+			"script": "woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
 			"website": "http://www.woothemes.com/woocommerce"
 		},
 		"Woopra": {

@@ -8597,7 +8597,7 @@
 			"cats": [
 				"6"
 			],
-      "html": "<link[^>]*tictail\\.com",
+      		"html": "<link[^>]*tictail\\.com",
 			"icon": "tictail.png",
 			"website": "https://tictail.com"
 		},
@@ -8633,6 +8633,15 @@
 			},
 			"script": "(?:/|_)tiki",
 			"website": "http://tiki.org"
+		},
+		"Tilda": {
+			"cats": [
+				"1",
+			],
+			"icon": "tilda.png",
+			"html": "<link[^>]* href=[^>]+(tildacdn|tilda.ws|tilda-blocks)",
+			"script": "(tildacdn|tilda.ws|tilda-blocks)",
+			"website": "https://tilda.cc"
 		},
 		"Timeplot": {
 			"cats": [

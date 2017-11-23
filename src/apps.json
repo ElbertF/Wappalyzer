@@ -8636,7 +8636,7 @@
 		},
 		"Tilda": {
 			"cats": [
-				"1",
+				"1"
 			],
 			"icon": "tilda.png",
 			"html": "<link[^>]* href=[^>]+(tildacdn|tilda.ws|tilda-blocks)",

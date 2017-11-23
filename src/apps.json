@@ -1558,6 +1558,7 @@
 				"Server": "cloudflare"
 			},
 			"icon": "CloudFlare.svg",
+			"script": "cloudflare.com/",
 			"website": "http://www.cloudflare.com"
 		},
 		"Cloudera": {

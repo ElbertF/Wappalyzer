@@ -8639,8 +8639,8 @@
 				"1"
 			],
 			"icon": "tilda.png",
-			"html": "<link[^>]* href=[^>]+(tildacdn|tilda.ws|tilda-blocks)",
-			"script": "(tildacdn|tilda.ws|tilda-blocks)",
+			"html": "<link[^>]* href=[^>]+tilda(cdn|.ws|-blocks)",
+			"script": "tilda(cdn|.ws|-blocks)",
 			"website": "https://tilda.cc"
 		},
 		"Timeplot": {

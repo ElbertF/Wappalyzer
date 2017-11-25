@@ -1,5 +1,26 @@
 {
 	"apps": {
+		"aframe": {
+			"cats": [
+				"6"
+			],
+       "env": "aframe",
+  "headers": {
+    "X-Powered-By": "ThreeJs"
+  },
+  "html": "<link[^>]aframe\\.css",
+  "implies": "ThreeJS\\;confidence:100",
+  "meta": {
+    "generator": "(?:threejs)"
+  },
+  "script": "aframe.min-([0-9.]+)\\.js\\;confidence:50\\;version:\\1",
+  "url": ".+\\.aframe\\.io",
+  "website": "https://aframe.io",
+}
+			"icon": "aframe.svg",
+		"website": "https://aframe.io"
+    },
+
 		"1&1": {
 			"cats": [
 				"6"
@@ -9,6 +30,7 @@
 			"url": "/shop/catalog/browse\\?sessid=",
 			"website": "http://1and1.com"
 		},
+    
 		"1C-Bitrix": {
 			"cats": [
 				"1"

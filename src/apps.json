@@ -8283,6 +8283,19 @@
 			"script": "js\\.stripe\\.com",
 			"website": "http://stripe.com"
 		},
+    "styled-components": {
+      "cats": [
+        "12",
+        "47"
+      ],
+			"implies": [
+				"React"
+			],
+      "icon": "styled-components.png",
+      "website": "https://styled-components.com",
+      "html": "<style[^>]*data-styled-components",
+      "env": "^styled$"
+    },
 		"SublimeVideo": {
 			"cats": [
 				"14"

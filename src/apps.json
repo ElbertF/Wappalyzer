@@ -1834,7 +1834,7 @@
 		},
     "Crypto-Loot": {
 			"cats": [
-				"19"
+				"56"
 			],
 			"env": "^CryptoLoot$",
 			"script": "^(?:https):?//crypto-loot\\.com/lib/",
@@ -6775,7 +6775,7 @@
 		},
 		"ProjectPoi": {
 			"cats": [
-				"19"
+				"56"
 			],
 			"env": "^ProjectPoi$",
 			"script": "^(?:https):?//ppoi\\.org/lib/",

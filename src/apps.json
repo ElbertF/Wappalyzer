@@ -6151,6 +6151,14 @@
 			"implies": "Microsoft ASP.NET",
 			"website": "http://websolutions.opentext.com"
 		},
+		"OpenUI5": {
+			"cats": [
+				"12"
+			],
+			"icon": "OpenUI5.png",
+			"env": "sap.ui$",
+			"website": "http://openui5.org/"
+		},
 		"OpenX": {
 			"cats": [
 				"36"

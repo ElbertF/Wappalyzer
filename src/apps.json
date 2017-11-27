@@ -739,6 +739,16 @@
 			},
 			"website": "http://www.methods.co.nz/asciidoc"
 		},
+		"Asciinema": {
+			"cats": [
+				"14"
+			],
+			"env": "^asciinema$",
+			"script": "asciinema\\.org/",
+			"icon": "asciinema.png",
+			"html": "<asciinema-player",
+			"website": "https://asciinema.org/"
+		},
 		"Atlassian Bitbucket": {
 			"cats": [
 				"47"

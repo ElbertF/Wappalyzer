@@ -1592,7 +1592,7 @@
 		},
 		"CoinHive": {
 			"cats": [
-				"19"
+				"56"
 			],
 			"env": "^CoinHive$",
 			"script":  "\\/(?:coinhive|(authedmine))(?:\\.min)?\\.js\\;version:\\1?opt-in:",
@@ -1602,7 +1602,8 @@
 		},
 		"CoinHive Captcha": {
 			"cats": [
-				"16"
+				"16",
+				"56"
 			],
 			"html": "(?:<div[^>]+class=\"coinhive-captcha[^>]+data-key|<div[^>]+data-key[^>]+class=\"coinhive-captcha)",
 			"script":  "https?://authedmine\\.com/(?:lib/captcha|captcha)",
@@ -4260,7 +4261,7 @@
 		},
 		"JSEcoin": {
 			"cats": [
-				"19"
+				"56"
 			],
 			"env": "^jseMine$",
 			"script": "^(?:https):?//load\\.jsecoin\\.com/server/load/",
@@ -11286,6 +11287,10 @@
 		"55": {
 			"name": "Accounting",
 			"priority": "1"
+		},
+		"56": {
+			"name": "Cryptominer",
+			"priority": "8"
 		}
 	}
 }

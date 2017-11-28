@@ -2660,7 +2660,8 @@
 				"31"
 			],
 			"headers": {
-				"Fastly-Debug-Digest": ""
+				"Fastly-Debug-Digest": "",
+				"X-Fastly-Request-ID": ""
 			},
 			"icon": "Fastly.svg",
 			"website": "https://www.fastly.com"

@@ -992,7 +992,7 @@
 			"meta": {
 				"generator": "^Blogger$"
 			},
-			"url": "\\.blogspot\\.com",
+			"url": "^https?://[^/]+\\.blogspot\\.com",
 			"website": "http://www.blogger.com"
 		},
 		"Bluefish": {
@@ -1596,7 +1596,7 @@
 			],
 			"env": "^CoinHive$",
 			"script":  "\\/(?:coinhive|(authedmine))(?:\\.min)?\\.js\\;version:\\1?opt-in:",
-			"url": "https?://cnhv.co/",
+			"url": "https?://cnhv\\.co/",
 			"icon": "CoinHive.svg",
 			"website": "https://coinhive.com"
 		},
@@ -3264,7 +3264,7 @@
 				"1"
 			],
 			"icon": "Google Sites.png",
-			"url": "sites\\.google\\.com",
+			"url": "^https?://sites\\.google\\.com",
 			"website": "http://sites.google.com"
 		},
 		"Google Tag Manager": {
@@ -5180,7 +5180,7 @@
 			},
 			"icon": "Medium.svg",
 			"script": "medium\\.com",
-			"url": "^(?:www\\.)?medium\\.com",
+			"url": "^^https?://(?:www\\.)?medium\\.com",
 			"website": "https://medium.com"
 		},
 		"Meebo": {
@@ -7120,7 +7120,7 @@
 			"html": "(?:<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)",
 			"icon": "Reddit.png",
 			"implies": "Python",
-			"url": "^(?:www\\.)?reddit\\.com",
+			"url": "^^https?://(?:www\\.)?reddit\\.com",
 			"website": "http://code.reddit.com"
 		},
 		"Redmine": {
@@ -8353,7 +8353,7 @@
 			"meta": {
 				"generator": "^Svbtle\\.com$"
 			},
-			"url": "\\.svbtle\\.com",
+			"url": "^https?://[^/]+\\.svbtle\\.com",
 			"website": "https://www.svbtle.com"
 		},
 		"SweetAlert": {

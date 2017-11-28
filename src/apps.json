@@ -3032,6 +3032,20 @@
 			},
 			"website": "http://gitbook.io"
 		},
+		"Github Pages": {
+			"cats": [
+				"11",
+				"31"
+			],
+			"url": "\\.github\\.io/",
+			"headers": {
+				"Server": "^GitHub\\.com$",
+				"X-GitHub-Request-Id": ""
+			},
+			"icon": "github.svg",
+			"implies": "Ruby on Rails",
+			"website": "https://pages.github.com/"
+		},
 		"GitLab": {
 			"cats": [
 				"13",

@@ -3042,7 +3042,7 @@
 				"Server": "^GitHub\\.com$",
 				"X-GitHub-Request-Id": ""
 			},
-			"icon": "github.svg",
+			"icon": "github.png",
 			"implies": "Ruby on Rails",
 			"website": "https://pages.github.com/"
 		},

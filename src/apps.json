@@ -5180,7 +5180,7 @@
 			},
 			"icon": "Medium.svg",
 			"script": "medium\\.com",
-			"url": "^^https?://(?:www\\.)?medium\\.com",
+			"url": "^https?://(?:www\\.)?medium\\.com",
 			"website": "https://medium.com"
 		},
 		"Meebo": {

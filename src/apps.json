@@ -3032,17 +3032,17 @@
 			},
 			"website": "http://gitbook.io"
 		},
-		"Github Pages": {
+		"GitHub Pages": {
 			"cats": [
 				"11",
 				"31"
 			],
-			"url": "\\.github\\.io/",
+			"url": "^https?://[^/]+\\.github\\.io/",
 			"headers": {
 				"Server": "^GitHub\\.com$",
 				"X-GitHub-Request-Id": ""
 			},
-			"icon": "github.png",
+			"icon": "GitHub.svg",
 			"implies": "Ruby on Rails",
 			"website": "https://pages.github.com/"
 		},

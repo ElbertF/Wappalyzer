@@ -10197,7 +10197,8 @@
 				"6"
 			],
 			"headers": {
-				"X-Powered-By": "^eZ Publish"
+				"X-Powered-By": "^eZ Publish",
+				"Set-Cookie": "^eZSESSID="
 			},
 			"icon": "eZ Publish.png",
 			"implies": "PHP",

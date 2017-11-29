@@ -3700,10 +3700,10 @@
 			"headers": {
 				"Set-Cookie": "_hybris"
 			},
-			"html": "<[^>]+(?:/sys_master/|/hybr/|/_ui/desktop/)",
+			"html": "<[^>]+\(?:sys_master|hybr|_ui/(?:desktop|common/img/webicons))/",
 			"icon": "Hybris.png",
 			"implies": "Java",
-			"website": "http://hybris.com"
+			"website": "https://hybris.com"
 		},
 		"IBM Coremetrics": {
 			"cats": [

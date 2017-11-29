@@ -3700,7 +3700,7 @@
 			"headers": {
 				"Set-Cookie": "_hybris"
 			},
-			"html": "<[^>]+\(?:sys_master|hybr|_ui/(?:desktop|common/img/webicons))/",
+			"html": "<[^>]+/(?:sys_master|hybr|_ui/(?:desktop|common/img/webicons))/",
 			"icon": "Hybris.png",
 			"implies": "Java",
 			"website": "https://hybris.com"

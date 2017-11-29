@@ -7120,7 +7120,7 @@
 			"html": "(?:<a[^>]+Powered by Reddit|powered by <a[^>]+>reddit<)",
 			"icon": "Reddit.png",
 			"implies": "Python",
-			"url": "^^https?://(?:www\\.)?reddit\\.com",
+			"url": "^https?://(?:www\\.)?reddit\\.com",
 			"website": "http://code.reddit.com"
 		},
 		"Redmine": {

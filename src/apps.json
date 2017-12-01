@@ -5196,7 +5196,7 @@
 				"1",
 				"6"
 			],
-			"html": "<!-- Rendered with Melics CMS V2",
+			"html": "<!-- Rendered with Melis CMS V2",
 			"icon": "meliscmsv2.png",
 			"meta": {
 				"powered-by": "^Melis CMS"
@@ -8812,7 +8812,7 @@
 			],
 			"html": [
 				"<style>/\\*!\\* Bootstrap v(\\d\\.\\d\\.\\d)\\;version:\\1",
-				"<link[^>]+?href=\"[^\"]+bootstrap(?:\\.min)?\\.css",
+				"<link[^>]+?href=\"[^\"]*bootstrap(?:\\.min)?\\.css",
 				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
 			],
 			"icon": "Bootstrap.png",

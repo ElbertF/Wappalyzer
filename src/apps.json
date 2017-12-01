@@ -8085,7 +8085,7 @@
 				"4"
 			],
 			"env": "^DOCUMENTATION_OPTIONS$",
-			"html": "Created using <a href=\"https?://sphinx-doc\\.org/\">Sphinx</a> ([\\d.+])+\\.\\;version:\\1",
+			"html": "Created using <a href=\"https?://sphinx-doc\\.org/\">Sphinx</a> ([.\\d+])+\\.\\;version:\\1",
 			"icon": "Sphinx.png",
 			"implies": "Python",
 			"website": "http://sphinx.pocoo.org"

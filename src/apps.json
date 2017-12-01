@@ -8055,7 +8055,7 @@
 			],
 			"env": "^Sonar(?:Measures|Request)$",
 			"html": [
-				"<link href=\"/css/sonar\\.css?v=([\\d.]+)\\;version:\\1",
+				"<link href=\"/css/sonar\\.css\\?v=([\\d.]+)\\;version:\\1",
 				"<title>SonarQube</title>"
 			],
 			"icon": "sonar.png",

@@ -7046,7 +7046,7 @@
 			],
 			"env": "^Raphael$",
 			"icon": "Raphael.png",
-			"script": "raphael.*\\.js",
+			"script": "raphael(?:-([\\d.]+))(?:\\.min)\\.js\\;version:\\1",
 			"website": "http://dmitrybaranovskiy.github.io/raphael/"
 		},
 		"Rapid Logic": {

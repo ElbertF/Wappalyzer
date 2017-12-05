@@ -11129,6 +11129,14 @@
 			"implies": "Laravel",
 			"icon": "akaunting.svg",
 			"website": "https://akaunting.com"
+		},
+		"Freshmarketer": {
+			"cats": [
+				"10"
+			],
+			"script": "cdn\\.freshmarketer\\.com",
+			"icon": "freshmarketer.png",
+			"website": "https://www.freshworks.com/marketing-automation/conversion-rate-optimization/"
 		}
 	},
 	"categories": {

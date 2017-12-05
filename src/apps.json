@@ -9904,7 +9904,7 @@
 				"54"
 			],
 			"html": [
-				"<!-- This site is optimized with the Yoast"
+				"<!-- This site is optimized with the Yoast SEO plugin v([\d.]+) -"
 			],
 			"icon": "Yoast SEO.png",
 			"website": "http://yoast.com"

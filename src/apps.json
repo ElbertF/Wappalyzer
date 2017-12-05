@@ -10373,7 +10373,7 @@
 			"script": [
 				"jquery(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
 				"/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
-				"jquery.*\\.js"
+				"jquery.*\\.js(?:\\?ver=([\d.]+))?\\;version:\\1"
 			],
 			"website": "http://jquery.com"
 		},

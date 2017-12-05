@@ -11094,6 +11094,21 @@
 			],
 			"icon": "mouseflow.png",
 			"website": "https://mouseflow.com/"
+		},
+		"Inspectlet": {
+			"cats": [
+				"10"
+			],
+			"html": [
+				"<!-- Begin Inspectlet Embed Code -->",
+				"<!-- End Inspectlet Embed Code -->",
+				"<script[^>]+[^]+cdn\\.inspectlet\\.com"
+			],
+			"env": [
+				"__insp"
+			],
+			"icon": "inspectlet.png",
+			"website": "https://www.inspectlet.com/"
 		}
 	},
 	"categories": {

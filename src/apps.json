@@ -11064,6 +11064,51 @@
 			"implies": "Laravel",
 			"icon": "akaunting.svg",
 			"website": "https://akaunting.com"
+		},
+		"Visual Website Optimizer": {
+			"cats": [
+				"10"
+			],
+			"html": [
+				"<!-- Start Visual Website Optimizer Asynchronous Code -->",
+				"<!-- Start Visual Website Optimizer Synchronous Code -->",
+				"<!-- End Visual Website Optimizer Asynchronous Code -->",
+				"<!-- End Visual Website Optimizer Synchronous Code -->",
+				"<script[^>]+[^]+dev\\.visualwebsiteoptimizer\\.com"
+			],
+			"env": [
+				"VWO"
+			],
+			"icon": "vwo.svg",
+			"website": "https://vwo.com/"
+		},
+		"Mouse Flow": {
+			"cats": [
+				"10"
+			],
+			"html": [
+				"<script[^>]+[^]+cdn\\.mouseflow\\.com"
+			],
+			"env": [
+				"_mfq"
+			],
+			"icon": "mouseflow.png",
+			"website": "https://mouseflow.com/"
+		},
+		"Inspectlet": {
+			"cats": [
+				"10"
+			],
+			"html": [
+				"<!-- Begin Inspectlet Embed Code -->",
+				"<!-- End Inspectlet Embed Code -->",
+				"<script[^>]+[^]+cdn\\.inspectlet\\.com"
+			],
+			"env": [
+				"__insp"
+			],
+			"icon": "inspectlet.png",
+			"website": "https://www.inspectlet.com/"
 		}
 	},
 	"categories": {

@@ -11129,6 +11129,18 @@
 			"implies": "Laravel",
 			"icon": "akaunting.svg",
 			"website": "https://akaunting.com"
+		},
+		"GoSquared": {
+			"cats": [
+				"10",
+				"52",
+				"53"
+			],
+			"env": [
+				"_gs;confidence:30"
+			],
+			"icon": "gosquared.png",
+			"website": "https://www.gosquared.com/"
 		}
 	},
 	"categories": {

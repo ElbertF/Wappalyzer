@@ -6519,7 +6519,8 @@
 				"22"
 			],
 			"headers": {
-				"X-Powered-By": "^Phusion Passenger"
+				"X-Powered-By": "^Phusion Passenger ?([\d.]+)?\\;version:\\1",
+				"Server": "Phusion Passenger ([\d.]+)\\;version:\\1"
 			},
 			"icon": "Phusion Passenger.png",
 			"website": "http://phusionpassenger.com"
@@ -7306,7 +7307,7 @@
 			],
 			"headers": {
 				"Server": "(?:mod_rails|mod_rack|Phusion(?:\\.|_)Passenger)\\;confidence:50",
-				"X-Powered-By": "(?:mod_rails|mod_rack|Phusion[\\._ ]Passenger)(?: \\(mod_rails/mod_rack\\))?(?: ?/?([\\d\\.]+))?\\;version:\\1\\;confidence:50"
+				"X-Powered-By": "(?:mod_rails|mod_rack|Phusion[\\._ ]Passenger)(?: \\(mod_rails/mod_rack\\))?\\;confidence:50"
 			},
 			"icon": "Ruby on Rails.png",
 			"implies": "Ruby",

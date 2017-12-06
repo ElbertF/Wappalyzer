@@ -4157,6 +4157,7 @@
 				"11"
 			],
 			"icon": "Jekyll.png",
+			"html": "Powered by <a href=\"https?://jekyllrb.com\"[^>]*>Jekyll</",
 			"meta": {
 				"generator": "Jekyll (v[\\d.]+)?\\;version:\\1"
 			},

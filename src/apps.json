@@ -3408,7 +3408,7 @@
 				"X-Powered-By": "HHVM/?([\\d.]+)?\\;version:\\1"
 			},
 			"icon": "HHVM.png",
-			"implies": "PHP\\;confidence:50",
+			"implies": "PHP",
 			"website": "http://hhvm.com"
 		},
 		"HP": {
@@ -5098,9 +5098,7 @@
 			"icon": "mattermost.png",
 			"implies": [
 				"Go",
-				"React",
-				"PostgreSQL\\;confidence:50",
-				"MySQL\\;confidence:50"
+				"React"
 			],
 			"website": "http://about.mattermost.com"
 		},
@@ -5242,7 +5240,7 @@
 			"headers": {
 				"Set-Cookie": "ASPSESSION|ASP\\.NET_SessionId",
 				"X-AspNet-Version": "(.+)\\;version:\\1",
-				"X-Powered-By": "ASP\\.NET\\;confidence:50"
+				"X-Powered-By": "ASP\\.NET"
 			},
 			"html": "<input[^>]+name=\"__VIEWSTATE",
 			"icon": "Microsoft ASP.NET.png",
@@ -6886,7 +6884,7 @@
 				"27"
 			],
 			"headers": {
-				"Server": "(?:^|\\s)Python(?:/([\\d.]+))?\\;confidence:50\\;version:\\1"
+				"Server": "(?:^|\\s)Python(?:/([\\d.]+))?\\;version:\\1"
 			},
 			"icon": "Python.png",
 			"website": "http://python.org"
@@ -7218,7 +7216,7 @@
 			"icon": "RiteCMS.png",
 			"implies": [
 				"PHP",
-				"SQLite\\;confidence:50"
+				"SQLite\\;confidence:80"
 			],
 			"meta": {
 				"generator": "^RiteCMS(?: (.+))?\\;version:\\1"
@@ -8842,7 +8840,7 @@
 			],
 			"env": "^typeahead$",
 			"icon": "Twitter typeahead.js.png",
-			"implies": "jQuery\\;confidence:50",
+			"implies": "jQuery",
 			"script": "(?:typeahead|bloodhound)\\.(?:jquery|bundle)?(?:\\.min)?\\.js",
 			"website": "http://twitter.github.io/typeahead.js"
 		},

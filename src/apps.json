@@ -8816,7 +8816,11 @@
 				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
 			],
 			"icon": "Bootstrap.png",
-			"script": "(?:twitter\\.github\\.com/bootstrap|bootstrap(?:\\.min)?\\.js)",
+			"script": [
+				"twitter\\.github\\.com/bootstrap",
+				"bootstrap(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+				"(:?/([\\d.]+)/)bootstrap(?:\\.min)?\\.js\\;version:\\1"
+			],
 			"website": "https://getbootstrap.com"
 		},
 		"Twitter Emoji (Twemoji)": {

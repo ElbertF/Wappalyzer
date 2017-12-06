@@ -6519,8 +6519,8 @@
 				"22"
 			],
 			"headers": {
-				"X-Powered-By": "^Phusion Passenger ?([\d.]+)?\\;version:\\1",
-				"Server": "Phusion Passenger ([\d.]+)\\;version:\\1"
+				"X-Powered-By": "^Phusion Passenger ?([\\d.]+)?\\;version:\\1",
+				"Server": "Phusion Passenger ([\\d.]+)\\;version:\\1"
 			},
 			"icon": "Phusion Passenger.png",
 			"website": "http://phusionpassenger.com"

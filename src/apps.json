@@ -8984,7 +8984,7 @@
 				"12"
 			],
 			"icon": "Underscore.js.png",
-			"script": "underscore.*\\.js",
+			"script": "underscore.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
 			"website": "http://underscorejs.org"
 		},
 		"Usabilla": {

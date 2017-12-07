@@ -15,8 +15,9 @@ class Driver {
       delay: 500,
       maxDepth: 3,
       maxUrls: 10,
-      maxWait: 3000,
+      maxWait: 1000,
       recursive: false,
+      requestTimeout: 3000,
       userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
     }, options || {});
 
@@ -41,6 +42,11 @@ class Driver {
   }
 
   analyze() {
+    this.time = {
+      start: new Date().getTime(),
+      last: new Date().getTime(),
+    }
+
     return this.crawl(this.origPageUrl);
   }
 
@@ -49,6 +55,8 @@ class Driver {
   }
 
   displayApps(detected) {
+    this.timer('displayApps');
+
     Object.keys(detected).forEach(appName => {
       const app = detected[appName];
 
@@ -76,6 +84,8 @@ class Driver {
   }
 
   fetch(pageUrl, index, depth) {
+    this.timer('fetch');
+
     return new Promise(resolve => {
       // Return when the URL is a duplicate or maxUrls has been reached
       if ( this.analyzedPageUrls.indexOf(pageUrl.href) !== -1 || this.analyzedPageUrls.length >= this.options.maxUrls ) {
@@ -94,16 +104,22 @@ class Driver {
 
       this.sleep(this.options.delay * index)
         .then(() => {
-          browser.visit(pageUrl.href, error => {
+          this.timer('browser.visit start');
+
+          browser.visit(pageUrl.href, this.options.requestTimeout, error => {
+            this.timer('browser.visit end');
+
             if ( !browser.resources['0'] || !browser.resources['0'].response ) {
               this.wappalyzer.log('No response from server', 'browser', 'error');
 
               return resolve();
             }
 
-            browser.wait()
+            browser.wait(this.options.maxWait)
               .catch(error => this.wappalyzer.log(error.message, 'browser', 'error'))
               .finally(() => {
+                this.timer('browser.wait end');
+
                 const headers = {};
 
                 browser.resources['0'].response.headers._headers.forEach(header => {
@@ -145,6 +161,8 @@ class Driver {
   }
 
   crawl(pageUrl, index = 1, depth = 1) {
+    this.timer('crawl');
+
     return new Promise(resolve => {
       this.fetch(pageUrl, index, depth)
         .then(links => {
@@ -158,12 +176,26 @@ class Driver {
             return Promise.resolve();
           }
         })
-        .then(() => resolve(this.apps));
+        .then(() => {
+          this.timer('done');
+
+          resolve(this.apps)
+        });
     });
   }
 
   sleep(ms) {
     return ms ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
+  }
+
+  timer(step) {
+    const time = new Date().getTime();
+    const sinceStart = ( Math.round(( time - this.time.start ) / 10) / 100) + 's';
+    const sinceLast = ( Math.round(( time - this.time.last ) / 10) / 100) + 's';
+
+    this.wappalyzer.log('[' + step + '] Time lapsed: ' + sinceLast + ' / ' + sinceStart, 'driver');
+
+    this.time.last = time;
   }
 };
 

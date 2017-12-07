@@ -5240,7 +5240,7 @@
 			"headers": {
 				"Set-Cookie": "ASPSESSION|ASP\\.NET_SessionId",
 				"X-AspNet-Version": "(.+)\\;version:\\1",
-				"X-Powered-By": "ASP\\.NET"
+				"X-Powered-By": "ASP\\.NET\\;confidence:50"
 			},
 			"html": "<input[^>]+name=\"__VIEWSTATE",
 			"icon": "Microsoft ASP.NET.png",

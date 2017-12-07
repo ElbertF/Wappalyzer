@@ -3408,7 +3408,7 @@
 				"X-Powered-By": "HHVM/?([\\d.]+)?\\;version:\\1"
 			},
 			"icon": "HHVM.png",
-			"implies": "PHP",
+			"implies": "PHP\\;confidence:75",
 			"website": "http://hhvm.com"
 		},
 		"HP": {

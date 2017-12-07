@@ -117,6 +117,10 @@ class Wappalyzer {
     return new Promise((resolve, reject) => {
       var parsed = this.parseUrl(url);
 
+      if ( parsed.protocol !== 'http:' && parsed.protocol !== 'https:' ) {
+        reject();
+      }
+
       this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
         .then(robotsTxt => {
           robotsTxt.forEach(disallow => parsed.pathname.indexOf(disallow) === 0 && reject());

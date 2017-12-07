@@ -27,13 +27,14 @@ node index.js [url] [options]
 ### Options
 
 ```
-  --debug=0|1        Output debug messages.
-  --delay=ms         Wait for ms milliseconds between requests.
-  --max-depth=num    Don't analyze pages more than num levels deep.
-  --max-urls=num     Exit when num URLs have been analyzed.
-  --max-wait=ms      Wait no more than ms milliseconds for page resources to load.
-  --recursive=0|1    Follow links on pages (crawler).
-  --user-agent=str   Set the user agent string.
+  --debug=0|1             Output debug messages.
+  --delay=ms              Wait for ms milliseconds between requests.
+  --max-depth=num         Don't analyze pages more than num levels deep.
+  --max-urls=num          Exit when num URLs have been analyzed.
+  --max-wait=ms           Wait no more than ms milliseconds for page resources to load.
+  --recursive=0|1         Follow links on pages (crawler).
+  --request-timeout=ms    Wait no more than ms millisecond for the page to load.
+  --user-agent=str        Set the user agent string.
 ```
 
 
@@ -45,8 +46,9 @@ const options = {
   delay: 500,
   maxDepth: 3,
   maxUrls: 10,
-  maxWait: 3000,
+  maxWait: 1000,
   recursive: true,
+  requestTimeout: 3000,
   userAgent: 'Wappalyzer',
 };
 

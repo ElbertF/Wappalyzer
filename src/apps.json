@@ -5414,7 +5414,10 @@
 			],
 			"env": "^Modernizr$",
 			"icon": "Modernizr.svg",
-			"script": "modernizr(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
+			"script": [
+				"modernizr(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
+				"/([\\d.]+)/modernizr(?:\\.min)?\\.js\\;version:\\1"
+			],
 			"website": "http://www.modernizr.com"
 		},
 		"Modified": {

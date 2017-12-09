@@ -11137,10 +11137,65 @@
 				"53"
 			],
 			"env": [
-				"_gs;confidence:30"
+				"_gs\\;confidence:30"
 			],
 			"icon": "gosquared.png",
 			"website": "https://www.gosquared.com/"
+    },
+		"Amplitude": {
+			"cats": [
+				"10"
+			],
+			"script": [
+				"cdn\\.amplitude\\.com"
+			],
+			"icon": "amplitude.png",
+			"website": "https://amplitude.com/"
+  },
+ 		"Inspectlet": {
+			"html": [
+				"<!-- (?:Begin|End) Inspectlet Embed Code -->"
+			],
+			"script": [
+				"cdn\\.inspectlet\\.com"
+			],
+			"env": [
+				"__insp",
+				"__inspld"
+			],
+			"icon": "inspectlet.png",
+			"website": "https://www.inspectlet.com/"
+    },
+		"Mouse Flow": {
+			"cats": [
+				"10"
+			],
+			"script": [
+				"cdn\\.mouseflow\\.com"
+			],
+			"env": [
+				"_mfq"
+			],
+			"icon": "mouseflow.png",
+			"website": "https://mouseflow.com/"
+    },
+		"Visual Website Optimizer": {
+			"cats": [
+				"10"
+			],
+			"html": [
+				"<!-- (?:Start|End) Visual Website Optimizer A?Synchronous Code -->"
+			],
+			"script": [
+				"dev\\.visualwebsiteoptimizer\\.com"
+			],
+			"env": [
+				"VWO",
+				"__vwo"
+			],
+			"icon": "vwo.svg",
+			"website": "https://vwo.com/"
+
 		}
 	},
 	"categories": {

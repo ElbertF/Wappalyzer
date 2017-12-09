@@ -32,7 +32,7 @@
 	"categoryName20":           { "message": "Editor" },
 	"categoryName21":           { "message": "LMS" },
 	"categoryName22":           { "message": "Web Server" },
-	"categoryName23":           { "message": "Öncellek Aracı" },
+	"categoryName23":           { "message": "Önbellek Aracı" },
 	"categoryName24":           { "message": "Zengin Metin Editörü" },
 	"categoryName25":           { "message": "JavaScript Grafikleri" },
 	"categoryName26":           { "message": "Mobil Framework" },
@@ -63,5 +63,6 @@
 	"categoryName51":           { "message": "Açılış Sayfası Oluşturucu" },
 	"categoryName52":           { "message": "Canlı Sohbet" },
 	"categoryName53":           { "message": "CRM" },
-  "categoryName54":           { "message": "SEO" }
+	"categoryName54":           { "message": "SEO" },
+	"categoryName55":           { "message": "Muhasebe" }
 }

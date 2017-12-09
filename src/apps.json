@@ -8878,7 +8878,7 @@
 				"<link[^>]+?href=\"[^\"]*bootstrap(?:\\.min)?\\.css",
 				"<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
 			],
-			"icon": "Bootstrap.png",
+			"icon": "Bootstrap.svg",
 			"script": [
 				"twitter\\.github\\.com/bootstrap",
 				"bootstrap(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",

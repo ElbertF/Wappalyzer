@@ -3632,7 +3632,7 @@
 				"19"
 			],
 			"icon": "Highlight.js.png",
-			"script": "/highlight\\.js/[\\d.]+?/highlight\\.min\\.js",
+			"script": "/highlight\\.js/([\\d.]+)/highlight\\.min\\.js\\;version:\\1",
 			"website": "https://highlightjs.org/"
 		},
 		"Highstock": {

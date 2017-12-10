@@ -548,7 +548,7 @@
 				"12"
 			],
 			"env": "^angular$",
-			"html": "<app ng-version=\"([\\d.]+)\">\\;version:\\1",
+			"html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
 			"icon": "Angular.svg",
 			"script": [
 				"angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",

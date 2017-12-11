@@ -5197,9 +5197,10 @@
 			],
 			"html": "(?:<a[^>]+>Powered by MediaWiki</a>|<[^>]+id=\"t-specialpages)",
 			"icon": "MediaWiki.png",
+			"env": "^mediaWiki$",
 			"implies": "PHP",
 			"meta": {
-				"generator": "^MediaWiki ?([\\d.]+)$\\;version:\\1"
+				"generator": "^MediaWiki ?([\\d.]+)\\;version:\\1"
 			},
 			"website": "http://www.mediawiki.org"
 		},

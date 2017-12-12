@@ -9870,7 +9870,6 @@
 			],
 			"env": "^mathjs$",
 			"icon": "math.js.png",
-            
 			"script": "math(?:\\.min)?\\.js",
 			"website": "http://mathjs.org"
 		},

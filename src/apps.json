@@ -9859,9 +9859,10 @@
 				"52",
 				"53"
 			],
-            "env":"LH_dataCreazione",
+            "env":"^LH_dataCreazione$",
 			"icon": "LiveHelp.png",
-			"website": "http://www.livehelp.it"
+			"website": "https://www.livehelp.it",
+            "script": "server\\.livehelp\\.it/widgetjs"
 		},
 		"math.js": {
 			"cats": [

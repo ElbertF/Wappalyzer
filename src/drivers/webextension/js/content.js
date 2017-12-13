@@ -1,11 +1,7 @@
 /** global: browser */
 
 if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
-  var html = document.documentElement.outerHTML;
-
-  if ( html.length > 50000 ) {
-    html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-  }
+  var html = new XMLSerializer().serializeToString(document);
 
   var scripts = Array.prototype.slice
       .apply(document.scripts)

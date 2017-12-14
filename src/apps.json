@@ -3042,7 +3042,7 @@
 			],
 			"icon": "GitBook.png",
 			"meta": {
-				"generator": "GitBook(?:.([\\d.]+))?\\;version:\\1"
+				"generator": "^GitBook(?:.([\\d.]+))?\\;version:\\1"
 			},
 			"website": "http://gitbook.io"
 		},

@@ -11210,6 +11210,15 @@
 			"icon": "vwo.svg",
 			"website": "https://vwo.com/"
 
+		},
+		"docsify": {
+			"cats": [
+				"4"
+			],
+			"icon": "docsify.svg",
+			"script": "docsify",
+			"env": "^Docsify$",
+			"website": "https://docsify.js.org"
 		}
 	},
 	"categories": {

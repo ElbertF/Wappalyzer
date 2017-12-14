@@ -11216,7 +11216,7 @@
 				"4"
 			],
 			"icon": "docsify.svg",
-			"script": "docsify",
+			"script": "/docsify(?:\\.min)?\\.js",
 			"env": "^Docsify$",
 			"website": "https://docsify.js.org"
 		}

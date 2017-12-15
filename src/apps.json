@@ -3209,6 +3209,15 @@
 			"script": "google-analytics\\.com\\/(?:ga|urchin|(analytics))\\.js\\;version:\\1?UA:",
 			"website": "http://google.com/analytics"
 		},
+		"Google Analytics Enhanced eCommerce": {
+			"cats": [
+				"10"
+			],
+			"env": "^gaplugins\\.EC$",
+			"icon": "Google Analytics.svg",
+			"script": "google-analytics\\.com\\/plugins\\/ua\\/ec.js",
+			"website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
+		},
 		"Google App Engine": {
 			"cats": [
 				"22"

@@ -7479,6 +7479,16 @@
 			"icon": "SQLite.png",
 			"website": "http://www.sqlite.org"
 		},
+    "Sqreen": {
+      "cats": [
+        "19"
+      ],
+      "headers": {
+        "X-Protected-By": "^Sqreen$"
+      },
+      "icon": "Sqreen.png",
+      "website": "https://sqreen.io",
+    },
 		"SUSE": {
 			"cats": [
 				"28"

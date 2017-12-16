@@ -89,6 +89,21 @@
 			"icon": "amber.png",
 			"website": "https://amberframework.org"
 		},
+		"Ant Design": {
+			"cats": [
+				"12"
+			],
+			"implies": [
+				"React"
+			],
+			"icon": "Ant Design.svg",
+			"env": "^antd$",
+			"html": [
+				"<(?:div|button) class=\"ant-(?:btn|col|row|layout|breadcrumb|menu|pagination|steps|select|cascader|checkbox|calendar|form|input-number|input|mention|rate|radio|slider|switch|tree-select|time-picker|transfer|upload|avatar|badge|card|carousel|collapse|list|popover|tooltip|table|tabs|tag|timeline|tree|alert|modal|message|notification|progress|popconfirm|spin|anchor|back-top|divider)",
+				"<i class=\"anticon anticon-"
+			],
+			"website": "https://ant.design"
+		},
 		"AMPcms": {
 			"cats": [
 				"1"

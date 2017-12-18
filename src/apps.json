@@ -563,13 +563,14 @@
 				"12"
 			],
 			"env": "^angular$",
-			"icon": "AngularJS.svg",
+			"html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
+			"icon": "Angular.svg",
 			"script": [
 				"angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
 				"/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
 				"angular.*\\.js"
 			],
-			"website": "http://angularjs.org"
+			"website": "https://angular.io/"
 		},
 		"Apache": {
 			"cats": [

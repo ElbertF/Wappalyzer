@@ -3318,7 +3318,10 @@
 				"^googletag$",
 				"^google_tag_manager$"
 			],
-			"html": "googletagmanager\\.com/ns\\.html[^>]+></iframe>",
+			"html": [
+				"googletagmanager\\.com/ns\\.html[^>]+></iframe>",
+				"<!-- (?:End )?Google Tag Manager -->"
+			],
 			"icon": "Google Tag Manager.png",
 			"website": "http://www.google.com/tagmanager"
 		},

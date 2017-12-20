@@ -6210,7 +6210,7 @@
 				"12"
 			],
 			"icon": "OpenUI5.png",
-			"env": "sap\\.ui$",
+			"script": "sap-ui-core\\.js",
 			"website": "http://openui5.org/"
 		},
 		"OpenX": {

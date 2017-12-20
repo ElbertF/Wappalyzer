@@ -9822,7 +9822,7 @@
 			"cats": [
 				"2"
 			],
-			"html": "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo&trade;|<!--XF:branding|<html[^>]+id=\"XenForo\")",
+			"html": "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
 			"icon": "XenForo.png",
 			"website": "http://xenforo.com"
 		},

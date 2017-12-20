@@ -10470,7 +10470,7 @@
 			"script": [
 				"jquery(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
 				"/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
-				"jquery.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+				"jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
 			],
 			"website": "http://jquery.com"
 		},

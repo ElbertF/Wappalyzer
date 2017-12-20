@@ -5917,6 +5917,20 @@
 			],
 			"website": "https://zeit.co/next"
 		},
+		"NextGEN Gallery": {
+			"cats": [
+				"7"
+			],
+			"icon": "NextGEN Gallery.png",
+			"html": [
+				"<!-- <meta name=\"NextGEN\" version=\"([\\d.]+)\" /> -->\\;version:\\1"
+			],
+			"script": "/nextgen-gallery/js/",
+			"implies": [
+				"WordPress"
+			],
+			"website": "https://www.imagely.com/wordpress-gallery-plugin"
+		},
 		"Nginx": {
 			"cats": [
 				"22"

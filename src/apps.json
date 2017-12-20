@@ -4203,7 +4203,8 @@
 			"icon": "Jekyll.png",
 			"html": [
 				"Powered by <a href=\"https?://jekyllrb.com\"[^>]*>Jekyll</",
-				"<!-- Created with Jekyll Now -"
+				"<!-- Created with Jekyll Now -",
+				"<!-- Begin Jekyll SEO tag"
 			],
 			"meta": {
 				"generator": "Jekyll (v[\\d.]+)?\\;version:\\1"

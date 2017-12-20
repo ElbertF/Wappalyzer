@@ -7184,6 +7184,18 @@
 			"implies": "Go",
 			"website": "http://revel.github.io"
 		},
+		"Revslider":{
+			"cats": [
+				"19"
+			],
+			"icon": "revslider.png",
+			"html": [
+				"<link[^>]* href=[\\'\"][^']+revslider[/\\w-]+\\.css\\?ver=([0-9.]+)[\\'\"]\\;version:\\1"
+			],
+			"script": "/revslider/[/\\w-]+/js",
+			"implies": "WordPress",
+			"website": "https://revolution.themepunch.com/"
+		},
 		"Rickshaw": {
 			"cats": [
 				"25"

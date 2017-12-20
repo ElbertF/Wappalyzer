@@ -1599,14 +1599,14 @@
 		},
 		"CNV Platform": {
 			"cats": [
-				"6"
+				"1"
 			],
 			"headers": {
 				"Set-Cookie": "cnv_session"
 			},
 			"icon": "CNV.png",
 			"implies": "laravel",
-			"website": "https://cnv.vn",
+			"website": "https://cnv.vn"
 		},
 		"CodeIgniter": {
 			"cats": [

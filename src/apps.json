@@ -3242,6 +3242,14 @@
 			"icon": "Google Charts.png",
 			"website": "http://developers.google.com/chart/"
 		},
+		"Google Closure Compiler": {
+			"cats": [
+				"44"
+			],
+			"env": "^closure_(?:lm|uid)_",
+			"icon": "Google Closure Compiler.png",
+			"website": "https://developers.google.com/closure/compiler/"
+		},
 		"Google Code Prettify": {
 			"cats": [
 				"19"

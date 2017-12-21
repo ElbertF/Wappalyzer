@@ -6920,7 +6920,10 @@
 			"cats": [
 				"18"
 			],
-			"html": "<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1",
+			"html": [
+				"<link[^>]+(?:([\\d.])+/)?pure(?:-min)?\\.css\\;version:\\1",
+				"<div[^>]+class=\"[^\"]*pure-u-(?:sm-|md-|lg-|xl-)?\\d-\\d"
+			],
 			"icon": "Pure CSS.png",
 			"website": "http://purecss.io"
 		},

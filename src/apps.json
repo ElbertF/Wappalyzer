@@ -1617,6 +1617,14 @@
 			"icon": "CodeMirror.png",
 			"website": "http://codemirror.net"
 		},
+		"Coinhave": {
+			"cats": [
+				"56"
+			],
+			"script": "https?://coin-have\\.com/c/[0-9a-zA-Z]+\\.js",
+			"icon": "coinhave.png",
+			"website": "https://coin-have.com/"
+		},
 		"CoinHive": {
 			"cats": [
 				"56"
@@ -5393,6 +5401,17 @@
 			],
 			"icon": "Milligram.png",
 			"website": "http://milligram.github.io"
+		},
+		"Minero": {
+			"cats": [
+				"56"
+			],
+			"script": [
+				"https?://minero\\.cc/lib/minero\\.min\\.js",
+				"https?://minero\\.cc/lib/minero-miner\\.min\\.js",
+				"https?://minero\\.cc/lib/minero-hidden\\.min\\.js"
+			],
+			"website": "http://minero.cc/"
 		},
 		"MiniBB": {
 			"cats": [

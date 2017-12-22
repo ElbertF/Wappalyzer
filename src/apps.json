@@ -1621,7 +1621,8 @@
 			"cats": [
 				"56"
 			],
-			"script": "https?://coin-have\\.com/c/[0-9a-zA-Z]+\\.js",
+			"env": "^m_[0-9a-zA-Z]{4}$",
+			"script": "https?://coin-have\\.com/c/[0-9a-zA-Z]{4}\\.js",
 			"icon": "coinhave.png",
 			"website": "https://coin-have.com/"
 		},
@@ -5402,14 +5403,12 @@
 			"icon": "Milligram.png",
 			"website": "http://milligram.github.io"
 		},
-		"Minero": {
+		"Minero.cc": {
 			"cats": [
 				"56"
 			],
 			"script": [
-				"https?://minero\\.cc/lib/minero\\.min\\.js",
-				"https?://minero\\.cc/lib/minero-miner\\.min\\.js",
-				"https?://minero\\.cc/lib/minero-hidden\\.min\\.js"
+				"https?://minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
 			],
 			"website": "http://minero.cc/"
 		},

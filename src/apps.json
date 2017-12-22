@@ -6637,7 +6637,6 @@
       "cats": [
         "56"
       ],
-      "env": "^m_[0-9a-zA-Z]{4}$",
       "script": "https?://coin-have\\.com/c/[0-9a-zA-Z]{4}\\.js",
       "icon": "coinhave.png",
       "website": "https://coin-have.com/"

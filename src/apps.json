@@ -11827,7 +11827,7 @@
       ],
       "html": "<iframe[^>]src=[\\'\"]https://webmine\\.cz/miner\\?key=",
       "icon": "webmine.png",
-      "website": ""
+      "website": "https://webmine.cz/"
     },
     "webpack": {
       "cats": [

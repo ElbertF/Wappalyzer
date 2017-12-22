@@ -35,9 +35,9 @@
 						},
 						"required": true
 					},
-					"env": {
-						"type": [ "string", "array" ],
-						"items": {
+					"js": {
+						"type": "object",
+						"additionalProperties": {
 							"type": "string"
 						}
 					},

@@ -1,54 +1,60 @@
 /** global: browser */
 
 if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
-  var html = new XMLSerializer().serializeToString(document);
-
-  var scripts = Array.prototype.slice
-      .apply(document.scripts)
-      .filter(s => s.src)
-      .map(s => s.src);
-
   try {
-    browser.runtime.sendMessage({
-      id: 'analyze',
-      subject: { html },
-      source: 'content.js'
-    });
+    var html = new XMLSerializer().serializeToString(document);
+
+    if ( html.length > 50000 ) {
+      html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+    }
+
+    const scripts = Array.prototype.slice
+      .apply(document.scripts)
+      .filter(script => script.src)
+      .map(script => script.src);
 
     browser.runtime.sendMessage({
       id: 'analyze',
-      subject: { scripts },
+      subject: { html, scripts },
       source: 'content.js'
     });
 
-    var container = document.createElement('wappalyzerData');
+    const script = document.createElement('script');
 
-    container.setAttribute('id',    'wappalyzerData');
-    container.setAttribute('style', 'display: none');
+    script.onload = () => {
+      addEventListener('message', event => {
+        if ( event.data.id !== 'js' ) {
+          return;
+        }
 
-    var script = document.createElement('script');
+        browser.runtime.sendMessage({
+          id: 'analyze',
+          subject: {
+            js: event.data.js
+          },
+          source: 'content.js'
+        });
+      }, true);
 
-    script.setAttribute('id', 'wappalyzerEnvDetection');
+      ( chrome || browser ).runtime.sendMessage({
+        id: 'init_js',
+        subject: {},
+        source: 'content.js'
+      }, response => {
+        if ( response ) {
+          postMessage({
+            id: 'patterns',
+            patterns: response.patterns
+          }, '*');
+        }
+      });
+    };
+
+    script.setAttribute('id', 'wappalyzer');
     script.setAttribute('src', browser.extension.getURL('js/inject.js'));
 
-    container.addEventListener('wappalyzerEvent', (event => {
-      var env = event.target.childNodes[0].nodeValue;
-
-      document.documentElement.removeChild(container);
-      document.documentElement.removeChild(script);
-
-      env = env.split(' ').slice(0, 500);
-
-      browser.runtime.sendMessage({
-        id: 'analyze',
-        subject: { env },
-        source: 'content.js'
-      });
-    }), true);
-
-    document.documentElement.appendChild(container);
-    document.documentElement.appendChild(script);
-  } catch(e) {
+    document.body.appendChild(script);
+  } catch (e) {
     log(e);
   }
 }

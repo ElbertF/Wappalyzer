@@ -31,14 +31,17 @@ class Driver {
     this.origPageUrl = url.parse(pageUrl);
     this.analyzedPageUrls = [];
     this.apps = [];
+    this.meta = {};
 
     this.wappalyzer = new Wappalyzer();
 
     this.wappalyzer.apps = json.apps;
     this.wappalyzer.categories = json.categories;
 
+    this.wappalyzer.parseJsPatterns();
+
     this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
-    this.wappalyzer.driver.displayApps = detected => this.displayApps(detected);
+    this.wappalyzer.driver.displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
   }
 
   analyze() {
@@ -54,8 +57,10 @@ class Driver {
     this.options.debug && console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
   }
 
-  displayApps(detected) {
+  displayApps(detected, meta) {
     this.timer('displayApps');
+
+    this.meta = meta;
 
     Object.keys(detected).forEach(appName => {
       const app = detected[appName];
@@ -120,34 +125,15 @@ class Driver {
               .finally(() => {
                 this.timer('browser.wait end');
 
-                const headers = {};
-
-                browser.resources['0'].response.headers._headers.forEach(header => {
-                  if ( !headers[header[0]] ){
-                    headers[header[0]] = [];
-                  }
-
-                  headers[header[0]].push(header[1]);
-                });
-
-                let html = '';
-
-                try {
-                  html = browser.html();
-                } catch ( e ) {
-                  this.wappalyzer.log(error.message, 'browser', 'error');
-                }
-
-                const vars = Object.getOwnPropertyNames(browser.window);
-                const scripts = Array.prototype.slice
-                  .apply(browser.document.scripts)
-                  .filter(s => s.src)
-                  .map(s => s.src);
+                const headers = this.getHeaders(browser);
+                const html    = this.getHtml(browser);
+                const scripts = this.getScripts(browser);
+                const js      = this.getJs(browser);
 
                 this.wappalyzer.analyze(pageUrl.hostname, pageUrl.href, {
                   headers,
                   html,
-                  env: vars,
+                  js,
                   scripts
                 });
 
@@ -158,6 +144,70 @@ class Driver {
           });
         });
     });
+  }
+
+  getHeaders(browser) {
+    const headers = {};
+
+    browser.resources['0'].response.headers._headers.forEach(header => {
+      if ( !headers[header[0]] ){
+        headers[header[0]] = [];
+      }
+
+      headers[header[0]].push(header[1]);
+    });
+
+    return headers;
+  }
+
+  getHtml(browser) {
+    let html = '';
+
+    try {
+      html = browser.html();
+    } catch ( e ) {
+      this.wappalyzer.log(error.message, 'browser', 'error');
+    }
+
+    return html;
+  }
+
+  getScripts(browser) {
+    const scripts = Array.prototype.slice
+      .apply(browser.document.scripts)
+      .filter(s => s.src)
+      .map(s => s.src);
+
+    return scripts;
+  }
+
+  getJs(browser) {
+    const patterns = this.wappalyzer.jsPatterns;
+    const js = {};
+
+    Object.keys(patterns).forEach(appName => {
+      js[appName] = {};
+
+      Object.keys(patterns[appName]).forEach(chain => {
+        js[appName][chain] = {};
+
+        patterns[appName][chain].forEach((pattern, index) => {
+          const properties = chain.split('.');
+
+          let value = properties.reduce((parent, property) => {
+            return parent && parent.hasOwnProperty(property) ? parent[property] : null;
+          }, browser.window);
+
+          value = typeof value === 'string' ? value : !!value;
+
+          if ( value ) {
+            js[appName][chain][index] = value;
+          }
+        });
+      });
+    });
+
+    return js;
   }
 
   crawl(pageUrl, index = 1, depth = 1) {
@@ -179,7 +229,10 @@ class Driver {
         .then(() => {
           this.timer('done');
 
-          resolve(this.apps)
+          resolve({
+            applications: this.apps,
+            meta: this.meta
+          });
         });
     });
   }

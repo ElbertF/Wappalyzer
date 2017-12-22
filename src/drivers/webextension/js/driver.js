@@ -76,6 +76,10 @@ fetch('../apps.json')
     wappalyzer.categories = json.categories;
 
     categoryOrder = Object.keys(wappalyzer.categories).sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
+
+    wappalyzer.parseJsPatterns();
+
+    console.log('xxx');
   })
   .catch(error => {
     wappalyzer.log('GET apps.json: ' + error, 'driver', 'error');
@@ -192,6 +196,12 @@ browser.webRequest.onCompleted.addListener(request => {
         };
 
         break;
+      case 'init_js':
+        response = {
+          patterns: wappalyzer.jsPatterns
+        };
+
+        break;
       default:
     }
 
@@ -211,7 +221,7 @@ wappalyzer.driver.log = (message, source, type) => {
 /**
  * Display apps
  */
-wappalyzer.driver.displayApps = (detected, context) => {
+wappalyzer.driver.displayApps = (detected, meta, context) => {
   var tab = context.tab;
 
   tabCache[tab.id] = tabCache[tab.id] || { detected: [] };

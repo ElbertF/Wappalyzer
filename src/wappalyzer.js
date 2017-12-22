@@ -18,6 +18,7 @@ class Wappalyzer {
     this.apps = {};
     this.categories = {};
     this.driver = {};
+    this.jsPatterns = {};
 
     this.detected = {};
     this.hostnameCache = {};
@@ -51,6 +52,11 @@ class Wappalyzer {
       this.detected[url] = {};
     }
 
+    // Additional information
+    const matches = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
+
+    const language = matches && matches.length ? matches[1] : null;
+
     Object.keys(this.apps).forEach(appName => {
       apps[appName] = this.detected[url] && this.detected[url][appName] ? this.detected[url][appName] : new Application(appName, this.apps[appName]);
 
@@ -82,6 +88,12 @@ class Wappalyzer {
       }
     })
 
+    if ( data.js ) {
+      Object.keys(data.js).forEach(appName => {
+        this.analyzeJs(apps[appName], data.js[appName]);
+      });
+    }
+
     Object.keys(apps).forEach(appName => {
       var app = apps[appName];
 
@@ -94,13 +106,13 @@ class Wappalyzer {
     this.resolveImplies(apps, url);
 
     this.cacheDetectedApps(apps, url);
-    this.trackDetectedApps(apps, url, hostname, data.html);
+    this.trackDetectedApps(apps, url, hostname, language);
 
     if ( Object.keys(apps).length ) {
       this.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url, 'core');
     }
 
-    this.driver.displayApps(this.detected[url], context);
+    this.driver.displayApps(this.detected[url], { language }, context);
   }
 
   /**
@@ -244,6 +256,17 @@ class Wappalyzer {
     return parsed;
   }
 
+  /**
+   * Parse JavaScript patterns
+   */
+  parseJsPatterns() {
+    Object.keys(this.apps).forEach(appName => {
+      if ( this.apps[appName].js ) {
+        this.jsPatterns[appName] = this.parsePatterns(this.apps[appName].js);
+      }
+    });
+  }
+
   resolveExcludes(apps) {
     var excludes = [];
 
@@ -326,7 +349,7 @@ class Wappalyzer {
   /**
    * Track detected applications
    */
-  trackDetectedApps(apps, url, hostname, html) {
+  trackDetectedApps(apps, url, hostname, language) {
     if ( !( this.driver.ping instanceof Function ) ) {
       return;
     }
@@ -362,13 +385,8 @@ class Wappalyzer {
       }
     });
 
-    // Additional information
     if ( hostname in this.hostnameCache ) {
-      var match = html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
-
-      if ( match && match.length ) {
-        this.hostnameCache[hostname].meta['language'] = match[1];
-      }
+      this.hostnameCache[hostname].meta['language'] = language;
     }
 
     this.ping();
@@ -485,6 +503,22 @@ class Wappalyzer {
         })
       });
     }
+  }
+
+  /**
+   * Analyze JavaScript variables
+   */
+  analyzeJs(app, results) {
+    Object.keys(results).forEach(string => {
+      Object.keys(results[string]).forEach(index => {
+        const pattern = this.jsPatterns[app.name][string][index];
+        const value = results[string][index];
+
+        if ( pattern.regex.test(value) ) {
+          this.addDetected(app, pattern, 'js', value);
+        }
+      });
+    });
   }
 
   /**

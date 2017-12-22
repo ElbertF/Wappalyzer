@@ -5466,7 +5466,7 @@
         "MathJax.version": "(.*)\\;version:\\1"
       },
       "icon": "MathJax.png",
-      "script": "mathjax\\.js",
+      "script": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
       "website": "https://www.mathjax.org"
     },
     "Mattermost": {

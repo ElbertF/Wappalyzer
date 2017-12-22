@@ -4320,6 +4320,14 @@
       "icon": "Invenio.png",
       "website": "http://invenio-software.org"
     },
+    "Inwemo":{
+      "cats": [
+        "56"
+      ],
+      "script": "https?://cdn\\.inwemo\\.com/inwemo\\.min\\.js",
+      "icon": "inwemo.png",
+      "website": "https://inwemo.com/"
+    },
     "Ionicons": {
       "cats": [
         "17"

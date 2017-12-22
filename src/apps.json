@@ -11825,9 +11825,6 @@
       "cats": [
         "56"
       ],
-      "js": {
-
-      },
       "html": "<iframe[^>]src=[\\'\"]https://webmine\\.cz/miner\\?key=",
       "icon": "webmine.png",
       "website": ""

@@ -1753,6 +1753,17 @@
       "icon": "CoinHive.svg",
       "website": "https://coinhive.com"
     },
+    "Coinlab": {
+        "cats": [
+          "56"
+        ],
+        "js": {
+          "Coinlab": ""
+        },
+        "script": "https?://coinlab\\.biz/lib/coinlab\\.js\\?id=",
+        "icon": "coinlab.png",
+        "website":"https://coinlab.biz/en"
+    },
     "Comandia": {
       "cats": [
         "6"

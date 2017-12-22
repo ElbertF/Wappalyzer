@@ -5931,6 +5931,14 @@
       "icon": "Monkey HTTP Server.png",
       "website": "http://monkey-project.com"
     },
+    "Monerominer": {
+      "cats": [
+        "56"
+      ],
+      "script":"<iframe[^>]+src=[\\'\"]https?://monerominer\\.rocks/miner\\.php\\?siteid=",
+      "icon": "monerominer.png",
+      "website": "https://monerominer.rocks/"
+    },
     "Mono": {
       "cats": [
         "18"

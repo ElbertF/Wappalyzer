@@ -4324,6 +4324,10 @@
       "cats": [
         "56"
       ],
+      "js": {
+        "Inwemo": "",
+        "_0x69dd": ""
+      },
       "script": "https?://cdn\\.inwemo\\.com/inwemo\\.min\\.js",
       "icon": "inwemo.png",
       "website": "https://inwemo.com/"

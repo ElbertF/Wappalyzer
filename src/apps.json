@@ -6624,7 +6624,7 @@
       "script": "sap-ui-core\\.js",
       "website": "http://openui5.org/"
     },
-    "Minero": {
+    "Minero.cc": {
       "cats": [
         "56"
       ],
@@ -6637,7 +6637,8 @@
       "cats": [
         "56"
       ],
-      "script": "https?://coin-have\\.com/c/[0-9a-zA-Z]+\\.js",
+      "env": "^m_[0-9a-zA-Z]{4}$",
+      "script": "https?://coin-have\\.com/c/[0-9a-zA-Z]{4}\\.js",
       "icon": "coinhave.png",
       "website": "https://coin-have.com/"
     },

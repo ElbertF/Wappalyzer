@@ -1693,7 +1693,7 @@
 		"CLOUDCOINS": ""
       },
       "script": "https?://cdn\\.cloudcoins\\.co/javascript/cloudcoins\\.min\\.js",
-      "website": "cloudcoins.co"
+      "website": "https://cloudcoins.co"
     },
     "CloudFlare": {
       "cats": [

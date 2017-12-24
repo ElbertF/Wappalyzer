@@ -17,7 +17,7 @@
         "gaplugins.EC": ""
       },
       "icon": "Google Analytics.svg",
-      "script": "google-analytics\\.com\\/plugins\\/ua\\/ec.js",
+      "script": "google-analytics\\.com\\/plugins\\/ua\\/ec\\.js",
       "website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
     },
     "1C-Bitrix": {

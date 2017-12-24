@@ -1692,7 +1692,7 @@
       "js": {
 		"CLOUDCOINS": ""
       },
-      "script": "https?://cdn\\.cloudcoins\\.co/javascript/cloudcoins\\.min\\.js",
+      "script": "https?://cdn\\.cloudcoins\\.co/javascript/cloudcoins\\.min\\.js"
     },
     "CloudFlare": {
       "cats": [

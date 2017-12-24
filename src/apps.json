@@ -1685,6 +1685,15 @@
       "script": "/cloudcart-(?:assets|storage)/",
       "website": "http://cloudcart.com"
     },
+    "Cloudcoins": {
+      "cats": [
+        "56"
+      ],
+      "js": {
+		"CLOUDCOINS": ""
+      },
+      "script": "https?://cdn\\.cloudcoins\\.co/javascript/cloudcoins\\.min\\.js",
+    },
     "CloudFlare": {
       "cats": [
         "31"

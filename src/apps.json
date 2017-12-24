@@ -1754,7 +1754,7 @@
       "website": "https://coinhive.com"
     },
     "Coinimp": {
-      "cats": [
+      "cats": [
         "56"
       ],
       "script": "https?://www\\.hashing\\.win/scripts/min\\.js",

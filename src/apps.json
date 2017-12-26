@@ -9586,7 +9586,7 @@
       "script": [
         "twitter\\.github\\.com/bootstrap",
         "bootstrap(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "(?:/([\\d.]+)/)bootstrap(?:\\.min)?\\.js\\;version:\\1"
+        "(?:/([\\d.]+))?(?:/js)?/bootstrap(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "https://getbootstrap.com"
     },

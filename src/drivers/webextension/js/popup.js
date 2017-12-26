@@ -11,15 +11,9 @@ var func = tabs => {
   });
 };
 
-try {
-  // Chrome, Firefox
-  browser.tabs.query({ active: true, currentWindow: true })
-    .then(func)
-    .catch(console.error);
-} catch ( e ) {
-  // Edge
-  browser.tabs.query({ active: true, currentWindow: true }, func);
-}
+browser.tabs.query({ active: true, currentWindow: true })
+  .then(func)
+  .catch(console.error);
 
 function replaceDomWhenReady(dom) {
   if ( /complete|interactive|loaded/.test(document.readyState) ) {

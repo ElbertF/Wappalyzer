@@ -118,13 +118,9 @@ var callback = tabs => {
   })
 };
 
-try {
-  browser.tabs.query({})
-    .then(callback)
-    .catch(error => wappalyzer.log(error, 'driver', 'error'));
-} catch ( e ) {
-  browser.tabs.query({}, callback);
-}
+browser.tabs.query({})
+  .then(callback)
+  .catch(error => wappalyzer.log(error, 'driver', 'error'));
 
 // Capture response headers
 browser.webRequest.onCompleted.addListener(request => {

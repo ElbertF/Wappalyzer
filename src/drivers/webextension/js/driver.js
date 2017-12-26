@@ -248,10 +248,14 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
                   icon = 'converted/' + icon.replace(/\.svg$/, '.png');
                 }
 
-                browser.pageAction.setIcon({
-                  tabId: tab.id,
-                  path: '../images/icons/' + icon
-                });
+                try {
+                	browser.pageAction.setIcon({
+                    tabId: tab.id,
+                    path: '../images/icons/' + icon
+                  });
+                } catch(e) {
+                  // Firefox for Android does not support setIcon see https://bugzilla.mozilla.org/show_bug.cgi?id=1331746
+                }
 
                 found = true;
               }

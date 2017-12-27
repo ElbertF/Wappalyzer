@@ -5984,7 +5984,7 @@
       "cats": [
         "56"
       ],
-      "script": "<iframe[^>]+src=[\\'\"]https?://monerominer\\.rocks/miner\\.php\\?siteid=",
+      "html": "<iframe[^>]+src=[\\'\"]https?://monerominer\\.rocks/miner\\.php\\?siteid=",
       "icon": "monerominer.png",
       "website": "https://monerominer.rocks/"
     },

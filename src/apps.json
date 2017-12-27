@@ -8321,8 +8321,8 @@
       "icon": "Serendipity.png",
       "implies": "PHP",
       "meta": {
-        "Powered-By": "Serendipity v\\.(.+)\\;version:\\1",
-        "generator": "Serendipity"
+        "Powered-By": "Serendipity v\\.([\\d.]+)\\;version:\\1",
+        "generator": "Serendipity(?: v\\.([\\d.]+))?\\;version:\\1"
       },
       "website": "http://s9y.org"
     },

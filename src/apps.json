@@ -7960,7 +7960,7 @@
       "icon": "Ruby on Rails.png",
       "implies": "Ruby",
       "meta": {
-        "csrf-param": "authenticity_token\\;confidence:50"
+        "csrf-param": "^authenticity_token$\\;confidence:50"
       },
       "script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
       "website": "http://rubyonrails.org"

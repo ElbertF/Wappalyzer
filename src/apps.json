@@ -2251,6 +2251,17 @@
       "script": "dedeajax",
       "website": "http://dedecms.com"
     },
+    "deepMiner":{
+      "cats": [
+		"56"
+      ],
+      "js": {
+		"deepMiner": ""
+      },
+      "script": "deepMiner\\.js",
+      "icon": "deepminer.png",
+      "website": "https://github.com/deepwn/deepMiner"
+    },
     "Dell": {
       "cats": [
         "40"

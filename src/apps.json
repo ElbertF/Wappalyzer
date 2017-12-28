@@ -2253,10 +2253,10 @@
     },
     "deepMiner":{
       "cats": [
-		"56"
+	"56"
       ],
       "js": {
-		"deepMiner": ""
+	"deepMiner": ""
       },
       "script": "deepMiner\\.js",
       "icon": "deepminer.png",

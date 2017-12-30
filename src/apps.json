@@ -3918,6 +3918,19 @@
       "script": "hellobar\\.js",
       "website": "http://hellobar.com"
     },
+    "Hexo": {
+      "cats": [
+        "11"
+      ],
+      "icon": "Hexo.png",
+      "html": [
+        "by <a href=\"https?://hexo\\.io/?\"[^>]*>Hexo</"
+      ],
+      "meta": {
+        "generator": "Hexo"
+      },
+      "website": "https://hexo.io"
+    },
     "Hiawatha": {
       "cats": [
         "22"

@@ -605,7 +605,7 @@
       ],
       "website": "http://material.angularjs.org"
     },
-    "AngularJS": {
+    "Angular": {
       "cats": [
         "12"
       ],
@@ -614,7 +614,7 @@
         "angular.version.full": "(.*)\\;version:\\1"
       },
       "html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
-      "icon": "AngularJS.svg",
+      "icon": "Angular.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",

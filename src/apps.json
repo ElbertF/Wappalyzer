@@ -12056,7 +12056,23 @@
       },
       "icon": "vwo.svg",
       "website": "https://vwo.com/"
-    }
+    },
+	"XWiki": {
+      "cats": [
+        "8"
+      ],
+      "html": [
+        "<html[^>]data-xwiki-[^>]>"
+      ],
+      "meta": {
+        "wiki": "xwiki"
+      },
+      "implies": "Java\\;confidence:99",
+      "excludes": "MediaWiki",
+      "website": "http://www.xwiki.org",
+      "icon": "xwiki.svg"
+}
+	
   },
   "categories": {
     "1": {

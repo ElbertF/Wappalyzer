@@ -11250,7 +11250,16 @@
         "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
         "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
       ],
-      "website": "http://jquery.com"
+      "website": "https://jquery.com"
+    },
+    "jQuery Migrate": {
+      "cats": [
+        "12"
+      ],
+      "icon": "jQuery.svg",
+      "implies": "jQuery",
+      "script": "jquery.migrate(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "website": "https://github.com/jquery/jquery-migrate"
     },
     "jQuery Mobile": {
       "cats": [
@@ -11259,7 +11268,7 @@
       "icon": "jQuery Mobile.svg",
       "implies": "jQuery",
       "script": "jquery\\.mobile(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
-      "website": "http://jquerymobile.com"
+      "website": "https://jquerymobile.com"
     },
     "jQuery Sparklines": {
       "cats": [

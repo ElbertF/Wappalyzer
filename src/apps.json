@@ -2985,6 +2985,15 @@
       "implies": "Python",
       "website": "http://flask.pocoo.org"
     },
+    "Flat UI": {
+      "cats": [
+        "18"
+      ],
+      "icon": "Flat UI.png",
+      "implies": "Bootstrap",
+			"html": "<link[^>]* href=[^>]+flat-ui(?:\\.min)?\\.css",
+      "website": "https://designmodo.github.io/Flat-UI/"
+    },
     "FlexCMP": {
       "cats": [
         "1"

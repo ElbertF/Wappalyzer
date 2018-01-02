@@ -3924,10 +3924,10 @@
       ],
       "icon": "Hexo.png",
       "html": [
-        "by <a href=\"https?://hexo\\.io/?\"[^>]*>Hexo</"
+        "Powered by <a href=\"https?://hexo\\.io/?\"[^>]*>Hexo</"
       ],
       "meta": {
-        "generator": "Hexo"
+        "generator": "Hexo(?: v?([\\d.]+))?\\;version:\\1"
       },
       "website": "https://hexo.io"
     },

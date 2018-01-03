@@ -4993,6 +4993,18 @@
       "implies": "PHP",
       "website": "http://laravel.com"
     },
+    "MYPAGE Platform": {
+      "cats": [
+        "1",
+        "6"
+      ],
+      "headers": {
+        "Set-Cookie": "botble_session"
+      },
+      "icon": "mypage-platform.png",
+      "implies": "laravel",
+      "website": "https://www.mypage.vn"
+    },
     "Lazy.js": {
       "cats": [
         "12"

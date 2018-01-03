@@ -3182,7 +3182,7 @@
       },
       "html": [
         "<div id=\"gsNavBar\" class=\"gcBorder1\">",
-        "Powered by <a href=\"[^\"]+\">([^<]+)</a>\\;version:\\1"
+        "<a href=\"http://gallery\\.sourceforge\\.net\"><img[^>]+Powered by Gallery\\s*(?:(?:v|Version)\\s*([0-9.]+))?\\;version:\\1"
       ],
       "icon": "Gallery.png",
       "website": "http://galleryproject.org/"

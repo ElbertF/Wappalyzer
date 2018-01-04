@@ -8419,6 +8419,16 @@
       "script": "mediacdn\\.shopatron\\.com",
       "website": "http://ecommerce.shopatron.com"
     },
+    "Shoper": {
+      "cats": [
+        "6"
+      ],
+      "js": {
+        "shoper": ""
+      },
+      "icon": "Shoper.svg",
+      "website": "https://www.shoper.pl"
+    },
     "Shopery": {
       "cats": [
         "6"

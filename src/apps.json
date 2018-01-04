@@ -10758,6 +10758,7 @@
         "<!-- This site is optimized with the Yoast SEO plugin v([\\d.]+) -\\;version:\\1"
       ],
       "icon": "Yoast SEO.png",
+      "implies": "WordPress",
       "website": "http://yoast.com"
     },
     "YouTrack": {

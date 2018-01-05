@@ -17,7 +17,7 @@
     "wappalyzer.js"
   ],
   "dependencies": {
-    "request": "^2.81.0",
+    "request": "^2.83.0",
     "zombie": "^5.0.7"
   }
 }

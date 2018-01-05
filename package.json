@@ -1,8 +1,8 @@
 {
   "dependencies": {
-    "file-type": "3.8.*",
-    "is-svg": "2.0.*",
-    "read-chunk": "2.0.*"
+    "file-type": "7.4.*",
+    "is-svg": "2.1.*",
+    "read-chunk": "2.1.*"
   }
 }
 

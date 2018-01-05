@@ -11312,6 +11312,9 @@
       "cats": [
         "12"
       ],
+      "js": {
+        "jQuery.migrateVersion": "([\\d.]+)\\;version:\\1"
+      },
       "icon": "jQuery.svg",
       "implies": "jQuery",
       "script": "jquery.migrate(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",

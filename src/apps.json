@@ -1,4 +1,5 @@
 {
+  "$schema": "../schema.json",
   "apps": {
     "1&1": {
       "cats": [

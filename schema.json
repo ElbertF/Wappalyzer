@@ -3,6 +3,9 @@
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {
+		"$schema": {
+			"type": "string"
+		},
 		"categories": {
 			"type": "object",
 			"required": true,
@@ -48,19 +51,28 @@
 						}
 					},
 					"html": {
-						"type": [ "string", "array" ],
+						"type": [
+							"string",
+							"array"
+						],
 						"items": {
 							"type": "string"
 						}
 					},
 					"excludes": {
-						"type": [ "string", "array" ],
+						"type": [
+							"string",
+							"array"
+						],
 						"items": {
 							"type": "string"
 						}
 					},
 					"implies": {
-						"type": [ "string", "array" ],
+						"type": [
+							"string",
+							"array"
+						],
 						"items": {
 							"type": "string"
 						}
@@ -72,7 +84,10 @@
 						}
 					},
 					"script": {
-						"type": [ "string", "array" ],
+						"type": [
+							"string",
+							"array"
+						],
 						"items": {
 							"type": "string"
 						}

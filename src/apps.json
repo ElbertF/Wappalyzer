@@ -5026,6 +5026,17 @@
       "implies": "PHP",
       "website": "http://laravel.com"
     },
+    "Laterpay": {
+      "cats": [
+        "41"
+      ],
+      "meta": {
+        "laterpay:connector:callbacks:on_user_has_access": "deobfuscateText"
+      },
+      "script": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z\\-]*/live/[\\w-]+\\.js\\;version:\\1",
+      "icon": "laterpay.png",
+      "website": "https://www.laterpay.net/"
+    },
     "MYPAGE Platform": {
       "cats": [
         "1",

@@ -12193,7 +12193,7 @@
     },
     "14": {
       "name": "Video Players",
-      "priority": "9"
+      "priority": "7"
     },
     "15": {
       "name": "Comment Systems",
@@ -12217,7 +12217,7 @@
     },
     "20": {
       "name": "Editors",
-      "priority": "9"
+      "priority": "4"
     },
     "21": {
       "name": "LMS",
@@ -12225,7 +12225,7 @@
     },
     "22": {
       "name": "Web Servers",
-      "priority": "9"
+      "priority": "5"
     },
     "23": {
       "name": "Cache Tools",
@@ -12233,7 +12233,7 @@
     },
     "24": {
       "name": "Rich Text Editors",
-      "priority": "9"
+      "priority": "4"
     },
     "25": {
       "name": "JavaScript Graphics",
@@ -12253,11 +12253,11 @@
     },
     "29": {
       "name": "Search Engines",
-      "priority": "9"
+      "priority": "4"
     },
     "30": {
       "name": "Web Mail",
-      "priority": "9"
+      "priority": "2"
     },
     "31": {
       "name": "CDN",
@@ -12269,11 +12269,11 @@
     },
     "33": {
       "name": "Web Server Extensions",
-      "priority": "9"
+      "priority": "7"
     },
     "34": {
       "name": "Databases",
-      "priority": "9"
+      "priority": "5"
     },
     "35": {
       "name": "Maps",
@@ -12301,7 +12301,7 @@
     },
     "41": {
       "name": "Payment Processors",
-      "priority": "9"
+      "priority": "8"
     },
     "42": {
       "name": "Tag Managers",
@@ -12313,19 +12313,19 @@
     },
     "44": {
       "name": "Build CI Systems",
-      "priority": "9"
+      "priority": "4"
     },
     "45": {
       "name": "Control Systems",
-      "priority": "9"
+      "priority": "8"
     },
     "46": {
       "name": "Remote Access",
-      "priority": "9"
+      "priority": "8"
     },
     "47": {
       "name": "Dev Tools",
-      "priority": "9"
+      "priority": "3"
     },
     "48": {
       "name": "Network Storage",
@@ -12349,11 +12349,11 @@
     },
     "53": {
       "name": "CRM",
-      "priority": "9"
+      "priority": "7"
     },
     "54": {
       "name": "SEO",
-      "priority": "9"
+      "priority": "7"
     },
     "55": {
       "name": "Accounting",

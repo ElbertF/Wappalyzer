@@ -12225,7 +12225,7 @@
     },
     "22": {
       "name": "Web Servers",
-      "priority": "5"
+      "priority": "7"
     },
     "23": {
       "name": "Cache Tools",
@@ -12233,7 +12233,7 @@
     },
     "24": {
       "name": "Rich Text Editors",
-      "priority": "4"
+      "priority": "5"
     },
     "25": {
       "name": "JavaScript Graphics",

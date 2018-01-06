@@ -9170,8 +9170,8 @@
       "excludes": "SweetAlert",
       "html": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
       "icon": "SweetAlert2.png",
-      "script": "sweetalert2(?:\\.min)?\\.js",
-      "website": "https://limonte.github.io/sweetalert2"
+      "script": "sweetalert2(?:\\.all)?(?:\\.min)?\\.js",
+      "website": "https://sweetalert2.github.io/"
     },
     "Swiftlet": {
       "cats": [

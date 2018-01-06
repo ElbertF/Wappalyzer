@@ -609,18 +609,25 @@
       "cats": [
         "12"
       ],
+      "html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
+      "icon": "Angular.svg",
+      "website": "https://angular.io"
+    },
+    "AngularJS": {
+      "cats": [
+        "12"
+      ],
       "js": {
         "angular": "",
         "angular.version.full": "(.*)\\;version:\\1"
       },
-      "html": "<app[^>]+ng-version=\"([\\d.]+)\">\\;version:\\1",
       "icon": "Angular.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
         "angular.*\\.js"
       ],
-      "website": "http://angular.io"
+      "website": "https://angularjs.org"
     },
     "Apache": {
       "cats": [

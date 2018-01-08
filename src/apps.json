@@ -11809,7 +11809,7 @@
         "Scriptaculous": ""
       },
       "icon": "script.aculo.us.png",
-      "script": "(?:scriptaculous|protoaculous)\\.js",
+      "script": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
       "website": "http://script.aculo.us"
     },
     "shine.js": {

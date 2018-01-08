@@ -10118,14 +10118,6 @@
       "script": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
       "website": "http://volusion.com"
     },
-    "Vox": {
-      "cats": [
-        "11"
-      ],
-      "icon": "Vox.png",
-      "url": "\\.vox\\.com",
-      "website": "http://www.vox.com"
-    },
     "Vue.js": {
       "cats": [
         "12"

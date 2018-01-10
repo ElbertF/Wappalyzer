@@ -1246,7 +1246,16 @@
       "cats": [
         "13"
       ],
-      "html": "href=\"enter_bug\\.cgi\">",
+      "html": [
+				"href=\"enter_bug\\.cgi\">",
+				"<main id=\"bugzilla-body\""
+			],
+			"meta": {
+				"generator":"Bugzilla ?([\\d.]+)?\\;version:\\1"
+			},
+      "js": {
+        "BUGZILLA": ""
+      },
       "icon": "Bugzilla.png",
       "implies": "Perl",
       "website": "http://www.bugzilla.org"

@@ -11908,7 +11908,7 @@
       "icon": "vBulletin.png",
       "implies": "PHP",
       "meta": {
-        "generator": "vBulletin([\\d.]+)?\\;version:\\1"
+        "generator": "vBulletin ([\\d.]+)?\\;version:\\1"
       },
       "website": "http://www.vbulletin.com"
     },

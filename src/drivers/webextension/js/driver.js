@@ -233,7 +233,7 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
             var app = detected[appName];
 
             app.props.cats.forEach(category => {
-              if ( category === match && !found ) {
+              if ( category === parseInt(match) && !found ) {
                 var icon = app.props.icon || 'default.svg';
 
                 if ( !dynamicIcon ) {

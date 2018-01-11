@@ -8237,26 +8237,6 @@
       "icon": "Scala.png",
       "website": "http://www.scala-lang.org"
     },
-    "Schneider": {
-      "cats": [
-        "45"
-      ],
-      "icon": "Schneider.png",
-      "website": "http://schneider-electric.com"
-    },
-    "Schneider Web Server": {
-      "cats": [
-        "22"
-      ],
-      "headers": {
-        "Server": "Schneider-WEB(?:/V?([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "Schneider.png",
-      "implies": [
-        "Schneider"
-      ],
-      "website": "http://schneider-electric.com"
-    },
     "Scholica": {
       "cats": [
         "21"

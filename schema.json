@@ -13,7 +13,7 @@
 					"required": true,
 					"properties": {
 						"priority": {
-							"type": "string"
+							"type": "number"
 						},
 						"name": {
 							"type": "string"
@@ -31,7 +31,7 @@
 					"cats": {
 						"type": "array",
 						"items": {
-							"type": "string"
+							"type": "number"
 						},
 						"required": true
 					},

@@ -5253,7 +5253,6 @@
         "fyre": "",
         "FyreLoader": "",
         "LF.CommentCount": "",
-        "L.version": "(.*)\\;confidence:0\\;version:\\1"
       },
       "html": "<[^>]+(?:id|class)=\"livefyre",
       "icon": "Livefyre.png",

@@ -5252,7 +5252,7 @@
       "js": {
         "fyre": "",
         "FyreLoader": "",
-        "LF.CommentCount": "",
+        "LF.CommentCount": ""
       },
       "html": "<[^>]+(?:id|class)=\"livefyre",
       "icon": "Livefyre.png",

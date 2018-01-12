@@ -5252,8 +5252,7 @@
       "js": {
         "fyre": "",
         "FyreLoader": "",
-        "LF.CommentCount": "",
-        "L.version": "(.*)\\;confidence:0\\;version:\\1"
+        "LF.CommentCount": ""
       },
       "html": "<[^>]+(?:id|class)=\"livefyre",
       "icon": "Livefyre.png",

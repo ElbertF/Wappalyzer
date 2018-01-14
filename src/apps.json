@@ -98,6 +98,14 @@
       "icon": "ebis.png",
       "website": "http://www.ebis.ne.jp"
     },
+    "Accelerated Mobile Pages": {
+      "cats": [
+        "12"
+      ],
+      "html": "<html[^>]* amp|⚡",
+      "icon": "Accelerated-Mobile-Pages.svg",
+      "website": "https://www.ampproject.org"
+    },
     "Amber": {
       "cats": [
         "18",

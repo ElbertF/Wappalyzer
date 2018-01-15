@@ -102,7 +102,7 @@
       "cats": [
         "12"
       ],
-      "html": "<html[^>]* amp|⚡",
+      "html": "<html[^>]* (?:amp|⚡)",
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.ampproject.org"
     },

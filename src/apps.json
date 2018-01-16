@@ -1984,7 +1984,7 @@
       ],
       "headers": {
         "Set-Cookie": "^CraftSessionId=",
-        "X-Powered-By": "^Craft CMS$"
+        "X-Powered-By": "\\bCraft CMS\\b"
       },
       "icon": "Craft CMS.svg",
       "implies": "Yii",

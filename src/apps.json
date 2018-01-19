@@ -10113,6 +10113,7 @@
       "js": {
         "Vue": ""
       },
+      "html": "<[^>]+data-v-",
       "icon": "Vue.js.png",
       "script": [
         "vue(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",

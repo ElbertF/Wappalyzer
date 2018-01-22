@@ -10881,7 +10881,7 @@
       ],
       "headers": {
         "Set-Cookie": "ZENDSERVERSESSID",
-        "X-Powered-By": "Zend"
+        "X-Powered-By": "Zend(?:Server)?/([0-9.]+)?\\;version:\\1"
       },
       "icon": "Zend.png",
       "website": "http://zend.com"

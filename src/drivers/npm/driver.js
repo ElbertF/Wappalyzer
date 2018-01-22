@@ -246,7 +246,7 @@ class Driver {
             return parent && parent.hasOwnProperty(property) ? parent[property] : null;
           }, browser.window);
 
-          value = typeof value === 'string' ? value : !!value;
+          value = typeof value === 'string' || typeof value === 'number' ? value : !!value;
 
           if ( value ) {
             js[appName][chain][index] = value;

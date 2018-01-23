@@ -7807,7 +7807,7 @@
         "13"
       ],
       "headers": {
-        "Set-Cookie": "_redmine_session"
+        "Set-Cookie": "^_redmine_session"
       },
       "html": "Powered by <a href=\"[^>]+Redmine",
       "icon": "Redmine.png",

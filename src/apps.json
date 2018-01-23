@@ -7806,6 +7806,9 @@
       "cats": [
         "13"
       ],
+      "headers": {
+        "Set-Cookie": "_redmine_session"
+      },
       "html": "Powered by <a href=\"[^>]+Redmine",
       "icon": "Redmine.png",
       "implies": "Ruby on Rails",

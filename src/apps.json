@@ -598,7 +598,7 @@
         "ngMaterial": ""
       },
       "icon": "Angular.svg",
-      "implies": "AngularJS",
+      "implies": "Angular",
       "script": [
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
         "angular-material.*\\.js"
@@ -3231,7 +3231,7 @@
       "icon": "Gatsby.svg",
       "implies": [
         "React",
-        "Webpack"
+        "webpack"
       ],
       "website": "https://www.gatsbyjs.org/"
     },
@@ -3599,7 +3599,7 @@
         "Set-Cookie": "cnv_session"
       },
       "icon": "CNV.png",
-      "implies": "laravel",
+      "implies": "Laravel",
       "website": "https://cnv.vn"
     },
     "Google Tag Manager": {
@@ -5035,7 +5035,7 @@
         "Set-Cookie": "botble_session"
       },
       "icon": "mypage-platform.png",
-      "implies": "laravel",
+      "implies": "Laravel",
       "website": "https://www.mypage.vn"
     },
     "Lazy.js": {
@@ -5614,7 +5614,7 @@
       "implies": [
         "MongoDB",
         "Express",
-        "AngularJS"
+        "Angular"
       ],
       "website": "http://mean.io"
     },
@@ -6110,7 +6110,7 @@
       "icon": "MotoCMS.svg",
       "implies": [
         "PHP",
-        "AngularJS",
+        "Angular",
         "jQuery"
       ],
       "script": ".*\\/mt-includes\\/[asetj]{2,6}\\/.*\\.js.*",
@@ -7474,7 +7474,7 @@
       "icon": "Proximis Omnichannel.png",
       "implies": [
         "PHP",
-        "AngularJS"
+        "Angular"
       ],
       "meta": {
         "generator": "Proximis Omnichannel"
@@ -7748,7 +7748,7 @@
       },
       "icon": "Rayo.png",
       "implies": [
-        "AngularJS",
+        "Angular",
         "Microsoft ASP.NET"
       ],
       "meta": {
@@ -9249,7 +9249,7 @@
       "icon": "Taiga.png",
       "implies": [
         "Django",
-        "AngularJS"
+        "Angular"
       ],
       "website": "http://taiga.io"
     },

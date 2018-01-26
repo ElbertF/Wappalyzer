@@ -630,7 +630,7 @@
         "angular": "",
         "angular.version.full": "(.*)\\;version:\\1"
       },
-      "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1"
+      "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1",
       "icon": "Angular.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",

@@ -86,6 +86,19 @@
       "icon": "3ware.png",
       "website": "http://www.3ware.com"
     },
+    "A-Frame": {
+      "cats": [
+        25
+      ],
+      "html": "<a-scene[^<>]*>",
+      "icon": "A-Frame.svg",
+      "implies": "three.js",
+      "js": {
+        "AFRAME.version": "(.*)\\;version:\\1"
+      },
+      "scripts": "https://aframe.io/releases/0.7.1/aframe.min.js",
+      "website": "https://aframe.io"
+    },
     "AD EBiS": {
       "cats": [
         10

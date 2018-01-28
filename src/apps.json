@@ -96,7 +96,7 @@
       "js": {
         "AFRAME.version": "(.*)\\;version:\\1"
       },
-      "scripts": "https://aframe.io/releases/0.7.1/aframe.min.js",
+      "scripts": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://aframe.io"
     },
     "AD EBiS": {

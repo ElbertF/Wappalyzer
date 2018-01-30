@@ -8973,6 +8973,7 @@
       "js": {
         "Squarespace": ""
       },
+      "html": "<!-- This is Squarespace\\. -->",
       "headers": {
         "X-ServedBy": "squarespace"
       },

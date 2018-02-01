@@ -4769,6 +4769,19 @@
       "implies": "Canon",
       "website": "http://www.canon.com"
     },
+    "Kajabi": {
+      "cats": [
+        6
+      ],
+      "js": {
+        "Kajabi": ""
+      },
+      "headers": {
+        "Set-Cookie": "_kjb_session"
+      },
+      "icon": "Kajabi.svg",
+      "website": "https://newkajabi.com"
+    },
     "Kampyle": {
       "cats": [
         10,

@@ -2054,6 +2054,17 @@
       "implies": "Yii",
       "website": "https://craftcms.com"
     },
+    "Craft Commerce": {
+      "cats": [
+        6
+      ],
+      "headers": {
+        "X-Powered-By": "\\bCraft Commerce\\b"
+      },
+      "icon": "Craft CMS.svg",
+      "implies": "Craft CMS",
+      "website": "https://craftcommerce.com"
+    },
     "Crazy Egg": {
       "cats": [
         10

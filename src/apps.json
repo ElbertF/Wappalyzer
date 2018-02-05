@@ -6820,7 +6820,7 @@
       ],
       "icon": "OpenUI5.png",
       "js": {
-        "sap.ui": ""
+        "sap.ui.version": "(.*)\\;version:\\1"
       },
       "script": "sap-ui-core\\.js",
       "website": "http://openui5.org/"

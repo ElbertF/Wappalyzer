@@ -12248,6 +12248,21 @@
       "excludes": "MediaWiki",
       "website": "http://www.xwiki.org",
       "icon": "xwiki.png"
+    },
+    "Woosa": {
+      "cats": [
+        1,
+        6
+      ],
+      "excludes": [
+         "WordPress",
+         "WooCommerce"
+      ],
+      "meta": {
+        "generator": "^Woosa$"
+      },
+      "icon": "Woosa.svg",
+      "website": "https://woosa.nl"
     }
   },
   "categories": {

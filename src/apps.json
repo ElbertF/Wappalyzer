@@ -2548,6 +2548,16 @@
       },
       "website": "http://www.stack.nl/~dimitri/doxygen/"
     },
+    "Dream7 CMS": {
+      "cats": [
+        1
+      ],
+      "icon": "Dream7.png",
+      "meta": {
+        "generator": "Dream7 CMS v.([\\d.]+)\\;version:\\1"
+      },
+      "website": "https://7nd.de"
+    },
     "DreamWeaver": {
       "cats": [
         20

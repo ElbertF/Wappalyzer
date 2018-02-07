@@ -5788,7 +5788,7 @@
       ],
       "js": {
         "Meteor": "",
-        "METEOR_VERSION": ""
+        "Meteor.release": "^METEOR@([\\d.]+)\\;version:\\1"
       },
       "html": "<link[^>]+__meteor-css__",
       "icon": "Meteor.png",
@@ -5796,15 +5796,12 @@
         "MongoDB",
         "Node.js"
       ],
-      "website": "http://meteor.com"
+      "website": "https://www.meteor.com"
     },
     "Methode": {
       "cats": [
         1
       ],
-      "js": {
-        "eidosBase": ""
-      },
       "html": "<!-- Methode uuid: \"[a-f\\d]+\" ?-->",
       "icon": "Methode.png",
       "meta": {
@@ -5814,7 +5811,7 @@
         "eomportal-loid": "[\\d.]+",
         "eomportal-uuid": "[a-f\\d]+"
       },
-      "website": "http://www.eidosmedia.com/solutions"
+      "website": "https://www.eidosmedia.com/"
     },
     "Microsoft ASP.NET": {
       "cats": [
@@ -5882,7 +5879,8 @@
         1
       ],
       "js": {
-        "_spBodyOnLoadCalled": ""
+        "_spBodyOnLoadCalled": "",
+        "SPDesignerProgID": ""
       },
       "headers": {
         "MicrosoftSharePointTeamServices": "(.*)\\;version:\\1",
@@ -5894,7 +5892,7 @@
       "meta": {
         "generator": "Microsoft SharePoint"
       },
-      "website": "http://sharepoint.microsoft.com"
+      "website": "https://sharepoint.microsoft.com"
     },
     "Microsoft Word": {
       "cats": [
@@ -5955,18 +5953,18 @@
       },
       "icon": "Mint.png",
       "script": "mint/\\?js",
-      "website": "http://haveamint.com"
+      "website": "https://haveamint.com"
     },
     "Mixpanel": {
       "cats": [
         10
       ],
       "js": {
-        "Mixpanel": ""
+        "mixpanel": ""
       },
       "icon": "Mixpanel.png",
       "script": "api\\.mixpanel\\.com/track",
-      "website": "http://mixpanel.com"
+      "website": "https://mixpanel.com"
     },
     "Mobify": {
       "cats": [
@@ -5976,19 +5974,20 @@
         "Mobify": ""
       },
       "icon": "Mobify.png",
-      "script": "mobify\\.com",
-      "website": "http://www.mobify.com"
+      "script": "//cdn\\.mobify\\.com/",
+      "website": "https://www.mobify.com"
     },
     "MochiKit": {
       "cats": [
         12
       ],
       "js": {
-        "MochiKit": ""
+        "MochiKit": "",
+        "MochiKit.MochiKit.VERSION": "(.*)\\;version:\\1"
       },
       "icon": "MochiKit.png",
       "script": "MochiKit(?:\\.min)?\\.js",
-      "website": "http://mochikit.com"
+      "website": "https://mochi.github.io/mochikit/"
     },
     "MochiWeb": {
       "cats": [
@@ -6004,14 +6003,15 @@
         12
       ],
       "js": {
-        "Modernizr": ""
+        "Modernizr": "",
+        "Modernizr._version": "(.*)\\;version:\\1"
       },
       "icon": "Modernizr.svg",
       "script": [
         "modernizr(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
         "/([\\d.]+)/modernizr(?:\\.min)?\\.js\\;version:\\1"
       ],
-      "website": "http://www.modernizr.com"
+      "website": "https://modernizr.com"
     },
     "Modified": {
       "cats": [
@@ -6043,7 +6043,7 @@
       "icon": "MoinMoin.png",
       "implies": "Python",
       "script": "moin(?:_static(\\d)(\\d)(\\d)|.+)/common/js/common\\.js\\;version:\\1.\\2.\\3",
-      "website": "http://moinmo.in"
+      "website": "https://moinmo.in"
     },
     "Mojolicious": {
       "cats": [
@@ -6080,11 +6080,12 @@
         12
       ],
       "js": {
-        "moment": ""
+        "moment": "",
+        "moment.version": "(.*)\\;version:\\1"
       },
       "icon": "Moment.js.svg",
       "script": "moment(?:\\.min)?\\.js",
-      "website": "http://momentjs.com"
+      "website": "https://momentjs.com"
     },
     "Mondo Media": {
       "cats": [
@@ -6152,25 +6153,27 @@
       "icon": "Mono.net.png",
       "implies": "Piwik",
       "script": "monotracker(?:\\.min)?\\.js",
-      "website": "http://www.mono.net"
+      "website": "https://www.mono.net/en"
     },
     "MooTools": {
       "cats": [
         12
       ],
       "js": {
-        "MooTools": ""
+        "MooTools": "",
+        "MooTools.version": "(.*)\\;version:\\1"
       },
       "icon": "MooTools.png",
       "script": "mootools.*\\.js",
-      "website": "http://mootools.net"
+      "website": "https://mootools.net"
     },
     "Moodle": {
       "cats": [
         21
       ],
       "js": {
-        "moodle": ""
+        "Y.Moodle": "",
+        "M.core": ""
       },
       "headers": {
         "Set-Cookie": "(?:MoodleSession|MOODLEID_)"
@@ -6263,11 +6266,12 @@
         12
       ],
       "js": {
-        "Mustache": ""
+        "Mustache": "",
+        "Mustache.version": "(.*)\\;version:\\1"
       },
       "icon": "Mustache.png",
       "script": "mustache(?:\\.min)?\\.js",
-      "website": "http://mustache.github.com"
+      "website": "https://mustache.github.io"
     },
     "MyBB": {
       "cats": [
@@ -6282,7 +6286,7 @@
         "PHP",
         "MySQL"
       ],
-      "website": "http://www.mybb.com"
+      "website": "https://mybb.com"
     },
     "MyBlogLog": {
       "cats": [
@@ -6322,7 +6326,8 @@
         25
       ],
       "js": {
-        "nv": "\\;confidence:20"
+        "nv.addGraph": "",
+        "nv.version": "(.*)\\;confidence:0\\;version:\\1"
       },
       "html": "<link[^>]* href=[^>]+nv\\.d3(?:\\.min)?\\.css",
       "icon": "NVD3.png",
@@ -6338,16 +6343,6 @@
       "script": "tag\\.navdmp\\.com",
       "website": "https://www.navegg.com/"
     },
-    "Nedstat": {
-      "cats": [
-        10
-      ],
-      "js": {
-        "sitestat": ""
-      },
-      "icon": "Nedstat.png",
-      "website": "http://www.nedstat.com"
-    },
     "NEO - Omnichannel Commerce Platform": {
       "cats": [
         6
@@ -6357,17 +6352,6 @@
       },
       "icon": "Plataforma NEO.svg",
       "website": "http://www.jetecommerce.com.br/"
-    },
-    "Neonclear": {
-      "cats": [
-        12
-      ],
-      "icon": "Neonclear.png",
-      "js": {
-        "neon": ""
-      },
-      "script": "/neonclear(?:\\.min|\\.dev)?\\.js",
-      "website": "http://neon.atm.re"
     },
     "Neos CMS": {
       "cats": [
@@ -6435,7 +6419,7 @@
       },
       "icon": "Neto.svg",
       "script": "jquery\\.neto.*\\.js",
-      "website": "http://www.neto.com.au"
+      "website": "https://www.neto.com.au"
     },
     "Netsuite": {
       "cats": [
@@ -6452,7 +6436,8 @@
         18
       ],
       "js": {
-        "Nette": ""
+        "Nette": "",
+        "Nette.version": "(.*)\\;version:\\1"
       },
       "headers": {
         "Set-Cookie": "nette-browser=",
@@ -6465,17 +6450,18 @@
       ],
       "icon": "Nette Framework.png",
       "implies": "PHP",
-      "website": "http://nette.org"
+      "website": "https://nette.org"
     },
     "New Relic": {
       "cats": [
         10
       ],
       "js": {
-        "NREUM": ""
+        "NREUM": "",
+        "newrelic": ""
       },
       "icon": "New Relic.png",
-      "website": "http://newrelic.com"
+      "website": "https://newrelic.com"
     },
     "NextGEN Gallery": {
       "cats": [
@@ -6508,7 +6494,7 @@
         "webpack",
         "Node.js"
       ],
-      "website": "https://zeit.co/next"
+      "website": "https://github.com/zeit/next.js"
     },
     "Nginx": {
       "cats": [
@@ -6567,11 +6553,12 @@
         "oxTopMenu": "",
         "oxModalPopup": "",
         "oxLoginBox": "",
-        "oxInputValidator": ""
+        "oxInputValidator": "",
+        "oxCookieNote": ""
       },
       "html": "<!--[^-]*OXID eShop",
       "icon": "OXID eShop.png",
-      "website": "http://oxid-esales.com"
+      "website": "https://en.oxid-esales.com/en/home.html"
     },
     "October CMS": {
       "cats": [
@@ -6646,7 +6633,7 @@
         10
       ],
       "js": {
-        "OneStat": ""
+        "OneStat_Pageview": ""
       },
       "icon": "OneStat.png",
       "website": "http://www.onestat.com"
@@ -6659,7 +6646,7 @@
         "OAS_AD": ""
       },
       "icon": "Open AdStream.png",
-      "website": "http://xaxis.com"
+      "website": "https://www.xaxis.com"
     },
     "Open Classifieds": {
       "cats": [
@@ -6691,12 +6678,13 @@
         10
       ],
       "js": {
-        "owa_": "",
-        "_owa_": ""
+        "owa_baseUrl": "",
+        "owa_cmds": "",
+        "OWA.config.baseUrl": ""
       },
       "html": "<!-- (?:Start|End) Open Web Analytics Tracker -->",
       "icon": "Open Web Analytics.png",
-      "website": "http://openwebanalytics.com"
+      "website": "http://www.openwebanalytics.com"
     },
     "Open eShop": {
       "cats": [
@@ -6762,11 +6750,12 @@
         35
       ],
       "js": {
-        "OpenLayers": ""
+        "ol.CanvasMap": "",
+        "OpenLayers.VERSION_NUMBER": "([\\d.]+)\\;version:\\1"
       },
       "icon": "OpenLayers.png",
       "script": "openlayers",
-      "website": "http://openlayers.org"
+      "website": "https://openlayers.org"
     },
     "OpenNemas": {
       "cats": [
@@ -6891,7 +6880,7 @@
       },
       "icon": "Optimizely.png",
       "script": "optimizely\\.com.*\\.js",
-      "website": "http://optimizely.com"
+      "website": "https://www.optimizely.com"
     },
     "Oracle Application Server": {
       "cats": [
@@ -6980,11 +6969,11 @@
       ],
       "js": {
         "OutbrainPermaLink": "",
-        "OB_releaseVer": ""
+        "OB_releaseVer": "(.*)\\;version:\\1"
       },
       "icon": "Outbrain.png",
       "script": "widgets\\.outbrain\\.com/outbrain\\.js",
-      "website": "http://outbrain.com"
+      "website": "https://www.outbrain.com"
     },
     "Outlook Web App": {
       "cats": [
@@ -7014,12 +7003,13 @@
         19
       ],
       "js": {
-        "PDFJS": ""
+        "PDFJS": "",
+        "PDFJS.version": "(.*)\\;version:\\1"
       },
       "html": "<\\/div>\\s*<!-- outerContainer -->\\s*<div\\s*id=\"printContainer\"><\\/div>",
       "icon": "PDF.js.svg",
       "url": "/web/viewer\\.html?file=[^&]\\.pdf",
-      "website": "http://mozilla.github.io/pdf.js/"
+      "website": "https://mozilla.github.io/pdf.js/"
     },
     "PHP": {
       "cats": [
@@ -7082,7 +7072,7 @@
         "X-Pardot-Rsp": ""
       },
       "icon": "Pardot.png",
-      "website": "http://pardot.com"
+      "website": "https://www.pardot.com"
     },
     "Parse.ly": {
       "cats": [
@@ -7092,21 +7082,22 @@
         "PARSELY": ""
       },
       "icon": "Parse.ly.png",
-      "website": "http://parse.ly"
+      "website": "https://www.parse.ly"
     },
     "Paths.js": {
       "cats": [
         25
       ],
       "script": "paths(?:\\.min)?\\.js",
-      "website": "http://github.com/andreaferretti/paths-js"
+      "website": "https://github.com/andreaferretti/paths-js"
     },
     "Braintree": {
       "cats": [
         41
       ],
       "js": {
-        "braintree": ""
+        "Braintree": "",
+        "Braintree.version": "(.*)\\;version:\\1"
       },
       "icon": "Braintree.svg",
       "website": "https://www.braintreepayments.com"
@@ -7116,7 +7107,7 @@
         41
       ],
       "js": {
-        "adyen.encrypt.version": "(.*)\\;version:\\1\\;confidence:50"
+        "adyen.encrypt.version": "(.*)\\;version:\\1"
       },
       "icon": "Adyen.svg",
       "website": "https://www.adyen.com"
@@ -7131,7 +7122,7 @@
       "html": "<input[^>]+_s-xclick",
       "icon": "PayPal.svg",
       "script": "paypalobjects\\.com/js",
-      "website": "http://paypal.com"
+      "website": "https://paypal.com"
     },
     "PencilBlue": {
       "cats": [
@@ -7144,18 +7135,6 @@
       "icon": "PencilBlue.png",
       "implies": "Node.js",
       "website": "http://pencilblue.org"
-    },
-    "Penguin": {
-      "cats": [
-        18
-      ],
-      "js": {
-        "penguin": ""
-      },
-      "html": "<link[^>]+?href=\"[^\"]+penguin(?:\\.min)?\\.css",
-      "icon": "Penguin.svg",
-      "script": "penguin(?:\\.min)?\\.js",
-      "website": "http://penguin.docs.bqws.io"
     },
     "Percussion": {
       "cats": [
@@ -7188,20 +7167,6 @@
       "icon": "Perl.png",
       "website": "http://perl.org"
     },
-    "Petrojs": {
-      "cats": [
-        12
-      ],
-      "js": {
-        "petrojs": ""
-      },
-      "icon": "Petrojs.png",
-      "script": [
-        "petrojs(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "(?:/([\\d.]+)/)?petrojs(?:\\.min)?\\.js\\;version:\\1"
-      ],
-      "website": "http://petrojs.thepetronics.com"
-    },
     "Phabricator": {
       "cats": [
         13,
@@ -7223,10 +7188,11 @@
         12
       ],
       "js": {
-        "Phaser": ""
+        "Phaser": "",
+        "Phaser.VERSION": "(.*)\\;version:\\1"
       },
       "icon": "Phaser.png",
-      "website": "http://phaser.io"
+      "website": "https://phaser.io"
     },
     "Phenomic": {
       "cats": [
@@ -7264,19 +7230,6 @@
       },
       "icon": "Phusion Passenger.png",
       "website": "http://phusionpassenger.com"
-    },
-    "Piano Solo": {
-      "cats": [
-        43
-      ],
-      "js": {
-        "PianoMedia": ""
-      },
-      "headers": {
-        "Set-Cookie": "pianovisitkey"
-      },
-      "icon": "Piano Solo.png",
-      "website": "http://www.pianomedia.com/products"
     },
     "Pimcore": {
       "cats": [

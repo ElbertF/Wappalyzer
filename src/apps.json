@@ -5377,6 +5377,9 @@
         12
       ],
       "icon": "Lo-dash.png",
+      "js": {
+        "_.VERSION": "(.*)\\;version:\\1"
+      },
       "script": "lodash.*\\.js",
       "website": "http://www.lodash.com"
     },

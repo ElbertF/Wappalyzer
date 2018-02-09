@@ -631,7 +631,7 @@
       "cats": [
         12
       ],
-      "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1",
+      "html": "<[^>]+ ng-version=\"([\\d.]+)\"\\;version:\\1",
       "icon": "Angular.svg",
       "website": "https://angular.io"
     },
@@ -643,7 +643,6 @@
         "angular": "",
         "angular.version.full": "(.*)\\;version:\\1"
       },
-      "html": "<[^>]+ ng-version=\"([\\d.]+)\">\\;version:\\1",
       "icon": "AngularJS.svg",
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -6003,7 +6002,6 @@
         12
       ],
       "js": {
-        "Modernizr": "",
         "Modernizr._version": "(.*)\\;version:\\1"
       },
       "icon": "Modernizr.svg",
@@ -6809,7 +6807,7 @@
       ],
       "icon": "OpenUI5.png",
       "js": {
-        "sap.ui": ""
+        "sap.ui.version": "(.*)\\;version:\\1"
       },
       "script": "sap-ui-core\\.js",
       "website": "http://openui5.org/"
@@ -12201,6 +12199,21 @@
       "excludes": "MediaWiki",
       "website": "http://www.xwiki.org",
       "icon": "xwiki.png"
+    },
+    "Woosa": {
+      "cats": [
+        1,
+        6
+      ],
+      "excludes": [
+         "WordPress",
+         "WooCommerce"
+      ],
+      "meta": {
+        "generator": "^Woosa$"
+      },
+      "icon": "Woosa.png",
+      "website": "https://woosa.nl"
     }
   },
   "categories": {

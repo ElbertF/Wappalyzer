@@ -10,7 +10,7 @@
 	"optionTracking":           { "message": "Przesyłaj anonimowe statystyki aplikacji wykrytych przez Wappalyzer do twórców" },
 	"nothingToDo":              { "message": "Nic tu nie ma." },
 	"noAppsDetected":           { "message": "Nie wykryto żadnych aplikacji." },
-  "categoryPin":              { "message": "Always show icon" },
+  "categoryPin":              { "message": "Zawsze pokazuj tą ikonę" },
 	"categoryName1":            { "message": "System zarządzania treścią" },
 	"categoryName2":            { "message": "Forum" },
 	"categoryName3":            { "message": "Menedżer baz danych" },

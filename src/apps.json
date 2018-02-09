@@ -10189,7 +10189,7 @@
         12
       ],
       "js": {
-        "Vue": ""
+        "Vue.version": "(.*)\\;version:\\1"
       },
       "html": "<[^>]+data-v-",
       "icon": "Vue.js.png",

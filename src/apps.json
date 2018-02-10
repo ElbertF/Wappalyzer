@@ -7505,7 +7505,7 @@
         12
       ],
       "js": {
-        "Prototype": ""
+        "Prototype.Version": "(.*)\\;version:\\1"
       },
       "icon": "Prototype.png",
       "script": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",

@@ -10,6 +10,7 @@
 	"optionsSaved":         { "message": "Sauvegardé" },
 	"twitter":              { "message": "Suivre Wappalyzer sur Twitter" },
 	"website":              { "message": "Aller sur wappalyzer.com" },
+  "categoryPin":          { "message": "Always show icon" },
 	"categoryName1":        { "message": "CMS" },
 	"categoryName2":        { "message": "Forum" },
 	"categoryName3":        { "message": "Gestionnaire de base de données" },

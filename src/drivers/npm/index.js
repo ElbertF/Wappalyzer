@@ -28,6 +28,12 @@ while ( arg = args.shift() ) {
 
 const wappalyzer = new Wappalyzer(url, options);
 
+setTimeout(() => {
+  console.log('force quit');
+
+  process.exit(1);
+}, 10000);
+
 wappalyzer.analyze()
   .then(json => {
     process.stdout.write(JSON.stringify(json) + '\n')

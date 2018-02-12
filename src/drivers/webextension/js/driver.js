@@ -10,6 +10,7 @@ const wappalyzer = new Wappalyzer();
 var tabCache = {};
 var headersCache = {};
 var categoryOrder = [];
+var options = {};
 
 browser.tabs.onRemoved.addListener(tabId => {
   tabCache[tabId] = null;
@@ -18,10 +19,12 @@ browser.tabs.onRemoved.addListener(tabId => {
 /**
  * Get a value from localStorage
  */
-function getOption(name, defaultValue) {
+function getOption(name, defaultValue = null) {
   return new Promise((resolve, reject) => {
     const callback = item => {
-      resolve(item.hasOwnProperty(name) ? item[name] : defaultValue);
+      options[name] = item.hasOwnProperty(name) ? item[name] : defaultValue;
+
+      resolve(options[name]);
     };
 
     browser.storage.local.get(name)
@@ -39,6 +42,8 @@ function setOption(name, value) {
   option[name] = value;
 
   browser.storage.local.set(option);
+
+  options[name] = value;
 }
 
 /**
@@ -75,9 +80,11 @@ fetch('../apps.json')
     wappalyzer.apps = json.apps;
     wappalyzer.categories = json.categories;
 
-    categoryOrder = Object.keys(wappalyzer.categories).sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
-
     wappalyzer.parseJsPatterns();
+
+    categoryOrder = Object.keys(wappalyzer.categories)
+      .map(categoryId => parseInt(categoryId, 10))
+      .sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
   })
   .catch(error => {
     wappalyzer.log('GET apps.json: ' + error, 'driver', 'error');
@@ -96,16 +103,19 @@ getOption('version')
       getOption('upgradeMessage', true)
         .then(upgradeMessage => {
           if ( upgradeMessage ) {
-            openTab({
-              url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
-              background: true
-            });
+            // openTab({
+            //   url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
+            //   background: true
+            // });
           }
         });
     }
 
     setOption('version', version);
   });
+
+getOption('dynamicIcon', true);
+getOption('pinnedCategory');
 
 // Run content script
 var callback = tabs => {
@@ -184,10 +194,15 @@ browser.webRequest.onCompleted.addListener(request => {
         break;
       case 'get_apps':
         response = {
-          tabCache:   tabCache[message.tab.id],
-          apps:       wappalyzer.apps,
-          categories: wappalyzer.categories
+          tabCache: tabCache[message.tab.id],
+          apps: wappalyzer.apps,
+          categories: wappalyzer.categories,
+          pinnedCategory: options.pinnedCategory,
         };
+
+        break;
+      case 'set_option':
+        setOption(message.key, message.value);
 
         break;
       case 'init_js':
@@ -223,49 +238,46 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
   tabCache[tab.id].detected = detected;
 
   if ( Object.keys(detected).length ) {
-    getOption('dynamicIcon', true)
-      .then(dynamicIcon => {
-        var appName, found = false;
+    var appName, found = false;
 
-        // Find the main application to display
-        categoryOrder.forEach(match => {
-          Object.keys(detected).forEach(appName => {
-            var app = detected[appName];
+    // Find the main application to display
+    [ options.pinnedCategory ].concat(categoryOrder).forEach(match => {
+      Object.keys(detected).forEach(appName => {
+        var app = detected[appName];
 
-            app.props.cats.forEach(category => {
-              if ( category === match && !found ) {
-                var icon = app.props.icon || 'default.svg';
+        app.props.cats.forEach(category => {
+          if ( category === match && !found ) {
+            var icon = app.props.icon || 'default.svg';
 
-                if ( !dynamicIcon ) {
-                  icon = 'default.svg';
-                }
+            if ( !options.dynamicIcon ) {
+              icon = 'default.svg';
+            }
 
-                if ( /\.svg$/i.test(icon) ) {
-                  icon = 'converted/' + icon.replace(/\.svg$/, '.png');
-                }
+            if ( /\.svg$/i.test(icon) ) {
+              icon = 'converted/' + icon.replace(/\.svg$/, '.png');
+            }
 
-                try {
-                	browser.pageAction.setIcon({
-                    tabId: tab.id,
-                    path: '../images/icons/' + icon
-                  });
-                } catch(e) {
-                  // Firefox for Android does not support setIcon see https://bugzilla.mozilla.org/show_bug.cgi?id=1331746
-                }
+            try {
+              browser.pageAction.setIcon({
+                tabId: tab.id,
+                path: '../images/icons/' + icon
+              });
+            } catch(e) {
+              // Firefox for Android does not support setIcon see https://bugzilla.mozilla.org/show_bug.cgi?id=1331746
+            }
 
-                found = true;
-              }
-            });
-          });
+            found = true;
+          }
         });
-
-        if ( typeof chrome !== 'undefined' ) {
-          // Browser polyfill doesn't seem to work here
-          chrome.pageAction.show(tab.id);
-        } else {
-          browser.pageAction.show(tab.id);
-        }
       });
+    });
+
+    if ( typeof chrome !== 'undefined' ) {
+      // Browser polyfill doesn't seem to work here
+      chrome.pageAction.show(tab.id);
+    } else {
+      browser.pageAction.show(tab.id);
+    }
   }
 };
 

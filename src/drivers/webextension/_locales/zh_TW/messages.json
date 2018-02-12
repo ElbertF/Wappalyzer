@@ -10,6 +10,7 @@
   "optionTracking":           { "message": "匿名傳送應用程式偵測報告至 wappalyzer.com 作為研究用途" },
   "nothingToDo":              { "message": "這裡什麼也沒有。" },
   "noAppsDetected":           { "message": "未偵測到應用程式。" },
+  "categoryPin":              { "message": "Always show icon" },
   "categoryName1":            { "message": "內容管理系統（CMS）" },
   "categoryName2":            { "message": "留言板/討論區" },
   "categoryName3":            { "message": "資料庫管理" },

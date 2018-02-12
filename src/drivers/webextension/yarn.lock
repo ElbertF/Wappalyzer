@@ -2,6 +2,6 @@
 # yarn lockfile v1
 
 
-webextension-polyfill@^0.1.1:
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/webextension-polyfill/-/webextension-polyfill-0.1.1.tgz#1d172e59b9ee8706d5ce2c55eebfe0cf23972d70"
+webextension-polyfill@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/webextension-polyfill/-/webextension-polyfill-0.2.1.tgz#cdfc9126033039f1713553157d35beff1d4d6f4a"

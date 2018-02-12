@@ -1,12 +1,16 @@
 /** global: chrome */
 /** global: browser */
 
+var pinnedCategory = null;
+
 var func = tabs => {
   ( chrome || browser ).runtime.sendMessage({
     id: 'get_apps',
     tab: tabs[0],
     source: 'popup.js'
   }, response => {
+    pinnedCategory = response.pinnedCategory;
+
     replaceDomWhenReady(appsToDomTemplate(response));
   });
 };
@@ -39,6 +43,34 @@ function replaceDom(domTemplate) {
   Array.prototype.forEach.call(nodes, node => {
     node.childNodes[0].nodeValue = browser.i18n.getMessage(node.dataset.i18n);
   });
+
+  Array.from(document.querySelectorAll('.detected__category-pin-wrapper')).forEach(pin => {
+    pin.addEventListener('click', event => {
+      const categoryId = parseInt(pin.dataset.categoryId, 10);
+
+      if ( categoryId === pinnedCategory ) {
+        pin.className = 'detected__category-pin-wrapper';
+
+        pinnedCategory = null;
+      } else {
+        const active = document.querySelector('.detected__category-pin-wrapper--active');
+
+        if ( active ) {
+          active.className = 'detected__category-pin-wrapper';
+        }
+
+        pin.className = 'detected__category-pin-wrapper detected__category-pin-wrapper--active';
+
+        pinnedCategory = categoryId;
+      }
+
+      ( chrome || browser ).runtime.sendMessage({
+        id: 'set_option',
+        key: 'pinnedCategory',
+        value: pinnedCategory,
+      });
+    });
+  });
 }
 
 function appsToDomTemplate(response) {
@@ -70,7 +102,7 @@ function appsToDomTemplate(response) {
             'a', {
               class: 'detected__app',
               target: '_blank',
-              href: 'https://www.wappalyzer.com/applications/' + slugify(appName)
+              href: 'https://www.wappalyzer.com/technologies/' + slugify(appName)
             }, [
               'img', {
                 class: 'detected__app-icon',
@@ -80,8 +112,18 @@ function appsToDomTemplate(response) {
               'span', {
                 class: 'detected__app-name'
               },
-              appName + ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' )
-            ]
+              appName,
+            ], version ? [
+              'span', {
+                class: 'detected__app-version'
+              },
+              version
+            ] : null, confidence < 100 ? [
+              'span', {
+                class: 'detected__app-confidence'
+              },
+              confidence + '% sure'
+            ] : null
           ]
         );
       }
@@ -91,15 +133,31 @@ function appsToDomTemplate(response) {
           'div', {
             class: 'detected__category'
           }, [
-            'a', {
-              class: 'detected__category-link',
-              target: '_blank',
-              href: 'https://www.wappalyzer.com/categories/' + slugify(response.categories[cat].name)
+            'div', {
+              class: 'detected__category-name'
             }, [
-              'span', {
-                class: 'detected__category-name'
+              'a', {
+                class: 'detected__category-link',
+                target: '_blank',
+                href: 'https://www.wappalyzer.com/categories/' + slugify(response.categories[cat].name)
               },
-              browser.i18n.getMessage('categoryName' + cat)
+              browser.i18n.getMessage('categoryName' + cat),
+            ], [
+              'span', {
+                class: 'detected__category-pin-wrapper' + ( pinnedCategory == cat ? ' detected__category-pin-wrapper--active' : '' ),
+                'data-category-id': cat,
+                'title': browser.i18n.getMessage('categoryPin'),
+              }, [
+                'img', {
+                  class: 'detected__category-pin detected__category-pin--active',
+                  src: '../images/pin-active.svg'
+                },
+              ], [
+                'img', {
+                  class: 'detected__category-pin detected__category-pin--inactive',
+                  src: '../images/pin.svg'
+                }
+              ]
             ]
           ], [
             'div', {

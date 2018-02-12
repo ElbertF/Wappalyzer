@@ -5,8 +5,8 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
   try {
     var html = new XMLSerializer().serializeToString(document);
 
-    if ( html.length > 50000 ) {
-      html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+    if ( html.length > 100 * 1024 ) {
+      html = html.substring(0, 50 * 1024) + html.substring(html.length - 50 * 1024, html.length);
     }
 
     const scripts = Array.prototype.slice

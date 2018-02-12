@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Enviar informes anónimos sobre las aplicaciones detectadas a wappalyzer.com para análisis" },
 	"nothingToDo":              { "message": "Nada que hacer aquí." },
 	"noAppsDetected":           { "message": "Aplicaciones no detectadas." },
+  "categoryPin":              { "message": "Always show icon" },
 	"categoryName1":            { "message": "Gestor de Contenido" },
 	"categoryName2":            { "message": "Foro" },
 	"categoryName3":            { "message": "Gestor de Bases de Datos" },

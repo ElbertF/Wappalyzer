@@ -27,10 +27,11 @@ node index.js [url] [options]
 ### Options
 
 ```
+  --chunk-size=num   Process links in chunks.
   --debug=0|1        Output debug messages.
   --delay=ms         Wait for ms milliseconds between requests.
-  --max-depth=num    Don't analyze pages more than num levels deep.
-  --max-urls=num     Exit when num URLs have been analyzed.
+  --max-depth=num    Don't analyse pages more than num levels deep.
+  --max-urls=num     Exit when num URLs have been analysed.
   --max-wait=ms      Wait no more than ms milliseconds for page resources to load.
   --recursive=0|1    Follow links on pages (crawler).
   --user-agent=str   Set the user agent string.

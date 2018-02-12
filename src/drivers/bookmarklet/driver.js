@@ -6,9 +6,10 @@
 /** global: XMLHttpRequest */
 
 (function() {
+  wappalyzer.driver.document = document;
+
 	const container = document.getElementById('wappalyzer-container');
-	const domain = top.location.host;
-	const url = top.location.href.replace(/#.*$/, '');
+	const url = wappalyzer.parseUrl(top.location.href);
 	const hasOwn = Object.prototype.hasOwnProperty;
 
   /**
@@ -19,7 +20,7 @@
   };
 
   function getPageContent() {
-    wappalyzer.log('func: getPageContent');
+    wappalyzer.log('func: getPageContent', 'driver');
 
     var env = [];
 
@@ -32,7 +33,7 @@
       .filter(s => s.src)
       .map(s => s.src);
 
-    wappalyzer.analyze(domain, url, {
+    wappalyzer.analyze(url, {
       html: document.documentElement.innerHTML,
       env: env,
       scripts: scripts
@@ -40,7 +41,7 @@
   }
 
 	function getResponseHeaders() {
-    wappalyzer.log('func: getResponseHeaders');
+    wappalyzer.log('func: getResponseHeaders', 'driver');
 
     var xhr = new XMLHttpRequest();
 
@@ -51,7 +52,7 @@
         var headers = xhr.getAllResponseHeaders().split("\n");
 
         if ( headers.length > 0 && headers[0] != '' ) {
-          wappalyzer.log('responseHeaders: ' + xhr.getAllResponseHeaders());
+          wappalyzer.log('responseHeaders: ' + xhr.getAllResponseHeaders(), 'driver');
 
           var responseHeaders = {};
 
@@ -69,7 +70,7 @@
             }
           });
 
-          wappalyzer.analyze(domain, url, {
+          wappalyzer.analyze(url, {
             headers: responseHeaders
           });
         }
@@ -83,7 +84,7 @@
    * Display apps
    */
   wappalyzer.driver.displayApps = detected => {
-    wappalyzer.log('func: diplayApps');
+    wappalyzer.log('func: diplayApps', 'driver');
 
     var first = true;
     var app;
@@ -104,14 +105,14 @@
 
         var version = detected[app].version,
           confidence = detected[app].confidence;
-        
+
         html +=
           '<div class="wappalyzer-app' + ( first ? ' wappalyzer-first' : '' ) + '">' +
             '<a target="_blank" class="wappalyzer-application" href="' + wappalyzer.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
               '<strong>' +
                 '<img src="' + wappalyzer.config.websiteURL + 'images/icons/' + (wappalyzer.apps[app].icon || 'default.svg') + '" width="16" height="16"/> ' + app +
               '</strong>' +
-              ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) + 
+              ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) +
             '</a>';
 
         for ( let i in wappalyzer.apps[app].cats ) {

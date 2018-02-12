@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Wappalyzer takomillashtirish uchun hisobotlarni maxfiy ravishda serverga jo'natish" },
 	"nothingToDo":              { "message": "Bu yerda tekshirib bolmaydi." },
 	"noAppsDetected":           { "message": "Hech qanday dastur aniqlanmadi." },
+  "categoryPin":              { "message": "Always show icon" },
 	"categoryName1":            { "message": "CMS (KBT)" },
 	"categoryName2":            { "message": "Forum" },
 	"categoryName3":            { "message": "MB boshqaruvi" },

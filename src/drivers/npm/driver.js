@@ -13,6 +13,7 @@ const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/;
 class Driver {
   constructor(pageUrl, options) {
     this.options = Object.assign({}, {
+      chunkSize: 5,
       debug: false,
       delay: 500,
       maxDepth: 3,
@@ -133,6 +134,7 @@ class Driver {
       });
 
       const links = Array.from(browser.document.getElementsByTagName('a'))
+        .filter(link => link.protocol === 'http:' || link.protocol === 'https:')
         .filter(link => link.hostname === this.origPageUrl.hostname)
         .filter(link => extensions.test(link.pathname))
         .map(link => { link.hash = ''; return url.parse(link.href) });
@@ -244,7 +246,7 @@ class Driver {
             return parent && parent.hasOwnProperty(property) ? parent[property] : null;
           }, browser.window);
 
-          value = typeof value === 'string' ? value : !!value;
+          value = typeof value === 'string' || typeof value === 'number' ? value : !!value;
 
           if ( value ) {
             js[appName][chain][index] = value;
@@ -256,14 +258,15 @@ class Driver {
     return js;
   }
 
-  crawl(pageUrl, index = 1, depth = 1) {
+  crawl(pageUrl, index, depth = 1) {
     pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
 
     return new Promise(resolve => {
       this.fetch(pageUrl, index, depth)
+        .catch(() => {})
         .then(links => {
           if ( links && Boolean(this.options.recursive) && depth < this.options.maxDepth ) {
-            return Promise.all(links.map((link, index) => this.crawl(link, index + 1, depth + 1)));
+            return this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
           } else {
             return Promise.resolve();
           }
@@ -275,6 +278,20 @@ class Driver {
             meta: this.meta
           });
         });
+    });
+  }
+
+  chunk(links, depth, chunk = 0) {
+    if ( links.length === 0 ) {
+      return Promise.resolve();
+    }
+
+    const chunked = links.splice(0, this.options.chunkSize);
+
+    return new Promise(resolve => {
+      Promise.all(chunked.map((link, index) => this.crawl(link, index, depth)))
+        .then(() => this.chunk(links, depth, chunk + 1))
+        .then(() => resolve());
     });
   }
 

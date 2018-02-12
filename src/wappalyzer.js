@@ -122,17 +122,19 @@ class Wappalyzer {
    */
   robotsTxtAllows(url) {
     return new Promise((resolve, reject) => {
-      var parsed = this.parseUrl(url.canonical);
+      var parsed = this.parseUrl(url);
 
       if ( parsed.protocol !== 'http:' && parsed.protocol !== 'https:' ) {
-        reject();
+        return reject();
       }
 
       this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
         .then(robotsTxt => {
-          robotsTxt.forEach(disallow => parsed.pathname.indexOf(disallow) === 0 && reject());
-
-          resolve();
+          if (robotsTxt.some(disallowedPath => parsed.pathname.indexOf(disallowedPath) === 0)) {
+            return reject();
+          } else {
+            return resolve();
+          }
         });
     });
   };
@@ -440,13 +442,16 @@ class Wappalyzer {
   analyzeMeta(app, html) {
     var regex = /<meta[^>]+>/ig;
     var patterns = this.parsePatterns(app.props.meta);
-    var content;
-    var match;
+    var content = '';
+    var matches = [];
 
-    while ( patterns && ( match = regex.exec(html) ) ) {
+    while ( patterns && ( matches = regex.exec(html) ) ) {
       for ( var meta in patterns ) {
-        if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
-          content = match.toString().match(/content=("|')([^"']+)("|')/i);
+
+        const r = new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i');
+
+        if ( new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i').test(matches[0]) ) {
+          content = matches[0].match(/content=("|')([^"']+)("|')/i);
 
           patterns[meta].forEach(pattern => {
             if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {

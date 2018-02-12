@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Anonim olarak tespit edilen uygulamalar hakkında wappalyzer.com'a araştırma raporları gönderin" },
 	"nothingToDo":              { "message": "Burada yapacak birşey yok." },
 	"noAppsDetected":           { "message": "Uygulamalar tespit edilemedi." },
+  "categoryPin":              { "message": "Always show icon" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Mesaj Tahtası" },
 	"categoryName3":            { "message": "Veritabanı Yöneticisi" },

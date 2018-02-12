@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Анонімно надсилати статистику розпізнавань на сервер для досліджень" },
 	"nothingToDo":              { "message": "Тут нічого робити." },
 	"noAppsDetected":           { "message": "Нічого не знайдено." },
+  "categoryPin":              { "message": "Always show icon" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Форум" },
 	"categoryName3":            { "message": "Менеджер БД" },

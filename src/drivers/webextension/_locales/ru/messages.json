@@ -63,5 +63,6 @@
   "optionsSaved" : { "message" : "Успешно сохранено!" },
   "twitter" : { "message" : "Следите за новостями в Твиттере" },
   "website" : { "message" : "Перейти на Wappalyzer.com" },
+  "categoryPin":          { "message": "Always show icon" },
   "categoryName54":           { "message": "SEO" }
 }

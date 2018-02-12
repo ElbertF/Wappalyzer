@@ -2,26 +2,31 @@
 # yarn lockfile v1
 
 
-file-type@3.8.*:
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/file-type/-/file-type-3.8.0.tgz#bcadf6a8f624ebe4a10e5ad26727b6b93f16d78d"
+file-type@7.4.*:
+  version "7.4.0"
+  resolved "https://registry.yarnpkg.com/file-type/-/file-type-7.4.0.tgz#2a7c94f62a0030150bb7d9b6c70cfa1d3e759c86"
 
 html-comment-regex@^1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/html-comment-regex/-/html-comment-regex-1.1.1.tgz#668b93776eaae55ebde8f3ad464b307a4963625e"
 
-is-svg@2.0.*:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/is-svg/-/is-svg-2.0.1.tgz#f93ab3bf1d6bbca30e9753cd3485b1300eebc013"
+is-svg@2.1.*:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/is-svg/-/is-svg-2.1.0.tgz#cf61090da0d9efbcab8722deba6f032208dbb0e9"
   dependencies:
     html-comment-regex "^1.1.0"
 
-pify@^2.3.0:
-  version "2.3.0"
-  resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
+pify@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/pify/-/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
 
-read-chunk@2.0.*:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/read-chunk/-/read-chunk-2.0.0.tgz#3246e877829116cec059674c4d5f300f7a9261f3"
+read-chunk@2.1.*:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/read-chunk/-/read-chunk-2.1.0.tgz#6a04c0928005ed9d42e1a6ac5600e19cbc7ff655"
   dependencies:
-    pify "^2.3.0"
+    pify "^3.0.0"
+    safe-buffer "^5.1.1"
+
+safe-buffer@^5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.1.tgz#893312af69b2123def71f57889001671eeb2c853"

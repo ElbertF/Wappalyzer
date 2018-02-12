@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Anonyme Statistiken an wappalyzer.com übermitteln" },
 	"nothingToDo":              { "message": "Nichts zu tun." },
 	"noAppsDetected":           { "message": "Keine Applikation entdeckt." },
+  "categoryPin":              { "message": "Always show icon" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Nachrichten Board" },
 	"categoryName3":            { "message": "Datenbankverwaltung" },

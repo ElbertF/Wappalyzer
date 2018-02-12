@@ -53,7 +53,7 @@
         }
       }
 
-      return typeof value === 'string' ? value : !!value;
+      return typeof value === 'string' || typeof value === 'number' ? value : !!value;
     } catch(e) {
       // Fail quietly
     }

@@ -46,25 +46,52 @@ body {
   padding-bottom: 1rem;
 }
 
-.detected__category-link {
+.detected__category-name {
   border-bottom: 1px solid #dbdbdb;
   display: block;
   margin-bottom: .5rem;
+}
+
+.detected__category-link {
+  color: #4608ad;
+  font-weight: bold;
+  line-height: 2rem;
   text-decoration: none;
 }
 
-.detected__category-name {
-  color: #4608ad;
-  display: block;
-  font-weight: bold;
-  line-height: 2rem;
-}
-
-.detected__category-link:hover .detected__category-name {
+.detected__category-link:hover {
   color: #4a4a4a;
 }
 
+.detected__category-pin-wrapper {
+  margin-left: .2rem;
+}
+
+.detected__category-pin {
+  cursor: pointer;
+  display: none;
+  height: 16px;
+  margin-left: .2rem;
+  width: 16px;
+  vertical-align: middle;
+}
+
+.detected__category:hover .detected__category-pin--inactive {
+  display: inline-block;
+}
+
+.detected__category-pin-wrapper--active .detected__category-pin--inactive,
+.detected__category-pin-wrapper:hover .detected__category-pin--inactive {
+  display: none !important;
+}
+
+.detected__category-pin-wrapper--active .detected__category-pin--active,
+.detected__category-pin-wrapper:hover .detected__category-pin--active {
+  display: inline-block;
+}
+
 .detected__app {
+  color: #4a4a4a;
   display: block;
   line-height: 1.7rem;
   text-decoration: none;
@@ -84,11 +111,26 @@ body {
 }
 
 .detected__app-name {
-  color: #4a4a4a;
+}
+
+.detected__app-version, .detected__app-confidence {
+  background: #eee;
+  border-radius: 3px;
+  font-size: .7rem;
+  margin-left: .3rem;
+  padding: .1rem .2rem;
 }
 
 .detected__app:hover .detected__app-name {
   border-bottom: 1px solid #4a4a4a;
+}
+
+.detected__app:hover .detected__app-version {
+  border-bottom: 1px solid white;
+}
+
+.detected__app:hover .detected__app-confidence {
+  border-bottom: 1px solid white;
 }
 
 .detected-app {

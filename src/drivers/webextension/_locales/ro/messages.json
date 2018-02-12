@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Trimite rapoarte anonime despre aplicațiile detectate către wappalyzer.com pentru cercetare" },
 	"nothingToDo":              { "message": "Nimic de făcut pe pagina curentă." },
 	"noAppsDetected":           { "message": "Nici o aplicație detectată." },
+  "categoryPin":              { "message": "Afișează icon tot timpul" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Forum de discuții" },
 	"categoryName3":            { "message": "Manager baze de date" },

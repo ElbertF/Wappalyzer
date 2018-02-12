@@ -10,6 +10,7 @@
     "optionTracking":           { "message": "Anonymne posielať správy o zistených aplikáciách na wappalyzer.com pre výskum" },
     "nothingToDo":              { "message": "Nie je tu čo robiť." },
     "noAppsDetected":           { "message": "Žiadne aplikácie neboli zistené." },
+    "categoryPin":              { "message": "Always show icon" },
     "categoryName1":            { "message": "CMS" },
     "categoryName2":            { "message": "Message Board" },
     "categoryName3":            { "message": "Správca databáz" },

@@ -8506,6 +8506,16 @@
       "script": "mediacdn\\.shopatron\\.com",
       "website": "http://ecommerce.shopatron.com"
     },
+    "Shopcada": {
+      "cats": [
+        6
+      ],
+      "js": {
+        "Shopcada": ""
+      },
+      "icon": "Shopcada.png",
+      "website": "http://shopcada.com"
+    },
     "Shoper": {
       "cats": [
         6

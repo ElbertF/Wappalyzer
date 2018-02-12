@@ -11412,6 +11412,9 @@
       ],
       "icon": "jQuery UI.svg",
       "implies": "jQuery",
+      "js": {
+        "jQuery.ui.version": "(.*)\\;version:\\1"
+      },
       "script": [
         "jquery-ui(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "([\\d.]+)/jquery-ui(?:\\.min)?\\.js\\;version:\\1",

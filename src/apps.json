@@ -3105,6 +3105,16 @@
       ],
       "website": "https://woocommerce.com/flexslider/"
     },
+    "Flickity": {
+      "cats": [
+        12
+      ],
+      "js": {
+        "Flickity": ""
+      },
+      "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
+      "website": "https://flickity.metafizzy.co/"
+    },
     "FluxBB": {
       "cats": [
         2

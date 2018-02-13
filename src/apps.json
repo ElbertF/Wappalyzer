@@ -9713,6 +9713,9 @@
         "<link[^>]+?href=\"[^\"]*bootstrap(?:\\.min)?\\.css",
         "<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
       ],
+      "js": {
+        "bootstrap.Alert.VERSION": "(.*)\\;version:\\1"
+      },
       "icon": "Bootstrap.svg",
       "script": [
         "twitter\\.github\\.com/bootstrap",

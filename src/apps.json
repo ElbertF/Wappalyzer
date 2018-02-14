@@ -3330,6 +3330,9 @@
         "<!-- Extra divs, for stylesheet developers to add imagery -->",
         "<link rel=\"alternate\" type=\"application/rss+xml\" href=\"[^\"]+\" title=\"[^\"]+ - Gazelle Change Log\""
       ],
+      "js": {
+        "GazURL": ""
+      },
       "website": "https://whatcd.github.io/Gazelle/"
     },
     "Gentoo": {

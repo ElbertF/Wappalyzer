@@ -9785,7 +9785,7 @@
         17
       ],
       "js": {
-        "Typekit": ""
+        "Typekit.config.js": "(.*)\\;version:\\1"
       },
       "icon": "Typekit.png",
       "script": "use\\.typekit\\.com",

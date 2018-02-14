@@ -3322,6 +3322,16 @@
       "icon": "Gauges.png",
       "website": "https://get.gaug.es"
     },
+    "Gazelle": {
+      "cats": [
+        29
+      ],
+      "html": [
+        "<!-- Extra divs, for stylesheet developers to add imagery -->",
+        "<link rel=\"alternate\" type=\"application/rss+xml\" href=\"[^\"]+\" title=\"[^\"]+ - Gazelle Change Log\""
+      ],
+      "website": "https://whatcd.github.io/Gazelle/"
+    },
     "Gentoo": {
       "cats": [
         28

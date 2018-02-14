@@ -4989,6 +4989,9 @@
       "meta": {
         "generator": "^Koha ([\\d.]+)$\\;version:\\1"
       },
+      "js": {
+        "KOHA": ""
+      },
       "html": [
         "<input name=\"koha_login_context\" value=\"intranet\" type=\"hidden\">",
         "<a href=\"/cgi-bin/koha/"

@@ -4982,6 +4982,21 @@
       },
       "website": "https://www.kobimaster.com.tr"
     },
+    "Koha": {
+      "cats": [
+        21
+      ],
+      "meta": {
+        "generator": "^Koha ([\\d.]+)$\\;version:\\1"
+      },
+      "html": [
+        "<input name=\"koha_login_context\" value=\"intranet\" type=\"hidden\">",
+        "<a href=\"/cgi-bin/koha/"
+      ],
+      "icon": "koha.png",
+      "implies": "Perl",
+      "website": "https://koha-community.org/"
+    },
     "Kohana": {
       "cats": [
         18

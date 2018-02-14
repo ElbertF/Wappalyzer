@@ -450,7 +450,7 @@ class Wappalyzer {
 
         const r = new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i');
 
-        if ( new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i').test(matches[0]) ) {
+        if (r.test(matches[0]) ) {
           content = matches[0].match(/content=("|')([^"']+)("|')/i);
 
           patterns[meta].forEach(pattern => {

@@ -4014,7 +4014,7 @@
     },
     "Hexo": {
       "cats": [
-        11
+        57
       ],
       "icon": "Hexo.png",
       "html": [
@@ -4140,8 +4140,7 @@
     },
     "Hugo": {
       "cats": [
-        1,
-        11
+        57
       ],
       "icon": "Hugo.png",
       "meta": {
@@ -4637,8 +4636,7 @@
     },
     "Jekyll": {
       "cats": [
-        1,
-        11
+        57
       ],
       "icon": "Jekyll.png",
       "html": [
@@ -7193,8 +7191,7 @@
     },
     "Phenomic": {
       "cats": [
-        1,
-        11
+        57
       ],
       "html": [
         "<[^>]+id=\"phenomic(?:root)?\""
@@ -7208,8 +7205,7 @@
     },
     "PHPoole": {
       "cats": [
-        1,
-        11
+        57
       ],
       "icon": "PHPoole.png",
       "meta": {
@@ -12449,6 +12445,10 @@
     "56": {
       "name": "Cryptominer",
       "priority": 8
+    },
+    "57": {
+      "name": "Static Site Generator",
+      "priority": 1
     }
   }
 }

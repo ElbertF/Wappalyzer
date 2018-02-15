@@ -4484,6 +4484,14 @@
       "icon": "Ionicons.png",
       "website": "http://ionicons.com"
     },
+    "ip-label": {
+      "cats": [
+        10
+      ],
+      "script": "clobs\\.js",
+      "icon": "iplabel.svg",
+      "website": "http://www.ip-label.com"
+    },
     "JAlbum": {
       "cats": [
         7

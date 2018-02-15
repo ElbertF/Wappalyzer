@@ -5481,6 +5481,16 @@
       "icon": "mhonarc.png",
       "website": "http://www.mhonarc.at"
     },
+    "MkDocs": {
+      "cats": [
+        4
+      ],
+      "meta": {
+        "generator": "^mkdocs-([\\d.]+)\\;version:\\1"
+      },
+      "icon": "mkdocs.png",
+      "website": "http://www.mkdocs.org/"
+    },
     "MOBOTIX": {
       "cats": [
         39

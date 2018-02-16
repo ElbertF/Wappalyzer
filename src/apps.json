@@ -10079,6 +10079,18 @@
       "icon": "VTEX Integrated Store.png",
       "website": "http://lojaintegrada.com.br"
     },
+    "Vaadin": {
+      "cats": [
+        18
+      ],
+      "js": {
+        "vaadin": ""
+      },
+      "icon": "Vaadin.svg",
+      "implies": "Java",
+      "script": "vaadinBootstrap\\.js(?:\\?v=([\\d.]+))?\\;version:\\1",
+      "website": "https://vaadin.com"
+    },
     "Vanilla": {
       "cats": [
         2

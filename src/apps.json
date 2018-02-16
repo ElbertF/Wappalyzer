@@ -951,6 +951,17 @@
       "script": "^https?://edge\\.avangate\\.net/",
       "website": "http://avangate.com"
     },
+    "Awesomplete": {
+      "cats": [
+        29
+      ],
+      "js": {
+        "awesomplete": ""
+      },
+      "html": "<link[^>]+href=\"[^>]*awesomplete(?:\\.min)?\\.css",
+      "script": "/awesomplete\\.js(?:$|\\?)",
+      "website": "https://leaverou.github.io/awesomplete/"
+    },
     "BEM": {
       "cats": [
         12

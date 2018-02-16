@@ -2911,7 +2911,7 @@
         1
       ],
       "headers": {
-        "Set-Cookie": "(?:exp_last_activity|exp_tracker)"
+        "Set-Cookie": "^exp_(?:last_activity|tracker|csrf_token)"
       },
       "icon": "ExpressionEngine.png",
       "implies": "PHP",

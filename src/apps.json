@@ -8309,22 +8309,28 @@
 			"icon": "WHMCS.png",
 			"website": "http://www.whmcs.com"
 		},
-	         "wpCache": {
-                        "cats": [
-                                "23"
-                        ],
-                        "headers": {
-				 "X-Powered-By": "wpCache(?:/([\\d.]+))?\\;version:\\1"
-		        },
-                        "meta": {
-	                        "generator": "wpCache",
-	                        "keywords": "wpCache"
-	                },
-	                "html": "<!--[^>]+wpCache",
-                        "icon": "wpCache.png",
-                        "implies": "PHP",
-                        "website": "http://wpcache.co"
-                        },
+               "wpCache": {
+                       "cats": [
+                              "23"
+                       ],
+                       "headers": {
+                                "X-Powered-By": "wpCache(?:/([\\d.]+))?\\;version:\\1"
+                       },
+                       "html": "<!--[^>]+wpCache",
+                       "url": "^https?://[^/]+\\.wpcache\\.co",
+                       "icon": "wpCache.png",
+                       "implies": [
+                        "Apache",
+                        "WordPress",
+                        "PHP",
+                        "Nginx"
+                      ],
+                      "meta": {
+                      "generator": "wpCache",
+                      "keywords": "wpCache"
+                      },
+                      "website": "http://wpcache.co"
+                },
 		"WP Rocket": {
 			"cats": [
 				"23"

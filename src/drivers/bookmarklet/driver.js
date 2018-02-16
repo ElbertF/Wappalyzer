@@ -1,6 +1,9 @@
 /**
- * Bookmarklet driver
+ * WebExtension driver
  */
+
+/** global: wappalyzer */
+/** global: XMLHttpRequest */
 
 (function() {
 	if ( typeof wappalyzer === 'undefined' ) {
@@ -112,7 +115,7 @@
 						'<div class="wappalyzer-app' + ( first ? ' wappalyzer-first' : '' ) + '">' +
 							'<a target="_blank" class="wappalyzer-application" href="' + w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
 								'<strong>' +
-									'<img src="' + w.config.websiteURL + 'images/icons/' + w.apps[app].icon + '" width="16" height="16"/> ' + app +
+									'<img src="' + w.config.websiteURL + 'images/icons/' + (w.apps[app].icon || 'default.svg') + '" width="16" height="16"/> ' + app +
 								'</strong>' +
 							'</a>';
 

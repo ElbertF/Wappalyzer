@@ -1,0 +1,19 @@
+#!/bin/bash
+
+cd "$(dirname $0)"
+
+if [[ -z "$(which docker)" ]]; then
+	echo "Please install Docker from https://www.docker.com"
+
+	exit 1
+fi
+
+docker="docker run --rm -v "$(pwd):/opt/wappalyzer" -it wappalyzer/dev"
+
+if [[ ! -d "node_modules" ]]; then
+	$docker ./bin/run links
+
+	$docker npm i
+fi
+
+$docker ./bin/run $@

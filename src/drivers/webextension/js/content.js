@@ -1,27 +1,29 @@
+/** global: browser */
+
 (function() {
 	var c = {
 		init: function() {
 			var html = document.documentElement.outerHTML;
 
-			c.log('init');
+			c.log('Function call: init()');
 
 			if ( html.length > 50000 ) {
 				html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
 			}
 
-			browser.runtime.sendMessage({ id: 'analyze', subject: { html: html } });
+			browser.runtime.sendMessage({ id: 'analyze', subject: { html: html }, source: 'content.js' });
 
 			c.getEnvironmentVars();
 		},
 
 		log: function(message) {
-			browser.runtime.sendMessage({ id: 'log', message: '[ content.js ] ' + message });
+			browser.runtime.sendMessage({ id: 'log', message: message, source: 'content.js' });
 		},
 
 		getEnvironmentVars: function() {
 			var container, script;
 
-			c.log('getEnvironmentVars');
+			c.log('Function call: getEnvironmentVars()');
 
 			if ( typeof document.documentElement.innerHTML === 'undefined' ) {
 				return;
@@ -46,7 +48,7 @@
 
 					environmentVars = environmentVars.split(' ').slice(0, 500);
 
-					browser.runtime.sendMessage({ id: 'analyze', subject: { env: environmentVars } });
+					browser.runtime.sendMessage({ id: 'analyze', subject: { env: environmentVars }, source: 'content.js' });
 				}), true);
 
 				document.documentElement.appendChild(container);

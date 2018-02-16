@@ -1,4 +1,4 @@
-# Wappalyzer [![Travis](https://img.shields.io/travis/AliasIO/Wappalyzer.svg?style=flat-square)](https://travis-ci.org/AliasIO/Wappalyzer/)
+# Wappalyzer [![Travis](https://img.shields.io/travis/AliasIO/Wappalyzer.svg)](https://travis-ci.org/AliasIO/Wappalyzer/) [![Scrutinizer](https://scrutinizer-ci.com/g/AliasIO/Wappalyzer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/AliasIO/Wappalyzer/?branch=master)
 
 [Wappalyzer](https://wappalyzer.com/) is a
 [cross-platform](https://github.com/AliasIO/Wappalyzer/wiki/Drivers) utility that uncovers the
@@ -20,28 +20,16 @@ Refer to the [wiki](https://github.com/AliasIO/Wappalyzer/wiki) for
 
 ## Getting Started
 
-This section describes how to set up a development environment. Everything you
-need is contained in a [Docker image](https://registry.hub.docker.com/u/wappalyzer/dev/)
-which is managed by Vagrant.
-
-Running this environment is optional but recommended as it provides some helpful tools.
-
-First, install [Docker](https://www.docker.com/) and [Vagrant](https://www.vagrantup.com/)
-on your system.
-
-Clone the Wappalyzer repository and open the newly created directory in a
-terminal. Run `vagrant up` to start the environment.
-
-Run `vagrant ssh` to access the environment and read usage instructions.
+Install [Docker](https://www.docker.com/) on your system first.
 
 ```shell
-$ git clone https://github.com/AliasIO/Wappalyzer.git wappalyzer
-$ cd wappalyzer
-$ vagrant up
-$ vagrant ssh
+$ git clone https://github.com/AliasIO/Wappalyzer.git
+$ cd Wappalyzer
+$ ./run links
 ```
 
-To stop the environment, run `vagrant halt`.
+The	`links` command creates symlinks for files that shared between the various
+drivers (i.e. different platforms). If your file system does not support
+symlinks, you need to manually copy these files (see [`bin/links`](https://github.com/AliasIO/Wappalyzer/blob/master/bin/links)).
 
-If a new Docker image becomes available, rebuild the environment with
-`vagrant destroy -y && vagrant up`.
+Please run `./run validate` before submitting a pull request.

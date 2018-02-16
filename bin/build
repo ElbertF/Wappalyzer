@@ -1,0 +1,77 @@
+#!/bin/bash
+
+cd "$(dirname $0)/.."
+
+set -eu
+
+./bin/validate
+
+echo "Prettifying apps.json..."
+
+jsonlint-cli -ist $'\t' src/apps.json
+
+echo "Converting SVG icons to PNG..."
+
+#svg2png-many -i src/icons/ -o src/icons/converted/ --width=32 --height=32
+
+echo "Compressing PNG icons..."
+
+set +e
+
+optipng -quiet "src/icons/*.png"
+optipng -quiet "src/icons/converted/*.png"
+
+set -e
+
+# WebExtension
+echo "Building WebExtension..."
+
+webextension_dir=src/drivers/webextension
+
+pushd $webextension_dir > /dev/null
+
+zip -qr ../../../build/wappalyzer_webextension.zip .
+
+popd > /dev/null
+
+# Edge
+echo "Building Edge application..."
+
+pushd build > /dev/null
+
+webextension_dir="../$webextension_dir"
+manifest_dir="Wappalyzer/edgeextension/manifest"
+
+mv $webextension_dir/manifest.json $webextension_dir/manifest.webextension.json
+mv $webextension_dir/manifest.edge.json $webextension_dir/manifest.json
+
+manifoldjs -l debug -p edgeextension -f edgeextension -m $webextension_dir/manifest.json
+
+# Replace symlinks with actual files
+rm $manifest_dir/Extension/images/icons
+
+cp ../src/apps.json $manifest_dir/Extension
+cp ../src/wappalyzer.js $manifest_dir/Extension/js
+cp -r ../src/icons $manifest_dir/Extension/images
+
+mv $webextension_dir/manifest.json $webextension_dir/manifest.edge.json
+mv $webextension_dir/manifest.webextension.json $webextension_dir/manifest.json
+
+sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-NAME-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
+sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-PUBLISHER-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
+sed -i 's/INSERT-YOUR-PACKAGE-PROPERTIES-PUBLISHERDISPLAYNAME-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
+sed -i 's/Version="0.\([^"]\+\)/Version="\1.0/' $manifest_dir/appxmanifest.xml
+
+cp $webextension_dir/images/icon_44.png  $manifest_dir/Assets/Square44x44Logo.png
+cp $webextension_dir/images/icon_150.png $manifest_dir/Assets/Square150x150Logo.png
+cp $webextension_dir/images/icon_50.png  $manifest_dir/Assets/StoreLogo.png
+
+manifoldjs -l debug -p edgeextension package $manifest_dir
+
+mv Wappalyzer/edgeextension/package/edgeExtension.appx wappalyzer_edge.appx
+
+rm -rf Wappalyzer
+
+popd > /dev/null
+
+echo "Done."

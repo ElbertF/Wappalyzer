@@ -6,6 +6,7 @@
 	"optionsSave":              { "message": "Ρυθμίσεις αποθήκευσης" },
 	"optionsSaved":             { "message": "Αποθηκεύτηκε" },
 	"optionUpgradeMessage":     { "message": "Ενημερώστε με για αναβαθμίσεις" },
+	"optionDynamicIcon":        { "message": "Use application icon instead of Wappalyzer logo" },
 	"optionTracking":           { "message": "Ανώνυμη αποστολή αναφορών για εντοπισμένες εφαρμογές στο wappalyzer.com για έρευνα" },
 	"nothingToDo":              { "message": "Καμία ενέργεια." },
 	"noAppsDetected":           { "message": "Δεν ανιχνεύθηκαν εφαρμογές." },
@@ -56,5 +57,6 @@
 	"categoryName49":           { "message": "Feed Readers" },
 	"categoryName50":           { "message": "Συστήματα Διαχειρίσης Εγγράφων" },
 	"categoryName51":           { "message": "Σύστημα Κατασκευής Σελίδων Υποδοχής" },
-	"categoryName52":           { "message": "Live Chat" }
+	"categoryName52":           { "message": "Live Chat" },
+	"categoryName53":           { "message": "CRM" }
 }

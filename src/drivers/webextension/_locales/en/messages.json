@@ -6,6 +6,7 @@
 	"optionsSave":              { "message": "Save options" },
 	"optionsSaved":             { "message": "Saved" },
 	"optionUpgradeMessage":     { "message": "Tell me about upgrades" },
+	"optionDynamicIcon":        { "message": "Use application icon instead of Wappalyzer logo" },
 	"optionTracking":           { "message": "Anonymously send reports on detected applications to wappalyzer.com for research" },
 	"nothingToDo":              { "message": "Nothing to do here." },
 	"noAppsDetected":           { "message": "No applications detected." },
@@ -14,6 +15,10 @@
 	"categoryName3":            { "message": "Database Manager" },
 	"categoryName4":            { "message": "Documentation Tool" },
 	"categoryName5":            { "message": "Widget" },
+	"categoryName6":            { "message": "Ecommerce" },
+	"categoryName7":            { "message": "Photo Galleries" },
+	"categoryName8":            { "message": "Wikis" },
+	"categoryName9":            { "message": "Hostin Panels" },
 	"categoryName10":           { "message": "Analytics" },
 	"categoryName11":           { "message": "Blog" },
 	"categoryName12":           { "message": "JavaScript Framework" },
@@ -56,5 +61,6 @@
 	"categoryName49":           { "message": "Feed Readers" },
 	"categoryName50":           { "message": "Document Management Systems" },
 	"categoryName51":           { "message": "Landing Page Builder" },
-	"categoryName52":           { "message": "Live Chat" }
+	"categoryName52":           { "message": "Live Chat" },
+	"categoryName53":           { "message": "CRM" }
 }

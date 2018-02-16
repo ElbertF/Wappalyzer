@@ -1,21 +1,25 @@
-language: node_js
-node_js:
-  - "node"
-sudo: false
-before_install:
- - export WAPPALYZER_ROOT=$TRAVIS_BUILD_DIR
- - export WAPPALYZER_NODE_PATH=$TRAVIS_BUILD_DIR
- - export PATH=$PATH:$TRAVIS_BUILD_DIR/bin
- - ln -s docker/node/package.json package.json
-after_script: ls -l --block-size=kB build
-cache:
-  directories:
-    - node_modules
+sudo: required
+
+services:
+  - docker
+
+after_success:
+  - sha256sum build/* > build/SHA256SUMS
+  - cat build/SHA256SUMS
+
+script:
+  - ./run build
+
+deploy:
+  provider: releases
+  api_key:
+    secure: mco1ycbfGXZEiBywOmM5A50Y1QPFawj4i0gdB9JDkXDvY7N2kPZyCdAeOQOMEJuetGT3HvJuTG0Ll47sithZfPqq6wx/4EeP8YQYYFIyoOlsIGi5MDR1kS5ZOqKDWGe5+x+/rUZbmuMHvgHWNSjPG8mBrp5xWmON6ETkLWfVB0c=
+  file_glob: true
+  file: build/*
+  skip_cleanup: true
+  on:
+    repo: AliasIO/Wappalyzer
+    tags: true
+
 env:
   - CXX=g++-4.8
-addons:
-  apt:
-    sources:
-      - ubuntu-toolchain-r-test
-    packages:
-      - g++-4.8

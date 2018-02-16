@@ -6,6 +6,7 @@
 	"optionsSave":              { "message": "Salvează opțiuni" },
 	"optionsSaved":             { "message": "Salvat" },
 	"optionUpgradeMessage":     { "message": "Anunță-mă dacă sunt actualizări" },
+	"optionDynamicIcon":        { "message": "Use application icon instead of Wappalyzer logo" },
 	"optionTracking":           { "message": "Trimite rapoarte anonime despre aplicațiile detectate către wappalyzer.com pentru cercetare" },
 	"nothingToDo":              { "message": "Nimic de făcut pe pagina curentă." },
 	"noAppsDetected":           { "message": "Nici o aplicație detectată." },
@@ -56,5 +57,6 @@
 	"categoryName49":           { "message": "Feed Readers" },
 	"categoryName50":           { "message": "Document Management Systems" },
 	"categoryName51":           { "message": "Landing Page Builder" },
-	"categoryName52":           { "message": "Live Chat" }
+	"categoryName52":           { "message": "Live Chat" },
+	"categoryName53":           { "message": "CRM" }
 }

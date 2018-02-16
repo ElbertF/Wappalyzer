@@ -1,15 +1,11 @@
-.vagrant
-
-build/*
-src/icons/converted/*
-
-node_modules
-npm-debug.log
-
-tags
+/build/*
+/src/icons/converted/*
+/node_modules
+/npm-debug.log
 
 !.gitkeep
 
+# Junk files
 Thumbs.db
 Desktop.ini
 *.DS_Store

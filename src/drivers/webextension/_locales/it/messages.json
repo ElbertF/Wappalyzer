@@ -6,6 +6,7 @@
 	"optionsSave":              { "message": "Salva opzioni" },
 	"optionsSaved":             { "message": "Salvato" },
 	"optionUpgradeMessage":     { "message": "Parlami dell'upgrade" },
+	"optionDynamicIcon":        { "message": "Use application icon instead of Wappalyzer logo" },
 	"optionTracking":           { "message": "Inviare anonimamente un report sulle applicazioni rilevate a wappalyzer.com per l'analisi" },
 	"nothingToDo":              { "message": "Niente da fare qui." },
 	"noAppsDetected":           { "message": "Nessuna applicazione rilevata." },
@@ -60,6 +61,7 @@
 	"categoryName49":           { "message": "Lettore di Feed" },
 	"categoryName50":           { "message": "Sistema di Gestione Documenti" },
 	"categoryName51":           { "message": "Landing Page Builder" },
-	"categoryName52":           { "message": "Live Chat" }
+	"categoryName52":           { "message": "Live Chat" },
+	"categoryName53":           { "message": "CRM" }
 }
 

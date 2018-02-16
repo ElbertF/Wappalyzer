@@ -4,6 +4,7 @@
 	"nothingToDo":          { "message": "Rien à faire ici." },
 	"optionTracking":       { "message": "Envoyer anonymement des rapports sur les applications détectées à wappalyzer.com pour la recherche" },
 	"optionUpgradeMessage": { "message": "M'afficher les mises à jour" },
+	"optionDynamicIcon":    { "message": "Use application icon instead of Wappalyzer logo" },
 	"options":              { "message": "Options" },
 	"optionsSave":          { "message": "Sauver les options" },
 	"optionsSaved":         { "message": "Sauvé" },
@@ -60,5 +61,6 @@
 	"categoryName49":       { "message": "Lecteur RSS" },
 	"categoryName50":       { "message": "Système de gestion de documents" },
 	"categoryName51":       { "message": "Landing Page Builder" },
-	"categoryName52":       { "message": "Chat en direct" }
+	"categoryName52":       { "message": "Chat en direct" },
+	"categoryName53":       { "message": "CRM" }
 }

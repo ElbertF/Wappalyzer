@@ -1,44 +1,51 @@
 {
 	"name": "Wappalyzer",
-  "short_name": "Wappalyzer",
-  "author": "Elbert Alias",
+	"short_name": "Wappalyzer",
+	"author": "Elbert Alias",
 	"homepage_url": "https://wappalyzer.com/",
 	"description": "Identify web technologies",
-	"version": "3",
+	"version": "4.0.1",
 	"default_locale": "en",
 	"manifest_version": 2,
 	"icons": {
-		"16":  "images/icon_16.png",
-		"19":  "images/icon_19.png",
-		"32":  "images/icon_32.png",
-		"38":  "images/icon_38.png",
+		"16": "images/icon_16.png",
+		"19": "images/icon_19.png",
+		"32": "images/icon_32.png",
+		"38": "images/icon_38.png",
 		"128": "images/icon_128.png"
 	},
 	"page_action": {
 		"default_icon": {
-      "16":  "images/icon_16.png",
-      "19":  "images/icon_19.png",
-      "32":  "images/icon_32.png",
-      "38":  "images/icon_38.png",
-      "128": "images/icon_128.png"
-    },
+			"16": "images/icon_16.png",
+			"19": "images/icon_19.png",
+			"32": "images/icon_32.png",
+			"38": "images/icon_38.png",
+			"128": "images/icon_128.png"
+		},
 		"default_title": "Wappalyzer",
 		"default_popup": "popup.html"
 	},
 	"background": {
 		"page": "background.html",
-    "persistent": true
+		"persistent": true
 	},
 	"content_scripts": [
 		{
-			"matches": [ "http://*/*", "https://*/*" ],
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			],
 			"js": [
 				"js/browser-polyfill.js",
 				"js/content.js"
 			],
 			"run_at": "document_idle"
-		}, {
-			"matches": [ "http://*/*", "https://*/*" ],
+		},
+		{
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			],
 			"js": [
 				"js/browser-polyfill.js",
 				"js/iframe.js"
@@ -50,7 +57,7 @@
 	"web_accessible_resources": [
 		"js/inject.js"
 	],
-  "options_page": "options.html",
+	"options_page": "options.html",
 	"permissions": [
 		"tabs",
 		"webRequest",
@@ -58,5 +65,9 @@
 		"http://*/*",
 		"https://*/*"
 	],
-	"content_security_policy": "script-src 'self'; object-src 'self'"
+	"content_security_policy": "script-src 'self'; object-src 'self'",
+	"-ms-preload": {
+		"backgroundScript": "js/ms_background_scripts_api_bridge.js",
+		"contentScript": "js/ms_content_scripts_api_bridge.js"
+	}
 }

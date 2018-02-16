@@ -85,8 +85,7 @@
 						"required": true
 					},
 					"icon": {
-						"type": "string",
-						"required": true
+						"type": "string"
 					}
 				}
 			}

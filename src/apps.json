@@ -7438,7 +7438,8 @@
         12
       ],
       "js": {
-        "Polymer": ""
+        "Polymer": "",
+        "Polymer.version": "(.*)\\;version:\\1"
       },
       "html": "(?:<polymer-[^>]+|<link[^>]+rel=\"import\"[^>]+/polymer\\.html\")",
       "icon": "Polymer.png",

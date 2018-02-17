@@ -8624,7 +8624,7 @@
 			"icon": "WHMCS.png",
 			"website": "http://www.whmcs.com"
 		},
-               "wpCache": {
+                "wpCache": {
                         "cats": [
                                "23"
                        ],

@@ -8872,7 +8872,7 @@
         12
       ],
       "js": {
-        "io": "\\;confidence:20"
+        "io.version": "(.*)\\;version:\\1\\;confidence:20"
       },
       "icon": "Socket.io.png",
       "implies": "Node.js",

@@ -10320,10 +10320,8 @@
       "url": "^https?://[^/]+\\.wpcache\\.co",
       "icon": "wpCache.png",
       "implies": [
-        "Apache",
         "WordPress",
-        "PHP",
-        "Nginx"
+        "PHP"
       ],
       "meta": {
         "generator": "wpCache",

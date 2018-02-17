@@ -2285,7 +2285,7 @@
       ],
       "headers": {
         "Server": "Debian",
-        "X-Powered-By": "(?:Debian|dotdeb|(potato|woody|sarge|etch|lenny|squeeze|wheezy|jessie|stretch|sid))\\;version:\\1"
+        "X-Powered-By": "(?:Debian|dotdeb|(potato|woody|sarge|etch|lenny|squeeze|wheezy|jessie|stretch|buster|sid))\\;version:\\1"
       },
       "icon": "Debian.png",
       "website": "http://debian.org"

@@ -625,19 +625,42 @@
         "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
         "angular-material.*\\.js"
       ],
-      "website": "http://material.angularjs.org"
+      "website": "https://material.angularjs.org"
     },
     "Angular": {
       "cats": [
         12
       ],
+      "excludes": [
+        "AngularDart\\;confidence:75",
+        "AngularJS\\;confidence:75"
+      ],
       "html": "<[^>]+ ng-version=\"([\\d.]+)\"\\;version:\\1",
       "icon": "Angular.svg",
       "website": "https://angular.io"
     },
+    "AngularDart": {
+      "cats": [
+        18
+      ],
+      "implies": "Dart",
+      "excludes": [
+        "Angular",
+        "AngularJS"
+      ],
+      "icon": "AngularDart.svg",
+      "website": "https://webdev.dartlang.org/angular/",
+      "js": {
+        "ngTestabilityRegistries": ""
+      }
+    },
     "AngularJS": {
       "cats": [
         12
+      ],
+      "excludes": [
+        "Angular\\;confidence:75",
+        "AngularDart\\;confidence:75"
       ],
       "js": {
         "angular": "",
@@ -2231,6 +2254,27 @@
         "generator": "Danneo CMS ([\\d.]+)\\;version:\\1"
       },
       "website": "http://danneo.com"
+    },
+    "Dart": {
+      "cats": [
+        27
+      ],
+      "icon": "Dart.svg",
+      "implies": "AngularDart\\;confidence:75",
+      "excludes": [
+        "Angular\\;confidence:75",
+        "AngularJS\\;confidence:75"
+      ],
+      "website": "https://www.dartlang.org",
+      "script": [
+        "/(?:\\.)?(?:dart)(?:\\.js)?/",
+        "packages/browser/dart\\.js"
+      ],
+      "html": "/(?:<script)[^>]+(?:type=\"application/dart\")/",
+      "js": {
+        "___dart__$dart_dartObject_ZxYxX_0_": "",
+        "___dart_dispatch_record_ZxYxX_0_": ""
+      }
     },
     "Darwin": {
       "cats": [

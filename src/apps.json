@@ -7881,7 +7881,7 @@
       ],
       "js": {
         "React": "",
-        "react.version": "(.*)\\;version:\\1"
+        "React.version": "(.*)\\;version:\\1"
       },
       "html": "<[^>]+data-react",
       "icon": "React.png",

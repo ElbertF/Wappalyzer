@@ -7880,7 +7880,6 @@
         12
       ],
       "js": {
-        "React": "",
         "react.version": "(.*)\\;version:\\1",
         "React.version": "(.*)\\;version:\\1"
       },

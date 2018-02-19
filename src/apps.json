@@ -4489,6 +4489,9 @@
         10
       ],
       "script": "clobs\\.js",
+      "js": {
+        "clobs": ""
+      },
       "icon": "iplabel.svg",
       "website": "http://www.ip-label.com"
     },

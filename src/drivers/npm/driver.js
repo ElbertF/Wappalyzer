@@ -133,14 +133,17 @@ class Driver {
         js
       })
         .then(() => {
-          const links = Array.from(browser.document.getElementsByTagName('a'))
-            .reduce((acc, link) => {
+          const links = Array.prototype.reduce.call(
+            browser.document.getElementsByTagName('a'),
+            (acc, link) => {
               if (link.protocol.match(/https?:/) || link.hostname === this.origPageUrl.hostname || extensions.test(link.pathname)) {
                 link.hash = '';
                 acc.push(url.parse(link.href));
               }
               return acc;
-            }, []);
+            },
+            []
+          );
 
           return resolve(links);
         });

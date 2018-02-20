@@ -134,10 +134,13 @@ class Driver {
       })
         .then(() => {
           const links = Array.from(browser.document.getElementsByTagName('a'))
-            .filter(link => link.protocol === 'http:' || link.protocol === 'https:')
-            .filter(link => link.hostname === this.origPageUrl.hostname)
-            .filter(link => extensions.test(link.pathname))
-            .map(link => { link.hash = ''; return url.parse(link.href) });
+            .reduce((acc, link) => {
+              if (link.protocol.match(/https?:/) || link.hostname === this.origPageUrl.hostname || extensions.test(link.pathname)) {
+                link.hash = '';
+                acc.push(url.parse(link.href));
+              }
+              return acc;
+            }, []);
 
           return resolve(links);
         });

@@ -1896,10 +1896,10 @@
       "icon": "Concrete5.png",
       "implies": "PHP",
       "meta": {
-        "generator": "concrete5 - ([\\d.ab]+)\\;version:\\1"
+        "generator": "^concrete5 - ([\\d.]+)$\\;version:\\1"
       },
-      "script": "concrete/js/",
-      "website": "http://concrete5.org"
+      "script": "/concrete/js/",
+      "website": "https://concrete5.org"
     },
     "Connect": {
       "cats": [

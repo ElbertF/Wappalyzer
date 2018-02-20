@@ -10716,7 +10716,7 @@
         12
       ],
       "js": {
-        "XRegExp": ""
+        "XRegExp.version": "(.*)\\;version:\\1"
       },
       "icon": "XRegExp.png",
       "script": [

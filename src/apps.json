@@ -12293,7 +12293,6 @@
       "icon": "genexus.png",
       "website": "https://www.genexus.com",
       "js": {
-        "gx": "",
         "gx.evt": ""
       },
       "html": "<[^>]+class=\"gxp-page\"",

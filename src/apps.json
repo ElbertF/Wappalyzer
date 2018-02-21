@@ -9175,7 +9175,7 @@
         41
       ],
       "js": {
-        "Stripe": ""
+        "Stripe.version": "(.*)\\;version:\\1"
       },
       "html": "<input[^>]+data-stripe",
       "icon": "Stripe.png",

@@ -12297,7 +12297,7 @@
         "gx.evt": ""
       },
       "html": "<[^>]+class=\"gxp-page\"",
-      "script": "gxp\\.js"
+      "script": "/gxp\\.js"
     }
   },
   "categories": {

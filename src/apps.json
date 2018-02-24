@@ -2984,6 +2984,9 @@
         12
       ],
       "icon": "FancyBox.png",
+      "js": {
+        "$.fancybox.version": "(.*)\\;version:\\1"
+      },
       "implies": "jQuery",
       "script": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
       "website": "http://fancyapps.com/fancybox"

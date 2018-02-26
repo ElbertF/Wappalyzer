@@ -7049,6 +7049,15 @@
       },
       "website": "http://panvision.de/Produkte/Content_Management/index.asp"
     },
+    "Pelican": {
+      "cats": [
+        1
+      ],
+      "implies": "Python",
+      "icon": "pelican.png",
+      "html": "powered by <a href=\"[^>]+getpelican",
+      "website": "http://getpelican.com"
+    },
     "PDF.js": {
       "cats": [
         19

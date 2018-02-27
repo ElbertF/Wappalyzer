@@ -3562,6 +3562,23 @@
       "script": "js/gogs\\.js",
       "website": "http://gogs.io"
     },
+    "Gitea": {
+      "cats": [
+        47
+      ],
+      "headers": {
+        "Set-Cookie": "i_like_gitea="
+      },
+      "html": [
+        "<div class=\"ui left\">\n\\s+© Gitea Version: ([\\d.]+)"
+      ],
+      "icon": "gitea.svg",
+      "meta": {
+        "keywords": "go,git,self-hosted,gitea"
+      },
+      "script": "/js/index\\.js\\?v=[a-f0-9]{32}",
+      "website": "http://gitea.io"
+    },
     "Google AdSense": {
       "cats": [
         36

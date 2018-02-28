@@ -120,6 +120,17 @@
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.ampproject.org"
     },
+    "Acquia Cloud": {
+      "cats": [
+         "22"
+      ],
+      "headers": {
+        "X-AH-Environment": "^\\w+$"
+      },
+      "icon": "acquia-cloud.png",
+      "implies": "Drupal\\;confidence:95",
+      "website": "https://www.acquia.com/"
+    },
     "Amber": {
       "cats": [
         18,

@@ -3570,7 +3570,7 @@
         "Set-Cookie": "i_like_gitea="
       },
       "html": [
-        "<div class=\"ui left\">\n\\s+© Gitea Version: ([\\d.]+)"
+        "<div class=\"ui left\">\n\\s+© Gitea Version: [\\d.]+"
       ],
       "icon": "gitea.svg",
       "meta": {

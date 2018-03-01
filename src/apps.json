@@ -5188,6 +5188,11 @@
       "cats": [
         35
       ],
+      "js": {
+        "L.version": "(.*)\\;version:\\1\\;confidence:0",
+        "L.PosAnimation": "",
+        "L.DistanceGrid": ""
+      },
       "icon": "Leaflet.png",
       "script": "leaflet.*\\.js",
       "website": "http://leafletjs.com"

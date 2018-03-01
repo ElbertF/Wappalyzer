@@ -7055,7 +7055,7 @@
       ],
       "implies": "Python",
       "icon": "pelican.png",
-      "html": "getpelican\\.com",
+      "html": "powered by <a href=\"[^>]+getpelican\\.com",
       "website": "https://blog.getpelican.com/"
     },
     "PDF.js": {

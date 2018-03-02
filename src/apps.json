@@ -3443,7 +3443,8 @@
         47
       ],
       "js": {
-        "GitLab": ""
+        "GitLab": "",
+        "gl.dashboardOptions": ""
       },
       "headers": {
         "Set-cookie": "_gitlab_session"

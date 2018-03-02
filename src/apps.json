@@ -3425,7 +3425,6 @@
     },
     "GitHub Pages": {
       "cats": [
-        11,
         31
       ],
       "url": "^https?://[^/]+\\.github\\.io/",

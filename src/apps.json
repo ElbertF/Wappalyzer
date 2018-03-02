@@ -3567,16 +3567,15 @@
         47
       ],
       "headers": {
-        "Set-Cookie": "i_like_gitea="
+        "Set-Cookie": "^i_like_gitea="
       },
       "html": [
-        "<div class=\"ui left\">\n\\s+© Gitea Version: [\\d.]+"
+        "<div class=\"ui left\">\n\\s+© Gitea Version: ([\\d.]+)\\;version:\\1"
       ],
       "icon": "gitea.svg",
       "meta": {
-        "keywords": "go,git,self-hosted,gitea"
+        "keywords": "^go,git,self-hosted,gitea$"
       },
-      "script": "/js/index\\.js\\?v=[a-f0-9]{32}",
       "website": "http://gitea.io"
     },
     "Google AdSense": {

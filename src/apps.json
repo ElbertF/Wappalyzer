@@ -3576,7 +3576,7 @@
       "meta": {
         "keywords": "^go,git,self-hosted,gitea$"
       },
-      "website": "http://gitea.io"
+      "website": "https://gitea.io"
     },
     "Google AdSense": {
       "cats": [

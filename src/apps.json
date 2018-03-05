@@ -96,7 +96,7 @@
       "js": {
         "AFRAME.version": "(.*)\\;version:\\1"
       },
-      "scripts": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
+      "script": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://aframe.io"
     },
     "AD EBiS": {
@@ -1053,7 +1053,9 @@
         "React"
       ],
       "icon": "Ant Design.svg",
-      "env": "^antd$",
+      "js": {
+        "antd": ""
+      },
       "html": [
         "<(?:div|button) class=\"ant-(?:btn|col|row|layout|breadcrumb|menu|pagination|steps|select|cascader|checkbox|calendar|form|input-number|input|mention|rate|radio|slider|switch|tree-select|time-picker|transfer|upload|avatar|badge|card|carousel|collapse|list|popover|tooltip|table|tabs|tag|timeline|tree|alert|modal|message|notification|progress|popconfirm|spin|anchor|back-top|divider)",
         "<i class=\"anticon anticon-"
@@ -3112,7 +3114,7 @@
       "js": {
         "Flickity": ""
       },
-      "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
+      "script": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
       "website": "https://flickity.metafizzy.co/"
     },
     "FluxBB": {

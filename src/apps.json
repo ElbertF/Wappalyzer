@@ -11445,7 +11445,7 @@
       },
       "icon": "jQuery.svg",
       "implies": "jQuery",
-      "script": "jquery.migrate(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "script": "jquery[\\.-]migrate(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
       "website": "https://github.com/jquery/jquery-migrate"
     },
     "jQuery Mobile": {
@@ -11454,7 +11454,7 @@
       ],
       "icon": "jQuery Mobile.svg",
       "implies": "jQuery",
-      "script": "jquery\\.mobile(?:-([\\d.]+rc\\d))?.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+      "script": "jquery[\\.-]mobile(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
       "website": "https://jquerymobile.com"
     },
     "jQuery Sparklines": {

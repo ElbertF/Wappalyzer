@@ -5690,7 +5690,10 @@
       ],
       "html": "<link[^>]* href=\"[^\"]*material(?:\\.[\\w]+-[\\w]+)?(?:\\.min)?\\.css",
       "icon": "Material Design Lite.png",
-      "script": "material(?:\\.min)?\\.js",
+      "script": "(?:/([\\d.]+))?/material(?:\\.min)?\\.js\\;version:\\1",
+      "js": {
+        "MaterialIconToggle": ""
+      },
       "website": "https://getmdl.io"
     },
     "Materialize CSS": {

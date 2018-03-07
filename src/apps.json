@@ -4075,8 +4075,11 @@
       "cats": [
         19
       ],
+      "js": {
+        "hljs.listLanguage": ""
+      },
       "icon": "Highlight.js.png",
-      "script": "/highlight\\.js/[\\d.]+?/highlight\\.min\\.js",
+      "script": "/(?:([\\d.])+/)?highlight(?:\\.min)\\.js\\;version:\\1",
       "website": "https://highlightjs.org/"
     },
     "Highstock": {

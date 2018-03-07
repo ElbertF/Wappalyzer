@@ -4079,7 +4079,7 @@
         "hljs.listLanguage": ""
       },
       "icon": "Highlight.js.png",
-      "script": "/(?:([\\d.])+/)?highlight(?:\\.min)\\.js\\;version:\\1",
+      "script": "/(?:([\\d.])+/)?highlight(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://highlightjs.org/"
     },
     "Highstock": {

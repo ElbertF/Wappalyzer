@@ -3036,8 +3036,8 @@
         34
       ],
       "icon": "Firebase.png",
-      "script": "firebase.*\\.js",
-      "website": "http://firebase.com"
+      "script": "/(?:([\\d.]+)/)?firebase(?:\\.min)?\\.js\\;version:\\1",
+      "website": "https://firebase.com"
     },
     "Fireblade": {
       "cats": [

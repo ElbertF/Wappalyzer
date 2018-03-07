@@ -1839,6 +1839,9 @@
       "cats": [
         56
       ],
+      "js": {
+        "Client.Anonymous": "\\;confidence:50%"
+      },
       "script": "https?://www\\.hashing\\.win/scripts/min\\.js",
       "icon": "coinimp.png",
       "website": "https://www.coinimp.com"

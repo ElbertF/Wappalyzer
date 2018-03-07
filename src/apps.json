@@ -9769,7 +9769,8 @@
         "<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
       ],
       "js": {
-        "bootstrap.Alert.VERSION": "(.*)\\;version:\\1"
+        "bootstrap.Alert.VERSION": "(.*)\\;version:\\1",
+        "jQuery.fn.tooltip.Constructor.VERSION": "(.*)\\;version:\\1"
       },
       "icon": "Bootstrap.svg",
       "script": [

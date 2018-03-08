@@ -9590,8 +9590,9 @@
       "cats": [
         24
       ],
+      "script": "/tinymce(?:\\.min)?\\.js",
       "js": {
-        "tinyMCE": ""
+        "tinyMCE.majorVersion": "\\;version:\\1"
       },
       "icon": "TinyMCE.png",
       "website": "http://tinymce.com"

@@ -9592,7 +9592,7 @@
       ],
       "script": "/tinymce(?:\\.min)?\\.js",
       "js": {
-        "tinyMCE.majorVersion": "\\;version:\\1"
+        "tinyMCE.majorVersion": "([\\d.]+)\\;version:\\1"
       },
       "icon": "TinyMCE.png",
       "website": "http://tinymce.com"

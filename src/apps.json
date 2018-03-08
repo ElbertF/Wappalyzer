@@ -8411,12 +8411,11 @@
         18
       ],
       "html": [
-        "(?:<div class=\"ui\\s[^>]+\">)\\;confidence:30",
-        "(?:<link[^>]+semantic(?:\\.css|\\.min\\.css)\">)"
+        "<link[^>]+semantic(?:\\.min)\\.css\""
       ],
       "icon": "Semantic-ui.png",
-      "script": "(?:semantic(?:\\.js|\\.min\\.js))",
-      "website": "http://semantic-ui.com"
+      "script": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
+      "website": "https://semantic-ui.com"
     },
     "Sencha Touch": {
       "cats": [

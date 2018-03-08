@@ -1743,7 +1743,7 @@
         19
       ],
       "icon": "Clipboard.js.svg",
-      "script": "clipboard(?:\\.min)?\\.js",
+      "script": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://clipboardjs.com/"
     },
     "CloudCart": {

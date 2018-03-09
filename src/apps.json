@@ -11756,6 +11756,17 @@
       },
       "website": "http://owncloud.org"
     },
+    "particles.js": {
+      "cats": [
+        25
+      ],
+      "js": {
+        "particleJS": ""
+      },
+      "script": "/particles(?:\\min)?\\.js",
+      "html": "<div id=\"particles\\-js\">",
+      "website": "https://vincentgarreau.com/particles.js/"
+    },
     "papaya CMS": {
       "cats": [
         1

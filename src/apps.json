@@ -519,7 +519,8 @@
         29
       ],
       "js": {
-        "AlgoliaSearch": ""
+        "AlgoliaSearch": "",
+        "algoliasearch.version": "(.*)\\;version:\\1"
       },
       "icon": "Algolia Realtime Search.svg",
       "website": "http://www.algolia.com"

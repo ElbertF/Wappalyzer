@@ -1532,7 +1532,7 @@
       },
       "html": "<[a-z]+ [^>]*id=\"carbonads-container\"",
       "icon": "Carbon Ads.png",
-      "script": "[^\\/]*\\/\\/(?:engine|srv)\\.carbonads\\.com\\/",
+      "script": "//(?:engine|srv)\\.carbonads\\.com\\/",
       "website": "http://carbonads.net"
     },
     "Cargo": {
@@ -2100,7 +2100,7 @@
         "criteo_q": ""
       },
       "icon": "Criteo.svg",
-      "script": "[^/]*//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
+      "script": "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
       "website": "http://criteo.com"
     },
     "Cross Pixel": {
@@ -8793,7 +8793,7 @@
       ],
       "html": "(?:<a [^>]*href=\"[^/]*//[^/]*serving-sys\\.com/|<img [^>]*src=\"[^/]*//[^/]*serving-sys\\.com/)",
       "icon": "Sizmek.png",
-      "script": "[^/]*//[^/]*serving-sys\\.com/",
+      "script": "serving-sys\\.com/",
       "website": "http://sizmek.com"
     },
     "Slimbox": {

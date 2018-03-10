@@ -13,7 +13,8 @@ if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
     const scripts = Array.prototype.slice
       .apply(document.scripts)
       .filter(script => script.src)
-      .map(script => script.src);
+      .map(script => script.src)
+      .filter(script => script.indexOf("data:text/javascript;") != 0);;
 
     browser.runtime.sendMessage({
       id: 'analyze',

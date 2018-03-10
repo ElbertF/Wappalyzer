@@ -6534,7 +6534,7 @@
       "icon": "Neos.svg",
       "implies": "Neos Flow",
       "url": "/neos/",
-      "website": "http://neos.io"
+      "website": "https://neos.io"
     },
     "Neos Flow": {
       "cats": [
@@ -6546,7 +6546,7 @@
       },
       "icon": "Neos.svg",
       "implies": "PHP",
-      "website": "http://flow.neos.io"
+      "website": "https://flow.neos.io"
     },
     "Nepso": {
       "cats": [

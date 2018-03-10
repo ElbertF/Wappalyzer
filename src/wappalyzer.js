@@ -19,7 +19,6 @@ class Wappalyzer {
     this.categories = {};
     this.driver = {};
     this.jsPatterns = {};
-
     this.detected = {};
     this.hostnameCache = {};
     this.adCache = [];
@@ -139,12 +138,12 @@ class Wappalyzer {
 
       this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
         .then(robotsTxt => {
-          if (robotsTxt.some(disallowedPath => parsed.pathname.indexOf(disallowedPath) === 0)) {
+          if ( robotsTxt.some(disallowedPath => parsed.pathname.indexOf(disallowedPath) === 0) ) {
             return reject();
-          } else {
-            return resolve();
           }
-        });
+
+          return resolve();
+        }, () => resolve());
     });
   };
 

@@ -11,6 +11,7 @@ var tabCache = {};
 var headersCache = {};
 var categoryOrder = [];
 var options = {};
+var robotsTxtQueue = {};
 
 browser.tabs.onRemoved.addListener(tabId => {
   tabCache[tabId] = null;
@@ -287,7 +288,13 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
  * Fetch and cache robots.txt for host
  */
 wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
-  return new Promise((resolve, reject) => {
+  if ( robotsTxtQueue.hasOwnProperty(host) ) {
+    wappalyzer.log('robotTxt fetch already in queue');
+
+    return robotsTxtQueue[host];
+  }
+
+  robotsTxtQueue[host] = new Promise((resolve, reject) => {
     getOption('tracking', true)
       .then(tracking => {
         if ( !tracking ) {
@@ -299,34 +306,31 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
             robotsTxtCache = robotsTxtCache || {};
 
             if ( host in robotsTxtCache ) {
-              resolve(robotsTxtCache[host]);
-            } else {
-              const url = 'http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt';
-
-              fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt')
-                .then(response => {
-                  if ( !response.ok ) {
-                    if ( response.status === 404 ) {
-                      return '';
-                    } else {
-                      throw 'GET ' + response.url + ' was not ok';
-                    }
-                  }
-
-                  return response.text();
-                })
-                .then(robotsTxt => {
-                  robotsTxtCache[host] = wappalyzer.parseRobotsTxt(robotsTxt);
-
-                  setOption('robotsTxtCache', robotsTxtCache);
-
-                  resolve(robotsTxtCache[host]);
-                })
-                .catch(reject);
+              return resolve(robotsTxtCache[host]);
             }
+
+            const timeout = setTimeout(() => resolve([]), 3000);
+
+            fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt', { redirect: 'follow' })
+              .then(response => {
+                clearTimeout(timeout);
+
+                return response.ok ? response.text() : '';
+              })
+              .then(robotsTxt => {
+                robotsTxtCache[host] = wappalyzer.parseRobotsTxt(robotsTxt);
+
+                setOption('robotsTxtCache', robotsTxtCache);
+
+                resolve(robotsTxtCache[host]);
+              })
+              .catch(err => resolve([]));
           });
       });
-  });
+  })
+  .finally(() => delete robotsTxtQueue[host]);
+
+  return robotsTxtQueue[host];
 };
 
 /**

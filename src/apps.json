@@ -2159,9 +2159,9 @@
         "CRLT.CONFIG.ASMJS_NAME": ""
       },
       "script": [
-        "^(?:https):?//crypto-loot\\.com/lib/",
-        "^(?:https):?//webmine\\.pro/",
-        "^(?:https):?//cryptoloot\\.pro/",
+        "^/crypto-loot\\.com/lib/",
+        "^/webmine\\.pro/",
+        "^/cryptoloot\\.pro/",
         "/crlt\\.js\\;confidence:75%"
       ],
       "icon": "Crypto-Loot.png",

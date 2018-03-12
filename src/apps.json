@@ -11970,7 +11970,7 @@
       "js": {
         "particleJS": ""
       },
-      "script": "/particles(?:\\min)?\\.js",
+      "script": "/particles(?:\\.min)?\\.js",
       "html": "<div id=\"particles\\-js\">",
       "website": "https://vincentgarreau.com/particles.js/"
     },

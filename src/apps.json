@@ -6775,6 +6775,7 @@
       "html": "Powered by <a href=\"http://octopress\\.org\">",
       "icon": "octopress.png",
       "implies": "Jekyll",
+      "script": "/octopress\\.js",
       "meta": {
         "generator": "Octopress"
       },

@@ -2496,6 +2496,7 @@
       ],
       "js": {
         "DISQUS": "",
+        "disqus_shortname": "",
         "disqus_url": ""
       },
       "html": "<div[^>]+id=\"disqus_thread\"",

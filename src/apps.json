@@ -1618,6 +1618,17 @@
       "implies": "Canon",
       "website": "http://www.canon.com"
     },
+    "CDN77": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "server": "^CDN77-Turbo$",
+        "Server": "^CDN77-Turbo$"
+      },
+      "icon": "CDN77.png",
+      "website": "https://www.cdn77.com"
+    },
     "CentOS": {
       "cats": [
         28

@@ -3123,7 +3123,8 @@
       ],
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
-        "Fingerprint2": ""
+        "Fingerprint2": "",
+        "Fingerprint2.VERSION": "(.*)\\;version:\\1"
       },
       "script": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://valve.github.io/fingerprintjs2/"

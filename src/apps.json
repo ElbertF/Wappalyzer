@@ -8383,7 +8383,8 @@
         1
       ],
       "headers": {
-        "X-Spip-Cache": ""
+        "X-Spip-Cache": "",
+        "Composed-By": "SPIP ([\\d.]+) @;version:\\1"
       },
       "icon": "SPIP.png",
       "implies": "PHP",

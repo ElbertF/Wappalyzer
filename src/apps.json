@@ -1898,7 +1898,7 @@
         56
       ],
       "js": {
-        "Client.Anonymous": "\\;confidence:50%"
+        "Client.Anonymous": "\\;confidence:50"
       },
       "script": "https?://www\\.hashing\\.win/scripts/min\\.js",
       "icon": "coinimp.png",
@@ -2174,7 +2174,7 @@
         "^/crypto-loot\\.com/lib/",
         "^/webmine\\.pro/",
         "^/cryptoloot\\.pro/",
-        "/crlt\\.js\\;confidence:75%"
+        "/crlt\\.js\\;confidence:75"
       ],
       "icon": "Crypto-Loot.png",
       "website": "https://crypto-loot.com/"

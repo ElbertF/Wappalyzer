@@ -151,15 +151,13 @@ browser.webRequest.onCompleted.addListener(request => {
       headersCache = {};
     }
 
-    if ( /text\/html/.test(responseHeaders['content-type'][0]) ) {
-      if ( headersCache[url.canonical] === undefined ) {
-        headersCache[url.canonical] = {};
-      }
-
-      Object.keys(responseHeaders).forEach(header => {
-        headersCache[url.canonical][header] = responseHeaders[header].slice();
-      });
+    if ( headersCache[url.canonical] === undefined ) {
+      headersCache[url.canonical] = {};
     }
+
+    Object.keys(responseHeaders).forEach(header => {
+      headersCache[url.canonical][header] = responseHeaders[header].slice();
+    });
   }
 }, { urls: [ 'http://*/*', 'https://*/*' ], types: [ 'main_frame' ] }, [ 'responseHeaders' ]);
 

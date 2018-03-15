@@ -205,6 +205,16 @@
       "icon": "ATEN.png",
       "website": "http://www.aten.com"
     },
+    "AWS": {
+      "cats": [
+        31
+      ],
+      "icon": "AWS.png",
+      "cookies": {
+        "AWSELB": ""
+      },
+      "website": "https://aws.amazon.com/"
+    },
     "AWStats": {
       "cats": [
         10

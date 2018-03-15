@@ -60,12 +60,12 @@
 	"categoryName47":           { "message": "Outil de développement" },
 	"categoryName48":           { "message": "Stockage réseau" },
 	"categoryName49":           { "message": "Lecteur de flux RSS" },
-	"categoryName51":           { "message": "Créateur de page d'atterrissage" },
+	"categoryName51":           { "message": "Créateur de Landing Page" },
 	"categoryName50":           { "message": "Système de gestion de documents" },
 	"categoryName52":           { "message": "Chat en direct" },
 	"categoryName53":           { "message": "CRM" },
 	"categoryName54":           { "message": "SEO" },
 	"categoryName55":           { "message": "Comptabilité" },
-	"categoryName56":           { "message": "Mineur de crypto monnaie" },
+	"categoryName56":           { "message": "Crypto-mineur" },
 	"categoryName57":           { "message": "Générateur de site statique" }
 }

@@ -12336,14 +12336,14 @@
       },
       "website": "http://www.xt-commerce.com"
     },
-    "Raychat": {
+    "Raychatr": {
       "cats": [
         52
       ],
       "js": {
         "Raychat": ""
       },
-      "icon": "raychat.svg",
+      "icon": "raychat.png",
       "script": "app\\.raychat\\.io/scripts/js",
       "website": "https://raychat.io"
     },

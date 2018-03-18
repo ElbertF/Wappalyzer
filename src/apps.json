@@ -8939,7 +8939,6 @@
         12
       ],
       "html": "<link [^>]+(?:/([\\d.]+)/)?slick-theme\\.css\\;version:\\1",
-      "icon": "Slick.png",
       "implies": "jQuery",
       "script": "(?:/([\\d.]+))?/slick(?:\\.min)?\\.js\\;version:\\1",
       "website": "http://kenwheeler.github.io/slick"

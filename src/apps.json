@@ -2218,7 +2218,6 @@
         25
       ],
       "js": {
-        "d3": "\\;confidence:20",
         "d3.version": "(.*)\\;version:\\1"
       },
       "icon": "D3.png",
@@ -2746,7 +2745,6 @@
       ],
       "icon": "ef.js.svg",
       "js": {
-        "ef": "\\;confidence:20",
         "ef.version": "(.*)\\;version:\\1",
         "efCore": ""
       },
@@ -5108,7 +5106,6 @@
         12
       ],
       "js": {
-        "ko": "\\;confidence:20",
         "ko.version": "(.*)\\;version:\\1"
       },
       "icon": "Knockout.js.png",
@@ -8315,10 +8312,11 @@
         12
       ],
       "js": {
-        "Rx": "\\;confidence:20"
+        "Rx.CompositeDisposable": "",
+        "Rx.Symbol": ""
       },
       "icon": "RxJS.png",
-      "script": "rx(?:\\.\\w+)?(?:\\.compat)?(?:\\.min)?\\.js",
+      "script": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
       "website": "http://reactivex.io"
     },
     "S.Builder": {
@@ -8581,8 +8579,11 @@
       ],
       "icon": "Select2.png",
       "implies": "jQuery",
-      "script": "select2.*\\.js",
-      "website": "http://select2.github.io"
+      "js": {
+        "jQuery.fn.select2": ""
+      },
+      "script": "select2(?:\\.min|\\.full)?\\.js",
+      "website": "https://select2.org/"
     },
     "Semantic-ui": {
       "cats": [
@@ -9049,12 +9050,13 @@
         12
       ],
       "js": {
-        "io.version": "(.*)\\;version:\\1\\;confidence:20"
+        "io.Socket": "",
+        "io.version": "(.*)\\;version:\\1"
       },
       "icon": "Socket.io.png",
       "implies": "Node.js",
       "script": "socket\\.io.*\\.js",
-      "website": "http://socket.io"
+      "website": "https://socket.io"
     },
     "Solodev": {
       "cats": [
@@ -10455,8 +10457,7 @@
       "icon": "Vue.js.png",
       "script": [
         "vue(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+)/vue(?:\\.min)?\\.js\\;version:\\1",
-        "vue.*\\.js\\;confidence:20"
+        "/([\\d.]+)/vue(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "http://vuejs.org"
     },
@@ -11347,11 +11348,11 @@
         12
       ],
       "js": {
-        "basket": "\\;confidence:20"
+        "basket.isValidItem": ""
       },
       "icon": "basket.js.png",
       "script": "basket.*\\.js\\;confidence:10",
-      "website": "http://addyosmani.github.io/basket.js/"
+      "website": "https://addyosmani.github.io/basket.js/"
     },
     "cPanel": {
       "cats": [

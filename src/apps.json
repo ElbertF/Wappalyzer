@@ -10141,6 +10141,9 @@
         12
       ],
       "icon": "Underscore.js.png",
+      "js": {
+        "_.VERSION": "(.*)\\;version:\\1"
+      },
       "script": "underscore.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
       "website": "http://underscorejs.org"
     },

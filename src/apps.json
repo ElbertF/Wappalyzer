@@ -582,7 +582,8 @@
         31
       ],
       "headers": {
-        "X-Amz-Cf-Id": ""
+        "X-Amz-Cf-Id": "",
+        "Via": "\\(CloudFront\\)$"
       },
       "icon": "Amazon-Cloudfront.svg",
       "website": "http://aws.amazon.com/cloudfront/"

@@ -2040,7 +2040,10 @@
       "cats": [
         1
       ],
-      "html": "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.contentful\\.com",
+      "html": [
+        "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.cfassets\\.net",
+        "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.contentful\\.com"
+      ],
       "icon": "Contentful.svg",
       "website": "http://www.contentful.com"
     },

@@ -11984,7 +11984,7 @@
         25
       ],
       "js": {
-        "particleJS": ""
+        "particlesJS": ""
       },
       "script": "/particles(?:\\.min)?\\.js",
       "html": "<div id=\"particles\\-js\">",

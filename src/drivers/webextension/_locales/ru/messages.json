@@ -1,4 +1,4 @@
-﻿{
+{
   "categoryName1" : { "message" : "CMS" },
   "categoryName2" : { "message" : "Форум" },
   "categoryName3" : { "message" : "Менеджер БД" },
@@ -62,5 +62,10 @@
   "optionsSave" : { "message" : "Сохранить" },
   "optionsSaved" : { "message" : "Успешно сохранено!" },
   "twitter" : { "message" : "Следите за новостями в Твиттере" },
-  "website" : { "message" : "Перейти на Wappalyzer.com" }
+  "website" : { "message" : "Перейти на Wappalyzer.com" },
+  "categoryPin":          { "message": "Always show icon" },
+  "categoryName54":           { "message": "SEO" },
+  "categoryName55":           { "message": "Accounting" },
+	"categoryName56":           { "message": "Cryptominer" },
+	"categoryName57":           { "message": "Static Site Generator" }
 }

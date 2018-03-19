@@ -66,6 +66,7 @@
 		'washingtonpost.com'
 	];
 
+	var robotsTxtAllows = wappalyzer.robotsTxtAllows.bind(wappalyzer);
 	if ( !String.prototype.endsWith ) {
 		String.prototype.endsWith = function(searchString, position) {
 			var subjectString = this.toString();
@@ -114,21 +115,33 @@
 		}
 	}
 
-	function ifTrackingEnabled(ifCallback, elseCallback) {
+	function ifTrackingEnabled(details, ifCallback, elseCallback) {
+
+		var fullIfCallback = function() {
+			allowedByRobotsTxt(details, ifCallback, elseCallback);
+		};
 
 		browser.storage.local.get('tracking').then(function(item) {
 
 			if ( item.hasOwnProperty('tracking') ) {
 				if ( item.tracking ) {
-					ifCallback();
+					fullIfCallback();
 				} else {
 					elseCallback();
 				}
 			} else {
-				ifCallback();
+				fullIfCallback();
 			}
 		});
 
+	}
+
+	function allowedByRobotsTxt(details, ifCallback, elseCallback) {
+		if (  details.url && !details.url.startsWith('chrome://')  ) {
+			robotsTxtAllows(details.url).then(ifCallback, elseCallback);
+		} else {
+			elseCallback();
+		}
 	}
 
 	function isPixelRequest(request) {
@@ -207,6 +220,7 @@
 			this.cleanupCollector(tabId);
 
 			ifTrackingEnabled(
+				details,
 				function() {
 					if ( !areListenersRegistered ) {
 
@@ -266,18 +280,19 @@
 		browserProxy.tabs.sendMessage(this.tabId, message);
 	};
 
-	PageNetworkTrafficCollector.prototype.sendToTab = function(assetReq, reqs, curPageUrl, isValidAd) {
+	PageNetworkTrafficCollector.prototype.sendToTab = function(assetReq, reqs, curPageUrl, adTrackingEvent) {
 		var msg = {};
 		msg.assets = [];
+		msg.requests = [];
 		msg.event_data = {};
-		if ( isValidAd ) {
-			msg.event = 'new-video-ad';
+		msg.event = adTrackingEvent;
+		if ( adTrackingEvent === 'new-video-ad' ) {
 			msg.requests = reqs;
 			msg.requests.sort(function(reqA, reqB) {return reqA.requestTimestamp - reqB.requestTimestamp;});
 			if ( assetReq ) {
 				msg.assets = [assetReq];
 			}
-		} else {
+		} else if ( adTrackingEvent === 'new-invalid-video-ad' ) {
 			msg.requests = reqs.map(function(request) {
 				return parseHostnameFromUrl(request.url);
 			});
@@ -288,7 +303,6 @@
 				contentType: assetReq.contentType,
 				size: assetReq.size
 			}];
-			msg.event = 'new-invalid-video-ad';
 		}
 		msg.origUrl = curPageUrl;
 		msg.displayAdFound = this.displayAdFound;
@@ -426,10 +440,13 @@
 				}
 
 				if ( this.isYoutubeAdReq(frameUrl, requestUrl) ) {
-					var videoId = this.parseYoutubeVideoIdFromUrl(requestUrl);
-					if ( videoId ) {
+					var destVideoId = this.parseYoutubeVideoIdFromUrl(requestUrl);
+					var srcVideoId = this.parseYoutubeVideoIdFromUrl(frameUrl);
+					if ( srcVideoId && destVideoId ) {
 						request.isYoutubeAd = true;
 						request.isVideo = true;
+						request.rawSrcUrl = frameUrl;
+						request.rawDestUrl = requestUrl;
 						request.url = 'https://www.youtube.com/watch?v=' + this.parseYoutubeVideoIdFromUrl(requestUrl);
 					}
 				} else if ( !this.bannedRequest(request) &&
@@ -519,7 +536,7 @@
 			return match[1];
 		}
 
-		re = /^https?:\/\/www\.youtube\.com\/watch\?v=(.*$)/;
+		re = /^https?:\/\/www\.youtube\.com\/watch.*(\?|&)v=([^&]*)/;
 		match = re.exec(url);
 		if ( match && match.length > 1 ) {
 			return match[1];
@@ -618,10 +635,10 @@
 				var tagReqs = _this.grabTagReqs(rawRequests, msgAssetReq);
 
 				if ( _this.isValidVideoAd(msgAssetReq, tagReqs) ) {
-					_this.sendToTab(msgAssetReq, tagReqs, origPageUrl, true);
+					_this.sendToTab(msgAssetReq, tagReqs, origPageUrl, 'new-video-ad');
 				} else {
 
-					_this.sendToTab(msgAssetReq, tagReqs, origPageUrl, false);
+					_this.sendToTab(msgAssetReq, tagReqs, origPageUrl, 'new-invalid-video-ad');
 				}
 
 			} else {
@@ -792,12 +809,13 @@
 	browserProxy.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		if ( request === 'is_tracking_enabled' ) {
 			ifTrackingEnabled(
+				sender.tab,
 				function() {
-					sendResponse({'tracking_enabled': true});
-				},
+					try {sendResponse({'tracking_enabled': true});}
+					catch(err) {} },
 				function() {
-					sendResponse({'tracking_enabled': false});
-				}
+					try {sendResponse({'tracking_enabled': false});}
+					catch(err) {}}
 			);
 		}
 		return true;

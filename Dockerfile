@@ -4,18 +4,18 @@ MAINTAINER Elbert Alias <elbert@alias.io>
 
 ENV WAPPALYZER_DIR=/opt/wappalyzer
 
-RUN apk add --no-cache \
+RUN apk update && apk add --no-cache \
 	bash \
 	curl \
 	fontconfig \
 	nodejs \
+	nodejs-npm \
 	optipng \
 	zip
 
-RUN mkdir -p /usr/share && \
-  cd /usr/share \
-  && curl -L https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.1.1-linux-x86_64.tar.bz2 | tar xj \
-  && ln -s /usr/share/phantomjs/phantomjs /usr/bin/phantomjs
+# Fixes PhantomJS
+# https://github.com/dustinblackman/phantomized
+RUN curl -Ls "https://github.com/dustinblackman/phantomized/releases/download/2.1.1a/dockerized-phantomjs.tar.gz" | tar xz -C /
 
 RUN apk del \
 	curl
@@ -23,7 +23,8 @@ RUN apk del \
 RUN npm i -g \
 	jsonlint-cli \
 	manifoldjs \
-	svg2png-many
+	svg2png-many \
+	yarn
 
 RUN mkdir -p $WAPPALYZER_DIR
 

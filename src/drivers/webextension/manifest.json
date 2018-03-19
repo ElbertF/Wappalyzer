@@ -2,9 +2,9 @@
 	"name": "Wappalyzer",
 	"short_name": "Wappalyzer",
 	"author": "Elbert Alias",
-	"homepage_url": "https://wappalyzer.com/",
+	"homepage_url": "https://www.wappalyzer.com",
 	"description": "Identify web technologies",
-	"version": "4.1.5",
+	"version": "5.4.12",
 	"default_locale": "en",
 	"manifest_version": 2,
 	"icons": {
@@ -23,10 +23,10 @@
 			"128": "images/icon_128.png"
 		},
 		"default_title": "Wappalyzer",
-		"default_popup": "popup.html"
+		"default_popup": "html/popup.html"
 	},
 	"background": {
-		"page": "background.html"
+		"page": "html/background.html"
 
 	},
 	"content_scripts": [
@@ -36,18 +36,17 @@
 				"https://*/*"
 			],
 			"js": [
-				"js/browser-polyfill.js",
+				"node_modules/webextension-polyfill/dist/browser-polyfill.js",
 				"js/content.js"
 			],
 			"run_at": "document_idle"
 		},
 		{
 			"matches": [
-				 "http://*/*",
+        "http://*/*",
 				"https://*/*"
 			],
 			"js": [
-				"js/browser-polyfill.js",
 				"js/iframe.js"
 			],
 			"run_at": "document_start",
@@ -57,12 +56,13 @@
 	"web_accessible_resources": [
 		"js/inject.js"
 	],
-	"options_page": "options.html",
+	"options_page": "html/options.html",
 	"options_ui": {
-		"page": "options.html",
+		"page": "html/options.html",
 		"open_in_tab": false
 	},
 	"permissions": [
+    "cookies",
 		"storage",
 		"tabs",
 		"webRequest",

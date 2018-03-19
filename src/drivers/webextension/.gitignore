@@ -1,4 +1,7 @@
 /apps.json
-/images/icons/converted/*
 /images/icons/*
+/images/icons/converted/*
 /js/wappalyzer.js
+/node_modules
+
+!.gitkeep

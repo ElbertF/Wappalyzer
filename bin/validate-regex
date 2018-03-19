@@ -75,6 +75,18 @@ for ( app in json.apps ) {
 						throw new Error('HTML patterns must contain "<" or ">".\n' + app + ': ' + type + ': ' + pattern);
 					}
 				}
+
+				//Warn about suspicious periods (".") in patterns which should probably have been escaped
+				//	Periods inside character classes (such as [\d.]) don't count as wildcard, so we'll replace
+				//	the character classes in the pattern with "_". (We could remove them entirely, but then
+				//  we'd have to deal with leftover * and + characters; for example, removing the character
+				//  class entirely from the pattern /test.[a-z]+/ would yield the pattern /test.+/, which
+				//  would mean not detecting the un-escaped ".". Replacing the character class with an
+				//	underscore instead gives /test._+/, which WOULD yield a warning about the unescaped ".".)
+				if ( /(?:^\/|[^\\])\.(?:[^*+]|\/$)/.test(regex.replace(/([^\\]|^)\[[^\]]+\]/g,'$1_') ) ) {
+					console.warn('Suspicious period (".") in pattern. Should this have been escaped?\n\tApp: ' + app + '\n\tPattern: ' + type + ': ' + pattern);
+				}
+
 			});
 		}
 	});

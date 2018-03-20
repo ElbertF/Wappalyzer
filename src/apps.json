@@ -3103,6 +3103,7 @@
       ],
       "headers": {
         "Fastly-Debug-Digest": "",
+        "Vary": "Fastly-SSL",
         "X-Fastly-Request-ID": ""
       },
       "icon": "Fastly.svg",

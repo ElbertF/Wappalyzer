@@ -3571,7 +3571,6 @@
       "icon": "GitLab.svg",
       "implies": "Ruby on Rails",
       "meta": {
-        "description": "^GitLab",
         "og:site_name": "^GitLab$"
       },
       "website": "https://about.gitlab.com"

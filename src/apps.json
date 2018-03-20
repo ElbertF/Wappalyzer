@@ -10288,7 +10288,7 @@
         23
       ],
       "headers": {
-        "Via": "\\d\\.\\d varnish(?: \\(Varnish/([\\d.]+)\\))?\\;version:\\1",
+        "Via": "varnish(?: \\(Varnish/([\\d.]+)\\))?\\;version:\\1",
         "X-Varnish": "",
         "X-Varnish-Action": "",
         "X-Varnish-Age": "",

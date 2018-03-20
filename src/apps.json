@@ -11195,6 +11195,9 @@
       "cats": [
         18
       ],
+      "js": {
+        "Foundation.version": "([\\d.]+)\\;version:\\1"
+      },
       "html": [
         "<link[^>]+foundation[^>\"]+css",
         "<div [^>]*class=\"[^\"]*(?:small|medium|large)-\\d{1,2} columns"

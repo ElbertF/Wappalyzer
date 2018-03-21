@@ -9016,7 +9016,7 @@
         12
       ],
       "js": {
-        "Snap": ""
+        "Snap.version": "(.*)\\;version:\\1"
       },
       "icon": "Snap.svg.png",
       "script": "snap\\.svg(?:-min)?\\.js",

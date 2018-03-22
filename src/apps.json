@@ -12448,6 +12448,9 @@
       "cats": [
         10
       ],
+      "js": {
+        "mouseflow.version": "(.*)\\;version:\\1"
+      },
       "script": [
         "cdn\\.mouseflow\\.com"
       ],

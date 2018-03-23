@@ -4418,6 +4418,10 @@
       "cats": [
         2
       ],
+      "cookies": {
+        "ipbWWLsession_id": "",
+        "ipbWWLmodpids": ""
+      },
       "js": {
         "IPBoard": "",
         "ipb_var": "",

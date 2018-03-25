@@ -1062,6 +1062,16 @@
       },
       "website": "http://backdropcms.org"
     },
+    "Backtory": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "X-Powered-By": "Backtory"
+      },
+      "icon": "Backtory.svg",
+      "website": "https://backtory.com"
+    },
     "Banshee": {
       "cats": [
         1,

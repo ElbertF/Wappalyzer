@@ -6423,7 +6423,7 @@
         "AngularJS",
         "jQuery"
       ],
-      "script": ".*\\/mt-includes\\/[asetj]{2,6}\\/.*\\.js.*",
+      "script": "/mt-includes/js/website(?:assets)?\\.(?:min)?\\.js",
       "website": "http://motocms.com"
     },
     "Movable Type": {

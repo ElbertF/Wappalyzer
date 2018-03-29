@@ -2671,7 +2671,7 @@
         "X-Generator": "Drupal(?:\\s([\\d.]+))?\\;version:\\1"
       },
       "html": "<(?:link|style)[^>]+sites/(?:default|all)/(?:themes|modules)/",
-      "icon": "Drupal.png",
+      "icon": "Drupal.svg",
       "implies": "PHP",
       "meta": {
         "generator": "Drupal(?:\\s([\\d.]+))?\\;version:\\1"

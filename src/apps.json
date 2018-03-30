@@ -9236,6 +9236,19 @@
       "icon": "Squarespace.png",
       "website": "http://www.squarespace.com"
     },
+    "Pagevamp": {
+      "cats": [
+        1
+      ],
+      "js": {
+        "Pagevamp": ""
+      },
+      "headers": {
+        "X-ServedBy": "pagevamp"
+      },
+      "icon": "Pagevamp.png",
+      "website": "https://www.pagevamp.com"
+    },
     "SquirrelMail": {
       "cats": [
         30

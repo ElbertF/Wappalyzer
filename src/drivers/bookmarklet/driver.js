@@ -1,158 +1,154 @@
 /**
- * WebExtension driver
+ * Bookmarklet driver
  */
 
 /** global: wappalyzer */
 /** global: XMLHttpRequest */
 
 (function() {
-	if ( typeof wappalyzer === 'undefined' ) {
-		return;
-	}
+  wappalyzer.driver.document = document;
 
-	var
-		w             = wappalyzer,
-		debug         = true,
-		d             = window.document,
-		container     = d.getElementById('wappalyzer-container'),
-		domain        = window.top.location.host,
-		url           = window.top.location.href.replace(/#.*$/, ''),
-		hasOwn        = Object.prototype.hasOwnProperty;
+	const container = document.getElementById('wappalyzer-container');
+	const url = wappalyzer.parseUrl(top.location.href);
+	const hasOwn = Object.prototype.hasOwnProperty;
 
-	w.driver = {
-		timeout: 1000,
+  /**
+   * Log messages to console
+   */
+  wappalyzer.driver.log = (message, source, type) => {
+    console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+  };
 
-		/**
-		 * Log messages to console
-		 */
-		log: function(args) {
-			if ( debug && console != null && console[args.type] != null ) {
-				console[args.type](args.message);
-			}
-		},
+  function getPageContent() {
+    wappalyzer.log('func: getPageContent', 'driver');
 
-		/**
-		 * Initialize
-		 */
-		init: function() {
-			w.driver.getEnvironmentVars();
-			w.driver.getResponseHeaders();
-		},
+    var env = [];
 
-		getEnvironmentVars: function() {
-			w.log('func: getEnvironmentVars');
+    for ( let i in window ) {
+      env.push(i);
+    }
 
-			var i, env = [];
+    var scripts = Array.prototype.slice
+      .apply(document.scripts)
+      .filter(s => s.src)
+      .map(s => s.src);
 
-			for ( i in window ) {
-				env.push(i);
-			}
+    wappalyzer.analyze(url, {
+      html: document.documentElement.innerHTML,
+      env: env,
+      scripts: scripts
+    });
+  }
 
-			w.analyze(domain, url, { html: d.documentElement.innerHTML, env: env });
-		},
+	function getResponseHeaders() {
+    wappalyzer.log('func: getResponseHeaders', 'driver');
 
-		getResponseHeaders: function() {
-			w.log('func: getResponseHeaders');
+    var xhr = new XMLHttpRequest();
 
-			var xhr = new XMLHttpRequest();
+    xhr.open('GET', url, true);
 
-			xhr.open('GET', url, true);
+    xhr.onreadystatechange = () => {
+      if ( xhr.readyState === 4 && xhr.status ) {
+        var headers = xhr.getAllResponseHeaders().split("\n");
 
-			xhr.onreadystatechange = function() {
-				if ( xhr.readyState === 4 && xhr.status ) {
-					var headers = xhr.getAllResponseHeaders().split("\n");
+        if ( headers.length > 0 && headers[0] != '' ) {
+          wappalyzer.log('responseHeaders: ' + xhr.getAllResponseHeaders(), 'driver');
 
-					if ( headers.length > 0 && headers[0] != '' ) {
-						w.log('responseHeaders: ' + xhr.getAllResponseHeaders());
+          var responseHeaders = {};
 
-						var responseHeaders = {};
+          headers.forEach(line => {
+            var name, value;
 
-						headers.forEach(function(line) {
-							var name, value;
+            if ( line ) {
+              name  = line.substring(0, line.indexOf(': '));
+              value = line.substring(line.indexOf(': ') + 2, line.length - 1);
 
-							if ( line ) {
-								name  = line.substring(0, line.indexOf(': '));
-								value = line.substring(line.indexOf(': ') + 2, line.length - 1);
+              if ( !responseHeaders[name.toLowerCase()] ){
+                responseHeaders[name.toLowerCase()] = []
+              }
+              responseHeaders[name.toLowerCase()].push(value);
+            }
+          });
 
-								responseHeaders[name.toLowerCase()] = value;
-							}
-						});
+          wappalyzer.analyze(url, {
+            headers: responseHeaders
+          });
+        }
+      }
+    }
 
-						w.analyze(domain, url, { headers: responseHeaders });
-					}
-				}
-			}
+    xhr.send();
+  }
 
-			xhr.send();
-		},
+  /**
+   * Display apps
+   */
+  wappalyzer.driver.displayApps = detected => {
+    wappalyzer.log('func: diplayApps', 'driver');
 
-		/**
-		 * Display apps
-		 */
-		displayApps: function() {
-			w.log('func: diplayApps');
+    var first = true;
+    var app;
+    var category;
+    var html;
 
-			var
-				i,
-				first = true,
-				app,
-				category,
-				html;
+    html =
+      '<a id="wappalyzer-close" href="javascript: document.body.removeChild(document.getElementById(\'wappalyzer-container\')); void(0);">' +
+        'Close' +
+      '</a>' +
+      '<div id="wappalyzer-apps">';
 
-			html =
-				'<a id="wappalyzer-close" href="javascript: window.document.body.removeChild(window.document.getElementById(\'wappalyzer-container\')); void(0);">' +
-					'Close' +
-				'</a>' +
-				'<div id="wappalyzer-apps">';
+    if ( detected != null && Object.keys(detected).length ) {
+      for ( app in detected ) {
+        if ( !hasOwn.call(detected, app) ) {
+          continue;
+        }
 
-			if ( w.detected[url] != null && Object.keys(w.detected[url]).length ) {
-				for ( app in w.detected[url] ) {
-					if ( !hasOwn.call(w.detected[url], app) ) {
-						continue;
-					}
+        var version = detected[app].version,
+          confidence = detected[app].confidence;
 
-					html +=
-						'<div class="wappalyzer-app' + ( first ? ' wappalyzer-first' : '' ) + '">' +
-							'<a target="_blank" class="wappalyzer-application" href="' + w.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
-								'<strong>' +
-									'<img src="' + w.config.websiteURL + 'images/icons/' + (w.apps[app].icon || 'default.svg') + '" width="16" height="16"/> ' + app +
-								'</strong>' +
-							'</a>';
+        html +=
+          '<div class="wappalyzer-app' + ( first ? ' wappalyzer-first' : '' ) + '">' +
+            '<a target="_blank" class="wappalyzer-application" href="' + wappalyzer.config.websiteURL + 'applications/' + app.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9-]/g, '') + '">' +
+              '<strong>' +
+                '<img src="' + wappalyzer.config.websiteURL + 'images/icons/' + (wappalyzer.apps[app].icon || 'default.svg') + '" width="16" height="16"/> ' + app +
+              '</strong>' +
+              ( version ? ' ' + version : '' ) + ( confidence < 100 ? ' (' + confidence + '% sure)' : '' ) +
+            '</a>';
 
-					for ( i in w.apps[app].cats ) {
-						if ( !hasOwn.call(w.apps[app].cats, i) ) {
-							continue;
-						}
+        for ( let i in wappalyzer.apps[app].cats ) {
+          if ( !hasOwn.call(wappalyzer.apps[app].cats, i) ) {
+            continue;
+          }
 
-						category = w.categories[w.apps[app].cats[i]].name;
+          category = wappalyzer.categories[wappalyzer.apps[app].cats[i]].name;
 
-						html += '<a target="_blank" class="wappalyzer-category" href="' + w.config.websiteURL + 'categories/' + w.driver.slugify(category) + '">' + category + '</a>';
-					}
+          html += '<a target="_blank" class="wappalyzer-category" href="' + wappalyzer.config.websiteURL + 'categories/' + slugify(category) + '">' + category + '</a>';
+        }
 
-					html += '</div>';
+        html += '</div>';
 
-					first = false;
-				}
-			} else {
-				html += '<div id="wappalyzer-empty">No applications detected</div>';
-			}
+        first = false;
+      }
+    } else {
+      html += '<div id="wappalyzer-empty">No applications detected</div>';
+    }
 
-			html += '</div>';
+    html += '</div>';
 
-			container.innerHTML = html;
-		},
+    container.innerHTML = html;
+  },
 
-		/**
-		 * Go to URL
-		 */
-		goToURL: function(args) {
-			window.open(args.url);
-		},
+  /**
+   * Open a tab
+   */
+  function openTab(args) {
+    open(args.url);
+  }
 
-		slugify: function(string) {
-			return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]/g, '');
-		}
-	};
+  function slugify(string) {
+    return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
+  }
 
-	w.init();
+  getPageContent();
+  getResponseHeaders();
 })();

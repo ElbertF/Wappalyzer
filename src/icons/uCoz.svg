@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1100px" height="1100px" viewBox="0 0 1100 1100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.0.4 (8054) - http://www.bohemiancoding.com/sketch -->
+    <title>LOGO</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Dimensions-3" sketch:type="MSArtboardGroup" transform="translate(-260.000000, -3512.000000)">
+            <g id="LOGO" sketch:type="MSLayerGroup" transform="translate(260.000000, 3512.000000)">
+                <path d="M550,1100 C853.756612,1100 1100,853.756612 1100,550 C1100,246.243388 853.756612,0 550,0 C246.243388,0 0,246.243388 0,550 C0,853.756612 246.243388,1100 550,1100 Z" id="Oval-150" fill="#498BFA" sketch:type="MSShapeGroup"></path>
+                <path d="M679.259063,305.221016 L679.259063,633.813477 C679.259063,701.84971 624.126021,758.89182 556.132871,761.213261 C556.132871,761.213261 551.424989,761.384302 551.010202,761.384302 C550.352535,761.384302 545.080102,761.191144 545.080102,761.191144 C476.472336,758.878634 420.854753,701.351813 420.854753,632.711738 L420.854753,305.221016 L340.350514,305.221016 L340.350514,631.322425 C340.350514,747.090137 434.205902,840.734323 549.976105,840.482583 L551.0102,840.480335 L551.0102,840.480335 C666.205614,840.480335 759.589947,746.63277 759.589947,630.851732 L759.589947,305.221016 L679.259063,305.221016 Z" id="Oval-20" fill="#FFFFFF" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,228 +1,340 @@
-/**
- * PhantomJS driver
- */
+'use strict';
 
-/** global: phantom */
-/** global: wappalyzer */
+const Wappalyzer = require('./wappalyzer');
+const request = require('request');
+const url = require('url');
+const fs = require('fs');
+const Browser = require('zombie');
 
-(function() {
-	var
-		url,
-		originalUrl,
-		scriptDir,
-		scriptPath      = require('fs').absolute(require('system').args[0]),
-		resourceTimeout = 9000,
-		args            = [],    // TODO: Not used, maybe should be `arg`
-		debug           = false, // Output debug messages
-		quiet           = false; // Don't output errors
+const json = JSON.parse(fs.readFileSync(__dirname + '/apps.json'));
 
-	try {
-		// Working directory
-		scriptDir = scriptPath.split('/'); scriptDir.pop(); scriptDir = scriptDir.join('/');
+const extensions = /^([^.]+$|\.(asp|aspx|cgi|htm|html|jsp|php)$)/;
 
-		require('fs').changeWorkingDirectory(scriptDir);
+class Driver {
+  constructor(pageUrl, options) {
+    this.options = Object.assign({}, {
+      chunkSize: 5,
+      debug: false,
+      delay: 500,
+      maxDepth: 3,
+      maxUrls: 10,
+      maxWait: 5000,
+      recursive: false,
+      userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
+    }, options || {});
 
-		require('system').args.forEach(function(arg) {
-			var
-				value,
-				arr = /^(--[^=]+)=(.+)$/.exec(arg);
+    this.options.debug = Boolean(this.options.debug);
+    this.options.delay = this.options.recursive ? parseInt(this.options.delay, 10) : 0;
+    this.options.maxDepth = parseInt(this.options.maxDepth, 10);
+    this.options.maxUrls = parseInt(this.options.maxUrls, 10);
+    this.options.maxWait = parseInt(this.options.maxWait, 10);
+    this.options.recursive = Boolean(this.options.recursive);
 
-			if ( arr && arr.length === 3 ) {
-				arg   = arr[1];
-				value = arr[2];
-			}
+    this.origPageUrl = url.parse(pageUrl);
+    this.analyzedPageUrls = [];
+    this.apps = [];
+    this.meta = {};
 
-			switch ( arg ) {
-				case '-v':
-				case '--verbose':
-					debug = true;
+    this.wappalyzer = new Wappalyzer();
 
-					break;
-				case '-q':
-				case '--quiet':
-					quiet = true;
+    this.wappalyzer.apps = json.apps;
+    this.wappalyzer.categories = json.categories;
 
-					break;
-				case '--resource-timeout':
-					if ( value ) {
-						resourceTimeout = value;
-					}
+    this.wappalyzer.parseJsPatterns();
 
-					break;
-				default:
-					url = originalUrl = arg;
-			}
-		});
+    this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
+    this.wappalyzer.driver.displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
 
-		if ( !url ) {
-			throw new Error('Usage: phantomjs ' + require('system').args[0] + ' <url>');
-		}
+    process.on('uncaughtException', e => this.wappalyzer.log('Uncaught exception: ' + e.message, 'driver', 'error'));
+  }
 
-		if ( !phantom.injectJs('wappalyzer.js') ) {
-			throw new Error('Unable to open file js/wappalyzer.js');
-		}
+  analyze() {
+    this.time = {
+      start: new Date().getTime(),
+      last: new Date().getTime(),
+    }
 
-		wappalyzer.driver = {
-			timeout: 1000,
+    return this.crawl(this.origPageUrl);
+  }
 
-			/**
-			 * Log messages to console
-			 */
-			log: function(args) {
-				if ( args.type === 'error' ) {
-					if ( !quiet ) {
-						require('system').stderr.write(args.message + "\n");
-					}
-				} else if ( debug || args.type !== 'debug' ) {
-					require('system').stdout.write(args.message + "\n");
-				}
-			},
+  log(message, source, type) {
+    this.options.debug && console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+  }
 
-			/**
-			 * Display apps
-			 */
-			displayApps: function() {
-				var
-					app, cats,
-					apps  = [];
+  displayApps(detected, meta) {
+    this.meta = meta;
 
-				wappalyzer.log('driver.displayApps');
+    Object.keys(detected).forEach(appName => {
+      const app = detected[appName];
 
-				for ( app in wappalyzer.detected[url] ) {
-					cats = [];
+      var categories = [];
 
-					wappalyzer.apps[app].cats.forEach(function(cat) {
-						cats.push(wappalyzer.categories[cat].name);
-					});
+      app.props.cats.forEach(id => {
+        var category = {};
 
-					apps.push({
-						name: app,
-						confidence: wappalyzer.detected[url][app].confidenceTotal.toString(),
-						version:    wappalyzer.detected[url][app].version,
-						icon:       wappalyzer.apps[app].icon || 'default.svg',
-						website:    wappalyzer.apps[app].website,
-						categories: cats
-					});
-				}
+        category[id] = json.categories[id].name;
 
-				wappalyzer.driver.sendResponse(apps);
-			},
+        categories.push(category)
+      });
 
-			/**
-			 * Send response
-			 */
-			sendResponse: function(apps) {
-				apps = apps || [];
+      if ( !this.apps.some(detectedApp => detectedApp.name === app.name) ) {
+        this.apps.push({
+          name: app.name,
+          confidence: app.confidenceTotal.toString(),
+          version: app.version,
+          icon: app.props.icon || 'default.svg',
+          website: app.props.website,
+          categories
+        });
+      }
+    });
+  }
 
-				require('system').stdout.write(JSON.stringify({ url: url, originalUrl: originalUrl, applications: apps }) + "\n");
-			},
+  fetch(pageUrl, index, depth) {
+    // Return when the URL is a duplicate or maxUrls has been reached
+    if ( this.analyzedPageUrls.indexOf(pageUrl.href) !== -1 || this.analyzedPageUrls.length >= this.options.maxUrls ) {
+      return Promise.resolve();
+    }
 
-			/**
-			 * Initialize
-			 */
-			init: function() {
-				var
-					page, hostname,
-					headers = {},
-					a       = document.createElement('a'),
-					json    = JSON.parse(require('fs').read('apps.json'));
+    this.analyzedPageUrls.push(pageUrl.href);
 
-				wappalyzer.log('driver.init');
+    const timerScope = {
+      last: new Date().getTime()
+    };
 
-				a.href = url.replace(/#.*$/, '');
+    this.timer('fetch; url: ' + pageUrl.href + '; depth: ' + depth + '; delay: ' + ( this.options.delay * index ) + 'ms', timerScope);
 
-				hostname = a.hostname;
+    return new Promise(resolve => this.sleep(this.options.delay * index).then(() => this.visit(pageUrl, timerScope, resolve)));
+  }
 
-				wappalyzer.apps       = json.apps;
-				wappalyzer.categories = json.categories;
+  visit(pageUrl, timerScope, resolve) {
+    const browser = new Browser({
+      silent: true,
+      strictSSL: false,
+      userAgent: this.options.userAgent,
+      waitDuration: this.options.maxWait,
+    });
 
-				page = require('webpage').create();
+    this.timer('browser.visit start; url: ' + pageUrl.href, timerScope);
 
-				page.settings.loadImages      = false;
-				page.settings.userAgent       = 'Mozilla/5.0 (compatible; Wappalyzer; +https://github.com/AliasIO/Wappalyzer)';
-				page.settings.resourceTimeout = resourceTimeout;
+    browser.visit(pageUrl.href, () => {
+      this.timer('browser.visit end; url: ' + pageUrl.href, timerScope);
 
-				page.onError = function(message) {
-					wappalyzer.log(message, 'error');
-				};
+      if ( !this.responseOk(browser, pageUrl) ) {
+        return resolve();
+      }
 
-				page.onResourceTimeout = function() {
-					wappalyzer.log('Resource timeout', 'error');
+      const headers = this.getHeaders(browser);
+      const html = this.getHtml(browser);
+      const scripts = this.getScripts(browser);
+      const js = this.getJs(browser);
+      const cookies = this.getCookies(browser);
 
-					wappalyzer.driver.sendResponse();
+      this.wappalyzer.analyze(pageUrl, {
+        headers,
+        html,
+        scripts,
+        js,
+        cookies,
+      })
+        .then(() => {
+          const links = Array.prototype.reduce.call(
+            browser.document.getElementsByTagName('a'), (results, link) => {
+              if ( link.protocol.match(/https?:/) || link.hostname === this.origPageUrl.hostname || extensions.test(link.pathname) ) {
+                link.hash = '';
 
-					phantom.exit(1);
-				};
+                results.push(url.parse(link.href));
+              }
 
-				page.onResourceReceived = function(response) {
-					if ( response.url.replace(/\/$/, '') === url.replace(/\/$/, '') ) {
-						if ( response.redirectURL ) {
-							url = response.redirectURL;
+              return results;
+            }, []
+          );
 
-							return;
-						}
+          return resolve(links);
+        });
+    });
+  }
 
-						if ( response.stage === 'end' && response.status === 200 && response.contentType.indexOf('text/html') !== -1 ) {
-							response.headers.forEach(function(header) {
-								headers[header.name.toLowerCase()] = header.value;
-							});
-						}
-					}
-				};
+  responseOk(browser, pageUrl) {
+    // Validate response
+    const resource = browser.resources.length ? browser.resources.filter(resource => resource.response).shift() : null;
 
-				page.onResourceError = function(resourceError) {
-					wappalyzer.log(resourceError.errorString, 'error');
-				};
+    if ( !resource ) {
+      this.wappalyzer.log('No response from server; url: ' + pageUrl.href, 'driver', 'error');
 
-				page.open(url, function(status) {
-					var html, environmentVars = '';
+      return false;
+    }
 
-					if ( status === 'success' ) {
-						html = page.content;
+    if ( resource.response.status !== 200 ) {
+      this.wappalyzer.log('Response was not OK; status: ' + resource.response.status + ' ' + resource.response.statusText + '; url: ' + pageUrl.href, 'driver', 'error');
 
-						if ( html.length > 50000 ) {
-							html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-						}
+      return false;
+    }
 
-						// Collect environment variables
-						environmentVars = page.evaluate(function() {
-							var i, environmentVars = '';
+    const headers = this.getHeaders(browser);
 
-							for ( i in window ) {
-								environmentVars += i + ' ';
-							}
+    // Validate content type
+    const contentType = headers.hasOwnProperty('content-type') ? headers['content-type'].shift() : null;
 
-							return environmentVars;
-						});
+    if ( !contentType || !/\btext\/html\b/.test(contentType) ) {
+      this.wappalyzer.log('Skipping; url: ' + pageUrl.href + '; content type: ' + contentType, 'driver');
 
-						wappalyzer.log({ message: 'environmentVars: ' + environmentVars });
+      this.analyzedPageUrls.splice(this.analyzedPageUrls.indexOf(pageUrl.href), 1);
 
-						environmentVars = environmentVars.split(' ').slice(0, 500);
+      return false;
+    }
 
-						wappalyzer.analyze(hostname, url, {
-							html:    html,
-							headers: headers,
-							env:     environmentVars
-						});
+    // Validate document
+    if ( !browser.document || !browser.document.documentElement ) {
+      this.wappalyzer.log('No HTML document; url: ' + pageUrl.href, 'driver', 'error');
 
-						phantom.exit(0);
-					} else {
-						wappalyzer.log('Failed to fetch page', 'error');
+      return false;
+    }
 
-						wappalyzer.driver.sendResponse();
+    return true;
+  }
 
-						phantom.exit(1);
-					}
-				});
-			}
-		};
+  getHeaders(browser) {
+    const headers = {};
 
-		wappalyzer.init();
-	} catch ( e ) {
-		wappalyzer.log(e, 'error');
+    const resource = browser.resources.length ? browser.resources.filter(resource => resource.response).shift() : null;
 
-		wappalyzer.driver.sendResponse();
+    if ( resource ) {
+      resource.response.headers._headers.forEach(header => {
+        if ( !headers[header[0]] ){
+          headers[header[0]] = [];
+        }
 
-		phantom.exit(1);
-	}
-})();
+        headers[header[0]].push(header[1]);
+      });
+    }
+
+    return headers;
+  }
+
+  getHtml(browser) {
+    let html = '';
+
+    try {
+      html = browser.html();
+
+      if ( html.length > 50000 ) {
+        html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
+      }
+    } catch ( error ) {
+      this.wappalyzer.log(error.message, 'browser', 'error');
+    }
+
+    return html;
+  }
+
+  getScripts(browser) {
+    if ( !browser.document || !browser.document.scripts ) {
+      return [];
+    }
+
+    const scripts = Array.prototype.slice
+      .apply(browser.document.scripts)
+      .filter(script => script.src)
+      .map(script => script.src);
+
+    return scripts;
+  }
+
+  getJs(browser) {
+    const patterns = this.wappalyzer.jsPatterns;
+    const js = {};
+
+    Object.keys(patterns).forEach(appName => {
+      js[appName] = {};
+
+      Object.keys(patterns[appName]).forEach(chain => {
+        js[appName][chain] = {};
+
+        patterns[appName][chain].forEach((pattern, index) => {
+          const properties = chain.split('.');
+
+          let value = properties.reduce((parent, property) => {
+            return parent && parent.hasOwnProperty(property) ? parent[property] : null;
+          }, browser.window);
+
+          value = typeof value === 'string' || typeof value === 'number' ? value : !!value;
+
+          if ( value ) {
+            js[appName][chain][index] = value;
+          }
+        });
+      });
+    });
+
+    return js;
+  }
+
+  getCookies(browser) {
+    const cookies = [];
+
+    if ( browser.cookies ) {
+      browser.cookies.forEach(cookie => cookies.push({
+        name: cookie.key,
+        value: cookie.value,
+        domain: cookie.domain,
+        path: cookie.path,
+      }));
+    }
+
+    return cookies;
+  }
+
+  crawl(pageUrl, index, depth = 1) {
+    pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
+
+    return new Promise(resolve => {
+      this.fetch(pageUrl, index, depth)
+        .catch(() => {})
+        .then(links => {
+          if ( links && Boolean(this.options.recursive) && depth < this.options.maxDepth ) {
+            return this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
+          } else {
+            return Promise.resolve();
+          }
+        })
+        .then(() => {
+          resolve({
+            urls: this.analyzedPageUrls,
+            applications: this.apps,
+            meta: this.meta
+          });
+        });
+    });
+  }
+
+  chunk(links, depth, chunk = 0) {
+    if ( links.length === 0 ) {
+      return Promise.resolve();
+    }
+
+    const chunked = links.splice(0, this.options.chunkSize);
+
+    return new Promise(resolve => {
+      Promise.all(chunked.map((link, index) => this.crawl(link, index, depth)))
+        .then(() => this.chunk(links, depth, chunk + 1))
+        .then(() => resolve());
+    });
+  }
+
+  sleep(ms) {
+    return ms ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
+  }
+
+  timer(message, scope) {
+    const time = new Date().getTime();
+    const sinceStart = ( Math.round(( time - this.time.start ) / 10) / 100) + 's';
+    const sinceLast = ( Math.round(( time - scope.last ) / 10) / 100) + 's';
+
+    this.wappalyzer.log('[timer] ' + message + '; lapsed: ' + sinceLast + ' / ' + sinceStart, 'driver');
+
+    scope.last = time;
+  }
+};
+
+module.exports = Driver;

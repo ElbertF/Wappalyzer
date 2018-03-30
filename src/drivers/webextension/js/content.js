@@ -1,63 +1,71 @@
 /** global: browser */
+/** global: XMLSerializer */
 
-(function() {
-	var c = {
-		init: function() {
-			var html = document.documentElement.outerHTML;
+if ( typeof browser !== 'undefined' && typeof document.body !== 'undefined' ) {
+  try {
+    sendMessage('init', {});
 
-			c.log('Function call: init()');
+    // HTML
+    var html = new XMLSerializer().serializeToString(document).split('\n');
 
-			if ( html.length > 50000 ) {
-				html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-			}
+    html = html
+      .slice(0, 1000).concat(html.slice(html.length - 1000))
+      .map(line => line.substring(0, 1000))
+      .join('\n');
 
-			browser.runtime.sendMessage({ id: 'analyze', subject: { html: html }, source: 'content.js' });
+    // Scripts
+    const scripts = Array.prototype.slice
+      .apply(document.scripts)
+      .filter(script => script.src)
+      .map(script => script.src)
+      .filter(script => script.indexOf('data:text/javascript;') !== 0);
 
-			c.getEnvironmentVars();
-		},
+    sendMessage('analyze', { html, scripts });
 
-		log: function(message) {
-			browser.runtime.sendMessage({ id: 'log', message: message, source: 'content.js' });
-		},
+    // JavaScript variables
+    const script = document.createElement('script');
 
-		getEnvironmentVars: function() {
-			var container, script;
+    script.onload = () => {
+      const onMessage = event => {
+        if ( event.data.id !== 'js' ) {
+          return;
+        }
 
-			c.log('Function call: getEnvironmentVars()');
+        removeEventListener('message', onMessage);
 
-			if ( typeof document.documentElement.innerHTML === 'undefined' ) {
-				return;
-			}
+        sendMessage('analyze', { js: event.data.js });
 
-			try {
-				container = document.createElement('wappalyzerData');
+        script.remove();
+      };
 
-				container.setAttribute('id',    'wappalyzerData');
-				container.setAttribute('style', 'display: none');
+      addEventListener('message', onMessage);
 
-				script = document.createElement('script');
+      sendMessage('get_js_patterns', {}, response => {
+        if ( response ) {
+          postMessage({
+            id: 'patterns',
+            patterns: response.patterns
+          }, '*');
+        }
+      });
+    };
 
-				script.setAttribute('id', 'wappalyzerEnvDetection');
-				script.setAttribute('src', browser.extension.getURL('js/inject.js'));
+    script.setAttribute('src', browser.extension.getURL('js/inject.js'));
 
-				container.addEventListener('wappalyzerEvent', (function(event) {
-					var environmentVars = event.target.childNodes[0].nodeValue;
+    document.body.appendChild(script);
+  } catch (e) {
+    sendMessage('log', e);
+  }
+}
 
-					document.documentElement.removeChild(container);
-					document.documentElement.removeChild(script);
+function sendMessage(id, subject, callback) {
+  ( chrome || browser ).runtime.sendMessage({
+    id,
+    subject,
+    source: 'content.js'
+  }, callback || ( () => {} ));
+}
 
-					environmentVars = environmentVars.split(' ').slice(0, 500);
-
-					browser.runtime.sendMessage({ id: 'analyze', subject: { env: environmentVars }, source: 'content.js' });
-				}), true);
-
-				document.documentElement.appendChild(container);
-				document.documentElement.appendChild(script);
-			} catch(e) {
-				c.log('Error: ' + e);
-			}
-		}
-	}
-
-	c.init();
-}());
+// https://stackoverflow.com/a/44774834
+// https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript#Return_value
+undefined;

@@ -2,6 +2,7 @@
 /src/icons/converted/*
 /node_modules
 /npm-debug.log
+/npm-debug.log
 
 !.gitkeep
 
@@ -10,3 +11,5 @@ Thumbs.db
 Desktop.ini
 *.DS_Store
 ._*
+tags
+tags.*

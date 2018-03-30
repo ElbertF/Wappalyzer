@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "webextension-polyfill": "^0.2.1"
+  }
+}

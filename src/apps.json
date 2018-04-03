@@ -8144,7 +8144,7 @@
         12
       ],
       "js": {
-        "Reveal": ""
+        "Reveal.VERSION": "(.*)\\;version:\\1"
       },
       "icon": "Reveal.js.png",
       "implies": "Highlight.js",

@@ -6187,6 +6187,19 @@
       "script": "//cdn\\.mobify\\.com/",
       "website": "https://www.mobify.com"
     },
+    "Mobirise": {
+      "cats": [
+        51
+      ],
+      "meta": {
+        "generator": "^Mobirise"
+      },
+      "html": [
+        "<!-- Site made with Mobirise"
+      ]
+      "icon": "Mobirise.png",
+      "website": "https://mobirise.com"
+    },
     "MochiKit": {
       "cats": [
         12

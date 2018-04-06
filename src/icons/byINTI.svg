@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.2" baseProfile="tiny" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 x="0px" y="0px" viewBox="0 0 600 600" xml:space="preserve">
+<g>
+	<path fill="#F26722" d="M595,299.9C595,137,462.9,5,300,5C137.1,5,5,137.1,5,300c0,162.9,132.1,295,295,295h0.1
+		c162.9,0,294.9-132.1,295-294.9V299.9z M112.8,419.8H80.3v-211h32.6V419.8z M469.5,239h-54.7v180.8h-32.6V239h-53.2l-0.3,180.8
+		h-32.3L172,271.1v148.7h-32.9V209.1H172l124.6,153.7V208.8h32.6v0h140.4V239z M487.2,419.8v-211h32.6v211H487.2z"/>
+	<rect x="80.3" y="208.8" fill="#FFFFFF" width="32.6" height="211"/>
+	<polygon fill="#FFFFFF" points="329.1,239 382.3,239 382.3,419.8 414.9,419.8 414.9,239 469.5,239 469.5,208.8 329.1,208.8 	"/>
+	<rect x="487.2" y="208.8" fill="#FFFFFF" width="32.6" height="211"/>
+	<polygon fill="#FFFFFF" points="329.1,208.8 296.6,208.8 296.6,362.8 172,209.1 139.1,209.1 139.1,419.8 172,419.8 172,271.1 
+		296.6,419.8 328.8,419.8 329.1,239 329.1,208.8 	"/>
+</g>
+</svg>

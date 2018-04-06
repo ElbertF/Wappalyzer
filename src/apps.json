@@ -4616,6 +4616,15 @@
       "script": "(?:is-bin|INTERSHOP)",
       "website": "http://intershop.com"
     },
+    "INTI": {
+      "cats": [
+        6,
+        53
+      ],
+      "icon": "byInti.png",
+      "url": "^https?//.+\\.byinti\\.com",
+      "website": "http://byinti.com"
+    },
     "Invenio": {
       "cats": [
         50

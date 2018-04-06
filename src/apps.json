@@ -7210,6 +7210,16 @@
       },
       "website": "http://panvision.de/Produkte/Content_Management/index.asp"
     },
+    "Paper.js": {
+      "cats": [
+        25
+      ],
+      "icon": "paperjs.png",
+      "js": {
+        "paper.version": "(.*)\\;version:\\1"
+      },
+      "website": "http://paperjs.org/"
+    },
     "Pelican": {
       "cats": [
         1

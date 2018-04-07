@@ -4209,7 +4209,7 @@
         19
       ],
       "js": {
-        "hljs.listLanguage": ""
+        "hljs.listLanguages": ""
       },
       "icon": "Highlight.js.png",
       "script": "/(?:([\\d.])+/)?highlight(?:\\.min)?\\.js\\;version:\\1",

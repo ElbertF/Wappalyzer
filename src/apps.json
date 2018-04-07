@@ -10806,7 +10806,7 @@
         12
       ],
       "js": {
-        "YAHOO": "",
+        "YAHOO.VERSION": "(.*)\\;version:\\1,
         "YUI.version": "(.*)\\;version:\\1"
       },
       "icon": "YUI.png",

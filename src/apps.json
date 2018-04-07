@@ -5808,6 +5808,16 @@
       "script": "\\/assets\\/js\\/manycontacts\\.min\\.js",
       "website": "http://www.manycontacts.com"
     },
+    "Marked": {
+      "cats": [
+        12
+      ],
+      "js": {
+        "marked": ""
+      },
+      "script": "/marked(?:\\.min)?\\.js",
+      "website": "https://github.com/markedjs/marked"
+    },
     "Marionette.js": {
       "cats": [
         12

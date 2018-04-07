@@ -5815,6 +5815,7 @@
       "js": {
         "marked": ""
       },
+      "icon": "marked.svg",
       "script": "/marked(?:\\.min)?\\.js",
       "website": "https://github.com/markedjs/marked"
     },

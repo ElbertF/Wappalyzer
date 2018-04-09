@@ -12245,7 +12245,7 @@
         25
       ],
       "js": {
-        "THREE": ""
+        "THREE.REVISION": "(.*)\\;version:\\1"
       },
       "icon": "three.js.png",
       "script": "three(?:\\.min)?\\.js",

@@ -6192,10 +6192,10 @@
         51
       ],
       "meta": {
-        "generator": "^Mobirise"
+        "generator": "^Mobirise v([\\d.]+)\\;version:\\1"
       },
       "html": [
-        "<!-- Site made with Mobirise"
+        "<!-- Site made with Mobirise Website Builder v([\\d.]+)\\;version:\\1"
       ],
       "icon": "mobirise.png",
       "website": "https://mobirise.com"

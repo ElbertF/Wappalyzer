@@ -5989,6 +5989,17 @@
       },
       "website": "http://www.melistechnology.com/"
     },
+    "Mermaid": {
+      "cats": [
+        25
+      ],
+      "js": {
+        "mermaid": ""
+      },
+      "script": "/mermaid(?:\\.min)?\\.js",
+      "html": "<div [^>]*class=[\"']mermaid[\"']>\\;confidence:90",
+      "website": "https://mermaidjs.github.io/"
+    },
     "Meteor": {
       "cats": [
         12

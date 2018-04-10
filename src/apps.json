@@ -3587,17 +3587,6 @@
       },
       "website": "http://about.gitlab.com/gitlab-ci"
     },
-    "GitPHP": {
-      "cats": [
-        47
-      ],
-      "html": [
-        "<!-- gitphp web interface ([\\d.]+)\\;version:\\1",
-        "<a href=\"http://www\\.gitphp\\.org/\" target=\"_blank\">GitPHP by Chris Han"
-      ],
-      "implies": "PHP",
-      "website": "http://gitphp.org"
-    },
     "Gitiles": {
       "cats": [
         47

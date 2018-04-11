@@ -10,17 +10,6 @@
       "url": "/shop/catalog/browse\\?sessid=",
       "website": "http://1and1.com"
     },
-    "Google Analytics Enhanced eCommerce": {
-      "cats": [
-        10
-      ],
-      "js": {
-        "gaplugins.EC": ""
-      },
-      "icon": "Google Analytics.svg",
-      "script": "google-analytics\\.com\\/plugins\\/ua\\/ec\\.js",
-      "website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
-    },
     "1C-Bitrix": {
       "cats": [
         1
@@ -37,15 +26,6 @@
       "script": "1c-bitrix",
       "website": "http://www.1c-bitrix.ru"
     },
-    "animate.css": {
-      "cats": [
-        18
-      ],
-      "html": [
-        "<link [^>]+(?:/([\\d.]+)/)?animate\\.(?:min\\.)?css\\;version:\\1"
-      ],
-      "website": "https://daneden.github.io/animate.css/"
-    },
     "2z Project": {
       "cats": [
         1
@@ -55,15 +35,6 @@
         "generator": "2z project ([\\d.]+)\\;version:\\1"
       },
       "website": "http://2zproject-cms.ru"
-    },
-    "3DM": {
-      "cats": [
-        19
-      ],
-      "html": "<title>3ware 3DM([\\d\\.]+)?\\;version:\\1",
-      "icon": "3DM.png",
-      "implies": "3ware",
-      "website": "http://www.3ware.com"
     },
     "3dCart": {
       "cats": [
@@ -79,6 +50,15 @@
       "icon": "3dCart.png",
       "script": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
       "website": "http://www.3dcart.com"
+    },
+    "3DM": {
+      "cats": [
+        19
+      ],
+      "html": "<title>3ware 3DM([\\d\\.]+)?\\;version:\\1",
+      "icon": "3DM.png",
+      "implies": "3ware",
+      "website": "http://www.3ware.com"
     },
     "3ware": {
       "cats": [
@@ -163,6 +143,15 @@
       "implies": "PHP",
       "website": "http://www.ampcms.org"
     },
+    "animate.css": {
+      "cats": [
+        18
+      ],
+      "html": [
+        "<link [^>]+(?:/([\\d.]+)/)?animate\\.(?:min\\.)?css\\;version:\\1"
+      ],
+      "website": "https://daneden.github.io/animate.css/"
+    },
     "AOLserver": {
       "cats": [
         22
@@ -236,21 +225,6 @@
       },
       "icon": "ActOn.png",
       "website": "http://act-on.com"
-    },
-    "Prebid": {
-      "cats": [
-        36
-      ],
-      "icon": "Prebid.png",
-      "js": {
-        "pbjs": "",
-        "PREBID_TIMEOUT": ""
-      },
-      "script": [
-        "/prebid\\.js",
-        "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
-      ],
-      "website": "http://prebid.org"
     },
     "AdInfinity": {
       "cats": [
@@ -1857,6 +1831,17 @@
       "icon": "Cloudera.png",
       "website": "http://www.cloudera.com"
     },
+    "CNV Platform": {
+      "cats": [
+        1
+      ],
+      "cookies": {
+        "cnv_session": ""
+      },
+      "icon": "CNV.png",
+      "implies": "Laravel",
+      "website": "https://cnv.vn"
+    },
     "CodeIgniter": {
       "cats": [
         18
@@ -2391,20 +2376,6 @@
       },
       "icon": "Debian.png",
       "website": "http://debian.org"
-    },
-    "PHPDebugBar": {
-      "cats": [
-        47
-      ],
-      "js": {
-        "phpdebugbar": "",
-        "PhpDebugBar": ""
-      },
-      "script": [
-        "debugbar.*\\.js"
-      ],
-      "icon": "phpdebugbar.png",
-      "website": "http://phpdebugbar.com/"
     },
     "Decorum": {
       "cats": [
@@ -3462,6 +3433,19 @@
       },
       "website": "https://whatcd.github.io/Gazelle/"
     },
+    "Genexus": {
+      "cats": [
+        18,
+        19
+      ],
+      "icon": "genexus.png",
+      "website": "https://www.genexus.com",
+      "js": {
+        "gx.evt": ""
+      },
+      "html": "<[^>]+class=\"gxp-page\"",
+      "script": "/gxp\\.js"
+    },
     "Gentoo": {
       "cats": [
         28
@@ -3729,6 +3713,17 @@
       "script": "google-analytics\\.com\\/(?:ga|urchin|(analytics))\\.js\\;version:\\1?UA:",
       "website": "http://google.com/analytics"
     },
+    "Google Analytics Enhanced eCommerce": {
+      "cats": [
+        10
+      ],
+      "js": {
+        "gaplugins.EC": ""
+      },
+      "icon": "Google Analytics.svg",
+      "script": "google-analytics\\.com\\/plugins\\/ua\\/ec\\.js",
+      "website": "https://developers.google.com/analytics/devguides/collection/analyticsjs/enhanced-ecommerce"
+    },
     "Google App Engine": {
       "cats": [
         22
@@ -3821,17 +3816,6 @@
       "icon": "Google Sites.png",
       "url": "^https?://sites\\.google\\.com",
       "website": "http://sites.google.com"
-    },
-    "CNV Platform": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "cnv_session": ""
-      },
-      "icon": "CNV.png",
-      "implies": "Laravel",
-      "website": "https://cnv.vn"
     },
     "Google Tag Manager": {
       "cats": [
@@ -7432,6 +7416,20 @@
       "script": "/phenomic\\.browser\\.[a-f0-9]+\\.js",
       "website": "https://phenomic.io/"
     },
+    "PHPDebugBar": {
+      "cats": [
+        47
+      ],
+      "js": {
+        "phpdebugbar": "",
+        "PhpDebugBar": ""
+      },
+      "script": [
+        "debugbar.*\\.js"
+      ],
+      "icon": "phpdebugbar.png",
+      "website": "http://phpdebugbar.com/"
+    },
     "PHPoole": {
       "cats": [
         57
@@ -7645,6 +7643,21 @@
       ],
       "icon": "Powergap.png",
       "website": "http://powergap.de"
+    },
+    "Prebid": {
+      "cats": [
+        36
+      ],
+      "icon": "Prebid.png",
+      "js": {
+        "pbjs": "",
+        "PREBID_TIMEOUT": ""
+      },
+      "script": [
+        "/prebid\\.js",
+        "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
+      ],
+      "website": "http://prebid.org"
     },
     "Prefix-Free": {
       "cats": [
@@ -12560,19 +12573,6 @@
       },
       "icon": "Woosa.png",
       "website": "https://woosa.nl"
-    },
-    "Genexus": {
-      "cats": [
-        18,
-        19
-      ],
-      "icon": "genexus.png",
-      "website": "https://www.genexus.com",
-      "js": {
-        "gx.evt": ""
-      },
-      "html": "<[^>]+class=\"gxp-page\"",
-      "script": "/gxp\\.js"
     }
   },
   "categories": {

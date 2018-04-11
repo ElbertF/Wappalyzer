@@ -9299,18 +9299,6 @@
       "icon": "Stackla.png",
       "website": "http://stackla.com/"
     },
-    "Stamplay": {
-      "cats": [
-        34,
-        47
-      ],
-      "headers": {
-        "Server": "Stamplay"
-      },
-      "icon": "Stamplay.png",
-      "script": "stamplay.*\\.js",
-      "website": "http://stamplay.com"
-    },
     "Starlet": {
       "cats": [
         22

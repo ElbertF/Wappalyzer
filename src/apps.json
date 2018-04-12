@@ -5758,8 +5758,7 @@
       "script": [
         "js/mage",
         "skin/frontend/(?:default|(enterprise))\\;version:\\1?Enterprise:Community",
-        "static/_requirejs\\;confidence:50\\;version:2",
-        "static/frontend\\;confidence:20\\;version:2"
+        "static/_requirejs\\;confidence:50\\;version:2"
       ],
       "website": "https://magento.com"
     },

@@ -4306,6 +4306,7 @@
       "meta": {
         "generator": "Hugo ([\\d.]+)?\\;version:\\1"
       },
+      "html": "powered by <a [^>]*href=\"http://hugo.spf13.com",
       "website": "http://gohugo.io"
     },
     "Hybris": {

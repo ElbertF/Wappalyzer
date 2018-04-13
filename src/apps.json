@@ -5965,6 +5965,7 @@
       "headers": {
         "X-Powered-By": "^Medium$"
       },
+      "implies": "Node.js",
       "icon": "Medium.svg",
       "script": "medium\\.com",
       "url": "^https?://(?:www\\.)?medium\\.com",

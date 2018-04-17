@@ -9327,6 +9327,11 @@
         10
       ],
       "icon": "StatCounter.png",
+      "js": {
+        "_statcounter": "\\;confidence:100",
+        "sc_project": "\\;confidence:50",
+        "sc_security": "\\;confidence:50"
+      },
       "script": "statcounter\\.com/counter/counter",
       "website": "http://www.statcounter.com"
     },

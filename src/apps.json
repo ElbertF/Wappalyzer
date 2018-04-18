@@ -8113,7 +8113,10 @@
         4
       ],
       "html": "<redoc ",
-      "script": "/redoc.(?:min.)?js",
+      "script": "/redoc\\.(?:min\\.)?js",
+      "js": {
+        "Redoc.version": "(.*)\\;version:\\1"
+      },
       "icon": "redoc.png",
       "implies": "React",
       "website": "https://github.com/Rebilly/ReDoc"

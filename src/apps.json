@@ -10816,7 +10816,9 @@
         "Domain": "\\.wix\\.com"
       },
       "headers": {
-        "X-Wix-Renderer-Server": ""
+        "X-Wix-Renderer-Server": "",
+        "X-Wix-Request-Id": "",
+        "X-Wix-Server-Artifact-Id": ""
       },
       "icon": "Wix.png",
       "script": "static\\.wixstatic\\.com",

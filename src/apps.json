@@ -11306,6 +11306,16 @@
       "script": "v2\\.zopim\\.com",
       "website": "http://zopim.com"
     },
+    "Zenfolio": {
+      "cats": [
+        7
+      ],
+      "icon": "Zenfolio.png",
+      "js": {
+        "Zenfolio": ""
+      },
+      "website": "https://zenfolio.com"
+    },
     "Zepto": {
       "cats": [
         12

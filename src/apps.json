@@ -8108,6 +8108,16 @@
       },
       "website": "http://www.redmine.org"
     },
+    "ReDoc": {
+      "cats": [
+        4
+      ],
+      "html": "<redoc ",
+      "script": "/redoc.(?:min.)?js",
+      "icon": "redoc.png",
+      "implies": "React",
+      "website": "https://github.com/Rebilly/ReDoc"
+    },
     "Reinvigorate": {
       "cats": [
         10

@@ -9322,11 +9322,11 @@
       "implies": "Perl",
       "website": "http://metacpan.org/pod/Starlet"
     },
-    "StatCounter": {
+    "Statcounter": {
       "cats": [
         10
       ],
-      "icon": "StatCounter.png",
+      "icon": "Statcounter.svg",
       "js": {
         "_statcounter": "\\;confidence:100",
         "sc_project": "\\;confidence:50",

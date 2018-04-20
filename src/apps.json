@@ -922,7 +922,7 @@
       "icon": "Atlassian Jira.svg",
       "implies": "Java",
       "meta": {
-        "ajs-version-number": "([\\d\\.]+)\\;version:\\1",
+        "ajs-version-number": "^(.+)$\\;version:\\1",
         "application-name": "JIRA"
       },
       "website": "http://www.atlassian.com/software/jira/overview/"

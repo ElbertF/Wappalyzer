@@ -11273,7 +11273,7 @@
         "<input type=\"hidden\" value=\"[a-zA-Z0-9]{40}\" name=\"YII_CSRF_TOKEN\" \\/>",
         "<!\\[CDATA\\[YII-BLOCK-(?:HEAD|BODY-BEGIN|BODY-END)\\]"
       ],
-      "script": "yii.*\\.js",
+      "script": "yii.+\\.js",
       "icon": "Yii.png",
       "implies": [
         "PHP"

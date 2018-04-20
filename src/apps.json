@@ -479,7 +479,7 @@
         31
       ],
       "headers": {
-        "Server": "Airee"
+        "Server": "^Airee"
       },
       "icon": "Airee.png",
       "website": "http://xn--80aqc2a.xn--p1ai"
@@ -577,7 +577,7 @@
         19
       ],
       "headers": {
-        "Server": "AmazonS3"
+        "Server": "^AmazonS3$"
       },
       "icon": "aws-s3.svg",
       "website": "http://aws.amazon.com/s3/"
@@ -1608,7 +1608,6 @@
         31
       ],
       "headers": {
-        "server": "^CDN77-Turbo$",
         "Server": "^CDN77-Turbo$"
       },
       "icon": "CDN77.png",
@@ -1699,7 +1698,7 @@
         22
       ],
       "headers": {
-        "Server": "Cherokee(?:/([\\d.]+))?\\;version:\\1"
+        "Server": "^Cherokee(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "Cherokee.png",
       "website": "http://www.cherokee-project.com"
@@ -1826,7 +1825,7 @@
         "CloudFlare": ""
       },
       "headers": {
-        "Server": "cloudflare"
+        "Server": "^cloudflare$"
       },
       "icon": "CloudFlare.svg",
       "website": "http://www.cloudflare.com"
@@ -2092,7 +2091,7 @@
         22
       ],
       "headers": {
-        "Server": "Cowboy"
+        "Server": "^Cowboy$"
       },
       "icon": "Cowboy.png",
       "implies": "Erlang",

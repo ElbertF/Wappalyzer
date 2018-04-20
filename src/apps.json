@@ -2380,16 +2380,6 @@
       "script": "dataTables.*\\.js",
       "website": "http://datatables.net"
     },
-    "David Webbox": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "David-WebBox/([\\d.a]+ \\(\\d+\\))\\;version:\\1"
-      },
-      "icon": "David Webbox.png",
-      "website": "http://www.tobit.com"
-    },
     "Debian": {
       "cats": [
         28
@@ -2807,27 +2797,6 @@
       },
       "website": "http://www.eprints.org"
     },
-    "ESERV-10": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "ESERV-10(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "ESERV-10.png",
-      "website": "http://www.violasystems.com"
-    },
-    "EWS-NIC4": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "EWS-NIC4(?:\\/([\\d\\.a-z]+))?\\;version:\\1"
-      },
-      "icon": "EWS-NIC4.png",
-      "implies": "Dell",
-      "website": "http://dell.com"
-    },
     "EdgeCast": {
       "cats": [
         31
@@ -2969,16 +2938,6 @@
         "/ep_etherpad-lite/"
       ],
       "website": "https://etherpad.org"
-    },
-    "Exagon Concept": {
-      "cats": [
-        1
-      ],
-      "headers": {
-        "Server": "Exagon Server"
-      },
-      "icon": "ExagonConcept.svg",
-      "website": "http://www.exagon-concept.com"
     },
     "Exhibit": {
       "cats": [

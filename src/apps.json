@@ -11092,7 +11092,17 @@
       "cats": [
         2
       ],
-      "html": "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
+      "js": {
+        "XF.GuestUsername": ""
+      },
+      "cookies": {
+        "xf_session": "",
+        "xf_csrf": ""
+      },
+      "html": {
+				"(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
+				"<html id=\"XF\" "
+			},
       "icon": "XenForo.png",
       "website": "http://xenforo.com"
     },

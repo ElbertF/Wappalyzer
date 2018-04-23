@@ -11099,10 +11099,10 @@
         "xf_session": "",
         "xf_csrf": ""
       },
-      "html": {
+      "html": [
 				"(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
 				"<html id=\"XF\" "
-			},
+			],
       "icon": "XenForo.png",
       "website": "http://xenforo.com"
     },

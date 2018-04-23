@@ -4385,7 +4385,7 @@
         22
       ],
       "headers": {
-        "Server": "IIS(?:/([\\d.]+))?\\;version:\\1"
+        "Server": "^IIS(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "IIS.png",
       "implies": "Windows Server",
@@ -6061,7 +6061,7 @@
       },
       "headers": {
         "X-AspNet-Version": "(.+)\\;version:\\1",
-        "X-Powered-By": "ASP\\.NET\\;confidence:50"
+        "X-Powered-By": "^ASP\\.NET"
       },
       "html": "<input[^>]+name=\"__VIEWSTATE",
       "icon": "Microsoft ASP.NET.png",

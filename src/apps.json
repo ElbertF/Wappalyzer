@@ -106,7 +106,7 @@
     },
     "Acquia Cloud": {
       "cats": [
-        "22"
+        22
       ],
       "headers": {
         "X-AH-Environment": "^\\w+$"

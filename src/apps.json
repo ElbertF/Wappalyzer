@@ -1521,24 +1521,6 @@
       },
       "website": "http://cakephp.org"
     },
-    "Canon": {
-      "cats": [
-        40
-      ],
-      "icon": "Canon.png",
-      "website": "http://www.canon.com"
-    },
-    "Canon HTTP Server": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "CANON HTTP Server(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "Canon.png",
-      "implies": "Canon",
-      "website": "http://www.canon.com"
-    },
     "Captch Me": {
       "cats": [
         16,
@@ -2401,15 +2383,6 @@
       "icon": "Debian.png",
       "website": "http://debian.org"
     },
-    "Decorum": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "DECORUM(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "website": "http://example.com"
-    },
     "DedeCMS": {
       "cats": [
         1
@@ -3157,15 +3130,6 @@
       "icon": "Fireblade.png",
       "website": "http://fireblade.com"
     },
-    "FlashCom": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "FlashCom/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "website": "http://example.com"
-    },
     "Flask": {
       "cats": [
         18,
@@ -3896,17 +3860,6 @@
       "script": "/graffiti\\.js",
       "website": "http://graffiticms.codeplex.com"
     },
-    "Grandstream": {
-      "cats": [
-        22,
-        39
-      ],
-      "headers": {
-        "Server": "Grandstream\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "Grandstream.png",
-      "website": "http://www.grandstream.com"
-    },
     "Grav": {
       "cats": [
         1
@@ -4041,25 +3994,6 @@
       "icon": "HP.svg",
       "website": "http://hp.com"
     },
-    "HTTP Kit": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "^http-kit"
-      },
-      "implies": "Java",
-      "website": "http://http-kit.org"
-    },
-    "HTTP-Server": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "(?:^|[^-])\bHTTP-Server(?: ?/?V?([\\d.]+))?\\;version:\\1"
-      },
-      "website": "http://example.com"
-    },
     "HTTP/2": {
       "cats": [
         19
@@ -4104,16 +4038,6 @@
       "icon": "Handlebars.png",
       "script": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "http://handlebarsjs.com"
-    },
-    "Happy ICS Server": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "Happy ICS Server(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "implies": "OmniTouch 8660 My Teamwork",
-      "website": "http://example.com"
     },
     "Haravan": {
       "cats": [
@@ -4699,18 +4623,6 @@
       "implies": "JBoss Application Server",
       "website": "http://jboss.org/jbossweb"
     },
-    "JC-HTTPD": {
-      "cats": [
-        22
-      ],
-      "excludes": "Apache",
-      "headers": {
-        "Server": "JC-HTTPD(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "JC-HTTPD.png",
-      "implies": "Canon",
-      "website": "http://canon.com"
-    },
     "JET Enterprise": {
       "cats": [
         6
@@ -4961,17 +4873,6 @@
       },
       "icon": "KISSmetrics.png",
       "website": "https://www.kissmetrics.com"
-    },
-    "KS_HTTP": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "KS_HTTP\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "KS_HTTP.png",
-      "implies": "Canon",
-      "website": "http://www.canon.com"
     },
     "Kajabi": {
       "cats": [
@@ -5695,19 +5596,6 @@
       },
       "icon": "mkdocs.png",
       "website": "http://www.mkdocs.org/"
-    },
-    "MOBOTIX": {
-      "cats": [
-        39
-      ],
-      "icon": "MOBOTIX.png",
-      "meta": {
-        "author": "MOBOTIX AG\\;confidence:40",
-        "copyright": "MOBOTIX AG\\;confidence:40",
-        "publisher": "MOBOTIX AG\\;confidence:40"
-      },
-      "url": "control/userimage\\.html\\;confidence:70",
-      "website": "http://mobotix.com"
     },
     "MODX": {
       "cats": [
@@ -6447,16 +6335,6 @@
       "icon": "moon.svg",
       "script": "/moon(?:\\.min)?\\.js$",
       "website": "http://moonjs.ga/"
-    },
-    "Motion-httpd": {
-      "cats": [
-        22
-      ],
-      "excludes": "Apache",
-      "headers": {
-        "Server": "Motion-httpd(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "website": "http://lavrsen.dk/foswiki/bin/view/Motion"
     },
     "MotoCMS": {
       "cats": [
@@ -7976,15 +7854,6 @@
       "icon": "Quill.png",
       "website": "http://quilljs.com"
     },
-    "RAID HTTPServer": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "RAID HTTPServer(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "website": "http://example.com"
-    },
     "RBS Change": {
       "cats": [
         1,
@@ -8090,15 +7959,6 @@
       "icon": "Raphael.png",
       "script": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "http://dmitrybaranovskiy.github.io/raphael/"
-    },
-    "Rapid Logic": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "Rapid Logic(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "website": "http://example.com"
     },
     "Raspbian": {
       "cats": [
@@ -10499,18 +10359,6 @@
       "icon": "Vimeo.png",
       "website": "http://vimeo.com"
     },
-    "Virata EmWeb": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "Virata-EmWeb(?:/(R?[\\d._]+))?\\;version:\\1"
-      },
-      "implies": [
-        "HP"
-      ],
-      "website": "http://example.com"
-    },
     "VirtueMart": {
       "cats": [
         6
@@ -11546,15 +11394,6 @@
       "implies": "Brother",
       "website": "http://www.brother.com"
     },
-    "dwhttpd": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "dwhttpd\\/?([\\d\\.a-z]+)?\\;version:\\1"
-      },
-      "website": "http://example.com"
-    },
     "e107": {
       "cats": [
         1
@@ -11579,16 +11418,6 @@
       },
       "icon": "eDevice SmartStack.png",
       "website": "http://edevice.com"
-    },
-    "eHTTP": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "\beHTTP(?: v?([\\d\\.]+))?\\;version:\\1"
-      },
-      "implies": "HP ProCurve",
-      "website": "http://example.com"
     },
     "eSyndiCat": {
       "cats": [

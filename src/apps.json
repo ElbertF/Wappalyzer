@@ -7646,12 +7646,12 @@
         25
       ],
       "js": {
-        "Plotly": ""
+        "Plotly.version": "([\\d.])\\;version:\\1"
       },
       "icon": "Plotly.png",
       "implies": "D3",
       "script": "https?://cdn\\.plot\\.ly/plotly",
-      "website": "http://plot.ly/javascript/"
+      "website": "https://plot.ly/javascript/"
     },
     "Plura": {
       "cats": [

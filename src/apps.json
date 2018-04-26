@@ -4836,12 +4836,17 @@
       "cats": [
         44
       ],
+      "js": {
+        "jenkinsCIGlobal": "",
+        "jenkinsRules": ""
+      },
+			"html": "<span class=\"jenkins_ver\"><a href=\"https://jenkins\\.io/\">Jenkins ver\\. ([\\d.]+)\\;version:\\1",
       "headers": {
-        "X-Jenkins": "([\\d\\.]+)\\;version:\\1"
+        "X-Jenkins": "([\\d.]+)\\;version:\\1"
       },
       "icon": "Jenkins.png",
       "implies": "Java",
-      "website": "http://jenkins-ci.org"
+      "website": "https://jenkins.io/"
     },
     "Jetty": {
       "cats": [

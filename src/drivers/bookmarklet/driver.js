@@ -33,8 +33,15 @@
       .filter(s => s.src)
       .map(s => s.src);
 
+    var html = new XMLSerializer().serializeToString(document).split('\n');
+
+    html = html
+      .slice(0, 1000).concat(html.slice(html.length - 1000))
+      .map(line => line.substring(0, 1000))
+      .join('\n');
+
     wappalyzer.analyze(url, {
-      html: document.documentElement.innerHTML,
+      html: html,
       env: env,
       scripts: scripts
     });

@@ -1342,7 +1342,8 @@
       ],
       "html": [
         "href=\"enter_bug\\.cgi\">",
-        "<main id=\"bugzilla-body\""
+        "<main id=\"bugzilla-body\"",
+        "<span id=\"information\" class=\"header_addl_info\">version ([\\d.]+)<\\;version:\\1"
       ],
       "meta": {
         "generator": "Bugzilla ?([\\d.]+)?\\;version:\\1"

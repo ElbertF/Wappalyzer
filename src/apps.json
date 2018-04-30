@@ -10966,7 +10966,10 @@
         "<link[^>]+s\\d+\\.wp\\.com"
       ],
       "icon": "WordPress.svg",
-      "implies": "PHP",
+      "implies": [
+				"PHP",
+				"MySQL"
+			],
       "meta": {
         "generator": "WordPress( [\\d.]+)?\\;version:\\1"
       },

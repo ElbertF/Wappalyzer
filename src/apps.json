@@ -1230,6 +1230,19 @@
       "script": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
       "website": "https://www.boldchat.com/"
     },
+    "BoldGrid Post and Page Builder": {
+      "cats": [
+        1,
+        11
+      ],
+      "html": [
+        "<link rel=[\"']stylesheet[\"'] [^>]+post-and-page-builder",
+        "<link[^>]+s\\d+\\.boldgrid\\.com"
+      ],
+      "implies": "WordPress",
+      "script": "/wp-content/plugins/post-and-page-builder",
+      "website": "http://boldgrid.com"
+    },
     "Bolt": {
       "cats": [
         1

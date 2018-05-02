@@ -470,7 +470,6 @@ class Wappalyzer {
     const patterns = this.parsePatterns(app.props.meta);
     const promises = [];
 
-    var content = '';
     var matches = [];
 
     while ( patterns && ( matches = regex.exec(html) ) ) {
@@ -478,7 +477,7 @@ class Wappalyzer {
         const r = new RegExp('(?:name|property)=["\']' + meta + '["\']', 'i');
 
         if ( r.test(matches[0]) ) {
-          content = matches[0].match(/content=("|')([^"']+)("|')/i);
+          let content = matches[0].match(/content=("|')([^"']+)("|')/i);
 
           promises.push(this.asyncForEach(patterns[meta], pattern => {
             if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {

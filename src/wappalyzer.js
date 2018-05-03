@@ -38,7 +38,7 @@ class Wappalyzer {
   }
 
   asyncForEach(iterable, iterator) {
-    return Promise.all(( iterable || [] ).map(item => new Promise(resolve => setTimeout(() => resolve(iterator(item)), 1))));
+    return Promise.all( iterable || [] ).then(iterator);
   }
 
   analyze(url, data, context) {

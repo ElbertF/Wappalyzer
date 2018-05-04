@@ -60,6 +60,16 @@
       "implies": "3ware",
       "website": "http://www.3ware.com"
     },
+    "Softtr": {
+      "cats": [
+        6
+      ],
+      "icon": "softtr.PNG",
+      "meta": {
+        "copyright": "Softtr E-Ticaret Sistemleri"
+      },
+      "website": "https://www.softtr.com/"
+    },
     "3ware": {
       "cats": [
         22

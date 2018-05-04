@@ -22,12 +22,6 @@
   function getPageContent() {
     wappalyzer.log('func: getPageContent', 'driver');
 
-    var env = [];
-
-    for ( let i in window ) {
-      env.push(i);
-    }
-
     var scripts = Array.prototype.slice
       .apply(document.scripts)
       .filter(s => s.src)
@@ -35,7 +29,6 @@
 
     wappalyzer.analyze(url, {
       html: document.documentElement.innerHTML,
-      env: env,
       scripts: scripts
     });
   }

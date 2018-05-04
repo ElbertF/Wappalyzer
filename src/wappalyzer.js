@@ -88,10 +88,6 @@ class Wappalyzer {
       if ( data.headers ) {
         promises.push(this.analyzeHeaders(app, data.headers));
       }
-
-      if ( data.env ) {
-        promises.push(this.analyzeEnv(app, data.env));
-      }
     });
 
     if ( data.js ) {
@@ -535,25 +531,6 @@ class Wappalyzer {
     });
 
     return promises ? Promise.all(promises) : Promise.resolve();
-  }
-
-  /**
-   * Analyze environment variables
-   */
-  analyzeEnv(app, envs) {
-    var patterns = this.parsePatterns(app.props.env);
-
-    if ( patterns.length ) {
-      return Promise.resolve();
-    }
-
-    return this.asyncForEach(patterns, pattern => {
-      Object.keys(envs).forEach(env => {
-        if ( pattern.regex.test(envs[env]) ) {
-          this.addDetected(app, pattern, 'env', envs[env]);
-        }
-      })
-    });
   }
 
   /**

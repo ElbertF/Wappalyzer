@@ -100,34 +100,30 @@ class Wappalyzer {
       });
     }
 
-    return new Promise(resolve => {
-      Promise.all(promises)
-        .then(() => {
-          Object.keys(apps).forEach(appName => {
-            var app = apps[appName];
+    return Promise.all(promises)
+      .then(() => {
+        Object.keys(apps).forEach(appName => {
+          var app = apps[appName];
 
-            if ( !app.detected || !app.getConfidence() ) {
-              delete apps[app.name];
-            }
-          });
-
-          this.resolveExcludes(apps);
-          this.resolveImplies(apps, url.canonical);
-
-          this.cacheDetectedApps(apps, url.canonical);
-          this.trackDetectedApps(apps, url, language);
-
-          this.log('Processing ' + Object.keys(data).join(', ') + ' took ' + (( new Date() - startTime ) / 1000).toFixed(2) + 's (' + url.hostname + ')', 'core');
-
-          if ( Object.keys(apps).length ) {
-            this.log('Identified ' + Object.keys(apps).join(', ') + ' (' + url.hostname + ')', 'core');
+          if ( !app.detected || !app.getConfidence() ) {
+            delete apps[app.name];
           }
+         });
 
-          this.driver.displayApps(this.detected[url.canonical], { language }, context);
+        this.resolveExcludes(apps);
+        this.resolveImplies(apps, url.canonical);
 
-          resolve();
-        });
-    });
+        this.cacheDetectedApps(apps, url.canonical);
+        this.trackDetectedApps(apps, url, language);
+
+        this.log('Processing ' + Object.keys(data).join(', ') + ' took ' + (( new Date() - startTime ) / 1000).toFixed(2) + 's (' + url.hostname + ')', 'core');
+
+        if ( Object.keys(apps).length ) {
+          this.log('Identified ' + Object.keys(apps).join(', ') + ' (' + url.hostname + ')', 'core');
+        }
+
+        this.driver.displayApps(this.detected[url.canonical], { language }, context);
+      });
   }
 
   /**
@@ -413,10 +409,6 @@ class Wappalyzer {
   analyzeUrl(app, url) {
     var patterns = this.parsePatterns(app.props.url);
 
-    if ( !patterns.length ) {
-      return Promise.resolve();
-    }
-
     return this.asyncForEach(patterns, pattern => {
       if ( pattern.regex.test(url.canonical) ) {
         this.addDetected(app, pattern, 'url', url.canonical);
@@ -430,10 +422,6 @@ class Wappalyzer {
   analyzeHtml(app, html) {
     var patterns = this.parsePatterns(app.props.html);
 
-    if ( !patterns.length ) {
-      return Promise.resolve();
-    }
-
     return this.asyncForEach(patterns, pattern => {
       if ( pattern.regex.test(html) ) {
         this.addDetected(app, pattern, 'html', html);
@@ -446,10 +434,6 @@ class Wappalyzer {
    */
   analyzeScripts(app, scripts) {
     var patterns = this.parsePatterns(app.props.script);
-
-    if ( !patterns.length ) {
-      return Promise.resolve();
-    }
 
     return this.asyncForEach(patterns, pattern => {
       var match;
@@ -488,7 +472,7 @@ class Wappalyzer {
       }
     }
 
-    return promises ? Promise.all(promises) : Promise.resolve();
+    return Promise.all(promises);
   }
 
   /**
@@ -512,7 +496,7 @@ class Wappalyzer {
       }));
     });
 
-    return promises ? Promise.all(promises) : Promise.resolve();
+    return Promise.all(promises);
   }
 
   /**
@@ -534,7 +518,7 @@ class Wappalyzer {
       }));
     });
 
-    return promises ? Promise.all(promises) : Promise.resolve();
+    return Promise.all(promises);
   }
 
   /**
@@ -542,10 +526,6 @@ class Wappalyzer {
    */
   analyzeEnv(app, envs) {
     var patterns = this.parsePatterns(app.props.env);
-
-    if ( patterns.length ) {
-      return Promise.resolve();
-    }
 
     return this.asyncForEach(patterns, pattern => {
       Object.keys(envs).forEach(env => {
@@ -573,7 +553,7 @@ class Wappalyzer {
       }));
     });
 
-    return promises ? Promise.all(promises) : Promise.resolve();
+    return Promise.all(promises);
   }
 
   /**

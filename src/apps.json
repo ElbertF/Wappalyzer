@@ -5156,6 +5156,14 @@
       "script": "kotisivukone(?:\\.min)?\\.js",
       "website": "http://www.kotisivukone.fi"
     },
+    "Kubernetes Dashboard": {
+      "cats": [
+        47
+      ],
+      "icon": "Kubernetes.svg",
+      "html": "<html ng-app=\"kubernetesDashboard\"",
+      "website": "https://kubernetes.io/"
+    },
     "LEPTON": {
       "cats": [
         1

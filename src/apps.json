@@ -5161,7 +5161,7 @@
         47
       ],
       "icon": "Kubernetes.svg",
-      "html": "<html ng-app=\"kubernetesDashboard\"",
+      "html": "<html ng-app=\"kubernetesDashboard\">",
       "website": "https://kubernetes.io/"
     },
     "LEPTON": {

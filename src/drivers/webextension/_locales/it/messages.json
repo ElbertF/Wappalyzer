@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Inviare anonimamente un report sulle applicazioni rilevate a wappalyzer.com per l'analisi" },
 	"nothingToDo":              { "message": "Niente da fare qui." },
 	"noAppsDetected":           { "message": "Nessuna applicazione rilevata." },
+  "categoryPin":              { "message": "Always show icon" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Forum" },
 	"categoryName3":            { "message": "Gestore di Database" },
@@ -62,6 +63,10 @@
 	"categoryName50":           { "message": "Sistema di Gestione Documenti" },
 	"categoryName51":           { "message": "Landing Page Builder" },
 	"categoryName52":           { "message": "Live Chat" },
-	"categoryName53":           { "message": "CRM" }
+	"categoryName53":           { "message": "CRM" },
+  "categoryName54":           { "message": "SEO" },
+  "categoryName55":           { "message": "Accounting" },
+	"categoryName56":           { "message": "Cryptominer" },
+	"categoryName57":           { "message": "Static Site Generator" }
 }
 

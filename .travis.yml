@@ -3,12 +3,15 @@ sudo: required
 services:
   - docker
 
+before_install: npm install -g npm@latest
+install: npm ci
+
 after_success:
   - sha256sum build/* > build/SHA256SUMS
   - cat build/SHA256SUMS
 
-script:
-  - ./run build
+script: |-
+  version=$(grep '"version":' src/drivers/webextension/manifest.json | sed 's/^.*"version": "\(.*\)".*$/\1/'); ./run build $version
 
 deploy:
   provider: releases
@@ -23,3 +26,6 @@ deploy:
 
 env:
   - CXX=g++-4.8
+
+notifications:
+  slack: wappalyzer:ppXlJRMBDxrKYS9vgVxT7FuH

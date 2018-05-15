@@ -3,6 +3,9 @@
 	"type": "object",
 	"additionalProperties": false,
 	"properties": {
+		"$schema": {
+			"type": "string"
+		},
 		"categories": {
 			"type": "object",
 			"required": true,
@@ -13,7 +16,7 @@
 					"required": true,
 					"properties": {
 						"priority": {
-							"type": "string"
+							"type": "number"
 						},
 						"name": {
 							"type": "string"
@@ -31,13 +34,13 @@
 					"cats": {
 						"type": "array",
 						"items": {
-							"type": "string"
+							"type": "number"
 						},
 						"required": true
 					},
-					"env": {
-						"type": [ "string", "array" ],
-						"items": {
+					"js": {
+						"type": "object",
+						"additionalProperties": {
 							"type": "string"
 						}
 					},
@@ -48,19 +51,28 @@
 						}
 					},
 					"html": {
-						"type": [ "string", "array" ],
+						"type": [
+							"string",
+							"array"
+						],
 						"items": {
 							"type": "string"
 						}
 					},
 					"excludes": {
-						"type": [ "string", "array" ],
+						"type": [
+							"string",
+							"array"
+						],
 						"items": {
 							"type": "string"
 						}
 					},
 					"implies": {
-						"type": [ "string", "array" ],
+						"type": [
+							"string",
+							"array"
+						],
 						"items": {
 							"type": "string"
 						}
@@ -72,7 +84,10 @@
 						}
 					},
 					"script": {
-						"type": [ "string", "array" ],
+						"type": [
+							"string",
+							"array"
+						],
 						"items": {
 							"type": "string"
 						}

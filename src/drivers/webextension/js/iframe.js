@@ -131,14 +131,14 @@ var exports = {};
 			}
 		},
 
-		ifTrackingEnabled: function(callback, elseCallback) {
+		askIfTrackingEnabled: function(callback, elseCallback) {
 
 			this.sendToBackground(
 				'is_tracking_enabled',
 				'',
 				'tracking_enabled_response',
 				function(message) {
-					if ( message.tracking_enabled ) {
+					if ( message && message.tracking_enabled ) {
 
 						callback();
 					} else {
@@ -181,7 +181,7 @@ var exports = {};
 				video_assets: opt_video_assets,
 				assets: opt_assets,
 				version: '3',
-				mrev: '9c4d5b3-c',
+				mrev: '4aeaa5a-c',
 				msgNum: this.msgNum,
 				timestamp: new Date().getTime(),
 				pageVis: document.visibilityState,
@@ -890,7 +890,7 @@ var exports = {};
 	var _pageTags;
 	var INIT_MS_BW_SEARCHES = 2000;
 	var PAGE_TAG_RE = new RegExp('gpt|oascentral');
-	var POST_MSG_ID = '1490888598-28717-31700-14775-21098';
+	var POST_MSG_ID = '1519242200-10756-12873-1462-13403';
 	var AD_SERVER_RE = new RegExp('^(google_ads_iframe|oas_frame|atwAdFrame)');
 
 	function getPageTags(doc) {
@@ -1104,6 +1104,23 @@ var exports = {};
 			}
 		},
 
+		blockedRobotsMsgGen: function(sendFcn, origUrl) {
+
+			if ( origUrl.indexOf('google.com/_/chrome/newtab') === -1 ) {
+				var onBlockedRobotsMessage = function() {
+					var log;
+					log = _logGen.log('invalid-robotstxt', []);
+					log.doc.finalPageUrl = log.doc.url;
+					log.doc.url = exports.utils.normalizeUrl(origUrl);
+
+					sendFcn(log);
+				};
+				return onBlockedRobotsMessage;
+			} else {
+				return function() {};
+			}
+		},
+
 		init: function(onAdFound) {
 
 			if ( exports.utils.SCRIPT_IN_FRIENDLY_IFRAME ) {
@@ -1136,12 +1153,14 @@ if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 	window.adparser = {
 		init: exports.coordinator.init,
 		addPostMessageListener: exports.coordinator.addPostMessageListener,
-		ifTrackingEnabled: exports.utils.ifTrackingEnabled,
+		askIfTrackingEnabled: exports.utils.askIfTrackingEnabled,
+		blockedRobotsMsgGen: exports.coordinator.blockedRobotsMsgGen,
+		inWindowTop: exports.utils.SCRIPT_IN_WINDOW_TOP,
 		sendToBackground: exports.utils.sendToBackground
 	};
 } else {
 	exports.coordinator.addPostMessageListener();
-	exports.utils.ifTrackingEnabled(
+	exports.utils.askIfTrackingEnabled(
 		function() {
 			exports.coordinator.init(function() {});
 		},
@@ -1149,18 +1168,18 @@ if ( exports.utils.SCRIPT_IN_WINDOW_TOP ) {
 	);
 }
 })(window);
-(function(adparser) {
+(function(adparser, pageUrl) {
 	function onAdFound(log) {
 		adparser.sendToBackground({ id: 'ad_log', subject: log }, 'ad_log', '', function(){});
 	}
 
-	if (  window === window.top  ) {
+	if (  adparser && adparser.inWindowTop  ) {
 		adparser.addPostMessageListener();
-		adparser.ifTrackingEnabled(
+		adparser.askIfTrackingEnabled(
 			function() {
 				adparser.init(onAdFound);
 			},
-			function() {}
+			adparser.blockedRobotsMsgGen(onAdFound, pageUrl)
 		)
 	}
-})(window.adparser);
+})(window.adparser, window.location.href);

@@ -4104,7 +4104,8 @@
         19
       ],
       "js": {
-        "hljs.listLanguages": ""
+        "hljs.listLanguages": "",
+        "hljs.highlightBlock": ""
       },
       "icon": "Highlight.js.png",
       "script": "/(?:([\\d.])+/)?highlight(?:\\.min)?\\.js\\;version:\\1",

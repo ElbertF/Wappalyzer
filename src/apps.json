@@ -3123,6 +3123,22 @@
       "html": "<link[^>]* href=[^>]+flat-ui(?:\\.min)?\\.css",
       "website": "https://designmodo.github.io/Flat-UI/"
     },
+    "Flarum": {
+      "cats": [
+        2
+      ],
+      "icon": "flarum.png",
+      "implies": [
+				"PHP",
+				"MySQL"
+			],
+      "js": {
+        "app.forum.freshness": "",
+        "app.cache.discussionList": ""
+      },
+      "html": "<div id=\"flarum-loading\"",
+      "website": "http://flarum.org/"
+    },
     "FlexCMP": {
       "cats": [
         1

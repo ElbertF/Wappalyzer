@@ -1,41 +1,6 @@
 {
   "$schema": "../schema.json",
   "apps": {
-    "1&1": {
-      "cats": [
-        6
-      ],
-      "icon": "1and1.svg",
-      "implies": "PHP",
-      "url": "/shop/catalog/browse\\?sessid=",
-      "website": "http://1and1.com"
-    },
-    "1C-Bitrix": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "BITRIX_": ""
-      },
-      "headers": {
-        "X-Powered-CMS": "^Bitrix Site Manager"
-      },
-      "html": "(?:<link[^>]+components/bitrix|(?:src|href)=\"/bitrix/(?:js|templates))",
-      "icon": "1C-Bitrix.png",
-      "implies": "PHP",
-      "script": "1c-bitrix",
-      "website": "http://www.1c-bitrix.ru"
-    },
-    "2z Project": {
-      "cats": [
-        1
-      ],
-      "icon": "2z Project.png",
-      "meta": {
-        "generator": "2z project ([\\d.]+)\\;version:\\1"
-      },
-      "website": "http://2zproject-cms.ru"
-    },
     "3dCart": {
       "cats": [
         1,
@@ -50,25 +15,6 @@
       "icon": "3dCart.png",
       "script": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
       "website": "http://www.3dcart.com"
-    },
-    "3DM": {
-      "cats": [
-        19
-      ],
-      "html": "<title>3ware 3DM([\\d\\.]+)?\\;version:\\1",
-      "icon": "3DM.png",
-      "implies": "3ware",
-      "website": "http://www.3ware.com"
-    },
-    "3ware": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "3ware\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "3ware.png",
-      "website": "http://www.3ware.com"
     },
     "A-Frame": {
       "cats": [
@@ -183,16 +129,6 @@
       "icon": "AT Internet.png",
       "script": "xiti\\.com/hit\\.xiti",
       "website": "http://atinternet.com/en"
-    },
-    "ATEN": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "ATEN HTTP Server(?:\\(?V?([\\d\\.]+)\\)?)?\\;version:\\1"
-      },
-      "icon": "ATEN.png",
-      "website": "http://www.aten.com"
     },
     "AWStats": {
       "cats": [
@@ -1587,17 +1523,6 @@
       "icon": "Catberry.js.png",
       "implies": "Node.js",
       "website": "http://catberry.org"
-    },
-    "Catwalk": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "Catwalk\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "Catwalk.png",
-      "implies": "Canon",
-      "website": "http://www.canon.com"
     },
     "CDN77": {
       "cats": [

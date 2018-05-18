@@ -5181,6 +5181,9 @@
       "cats": [
         18
       ],
+      "js": {
+        "Laravel": ""
+      },
       "cookies": {
         "laravel_session": ""
       },

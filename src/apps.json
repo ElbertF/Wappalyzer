@@ -1880,7 +1880,10 @@
       "js": {
         "CoinHive": ""
       },
-      "script": "\\/(?:coinhive|(authedmine))(?:\\.min)?\\.js\\;version:\\1?opt-in:",
+      "script": [
+				"\\/(?:coinhive|(authedmine))(?:\\.min)?\\.js",
+				"coinhive\\.com/lib"
+			],
       "url": "https?://cnhv\\.co/",
       "icon": "CoinHive.svg",
       "website": "https://coinhive.com"

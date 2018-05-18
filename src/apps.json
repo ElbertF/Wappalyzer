@@ -3120,7 +3120,7 @@
       ],
       "icon": "Flat UI.png",
       "implies": "Bootstrap",
-      "html": "<link[^>]* href=[^>]+flat-ui(?:\\.min)?\\.css",
+      "html": "<link[^>]* href=[^>]+flat-ui(?:\\.min)?\\.css(?:\?v=([\\d.]+))?\\;version:\\1",
       "website": "https://designmodo.github.io/Flat-UI/"
     },
     "FlexCMP": {

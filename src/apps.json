@@ -1368,6 +1368,7 @@
       ],
       "js": {
         "CKEDITOR": "",
+				"CKEDITOR_BASEPATH": "",
         "CKEDITOR.version": "(.*)\\;version:\\1"
       },
       "icon": "CKEditor.png",

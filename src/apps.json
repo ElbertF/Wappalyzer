@@ -61,6 +61,15 @@
       "implies": "Drupal\\;confidence:95",
       "website": "https://www.acquia.com/"
     },
+    "All in One SEO Pack": {
+      "cats": [
+        54
+      ],
+      "implies": "WordPress",
+			"html": "<!-- All in One SEO Pack ([\\d.]+) ;\\version:\\1",
+      "website": "https://www.acquia.com/",
+			"icon": "all-in-One-SEO-Pack.png"
+    },
     "Amber": {
       "cats": [
         18,

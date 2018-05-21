@@ -66,7 +66,7 @@
         54
       ],
       "implies": "WordPress",
-			"html": "<!-- All in One SEO Pack ([\\d.]+) ;\\version:\\1",
+			"html": "<!-- All in One SEO Pack ([\\d.]+) \\;version:\\1",
       "website": "https://www.acquia.com/",
 			"icon": "all-in-One-SEO-Pack.png"
     },

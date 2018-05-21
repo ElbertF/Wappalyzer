@@ -9282,6 +9282,17 @@
       "script": "cdn\\.sublimevideo\\.net/js/[a-z\\d]+\\.js",
       "website": "http://sublimevideo.net"
     },
+    "Sucuri": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "x-sucuri-id": "",
+        "x-sucuri-cache:": ""
+      },
+      "icon": "sucuri.png",
+      "website": "https://sucuri.net/"
+    },
     "Subrion": {
       "cats": [
         1

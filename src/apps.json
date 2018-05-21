@@ -12427,6 +12427,20 @@
       },
       "icon": "Woosa.png",
       "website": "https://woosa.nl"
+    },
+    "UserGuiding": {
+      "cats": [
+        58,
+        10
+      ],
+      "icon": "UserGuiding.svg",
+      "script": "static\\.userguiding*\\.js",
+      "website": "https://userguiding.com",
+      "implies": [
+        "React",
+        "webpack",
+        "Node.js"
+      ]
     }
   },
   "categories": {
@@ -12656,6 +12670,10 @@
     },
     "57": {
       "name": "Static Site Generator",
+      "priority": 1
+    },
+    "58": {
+      "name": "User Onboarding",
       "priority": 1
     }
   }

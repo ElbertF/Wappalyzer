@@ -1881,7 +1881,7 @@
         "CoinHive": ""
       },
       "script": [
-				"\\/(?:coinhive|authedmine)(?:\\.min)?\\.js",
+				"\\/(?:coinhive|(authedmine))(?:\\.min)?\\.js\\;version:\\1?opt-in:",
 				"coinhive\\.com/lib"
 			],
       "url": "https?://cnhv\\.co/",

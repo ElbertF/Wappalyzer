@@ -10044,7 +10044,7 @@
       "icon": "Underscore.js.png",
       "js": {
         "_.restArguments": "",
-        "_.VERSION": "(.*)\\;version:\\1"
+        "_.VERSION": "(.*)\\;confidence:0\\;version:\\1"
       },
 			"excludes": "Lodash",
       "script": "underscore.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",

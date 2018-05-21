@@ -3409,6 +3409,7 @@
         4
       ],
       "icon": "GitBook.png",
+      "url": "^https?://[^/]+\\.gitbook\\.io/",
       "meta": {
         "generator": "GitBook(?:.([\\d.]+))?\\;version:\\1"
       },

@@ -2557,12 +2557,15 @@
       },
       "html": "<(?:link|style)[^>]+sites/(?:default|all)/(?:themes|modules)/",
       "icon": "Drupal.svg",
-      "implies": "PHP",
+      "implies": [
+				"PHP",
+				"Symfony"
+			],
       "meta": {
         "generator": "Drupal(?:\\s([\\d.]+))?\\;version:\\1"
       },
       "script": "drupal\\.js",
-      "website": "http://drupal.org"
+      "website": "https://drupal.org"
     },
     "Drupal Commerce": {
       "cats": [

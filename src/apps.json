@@ -7062,7 +7062,7 @@
     },
     "Pelican": {
       "cats": [
-        1
+        57
       ],
       "implies": "Python",
       "icon": "pelican.png",

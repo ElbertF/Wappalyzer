@@ -3630,7 +3630,7 @@
         31
       ],
       "headers": {
-        "Via": "^1.1 google$"
+        "Via": "^1\\.1 google$"
       },
       "icon": "google_cloud.svg",
       "website": "https://cloud.google.com"

@@ -3625,6 +3625,16 @@
       "icon": "Google Charts.png",
       "website": "http://developers.google.com/chart/"
     },
+    "Google Cloud": {
+      "cats": [
+        31
+      ],
+      "headers": {
+        "Via": "^1.1 google$"
+      },
+      "icon": "google_cloud.svg",
+      "website": "https://cloud.google.com"
+    },
     "Google Code Prettify": {
       "cats": [
         19

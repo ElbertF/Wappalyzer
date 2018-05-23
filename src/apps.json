@@ -1125,6 +1125,7 @@
         11
       ],
       "icon": "Blogger.png",
+      "implies": "Python",
       "meta": {
         "generator": "^Blogger$"
       },

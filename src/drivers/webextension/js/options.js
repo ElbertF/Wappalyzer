@@ -11,11 +11,11 @@ function getOption(name, defaultValue, callback) {
 }
 
 function setOption(name, value) {
-  var option = {};
-
-  option[name] = value;
-
-  browser.storage.local.set(option);
+  ( chrome || browser ).runtime.sendMessage({
+    id: 'set_option',
+    key: name,
+    value: value
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {

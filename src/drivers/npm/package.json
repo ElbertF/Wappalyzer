@@ -16,6 +16,9 @@
     "driver.js",
     "wappalyzer.js"
   ],
+  "bin": {
+    "wappalyzer": "./index.js"
+  },
   "dependencies": {
     "request": "^2.85.0",
     "zombie": "^5.0.8"

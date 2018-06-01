@@ -6099,6 +6099,9 @@
       "js": {
         "show_switch2gui": ""
       },
+      "cookies": {
+        "MOIN_SESSION": ""
+      },
       "icon": "MoinMoin.png",
       "implies": "Python",
       "script": "moin(?:_static(\\d)(\\d)(\\d)|.+)/common/js/common\\.js\\;version:\\1.\\2.\\3",

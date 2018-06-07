@@ -16,7 +16,7 @@ var
 for (app in json.apps) {
 	(function(app) {
 		var
-			iconPath = json.apps[app].icon || 'default.svg';
+			iconPath = json.apps[app].icon || 'default.svg',
 			path     = basePath + iconPath,
 			ext      = iconPath.substr(iconPath.length - 4);
 

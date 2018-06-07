@@ -10,7 +10,7 @@
 	"optionTracking":           { "message": "Anonyme Statistiken an wappalyzer.com übermitteln" },
 	"nothingToDo":              { "message": "Nichts zu tun." },
 	"noAppsDetected":           { "message": "Keine Applikation entdeckt." },
-  "categoryPin":              { "message": "Always show icon" },
+  "categoryPin":              { "message": "Immer Icon anzeigen" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Nachrichten Board" },
 	"categoryName3":            { "message": "Datenbankverwaltung" },
@@ -65,5 +65,7 @@
 	"categoryName52":           { "message": "Live-Chat" },
 	"categoryName53":           { "message": "CRM" },
   "categoryName54":           { "message": "SEO" },
-	"categoryName55":           { "message": "Buchhaltung" }
+	"categoryName55":           { "message": "Buchhaltung" },
+	"categoryName56":           { "message": "Cryptominer" },
+	"categoryName57":           { "message": "Statischer Seitengenerator" }
 }

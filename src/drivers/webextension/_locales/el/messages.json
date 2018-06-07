@@ -60,5 +60,8 @@
 	"categoryName51":           { "message": "Σύστημα Κατασκευής Σελίδων Υποδοχής" },
 	"categoryName52":           { "message": "Live Chat" },
 	"categoryName53":           { "message": "CRM" },
-  "categoryName54":           { "message": "SEO" }
+  "categoryName54":           { "message": "SEO" },
+	"categoryName55":           { "message": "Accounting" },
+	"categoryName56":           { "message": "Cryptominer" },
+	"categoryName57":           { "message": "Static Site Generator" }
 }

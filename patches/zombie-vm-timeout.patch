@@ -1,0 +1,11 @@
+--- src/drivers/npm/node_modules/zombie/lib/document.js	2018-04-20 14:36:04.097829977 +1000
++++ src/drivers/npm/node_modules/zombie/lib/document.js	2018-04-20 14:34:25.699317000 +1000
+@@ -281,7 +281,7 @@
+       // The current window, postMessage and window.close need this
+       browser._windowInScope = window;
+       var result = undefined;
+-      if (typeof code === 'string' || code instanceof String) result = VM.runInContext(code, window, { filename: filename });else if (code) result = code.call(window);
++      if (typeof code === 'string' || code instanceof String) result = VM.runInContext(code, window, { filename: filename, timeout: 1000 });else if (code) result = code.call(window);
+       browser.emit('evaluated', code, result, filename);
+       return result;
+     } catch (error) {

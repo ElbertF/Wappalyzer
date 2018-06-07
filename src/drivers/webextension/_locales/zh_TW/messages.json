@@ -64,5 +64,8 @@
   "categoryName51":           { "message": "著陸頁產生器" },
   "categoryName52":           { "message": "線上聊天" },
   "categoryName53":           { "message": "客戶關係管理系統（CRM）" },
-  "categoryName54":           { "message": "SEO" }
+  "categoryName54":           { "message": "SEO" },
+  "categoryName55":           { "message": "Accounting" },
+  "categoryName56":           { "message": "Cryptominer" },
+  "categoryName57":           { "message": "Static Site Generator" }
 }

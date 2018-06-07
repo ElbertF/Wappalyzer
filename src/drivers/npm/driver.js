@@ -19,16 +19,21 @@ class Driver {
       maxDepth: 3,
       maxUrls: 10,
       maxWait: 5000,
+			proxy: null,
       recursive: false,
       userAgent: 'Mozilla/5.0 (compatible; Wappalyzer)',
+      htmlMaxCols: 2000,
+      htmlMaxRows: 3000,
     }, options || {});
 
-    this.options.debug = Boolean(this.options.debug);
+    this.options.debug = Boolean(+this.options.debug);
+    this.options.recursive = Boolean(+this.options.recursive);
     this.options.delay = this.options.recursive ? parseInt(this.options.delay, 10) : 0;
     this.options.maxDepth = parseInt(this.options.maxDepth, 10);
     this.options.maxUrls = parseInt(this.options.maxUrls, 10);
     this.options.maxWait = parseInt(this.options.maxWait, 10);
-    this.options.recursive = Boolean(this.options.recursive);
+    this.options.htmlMaxCols = parseInt(this.options.htmlMaxCols, 10);
+    this.options.htmlMaxRows = parseInt(this.options.htmlMaxRows, 10);
 
     this.origPageUrl = url.parse(pageUrl);
     this.analyzedPageUrls = [];
@@ -44,6 +49,8 @@ class Driver {
 
     this.wappalyzer.driver.log = (message, source, type) => this.log(message, source, type);
     this.wappalyzer.driver.displayApps = (detected, meta, context) => this.displayApps(detected, meta, context);
+
+    process.on('uncaughtException', e => this.wappalyzer.log('Uncaught exception: ' + e.message, 'driver', 'error'));
   }
 
   analyze() {
@@ -107,7 +114,9 @@ class Driver {
 
   visit(pageUrl, timerScope, resolve) {
     const browser = new Browser({
+			proxy: this.options.proxy,
       silent: true,
+      strictSSL: false,
       userAgent: this.options.userAgent,
       waitDuration: this.options.maxWait,
     });
@@ -125,21 +134,30 @@ class Driver {
       const html = this.getHtml(browser);
       const scripts = this.getScripts(browser);
       const js = this.getJs(browser);
+      const cookies = this.getCookies(browser);
 
       this.wappalyzer.analyze(pageUrl, {
         headers,
         html,
         scripts,
-        js
-      });
+        js,
+        cookies,
+      })
+        .then(() => {
+          const links = Array.prototype.reduce.call(
+            browser.document.getElementsByTagName('a'), (results, link) => {
+              if ( link.protocol.match(/https?:/) && link.hostname === this.origPageUrl.hostname && extensions.test(link.pathname) ) {
+                link.hash = '';
 
-      const links = Array.from(browser.document.getElementsByTagName('a'))
-        .filter(link => link.protocol === 'http:' || link.protocol === 'https:')
-        .filter(link => link.hostname === this.origPageUrl.hostname)
-        .filter(link => extensions.test(link.pathname))
-        .map(link => { link.hash = ''; return url.parse(link.href) });
+                results.push(url.parse(link.href));
+              }
 
-      return resolve(links);
+              return results;
+            }, []
+          );
+
+          return resolve(links);
+        });
     });
   }
 
@@ -204,11 +222,11 @@ class Driver {
     let html = '';
 
     try {
-      html = browser.html();
-
-      if ( html.length > 50000 ) {
-        html = html.substring(0, 25000) + html.substring(html.length - 25000, html.length);
-      }
+      html = browser.html()
+        .split('\n')
+        .slice(0, this.options.htmlMaxRows / 2).concat(html.slice(html.length - this.options.htmlMaxRows / 2))
+        .map(line => line.substring(0, this.options.htmlMaxCols))
+        .join('\n');
     } catch ( error ) {
       this.wappalyzer.log(error.message, 'browser', 'error');
     }
@@ -258,14 +276,29 @@ class Driver {
     return js;
   }
 
-  crawl(pageUrl, index, depth = 1) {
+  getCookies(browser) {
+    const cookies = [];
+
+    if ( browser.cookies ) {
+      browser.cookies.forEach(cookie => cookies.push({
+        name: cookie.key,
+        value: cookie.value,
+        domain: cookie.domain,
+        path: cookie.path,
+      }));
+    }
+
+    return cookies;
+  }
+
+  crawl(pageUrl, index = 1, depth = 1) {
     pageUrl.canonical = pageUrl.protocol + '//' + pageUrl.host + pageUrl.pathname;
 
     return new Promise(resolve => {
       this.fetch(pageUrl, index, depth)
         .catch(() => {})
         .then(links => {
-          if ( links && Boolean(this.options.recursive) && depth < this.options.maxDepth ) {
+          if ( links && this.options.recursive && depth < this.options.maxDepth ) {
             return this.chunk(links.slice(0, this.options.maxUrls), depth + 1);
           } else {
             return Promise.resolve();

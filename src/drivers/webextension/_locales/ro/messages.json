@@ -61,5 +61,7 @@
 	"categoryName52":           { "message": "Chat Live" },
 	"categoryName53":           { "message": "CRM" },
   "categoryName54":           { "message": "SEO" },
-  "categoryName55":           { "message": "Contabilitate" }
+  "categoryName55":           { "message": "Accounting" },
+	"categoryName56":           { "message": "Cryptominer" },
+	"categoryName57":           { "message": "Static Site Generator" }
 }

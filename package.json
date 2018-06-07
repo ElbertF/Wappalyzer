@@ -3,6 +3,12 @@
     "file-type": "7.4.*",
     "is-svg": "2.1.*",
     "read-chunk": "2.1.*"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "mocha": "^5.0.1"
+  },
+  "scripts": {
+    "test": "mocha -R spec ./test"
   }
 }
-

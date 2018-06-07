@@ -64,5 +64,8 @@
   "twitter" : { "message" : "Следите за новостями в Твиттере" },
   "website" : { "message" : "Перейти на Wappalyzer.com" },
   "categoryPin":          { "message": "Always show icon" },
-  "categoryName54":           { "message": "SEO" }
+  "categoryName54":           { "message": "SEO" },
+  "categoryName55":           { "message": "Бухгалтерский учёт" },
+	"categoryName56":           { "message": "Криптомайнер" },
+	"categoryName57":           { "message": "Генератор статических сайтов" }
 }

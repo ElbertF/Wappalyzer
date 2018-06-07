@@ -148,7 +148,7 @@ body {
 
 .empty {
   display: flex;
-  height: 16rem;
+  height: 14.5rem;
   align-items: center;
   justify-content: center;
 }

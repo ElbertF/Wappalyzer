@@ -3,6 +3,9 @@ sudo: required
 services:
   - docker
 
+before_install: npm install -g npm@latest
+install: npm ci
+
 after_success:
   - sha256sum build/* > build/SHA256SUMS
   - cat build/SHA256SUMS

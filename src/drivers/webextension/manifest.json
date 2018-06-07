@@ -4,7 +4,7 @@
 	"author": "Elbert Alias",
 	"homepage_url": "https://www.wappalyzer.com",
 	"description": "Identify web technologies",
-	"version": "5.4.7",
+	"version": "5.4.15",
 	"default_locale": "en",
 	"manifest_version": 2,
 	"icons": {
@@ -62,6 +62,7 @@
 		"open_in_tab": false
 	},
 	"permissions": [
+    "cookies",
 		"storage",
 		"tabs",
 		"webRequest",
@@ -71,5 +72,3 @@
 	],
 	"content_security_policy": "script-src 'self'; object-src 'self'"
 }
-
-

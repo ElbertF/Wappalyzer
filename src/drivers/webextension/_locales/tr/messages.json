@@ -65,5 +65,7 @@
 	"categoryName52":           { "message": "Canlı Sohbet" },
 	"categoryName53":           { "message": "CRM" },
 	"categoryName54":           { "message": "SEO" },
-	"categoryName55":           { "message": "Muhasebe" }
+	"categoryName55":           { "message": "Muhasebe" },
+	"categoryName56":           { "message": "Cryptominer" },
+	"categoryName57":           { "message": "Static Site Generator" }
 }

@@ -8890,6 +8890,18 @@
       "script": "slimbox2\\.js",
       "website": "http://www.digitalia.be/software/slimbox2"
     },
+    "Slim.js": {
+      "cats": [
+        12
+      ],
+      "js": {
+        "Slim.tag": ""
+      },
+      "meta": {
+        "github": "https://github.com/eavichay/slim.js"
+      },
+      "website": "http://slimjs.com"
+    },
     "Smart Ad Server": {
       "cats": [
         36

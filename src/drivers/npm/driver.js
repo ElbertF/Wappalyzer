@@ -146,7 +146,7 @@ class Driver {
         .then(() => {
           const links = Array.prototype.reduce.call(
             browser.document.getElementsByTagName('a'), (results, link) => {
-              if ( link.protocol.match(/https?:/) || link.hostname === this.origPageUrl.hostname || extensions.test(link.pathname) ) {
+              if ( link.protocol.match(/https?:/) && link.hostname === this.origPageUrl.hostname && extensions.test(link.pathname) ) {
                 link.hash = '';
 
                 results.push(url.parse(link.href));

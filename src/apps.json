@@ -3242,6 +3242,14 @@
       "script": "^[^\\/]*//[ac]dn\\.fusionads\\.net/(?:api/([\\d.]+)/)?\\;version:\\1",
       "website": "http://fusionads.net"
     },
+    "Future Shop": {
+      "cats": [
+        6
+      ],
+      "icon": "futureshop.png",
+      "script": "future-shop.*\\.js",
+      "website": "https://www.future-shop.jp"
+    },
     "G-WAN": {
       "cats": [
         22

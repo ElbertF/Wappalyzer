@@ -4225,6 +4225,16 @@
       ],
       "website": "https://www.ideasoft.com"
     },
+    "IdoSell Shop": {
+      "cats": [
+        6
+      ],
+      "js": {
+        "IAI_Ajax": ""
+      },
+      "icon": "idosellshop.png",
+      "website": "https://www.idosell.com"
+    },
     "IIS": {
       "cats": [
         22

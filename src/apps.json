@@ -1842,6 +1842,16 @@
       "icon": "coinlab.png",
       "website": "https://coinlab.biz/en"
     },
+    "ColorMeShop": {
+      "cats": [
+        6
+      ],
+      "js": {
+        "Colorme": ""
+      },
+      "icon": "colormeshop.png",
+      "website": "https://shop-pro.jp"
+    },
     "Comandia": {
       "cats": [
         6

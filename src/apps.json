@@ -12441,6 +12441,22 @@
         "webpack",
         "Node.js"
       ]
+    },
+    "Appcues": {
+      "cats": [
+        58
+      ],
+      "icon": "Appcues.svg",
+      "script": "fast\\.appcues.com*\\.js",
+      "website": "https://appcues.com"
+    },
+    "Pendo": {
+      "cats": [
+        58
+      ],
+      "icon": "Pendo.svg",
+      "script": "cdn\\.pendo\\.io*\\.js",
+      "website": "https://pendo.io"
     }
   },
   "categories": {

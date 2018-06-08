@@ -7624,6 +7624,16 @@
       "icon": "ProjectPoi.png",
       "website": "https://ppoi.org/"
     },
+    "Projesoft": {
+      "cats": [
+        6
+      ],
+      "icon": "projesoft.png",
+      "script": [
+        "projesoft\\.js"
+      ],
+      "website": "https://www.projesoft.com.tr"
+    },
     "Prospector": {
       "cats": [
         36

@@ -12454,6 +12454,7 @@
       ],
       "icon": "vBulletin.png",
       "implies": "PHP",
+			"html": "<div id=\"copyright\">Powered by vBulletin",
       "js": {
         "vBulletin": ""
       },

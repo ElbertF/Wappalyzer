@@ -200,10 +200,15 @@ class Wappalyzer {
    *
    */
   ping() {
-    if ( Object.keys(this.hostnameCache).length + this.adCache.length > 50 ) {
-      this.driver.ping(this.hostnameCache, this.adCache);
+    if ( Object.keys(this.hostnameCache).length > 1 ) {
+      this.driver.ping(this.hostnameCache);
 
       this.hostnameCache = {};
+    }
+
+    if ( this.adCache.length > 1 ) {
+      this.driver.ping({}, this.adCache);
+
       this.adCache = [];
     }
   }

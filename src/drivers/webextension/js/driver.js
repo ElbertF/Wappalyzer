@@ -330,7 +330,7 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
 /**
  * Anonymously track detected applications for research purposes
  */
-wappalyzer.driver.ping = (hostnameCache, adCache) => {
+wappalyzer.driver.ping = (hostnameCache = {}, adCache = []) => {
   getOption('tracking', true)
     .then(tracking => {
       if ( tracking ) {

@@ -67,5 +67,6 @@
   "categoryName54":           { "message": "搜索引擎优化（SEO）" },
   "categoryName55":           { "message": "财务" },
   "categoryName56":           { "message": "Cryptominer" },
-  "categoryName57":           { "message": "Static Site Generator" }
+  "categoryName57":           { "message": "Static Site Generator" },
+	"categoryName58":           { "message": "User Onboarding" }
 }

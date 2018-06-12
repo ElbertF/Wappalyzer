@@ -20,9 +20,9 @@ echo "Deleting junk files..."
 
 find . -name ".DS_Store" -exec rm {} \;
 
-echo "Prettifying apps.json..."
+#echo "Prettifying apps.json..."
 
-jsonlint-cli -ist $'\t' src/apps.json
+#jsonlint -ips src/apps.json
 
 echo "Converting SVG icons to PNG..."
 

@@ -67,5 +67,6 @@
   "categoryName54":           { "message": "SEO" },
   "categoryName55":           { "message": "Бухгалтерский учёт" },
 	"categoryName56":           { "message": "Криптомайнер" },
-	"categoryName57":           { "message": "Генератор статических сайтов" }
+	"categoryName57":           { "message": "Генератор статических сайтов" },
+	"categoryName58":           { "message": "User Onboarding" }
 }

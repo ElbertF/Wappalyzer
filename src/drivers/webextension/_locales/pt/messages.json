@@ -67,5 +67,6 @@
     "categoryName54":           { "message": "SEO" },
     "categoryName55":           { "message": "Contabilidade" },
     "categoryName56":           { "message": "Cryptominer" },
-    "categoryName57":           { "message": "Gerador de Site Estático" }
+    "categoryName57":           { "message": "Gerador de Site Estático" },
+		"categoryName58":           { "message": "User Onboarding" }
 }

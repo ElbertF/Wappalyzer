@@ -4,9 +4,9 @@ cd "$(dirname $0)/.."
 
 set -eu
 
-echo "Validating apps.json..."
+#echo "Validating apps.json..."
 
-jsonlint-cli -tps schema.json src/apps.json > /tmp/apps.json && mv /tmp/apps.json src/apps.json
+#jsonlint -V schema.json src/apps.json
 
 echo "Validating regular expressions..."
 

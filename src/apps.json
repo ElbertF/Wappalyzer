@@ -8034,6 +8034,16 @@
       },
       "website": "http://ecservice.rakuten.com.br"
     },
+    "Rakuten Digital Commerce": {
+      "cats": [
+        6
+      ],
+      "icon": "RakutenDigitalCommerce.png",
+      "js": {
+        "RakutenApplication": ""
+      },
+      "website": "https://digitalcommerce.rakuten.com.br"
+    },
     "Ramda": {
       "cats": [
         12

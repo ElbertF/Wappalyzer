@@ -3026,6 +3026,16 @@
       "script": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
       "website": "http://fancyapps.com/fancybox"
     },
+    "Fastcommerce": {
+      "cats": [
+        6
+      ],
+      "icon": "Fastcommerce.png",
+      "meta": {
+        "generator": "Fastcommerce"
+      },
+      "website": "https://www.fastcommerce.com.br"
+    },
     "Fastly": {
       "cats": [
         31

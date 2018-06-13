@@ -3049,6 +3049,16 @@
       "implies": "PHP",
       "website": "http://fatfreeframework.com"
     },
+    "Fbits": {
+      "cats": [
+        6
+      ],
+      "js": {
+        "fbits": ""
+      },
+      "icon": "Fbits.png",
+      "website": "https://www.traycorp.com.br"
+    },
     "Fedora": {
       "cats": [
         28

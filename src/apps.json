@@ -9967,6 +9967,16 @@
       "script": "lucide\\.init(?:\\.min)?\\.js",
       "website": "http://www.translucide.net"
     },
+    "Tray": {
+      "cats": [
+        6
+      ],
+      "icon": "tray.png",
+      "js": {
+        "tray": ""
+      },
+      "website": "https://www.tray.com.br"
+    },
     "Tumblr": {
       "cats": [
         11

@@ -5744,6 +5744,17 @@
       ],
       "website": "http://mailchimp.com"
     },
+    "MakeShop Korea": {
+      "cats": [
+        6
+      ],
+      "icon": "MakeShopKorea.png",
+      "js": {
+        "MakeshopLogUniqueId": "",
+        "Makeshop": ""
+      },
+      "website": "https://www.makeshop.co.kr"
+    },
     "Mambo": {
       "cats": [
         1

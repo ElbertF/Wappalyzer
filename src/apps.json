@@ -7631,6 +7631,14 @@
       "script": "polymer\\.js",
       "website": "http://polymer-project.org"
     },
+    "Polyfill": {
+      "cats": [
+        12
+      ],
+			"icon": "polyfill.svg",
+      "script": "^https?://cdn\\.polyfill\\.io/",
+      "website": "https://polyfill.io"
+    },
     "Posterous": {
       "cats": [
         1,

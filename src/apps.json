@@ -7638,7 +7638,7 @@
 			"icon": "polyfill.svg",
       "script": [
 				"^https?://cdn\\.polyfill\\.io/",
-				"/polyfill\.min\.js"
+				"/polyfill\\.min\\.js"
 			],
       "website": "https://polyfill.io"
     },

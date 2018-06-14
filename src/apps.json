@@ -3032,7 +3032,7 @@
       ],
       "icon": "Fastcommerce.png",
       "meta": {
-        "generator": "Fastcommerce"
+        "generator": "^Fastcommerce"
       },
       "website": "https://www.fastcommerce.com.br"
     },
@@ -10003,9 +10003,7 @@
         6
       ],
       "icon": "tray.png",
-      "js": {
-        "tray": ""
-      },
+      "script": ".+tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
     },
     "Tumblr": {

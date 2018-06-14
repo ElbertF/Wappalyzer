@@ -7636,7 +7636,10 @@
         12
       ],
 			"icon": "polyfill.svg",
-      "script": "^https?://cdn\\.polyfill\\.io/",
+      "script": [
+				"^https?://cdn\\.polyfill\\.io/",
+				"/polyfill\.min\.js"
+			],
       "website": "https://polyfill.io"
     },
     "Posterous": {

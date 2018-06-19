@@ -1254,7 +1254,7 @@
         "<link[^>]+?href=\"[^\"]*bootstrap(?:\\.min)?\\.css",
         "<div[^>]+class=\"[^\"]*glyphicon glyphicon-"
       ],
-      "icon": "Bootstrap.svg",
+      "icon": "Bootstrap.png",
       "js": {
         "bootstrap.Alert.VERSION": "(.*)\\;version:\\1",
         "jQuery.fn.tooltip.Constructor.VERSION": "(.*)\\;version:\\1"

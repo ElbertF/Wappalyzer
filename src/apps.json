@@ -592,6 +592,11 @@
         "AngularDart",
         "AngularJS"
       ],
+      "js": {
+        "ng": "",
+        "ng.probe": "",
+        "ng.coreTokens": ""
+      },
       "html": "<[^>]+ ng-version=\"([\\d.]+)\"\\;version:\\1",
       "icon": "Angular.svg",
       "website": "https://angular.io"
@@ -11414,6 +11419,16 @@
         "generator": "Zinnia"
       },
       "website": "http://django-blog-zinnia.com"
+    },
+    "Zone.js": {
+      "cats": [
+        12
+      ],
+      "js": {
+        "Zone": "",
+        "Zone.root": ""
+      },
+      "website": "https://github.com/angular/zone.js/"
     },
     "Zope": {
       "cats": [

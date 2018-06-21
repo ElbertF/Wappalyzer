@@ -10623,6 +10623,20 @@
       "script": "web2py\\.js",
       "website": "http://web2py.com"
     },
+    "Webdev": {
+      "cats": [
+        20
+      ],
+      "headers": {
+        "WebDevSrc": ""
+			},
+      "icon": "webdev.png",
+			"html": "<!-- [a-zA-Z0-9_]+ [\\d/]+ [\\d:]+ WebDev \\d\\d ([\\d.]+) -->\\;version:\\1",
+      "meta": {
+        "generator": "^WEBDEV$"
+      },
+      "website": "https://www.windev.com/webdev/index.html"
+    },
     "WebGUI": {
       "cats": [
         1

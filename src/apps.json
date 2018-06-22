@@ -592,6 +592,10 @@
         "AngularDart",
         "AngularJS"
       ],
+      "js": {
+        "ng.probe": "",
+        "ng.coreTokens": ""
+      },
       "html": "<[^>]+ ng-version=\"([\\d.]+)\"\\;version:\\1",
       "icon": "Angular.svg",
       "website": "https://angular.io"

@@ -1,6 +1,20 @@
 {
   "$schema": "../schema.json",
   "apps": {
+    "1C-Bitrix": {
+      "cats": [
+             "1"
+      ],
+      "headers": {
+             "Set-Cookie": "BITRIX_",
+             "X-Powered-CMS": "Bitrix Site Manager"
+      },
+      "html": "(?:<link[^>]+components/bitrix|(?:src|href)=\"/bitrix/(?:js|templates))",
+      "icon": "1C-Bitrix.png",
+      "implies": "PHP",
+      "script": "1c-bitrix",
+      "website": "http://www.1c-bitrix.ru"
+    },
     "3dCart": {
       "cats": [
         1,

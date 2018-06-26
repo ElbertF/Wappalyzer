@@ -573,7 +573,7 @@ class Wappalyzer {
     app.detected = true;
 
     // Set confidence level
-    app.confidence[type + ' ' + ( key ? key + ' ' : '' ) + pattern.regex] = pattern.confidence === undefined ? 100 : pattern.confidence;
+    app.confidence[type + ' ' + ( key ? key + ' ' : '' ) + pattern.regex] = pattern.confidence === undefined ? 100 : parseInt(pattern.confidence);
 
     // Detect version number
     if ( pattern.version ) {

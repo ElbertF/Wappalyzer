@@ -12271,6 +12271,14 @@
       "implies": "Java",
       "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
     },
+    "Polyfill.io": {
+      "cats": [
+        19
+      ],
+      "icon": "polyfill.io.svg",
+      "script": "https:\/\/cdn\\.polyfill\\.io\/v\\d\/polyfill(?:\\.min){0,1}\\.js",
+      "website": "https://polyfill.io/v2/docs"
+    },
     "prettyPhoto": {
       "cats": [
         12

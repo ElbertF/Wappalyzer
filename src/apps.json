@@ -11533,6 +11533,17 @@
       "icon": "Zope.png",
       "website": "http://zope.org"
     },
+    "ZrLog": {
+      "cats": [
+        11
+      ],
+      "icon": "ZrLog.png",
+      "implies": "Java",
+      "headers": {
+        "X-ZrLog": "([\\d.]+)\\;version:\\1"
+      },
+      "website": "http://zrlog.com/"
+    },
     "a-blog cms": {
       "cats": [
         1

@@ -9163,6 +9163,16 @@
       },
       "website": "http://www.schillmania.com/projects/soundmanager2"
     },
+    "SoftTr": {
+      "cats": [
+        6
+       ],
+        "icon": "softtr.png",
+        "meta": {
+        "copyright": "Softtr E-Ticaret Sistemleri"
+    },
+    "website": "http://www.softtr.com/"
+    },
     "Sparql": {
       "cats": [
         27

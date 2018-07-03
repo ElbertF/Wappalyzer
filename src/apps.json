@@ -9082,6 +9082,16 @@
       "script": "socket\\.io.*\\.js",
       "website": "https://socket.io"
     },
+    "Softtr": {
+      "cats": [
+      6
+      ],
+      "icon": "softtr.png",
+      "meta": {
+      "copyright": "Softtr E-Ticaret Sistemleri"
+      },
+      "website": "http://www.softtr.com/"
+      },
     "Solodev": {
       "cats": [
         1

@@ -12064,7 +12064,7 @@
       ],
       "html": "<!--\\s+OTRS: Copyright \\d+-\\d+, OTRS AG",
       "icon": "otrs.png",
-      "implies": "perl",
+      "implies": "Perl",
       "script": "^/otrs-web/js/",
       "website": "https://www.otrs.com"
     },

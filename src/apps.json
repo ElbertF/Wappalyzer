@@ -1405,6 +1405,21 @@
       "icon": "Bulma.png",
       "website": "http://bulma.io"
     },
+    "Bunto": {
+      "cats": [
+        57
+      ],
+      "html": [
+        "Powered by <a href=\"https?://buntowaf\\.tk\"[^>]*>Bunto</",
+        "<!-- Created with Bunto Now -",
+        "<!-- Begin Bunto SEO tag"
+      ],
+      "icon": "Bunto.png",
+      "meta": {
+        "generator": "Bunto (v[\\d.]+)?\\;version:\\1"
+      },
+      "website": "https://buntowaf.tk"
+	},
     "Burning Board": {
       "cats": [
         2

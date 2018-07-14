@@ -1212,7 +1212,7 @@
     },
     "Boba.js": {
       "cats": [
-        12
+        59
       ],
       "implies": "Google Analytics",
       "script": "boba(?:\\.min)?\\.js",
@@ -1286,7 +1286,7 @@
     },
     "Bootstrap Table": {
       "cats": [
-        12
+        59
       ],
       "html": "<link[^>]+href=\"[^>]*bootstrap-table(?:\\.min)?\\.css",
       "icon": "Bootstrap Table.svg",
@@ -2238,7 +2238,7 @@
     },
     "DHTMLX": {
       "cats": [
-        12
+        59
       ],
       "icon": "DHTMLX.png",
       "script": "dhtmlxcommon\\.js",
@@ -2375,7 +2375,7 @@
     },
     "DataTables": {
       "cats": [
-        12
+        59
       ],
       "icon": "DataTables.png",
       "implies": "jQuery",
@@ -2508,7 +2508,7 @@
     },
     "Dojo": {
       "cats": [
-        12
+        59
       ],
       "icon": "Dojo.png",
       "js": {
@@ -2987,7 +2987,7 @@
     },
     "FancyBox": {
       "cats": [
-        12
+        59
       ],
       "icon": "FancyBox.png",
       "implies": "jQuery",
@@ -3052,7 +3052,7 @@
     },
     "Fingerprintjs": {
       "cats": [
-        12
+        59
       ],
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
@@ -3148,7 +3148,7 @@
     },
     "Flickity": {
       "cats": [
-        12
+        59
       ],
       "js": {
         "Flickity": ""
@@ -4010,7 +4010,7 @@
     },
     "Hammer.js": {
       "cats": [
-        12
+        59
       ],
       "icon": "Hammer.js.png",
       "js": {
@@ -4054,7 +4054,7 @@
     },
     "HeadJS": {
       "cats": [
-        12
+        59
       ],
       "html": "<[^>]*data-headjs-load",
       "icon": "HeadJS.png",
@@ -4378,7 +4378,7 @@
     },
     "Immutable.js": {
       "cats": [
-        12
+        59
       ],
       "icon": "Immutable.js.png",
       "js": {
@@ -5249,7 +5249,7 @@
     },
     "Lazy.js": {
       "cats": [
-        12
+        59
       ],
       "script": "lazy(?:\\.browser)?(?:\\.min)?\\.js",
       "website": "http://danieltao.com/lazy.js"
@@ -5316,7 +5316,7 @@
     },
     "Lightbox": {
       "cats": [
-        12
+        59
       ],
       "html": "<link [^>]*href=\"[^\"]+lightbox(?:\\.min)?\\.css",
       "icon": "Lightbox.png",
@@ -5377,7 +5377,7 @@
     },
     "List.js": {
       "cats": [
-        12
+        59
       ],
       "icon": "List.js.png",
       "js": {
@@ -5511,7 +5511,7 @@
     },
     "Lodash": {
       "cats": [
-        12
+        59
       ],
       "excludes": "Underscore.js",
       "icon": "Lo-dash.png",
@@ -5759,7 +5759,7 @@
     },
     "Marked": {
       "cats": [
-        12
+        59
       ],
       "icon": "marked.svg",
       "js": {
@@ -6188,7 +6188,7 @@
     },
     "MochiKit": {
       "cats": [
-        12
+        59
       ],
       "icon": "MochiKit.png",
       "js": {
@@ -6209,7 +6209,7 @@
     },
     "Modernizr": {
       "cats": [
-        12
+        59
       ],
       "icon": "Modernizr.svg",
       "js": {
@@ -6279,7 +6279,7 @@
     },
     "Moment Timezone": {
       "cats": [
-        12
+        59
       ],
       "icon": "Moment.js.svg",
       "implies": "Moment.js",
@@ -6288,7 +6288,7 @@
     },
     "Moment.js": {
       "cats": [
-        12
+        59
       ],
       "icon": "Moment.js.svg",
       "js": {
@@ -6404,7 +6404,7 @@
       ],
       "icon": "moon.svg",
       "script": "/moon(?:\\.min)?\\.js$",
-      "website": "http://moonjs.ga/"
+      "website": "https://kbrsh.github.io/moon/"
     },
     "MotoCMS": {
       "cats": [
@@ -7613,7 +7613,7 @@
     },
     "Polyfill": {
       "cats": [
-        12
+        59
       ],
 			"icon": "polyfill.svg",
       "script": [
@@ -8018,7 +8018,7 @@
     },
     "Ramda": {
       "cats": [
-        12
+        59
       ],
       "icon": "Ramda.png",
       "script": "ramda.*\\.js",
@@ -8248,7 +8248,7 @@
         "riot": ""
       },
       "script": "riot(?:\\+compiler)?(?:\\.min)?\\.js",
-      "website": "http://muut.com/riotjs"
+      "website": "https://riot.js.org/"
     },
     "RiteCMS": {
       "cats": [
@@ -8634,7 +8634,7 @@
     },
     "Select2": {
       "cats": [
-        12
+        59
       ],
       "icon": "Select2.png",
       "implies": "jQuery",
@@ -8983,7 +8983,7 @@
     },
     "Slick": {
       "cats": [
-        12
+        59
       ],
       "html": "<link [^>]+(?:/([\\d.]+)/)?slick-theme\\.css\\;version:\\1",
       "implies": "jQuery",
@@ -8992,7 +8992,7 @@
     },
     "Slimbox": {
       "cats": [
-        12
+        59
       ],
       "html": "<link [^>]*href=\"[^/]*slimbox(?:-rtl)?\\.css",
       "icon": "Slimbox.png",
@@ -9002,7 +9002,7 @@
     },
     "Slimbox 2": {
       "cats": [
-        12
+        59
       ],
       "html": "<link [^>]*href=\"[^/]*slimbox2(?:-rtl)?\\.css",
       "icon": "Slimbox 2.png",
@@ -9054,7 +9054,7 @@
     },
     "Snap.svg": {
       "cats": [
-        12
+        59
       ],
       "icon": "Snap.svg.png",
       "js": {
@@ -9179,7 +9179,7 @@
     },
     "SoundManager": {
       "cats": [
-        12
+        59
       ],
       "icon": "SoundManager.png",
       "js": {
@@ -9493,7 +9493,7 @@
     },
     "SweetAlert": {
       "cats": [
-        12
+        59
       ],
       "html": "<link[^>]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
       "icon": "SweetAlert.png",
@@ -9505,7 +9505,7 @@
     },
     "SweetAlert2": {
       "cats": [
-        12
+        59
       ],
       "excludes": "SweetAlert",
       "html": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
@@ -10004,7 +10004,7 @@
     },
     "Twitter typeahead.js": {
       "cats": [
-        12
+        59
       ],
       "icon": "Twitter typeahead.js.png",
       "implies": "jQuery",
@@ -10150,7 +10150,7 @@
     },
     "Underscore.js": {
       "cats": [
-        12
+        59
       ],
       "excludes": "Lodash",
       "icon": "Underscore.js.png",
@@ -10987,7 +10987,7 @@
     },
     "XRegExp": {
       "cats": [
-        12
+        59
       ],
       "icon": "XRegExp.png",
       "js": {
@@ -11017,7 +11017,7 @@
     },
     "Xajax": {
       "cats": [
-        12
+        59
       ],
       "icon": "Xajax.png",
       "script": "xajax_core.*\\.js",
@@ -11106,7 +11106,7 @@
     },
     "YUI": {
       "cats": [
-        12
+        59
       ],
       "icon": "YUI.png",
       "js": {
@@ -11368,7 +11368,7 @@
     },
     "Zepto": {
       "cats": [
-        12
+        59
       ],
       "icon": "Zepto.png",
       "js": {
@@ -11467,7 +11467,7 @@
     },
     "basket.js": {
       "cats": [
-        12
+        59
       ],
       "icon": "basket.js.png",
       "js": {
@@ -11779,7 +11779,7 @@
     },
     "jQuery": {
       "cats": [
-        12
+        59
       ],
       "icon": "jQuery.svg",
       "js": {
@@ -11794,7 +11794,7 @@
     },
     "jQuery Migrate": {
       "cats": [
-        12
+        59
       ],
       "icon": "jQuery.svg",
       "implies": "jQuery",
@@ -11826,7 +11826,7 @@
     },
     "jQuery UI": {
       "cats": [
-        12
+        59
       ],
       "icon": "jQuery UI.svg",
       "implies": "jQuery",
@@ -11872,7 +11872,7 @@
     },
     "math.js": {
       "cats": [
-        12
+        59
       ],
       "icon": "math.js.png",
       "js": {
@@ -12255,7 +12255,7 @@
     },
     "prettyPhoto": {
       "cats": [
-        12
+        59
       ],
       "html": "(?:<link [^>]*href=\"[^\"]*prettyPhoto(?:\\.min)?\\.css|<a [^>]*rel=\"prettyPhoto)",
       "icon": "prettyPhoto.png",
@@ -12310,7 +12310,7 @@
     },
     "script.aculo.us": {
       "cats": [
-        12
+        59
       ],
       "icon": "script.aculo.us.png",
       "js": {

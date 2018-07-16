@@ -6772,7 +6772,7 @@
         "x-now-id": "",
         "x-now-cache": ""
       },
-      "url": ".+now.sh+.*",
+      "url": "^.+now.sh+.*$",
       "icon": "zeit.svg",
       "website": "https://zeit.co/now"
     },

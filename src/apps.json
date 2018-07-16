@@ -4331,7 +4331,7 @@
         53
       ],
       "icon": "byINTI.svg",
-      "url": "^https?//.+\\.byinti\\.com",
+      "url": "^https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}.byinti\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)",
       "website": "http://byinti.com"
     },
     "IPB": {

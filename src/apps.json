@@ -6767,8 +6767,12 @@
         22
       ],
       "headers": {
-        "server": "^now$"
+        "server": "^now$",
+        "x-now-trace": "",
+        "x-now-id": "",
+        "x-now-cache": ""
       },
+      "url": ".+now.sh+.*",
       "icon": "zeit.svg",
       "website": "https://zeit.co/now"
     },

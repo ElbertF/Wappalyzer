@@ -7375,7 +7375,10 @@
       "cats": [
         57
       ],
-      "html": "powered by <a href=\"[^>]+getpelican\\.com",
+      "html": [
+				"powered by <a href=\"[^>]+getpelican\\.com",
+				"powered by <a href=\"http://pelican\.notmyidea\.org"
+			],
       "icon": "pelican.png",
       "implies": "Python",
       "website": "https://blog.getpelican.com/"

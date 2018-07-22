@@ -2475,7 +2475,7 @@
       "cats": [
         18
       ],
-      "html": "(?:powered by <a[^>]+>Django ?([\\d.]+)?|<input[^>]*name=[\"']csrfmiddlewaretoken[\"'][^>]*>)\\;version:\\1",
+      "html": "(?:powered by <a[^>]+>Django ?([\d.]+)?<\/a>|<input[^>]*name=[\"']csrfmiddlewaretoken[\"'][^>]*>)\\;version:\\1",
       "icon": "Django.png",
       "implies": "Python",
       "js": {

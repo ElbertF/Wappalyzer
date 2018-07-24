@@ -12555,7 +12555,7 @@
     },
     "12": {
       "name": "JavaScript Frameworks",
-      "priority": 5
+      "priority": 8
     },
     "13": {
       "name": "Issue Trackers",
@@ -12579,7 +12579,7 @@
     },
     "18": {
       "name": "Web Frameworks",
-      "priority": 4
+      "priority": 7
     },
     "19": {
       "name": "Miscellaneous",
@@ -12595,11 +12595,11 @@
     },
     "22": {
       "name": "Web Servers",
-      "priority": 7
+      "priority": 8
     },
     "23": {
       "name": "Cache Tools",
-      "priority": 9
+      "priority": 7
     },
     "24": {
       "name": "Rich Text Editors",
@@ -12607,19 +12607,19 @@
     },
     "25": {
       "name": "JavaScript Graphics",
-      "priority": 3
+      "priority": 6
     },
     "26": {
       "name": "Mobile Frameworks",
-      "priority": 3
+      "priority": 8
     },
     "27": {
       "name": "Programming Languages",
-      "priority": 4
+      "priority": 5
     },
     "28": {
       "name": "Operating Systems",
-      "priority": 5
+      "priority": 6
     },
     "29": {
       "name": "Search Engines",
@@ -12647,7 +12647,7 @@
     },
     "35": {
       "name": "Maps",
-      "priority": 9
+      "priority": 6
     },
     "36": {
       "name": "Advertising Networks",
@@ -12655,7 +12655,7 @@
     },
     "37": {
       "name": "Network Devices",
-      "priority": 9
+      "priority": 2
     },
     "38": {
       "name": "Media Servers",
@@ -12683,23 +12683,23 @@
     },
     "44": {
       "name": "Build CI Systems",
-      "priority": 4
+      "priority": 3
     },
     "45": {
       "name": "Control Systems",
-      "priority": 8
+      "priority": 2
     },
     "46": {
       "name": "Remote Access",
-      "priority": 8
+      "priority": 1
     },
     "47": {
       "name": "Dev Tools",
-      "priority": 3
+      "priority": 2
     },
     "48": {
       "name": "Network Storage",
-      "priority": 9
+      "priority": 2
     },
     "49": {
       "name": "Feed Readers",
@@ -12715,15 +12715,15 @@
     },
     "52": {
       "name": "Live Chat",
-      "priority": 9
+      "priority": 8
     },
     "53": {
       "name": "CRM",
-      "priority": 7
+      "priority": 5
     },
     "54": {
       "name": "SEO",
-      "priority": 7
+      "priority": 8
     },
     "55": {
       "name": "Accounting",
@@ -12731,7 +12731,7 @@
     },
     "56": {
       "name": "Cryptominer",
-      "priority": 8
+      "priority": 5
     },
     "57": {
       "name": "Static Site Generator",
@@ -12739,11 +12739,11 @@
     },
     "58": {
       "name": "User Onboarding",
-      "priority": 1
+      "priority": 8
     },
     "59": {
       "name": "JavaScript Libraries",
-      "priority": 1
+      "priority": 9
     }
   }
 }

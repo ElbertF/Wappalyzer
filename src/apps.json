@@ -12267,12 +12267,21 @@
       "cats": [
         16
       ],
-      "html": "(?:<div[^>]+id=\"recaptcha_image|<link[^>]+recaptcha|document\\.getElementById\\('recaptcha')",
+      "html": [
+				"<div[^>]+id=\"recaptcha_image",
+				"<link[^>]+recaptcha",
+				"<div[^>]+class=\"g-recaptcha\""
+			],
       "icon": "reCAPTCHA.png",
       "js": {
-        "Recaptcha": ""
+        "Recaptcha": "",
+        "recaptcha": ""
       },
-      "script": "(?:api-secure\\.recaptcha\\.net|recaptcha_ajax\\.js)",
+      "script": [
+				"api-secure\\.recaptcha\\.net",
+				"recaptcha_ajax\\.js",
+				"/recaptcha/api\\.js"
+			],
       "website": "https://www.google.com/recaptcha/"
     },
     "sIFR": {

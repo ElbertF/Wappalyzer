@@ -328,6 +328,17 @@
       "script": "(?:wh(?:utils|ver|proxy|lang|topic|msg)|ehlpdhtm)\\.js",
       "website": "http://adobe.com/products/robohelp.html"
     },
+    "ADPLAN": {
+      "cats": [
+        10
+      ],
+      "icon": "ADPLAN.png",
+      "script": [
+        "^https?://[^.]+\\.adplan7\\.com/\\;version:7",
+        "^https?://(?!o\\.)\\w+\\.advg\\.jp/"
+      ],
+      "website": "https://www.adplan7.com/"
+    },
     "Advanced Web Stats": {
       "cats": [
         10

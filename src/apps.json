@@ -8442,7 +8442,7 @@
         "Composed-By": "SPIP ([\\d.]+) @\\;version:\\1",
         "X-Spip-Cache": ""
       },
-      "icon": "SPIP.png",
+      "icon": "spip.svg",
       "implies": "PHP",
       "meta": {
         "generator": "(?:^|\\s)SPIP(?:\\s([\\d.]+(?:\\s\\[\\d+\\])?))?\\;version:\\1"

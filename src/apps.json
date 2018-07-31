@@ -3792,7 +3792,7 @@
     },
     "Google Tag Manager": {
       "cats": [
-        42
+        10
       ],
       "html": [
         "googletagmanager\\.com/ns\\.html[^>]+></iframe>",

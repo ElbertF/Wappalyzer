@@ -3915,13 +3915,6 @@
       "implies": "PHP\\;confidence:75",
       "website": "http://hhvm.com"
     },
-    "HP": {
-      "cats": [
-        40
-      ],
-      "icon": "HP.svg",
-      "website": "http://hp.com"
-    },
     "HP ChaiServer": {
       "cats": [
         22
@@ -3930,7 +3923,6 @@
         "Server": "HP-Chai(?:Server|SOE)(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "HP.svg",
-      "implies": "HP",
       "website": "http://hp.com"
     },
     "HP Compact Server": {

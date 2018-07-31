@@ -1,4 +1,4 @@
-# Wappalyzer [![Travis](https://img.shields.io/travis/AliasIO/Wappalyzer.svg)](https://travis-ci.org/AliasIO/Wappalyzer/) [![Scrutinizer](https://scrutinizer-ci.com/g/AliasIO/Wappalyzer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/AliasIO/Wappalyzer/?branch=master)
+# Wappalyzer [![Travis](https://travis-ci.org/AliasIO/Wappalyzer.svg?branch=master)](https://travis-ci.org/AliasIO/Wappalyzer/) [![Scrutinizer](https://scrutinizer-ci.com/g/AliasIO/Wappalyzer/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/AliasIO/Wappalyzer/?branch=master)
 
 [Wappalyzer](https://www.wappalyzer.com/) is a
 [cross-platform](https://github.com/AliasIO/Wappalyzer/wiki/Drivers) utility that uncovers the

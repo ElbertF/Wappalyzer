@@ -1320,17 +1320,6 @@
       },
       "website": "https://www.braintreepayments.com"
     },
-    "Brother": {
-      "cats": [
-        40
-      ],
-      "html": [
-        "(?:<!--|<BR>)Copyright\\(C\\) [\\d-]+ Brother Industries",
-        "<TITLE>\\n\\s*BROTHER "
-      ],
-      "icon": "Brother.png",
-      "website": "http://www.brother.com"
-    },
     "BrowserCMS": {
       "cats": [
         1

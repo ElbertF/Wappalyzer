@@ -4944,6 +4944,12 @@
       "script": "cdn\\.mykamva\\.ir",
       "website": "https://kamva.ir"
     },
+    "Katana Commerce": {
+      "cats": [6],
+      "implies": ["Microsoft ASP.NET", "React", "Webpack", "jQuery", "Less"],
+      "icon": "katana-commerce-icon.svg",
+      "website": "https://www.tritac.com/producten/katana-commerce/"
+    },
     "Kemal": {
       "cats": [
         18,

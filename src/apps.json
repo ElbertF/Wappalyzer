@@ -8332,14 +8332,8 @@
         18
       ],
       "headers": {
-        "Server": [
-					"mod_rails",
-					"mod_rack"
-				],
-        "X-Powered-By": [
-					"mod_rails",
-				  "mod_rack"
-				]
+        "Server": "mod_(?:rails|rack)",
+        "X-Powered-By": "mod_(?:rails|rack)"
       },
       "icon": "Ruby on Rails.png",
       "implies": "Ruby",

@@ -10758,7 +10758,7 @@
       "headers": {
         "Server": "Win32|Win64"
       },
-      "icon": "Microsoft.svg",
+      "icon": "WindowsServer.png",
       "website": "http://microsoft.com/windowsserver"
     },
     "Wink": {

@@ -6045,7 +6045,7 @@
       "headers": {
         "Server": "Microsoft-HTTPAPI(?:/([\\d.]+))?\\;version:\\1"
       },
-      "icon": "Microsoft.svg",
+      "icon": "Microsoft.png",
       "website": "http://microsoft.com"
     },
     "Microsoft PowerPoint": {
@@ -10748,7 +10748,7 @@
       "headers": {
         "Server": "\\bWinCE\\b"
       },
-      "icon": "Microsoft.svg",
+      "icon": "Microsoft.png",
       "website": "http://microsoft.com"
     },
     "Windows Server": {

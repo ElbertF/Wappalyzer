@@ -3771,17 +3771,6 @@
       "script": "apis\\.google\\.com/js/[a-z]*\\.js",
       "website": "http://plus.google.com"
     },
-    "Google Search Appliance": {
-      "cats": [
-        22,
-        29
-      ],
-      "headers": {
-        "Server": "^Google\\sSearch\\sAppliance$"
-      },
-      "icon": "Google Search Appliance.png",
-      "website": "https://enterprise.google.com/search"
-    },
     "Google Sites": {
       "cats": [
         1

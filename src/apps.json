@@ -9798,6 +9798,15 @@
       },
       "website": "http://titan360.com"
     },
+    "Tocas UI": {
+      "cats": [
+        18
+      ],
+      "html": "<link[^>]+href=\"[^>]*tocas(?:\\.min)?\\.css",
+      "icon": "Tocas UI.png",
+      "script": "tocas(?:\\.min)?\\.js",
+      "website": "https://tocas-ui.com/"
+    },
     "TomatoCart": {
       "cats": [
         6

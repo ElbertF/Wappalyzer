@@ -66,8 +66,8 @@
 	"categoryName53":           { "message": "Zarządzanie relacjami z klientami" },
 	"categoryName54":           { "message": "SEO" },
 	"categoryName55":           { "message": "Księgowość" },
-	"categoryName56":           { "message": "Cryptominer" },
-	"categoryName57":           { "message": "Static Site Generator" },
-	"categoryName58":           { "message": "User Onboarding" },
-	"categoryName59":           { "message": "JavaScript Libraries" }
+	"categoryName56":           { "message": "Koparka kryptowalut" },
+	"categoryName57":           { "message": "Generator stron statycznych" },
+	"categoryName58":           { "message": "Wdrażanie użytkownika" },
+	"categoryName59":           { "message": "Biblioteki JavaScript" }
 }

@@ -8073,7 +8073,7 @@
         "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
         "react.*\\.js"
       ],
-      "website": "https://facebook.github.io/react"
+      "website": "https://reactjs.org"
     },
     "Red Hat": {
       "cats": [

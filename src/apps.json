@@ -2923,10 +2923,11 @@
       "icon": "ExtJS.png",
       "js": {
         "Ext": "",
+        "Ext.version": "(.*)\\;version:\\1",
         "Ext.versions.extjs.version": "(.*)\\;version:\\1"
       },
       "script": "ext-base\\.js",
-      "website": "http://www.extjs.com"
+      "website": "https://www.sencha.com"
     },
     "FAST ESP": {
       "cats": [

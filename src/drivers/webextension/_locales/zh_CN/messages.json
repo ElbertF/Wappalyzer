@@ -66,8 +66,8 @@
   "categoryName53":           { "message": "客户关系管理（CRM）" },
   "categoryName54":           { "message": "搜索引擎优化（SEO）" },
   "categoryName55":           { "message": "财务" },
-  "categoryName56":           { "message": "Cryptominer" },
-  "categoryName57":           { "message": "Static Site Generator" },
-	"categoryName58":           { "message": "User Onboarding" },
-	"categoryName59":           { "message": "JavaScript Libraries" }
+  "categoryName56":           { "message": "加密货币挖矿器" },
+  "categoryName57":           { "message": "静态网站生成器" },
+	"categoryName58":           { "message": "用户引导" },
+	"categoryName59":           { "message": "JavaScript 库" }
 }

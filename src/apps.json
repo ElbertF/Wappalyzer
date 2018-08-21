@@ -1331,6 +1331,15 @@
       },
       "website": "https://www.braintreepayments.com"
     },
+    "Brightspot": {
+      "cats": [
+        1 
+      ],
+      "headers": { "X-Powered-By": "Brightspot" },
+      "icon": "Brightspot.svg",
+      "implies": "Java",
+      "website": "https://www.brightspot.com"
+    },
     "BrowserCMS": {
       "cats": [
         1

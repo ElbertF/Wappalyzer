@@ -12453,6 +12453,16 @@
       },
       "website": "https://webpack.github.io"
     },
+    "parcel": {
+      "cats": [
+        19
+      ],
+      "icon": "Parcel.png",
+      "js": {
+        "parcelRequire": ""
+      },
+      "website": "https://parceljs.org/"
+    },
     "wpCache": {
       "cats": [
         23

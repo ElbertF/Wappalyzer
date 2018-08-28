@@ -8371,6 +8371,15 @@
       "icon": "SDL Tridion.png",
       "website": "http://www.sdl.com/products/tridion"
     },
+    "Sentry": {
+      "cats": [
+        13
+      ],
+      "html": "<script[^>]*>\\s*Raven\\.config\\('[^']*', {\\s+release: '([0-9\\.]+)'\\;version:\\1",
+      "icon": "Sentry.svg",
+      "implies": "Django",
+      "website": "https://sentry.io/"
+    },
     "SIMsite": {
       "cats": [
         1

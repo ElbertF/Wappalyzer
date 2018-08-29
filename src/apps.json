@@ -8376,8 +8376,11 @@
         13
       ],
       "html": "<script[^>]*>\\s*Raven\\.config\\('[^']*', {\\s+release: '([0-9\\.]+)'\\;version:\\1",
+      "script": {
+        "Raven.config": "",
+        "ravenOptions.whitelistUrls": ""
+      },
       "icon": "Sentry.svg",
-      "implies": "Django",
       "website": "https://sentry.io/"
     },
     "SIMsite": {

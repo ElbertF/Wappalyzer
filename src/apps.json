@@ -3665,7 +3665,7 @@
         "GoogleAnalyticsObject": "",
         "gaGlobal": ""
       },
-      "script": "google-analytics\\.com\\/(?:ga|urchin|(analytics))\\.js\\;version:\\1?Universal Analytics:",
+      "script": "google-analytics\\.com\\/(?:ga|urchin|analytics)\\.js",
       "website": "http://google.com/analytics"
     },
     "Google Analytics Enhanced eCommerce": {

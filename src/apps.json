@@ -9521,7 +9521,7 @@
       "meta": {
         "generator": "^Sympa$"
       },
-			"html": "<a href=\"https?://www\\.sympa\\.org\">\s*Powered by Sympa\s*</a>",
+			"html": "<a href=\"https?://www\\.sympa\\.org\">\\s*Powered by Sympa\\s*</a>",
       "icon": "sympa.png",
       "implies": "Perl",
       "website": "https://www.sympa.org/"

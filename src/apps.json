@@ -12432,6 +12432,17 @@
       },
       "website": "http://vibecommerce.com.br"
     },
+    "Virgool": {
+      "cats": [
+        11
+      ],
+      "headers": {
+        "X-Powered-By": "^Virgool$"
+      },
+      "icon": "Virgool.svg",
+      "url": "^https?://(?:www\\.)?virgool\\.io",
+      "website": "https://virgool.io"
+    },
     "webEdition": {
       "cats": [
         1

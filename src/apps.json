@@ -12414,6 +12414,11 @@
       "js": {
         "vBulletin": ""
       },
+      "cookies": {
+        "bbsessionhash": "",
+        "bblastactivity": "",
+				"bblastvisit": ""
+      },
       "meta": {
         "generator": "vBulletin ?([\\d.]+)?\\;version:\\1"
       },

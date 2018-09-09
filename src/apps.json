@@ -7510,12 +7510,12 @@
         9
       ],
       "headers": {
-        "X-Powered-By": "PleskLin",
-        "X-Powered-By-Plesk": "Plesk"
+        "X-Powered-By": "^Plesk(?:L|W)in",
+        "X-Powered-By-Plesk": "^Plesk"
       },
       "icon": "Plesk.png",
       "script": "common\\.js\\?plesk",
-      "website": "http://plesk.com"
+      "website": "https://www.plesk.com/"
     },
     "Pligg": {
       "cats": [

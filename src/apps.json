@@ -5646,7 +5646,10 @@
         "<script type=\"text/x-magento-init\">"
       ],
       "icon": "Magento.png",
-      "implies": "PHP",
+      "implies": [
+				"PHP",
+				"MySQL"
+			],
       "js": {
         "Mage": "",
         "VarienForm": ""

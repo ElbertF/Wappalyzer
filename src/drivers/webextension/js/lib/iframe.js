@@ -139,7 +139,7 @@
             } else {
               elseCallback();
             }
-          },
+          }
         );
       },
     };

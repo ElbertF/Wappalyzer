@@ -8850,9 +8850,10 @@
       "html": "Powered by <a href=\"[^>]+SilverStripe",
       "icon": "SilverStripe.svg",
       "meta": {
-        "generator": "SilverStripe"
+        "generator": "^SilverStripe"
       },
-      "website": "http://www.silverstripe.org"
+			"implies": "PHP",
+      "website": "https://www.silverstripe.org"
     },
     "SimpleHTTP": {
       "cats": [

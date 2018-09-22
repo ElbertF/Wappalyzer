@@ -10449,7 +10449,7 @@
       "cats": [
         12
       ],
-      "html": "<[^>]+data-v-",
+      "html": "<[^>]+data-v(?:ue)-",
       "icon": "Vue.js.png",
       "js": {
         "Vue.version": "(.*)\\;version:\\1"

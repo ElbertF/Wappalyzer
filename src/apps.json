@@ -735,7 +735,7 @@
         22
       ],
       "headers": {
-        "Server": "^Apache-Coyote(/1\\.1)?$\\;version:\\1?4.1+:",
+        "Server": "^Apache-Coyote",
         "X-Powered-By": "\\bTomcat\\b(?:-([\\d.]+))?\\;version:\\1"
       },
       "icon": "Apache Tomcat.svg",

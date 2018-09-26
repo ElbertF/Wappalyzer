@@ -2628,7 +2628,7 @@
       "headers": {
         "Expires": "19 Nov 1978",
         "X-Drupal-Cache": "",
-        "X-Generator": "Drupal(?:\\s([\\d.]+))?\\;version:\\1"
+        "X-Generator": "^Drupal(?:\\s([\\d.]+))?\\;version:\\1"
       },
       "html": "<(?:link|style)[^>]+sites/(?:default|all)/(?:themes|modules)/",
       "icon": "Drupal.svg",
@@ -2637,10 +2637,10 @@
         "Drupal": ""
       },
       "meta": {
-        "generator": "Drupal(?:\\s([\\d.]+))?\\;version:\\1"
+        "generator": "^Drupal(?:\\s([\\d.]+))?\\;version:\\1"
       },
       "script": "drupal\\.js",
-      "website": "http://drupal.org"
+      "website": "https://drupal.org"
     },
     "Drupal Commerce": {
       "cats": [

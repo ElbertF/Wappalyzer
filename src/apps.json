@@ -1237,17 +1237,18 @@
       "script": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
       "website": "https://www.boldchat.com/"
     },
-    "BoldGrid Post and Page Builder": {
+    "BoldGrid": {
       "cats": [
         1,
         11
       ],
       "html": [
+        "<link rel=[\"']stylesheet[\"'] [^>]+boldgrid",
         "<link rel=[\"']stylesheet[\"'] [^>]+post-and-page-builder",
         "<link[^>]+s\\d+\\.boldgrid\\.com"
       ],
-      "implies": "WordPress",
       "script": "/wp-content/plugins/post-and-page-builder",
+      "implies": "WordPress",
       "website": "https://boldgrid.com"
     },
     "Bolt": {

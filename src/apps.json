@@ -10686,8 +10686,15 @@
         1
       ],
       "icon": "Weebly.png",
+      "implies": [
+				"PHP",
+				"MySQL"
+			],
+			"js": {
+				"_W.configDomain": ""
+			},
       "script": "cdn\\d+\\.editmysite\\.com",
-      "website": "http://www.weebly.com"
+      "website": "https://www.weebly.com"
     },
     "Wikinggruppen": {
       "cats": [

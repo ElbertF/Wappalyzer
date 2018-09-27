@@ -4281,7 +4281,7 @@
         22
       ],
       "headers": {
-        "Server": "^(:?Microsoft-)?IIS(?:/([\\d.]+))?\\;version:\\1"
+        "Server": "^(?:Microsoft-)?IIS(?:/([\\d.]+))?\\;version:\\1"
       },
       "icon": "IIS.png",
       "implies": "Windows Server",

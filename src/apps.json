@@ -281,7 +281,7 @@
       "cats": [
         42
       ],
-      "html": "\"//assets\\.adobedtm\\.com",
+      "script": "\"//assets\\.adobedtm\\.com",
       "icon": "adobedmt.png",
       "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
     },
@@ -2831,9 +2831,7 @@
       "cats": [
         42
       ],
-      "html": [
-        "^\"|//nexus\\.ensighten\\.com/.*/bootstrap\\.js"
-      ],
+      "script": "^\"|//nexus\\.ensighten\\.com/.*/bootstrap\\.js",
       "icon": "ensighten.png",
       "website": "https://success.ensighten.com/hc/en-us"
     },
@@ -8855,7 +8853,7 @@
       "cats": [
         42
       ],
-      "html": [
+      "script": [
         "//s\\.btstatic\\.com/tag\\.js",
         "//s\\.thebrighttag\\.com/iframe\\?"
       ],

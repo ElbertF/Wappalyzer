@@ -277,6 +277,16 @@
       "url": "\\.cfm(?:$|\\?)",
       "website": "http://adobe.com/products/coldfusion-family.html"
     },
+    "Adobe DTM": {
+      "cats": [
+        42
+      ],
+      "html": [
+        "\"\/\/assets\.adobedtm\.com",
+       ],
+      "icon": "adobedmt.png",
+      "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
+    },
     "Adobe Experience Manager": {
       "cats": [
         1
@@ -2818,6 +2828,16 @@
         "Ember.VERSION": "(.*)\\;version:\\1"
       },
       "website": "http://emberjs.com"
+    },
+    "Ensighten": {
+      "cats": [
+        42
+      ],
+      "html": [
+        "^\"|//nexus\\.ensighten\\.com/.*/bootstrap\\.js"
+      ],
+      "icon": "ensighten.png",
+      "website": "https://success.ensighten.com/hc/en-us"
     },
     "Enyo": {
       "cats": [
@@ -8833,6 +8853,17 @@
       ],
       "website": "http://shopware.com"
     },
+    "Signal": {
+      "cats": [
+        42
+      ],
+      "html": [
+        "//s\\.btstatic\\.com/tag\\.js",
+        "//s\\.thebrighttag\\.com/iframe\?"
+      ],
+      "icon": "signal.png",
+      "website": "https://www.signal.co/"
+    },
     "Silva": {
       "cats": [
         1
@@ -9606,8 +9637,9 @@
       },
       "script": [
         "^//tags\\.tiqcdn\\.com/",
-        "/tealium/utag\\.js$"
-      ],
+        "/tealium/utag\\.js$",
+        "/utag\\.js"
+        ],
       "website": "http://tealium.com"
     },
     "TeamCity": {
@@ -11125,6 +11157,17 @@
         "YStore": ""
       },
       "website": "http://smallbusiness.yahoo.com/ecommerce"
+    },
+    "Yahoo! Tag Manager": {
+      "cats": [
+        42
+      ],
+      "html": [
+        "b\\.yjtag\\.jp/iframe",
+        "<!-- (?:End )?Yahoo! Tag Manager -->"
+      ],
+      "icon": "yahoo.png",
+      "website": "https://tagmanager.yahoo.co.jp/"
     },
     "Yahoo! Web Analytics": {
       "cats": [

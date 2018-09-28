@@ -12293,6 +12293,18 @@
       "script": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
       "website": "https://script.aculo.us"
     },
+    "scrollreveal": {
+      "cats": [
+        59
+      ],
+      "icon": "scrollreveal.svg",
+      "html": "<[^>]+data-sr(?:-id)",
+      "js": {
+        "ScrollReveal().version": "(.*)\\;version:\\1"
+      },
+      "script": "scrollreveal(?:\\.min)(?:\\.js)",
+      "website": "https://scrollrevealjs.org"
+    },
     "shine.js": {
       "cats": [
         25

@@ -8857,7 +8857,7 @@
       ],
       "html": [
         "//s\\.btstatic\\.com/tag\\.js",
-        "//s\\.thebrighttag\\.com/iframe\?"
+        "//s\\.thebrighttag\\.com/iframe\\?"
       ],
       "icon": "signal.png",
       "website": "https://www.signal.co/"

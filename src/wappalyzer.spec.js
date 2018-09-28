@@ -114,6 +114,9 @@ describe('Wappalyzer', () => {
 
     it('should identify technologies using cookies', () => {
       expect(apps).to.have.any.keys('appCookies');
+    });
+
+    it('should identify technologies using uppercase named cookies', () => {
       expect(apps).to.have.any.keys('appUppercaseCookies');
     });
 

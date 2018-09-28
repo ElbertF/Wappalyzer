@@ -12,6 +12,11 @@ const appsJson = {
       test: 'test',
     },
   },
+  appUppercaseCookies: {
+    cookies: {
+      Test: 'Test',
+    },
+  },
   appHeaders: {
     headers: {
       'X-Powered-By': 'test',
@@ -109,6 +114,7 @@ describe('Wappalyzer', () => {
 
     it('should identify technologies using cookies', () => {
       expect(apps).to.have.any.keys('appCookies');
+      expect(apps).to.have.any.keys('appUppercaseCookies');
     });
 
     it('should identify technologies using JavaScript', () => {

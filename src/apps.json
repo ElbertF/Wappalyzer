@@ -4786,6 +4786,7 @@
         "X-Jimdo-Wid": ""
       },
       "icon": "jimdo.png",
+      "url": "\\.jimdo\\.com/",
       "js": {
         "jimdoData": "",
         "jimdo_Data": ""

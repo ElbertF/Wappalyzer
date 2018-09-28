@@ -281,9 +281,7 @@
       "cats": [
         42
       ],
-      "html": [
-        "\"\/\/assets\.adobedtm\.com",
-       ],
+      "html": "\"//assets\\.adobedtm\\.com",
       "icon": "adobedmt.png",
       "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
     },

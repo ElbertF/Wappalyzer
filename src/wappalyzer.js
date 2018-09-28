@@ -629,10 +629,10 @@ class Wappalyzer {
 
     Object.keys(patterns).forEach((cookieName) => {
       if (typeof patterns[cookieName] !== 'function') {
-        cookieName = cookieName.toLowerCase();
+        const cookieNameLower = cookieName.toLowerCase();
 
         promises.push(asyncForEach(patterns[cookieName], (pattern) => {
-          const cookie = cookies.find(_cookie => _cookie.name.toLowerCase() === cookieName);
+          const cookie = cookies.find(_cookie => _cookie.name.toLowerCase() === cookieNameLower);
 
           if (cookie && pattern.regex.test(cookie.value)) {
             addDetected(app, pattern, 'cookies', cookie.value, cookieName);

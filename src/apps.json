@@ -11158,10 +11158,8 @@
       "cats": [
         42
       ],
-      "html": [
-        "b\\.yjtag\\.jp/iframe",
-        "<!-- (?:End )?Yahoo! Tag Manager -->"
-      ],
+      "html":"<!-- (?:End )?Yahoo! Tag Manager -->",
+      "script": "b\\.yjtag\\.jp/iframe",
       "icon": "yahoo.png",
       "website": "https://tagmanager.yahoo.co.jp/"
     },

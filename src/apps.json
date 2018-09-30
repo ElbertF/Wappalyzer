@@ -8854,12 +8854,15 @@
     },
     "Signal": {
       "cats": [
-        42
+        32
       ],
       "script": [
         "//s\\.btstatic\\.com/tag\\.js",
         "//s\\.thebrighttag\\.com/iframe\\?"
       ],
+      "js": {
+        "signalData": ""
+      },
       "icon": "signal.png",
       "website": "https://www.signal.co/"
     },

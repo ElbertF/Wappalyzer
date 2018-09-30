@@ -281,7 +281,7 @@
       "cats": [
         42
       ],
-      "script": "\"//assets\\.adobedtm\\.com",
+      "script": "//assets.adobedtm.com/",
       "icon": "adobedmt.png",
       "website": "https://marketing.adobe.com/resources/help/en_US/dtm/c_overview.html"
     },
@@ -2179,7 +2179,10 @@
         "criteo_pubtag": "",
         "criteo_q": ""
       },
-      "script": "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
+      "script":[ 
+        "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
+        "//static.criteo.net/js/ld/ld.js"
+      ],
       "website": "http://criteo.com"
     },
     "Cross Pixel": {
@@ -2831,7 +2834,7 @@
       "cats": [
         42
       ],
-      "script": "^\"|//nexus\\.ensighten\\.com/.*/bootstrap\\.js",
+      "script": "//nexus.ensighten.com/",
       "icon": "ensighten.png",
       "website": "https://success.ensighten.com/hc/en-us"
     },
@@ -9633,8 +9636,7 @@
       },
       "script": [
         "^//tags\\.tiqcdn\\.com/",
-        "/tealium/utag\\.js$",
-        "/utag\\.js"
+        "/tealium/utag\\.js$"
         ],
       "website": "http://tealium.com"
     },

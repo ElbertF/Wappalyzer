@@ -2834,7 +2834,7 @@
       "cats": [
         42
       ],
-      "script": "//nexus.ensighten.com/",
+      "script": "//nexus\\.ensighten\\.com/",
       "icon": "ensighten.png",
       "website": "https://success.ensighten.com/hc/en-us"
     },

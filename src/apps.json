@@ -6731,7 +6731,8 @@
         22
       ],
       "headers": {
-        "Server": "nginx(?:/([\\d.]+))?\\;version:\\1"
+        "Server": "nginx(?:/([\\d.]+))?\\;version:\\1",
+				"X-Fastcgi-Cache": ""
       },
       "icon": "Nginx.svg",
       "website": "http://nginx.org/en"

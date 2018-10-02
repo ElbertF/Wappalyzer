@@ -1334,7 +1334,7 @@
     },
     "Brightspot": {
       "cats": [
-        1 
+        1
       ],
       "headers": { "X-Powered-By": "^Brightspot$" },
       "icon": "Brightspot.svg",
@@ -1856,6 +1856,17 @@
       },
       "icon": "Cloudera.png",
       "website": "http://www.cloudera.com"
+    },
+    "Coaster CMS": {
+      "cats": [
+        1
+      ],
+      "icon": "coaster-cms.png",
+      "implies": "Laravel",
+      "meta": {
+        "generator": "^Coaster CMS v([\\d.]+)$\\;version:\\1"
+      },
+      "website": "https://www.coastercms.org"
     },
     "CodeIgniter": {
       "cats": [

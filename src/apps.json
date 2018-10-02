@@ -1397,6 +1397,9 @@
         "<main id=\"bugzilla-body\"",
         "<span id=\"information\" class=\"header_addl_info\">version ([\\d.]+)<\\;version:\\1"
       ],
+      "cookies": {
+        "Bugzilla_login_request_cookie": ""
+      },
       "icon": "Bugzilla.png",
       "implies": "Perl",
       "js": {

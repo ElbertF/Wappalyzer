@@ -10906,6 +10906,7 @@
       ],
       "html": [
         "<link rel=[\"']stylesheet[\"'] [^>]+wp-(?:content|includes)",
+				"<div[^>]*class=[\"']amp-wp-",
         "<link[^>]+s\\d+\\.wp\\.com"
       ],
       "icon": "WordPress.svg",

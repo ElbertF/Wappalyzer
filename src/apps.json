@@ -6229,8 +6229,7 @@
         "Modernizr._version": "(.*)\\;version:\\1"
       },
       "script": [
-        "modernizr(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
-        "/([\\d.]+)/modernizr(?:\\.min)?\\.js\\;version:\\1"
+        "([\\d.]+)?/modernizr(?:.([\\d.]+))?.*\\.js\\;version:\\1?\\1:\\2"
       ],
       "website": "https://modernizr.com"
     },

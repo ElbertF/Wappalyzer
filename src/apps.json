@@ -3675,6 +3675,7 @@
         "_gat": ""
       },
       "icon": "Google Analytics.svg",
+			"html": "<amp-analytics [^>]*type=[\"']googleanalytics[\"']",
       "js": {
         "GoogleAnalyticsObject": "",
         "gaGlobal": ""

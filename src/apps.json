@@ -10593,14 +10593,6 @@
       "implies": "Haskell",
       "website": "http://www.stackage.org/package/warp"
     },
-    "Web Optimizer": {
-      "cats": [
-        10
-      ],
-      "html": "<title [^>]*lang=\"wo\">",
-      "icon": "Web Optimizer.png",
-      "website": "http://www.web-optimizer.us"
-    },
     "Web2py": {
       "cats": [
         18

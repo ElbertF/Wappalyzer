@@ -3646,10 +3646,10 @@
       ],
       "icon": "GoJS.png",
       "website": "https://gojs.net/",
-      "script": [
-        "go\\.js",
-        "go-debug\\.js"
-      ]
+      "js": {
+        "go.version": "(.*)\\;version:\\1",
+        "go.GraphObject": ""
+      }
     },
     "GoSquared": {
       "cats": [

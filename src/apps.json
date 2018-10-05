@@ -3896,16 +3896,6 @@
       "script": "/wp-content/plugins/gravityforms/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
       "website": "http://gravityforms.com"
     },
-    "Gravity Insights": {
-      "cats": [
-        10
-      ],
-      "icon": "Gravity Insights.png",
-      "js": {
-        "gravityInsightsParams": ""
-      },
-      "website": "http://insights.gravity.com"
-    },
     "Green Valley CMS": {
       "cats": [
         1

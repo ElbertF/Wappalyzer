@@ -6634,17 +6634,6 @@
       "icon": "Netlify.svg",
       "website": "https://www.netlify.com/"
     },
-    "Netmonitor": {
-      "cats": [
-        10
-      ],
-      "icon": "Netmonitor.png",
-      "js": {
-        "netmonitor": ""
-      },
-      "script": "netmonitor\\.fi/nmtracker\\.js",
-      "website": "http://netmonitor.fi/en"
-    },
     "Neto": {
       "cats": [
         6

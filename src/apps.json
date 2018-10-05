@@ -56,23 +56,6 @@
       "icon": "ebis.png",
       "website": "http://www.ebis.ne.jp"
     },
-    "AMPcms": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "AMP": ""
-      },
-      "headers": {
-        "X-AMP-Version": "([\\d.]+)\\;version:\\1"
-      },
-      "icon": "AMPcms.png",
-      "implies": "PHP",
-      "js": {
-        "amp_js_init": ""
-      },
-      "website": "http://www.ampcms.org"
-    },
     "AOLserver": {
       "cats": [
         22

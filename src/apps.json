@@ -3307,6 +3307,14 @@
       "script": "analytics\\.freespee\\.com/js/external/fs\\.(?:min\\.)?js",
       "website": "https://www.freespee.com"
     },
+    "Freshchat": {
+      "cats": [
+        52
+      ],
+      "icon": "freshchat.png",
+      "script": "wchat\\.freshchat\\.com/js/widget\\.js",
+      "website": "https://www.freshworks.com/live-chat-software/"
+    },
     "Freshmarketer": {
       "cats": [
         10

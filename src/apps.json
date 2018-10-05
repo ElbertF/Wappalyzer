@@ -1496,14 +1496,6 @@
       },
       "website": "http://www.cmsimple.org/en"
     },
-    "CO2Stats": {
-      "cats": [
-        10
-      ],
-      "html": "src=[^>]+co2stats\\.com/propres\\.php",
-      "icon": "CO2Stats.png",
-      "website": "http://co2stats.com"
-    },
     "CPG Dragonfly": {
       "cats": [
         1

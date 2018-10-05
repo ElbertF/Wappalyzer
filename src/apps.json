@@ -2086,7 +2086,7 @@
       "cats": [
         1
       ],
-      "html": "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.(?:ct?fassets\\.net|contentful\\.com)",
+      "html": "(?:https?:)?//(?:assets|downloads|images|videos)\\.(?:ctfassets\\.net|contentful\\.com)",
       "icon": "Contentful.svg",
       "website": "http://www.contentful.com"
     },

@@ -8745,17 +8745,6 @@
       "script": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
       "website": "http://shinystat.com"
     },
-    "Shopalize": {
-      "cats": [
-        5,
-        10
-      ],
-      "icon": "Shopalize.png",
-      "js": {
-        "Shopalize": ""
-      },
-      "website": "http://shopalize.com"
-    },
     "Shopatron": {
       "cats": [
         6

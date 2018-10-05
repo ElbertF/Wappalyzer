@@ -1348,17 +1348,6 @@
       },
       "website": "http://bubble.is"
     },
-    "BugSense": {
-      "cats": [
-        10
-      ],
-      "icon": "BugSense.png",
-      "js": {
-        "Bugsense": ""
-      },
-      "script": "bugsense\\.js",
-      "website": "http://bugsense.com"
-    },
     "BugSnag": {
       "cats": [
         10

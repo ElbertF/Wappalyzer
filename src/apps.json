@@ -107,17 +107,6 @@
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.ampproject.org"
     },
-    "Accessible Portal": {
-      "cats": [
-        1
-      ],
-      "icon": "Accessible Portal.png",
-      "implies": "PHP",
-      "meta": {
-        "generator": "Accessible Portal"
-      },
-      "website": "http://www.accessibleportal.com"
-    },
     "Acquia Cloud": {
       "cats": [
         22

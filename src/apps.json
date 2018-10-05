@@ -3640,6 +3640,17 @@
       "icon": "GoAhead.png",
       "website": "http://embedthis.com/products/goahead/index.html"
     },
+    "GoJS": {
+      "cats": [
+        25
+      ],
+      "icon": "GoJS.png",
+      "website": "https://gojs.net/",
+      "script": [
+        "go\\.js",
+        "go-debug\\.js"
+      ]
+    },
     "GoSquared": {
       "cats": [
         10,

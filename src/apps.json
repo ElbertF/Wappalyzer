@@ -9648,6 +9648,14 @@
       "script": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
       "website": "http://twiki.org"
     },
+    "tailwindcss": {
+      "cats": [
+        "18"
+      ],
+      "html": "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css",
+      "icon": "tailwindcss.svg",
+      "website": "https://tailwindcss.com/"
+    },
     "TYPO3 CMS": {
       "cats": [
         1

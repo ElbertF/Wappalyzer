@@ -10963,6 +10963,9 @@
         "PHP",
         "MySQL"
       ],
+      "headers": {
+        "link": "rel=\"https://api\\.w\\.org/\"$"
+      },
       "js": {
         "wp_username": ""
       },

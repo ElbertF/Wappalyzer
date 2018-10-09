@@ -6656,8 +6656,8 @@
         31
       ],
       "headers": {
-        "x-nf-request-id": "",
-        "Server": "Netlify"
+        "X-NF-Request-ID": "",
+        "Server": "^Netlify"
       },
       "icon": "Netlify.svg",
       "website": "https://www.netlify.com/"

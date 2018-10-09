@@ -10964,7 +10964,7 @@
         "MySQL"
       ],
       "headers": {
-        "link": "rel=\"https://api\\.w\\.org/\"$"
+        "link": "rel=\"https://api\\.w\\.org/\""
       },
       "js": {
         "wp_username": ""

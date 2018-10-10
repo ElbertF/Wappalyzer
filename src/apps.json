@@ -2536,6 +2536,15 @@
       },
       "website": "https://docusaurus.io/"
     },
+    "Docker": {
+      "cats": [
+        28
+      ],
+      "icon": "docker.png",
+      "implies": "Linux",
+      "html": "<!-- This comment is expected by the docker HEALTHCHECK  -->",
+      "website": "https://www.docker.com/"
+    },
     "Dojo": {
       "cats": [
         59

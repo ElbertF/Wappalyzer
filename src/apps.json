@@ -3056,6 +3056,7 @@
       "headers": {
         "Fastly-Debug-Digest": "",
         "Vary": "Fastly-SSL",
+        "x-via-fastly:": "",
         "X-Fastly-Request-ID": ""
       },
       "icon": "Fastly.svg",

@@ -1845,6 +1845,9 @@
         "cf-ray": ""
       },
       "icon": "CloudFlare.svg",
+      "cookies": {
+        "__cfduid": ""
+      },
       "js": {
         "CloudFlare": ""
       },

@@ -3224,7 +3224,7 @@
         17
       ],
       "html": [
-        "<link[^>]* href=[^>]+font-awesome(?:\\.min)?\\.css",
+        "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
         "<script[^>]* src=[^>]+fontawesome(?:\\.js)?"
       ],
       "icon": "Font Awesome.png",

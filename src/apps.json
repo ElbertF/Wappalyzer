@@ -555,6 +555,16 @@
       "icon": "aws-ec2.svg",
       "website": "http://aws.amazon.com/ec2/"
     },
+    "Amazon ELB": {
+      "cats": [
+        31
+      ],
+      "cookies": {
+        "AWSELB": ""
+      },
+      "icon": "aws-elb",
+      "website": "https://aws.amazon.com/elasticloadbalancing/"
+    },
     "Amazon S3": {
       "cats": [
         19

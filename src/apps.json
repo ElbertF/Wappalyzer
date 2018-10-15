@@ -2727,6 +2727,26 @@
       ],
       "website": "http://www.ec-cube.net"
     },
+    "Elementor": {
+      "cats": [ 
+        1,
+        11,
+        51
+      ],
+      "html":  [
+        "<div class=(?:\"|')[^>]*elementor",
+        "<section class=(?:\"|')[^>]*elementor",
+        "<link [^>]*href=(?:\"|')[^>]*elementor/assets",
+        "<link [^>]*href=(?:\"|')[^>]*uploads/elementor/css"
+      ],
+      "js": { 
+        "elementorFrontend.getElements": ""
+      },
+      "script": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
+      "icon": "Elementor.png",
+      "implies": "WordPress",
+      "website": "https://elementor.com"
+    },
     "ELOG": {
       "cats": [
         19

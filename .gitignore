@@ -4,6 +4,8 @@
 /npm-debug.log
 /npm-debug.log
 
+package-lock.json
+
 !.gitkeep
 
 # Junk files

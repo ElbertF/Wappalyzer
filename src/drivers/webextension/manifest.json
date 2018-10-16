@@ -4,7 +4,7 @@
 	"author": "Elbert Alias",
 	"homepage_url": "https://www.wappalyzer.com",
 	"description": "Identify web technologies",
-	"version": "5.1.6",
+	"version": "5.5.4",
 	"default_locale": "en",
 	"manifest_version": 2,
 	"icons": {
@@ -46,8 +46,12 @@
         "http://*/*",
 				"https://*/*"
 			],
+			"exclude_matches": [
+				"https://*.modirum.com/*",
+				"https://www.alphaecommerce.gr/*"
+			],
 			"js": [
-				"js/iframe.js"
+				"js/lib/iframe.js"
 			],
 			"run_at": "document_start",
 			"all_frames": true
@@ -62,6 +66,7 @@
 		"open_in_tab": false
 	},
 	"permissions": [
+    "cookies",
 		"storage",
 		"tabs",
 		"webRequest",
@@ -71,5 +76,3 @@
 	],
 	"content_security_policy": "script-src 'self'; object-src 'self'"
 }
-
-

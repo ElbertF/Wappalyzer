@@ -1,16 +1,61 @@
-(function() {
-	try {
-		var i, environmentVars = '', e = document.createEvent('Events');
+(() => {
+  try {
+    const detectJs = (chain) => {
+      const properties = chain.split('.');
 
-		e.initEvent('wappalyzerEvent', true, false);
+      let value = properties.length ? window : null;
 
-		for ( i in window ) {
-			environmentVars += i + ' ';
-		}
+      for (let i = 0; i < properties.length; i++) {
+        const property = properties[i];
 
-		document.getElementById('wappalyzerData').appendChild(document.createComment(environmentVars));
-		document.getElementById('wappalyzerData').dispatchEvent(e);
-	} catch(e) {
-		// Fail quietly
- 	}
-}());
+        if (value && value.hasOwnProperty(property)) {
+          value = value[property];
+        } else {
+          value = null;
+
+          break;
+        }
+      }
+
+      return typeof value === 'string' || typeof value === 'number' ? value : !!value;
+    };
+
+    const onMessage = (event) => {
+      if (event.data.id !== 'patterns') {
+        return;
+      }
+
+      removeEventListener('message', onMessage);
+
+      const patterns = event.data.patterns || {};
+
+      const js = {};
+
+      for (const appName in patterns) {
+        if (patterns.hasOwnProperty(appName)) {
+          js[appName] = {};
+
+          for (const chain in patterns[appName]) {
+            if (patterns[appName].hasOwnProperty(chain)) {
+              js[appName][chain] = {};
+
+              for (const index in patterns[appName][chain]) {
+                const value = detectJs(chain);
+
+                if (value && patterns[appName][chain].hasOwnProperty(index)) {
+                  js[appName][chain][index] = value;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      postMessage({ id: 'js', js }, '*');
+    };
+
+    addEventListener('message', onMessage);
+  } catch (e) {
+    // Fail quietly
+  }
+})();

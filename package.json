@@ -1,8 +1,19 @@
 {
   "dependencies": {
-    "file-type": "3.8.*",
-    "is-svg": "2.0.*",
-    "read-chunk": "2.0.*"
+    "file-type": "7.4.*",
+    "is-svg": "2.1.*",
+    "read-chunk": "2.1.*"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec src",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   }
 }
-

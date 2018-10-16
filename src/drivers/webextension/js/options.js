@@ -1,25 +1,27 @@
 /** global: browser */
-/** global: wappalyzer */
+/** global: Wappalyzer */
+
+const wappalyzer = new Wappalyzer();
 
 function getOption(name, defaultValue, callback) {
   browser.storage.local.get(name)
-    .then(item => {
+    .then((item) => {
       callback(item.hasOwnProperty(name) ? item[name] : defaultValue);
     });
 }
 
 function setOption(name, value) {
-  var option = {};
-
-  option[name] = value;
-
-  browser.storage.local.set(option);
+  (chrome || browser).runtime.sendMessage({
+    id: 'set_option',
+    key: name,
+    value,
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  var nodes = document.querySelectorAll('[data-i18n]');
+  const nodes = document.querySelectorAll('[data-i18n]');
 
-  Array.prototype.forEach.call(nodes, node => {
+  Array.prototype.forEach.call(nodes, (node) => {
     node.childNodes[0].nodeValue = browser.i18n.getMessage(node.dataset.i18n);
   });
 
@@ -35,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     open(wappalyzer.config.websiteURL);
   });
 
-  getOption('upgradeMessage', true, value => {
+  getOption('upgradeMessage', true, (value) => {
     const el = document.querySelector('#option-upgrade-message');
 
     el.checked = value;
@@ -45,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  getOption('dynamicIcon', true, value => {
+  getOption('dynamicIcon', true, (value) => {
     const el = document.querySelector('#option-dynamic-icon');
 
     el.checked = value;
@@ -55,7 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  getOption('tracking', true, value => {
+  getOption('tracking', true, (value) => {
     const el = document.querySelector('#option-tracking');
 
     el.checked = value;

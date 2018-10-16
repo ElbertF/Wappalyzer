@@ -1,0 +1,11 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "webextension-polyfill": {
+      "version": "0.2.1",
+      "resolved": "https://registry.npmjs.org/webextension-polyfill/-/webextension-polyfill-0.2.1.tgz",
+      "integrity": "sha1-zfyRJgMwOfFxNVMVfTW+/x1Nb0o="
+    }
+  }
+}

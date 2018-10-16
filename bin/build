@@ -22,7 +22,7 @@ find . -name ".DS_Store" -exec rm {} \;
 
 echo "Prettifying apps.json..."
 
-jsonlint-cli -ist $'\t' src/apps.json
+sed -e 's/\\\\/{{ESCAPE}}/g' src/apps.json | jsonlint-cli -ps | sed -e 's/{{ESCAPE}}/\\\\/g' > /tmp/apps.json && cat /tmp/apps.json > src/apps.json
 
 echo "Converting SVG icons to PNG..."
 
@@ -54,59 +54,17 @@ zip -qr ../../../build/wappalyzer_webextension.zip . \
   -x images/icon_50.png \
   -x images/icon_150.png \
   -x js/ms_\*.js \
-  -x manifest.edge.json \
   -x \*.log \
   -x \*.lock \
   -x \*.gitignore \
   -x \*.gitkeep \
   -x \*.js.map \
   -x \*.min.js \
+  -x \*.spec.js \
   -x \*.yarn-integrity \
   -x \*package.json \
   -x \*LICENSE \
   -x \*README.md
-
-popd > /dev/null
-
-# Edge
-echo "Building Edge application..."
-
-pushd build > /dev/null
-
-webextension_dir="../$webextension_dir"
-manifest_dir="Wappalyzer/edgeextension/manifest"
-
-mv $webextension_dir/manifest.json $webextension_dir/manifest.webextension.json
-mv $webextension_dir/manifest.edge.json $webextension_dir/manifest.json
-
-sed -i "s/\"version\": \"[^\"]*\"/\"version\": \"$version\"/" $webextension_dir/manifest.json
-
-manifoldjs -l debug -p edgeextension -f edgeextension -m $webextension_dir/manifest.json
-
-# Replace symlinks with actual files
-rm $manifest_dir/Extension/images/icons
-
-cp ../src/apps.json $manifest_dir/Extension
-cp ../src/wappalyzer.js $manifest_dir/Extension/js
-cp -r ../src/icons $manifest_dir/Extension/images
-
-mv $webextension_dir/manifest.json $webextension_dir/manifest.edge.json
-mv $webextension_dir/manifest.webextension.json $webextension_dir/manifest.json
-
-sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-NAME-HERE/1591Wappalyzer.Wappalyzer/' $manifest_dir/appxmanifest.xml
-sed -i 's/INSERT-YOUR-PACKAGE-IDENTITY-PUBLISHER-HERE/D240C22F-A6C1-45DF-BF7B-4C835064DF51/' $manifest_dir/appxmanifest.xml
-sed -i 's/INSERT-YOUR-PACKAGE-PROPERTIES-PUBLISHERDISPLAYNAME-HERE/Wappalyzer/' $manifest_dir/appxmanifest.xml
-sed -i 's/Version="0.\([^"]\+\)/Version="\1.0/' $manifest_dir/appxmanifest.xml
-
-cp $webextension_dir/images/icon_44.png  $manifest_dir/Assets/Square44x44Logo.png
-cp $webextension_dir/images/icon_150.png $manifest_dir/Assets/Square150x150Logo.png
-cp $webextension_dir/images/icon_50.png  $manifest_dir/Assets/StoreLogo.png
-
-manifoldjs -l debug -p edgeextension package $manifest_dir
-
-mv Wappalyzer/edgeextension/package/edgeExtension.appx wappalyzer_edge.appx
-
-rm -rf Wappalyzer
 
 popd > /dev/null
 

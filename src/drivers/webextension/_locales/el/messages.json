@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Ανώνυμη αποστολή αναφορών για εντοπισμένες εφαρμογές στο wappalyzer.com για έρευνα" },
 	"nothingToDo":              { "message": "Καμία ενέργεια." },
 	"noAppsDetected":           { "message": "Δεν ανιχνεύθηκαν εφαρμογές." },
+  "categoryPin":              { "message": "Always show icon" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Διαδικτυακό Φόρουμ" },
 	"categoryName3":            { "message": "Διαχειριστής Βάσης Δεδομένων" },
@@ -59,5 +60,10 @@
 	"categoryName51":           { "message": "Σύστημα Κατασκευής Σελίδων Υποδοχής" },
 	"categoryName52":           { "message": "Live Chat" },
 	"categoryName53":           { "message": "CRM" },
-  "categoryName54":           { "message": "SEO" }
+  "categoryName54":           { "message": "SEO" },
+	"categoryName55":           { "message": "Accounting" },
+	"categoryName56":           { "message": "Cryptominer" },
+	"categoryName57":           { "message": "Static Site Generator" },
+	"categoryName58":           { "message": "User Onboarding" },
+	"categoryName59":           { "message": "JavaScript Libraries" }
 }

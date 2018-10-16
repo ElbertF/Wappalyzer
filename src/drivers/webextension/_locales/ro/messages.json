@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Trimite rapoarte anonime despre aplicațiile detectate către wappalyzer.com pentru cercetare" },
 	"nothingToDo":              { "message": "Nimic de făcut pe pagina curentă." },
 	"noAppsDetected":           { "message": "Nici o aplicație detectată." },
+  "categoryPin":              { "message": "Afișează icon tot timpul" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Forum de discuții" },
 	"categoryName3":            { "message": "Manager baze de date" },
@@ -60,5 +61,9 @@
 	"categoryName52":           { "message": "Chat Live" },
 	"categoryName53":           { "message": "CRM" },
   "categoryName54":           { "message": "SEO" },
-  "categoryName55":           { "message": "Contabilitate" }
+  "categoryName55":           { "message": "Accounting" },
+	"categoryName56":           { "message": "Cryptominer" },
+	"categoryName57":           { "message": "Static Site Generator" },
+	"categoryName58":           { "message": "User Onboarding" },
+	"categoryName59":           { "message": "JavaScript Libraries" }
 }

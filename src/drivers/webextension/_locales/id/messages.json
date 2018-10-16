@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Secara anonim kirimkan laporan tentang aplikasi yang terdeteksi ke wappalyzer.com untuk penelitian" },
 	"nothingToDo":              { "message": "Tak ada yang dilakukan disini." },
 	"noAppsDetected":           { "message": "Tidak ada aplikasi yang terdeteksi." },
+  "categoryPin":              { "message": "Always show icon" },
 	"categoryName1":            { "message": "Sistem Pengelola Konten" },
 	"categoryName2":            { "message": "Papan Pesan" },
 	"categoryName3":            { "message": "Pengelola Basis Data" },
@@ -63,5 +64,10 @@
 	"categoryName51":           { "message": "Pembuat Laman Landas" },
 	"categoryName52":           { "message": "Chat Langsung" },
 	"categoryName53":           { "message": "CRM" },
-  "categoryName54":           { "message": "SEO" }
+  "categoryName54":           { "message": "SEO" },
+  "categoryName55":           { "message": "Accounting" },
+	"categoryName56":           { "message": "Cryptominer" },
+	"categoryName57":           { "message": "Static Site Generator" },
+	"categoryName58":           { "message": "User Onboarding" },
+	"categoryName59":           { "message": "JavaScript Libraries" }
 }

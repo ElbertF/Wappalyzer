@@ -2,37 +2,43 @@
  * WebExtension driver
  */
 
+/* eslint-env browser */
+/* global browser, chrome, fetch, Wappalyzer */
+
 /** global: browser */
+/** global: chrome */
+/** global: fetch */
 /** global: Wappalyzer */
 
 const wappalyzer = new Wappalyzer();
 
-var tabCache = {};
-var headersCache = {};
-var categoryOrder = [];
+const tabCache = {};
+let categoryOrder = [];
+const options = {};
+const robotsTxtQueue = {};
 
-browser.tabs.onRemoved.addListener(tabId => {
+browser.tabs.onRemoved.addListener((tabId) => {
   tabCache[tabId] = null;
 });
 
 /**
  * Get a value from localStorage
  */
-function getOption(name, defaultValue) {
+function getOption(name, defaultValue = null) {
   return new Promise((resolve, reject) => {
-    const callback = item => {
-      resolve(item.hasOwnProperty(name) ? item[name] : defaultValue);
+    const callback = (item) => {
+      options[name] = item[name] ? item[name] : defaultValue;
+
+      resolve(options[name]);
     };
 
-    try {
-      // Chrome, Firefox
-      browser.storage.local.get(name)
-        .then(callback)
-        .catch(error => wappalyzer.log(error, 'driver', 'error'));
-    } catch ( e ) {
-      // Edge
-      browser.storage.local.get(name, callback);
-    }
+    browser.storage.local.get(name)
+      .then(callback)
+      .catch((error) => {
+        wappalyzer.log(error, 'driver', 'error');
+
+        reject();
+      });
   });
 }
 
@@ -40,11 +46,13 @@ function getOption(name, defaultValue) {
  * Set a value in localStorage
  */
 function setOption(name, value) {
-  var option = {};
+  const option = {};
 
   option[name] = value;
 
   browser.storage.local.set(option);
+
+  options[name] = value;
 }
 
 /**
@@ -53,7 +61,7 @@ function setOption(name, value) {
 function openTab(args) {
   browser.tabs.create({
     url: args.url,
-    active: args.background === undefined || !args.background
+    active: args.background === undefined || !args.background,
   });
 }
 
@@ -63,46 +71,42 @@ function openTab(args) {
 function post(url, body) {
   fetch(url, {
     method: 'POST',
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   })
-    .then(response => {
-      wappalyzer.log('POST ' + url + ': ' + response.status, 'driver');
-    })
-    .catch(error => {
-      wappalyzer.log('POST ' + url + ': ' + error, 'driver', 'error');
-    });
+    .then(response => wappalyzer.log(`POST ${url}: ${response.status}`, 'driver'))
+    .catch(error => wappalyzer.log(`POST ${url}: ${error}`, 'driver', 'error'));
 }
 
 fetch('../apps.json')
-  .then(response => {
-    return response.json();
-  })
-  .then(json => {
+  .then(response => response.json())
+  .then((json) => {
     wappalyzer.apps = json.apps;
     wappalyzer.categories = json.categories;
 
-    categoryOrder = Object.keys(wappalyzer.categories).sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
+    wappalyzer.parseJsPatterns();
+
+    categoryOrder = Object.keys(wappalyzer.categories)
+      .map(categoryId => parseInt(categoryId, 10))
+      .sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
   })
-  .catch(error => {
-    wappalyzer.log('GET apps.json: ' + error, 'driver', 'error');
-  });
+  .catch(error => wappalyzer.log(`GET apps.json: ${error}`, 'driver', 'error'));
 
 // Version check
-var version = browser.runtime.getManifest().version;
+const { version } = browser.runtime.getManifest();
 
 getOption('version')
-  .then(previousVersion => {
-    if ( previousVersion === null ) {
+  .then((previousVersion) => {
+    if (previousVersion === null) {
       openTab({
-        url: wappalyzer.config.websiteURL + 'installed'
+        url: `${wappalyzer.config.websiteURL}installed`,
       });
-    } else if ( version !== previousVersion ) {
+    } else if (version !== previousVersion) {
       getOption('upgradeMessage', true)
-        .then(upgradeMessage => {
-          if ( upgradeMessage ) {
+        .then((upgradeMessage) => {
+          if (upgradeMessage) {
             openTab({
-              url: wappalyzer.config.websiteURL + 'upgraded?v' + version,
-              background: true
+              url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
+              background: true,
             });
           }
         });
@@ -111,79 +115,80 @@ getOption('version')
     setOption('version', version);
   });
 
-// Run content script
-var callback = tabs => {
-  tabs.forEach(tab => {
-    if ( tab.url.match(/^https?:\/\//) ) {
-      browser.tabs.executeScript(tab.id, {
-        file: 'js/content.js'
-      });
-    }
-  })
-};
+getOption('dynamicIcon', true);
+getOption('pinnedCategory');
 
-try {
-  browser.tabs.query({})
-    .then(callback)
-    .catch(error => wappalyzer.log(error, 'driver', 'error'));
-} catch ( e ) {
-  browser.tabs.query({}, callback);
-}
+getOption('hostnameCache', {})
+  .then((hostnameCache) => {
+    wappalyzer.hostnameCache = hostnameCache;
+
+    return hostnameCache;
+  });
+
+// Run content script on all tabs
+browser.tabs.query({ url: ['http://*/*', 'https://*/*'] })
+  .then((tabs) => {
+    tabs.forEach((tab) => {
+      browser.tabs.executeScript(tab.id, {
+        file: '../js/content.js',
+      });
+    });
+  })
+  .catch(error => wappalyzer.log(error, 'driver', 'error'));
 
 // Capture response headers
-browser.webRequest.onCompleted.addListener(request => {
-  var responseHeaders = {};
+browser.webRequest.onCompleted.addListener((request) => {
+  const headers = {};
 
-  if ( request.responseHeaders ) {
-    var url = wappalyzer.parseUrl(request.url);
+  if (request.responseHeaders) {
+    const url = wappalyzer.parseUrl(request.url);
 
-    request.responseHeaders.forEach(function(header) {
-      if ( !responseHeaders[header.name.toLowerCase()] ) {
-        responseHeaders[header.name.toLowerCase()] = []
-      }
-      responseHeaders[header.name.toLowerCase()].push(header.value || '' + header.binaryValue);
-    });
+    browser.tabs.query({ url: [url.href] })
+      .then((tabs) => {
+        const tab = tabs[0] || null;
 
-    if ( headersCache.length > 50 ) {
-      headersCache = {};
-    }
+        if (tab) {
+          request.responseHeaders.forEach((header) => {
+            const name = header.name.toLowerCase();
 
-    if ( /text\/html/.test(responseHeaders['content-type'][0]) ) {
-      if ( headersCache[url.canonical] === undefined ) {
-        headersCache[url.canonical] = {};
-      }
+            headers[name] = headers[name] || [];
 
-      Object.keys(responseHeaders).forEach(header => {
-        headersCache[url.canonical][header] = responseHeaders[header].slice();
-      });
-    }
+            headers[name].push((header.value || header.binaryValue || '').toString());
+          });
+
+          if (headers['content-type'] && /\/x?html/.test(headers['content-type'][0])) {
+            wappalyzer.analyze(url, { headers }, { tab });
+          }
+        }
+      })
+      .catch(error => wappalyzer.log(error, 'driver', 'error'));
   }
-}, { urls: [ 'http://*/*', 'https://*/*' ], types: [ 'main_frame' ] }, [ 'responseHeaders' ]);
+}, { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] }, ['responseHeaders']);
 
 // Listen for messages
-( chrome || browser ).runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if ( typeof message.id != 'undefined' ) {
-    if ( message.id !== 'log' ) {
-      wappalyzer.log('Message received from ' + message.source + ': ' + message.id, 'driver');
+(chrome || browser).runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (typeof message.id !== 'undefined') {
+    if (message.id !== 'log') {
+      wappalyzer.log(`Message${message.source ? ` from ${message.source}` : ''}: ${message.id}`, 'driver');
     }
 
-    var response;
+    const url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
+    let response;
 
-    switch ( message.id ) {
+    switch (message.id) {
       case 'log':
-        wappalyzer.log(message.message, message.source);
+        wappalyzer.log(message.subject, message.source);
+
+        break;
+      case 'init':
+        browser.cookies.getAll({ domain: `.${url.hostname}` })
+          .then(cookies => wappalyzer.analyze(url, { cookies }, { tab: sender.tab }));
 
         break;
       case 'analyze':
-        var url = wappalyzer.parseUrl(sender.tab.url);
+        wappalyzer.analyze(url, message.subject, { tab: sender.tab });
 
-        if ( headersCache[url.canonical] !== undefined ) {
-          message.subject.headers = headersCache[url.canonical];
-        }
-
-        wappalyzer.analyze(url.hostname, url.canonical, message.subject, {
-          tab: sender.tab
-        });
+        setOption('hostnameCache', wappalyzer.hostnameCache);
 
         break;
       case 'ad_log':
@@ -192,9 +197,20 @@ browser.webRequest.onCompleted.addListener(request => {
         break;
       case 'get_apps':
         response = {
-          tabCache:   tabCache[message.tab.id],
-          apps:       wappalyzer.apps,
-          categories: wappalyzer.categories
+          tabCache: tabCache[message.tab.id],
+          apps: wappalyzer.apps,
+          categories: wappalyzer.categories,
+          pinnedCategory: options.pinnedCategory,
+        };
+
+        break;
+      case 'set_option':
+        setOption(message.key, message.value);
+
+        break;
+      case 'get_js_patterns':
+        response = {
+          patterns: wappalyzer.jsPatterns,
         };
 
         break;
@@ -203,6 +219,8 @@ browser.webRequest.onCompleted.addListener(request => {
 
     sendResponse(response);
   }
+
+  return true;
 });
 
 wappalyzer.driver.document = document;
@@ -211,59 +229,64 @@ wappalyzer.driver.document = document;
  * Log messages to console
  */
 wappalyzer.driver.log = (message, source, type) => {
-  console.log('[wappalyzer ' + type + ']', '[' + source + ']', message);
+  console.log(`[wappalyzer ${type}]`, `[${source}]`, message);
 };
 
 /**
  * Display apps
  */
-wappalyzer.driver.displayApps = (detected, context) => {
-  var tab = context.tab;
+wappalyzer.driver.displayApps = (detected, meta, context) => {
+  const { tab } = context;
 
-  tabCache[tab.id] = tabCache[tab.id] || { detected: [] };
+  if (tab === undefined) {
+    return;
+  }
+
+  tabCache[tab.id] = tabCache[tab.id] || {
+    detected: [],
+  };
 
   tabCache[tab.id].detected = detected;
 
-  if ( Object.keys(detected).length ) {
-    getOption('dynamicIcon', true)
-      .then(dynamicIcon => {
-        var appName, found = false;
+  let found = false;
 
-        // Find the main application to display
-        categoryOrder.forEach(match => {
-          Object.keys(detected).forEach(appName => {
-            var app = detected[appName];
+  // Find the main application to display
+  [options.pinnedCategory].concat(categoryOrder).forEach((match) => {
+    Object.keys(detected).forEach((appName) => {
+      const app = detected[appName];
 
-            app.props.cats.forEach(category => {
-              if ( category === match && !found ) {
-                var icon = app.props.icon || 'default.svg';
+      app.props.cats.forEach((category) => {
+        if (category === match && !found) {
+          let icon = app.props.icon || 'default.svg';
 
-                if ( !dynamicIcon ) {
-                  icon = 'default.svg';
-                }
+          if (!options.dynamicIcon) {
+            icon = 'default.svg';
+          }
 
-                if ( /\.svg$/i.test(icon) ) {
-                  icon = 'converted/' + icon.replace(/\.svg$/, '.png');
-                }
+          if (/\.svg$/i.test(icon)) {
+            icon = `converted/${icon.replace(/\.svg$/, '.png')}`;
+          }
 
-                browser.pageAction.setIcon({
-                  tabId: tab.id,
-                  path: '../images/icons/' + icon
-                });
-
-                found = true;
-              }
+          try {
+            browser.pageAction.setIcon({
+              tabId: tab.id,
+              path: `../images/icons/${icon}`,
             });
-          });
-        });
+          } catch (e) {
+            // Firefox for Android does not support setIcon see https://bugzilla.mozilla.org/show_bug.cgi?id=1331746
+          }
 
-        if ( typeof chrome !== 'undefined' ) {
-          // Browser polyfill doesn't seem to work here
-          chrome.pageAction.show(tab.id);
-        } else {
-          browser.pageAction.show(tab.id);
+          found = true;
         }
       });
+    });
+  });
+
+  if (typeof chrome !== 'undefined') {
+    // Browser polyfill doesn't seem to work here
+    chrome.pageAction.show(tab.id);
+  } else {
+    browser.pageAction.show(tab.id);
   }
 };
 
@@ -271,55 +294,65 @@ wappalyzer.driver.displayApps = (detected, context) => {
  * Fetch and cache robots.txt for host
  */
 wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
-  return new Promise((resolve, reject) => {
-    getOption('robotsTxtCache')
-      .then(robotsTxtCache => {
-        robotsTxtCache = robotsTxtCache || {};
+  if (robotsTxtQueue[host]) {
+    return robotsTxtQueue[host];
+  }
 
-        if ( host in robotsTxtCache ) {
-          resolve(robotsTxtCache[host]);
-        } else {
-          var url = 'http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt';
+  robotsTxtQueue[host] = new Promise((resolve) => {
+    getOption('tracking', true)
+      .then((tracking) => {
+        if (!tracking) {
+          resolve([]);
 
-          fetch('http' + ( secure ? 's' : '' ) + '://' + host + '/robots.txt')
-            .then(response => {
-              if ( !response.ok ) {
-                if ( response.status === 404 ) {
-                  return '';
-                } else {
-                  throw 'GET ' + response.url + ' was not ok';
-                }
-              }
+          return;
+        }
 
-              return response.text();
-            })
-            .then(robotsTxt => {
-              robotsTxtCache[host] = wappalyzer.parseRobotsTxt(robotsTxt);
+        getOption('robotsTxtCache')
+          .then((robotsTxtCache) => {
+            robotsTxtCache = robotsTxtCache || {};
 
-              setOption('robotsTxtCache', robotsTxtCache);
-
+            if (host in robotsTxtCache) {
               resolve(robotsTxtCache[host]);
 
-              var hostname = host.replace(/:[0-9]+$/, '')
-            })
-            .catch(reject);
-        }
+              return;
+            }
+
+            const timeout = setTimeout(() => resolve([]), 3000);
+
+            fetch(`http${secure ? 's' : ''}://${host}/robots.txt`, { redirect: 'follow' })
+              .then((response) => {
+                clearTimeout(timeout);
+
+                return response.ok ? response.text() : '';
+              })
+              .then((robotsTxt) => {
+                robotsTxtCache[host] = Wappalyzer.parseRobotsTxt(robotsTxt);
+
+                setOption('robotsTxtCache', robotsTxtCache);
+
+                resolve(robotsTxtCache[host]);
+              })
+              .catch(() => resolve([]));
+          });
       });
-  });
+  })
+    .finally(() => delete robotsTxtQueue[host]);
+
+  return robotsTxtQueue[host];
 };
 
 /**
  * Anonymously track detected applications for research purposes
  */
-wappalyzer.driver.ping = (hostnameCache, adCache) => {
+wappalyzer.driver.ping = (hostnameCache = {}, adCache = []) => {
   getOption('tracking', true)
-    .then(tracking => {
-      if ( tracking ) {
-        if ( Object.keys(hostnameCache).length ) {
-          post('http://ping.wappalyzer.com/v3/', hostnameCache);
+    .then((tracking) => {
+      if (tracking) {
+        if (Object.keys(hostnameCache).length) {
+          post('https://api.wappalyzer.com/ping/v1/', hostnameCache);
         }
 
-        if ( adCache.length ) {
+        if (adCache.length) {
           post('https://ad.wappalyzer.com/log/wp/', adCache);
         }
 

@@ -15,3 +15,7 @@ echo "Validating regular expressions..."
 echo "Validating icons..."
 
 ./bin/validate-icons
+
+echo "Running tests..."
+
+npm run test

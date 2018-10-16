@@ -6,19 +6,123 @@
  * License: GPLv3 http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
-'use strict';
-
 const validation = {
   hostname: /(www.)?((.+?)\.(([a-z]{2,3}\.)?[a-z]{2,6}))$/,
-  hostnameBlacklist: /((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/
+  hostnameBlacklist: /((local|dev(elopment)?|stag(e|ing)?|test(ing)?|demo(shop)?|admin|google|cache)\.|\/admin|\.local)/,
 };
+
+/**
+ * Enclose string in array
+ */
+function asArray(value) {
+  return value instanceof Array ? value : [value];
+}
+
+/**
+ *
+ */
+function asyncForEach(iterable, iterator) {
+  return Promise.all((iterable || [])
+    .map(item => new Promise(resolve => setTimeout(() => resolve(iterator(item)), 1))));
+}
+
+/**
+ * Mark application as detected, set confidence and version
+ */
+function addDetected(app, pattern, type, value, key) {
+  app.detected = true;
+
+  // Set confidence level
+  app.confidence[`${type} ${key ? `${key} ` : ''}${pattern.regex}`] = pattern.confidence === undefined ? 100 : parseInt(pattern.confidence, 10);
+
+  // Detect version number
+  if (pattern.version) {
+    const versions = [];
+    const matches = pattern.regex.exec(value);
+
+    let { version } = pattern;
+
+    if (matches) {
+      matches.forEach((match, i) => {
+        // Parse ternary operator
+        const ternary = new RegExp(`\\\\${i}\\?([^:]+):(.*)$`).exec(version);
+
+        if (ternary && ternary.length === 3) {
+          version = version.replace(ternary[0], match ? ternary[1] : ternary[2]);
+        }
+
+        // Replace back references
+        version = version.trim().replace(new RegExp(`\\\\${i}`, 'g'), match || '');
+      });
+
+      if (version && versions.indexOf(version) === -1) {
+        versions.push(version);
+      }
+
+      if (versions.length) {
+        // Use the longest detected version number
+        app.version = versions.reduce((a, b) => (a.length > b.length ? a : b));
+      }
+    }
+  }
+}
+
+function resolveExcludes(apps, detected) {
+  const excludes = [];
+  const detectedApps = Object.assign({}, apps, detected);
+
+  // Exclude app in detected apps only
+  Object.keys(detectedApps).forEach((appName) => {
+    const app = detectedApps[appName];
+
+    if (app.props.excludes) {
+      asArray(app.props.excludes).forEach((excluded) => {
+        excludes.push(excluded);
+      });
+    }
+  });
+
+  // Remove excluded applications
+  Object.keys(apps).forEach((appName) => {
+    if (excludes.indexOf(appName) > -1) {
+      delete apps[appName];
+    }
+  });
+}
+
+class Application {
+  constructor(name, props, detected) {
+    this.confidence = {};
+    this.confidenceTotal = 0;
+    this.detected = Boolean(detected);
+    this.excludes = [];
+    this.name = name;
+    this.props = props;
+    this.version = '';
+  }
+
+  /**
+   * Calculate confidence total
+   */
+  getConfidence() {
+    let total = 0;
+
+    Object.keys(this.confidence).forEach((id) => {
+      total += this.confidence[id];
+    });
+
+    this.confidenceTotal = Math.min(total, 100);
+
+    return this.confidenceTotal;
+  }
+}
 
 class Wappalyzer {
   constructor() {
     this.apps = {};
     this.categories = {};
     this.driver = {};
-
+    this.jsPatterns = {};
     this.detected = {};
     this.hostnameCache = {};
     this.adCache = [];
@@ -34,73 +138,104 @@ class Wappalyzer {
    * Log messages to console
    */
   log(message, source, type) {
-    this.driver.log(message, source || '', type || 'debug');
+    if (this.driver.log) {
+      this.driver.log(message, source || '', type || 'debug');
+    }
   }
 
-  analyze(hostname, url, data, context) {
-    var apps = {};
+  analyze(url, data, context) {
+    const apps = {};
+    const promises = [];
+    const startTime = new Date();
+    const {
+      scripts,
+      cookies,
+      headers,
+      js,
+    } = data;
 
-    // Remove hash from URL
-    data.url = url = url.split('#')[0];
+    let { html } = data;
 
-    if ( typeof data.html !== 'string' ) {
-      data.html = '';
+    if (this.detected[url.canonical] === undefined) {
+      this.detected[url.canonical] = {};
     }
 
-    if ( this.detected[url] === undefined ) {
-      this.detected[url] = {};
+    // Additional information
+    let language = null;
+
+    if (html) {
+      if (typeof html !== 'string') {
+        html = '';
+      }
+
+      const matches = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
+
+      language = matches && matches.length ? matches[1] : null;
     }
 
-    Object.keys(this.apps).forEach(appName => {
-      apps[appName] = this.detected[url] && this.detected[url][appName] ? this.detected[url][appName] : new Application(appName, this.apps[appName]);
+    Object.keys(this.apps).forEach((appName) => {
+      apps[appName] = this.detected[url.canonical] && this.detected[url.canonical][appName]
+        ? this.detected[url.canonical][appName]
+        : new Application(appName, this.apps[appName]);
 
-      var app = apps[appName];
+      const app = apps[appName];
 
-      if ( url ) {
-        this.analyzeUrl(app, url);
+      promises.push(this.analyzeUrl(app, url));
+
+      if (html) {
+        promises.push(this.analyzeHtml(app, html));
+        promises.push(this.analyzeMeta(app, html));
       }
 
-      if ( data.html ) {
-        this.analyzeHtml(app, data.html);
-        this.analyzeMeta(app, data.html);
+      if (scripts) {
+        promises.push(this.analyzeScripts(app, scripts));
       }
 
-      if ( data.scripts ) {
-        this.analyzeScripts(app, data.scripts);
-      }
-      
-      if ( data.headers ) {
-        this.analyzeHeaders(app, data.headers);
+      if (cookies) {
+        promises.push(this.analyzeCookies(app, cookies));
       }
 
-      if ( data.env ) {
-        this.analyzeEnv(app, data.env);
-      }
-
-      if ( data.robotsTxt ) {
-        this.analyzeRobotsTxt(app, data.robotsTxt);
-      }
-    })
-
-    Object.keys(apps).forEach(appName => {
-      var app = apps[appName];
-
-      if ( !app.detected || !app.getConfidence() ) {
-        delete apps[app.name];
+      if (headers) {
+        promises.push(this.analyzeHeaders(app, headers));
       }
     });
 
-    this.resolveExcludes(apps);
-    this.resolveImplies(apps, url);
-
-    this.cacheDetectedApps(apps, url);
-    this.trackDetectedApps(apps, url, hostname, data.html);
-
-    if ( Object.keys(apps).length ) {
-      this.log(Object.keys(apps).length + ' apps detected: ' + Object.keys(apps).join(', ') + ' on ' + url, 'core');
+    if (js) {
+      Object.keys(js).forEach((appName) => {
+        if (typeof js[appName] !== 'function') {
+          promises.push(this.analyzeJs(apps[appName], js[appName]));
+        }
+      });
     }
 
-    this.driver.displayApps(this.detected[url], context);
+    return new Promise((resolve) => {
+      Promise.all(promises)
+        .then(() => {
+          Object.keys(apps).forEach((appName) => {
+            const app = apps[appName];
+
+            if (!app.detected || !app.getConfidence()) {
+              delete apps[app.name];
+            }
+          });
+
+          resolveExcludes(apps, this.detected[url]);
+          this.resolveImplies(apps, url.canonical);
+
+          this.cacheDetectedApps(apps, url.canonical);
+          this.trackDetectedApps(apps, url, language);
+
+          this.log(`Processing ${Object.keys(data).join(', ')} took ${((new Date() - startTime) / 1000).toFixed(2)}s (${url.hostname})`, 'core');
+
+          if (Object.keys(apps).length) {
+            this.log(`Identified ${Object.keys(apps).join(', ')} (${url.hostname})`, 'core');
+          }
+
+          this.driver.displayApps(this.detected[url.canonical], { language }, context);
+
+          return resolve();
+        });
+    });
   }
 
   /**
@@ -115,26 +250,34 @@ class Wappalyzer {
    */
   robotsTxtAllows(url) {
     return new Promise((resolve, reject) => {
-      var parsed = this.parseUrl(url);
+      const parsed = this.parseUrl(url);
+
+      if (parsed.protocol !== 'http:' && parsed.protocol !== 'https:') {
+        reject();
+
+        return;
+      }
 
       this.driver.getRobotsTxt(parsed.host, parsed.protocol === 'https:')
-        .then(robotsTxt => {
-          robotsTxt.forEach(disallow => parsed.pathname.indexOf(disallow) === 0 && reject());
+        .then((robotsTxt) => {
+          if (robotsTxt.some(disallowedPath => parsed.pathname.indexOf(disallowedPath) === 0)) {
+            return reject();
+          }
 
-          resolve();
-        });
+          return resolve();
+        }, () => resolve());
     });
-  };
+  }
 
   /**
    * Parse a URL
    */
   parseUrl(url) {
-    var a = this.driver.document.createElement('a');
+    const a = this.driver.document.createElement('a');
 
     a.href = url;
 
-    a.canonical = a.protocol + '//' + a.host + a.pathname;
+    a.canonical = `${a.protocol}//${a.host}${a.pathname}`;
 
     return a;
   }
@@ -142,22 +285,21 @@ class Wappalyzer {
   /**
    *
    */
-  parseRobotsTxt(robotsTxt) {
-    var userAgent;
-    var disallow = [];
+  static parseRobotsTxt(robotsTxt) {
+    const disallow = [];
 
-    robotsTxt.split('\n').forEach(line => {
-      var matches = /^User-agent:\s*(.+)$/i.exec(line);
+    let userAgent;
 
-      if ( matches ) {
+    robotsTxt.split('\n').forEach((line) => {
+      let matches = /^User-agent:\s*(.+)$/i.exec(line.trim());
+
+      if (matches) {
         userAgent = matches[1].toLowerCase();
-      } else {
-        if ( userAgent === '*' || userAgent === 'wappalyzer' ) {
-          matches = /^Disallow:\s*(.+)$/i.exec(line);
+      } else if (userAgent === '*' || userAgent === 'wappalyzer') {
+        matches = /^Disallow:\s*(.+)$/i.exec(line.trim());
 
-          if ( matches ) {
-            disallow.push(matches[1]);
-          }
+        if (matches) {
+          disallow.push(matches[1]);
         }
       }
     });
@@ -169,129 +311,124 @@ class Wappalyzer {
    *
    */
   ping() {
-    if ( Object.keys(this.hostnameCache).length + this.adCache.length > 200 ) {
-      this.driver.ping(this.hostnameCache, this.adCache);
+    if (Object.keys(this.hostnameCache).length > 100) {
+      this.driver.ping(this.hostnameCache);
 
       this.hostnameCache = {};
+    }
+
+    if (this.adCache.length > 50) {
+      this.driver.ping({}, this.adCache);
+
       this.adCache = [];
     }
-  }
-
-  /**
-   * Enclose string in array
-   */
-  asArray(value) {
-    return typeof value === 'string' ? [ value ] : value;
   }
 
   /**
    * Parse apps.json patterns
    */
   parsePatterns(patterns) {
-    var parsed = {};
+    if (!patterns) {
+      return [];
+    }
+
+    let parsed = {};
 
     // Convert string to object containing array containing string
-    if ( typeof patterns === 'string' || patterns instanceof Array ) {
+    if (typeof patterns === 'string' || patterns instanceof Array) {
       patterns = {
-        main: this.asArray(patterns)
+        main: asArray(patterns),
       };
     }
 
-    for ( var key in patterns ) {
+    Object.keys(patterns).forEach((key) => {
       parsed[key] = [];
 
-      this.asArray(patterns[key]).forEach(pattern => {
-        var attrs = {};
+      asArray(patterns[key]).forEach((pattern) => {
+        const attrs = {};
 
         pattern.split('\\;').forEach((attr, i) => {
-          if ( i ) {
+          if (i) {
             // Key value pairs
             attr = attr.split(':');
 
-            if ( attr.length > 1 ) {
+            if (attr.length > 1) {
               attrs[attr.shift()] = attr.join(':');
             }
           } else {
             attrs.string = attr;
 
             try {
-              attrs.regex = new RegExp(attr.replace('/', '\/'), 'i'); // Escape slashes in regular expression
+              attrs.regex = new RegExp(attr.replace('/', '\\/'), 'i'); // Escape slashes in regular expression
             } catch (e) {
               attrs.regex = new RegExp();
 
-              this.log(e + ': ' + attr, 'error', 'core');
+              this.log(`${e}: ${attr}`, 'error', 'core');
             }
           }
         });
 
         parsed[key].push(attrs);
       });
-    }
+    });
 
     // Convert back to array if the original pattern list was an array (or string)
-    if ( 'main' in parsed ) {
+    if ('main' in parsed) {
       parsed = parsed.main;
     }
 
     return parsed;
   }
 
-  resolveExcludes(apps) {
-    var excludes = [];
-
-    // Exclude app in detected apps only
-    Object.keys(apps).forEach(appName => {
-      var app = apps[appName];
-
-      if ( app.props.excludes ) {
-        this.asArray(app.props.excludes).forEach(excluded => {
-          excludes.push(excluded);
-        });
+  /**
+   * Parse JavaScript patterns
+   */
+  parseJsPatterns() {
+    Object.keys(this.apps).forEach((appName) => {
+      if (this.apps[appName].js) {
+        this.jsPatterns[appName] = this.parsePatterns(this.apps[appName].js);
       }
-    })
-
-    // Remove excluded applications
-    Object.keys(apps).forEach(appName => {
-      if ( excludes.indexOf(appName) !== -1 ) {
-        delete apps[appName];
-      }
-    })
+    });
   }
 
   resolveImplies(apps, url) {
-    var checkImplies = true;
+    let checkImplies = true;
+
+    const resolve = (appName) => {
+      const app = apps[appName];
+
+      if (app && app.props.implies) {
+        asArray(app.props.implies).forEach((implied) => {
+          [implied] = this.parsePatterns(implied);
+
+          if (!this.apps[implied.string]) {
+            this.log(`Implied application ${implied.string} does not exist`, 'core', 'warn');
+
+            return;
+          }
+
+          if (!(implied.string in apps)) {
+            apps[implied.string] = this.detected[url] && this.detected[url][implied.string]
+              ? this.detected[url][implied.string]
+              : new Application(implied.string, this.apps[implied.string], true);
+
+            checkImplies = true;
+          }
+
+          // Apply app confidence to implied app
+          Object.keys(app.confidence).forEach((id) => {
+            apps[implied.string].confidence[`${id} implied by ${appName}`] = app.confidence[id] * (implied.confidence === undefined ? 1 : implied.confidence / 100);
+          });
+        });
+      }
+    };
 
     // Implied applications
     // Run several passes as implied apps may imply other apps
-    while ( checkImplies ) {
+    while (checkImplies) {
       checkImplies = false;
 
-      Object.keys(apps).forEach(appName => {
-        var app = apps[appName];
-
-        if ( app && app.props.implies ) {
-          this.asArray(app.props.implies).forEach(implied => {
-            implied = this.parsePatterns(implied)[0];
-
-            if ( !this.apps[implied.string] ) {
-              this.log('Implied application ' + implied.string + ' does not exist', 'core', 'warn');
-
-              return;
-            }
-
-            if ( !( implied.string in apps ) ) {
-              apps[implied.string] = this.detected[url] && this.detected[url][implied.string] ? this.detected[url][implied.string] : new Application(implied.string, this.apps[implied.string], true);
-
-              checkImplies = true;
-            }
-
-            // Apply app confidence to implied app
-            Object.keys(app.confidence).forEach(id => {
-              apps[implied.string].confidence[id + ' implied by ' + appName] = app.confidence[id] * ( implied.confidence ? implied.confidence / 100 : 1 );
-            });
-          });
-        }
-      });
+      Object.keys(apps).forEach(resolve);
     }
   }
 
@@ -299,18 +436,19 @@ class Wappalyzer {
    * Cache detected applications
    */
   cacheDetectedApps(apps, url) {
-    Object.keys(apps).forEach(appName => {
-      var app = apps[appName];
+    Object.keys(apps).forEach((appName) => {
+      const app = apps[appName];
 
       // Per URL
       this.detected[url][appName] = app;
 
-      Object.keys(app.confidence).forEach(id => {
-        this.detected[url][appName].confidence[id] = app.confidence[id];
-      });
-    })
+      Object.keys(app.confidence)
+        .forEach((id) => {
+          this.detected[url][appName].confidence[id] = app.confidence[id];
+        });
+    });
 
-    if ( this.driver.ping instanceof Function ) {
+    if (this.driver.ping instanceof Function) {
       this.ping();
     }
   }
@@ -318,49 +456,45 @@ class Wappalyzer {
   /**
    * Track detected applications
    */
-  trackDetectedApps(apps, url, hostname, html) {
-    if ( !( this.driver.ping instanceof Function ) ) {
+  trackDetectedApps(apps, url, language) {
+    if (!(this.driver.ping instanceof Function)) {
       return;
     }
 
-    Object.keys(apps).forEach(appName => {
-      var app = apps[appName];
+    const hostname = `${url.protocol}//${url.hostname}`;
 
-      if ( this.detected[url][appName].getConfidence() >= 100 ) {
-        if ( validation.hostname.test(hostname) && !validation.hostnameBlacklist.test(url) ) {
-          this.robotsTxtAllows(url)
-            .then(() => {
-              if ( !( hostname in this.hostnameCache ) ) {
-                this.hostnameCache[hostname] = {
-                  applications: {},
-                  meta: {}
-                };
-              }
+    Object.keys(apps).forEach((appName) => {
+      const app = apps[appName];
 
-              if ( !( appName in this.hostnameCache[hostname].applications ) ) {
-                this.hostnameCache[hostname].applications[appName] = {
-                  hits: 0
-                };
-              }
+      if (this.detected[url.canonical][appName].getConfidence() >= 100) {
+        if (
+          validation.hostname.test(url.hostname)
+          && !validation.hostnameBlacklist.test(url.hostname)
+        ) {
+          if (!(hostname in this.hostnameCache)) {
+            this.hostnameCache[hostname] = {
+              applications: {},
+              meta: {},
+            };
+          }
 
-              this.hostnameCache[hostname].applications[appName].hits ++;
+          if (!(appName in this.hostnameCache[hostname].applications)) {
+            this.hostnameCache[hostname].applications[appName] = {
+              hits: 0,
+            };
+          }
 
-              if ( apps[appName].version ) {
-                this.hostnameCache[hostname].applications[appName].version = app.version;
-              }
-            })
-          .catch(() => this.log('Disallowed in robots.txt: ' + url), 'core')
+          this.hostnameCache[hostname].applications[appName].hits += 1;
+
+          if (apps[appName].version) {
+            this.hostnameCache[hostname].applications[appName].version = app.version;
+          }
         }
       }
     });
 
-    // Additional information
-    if ( hostname in this.hostnameCache ) {
-      var match = html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
-
-      if ( match && match.length ) {
-        this.hostnameCache[hostname].meta['language'] = match[1];
-      }
+    if (hostname in this.hostnameCache) {
+      this.hostnameCache[hostname].meta.language = language;
     }
 
     this.ping();
@@ -370,199 +504,169 @@ class Wappalyzer {
    * Analyze URL
    */
   analyzeUrl(app, url) {
-    var patterns = this.parsePatterns(app.props.url);
+    const patterns = this.parsePatterns(app.props.url);
 
-    if ( patterns.length ) {
-      patterns.forEach(pattern => {
-        if ( pattern.regex.test(url) ) {
-          this.addDetected(app, pattern, 'url', url);
-        }
-      });
+    if (!patterns.length) {
+      return Promise.resolve();
     }
+
+    return asyncForEach(patterns, (pattern) => {
+      if (pattern.regex.test(url.canonical)) {
+        addDetected(app, pattern, 'url', url.canonical);
+      }
+    });
   }
 
   /**
    * Analyze HTML
    */
   analyzeHtml(app, html) {
-    var patterns = this.parsePatterns(app.props.html);
+    const patterns = this.parsePatterns(app.props.html);
 
-    if ( patterns.length ) {
-      patterns.forEach(pattern => {
-        if ( pattern.regex.test(html) ) {
-          this.addDetected(app, pattern, 'html', html);
-        }
-      });
+    if (!patterns.length) {
+      return Promise.resolve();
     }
+
+    return asyncForEach(patterns, (pattern) => {
+      if (pattern.regex.test(html)) {
+        addDetected(app, pattern, 'html', html);
+      }
+    });
   }
 
   /**
    * Analyze script tag
    */
   analyzeScripts(app, scripts) {
-    var patterns = this.parsePatterns(app.props.script);
+    const patterns = this.parsePatterns(app.props.script);
 
-    if ( patterns.length ) {
-      patterns.forEach(pattern => {
-        var match;
-
-        scripts.forEach(uri => {
-          if ( pattern.regex.test(uri) ) {
-            this.addDetected(app, pattern, 'script', uri);
-          }
-        });
-      });
+    if (!patterns.length) {
+      return Promise.resolve();
     }
+
+    return asyncForEach(patterns, (pattern) => {
+      scripts.forEach((uri) => {
+        if (pattern.regex.test(uri)) {
+          addDetected(app, pattern, 'script', uri);
+        }
+      });
+    });
   }
 
   /**
    * Analyze meta tag
    */
   analyzeMeta(app, html) {
-    var regex = /<meta[^>]+>/ig;
-    var patterns = this.parsePatterns(app.props.meta);
-    var content;
-    var match;
+    const regex = /<meta[^>]+>/ig;
+    const patterns = this.parsePatterns(app.props.meta);
+    const promises = [];
 
-    while ( patterns && ( match = regex.exec(html) ) ) {
-      for ( var meta in patterns ) {
-        if ( new RegExp('(name|property)=["\']' + meta + '["\']', 'i').test(match) ) {
-          content = match.toString().match(/content=("|')([^"']+)("|')/i);
-
-          patterns[meta].forEach(pattern => {
-            if ( content && content.length === 4 && pattern.regex.test(content[2]) ) {
-              this.addDetected(app, pattern, 'meta', content[2], meta);
-            }
-          });
-        }
-      }
+    if (!app.props.meta) {
+      return Promise.resolve();
     }
+
+    let matches;
+
+    do {
+      matches = regex.exec(html);
+
+      if (!matches) {
+        break;
+      }
+
+      const [match] = matches;
+
+      Object.keys(patterns).forEach((meta) => {
+        const r = new RegExp(`(?:name|property)=["']${meta}["']`, 'i');
+
+        if (r.test(match)) {
+          const content = match.match(/content=("|')([^"']+)("|')/i);
+
+          promises.push(asyncForEach(patterns[meta], (pattern) => {
+            if (content && content.length === 4 && pattern.regex.test(content[2])) {
+              addDetected(app, pattern, 'meta', content[2], meta);
+            }
+          }));
+        }
+      });
+    } while (matches);
+
+    return Promise.all(promises);
   }
 
   /**
-   * analyze response headers
+   * Analyze response headers
    */
   analyzeHeaders(app, headers) {
-    var patterns = this.parsePatterns(app.props.headers);
+    const patterns = this.parsePatterns(app.props.headers);
+    const promises = [];
 
-    if ( headers ) {
-      Object.keys(patterns).forEach(headerName => {
-        patterns[headerName].forEach(pattern => {
+    Object.keys(patterns).forEach((headerName) => {
+      if (typeof patterns[headerName] !== 'function') {
+        promises.push(asyncForEach(patterns[headerName], (pattern) => {
           headerName = headerName.toLowerCase();
 
-          if ( headerName in headers ) {
-            headers[headerName].forEach(headerValue => {
-              if ( pattern.regex.test(headerValue) ) {
-                this.addDetected(app, pattern, 'headers', headerValue, headerName);
+          if (headerName in headers) {
+            headers[headerName].forEach((headerValue) => {
+              if (pattern.regex.test(headerValue)) {
+                addDetected(app, pattern, 'headers', headerValue, headerName);
               }
             });
           }
-        });
-      });
-    }
-  }
-
-  /**
-   * Analyze environment variables
-   */
-  analyzeEnv(app, envs) {
-    var patterns = this.parsePatterns(app.props.env);
-
-    if ( patterns.length ) {
-      patterns.forEach(pattern => {
-        Object.keys(envs).forEach(env => {
-          if ( pattern.regex.test(envs[env]) ) {
-            this.addDetected(app, pattern, 'env', envs[env]);
-          }
-        })
-      });
-    }
-  }
-
-  /**
-   * Analyze robots.txt
-   */
-  analyzeRobotsTxt(app, robotsTxt) {
-    var patterns = this.parsePatterns(app.props.robotsTxt);
-
-    if ( patterns.length ) {
-      patterns.forEach(pattern => {
-        if ( pattern.regex.test(robotsTxt) ) {
-          this.addDetected(app, pattern, 'robotsTxt', robotsTxt);
-        }
-      });
-    }
-  }
-
-  /**
-   * Mark application as detected, set confidence and version
-   */
-  addDetected(app, pattern, type, value, key) {
-    app.detected = true;
-
-    // Set confidence level
-    app.confidence[type + ' ' + ( key ? key + ' ' : '' ) + pattern.regex] = pattern.confidence || 100;
-
-    // Detect version number
-    if ( pattern.version ) {
-      var versions = [];
-      var version  = pattern.version;
-      var matches  = pattern.regex.exec(value);
-
-      if ( matches ) {
-        matches.forEach((match, i) => {
-          // Parse ternary operator
-          var ternary = new RegExp('\\\\' + i + '\\?([^:]+):(.*)$').exec(version);
-
-          if ( ternary && ternary.length === 3 ) {
-            version = version.replace(ternary[0], match ? ternary[1] : ternary[2]);
-          }
-
-          // Replace back references
-          version = version.replace(new RegExp('\\\\' + i, 'g'), match || '');
-        });
-
-        if ( version && versions.indexOf(version) === -1 ) {
-          versions.push(version);
-        }
-
-        if ( versions.length ) {
-          // Use the longest detected version number
-          app.version = versions.reduce((a, b) => a.length > b.length ? a : b);
-        }
+        }));
       }
-    }
-  }
-}
+    });
 
-/**
- * Application class
- */
-class Application {
-  constructor(name, props, detected) {
-    this.confidence      = {};
-    this.confidenceTotal = 0;
-    this.detected        = Boolean(detected);
-    this.excludes        = [];
-    this.name            = name;
-    this.props           = props;
-    this.version         = '';
+    return promises ? Promise.all(promises) : Promise.resolve();
   }
 
   /**
-   * Calculate confidence total
+   * Analyze cookies
    */
-  getConfidence() {
-    var total = 0;
+  analyzeCookies(app, cookies) {
+    const patterns = this.parsePatterns(app.props.cookies);
+    const promises = [];
 
-    for ( var id in this.confidence ) {
-      total += this.confidence[id];
-    }
+    Object.keys(patterns).forEach((cookieName) => {
+      if (typeof patterns[cookieName] !== 'function') {
+        const cookieNameLower = cookieName.toLowerCase();
 
-    return this.confidenceTotal = Math.min(total, 100);
+        promises.push(asyncForEach(patterns[cookieName], (pattern) => {
+          const cookie = cookies.find(_cookie => _cookie.name.toLowerCase() === cookieNameLower);
+
+          if (cookie && pattern.regex.test(cookie.value)) {
+            addDetected(app, pattern, 'cookies', cookie.value, cookieName);
+          }
+        }));
+      }
+    });
+
+    return promises ? Promise.all(promises) : Promise.resolve();
+  }
+
+  /**
+   * Analyze JavaScript variables
+   */
+  analyzeJs(app, results) {
+    const promises = [];
+
+    Object.keys(results).forEach((string) => {
+      if (typeof results[string] !== 'function') {
+        promises.push(asyncForEach(Object.keys(results[string]), (index) => {
+          const pattern = this.jsPatterns[app.name][string][index];
+          const value = results[string][index];
+
+          if (pattern && pattern.regex.test(value)) {
+            addDetected(app, pattern, 'js', value, string);
+          }
+        }));
+      }
+    });
+
+    return promises ? Promise.all(promises) : Promise.resolve();
   }
 }
 
-if ( typeof module === 'object' ) {
+if (typeof module === 'object') {
   module.exports = Wappalyzer;
 }

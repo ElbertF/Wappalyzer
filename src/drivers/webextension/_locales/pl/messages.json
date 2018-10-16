@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Przesyłaj anonimowe statystyki aplikacji wykrytych przez Wappalyzer do twórców" },
 	"nothingToDo":              { "message": "Nic tu nie ma." },
 	"noAppsDetected":           { "message": "Nie wykryto żadnych aplikacji." },
+  "categoryPin":              { "message": "Zawsze pokazuj tą ikonę" },
 	"categoryName1":            { "message": "System zarządzania treścią" },
 	"categoryName2":            { "message": "Forum" },
 	"categoryName3":            { "message": "Menedżer baz danych" },
@@ -63,5 +64,10 @@
 	"categoryName51":           { "message": "Konstruktory stron" },
 	"categoryName52":           { "message": "Czat na żywo" },
 	"categoryName53":           { "message": "Zarządzanie relacjami z klientami" },
-  "categoryName54":           { "message": "SEO" }
+	"categoryName54":           { "message": "SEO" },
+	"categoryName55":           { "message": "Księgowość" },
+	"categoryName56":           { "message": "Koparka kryptowalut" },
+	"categoryName57":           { "message": "Generator stron statycznych" },
+	"categoryName58":           { "message": "Wdrażanie użytkownika" },
+	"categoryName59":           { "message": "Biblioteki JavaScript" }
 }

@@ -68,6 +68,6 @@
 	"categoryName55":           { "message": "Buchhaltung" },
 	"categoryName56":           { "message": "Cryptominer" },
 	"categoryName57":           { "message": "Statischer Seitengenerator" },
-	"categoryName58":           { "message": "User Onboarding" },
-	"categoryName59":           { "message": "JavaScript Libraries" }
+	"categoryName58":           { "message": "Benutzer-Einbindung" },
+	"categoryName59":           { "message": "JavaScript Bibliotheken" }
 }

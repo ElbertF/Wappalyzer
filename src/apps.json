@@ -2734,10 +2734,10 @@
         51
       ],
       "html":  [
-        "<div class=(?:\"|')[^>]*elementor",
-        "<section class=(?:\"|')[^>]*elementor",
-        "<link [^>]*href=(?:\"|')[^>]*elementor/assets",
-        "<link [^>]*href=(?:\"|')[^>]*uploads/elementor/css"
+        "<div class=(?:\"|')[^\"']*elementor",
+        "<section class=(?:\"|')[^\"']*elementor",
+        "<link [^>]*href=(?:\"|')[^\"']*elementor/assets",
+        "<link [^>]*href=(?:\"|')[^\"']*uploads/elementor/css"
       ],
       "js": { 
         "elementorFrontend.getElements": ""

@@ -562,7 +562,7 @@
       "cookies": {
         "AWSELB": ""
       },
-      "icon": "aws-elb",
+      "icon": "aws-elb.png",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
     "Amazon S3": {

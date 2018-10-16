@@ -6491,16 +6491,6 @@
       },
       "website": "http://movabletype.org"
     },
-    "Moxa": {
-      "cats": [
-        37
-      ],
-      "headers": {
-        "Server": "MoxaHttp(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "Moxa.png",
-      "website": "http://moxa.com"
-    },
     "Mozard Suite": {
       "cats": [
         1

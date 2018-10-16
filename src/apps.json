@@ -823,14 +823,6 @@
       "script": "arastta\\.js",
       "website": "http://arastta.org"
     },
-    "Arc Forum": {
-      "cats": [
-        2
-      ],
-      "html": "ping\\.src = node\\.href;\\s+[^>]+\\s+}\\s+</script>",
-      "icon": "Arc Forum.png",
-      "website": "http://arclanguage.org"
-    },
     "ArcGIS API for JavaScript": {
       "cats": [
         35

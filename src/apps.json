@@ -2393,6 +2393,21 @@
       "icon": "Apple.svg",
       "website": "https://opensource.apple.com"
     },
+    "Datadome": {
+      "cats": [
+        19
+      ],
+      "cookies": {
+				"datadome": ""
+			},
+      "headers": {
+        "X-DataDome": "",
+        "Server": "^DataDome$",
+        "X-DataDome-CID": ""
+      },
+      "icon": "datadome.png",
+      "website": "https://datadome.co/"
+    },
     "DataLife Engine": {
       "cats": [
         1

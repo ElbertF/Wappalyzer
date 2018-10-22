@@ -1751,7 +1751,7 @@
         "generator": "^Chevereto ?([0-9.]+)?$\\;version:\\1"
       },
 			"script": "/chevereto\\.js",
-			"html": "Powered by <a href=\"https?://chevereto.\com\">",
+			"html": "Powered by <a href=\"https?://chevereto\\.com\">",
       "icon": "chevereto.png",
       "implies": "PHP",
       "website": "https://chevereto.com/"

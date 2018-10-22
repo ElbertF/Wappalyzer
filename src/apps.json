@@ -1743,6 +1743,19 @@
       "implies": "Python",
       "website": "http://www.cherrypy.org"
     },
+    "Chevereto": {
+      "cats": [
+        7
+      ],
+      "meta": {
+        "generator": "^Chevereto ?([0-9.]+)?$\\;version:\\1"
+      },
+			"script": "/chevereto\\.js",
+			"html": "Powered by <a href=\"https?://chevereto.\com\">",
+      "icon": "chevereto.png",
+      "implies": "PHP",
+      "website": "https://chevereto.com/"
+    },
     "Chitika": {
       "cats": [
         36

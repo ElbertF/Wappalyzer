@@ -10724,6 +10724,17 @@
       "icon": "Webs.png",
       "website": "http://webs.com"
     },
+    "Websocket": {
+      "cats": [
+        19
+      ],
+			"html": [
+				"<link[^>]+rel=[\"']web-socket[\"']",
+				"<(?:link|a)[^>]+href=[\"']wss?://"
+			],
+      "icon": "websocket.png",
+      "website": "https://en.wikipedia.org/wiki/WebSocket"
+    },
     "WebsPlanet": {
       "cats": [
         1

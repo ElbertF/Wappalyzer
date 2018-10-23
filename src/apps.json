@@ -11896,6 +11896,23 @@
       "script": "jquery[.-]mobile(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
       "website": "https://jquerymobile.com"
     },
+    "jQuery-pjax": {
+      "cats": [
+        26
+      ],
+      "implies": "jQuery",
+      "meta": {
+        "pjax-timeout": "",
+        "pjax-replace": "",
+        "pjax-push": ""
+      },
+      "js": {
+        "jQuery.pjax": ""
+      },
+      "script": "jquery[.-]pjax(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
+			"html": "<div[^>]+data-pjax-container",
+      "website": "https://github.com/defunkt/jquery-pjax"
+    },
     "jQuery Sparklines": {
       "cats": [
         25

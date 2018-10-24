@@ -1698,6 +1698,7 @@
       "icon": "Chart.js.svg",
       "js": {
         "Chart": "\\;confidence:50",
+				"Chart.defaults.doughnut": "",
         "chart.ctx.bezierCurveTo": ""
       },
       "script": [

@@ -1393,9 +1393,11 @@
       ],
       "icon": "BugSnag.png",
       "js": {
-        "Bugsnag": ""
+        "Bugsnag": "",
+        "bugsnag": "",
+        "bugsnagClient": ""
       },
-      "script": "bugsnag.*\\.js",
+      "script": "/bugsnag.*\\.js",
       "website": "http://bugsnag.com"
     },
     "Bugzilla": {

@@ -425,6 +425,20 @@
       "script": "shop-static\\.afterbuy\\.de",
       "website": "http://www.afterbuy.de"
     },
+    "Ahoy": {
+      "cats": [
+        10
+      ],
+      "js": {
+        "ahoy": ""
+      },
+      "cookies": {
+        "ahoy_track": "",
+        "ahoy_visit": "",
+        "ahoy_visitor": ""
+      },
+      "website": "https://github.com/ankane/ahoy"
+    },
     "Aircall": {
       "cats": [
         52

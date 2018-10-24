@@ -8375,6 +8375,9 @@
       "meta": {
         "csrf-param": "^authenticity_token$\\;confidence:50"
       },
+      "cookies": {
+        "_session_id": "\\;confidence:75"
+      },
       "script": "/assets/application-[a-z\\d]{32}/\\.js\\;confidence:50",
       "website": "https://rubyonrails.org"
     },

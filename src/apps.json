@@ -637,7 +637,8 @@
       "cats": [
         18
       ],
-      "icon": "AngularJS.svg", "implies": "AngularJS",
+      "icon": "AngularJS.svg",
+			"implies": "AngularJS",
       "js": {
         "ngMaterial": ""
       },
@@ -673,7 +674,7 @@
         "angular.version.full": "(.*)\\;version:\\1"
       },
       "script": [
-        "angular(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "angular[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+(?:-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
         "angular.*\\.js"
       ],
@@ -8120,7 +8121,7 @@
         "react.version": "(.*)\\;version:\\1"
       },
       "script": [
-        "react(?:-with-addons)?[.-]?([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "react(?:-with-addons)?[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
         "react.*\\.js"
       ],
@@ -10548,7 +10549,7 @@
         "Vue.version": "(.*)\\;version:\\1"
       },
       "script": [
-        "vue[.-]?([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "vue[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "(?:/([\\d.]+))?/vue(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "http://vuejs.org"
@@ -11059,7 +11060,7 @@
         "XRegExp.version": "(.*)\\;version:\\1"
       },
       "script": [
-        "xregexp[.-]?([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "xregexp[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/xregexp(?:\\.min)?\\.js\\;version:\\1",
         "xregexp.*\\.js"
       ],
@@ -11860,7 +11861,7 @@
         "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
       },
       "script": [
-        "jquery[.-]?([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "jquery[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
         "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
       ],

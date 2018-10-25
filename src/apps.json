@@ -1701,13 +1701,12 @@
         "chart.ctx.bezierCurveTo": ""
       },
       "script": [
-        "Chart(?:\\.bundle)?(?:\\.min)?\\.js\\;confidence:50",
+        "/Chart(?:\\.bundle)?(?:\\.min)?\\.js\\;confidence:75",
         "chartjs\\.org/dist/([\\d.]+(?:-[^/]+)?|master|latest)/Chart.*\\.js\\;version:\\1",
         "cdnjs\\.cloudflare\\.com/ajax/libs/Chart\\.js/([\\d.]+(?:-[^/]+)?)/Chart.*\\.js\\;version:\\1",
-        "cdn\\.jsdelivr\\.net/npm/chart\\.js@([\\d.]+(?:-[^/]+)?|latest)/dist/Chart.*\\.js\\;version:\\1",
-        "cdn\\.jsdelivr\\.net/gh/chartjs/Chart\\.js@([\\d.]+(?:-[^/]+)?|latest)/dist/Chart.*\\.js\\;version:\\1"
+        "cdn\\.jsdelivr\\.net/(?:npm|gh/chartjs)/chart\\.js@([\\d.]+(?:-[^/]+)?|latest)/dist/Chart.*\\.js\\;version:\\1"
       ],
-      "website": "http://www.chartjs.org"
+      "website": "https://www.chartjs.org"
     },
     "Chartbeat": {
       "cats": [

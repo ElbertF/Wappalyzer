@@ -10536,6 +10536,7 @@
       ],
       "html": "<link [^>]*href=\"[^\"]*/vspfiles/",
       "icon": "Volusion.svg",
+      "implies": "Microsoft ASP.NET",
       "js": {
         "volusion": ""
       },
@@ -10548,6 +10549,7 @@
       ],
       "html": "<body [^>]*data-vn-page-name",
       "icon": "Volusion.svg",
+      "implies": "AngularJS",
       "website": "https://www.volusion.com"
     },
     "Vue.js": {

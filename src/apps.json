@@ -10530,17 +10530,25 @@
       "script": "visualpath[^/]*\\.trackset\\.it/[^/]+/track/include\\.js",
       "website": "http://www.trackset.com/web-analytics-software/visualpath"
     },
-    "Volusion": {
+    "Volusion (V1)": {
       "cats": [
         6
       ],
       "html": "<link [^>]*href=\"[^\"]*/vspfiles/",
-      "icon": "Volusion.png",
+      "icon": "Volusion.svg",
       "js": {
         "volusion": ""
       },
       "script": "/volusion\\.js(?:\\?([\\d.]*))?\\;version:\\1",
-      "website": "http://volusion.com"
+      "website": "https://www.volusion.com"
+    },
+    "Volusion (V2)": {
+      "cats": [
+        6
+      ],
+      "html": "<body [^>]*data-vn-page-name",
+      "icon": "Volusion.svg",
+      "website": "https://www.volusion.com"
     },
     "Vue.js": {
       "cats": [

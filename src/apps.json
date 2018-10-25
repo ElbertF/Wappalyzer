@@ -637,15 +637,11 @@
       "cats": [
         18
       ],
-      "icon": "AngularJS.svg",
-      "implies": "AngularJS",
+      "icon": "AngularJS.svg", "implies": "AngularJS",
       "js": {
         "ngMaterial": ""
       },
-      "script": [
-        "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular-material(?:\\.min)?\\.js\\;version:\\1",
-        "angular-material.*\\.js"
-      ],
+      "script": "/([\\d.rc-]+)?/angular-material(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://material.angularjs.org"
     },
     "AngularDart": {
@@ -677,8 +673,8 @@
         "angular.version.full": "(.*)\\;version:\\1"
       },
       "script": [
-        "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+(?:\\-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
+        "angular(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "/([\\d.]+(?:-?rc[.\\d]*)*)/angular(?:\\.min)?\\.js\\;version:\\1",
         "angular.*\\.js"
       ],
       "website": "https://angularjs.org"
@@ -1299,7 +1295,7 @@
       },
       "script": [
         "twitter\\.github\\.com/bootstrap",
-        "bootstrap(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "bootstrap[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "(?:/([\\d.]+))?(?:/js)?/bootstrap(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "https://getbootstrap.com"
@@ -2578,7 +2574,7 @@
       "icon": "DokuWiki.png",
       "implies": "PHP",
       "meta": {
-        "generator": "^DokuWiki( Release [\\-\\d]+)?\\;version:\\1"
+        "generator": "^DokuWiki( Release [\\d-]+)?\\;version:\\1"
       },
       "website": "https://www.dokuwiki.org"
     },
@@ -2740,7 +2736,7 @@
         22
       ],
       "headers": {
-        "Server": "ELOG HTTP( \\d[\\-\\d\\.]+)?\\;version:\\1"
+        "Server": "ELOG HTTP ?([\\d.-]+)?\\;version:\\1"
       },
       "icon": "ELOG.png",
       "implies": "ELOG",
@@ -2904,7 +2900,7 @@
         27
       ],
       "headers": {
-        "Server": "Erlang( OTP/(?:[\\-\\d\\.ABR]+))?\\;version:\\1"
+        "Server": "Erlang( OTP/(?:[\\d.ABR-]+))?\\;version:\\1"
       },
       "icon": "Erlang.png",
       "website": "http://www.erlang.org"
@@ -4164,7 +4160,7 @@
       ],
       "html": "<svg[^>]*><desc>Created with Highstock ([\\d.]*)\\;version:\\1",
       "icon": "Highcharts.png",
-      "script": "highstock(?:\\-|\\.)?([\\d\\.]*\\d).*\\.js\\;version:\\1",
+      "script": "highstock[.-]?([\\d\\.]*\\d).*\\.js\\;version:\\1",
       "website": "http://highcharts.com/products/highstock"
     },
     "Hinza Advanced CMS": {
@@ -5269,7 +5265,7 @@
       "meta": {
         "laterpay:connector:callbacks:on_user_has_access": "deobfuscateText"
       },
-      "script": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z\\-]*/live/[\\w-]+\\.js\\;version:\\1",
+      "script": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
       "website": "https://www.laterpay.net/"
     },
     "Lazy.js": {
@@ -6331,7 +6327,7 @@
       ],
       "icon": "Moment.js.svg",
       "implies": "Moment.js",
-      "script": "moment-timezone(?:\\-data)?(?:\\.min)?\\.js",
+      "script": "moment-timezone(?:-data)?(?:\\.min)?\\.js",
       "website": "http://momentjs.com/timezone/"
     },
     "Moment.js": {
@@ -8124,7 +8120,7 @@
         "react.version": "(.*)\\;version:\\1"
       },
       "script": [
-        "react(?:\\-with\\-addons)?(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "react(?:-with-addons)?[.-]?([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/react(?:\\.min)?\\.js\\;version:\\1",
         "react.*\\.js"
       ],
@@ -10552,7 +10548,7 @@
         "Vue.version": "(.*)\\;version:\\1"
       },
       "script": [
-        "vue(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "vue[.-]?([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "(?:/([\\d.]+))?/vue(?:\\.min)?\\.js\\;version:\\1"
       ],
       "website": "http://vuejs.org"
@@ -11063,7 +11059,7 @@
         "XRegExp.version": "(.*)\\;version:\\1"
       },
       "script": [
-        "xregexp(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "xregexp[.-]?([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/xregexp(?:\\.min)?\\.js\\;version:\\1",
         "xregexp.*\\.js"
       ],
@@ -11355,7 +11351,7 @@
       "cats": [
         18
       ],
-      "html": "<!-- ZK [\\.\\d\\s]+-->",
+      "html": "<!-- ZK [.\\d\\s]+-->",
       "icon": "ZK.png",
       "implies": "Java",
       "script": "zkau/",
@@ -11864,7 +11860,7 @@
         "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
       },
       "script": [
-        "jquery(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
+        "jquery[.-]?([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
         "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
         "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
       ],
@@ -12199,7 +12195,7 @@
       "cats": [
         25
       ],
-      "html": "<div id=\"particles\\-js\">",
+      "html": "<div id=\"particles-js\">",
       "js": {
         "particlesJS": ""
       },

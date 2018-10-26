@@ -8813,6 +8813,16 @@
       },
       "website": "http://shopify.com"
     },
+    "Shopline": {
+      "cats": [
+        6
+      ],
+      "icon": "shopline.png",
+      "meta": {
+        "og:image":"https\\:\/\/img\\.shoplineapp\\.com"
+      },
+      "website": "https://shoplineapp.com/"
+    },
     "Shoptet": {
       "cats": [
         6

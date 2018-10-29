@@ -2654,9 +2654,14 @@
       "cats": [
         20
       ],
-      "html": "(?:<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)|function MM_preloadImages\\(\\) \\{)\\;version:\\1",
-      "icon": "DreamWeaver.png",
-      "website": "http://www.adobe.com/products/dreamweaver"
+      "html": "<!--[^>]*(?:InstanceBeginEditable|Dreamweaver([^>]+)target|DWLayoutDefaultTable)\\;version:\\1",
+			"js": {
+				"MM_showMenu": "",
+				"MM_preloadImages": "",
+				"MM_showHideLayers": ""
+			},
+			"icon": "DreamWeaver.png",
+      "website": "https://www.adobe.com/products/dreamweaver.html"
     },
     "Drupal": {
       "cats": [

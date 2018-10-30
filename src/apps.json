@@ -1456,13 +1456,6 @@
       "script": "^https?://s\\d\\.buysellads\\.com/",
       "website": "http://buysellads.com"
     },
-    "C++": {
-      "cats": [
-        27
-      ],
-      "icon": "C++.png",
-      "website": "http://isocpp.org"
-    },
     "CDN77": {
       "cats": [
         31

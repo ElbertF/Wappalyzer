@@ -5574,10 +5574,6 @@
         58
       ],
       "icon": "LOU.png",
-      "implies": [
-        "React",
-        "Django"
-      ],
       "script": "cdn\\.louassist\\.com*",
       "website": "https://www.louassist.com"
     },

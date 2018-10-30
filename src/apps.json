@@ -12313,11 +12313,11 @@
         1,
         2
       ],
-      "html": "Powered by <a href=\"[^\"]+phpwind\\.net",
+      "html": "(?:Powered|Code) by <a href=\"[^\"]+phpwind\\.net",
       "icon": "phpwind.png",
       "implies": "PHP",
       "meta": {
-        "generator": "^phpwind"
+        "generator": "^phpwind(?: v([0-9-]+))?\\;version:\\1"
       },
       "website": "https://www.phpwind.net"
     },

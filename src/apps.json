@@ -2575,10 +2575,14 @@
       "cookies": {
         "DokuWiki": ""
       },
+			"html": [
+				"<div[^>]+id=\"dokuwiki__>",
+				"<a[^>]+href=\"#dokuwiki__"
+			],
       "icon": "DokuWiki.png",
       "implies": "PHP",
       "meta": {
-        "generator": "^DokuWiki( Release [\\-\\d]+)?\\;version:\\1"
+        "generator": "^DokuWiki( Release [\\d-]+)?\\;version:\\1"
       },
       "website": "https://www.dokuwiki.org"
     },

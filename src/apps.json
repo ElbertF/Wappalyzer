@@ -672,6 +672,10 @@
         "AngularDart"
       ],
       "icon": "AngularJS.svg",
+      "html": [
+				"<(?:div|html)[^>]+ng-app=",
+				"<ng-app"
+			],
       "js": {
         "angular": "",
         "angular.version.full": "(.*)\\;version:\\1"

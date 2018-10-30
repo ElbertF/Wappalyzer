@@ -3416,7 +3416,7 @@
         "<style id=\"gatsby-inlined-css\">"
       ],
       "meta": {
-        "generator": "Gatsby(?: ([0-9.]+))?\\;version:\\1"
+        "generator": "^Gatsby(?: ([0-9.]+))?$\\;version:\\1"
       },
       "icon": "Gatsby.svg",
       "implies": [

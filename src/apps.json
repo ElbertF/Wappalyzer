@@ -9880,7 +9880,7 @@
       "js": {
         "tinyMCE.majorVersion": "([\\d.]+)\\;version:\\1"
       },
-      "script": "/tinymce(?:\\.min)?\\.js",
+      "script": "/tiny(?:_)?mce(?:\\.min)?\\.js",
       "website": "http://tinymce.com"
     },
     "Titan": {

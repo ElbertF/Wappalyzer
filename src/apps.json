@@ -15,6 +15,14 @@
       "script": "1c-bitrix",
       "website": "http://www.1c-bitrix.ru"
     },
+    "91App": {
+      "cats": [
+        6
+      ],
+      "icon": "91app.png",
+      "script": "https\\:\/\/track\\.91app\\.io\/track\\.js\\?",
+      "website": "https://www.91app.com/"
+    },
     "3dCart": {
       "cats": [
         1,
@@ -8860,6 +8868,16 @@
         "Shopify": ""
       },
       "website": "http://shopify.com"
+    },
+    "Shopline": {
+      "cats": [
+        6
+      ],
+      "icon": "shopline.png",
+      "meta": {
+        "og:image":"https\\:\/\/img\\.shoplineapp\\.com"
+      },
+      "website": "https://shoplineapp.com/"
     },
     "Shoptet": {
       "cats": [

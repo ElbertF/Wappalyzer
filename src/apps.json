@@ -9652,14 +9652,18 @@
       "cats": [
         1
       ],
-      "html": "<(?:script[^>]+ src|link[^>]+ href)=[^>]+typo3temp/",
+      "html": [
+				"<link[^>]+ href=\"typo3(?:conf|temp)/",
+				"<img[^>]+ src=\"typo3(?:conf|temp)/"
+			],
       "icon": "TYPO3.svg",
       "implies": "PHP",
+			"script": "^typo3(?:conf|temp)/",
       "meta": {
         "generator": "TYPO3\\s+(?:CMS\\s+)?([\\d.]+)?(?:\\s+CMS)?\\;version:\\1"
       },
       "url": "/typo3/",
-      "website": "http://www.typo3.org"
+      "website": "https://typo3.org/"
     },
     "Taiga": {
       "cats": [

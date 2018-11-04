@@ -10955,7 +10955,7 @@
         11
       ],
       "html": [
-        "<link rel=[\"']stylesheet[\"'] [^>]+wp-(?:content|includes)",
+        "<link rel=[\"']stylesheet[\"'] [^>]+/wp-(?:content|includes)/",
         "<link[^>]+s\\d+\\.wp\\.com"
       ],
       "icon": "WordPress.svg",
@@ -10967,10 +10967,10 @@
         "wp_username": ""
       },
       "meta": {
-        "generator": "WordPress( [\\d.]+)?\\;version:\\1"
+        "generator": "^WordPress ?([\\d.]+)?\\;version:\\1"
       },
-      "script": "/wp-includes/",
-      "website": "http://wordpress.org"
+      "script": "/wp-(?:content|includes)/",
+      "website": "https://wordpress.org"
     },
     "WordPress Super Cache": {
       "cats": [

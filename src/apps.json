@@ -7539,6 +7539,16 @@
       },
       "website": "http://planetplanet.org"
     },
+    "PlatformOS": {
+      "cats": [
+        1
+      ],
+      "icon": "PlatformOS.svg",
+      "headers": {
+        "x-powered-by": "^PlatformOS$"
+      },
+      "website": "https://www.platform-os.com"
+    },
     "Play": {
       "cats": [
         18

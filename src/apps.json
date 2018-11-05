@@ -10742,6 +10742,22 @@
       "url": "/websale7/",
       "website": "http://websale.de"
     },
+    "Website Creator": {
+      "cats": [
+        1
+      ],
+      "icon": "WebsiteCreator.png",
+      "implies": [
+        "PHP",
+        "MySQL",
+        "Vue.js"
+      ],
+      "meta": {
+        "generator": "Website Creator by hosttech",
+        "wsc_rendermode": ""
+      },
+      "website": "https://www.hosttech.ch/websitecreator"
+    },
     "WebsiteBaker": {
       "cats": [
         1

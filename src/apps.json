@@ -6284,10 +6284,11 @@
         1,
         6
       ],
-      "html": "(?:<script|link)[^>]*(?:src=|href=)[\"'][^\"]*mg-(?:core|plugins|templates)",
+      "html": "<link[^>]+href=[\"'][^\"]+mg-(?:core|plugins|templates)/",
+			"script": "mg-(?:core|plugins|templates)/",
       "icon": "Moguta.CMS.png",
       "implies": "PHP",
-      "website": "http://moguta.ru"
+      "website": "https://moguta.ru"
     },
     "MoinMoin": {
       "cats": [

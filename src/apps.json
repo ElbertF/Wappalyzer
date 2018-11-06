@@ -8001,19 +8001,22 @@
         30
       ],
       "headers": {
-        "Server": "RainLoop"
+        "Server": "^RainLoop"
       },
       "html": [
-        "<meta [^>]*(?:content=\"([^\"]+)[^>]+ id=\"rlAppVersion\"|id=\"rlAppVersion\"[^>]+ content=\"([^\"]+))\\;version:\\1?\\1:\\2",
-        "<link[^>]* href=\"[^\"]*rainloop/v/([^/]+)\\;version:\\1"
+				"<link[^>]href=\"rainloop/v/([0-9.]+)/static/apple-touch-icon\\.png/>\\;version:\\1"
       ],
+			"meta": {
+				"rlAppVersion": "^([0-9.]+)$\\;version:\\1"
+			},
       "icon": "RainLoop.png",
       "implies": "PHP",
       "js": {
+				"rainloopI18N": "",
         "rainloop": ""
       },
-      "script": "rainloop/v/([^/]+)\\;version:\\1",
-      "website": "http://rainloop.net"
+      "script": "^rainloop/v/([0-9.]+)/\\;version:\\1",
+      "website": "https://www.rainloop.net/"
     },
     "Rakuten DBCore": {
       "cats": [

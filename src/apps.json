@@ -6585,14 +6585,6 @@
       "icon": "Plataforma NEO.svg",
       "website": "http://www.jetecommerce.com.br/"
     },
-    "NOIX": {
-      "cats": [
-        19
-      ],
-      "html": "(?:<[^>]+(?:src|href)=[^>]*/media/noix|<!-- NOIX)",
-      "icon": "NOIX.png",
-      "website": "http://www.noix.com.br/tecnologias/joomla"
-    },
     "NVD3": {
       "cats": [
         25

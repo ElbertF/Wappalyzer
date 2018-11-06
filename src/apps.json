@@ -8656,13 +8656,12 @@
       "cats": [
         10
       ],
-      "html": "<script[\\s\\S]*cdn\\.segment\\.com/analytics\\.js[\\s\\S]*script>",
       "icon": "Segment.png",
       "js": {
         "analytics": ""
       },
       "script": "cdn\\.segment\\.com/analytics\\.js",
-      "website": "http://segment.com"
+      "website": "https://segment.com"
     },
     "Select2": {
       "cats": [

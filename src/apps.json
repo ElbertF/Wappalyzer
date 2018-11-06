@@ -1771,7 +1771,7 @@
         "PostgreSQL"
       ],
       "meta": {
-        "generator": ".*ckan.*"
+        "generator": "^ckan ?([0-9.]+)$\\;version:\\1"
       },
       "website": "http://ckan.org/"
     },

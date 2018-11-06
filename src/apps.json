@@ -10480,13 +10480,13 @@
         34
       ],
       "headers": {
-        "Server": "Virtuoso\\/?(\\d{2}\\.\\d{2}\\.\\d{4})?\\;version:\\1"
+        "Server": "Virtuoso/?([0-9.]+)?\\;version:\\1"
       },
       "meta": {
         "Copyright": "^Copyright &copy; \\d{4} OpenLink Software",
         "Keywords": "^OpenLink Virtuoso Sparql"
       },
-      "url": ".*/sparql\\.*",
+      "url": "/sparql",
       "website": "https://virtuoso.openlinksw.com/"
     },
     "Visual WebGUI": {

@@ -1321,7 +1321,7 @@
       "cats": [
         32
       ],
-      "html": "<script[^>]*>[^>]+\\.src\\s*=\\s*['\"](?:https?:)?//tag\\.bounceexchange\\.com/",
+      "script": "//tag\\.bounceexchange\\.com/",
       "icon": "Bounce Exchange.svg",
       "js": {
         "bouncex": ""
@@ -1453,7 +1453,7 @@
       "cats": [
         36
       ],
-      "html": "<script[^>]*>[^<]+?bsa\\.src\\s*=\\s*['\"](?:https?:)?\\/{2}\\w\\d\\.buysellads\\.com\\/[\\w\\d\\/]+?bsa\\.js['\"]",
+      "script": "\\.buysellads\\.com/",
       "icon": "BuySellAds.png",
       "js": {
         "_bsa": "",
@@ -8656,7 +8656,7 @@
       "cats": [
         10
       ],
-      "html": "<script[\\s\\S]*cdn\\.segment\\.com/analytics\\.js[\\s\\S]*script>",
+      "script": "cdn\\.segment\\.com/analytics\\.js",
       "icon": "Segment.png",
       "js": {
         "analytics": ""
@@ -9887,7 +9887,6 @@
       "cats": [
         36
       ],
-      "html": "<script[^>]+>var titan",
       "icon": "Titan.png",
       "js": {
         "titan": "",

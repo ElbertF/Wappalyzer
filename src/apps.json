@@ -2013,6 +2013,9 @@
       "js": {
         "CCM_IMAGE_PATH": ""
       },
+			"cookies": {
+				"CONCRETE5": ""
+			},
       "meta": {
         "generator": "^concrete5 - ([\\d.]+)$\\;version:\\1"
       },

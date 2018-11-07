@@ -12142,7 +12142,11 @@
       "cookies": {
         "osCsid": ""
       },
-      "html": "(?:<a[^>]*(?:\\?|&)osCsid|Powered by (?:<[^>]+>)?osCommerce</a>|<[^>]+class=\"[^>]*infoBoxHeading)",
+      "html": [
+				"<br />Powered by <a href=\"https?://www\\.oscommerce\\.com",
+				"<(?:input|a)[^>]+name=\"osCsid\"",
+				"<(?:tr|td|table)class=\"[^\"]*infoBoxHeading"
+			],
       "icon": "osCommerce.png",
       "implies": [
         "PHP",

@@ -9978,7 +9978,7 @@
         6
       ],
       "icon": "tray.png",
-      "script": ".+tcdn\\.com\\.br",
+      "script": "tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
     },
     "Tumblr": {

@@ -5953,13 +5953,20 @@
       "cats": [
         8
       ],
-      "html": "(?:<a[^>]+>Powered by MediaWiki</a>|<[^>]+id=\"t-specialpages)",
+      "html": [
+				"<body[^>]+class=\"mediawiki\"",
+				"<(?:a|img)[^>]+>Powered by MediaWiki</a>",
+				"<a[^>]+/Special:WhatLinksHere/"
+			],
       "icon": "MediaWiki.png",
       "implies": "PHP",
+			"js": {
+				"mw.util.toggleToc": ""
+			},
       "meta": {
         "generator": "^MediaWiki ?(.+)$\\;version:\\1"
       },
-      "website": "http://www.mediawiki.org"
+      "website": "https://www.mediawiki.org"
     },
     "Medium": {
       "cats": [

@@ -10803,17 +10803,6 @@
       "icon": "wikinggruppen.png",
       "website": "https://wikinggruppen.se/"
     },
-    "Wikispaces": {
-      "cats": [
-        8
-      ],
-      "html": [
-        "<script[^>]*>[^<]*session_url:\\s*'https://session\\.wikispaces\\.com/",
-        "<\\w+[^>]*\\s+class=\"[^\"]*WikispacesContent\\s+WikispacesBs3[^\"]*\""
-      ],
-      "icon": "Wikispaces.png",
-      "website": "http://www.wikispaces.com"
-    },
     "WikkaWiki": {
       "cats": [
         8

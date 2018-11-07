@@ -12222,7 +12222,13 @@
       "cookies": {
         "phpbb": ""
       },
-      "html": "(?:Powered by <a[^>]+phpbb|<a[^>]+phpbb[^>]+class=\\.copyright|\\tphpBB style name|<[^>]+styles/(?:sub|pro)silver/theme|<img[^>]+i_icon_mini|<table class=\"forumline)",
+      "html": [
+				"Powered by <a[^>]+phpBB",
+				"<div class=phpbb_copyright>",
+				"<[^>]+styles/(?:sub|pro)silver/theme",
+				"<img[^>]+i_icon_mini",
+				"<table class=\"[^\"]*forumline"
+			],
       "icon": "phpBB.png",
       "implies": "PHP",
       "js": {

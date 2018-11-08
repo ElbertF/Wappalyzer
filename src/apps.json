@@ -12435,7 +12435,7 @@
         12,
         47
       ],
-      "html": "<style[^>]*data-styled-components",
+      "html": "<style[^>]*data-styled",
       "icon": "styled-components.png",
       "implies": [
         "React"

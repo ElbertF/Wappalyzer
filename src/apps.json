@@ -38,7 +38,7 @@
       "icon": "A-Frame.svg",
       "implies": "three.js",
       "js": {
-        "AFRAME.version": "(.*)\\;version:\\1"
+        "AFRAME.version": "^(.+)$\\;version:\\1"
       },
       "script": "/?([\\d.]+)?/aframe(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://aframe.io"
@@ -373,7 +373,7 @@
       ],
       "icon": "Adyen.svg",
       "js": {
-        "adyen.encrypt.version": "(.*)\\;version:\\1"
+        "adyen.encrypt.version": "^(.+)$\\;version:\\1"
       },
       "website": "https://www.adyen.com"
     },
@@ -486,7 +486,7 @@
       "icon": "Algolia Realtime Search.svg",
       "js": {
         "AlgoliaSearch": "",
-        "algoliasearch.version": "(.*)\\;version:\\1"
+        "algoliasearch.version": "^(.+)$\\;version:\\1"
       },
       "website": "http://www.algolia.com"
     },
@@ -674,7 +674,7 @@
       "icon": "AngularJS.svg",
       "js": {
         "angular": "",
-        "angular.version.full": "(.*)\\;version:\\1"
+        "angular.version.full": "^(.+)$\\;version:\\1"
       },
       "script": [
         "angular(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -814,7 +814,7 @@
       ],
       "excludes": "OpenCart",
       "headers": {
-        "Arastta": "(.*)\\;version:\\1",
+        "Arastta": "^(.+)$\\;version:\\1",
         "X-Arastta": ""
       },
       "html": "Powered by <a [^>]*href=\"https?://(?:www\\.)?arastta\\.org[^>]+>Arastta",
@@ -1058,7 +1058,7 @@
       "implies": "Underscore.js",
       "js": {
         "Backbone": "",
-        "Backbone.VERSION": "(.*)\\;version:\\1"
+        "Backbone.VERSION": "^(.+)$\\;version:\\1"
       },
       "script": "backbone.*\\.js",
       "website": "http://backbonejs.org"
@@ -1294,8 +1294,8 @@
       ],
       "icon": "Bootstrap.png",
       "js": {
-        "bootstrap.Alert.VERSION": "(.*)\\;version:\\1",
-        "jQuery.fn.tooltip.Constructor.VERSION": "(.*)\\;version:\\1"
+        "bootstrap.Alert.VERSION": "^(.+)$\\;version:\\1",
+        "jQuery.fn.tooltip.Constructor.VERSION": "^(.+)$\\;version:\\1"
       },
       "script": [
         "twitter\\.github\\.com/bootstrap",
@@ -1336,7 +1336,7 @@
       "icon": "Braintree.svg",
       "js": {
         "Braintree": "",
-        "Braintree.version": "(.*)\\;version:\\1"
+        "Braintree.version": "^(.+)$\\;version:\\1"
       },
       "website": "https://www.braintreepayments.com"
     },
@@ -1495,7 +1495,7 @@
       "icon": "CKEditor.png",
       "js": {
         "CKEDITOR": "",
-        "CKEDITOR.version": "(.*)\\;version:\\1",
+        "CKEDITOR.version": "^(.+)$\\;version:\\1",
         "CKEDITOR_BASEPATH": ""
       },
       "website": "http://ckeditor.com"
@@ -1647,7 +1647,7 @@
       "implies": "Node.js",
       "js": {
         "catberry": "",
-        "catberry.version": "(.*)\\;version:\\1"
+        "catberry.version": "^(.+)$\\;version:\\1"
       },
       "website": "http://catberry.org"
     },
@@ -1886,7 +1886,7 @@
         18
       ],
       "cookies": {
-        "ci_csrf_token": "(.*)\\;version:\\1?2+:",
+        "ci_csrf_token": "^(.+)$\\;version:\\1?2+:",
         "ci_session": "",
         "exp_last_activity": "",
         "exp_tracker": ""
@@ -1903,7 +1903,7 @@
       "icon": "CodeMirror.png",
       "js": {
         "CodeMirror": "",
-        "CodeMirror.version": "(.*)\\;version:\\1"
+        "CodeMirror.version": "^(.+)$\\;version:\\1"
       },
       "website": "http://codemirror.net"
     },
@@ -2268,7 +2268,7 @@
       ],
       "icon": "D3.png",
       "js": {
-        "d3.version": "(.*)\\;version:\\1"
+        "d3.version": "^(.+)$\\;version:\\1"
       },
       "script": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
       "website": "http://d3js.org"
@@ -2310,7 +2310,7 @@
       "implies": "Microsoft ASP.NET",
       "js": {
         "DotNetNuke": "",
-        "dnn.apiversion": "(.*)\\;version:\\1"
+        "dnn.apiversion": "^(.+)$\\;version:\\1"
       },
       "meta": {
         "generator": "DotNetNuke"
@@ -2479,7 +2479,7 @@
       "implies": "PHP",
       "js": {
         "DISCUZCODE": "",
-        "discuzVersion": "(.*)\\;version:\\1",
+        "discuzVersion": "^(.+)$\\;version:\\1",
         "discuz_uid": ""
       },
       "meta": {
@@ -2543,7 +2543,7 @@
       "icon": "Dojo.png",
       "js": {
         "dojo": "",
-        "dojo.version.major": "(.*)\\;version:\\1"
+        "dojo.version.major": "^(.+)$\\;version:\\1"
       },
       "script": "([\\d.]+)/dojo/dojo(?:\\.xd)?\\.js\\;version:\\1",
       "website": "https://dojotoolkit.org"
@@ -2855,7 +2855,7 @@
       "implies": "Handlebars",
       "js": {
         "Ember": "",
-        "Ember.VERSION": "(.*)\\;version:\\1"
+        "Ember.VERSION": "^(.+)$\\;version:\\1"
       },
       "website": "http://emberjs.com"
     },
@@ -2934,7 +2934,7 @@
       "icon": "Exhibit.png",
       "js": {
         "Exhibit": "",
-        "Exhibit.version": "(.*)\\;version:\\1"
+        "Exhibit.version": "^(.+)$\\;version:\\1"
       },
       "script": "exhibit.*\\.js",
       "website": "http://simile-widgets.org/exhibit/"
@@ -2971,8 +2971,8 @@
       "icon": "ExtJS.png",
       "js": {
         "Ext": "",
-        "Ext.version": "(.*)\\;version:\\1",
-        "Ext.versions.extjs.version": "(.*)\\;version:\\1"
+        "Ext.version": "^(.+)$\\;version:\\1",
+        "Ext.versions.extjs.version": "^(.+)$\\;version:\\1"
       },
       "script": "ext-base\\.js",
       "website": "https://www.sencha.com"
@@ -3034,7 +3034,7 @@
       "icon": "FancyBox.png",
       "implies": "jQuery",
       "js": {
-        "$.fancybox.version": "(.*)\\;version:\\1"
+        "$.fancybox.version": "^(.+)$\\;version:\\1"
       },
       "script": "jquery\\.fancybox(?:\\.pack|\\.min)?\\.js(?:\\?v=([\\d.]+))?$\\;version:\\1",
       "website": "http://fancyapps.com/fancybox"
@@ -3099,7 +3099,7 @@
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
         "Fingerprint2": "",
-        "Fingerprint2.VERSION": "(.*)\\;version:\\1"
+        "Fingerprint2.VERSION": "^(.+)$\\;version:\\1"
       },
       "script": "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://valve.github.io/fingerprintjs2/"
@@ -4038,9 +4038,9 @@
       ],
       "icon": "Hammer.js.png",
       "js": {
-        "Ha.VERSION": "(.*)\\;version:\\1",
+        "Ha.VERSION": "^(.+)$\\;version:\\1",
         "Hammer": "",
-        "Hammer.VERSION": "(.*)\\;version:\\1"
+        "Hammer.VERSION": "^(.+)$\\;version:\\1"
       },
       "script": "hammer(?:\\.min)?\\.js",
       "website": "https://hammerjs.github.io"
@@ -4053,7 +4053,7 @@
       "icon": "Handlebars.png",
       "js": {
         "Handlebars": "",
-        "Handlebars.VERSION": "(.*)\\;version:\\1"
+        "Handlebars.VERSION": "^(.+)$\\;version:\\1"
       },
       "script": "handlebars(?:\\.runtime)?(?:-v([\\d.]+?))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "http://handlebarsjs.com"
@@ -4141,7 +4141,7 @@
       "icon": "Highcharts.png",
       "js": {
         "Highcharts": "",
-        "Highcharts.version": "(.*)\\;version:\\1"
+        "Highcharts.version": "^(.+)$\\;version:\\1"
       },
       "script": "highcharts.*\\.js",
       "website": "https://www.highcharts.com"
@@ -4407,7 +4407,7 @@
       "icon": "Immutable.js.png",
       "js": {
         "Immutable": "",
-        "Immutable.version": "(.*)\\;version:\\1"
+        "Immutable.version": "^(.+)$\\;version:\\1"
       },
       "script": "^immutable\\.(?:min\\.)?js$",
       "website": "https://facebook.github.io/immutable-js/"
@@ -4510,7 +4510,7 @@
       "icon": "InfernoJS.png",
       "js": {
         "Inferno": "",
-        "Inferno.version": "(.*)\\;version:\\1"
+        "Inferno.version": "^(.+)$\\;version:\\1"
       },
       "website": "https://infernojs.org"
     },
@@ -4747,7 +4747,7 @@
       "icon": "JavaScript Infovis Toolkit.png",
       "js": {
         "$jit": "",
-        "$jit.version": "(.*)\\;version:\\1"
+        "$jit.version": "^(.+)$\\;version:\\1"
       },
       "script": "jit(?:-yc)?\\.js",
       "website": "https://philogb.github.io/jit/"
@@ -4989,7 +4989,7 @@
       "implies": "jQuery",
       "js": {
         "kendo": "",
-        "kendo.version": "(.*)\\;version:\\1"
+        "kendo.version": "^(.+)$\\;version:\\1"
       },
       "website": "https://www.telerik.com/kendo-ui"
     },
@@ -5038,7 +5038,7 @@
       "icon": "KineticJS.png",
       "js": {
         "Kinetic": "",
-        "Kinetic.version": "(.*)\\;version:\\1"
+        "Kinetic.version": "^(.+)$\\;version:\\1"
       },
       "script": "kinetic(?:-v?([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://github.com/ericdrowell/KineticJS/"
@@ -5061,7 +5061,7 @@
       ],
       "icon": "Knockout.js.png",
       "js": {
-        "ko.version": "(.*)\\;version:\\1"
+        "ko.version": "^(.+)$\\;version:\\1"
       },
       "website": "http://knockoutjs.com"
     },
@@ -5203,7 +5203,7 @@
         1
       ],
       "headers": {
-        "X-KoobooCMS-Version": "(.*)\\;version:\\1"
+        "X-KoobooCMS-Version": "^(.+)$\\;version:\\1"
       },
       "icon": "Kooboo CMS.png",
       "implies": "Microsoft ASP.NET",
@@ -5287,7 +5287,7 @@
       "js": {
         "L.DistanceGrid": "",
         "L.PosAnimation": "",
-        "L.version": "(.*)\\;version:\\1\\;confidence:0"
+        "L.version": "^(.+)$\\;version:\\1\\;confidence:0"
       },
       "script": "leaflet.*\\.js",
       "website": "http://leafletjs.com"
@@ -5501,7 +5501,7 @@
       "icon": "Livefyre.png",
       "js": {
         "FyreLoader": "",
-        "L.version": "(.*)\\;confidence:0\\;version:\\1",
+        "L.version": "^(.+)$\\;confidence:0\\;version:\\1",
         "LF.CommentCount": "",
         "fyre": ""
       },
@@ -5541,7 +5541,7 @@
       "excludes": "Underscore.js",
       "icon": "Lo-dash.png",
       "js": {
-        "_.VERSION": "(.*)\\;confidence:0\\;version:\\1",
+        "_.VERSION": "^(.+)$\\;confidence:0\\;version:\\1",
         "_.differenceBy": ""
       },
       "script": "lodash.*\\.js",
@@ -5780,7 +5780,7 @@
       ],
       "js": {
         "Marionette": "",
-        "Marionette.VERSION": "(.*)\\;version:\\1"
+        "Marionette.VERSION": "^(.+)$\\;version:\\1"
       },
       "script": "backbone\\.marionette.*\\.js",
       "website": "https://marionettejs.com"
@@ -5836,7 +5836,7 @@
       "icon": "MathJax.png",
       "js": {
         "MathJax": "",
-        "MathJax.version": "(.*)\\;version:\\1"
+        "MathJax.version": "^(.+)$\\;version:\\1"
       },
       "script": "([\\d.]+)?/mathjax\\.js\\;version:\\1",
       "website": "https://www.mathjax.org"
@@ -5935,7 +5935,7 @@
       "icon": "MediaElement.js.png",
       "js": {
         "mejs": "",
-        "mejs.version": "(.*)\\;version:\\1"
+        "mejs.version": "^(.+)$\\;version:\\1"
       },
       "website": "http://www.mediaelementjs.com"
     },
@@ -6105,7 +6105,7 @@
         1
       ],
       "headers": {
-        "MicrosoftSharePointTeamServices": "(.*)\\;version:\\1",
+        "MicrosoftSharePointTeamServices": "^(.+)$\\;version:\\1",
         "SPRequestGuid": "",
         "SharePointHealthScore": "",
         "X-SharePointHealthScore": ""
@@ -6242,7 +6242,7 @@
       "icon": "MochiKit.png",
       "js": {
         "MochiKit": "",
-        "MochiKit.MochiKit.VERSION": "(.*)\\;version:\\1"
+        "MochiKit.MochiKit.VERSION": "^(.+)$\\;version:\\1"
       },
       "script": "MochiKit(?:\\.min)?\\.js",
       "website": "https://mochi.github.io/mochikit/"
@@ -6262,7 +6262,7 @@
       ],
       "icon": "Modernizr.svg",
       "js": {
-        "Modernizr._version": "(.*)\\;version:\\1"
+        "Modernizr._version": "^(.+)$\\;version:\\1"
       },
       "script": [
         "([\\d.]+)?/modernizr(?:.([\\d.]+))?.*\\.js\\;version:\\1?\\1:\\2"
@@ -6341,7 +6341,7 @@
       "icon": "Moment.js.svg",
       "js": {
         "moment": "",
-        "moment.version": "(.*)\\;version:\\1"
+        "moment.version": "^(.+)$\\;version:\\1"
       },
       "script": "moment(?:\\.min)?\\.js",
       "website": "https://momentjs.com"
@@ -6421,7 +6421,7 @@
       "icon": "MooTools.png",
       "js": {
         "MooTools": "",
-        "MooTools.version": "(.*)\\;version:\\1"
+        "MooTools.version": "^(.+)$\\;version:\\1"
       },
       "script": "mootools.*\\.js",
       "website": "https://mootools.net"
@@ -6530,7 +6530,7 @@
       ],
       "icon": "Mustache.png",
       "js": {
-        "Mustache.version": "(.*)\\;version:\\1"
+        "Mustache.version": "^(.+)$\\;version:\\1"
       },
       "script": "mustache(?:\\.min)?\\.js",
       "website": "https://mustache.github.io"
@@ -6602,7 +6602,7 @@
       "implies": "D3",
       "js": {
         "nv.addGraph": "",
-        "nv.version": "(.*)\\;confidence:0\\;version:\\1"
+        "nv.version": "^(.+)$\\;confidence:0\\;version:\\1"
       },
       "script": "nv\\.d3(?:\\.min)?\\.js",
       "website": "http://nvd3.org"
@@ -6713,7 +6713,7 @@
       "implies": "PHP",
       "js": {
         "Nette": "",
-        "Nette.version": "(.*)\\;version:\\1"
+        "Nette.version": "^(.+)$\\;version:\\1"
       },
       "website": "https://nette.org"
     },
@@ -7071,7 +7071,7 @@
       ],
       "icon": "OpenUI5.png",
       "js": {
-        "sap.ui.version": "(.*)\\;version:\\1"
+        "sap.ui.version": "^(.+)$\\;version:\\1"
       },
       "script": "sap-ui-core\\.js",
       "website": "http://openui5.org/"
@@ -7094,12 +7094,12 @@
         18
       ],
       "headers": {
-        "X-Powered-By": "Ophal(?: (.*))? \\(ophal\\.org\\)\\;version:\\1"
+        "X-Powered-By": "Ophal(?: (.+))? \\(ophal\\.org\\)\\;version:\\1"
       },
       "icon": "Ophal.png",
       "implies": "Lua",
       "meta": {
-        "generator": "Ophal(?: (.*))? \\(ophal\\.org\\)\\;version:\\1"
+        "generator": "Ophal(?: (.+))? \\(ophal\\.org\\)\\;version:\\1"
       },
       "script": "ophal\\.js",
       "website": "http://ophal.org"
@@ -7141,7 +7141,7 @@
         6
       ],
       "headers": {
-        "OracleCommerceCloud-Version": "(.*)\\;version:\\1"
+        "OracleCommerceCloud-Version": "^(.+)$\\;version:\\1"
       },
       "html": "<[^>]+id=\"oracle-cc\"",
       "icon": "Oracle.png",
@@ -7202,7 +7202,7 @@
       ],
       "icon": "Outbrain.png",
       "js": {
-        "OB_releaseVer": "(.*)\\;version:\\1",
+        "OB_releaseVer": "^(.+)$\\;version:\\1",
         "OutbrainPermaLink": ""
       },
       "script": "widgets\\.outbrain\\.com/outbrain\\.js",
@@ -7239,7 +7239,7 @@
       "icon": "PDF.js.svg",
       "js": {
         "PDFJS": "",
-        "PDFJS.version": "(.*)\\;version:\\1"
+        "PDFJS.version": "^(.+)$\\;version:\\1"
       },
       "url": "/web/viewer\\.html?file=[^&]\\.pdf",
       "website": "https://mozilla.github.io/pdf.js/"
@@ -7333,7 +7333,7 @@
       ],
       "icon": "paperjs.png",
       "js": {
-        "paper.version": "(.*)\\;version:\\1"
+        "paper.version": "^(.+)$\\;version:\\1"
       },
       "website": "http://paperjs.org/"
     },
@@ -7479,7 +7479,7 @@
       "icon": "Phaser.png",
       "js": {
         "Phaser": "",
-        "Phaser.VERSION": "(.*)\\;version:\\1"
+        "Phaser.VERSION": "^(.+)$\\;version:\\1"
       },
       "website": "https://phaser.io"
     },
@@ -7637,7 +7637,7 @@
       "html": "(?:<polymer-[^>]+|<link[^>]+rel=\"import\"[^>]+/polymer\\.html\")",
       "icon": "Polymer.png",
       "js": {
-        "Polymer.version": "(.*)\\;version:\\1"
+        "Polymer.version": "^(.+)$\\;version:\\1"
       },
       "script": "polymer\\.js",
       "website": "http://polymer-project.org"
@@ -7778,7 +7778,7 @@
       ],
       "icon": "Prototype.png",
       "js": {
-        "Prototype.Version": "(.*)\\;version:\\1"
+        "Prototype.Version": "^(.+)$\\;version:\\1"
       },
       "script": "(?:prototype|protoaculous)(?:-([\\d.]*[\\d]))?.*\\.js\\;version:\\1",
       "website": "http://www.prototypejs.org"
@@ -7837,7 +7837,7 @@
         "PUBLICCMS_USER": ""
       },
       "headers": {
-        "X-Powered-PublicCMS": "(.*)\\;version:\\1"
+        "X-Powered-PublicCMS": "^(.+)$\\;version:\\1"
       },
       "icon": "Public CMS.png",
       "implies": "Java",
@@ -8050,7 +8050,7 @@
       ],
       "icon": "Raphael.png",
       "js": {
-        "Raphael.version": "(.*)\\;version:\\1"
+        "Raphael.version": "^(.+)$\\;version:\\1"
       },
       "script": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://dmitrybaranovskiy.github.io/raphael/"
@@ -8108,7 +8108,7 @@
       "icon": "redoc.png",
       "implies": "React",
       "js": {
-        "Redoc.version": "(.*)\\;version:\\1"
+        "Redoc.version": "^(.+)$\\;version:\\1"
       },
       "script": "/redoc\\.(?:min\\.)?js",
       "website": "https://github.com/Rebilly/ReDoc"
@@ -8120,8 +8120,8 @@
       "html": "<[^>]+data-react",
       "icon": "React.png",
       "js": {
-        "React.version": "(.*)\\;version:\\1",
-        "react.version": "(.*)\\;version:\\1"
+        "React.version": "^(.+)$\\;version:\\1",
+        "react.version": "^(.+)$\\;version:\\1"
       },
       "script": [
         "react(?:\\-with\\-addons)?(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -8185,7 +8185,7 @@
       ],
       "icon": "RequireJS.png",
       "js": {
-        "requirejs.version": "(.*)\\;version:\\1"
+        "requirejs.version": "^(.+)$\\;version:\\1"
       },
       "script": "require.*\\.js",
       "website": "http://requirejs.org"
@@ -8208,7 +8208,7 @@
       "icon": "Reveal.js.png",
       "implies": "Highlight.js",
       "js": {
-        "Reveal.VERSION": "(.*)\\;version:\\1"
+        "Reveal.VERSION": "^(.+)$\\;version:\\1"
       },
       "script": "(?:^|/)reveal(?:\\.min)?\\.js",
       "website": "http://lab.hakim.se/reveal-js"
@@ -8327,7 +8327,7 @@
         "Microsoft ASP.NET"
       ],
       "meta": {
-        "generator": "^Rock v.*"
+        "generator": "^Rock v([0-9.]+)\\;version:\\1"
       },
       "website": "http://www.rockrms.com"
     },
@@ -9105,7 +9105,7 @@
       ],
       "icon": "Snap.svg.png",
       "js": {
-        "Snap.version": "(.*)\\;version:\\1"
+        "Snap.version": "^(.+)$\\;version:\\1"
       },
       "script": "snap\\.svg(?:-min)?\\.js",
       "website": "http://snapsvg.io"
@@ -9140,7 +9140,7 @@
       "implies": "Node.js",
       "js": {
         "io.Socket": "",
-        "io.version": "(.*)\\;version:\\1"
+        "io.version": "^(.+)$\\;version:\\1"
       },
       "script": "socket\\.io.*\\.js",
       "website": "https://socket.io"
@@ -9447,7 +9447,7 @@
       "html": "<input[^>]+data-stripe",
       "icon": "Stripe.png",
       "js": {
-        "Stripe.version": "(.*)\\;version:\\1"
+        "Stripe.version": "^(.+)$\\;version:\\1"
       },
       "script": "js\\.stripe\\.com",
       "website": "http://stripe.com"
@@ -9833,7 +9833,7 @@
         "application-name": "^TiddlyWiki$",
         "copyright": "^TiddlyWiki created by Jeremy Ruston",
         "generator": "^TiddlyWiki$",
-        "tiddlywiki-version": "(.*)\\;version:\\1"
+        "tiddlywiki-version": "^(.+)$\\;version:\\1"
       },
       "website": "http://tiddlywiki.com"
     },
@@ -9999,7 +9999,7 @@
       ],
       "icon": "TweenMax.png",
       "js": {
-        "TweenMax.version": "(.*)\\;version:\\1"
+        "TweenMax.version": "^(.+)$\\;version:\\1"
       },
       "script": "TweenMax(?:\\.min)?\\.js",
       "website": "http://greensock.com/tweenmax"
@@ -10108,7 +10108,7 @@
       ],
       "icon": "Typekit.png",
       "js": {
-        "Typekit.config.js": "(.*)\\;version:\\1"
+        "Typekit.config.js": "^(.+)$\\;version:\\1"
       },
       "script": "use\\.typekit\\.com",
       "website": "http://typekit.com"
@@ -10172,8 +10172,8 @@
       "js": {
         "ucCatalog": ""
       },
-      "script": "cgi-bin\\/UCJavaScript\\?(?:[^\"]*&)?merchantid=",
-      "url": "/cgi-bin/UCEditor\\?(?:.*&)?merchantid=",
+      "script": "cgi-bin\\/UCJavaScript\\?",
+      "url": "/cgi-bin/UCEditor\\?",
       "website": "http://ultracart.com"
     },
     "Umbraco": {
@@ -10181,7 +10181,7 @@
         1
       ],
       "headers": {
-        "X-Umbraco-Version": "(.*)\\;version:\\1"
+        "X-Umbraco-Version": "^(.+)$\\;version:\\1"
       },
       "html": "powered by <a href=[^>]+umbraco",
       "icon": "Umbraco.png",
@@ -10217,7 +10217,7 @@
       "excludes": "Lodash",
       "icon": "Underscore.js.png",
       "js": {
-        "_.VERSION": "(.*)\\;confidence:0\\;version:\\1",
+        "_.VERSION": "^(.+)$\\;confidence:0\\;version:\\1",
         "_.restArguments": ""
       },
       "script": "underscore.*\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
@@ -10549,7 +10549,7 @@
       "html": "<[^>]+data-v(?:ue)-",
       "icon": "Vue.js.png",
       "js": {
-        "Vue.version": "(.*)\\;version:\\1"
+        "Vue.version": "^(.+)$\\;version:\\1"
       },
       "script": [
         "vue(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -10852,7 +10852,7 @@
       ],
       "icon": "Wink.png",
       "js": {
-        "wink.version": "(.*)\\;version:\\1"
+        "wink.version": "^(.+)$\\;version:\\1"
       },
       "script": "(?:_base/js/base|wink).*\\.js",
       "website": "http://winktoolkit.org"
@@ -11060,7 +11060,7 @@
       ],
       "icon": "XRegExp.png",
       "js": {
-        "XRegExp.version": "(.*)\\;version:\\1"
+        "XRegExp.version": "^(.+)$\\;version:\\1"
       },
       "script": [
         "xregexp(?:\\-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -11179,8 +11179,8 @@
       ],
       "icon": "YUI.png",
       "js": {
-        "YAHOO.VERSION": "(.*)\\;version:\\1",
-        "YUI.version": "(.*)\\;version:\\1"
+        "YAHOO.VERSION": "^(.+)$\\;version:\\1",
+        "YUI.version": "^(.+)$\\;version:\\1"
       },
       "script": "(?:/yui/|yui\\.yahooapis\\.com)",
       "website": "http://yuilibrary.com"
@@ -11671,7 +11671,7 @@
       ],
       "icon": "ef.js.svg",
       "js": {
-        "ef.version": "(.*)\\;version:\\1",
+        "ef.version": "^(.+)$\\;version:\\1",
         "efCore": ""
       },
       "script": "/ef(?:-core)?(?:\\.min|\\.dev)?\\.js",
@@ -11891,7 +11891,7 @@
       "icon": "jQuery Mobile.svg",
       "implies": "jQuery",
       "js": {
-        "jQuery.mobile.version": "(.*)\\;version:\\1"
+        "jQuery.mobile.version": "^(.+)$\\;version:\\1"
       },
       "script": "jquery[.-]mobile(?:-([\\d.]))?(?:\\.min)?\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1?\\1:\\2",
       "website": "https://jquerymobile.com"
@@ -11911,7 +11911,7 @@
       "icon": "jQuery UI.svg",
       "implies": "jQuery",
       "js": {
-        "jQuery.ui.version": "(.*)\\;version:\\1"
+        "jQuery.ui.version": "^(.+)$\\;version:\\1"
       },
       "script": [
         "jquery-ui(?:-|\\.)([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
@@ -12403,7 +12403,7 @@
       ],
       "icon": "script.aculo.us.png",
       "js": {
-        "Scriptaculous.Version": "(.*)\\;version:\\1"
+        "Scriptaculous.Version": "^(.+)$\\;version:\\1"
       },
       "script": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
       "website": "https://script.aculo.us"
@@ -12415,7 +12415,7 @@
       "icon": "scrollreveal.svg",
       "html": "<[^>]+data-sr(?:-id)",
       "js": {
-        "ScrollReveal().version": "(.*)\\;version:\\1"
+        "ScrollReveal().version": "^(.+)$\\;version:\\1"
       },
       "script": "scrollreveal(?:\\.min)(?:\\.js)",
       "website": "https://scrollrevealjs.org"
@@ -12461,7 +12461,7 @@
       ],
       "icon": "three.js.png",
       "js": {
-        "THREE.REVISION": "(.*)\\;version:\\1"
+        "THREE.REVISION": "^(.+)$\\;version:\\1"
       },
       "script": "three(?:\\.min)?\\.js",
       "website": "https://threejs.org"

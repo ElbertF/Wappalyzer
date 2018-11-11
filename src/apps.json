@@ -12435,7 +12435,10 @@
         12,
         47
       ],
-      "html": "<style[^>]*data-styled",
+      "html": [
+        "<style[^>]*data-styled(?:-components)?[\\s\"]",
+        "<style[^>]+data-styled-version=\"([0-9)+)\"\\;version:\\1"
+      ],
       "icon": "styled-components.png",
       "implies": [
         "React"

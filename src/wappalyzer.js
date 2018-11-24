@@ -160,6 +160,8 @@ class Wappalyzer {
       this.detected[url.canonical] = {};
     }
 
+    const metas = [];
+
     // Additional information
     let language = null;
 
@@ -171,6 +173,20 @@ class Wappalyzer {
       const matches = data.html.match(/<html[^>]*[: ]lang="([a-z]{2}((-|_)[A-Z]{2})?)"/i);
 
       language = matches && matches.length ? matches[1] : null;
+
+      // grab metas
+      const regex = /<meta[^>]+>/ig;
+      let metaMatches;
+      do {
+        metaMatches = regex.exec(html);
+
+        if (!metaMatches) {
+          break;
+        }
+
+        const [match] = metaMatches;
+        metas.push(match);
+      } while (metaMatches);
     }
 
     Object.keys(this.apps).forEach((appName) => {
@@ -184,7 +200,7 @@ class Wappalyzer {
 
       if (html) {
         promises.push(this.analyzeHtml(app, html));
-        promises.push(this.analyzeMeta(app, html));
+        promises.push(this.analyzeMeta(app, metas));
       }
 
       if (scripts) {
@@ -556,8 +572,7 @@ class Wappalyzer {
   /**
    * Analyze meta tag
    */
-  analyzeMeta(app, html) {
-    const regex = /<meta[^>]+>/ig;
+  analyzeMeta(app, metas) {
     const patterns = this.parsePatterns(app.props.meta);
     const promises = [];
 
@@ -565,17 +580,7 @@ class Wappalyzer {
       return Promise.resolve();
     }
 
-    let matches;
-
-    do {
-      matches = regex.exec(html);
-
-      if (!matches) {
-        break;
-      }
-
-      const [match] = matches;
-
+    metas.forEach((match) => {
       Object.keys(patterns).forEach((meta) => {
         const r = new RegExp(`(?:name|property)=["']${meta}["']`, 'i');
 
@@ -589,7 +594,7 @@ class Wappalyzer {
           }));
         }
       });
-    } while (matches);
+    });
 
     return Promise.all(promises);
   }

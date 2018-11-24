@@ -81,7 +81,7 @@
     }
 
     function getFrame(getFrameDetails, callback) {
-      if (typeof chrome !== 'undefined') {
+      if (isChrome()) {
         chrome.webNavigation.getFrame(getFrameDetails, callback);
       } else if (typeof browser !== 'undefined') {
         const gettingFrame = browser.webNavigation.getFrame(getFrameDetails);

@@ -1,12 +1,25 @@
 /** global: browser */
 /** global: XMLSerializer */
 
+/* global browser, chrome */
+/* eslint-env browser */
+
+function sendMessage(id, subject, callback) {
+  (chrome || browser).runtime.sendMessage({
+    id,
+    subject,
+    source: 'content.js',
+  }, callback || (() => {}));
+}
+
 if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
   try {
     sendMessage('init', {});
 
     // HTML
-    let html = new XMLSerializer().serializeToString(document).split('\n');
+    let html = new XMLSerializer().serializeToString(document)
+      .replace(new RegExp('(.{1000,}[^>]*>)<', 'g'), (match, p1) => `${p1}\n<`)
+      .split('\n');
 
     html = html
       .slice(0, 1000).concat(html.slice(html.length - 1000))
@@ -31,14 +44,14 @@ if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
           return;
         }
 
-        removeEventListener('message', onMessage);
+        window.removeEventListener('message', onMessage);
 
         sendMessage('analyze', { js: event.data.js });
 
         script.remove();
       };
 
-      addEventListener('message', onMessage);
+      window.addEventListener('message', onMessage);
 
       sendMessage('get_js_patterns', {}, (response) => {
         if (response) {
@@ -58,14 +71,6 @@ if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
   }
 }
 
-function sendMessage(id, subject, callback) {
-  (chrome || browser).runtime.sendMessage({
-    id,
-    subject,
-    source: 'content.js',
-  }, callback || (() => {}));
-}
-
 // https://stackoverflow.com/a/44774834
 // https://developer.mozilla.org/en-US/Add-ons/WebExtensions/API/tabs/executeScript#Return_value
-undefined;
+undefined; // eslint-disable-line no-unused-expressions

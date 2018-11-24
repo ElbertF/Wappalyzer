@@ -1,5 +1,3 @@
-
-
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
@@ -285,6 +283,7 @@ class Driver {
 
     try {
       html = browser.html()
+        .replace(new RegExp(`(.{${this.options.htmlMaxCols},}[^>]*>)<`, 'g'), (match, p1) => `${p1}\n<`)
         .split('\n')
         .slice(0, this.options.htmlMaxRows / 2)
         .concat(html.slice(html.length - this.options.htmlMaxRows / 2))

@@ -56,23 +56,6 @@
       "icon": "ebis.png",
       "website": "http://www.ebis.ne.jp"
     },
-    "AMPcms": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "AMP": ""
-      },
-      "headers": {
-        "X-AMP-Version": "([\\d.]+)\\;version:\\1"
-      },
-      "icon": "AMPcms.png",
-      "implies": "PHP",
-      "js": {
-        "amp_js_init": ""
-      },
-      "website": "http://www.ampcms.org"
-    },
     "AOLserver": {
       "cats": [
         22
@@ -123,17 +106,6 @@
       "html": "<html[^>]* (?:amp|⚡)",
       "icon": "Accelerated-Mobile-Pages.svg",
       "website": "https://www.ampproject.org"
-    },
-    "Accessible Portal": {
-      "cats": [
-        1
-      ],
-      "icon": "Accessible Portal.png",
-      "implies": "PHP",
-      "meta": {
-        "generator": "Accessible Portal"
-      },
-      "website": "http://www.accessibleportal.com"
     },
     "Acquia Cloud": {
       "cats": [
@@ -555,6 +527,16 @@
       "icon": "aws-ec2.svg",
       "website": "http://aws.amazon.com/ec2/"
     },
+    "Amazon ELB": {
+      "cats": [
+        31
+      ],
+      "cookies": {
+        "AWSELB": ""
+      },
+      "icon": "aws-elb.png",
+      "website": "https://aws.amazon.com/elasticloadbalancing/"
+    },
     "Amazon S3": {
       "cats": [
         19
@@ -743,7 +725,7 @@
         22
       ],
       "headers": {
-        "Server": "^Apache-Coyote",
+        "Server": "^Apache-Coyote(?:/([\\d.]+))?\\;version:\\1",
         "X-Powered-By": "\\bTomcat\\b(?:-([\\d.]+))?\\;version:\\1"
       },
       "icon": "Apache Tomcat.svg",
@@ -1376,17 +1358,6 @@
       },
       "website": "http://bubble.is"
     },
-    "BugSense": {
-      "cats": [
-        10
-      ],
-      "icon": "BugSense.png",
-      "js": {
-        "Bugsense": ""
-      },
-      "script": "bugsense\\.js",
-      "website": "http://bugsense.com"
-    },
     "BugSnag": {
       "cats": [
         10
@@ -1523,14 +1494,6 @@
         "generator": "CMSimple( [\\d.]+)?\\;version:\\1"
       },
       "website": "http://www.cmsimple.org/en"
-    },
-    "CO2Stats": {
-      "cats": [
-        10
-      ],
-      "html": "src=[^>]+co2stats\\.com/propres\\.php",
-      "icon": "CO2Stats.png",
-      "website": "http://co2stats.com"
     },
     "CPG Dragonfly": {
       "cats": [
@@ -1845,6 +1808,9 @@
         "cf-ray": ""
       },
       "icon": "CloudFlare.svg",
+      "cookies": {
+        "__cfduid": ""
+      },
       "js": {
         "CloudFlare": ""
       },
@@ -2205,7 +2171,7 @@
         "criteo_pubtag": "",
         "criteo_q": ""
       },
-      "script":[ 
+      "script": [
         "//(?:cas\\.criteo\\.com|(?:[^/]\\.)?criteo\\.net)/",
         "//static.criteo.net/js/ld/ld.js"
       ],
@@ -2531,10 +2497,22 @@
         "React",
         "webpack"
       ],
+      "js": {
+        "search.indexName": ""
+      },
       "meta": {
         "generator": "^Docusaurus$"
       },
       "website": "https://docusaurus.io/"
+    },
+    "Docker": {
+      "cats": [
+        28
+      ],
+      "icon": "docker.png",
+      "implies": "Linux",
+      "html": "<!-- This comment is expected by the docker HEALTHCHECK  -->",
+      "website": "https://www.docker.com/"
     },
     "Dojo": {
       "cats": [
@@ -3222,10 +3200,10 @@
       "cats": [
         2
       ],
-      "html": "Powered by (?:<strong>)?<a href=\"[^>]+fluxbb",
+      "html": "<p id=\"poweredby\">[^<]+<a href=\"https?://fluxbb\\.org/\">",
       "icon": "FluxBB.png",
       "implies": "PHP",
-      "website": "http://fluxbb.org"
+      "website": "https://fluxbb.org"
     },
     "Flyspray": {
       "cats": [
@@ -3244,7 +3222,7 @@
         17
       ],
       "html": [
-        "<link[^>]* href=[^>]+font-awesome(?:\\.min)?\\.css",
+        "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
         "<script[^>]* src=[^>]+fontawesome(?:\\.js)?"
       ],
       "icon": "Font Awesome.png",
@@ -3326,6 +3304,14 @@
       "icon": "Freespee.svg",
       "script": "analytics\\.freespee\\.com/js/external/fs\\.(?:min\\.)?js",
       "website": "https://www.freespee.com"
+    },
+    "Freshchat": {
+      "cats": [
+        52
+      ],
+      "icon": "freshchat.png",
+      "script": "wchat\\.freshchat\\.com/js/widget\\.js",
+      "website": "https://www.freshworks.com/live-chat-software/"
     },
     "Freshmarketer": {
       "cats": [
@@ -3730,7 +3716,7 @@
         "_gat": ""
       },
       "icon": "Google Analytics.svg",
-			"html": "<amp-analytics [^>]*type=[\"']googleanalytics[\"']",
+      "html": "<amp-analytics [^>]*type=[\"']googleanalytics[\"']",
       "js": {
         "GoogleAnalyticsObject": "",
         "gaGlobal": ""
@@ -3943,16 +3929,6 @@
       "implies": "WordPress",
       "script": "/wp-content/plugins/gravityforms/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
       "website": "http://gravityforms.com"
-    },
-    "Gravity Insights": {
-      "cats": [
-        10
-      ],
-      "icon": "Gravity Insights.png",
-      "js": {
-        "gravityInsightsParams": ""
-      },
-      "website": "http://insights.gravity.com"
     },
     "Green Valley CMS": {
       "cats": [
@@ -6676,22 +6652,11 @@
         31
       ],
       "headers": {
-        "x-nf-request-id": "",
-        "Server": "Netlify"
+        "X-NF-Request-ID": "",
+        "Server": "^Netlify"
       },
       "icon": "Netlify.svg",
       "website": "https://www.netlify.com/"
-    },
-    "Netmonitor": {
-      "cats": [
-        10
-      ],
-      "icon": "Netmonitor.png",
-      "js": {
-        "netmonitor": ""
-      },
-      "script": "netmonitor\\.fi/nmtracker\\.js",
-      "website": "http://netmonitor.fi/en"
     },
     "Neto": {
       "cats": [
@@ -6787,7 +6752,7 @@
       ],
       "headers": {
         "Server": "nginx(?:/([\\d.]+))?\\;version:\\1",
-				"X-Fastcgi-Cache": ""
+        "X-Fastcgi-Cache": ""
       },
       "icon": "Nginx.svg",
       "website": "http://nginx.org/en"
@@ -7558,6 +7523,16 @@
         "generator": "^Planet(?:/([\\d.]+))?\\;version:\\1"
       },
       "website": "http://planetplanet.org"
+    },
+    "PlatformOS": {
+      "cats": [
+        1
+      ],
+      "icon": "PlatformOS.svg",
+      "headers": {
+        "x-powered-by": "^PlatformOS$"
+      },
+      "website": "https://www.platform-os.com"
     },
     "Play": {
       "cats": [
@@ -8793,17 +8768,6 @@
       "script": "^https?://codice(?:business|ssl|pro|isp)?\\.shinystat\\.com/cgi-bin/getcod\\.cgi",
       "website": "http://shinystat.com"
     },
-    "Shopalize": {
-      "cats": [
-        5,
-        10
-      ],
-      "icon": "Shopalize.png",
-      "js": {
-        "Shopalize": ""
-      },
-      "website": "http://shopalize.com"
-    },
     "Shopatron": {
       "cats": [
         6
@@ -9668,6 +9632,14 @@
       "script": "(?:TWikiJavascripts|twikilib(?:\\.min)?\\.js)",
       "website": "http://twiki.org"
     },
+    "tailwindcss": {
+      "cats": [
+        "18"
+      ],
+      "html": "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css",
+      "icon": "tailwindcss.svg",
+      "website": "https://tailwindcss.com/"
+    },
     "TYPO3 CMS": {
       "cats": [
         1
@@ -9724,7 +9696,7 @@
       "script": [
         "^//tags\\.tiqcdn\\.com/",
         "/tealium/utag\\.js$"
-        ],
+      ],
       "website": "http://tealium.com"
     },
     "TeamCity": {
@@ -10641,14 +10613,6 @@
       "implies": "Haskell",
       "website": "http://www.stackage.org/package/warp"
     },
-    "Web Optimizer": {
-      "cats": [
-        10
-      ],
-      "html": "<title [^>]*lang=\"wo\">",
-      "icon": "Web Optimizer.png",
-      "website": "http://www.web-optimizer.us"
-    },
     "Web2py": {
       "cats": [
         18
@@ -10983,6 +10947,9 @@
         "PHP",
         "MySQL"
       ],
+      "headers": {
+        "link": "rel=\"https://api\\.w\\.org/\""
+      },
       "js": {
         "wp_username": ""
       },
@@ -11254,7 +11221,7 @@
       "cats": [
         42
       ],
-      "html":"<!-- (?:End )?Yahoo! Tag Manager -->",
+      "html": "<!-- (?:End )?Yahoo! Tag Manager -->",
       "script": "b\\.yjtag\\.jp/iframe",
       "icon": "yahoo.png",
       "website": "https://tagmanager.yahoo.co.jp/"

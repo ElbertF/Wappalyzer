@@ -1,5 +1,3 @@
-
-
 const url = require('url');
 const fs = require('fs');
 const path = require('path');
@@ -284,12 +282,17 @@ class Driver {
     let html = '';
 
     try {
-      html = browser.html()
-        .split('\n')
-        .slice(0, this.options.htmlMaxRows / 2)
-        .concat(html.slice(html.length - this.options.htmlMaxRows / 2))
-        .map(line => line.substring(0, this.options.htmlMaxCols))
-        .join('\n');
+      if ((this.options.htmlMaxCols === 0) && (this.options.htmlMaxRows === 0)) {
+        html = browser.html().replace(new RegExp('<', 'g'), '\n<');
+      } else {
+        html = browser.html()
+          .replace(new RegExp(`(.{${this.options.htmlMaxCols},}[^>]*>)<`, 'g'), (match, p1) => `${p1}\n<`)
+          .split('\n')
+          .slice(0, this.options.htmlMaxRows / 2)
+          .concat(html.slice(html.length - this.options.htmlMaxRows / 2))
+          .map(line => line.substring(0, this.options.htmlMaxCols))
+          .join('\n');
+      }
     } catch (error) {
       this.wappalyzer.log(error.message, 'browser', 'error');
     }

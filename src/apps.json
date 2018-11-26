@@ -7331,15 +7331,15 @@
       ],
       "website": "http://phpdebugbar.com/"
     },
-    "PHPoole": {
+    "Cecil": {
       "cats": [
         57
       ],
-      "icon": "PHPoole.png",
+      "icon": "Cecil.png",
       "meta": {
-        "generator": "^PHPoole$"
+        "generator": "^Cecil|PHPoole$"
       },
-      "website": "https://phpoole.org"
+      "website": "https://cecil.app"
     },
     "Pagekit": {
       "cats": [

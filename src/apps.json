@@ -2745,6 +2745,20 @@
       "script": "dtagent.*\\.js",
       "website": "http://dynatrace.com"
     },
+    "EasyEngine": {
+      "cats": [
+        47,
+        9
+      ],
+      "icon": "EasyEngine.png",
+      "implies": [
+        "Docker"
+      ],
+      "headers": {
+        "x-powered-by": "^EasyEngine (.*)$\\;version:\\1"
+      },
+      "website": "https://easyengine.io"
+    },
     "EC-CUBE": {
       "cats": [
         6

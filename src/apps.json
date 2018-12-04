@@ -10640,7 +10640,7 @@
       "cats": [
         12
       ],
-      "html": "<div [^>]*id=\"__nuxt\""
+      "html": "<div [^>]*id=\"__nuxt\"",
       "icon": "Nuxt.js.png",
       "js": {
         "$nuxt": ""

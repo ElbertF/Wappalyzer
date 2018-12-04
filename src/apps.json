@@ -10636,6 +10636,21 @@
       ],
       "website": "http://vuejs.org"
     },
+    "Nuxt.js": {
+      "cats": [
+        12
+      ],
+      "html": "id=\"__nuxt\"",
+      "icon": "Nuxt.js.png",
+      "js": {
+        "$nuxt": ""
+      },
+      "script": [
+        "(.*=/_nuxt/(.*)"
+      ],
+      "implies": "Vue.js",
+      "website": "https://nuxtjs.org"
+    },
     "W3 Total Cache": {
       "cats": [
         23

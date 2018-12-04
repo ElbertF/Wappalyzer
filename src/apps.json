@@ -10642,7 +10642,7 @@
       ],
       "html": [
         "<div [^>]*id=\"__nuxt\"",
-        "<script [^>]*>window\.__NUXT__"
+        "<script [^>]*>window\\.__NUXT__"
       ],
       "icon": "Nuxt.js.png",
       "js": {

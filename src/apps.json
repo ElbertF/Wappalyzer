@@ -10646,7 +10646,7 @@
         "$nuxt": ""
       },
       "script": [
-        "(.*)/_nuxt/(.*)"
+        "/_nuxt/"
       ],
       "implies": "Vue.js",
       "website": "https://nuxtjs.org"

@@ -3,9 +3,9 @@
   "lockfileVersion": 1,
   "dependencies": {
     "webextension-polyfill": {
-      "version": "0.2.1",
-      "resolved": "https://registry.npmjs.org/webextension-polyfill/-/webextension-polyfill-0.2.1.tgz",
-      "integrity": "sha1-zfyRJgMwOfFxNVMVfTW+/x1Nb0o="
+      "version": "0.3.1",
+      "resolved": "https://registry.npmjs.org/webextension-polyfill/-/webextension-polyfill-0.3.1.tgz",
+      "integrity": "sha512-ISB42vlgMyM7xE1u6pREeCqmmXjLsYu/nqAR8Dl/gIAnylb+KpRpvKbVkUYNFePhhXn0Obkkc3jasOII9ztUtg=="
     }
   }
 }

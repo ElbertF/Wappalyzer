@@ -69,5 +69,9 @@
 	"categoryName56":           { "message": "کریپتوماینر" },
 	"categoryName57":           { "message": "تولید کننده سایت ایستا" },
 	"categoryName58":           { "message": "آن بوردینگ کاربر" },
-	"categoryName59":           { "message": "کتابخانه های جاوا اسکریپت" }
+	"categoryName59":           { "message": "کتابخانه های جاوا اسکریپت" },
+	"categoryName60":           { "message": "Containers" },
+	"categoryName61":           { "message": "SaaS" },
+	"categoryName62":           { "message": "PaaS" },
+	"categoryName63":           { "message": "IaaS" }
 }

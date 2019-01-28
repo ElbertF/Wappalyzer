@@ -1,32 +1,14 @@
+/* eslint-env browser */
+/* global browser, chrome, jsonToDOM */
+
 /** global: chrome */
 /** global: browser */
+/** global: jsonToDOM */
 
 let pinnedCategory = null;
 
-const func = (tabs) => {
-  (chrome || browser).runtime.sendMessage({
-    id: 'get_apps',
-    tab: tabs[0],
-    source: 'popup.js',
-  }, (response) => {
-    pinnedCategory = response.pinnedCategory;
-
-    replaceDomWhenReady(appsToDomTemplate(response));
-  });
-};
-
-browser.tabs.query({ active: true, currentWindow: true })
-  .then(func)
-  .catch(console.error);
-
-function replaceDomWhenReady(dom) {
-  if (/complete|interactive|loaded/.test(document.readyState)) {
-    replaceDom(dom);
-  } else {
-    document.addEventListener('DOMContentLoaded', () => {
-      replaceDom(dom);
-    });
-  }
+function slugify(string) {
+  return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
 }
 
 function replaceDom(domTemplate) {
@@ -73,6 +55,16 @@ function replaceDom(domTemplate) {
   });
 }
 
+function replaceDomWhenReady(dom) {
+  if (/complete|interactive|loaded/.test(document.readyState)) {
+    replaceDom(dom);
+  } else {
+    document.addEventListener('DOMContentLoaded', () => {
+      replaceDom(dom);
+    });
+  }
+}
+
 function appsToDomTemplate(response) {
   let template = [];
 
@@ -92,8 +84,7 @@ function appsToDomTemplate(response) {
       const apps = [];
 
       for (const appName in categories[cat].apps) {
-        const confidence = response.tabCache.detected[appName].confidenceTotal;
-        const version = response.tabCache.detected[appName].version;
+        const { confidence, version } = response.tabCache.detected[appName];
 
         apps.push(
           [
@@ -190,6 +181,18 @@ function appsToDomTemplate(response) {
   return template;
 }
 
-function slugify(string) {
-  return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
-}
+const func = (tabs) => {
+  (chrome || browser).runtime.sendMessage({
+    id: 'get_apps',
+    tab: tabs[0],
+    source: 'popup.js',
+  }, (response) => {
+    pinnedCategory = response.pinnedCategory;
+
+    replaceDomWhenReady(appsToDomTemplate(response));
+  });
+};
+
+browser.tabs.query({ active: true, currentWindow: true })
+  .then(func)
+  .catch(console.error);

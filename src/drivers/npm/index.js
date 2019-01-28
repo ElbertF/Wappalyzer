@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-
 const Wappalyzer = require('./driver');
+const Browser = require('./browsers/zombie');
 
 const args = process.argv.slice(2);
 
@@ -30,7 +30,7 @@ do {
   }
 } while (arg);
 
-const wappalyzer = new Wappalyzer(url, options);
+const wappalyzer = new Wappalyzer(Browser, url, options);
 
 wappalyzer.analyze()
   .then((json) => {

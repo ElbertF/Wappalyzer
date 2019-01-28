@@ -3,19 +3,18 @@
  */
 
 /* eslint-env browser */
-/* global browser, chrome, fetch, Wappalyzer */
+/* global browser, fetch, Wappalyzer */
 
 /** global: browser */
-/** global: chrome */
 /** global: fetch */
 /** global: Wappalyzer */
 
 const wappalyzer = new Wappalyzer();
 
 const tabCache = {};
-let categoryOrder = [];
-const options = {};
 const robotsTxtQueue = {};
+
+let categoryOrder = [];
 
 browser.tabs.onRemoved.addListener((tabId) => {
   tabCache[tabId] = null;
@@ -25,18 +24,22 @@ browser.tabs.onRemoved.addListener((tabId) => {
  * Get a value from localStorage
  */
 function getOption(name, defaultValue = null) {
-  return new Promise(async (resolve) => {
-    let option = defaultValue;
+  return new Promise(async (resolve, reject) => {
+    let value = defaultValue;
 
     try {
-      option = await browser.storage.local.get(name);
+      const option = await browser.storage.local.get(name);
+
+      if (option[name] !== undefined) {
+        value = option[name];
+      }
     } catch (error) {
-      wappalyzer.log(error, 'driver', 'error');
+      wappalyzer.log(error.message, 'driver', 'error');
+
+      return reject(error.message);
     }
 
-    options[name] = option;
-
-    resolve(option);
+    return resolve(value);
   });
 }
 
@@ -44,13 +47,17 @@ function getOption(name, defaultValue = null) {
  * Set a value in localStorage
  */
 function setOption(name, value) {
-  const option = {};
+  return new Promise(async (resolve, reject) => {
+    try {
+      await browser.storage.local.set({ [name]: value });
+    } catch (error) {
+      wappalyzer.log(error.message, 'driver', 'error');
 
-  option[name] = value;
+      return reject(error.message);
+    }
 
-  browser.storage.local.set(option);
-
-  options[name] = value;
+    return resolve();
+  });
 }
 
 /**
@@ -66,159 +73,110 @@ function openTab(args) {
 /**
  * Make a POST request
  */
-function post(url, body) {
-  fetch(url, {
-    method: 'POST',
-    body: JSON.stringify(body),
-  })
-    .then(response => wappalyzer.log(`POST ${url}: ${response.status}`, 'driver'))
-    .catch(error => wappalyzer.log(`POST ${url}: ${error}`, 'driver', 'error'));
+async function post(url, body) {
+  try {
+    const response = await fetch(url, {
+      method: 'POST',
+      body: JSON.stringify(body),
+    });
+
+    wappalyzer.log(`POST ${url}: ${response.status}`, 'driver');
+  } catch (error) {
+    wappalyzer.log(`POST ${url}: ${error}`, 'driver', 'error');
+  }
 }
 
-fetch('../apps.json')
-  .then(response => response.json())
-  .then((json) => {
-    wappalyzer.apps = json.apps;
-    wappalyzer.categories = json.categories;
-
-    wappalyzer.parseJsPatterns();
-
-    categoryOrder = Object.keys(wappalyzer.categories)
-      .map(categoryId => parseInt(categoryId, 10))
-      .sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
-  })
-  .catch(error => wappalyzer.log(`GET apps.json: ${error}`, 'driver', 'error'));
-
-// Version check
-const { version } = browser.runtime.getManifest();
-
-getOption('version')
-  .then((previousVersion) => {
-    if (previousVersion === null) {
-      openTab({
-        url: `${wappalyzer.config.websiteURL}installed`,
-      });
-    } else if (version !== previousVersion) {
-      getOption('upgradeMessage', true)
-        .then((upgradeMessage) => {
-          if (upgradeMessage) {
-            openTab({
-              url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
-              background: true,
-            });
-          }
-        });
-    }
-
-    setOption('version', version);
-  });
-
-getOption('dynamicIcon', true);
-getOption('pinnedCategory');
-
-getOption('hostnameCache', {})
-  .then((hostnameCache) => {
-    wappalyzer.hostnameCache = hostnameCache;
-
-    return hostnameCache;
-  });
-
-// Run content script on all tabs
-browser.tabs.query({ url: ['http://*/*', 'https://*/*'] })
-  .then((tabs) => {
-    tabs.forEach((tab) => {
-      browser.tabs.executeScript(tab.id, {
-        file: '../js/content.js',
-      });
-    });
-  })
-  .catch(error => wappalyzer.log(error, 'driver', 'error'));
-
 // Capture response headers
-browser.webRequest.onCompleted.addListener((request) => {
+browser.webRequest.onCompleted.addListener(async (request) => {
   const headers = {};
 
   if (request.responseHeaders) {
     const url = wappalyzer.parseUrl(request.url);
 
-    browser.tabs.query({ url: [url.href] })
-      .then((tabs) => {
-        const tab = tabs[0] || null;
+    let tab;
 
-        if (tab) {
-          request.responseHeaders.forEach((header) => {
-            const name = header.name.toLowerCase();
+    try {
+      [tab] = await browser.tabs.query({ url: [url.href] });
+    } catch (error) {
+      wappalyzer.log(error, 'driver', 'error');
+    }
 
-            headers[name] = headers[name] || [];
+    if (tab) {
+      request.responseHeaders.forEach((header) => {
+        const name = header.name.toLowerCase();
 
-            headers[name].push((header.value || header.binaryValue || '').toString());
-          });
+        headers[name] = headers[name] || [];
 
-          if (headers['content-type'] && /\/x?html/.test(headers['content-type'][0])) {
-            wappalyzer.analyze(url, { headers }, { tab });
-          }
-        }
-      })
-      .catch(error => wappalyzer.log(error, 'driver', 'error'));
+        headers[name].push((header.value || header.binaryValue || '').toString());
+      });
+
+      if (headers['content-type'] && /\/x?html/.test(headers['content-type'][0])) {
+        wappalyzer.analyze(url, { headers }, { tab });
+      }
+    }
   }
 }, { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] }, ['responseHeaders']);
 
 // Listen for messages
-(chrome || browser).runtime.onMessage.addListener((message, sender, sendResponse) => {
-  if (typeof message.id !== 'undefined') {
-    if (message.id !== 'log') {
-      wappalyzer.log(`Message${message.source ? ` from ${message.source}` : ''}: ${message.id}`, 'driver');
-    }
-
-    const url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
-    let response;
-
-    switch (message.id) {
-      case 'log':
-        wappalyzer.log(message.subject, message.source);
-
-        break;
-      case 'init':
-        browser.cookies.getAll({ domain: `.${url.hostname}` })
-          .then(cookies => wappalyzer.analyze(url, { cookies }, { tab: sender.tab }));
-
-        break;
-      case 'analyze':
-        wappalyzer.analyze(url, message.subject, { tab: sender.tab });
-
-        setOption('hostnameCache', wappalyzer.hostnameCache);
-
-        break;
-      case 'ad_log':
-        wappalyzer.cacheDetectedAds(message.subject);
-
-        break;
-      case 'get_apps':
-        response = {
-          tabCache: tabCache[message.tab.id],
-          apps: wappalyzer.apps,
-          categories: wappalyzer.categories,
-          pinnedCategory: options.pinnedCategory,
-        };
-
-        break;
-      case 'set_option':
-        setOption(message.key, message.value);
-
-        break;
-      case 'get_js_patterns':
-        response = {
-          patterns: wappalyzer.jsPatterns,
-        };
-
-        break;
-      default:
-    }
-
-    sendResponse(response);
+browser.runtime.onMessage.addListener(async (message, sender) => {
+  if (message.id === undefined) {
+    return Promise.resolve();
   }
 
-  return true;
+  if (message.id !== 'log') {
+    wappalyzer.log(`Message${message.source ? ` from ${message.source}` : ''}: ${message.id}`, 'driver');
+  }
+
+  const pinnedCategory = await getOption('pinnedCategory');
+
+  const url = wappalyzer.parseUrl(sender.tab ? sender.tab.url : '');
+
+  const cookies = await browser.cookies.getAll({ domain: `.${url.hostname}` });
+
+  let response;
+
+  switch (message.id) {
+    case 'log':
+      wappalyzer.log(message.subject, message.source);
+
+      break;
+    case 'init':
+      wappalyzer.analyze(url, { cookies }, { tab: sender.tab });
+
+      break;
+    case 'analyze':
+      wappalyzer.analyze(url, message.subject, { tab: sender.tab });
+
+      await setOption('hostnameCache', wappalyzer.hostnameCache);
+
+      break;
+    case 'ad_log':
+      wappalyzer.cacheDetectedAds(message.subject);
+
+      break;
+    case 'get_apps':
+      response = {
+        tabCache: tabCache[message.tab.id],
+        apps: wappalyzer.apps,
+        categories: wappalyzer.categories,
+        pinnedCategory,
+      };
+
+      break;
+    case 'set_option':
+      await setOption(message.key, message.value);
+
+      break;
+    case 'get_js_patterns':
+      response = {
+        patterns: wappalyzer.jsPatterns,
+      };
+
+      break;
+    default:
+  }
+
+  return Promise.resolve(response);
 });
 
 wappalyzer.driver.document = document;
@@ -227,13 +185,15 @@ wappalyzer.driver.document = document;
  * Log messages to console
  */
 wappalyzer.driver.log = (message, source, type) => {
-  console.log(`[wappalyzer ${type}]`, `[${source}]`, message);
+  const log = ['warn', 'error'].indexOf(type) !== -1 ? type : 'log';
+
+  console[log](`[wappalyzer ${type}]`, `[${source}]`, message);
 };
 
 /**
  * Display apps
  */
-wappalyzer.driver.displayApps = (detected, meta, context) => {
+wappalyzer.driver.displayApps = async (detected, meta, context) => {
   const { tab } = context;
 
   if (tab === undefined) {
@@ -246,20 +206,19 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
 
   tabCache[tab.id].detected = detected;
 
+  const pinnedCategory = await getOption('pinnedCategory');
+  const dynamicIcon = await getOption('dynamicIcon', true);
+
   let found = false;
 
   // Find the main application to display
-  [options.pinnedCategory].concat(categoryOrder).forEach((match) => {
+  [pinnedCategory].concat(categoryOrder).forEach((match) => {
     Object.keys(detected).forEach((appName) => {
       const app = detected[appName];
 
       app.props.cats.forEach((category) => {
         if (category === match && !found) {
-          let icon = app.props.icon || 'default.svg';
-
-          if (!options.dynamicIcon) {
-            icon = 'default.svg';
-          }
+          let icon = app.props.icon && dynamicIcon ? app.props.icon : 'default.svg';
 
           if (/\.svg$/i.test(icon)) {
             icon = `converted/${icon.replace(/\.svg$/, '.png')}`;
@@ -280,61 +239,53 @@ wappalyzer.driver.displayApps = (detected, meta, context) => {
     });
   });
 
-  if (typeof chrome !== 'undefined') {
-    // Browser polyfill doesn't seem to work here
-    chrome.pageAction.show(tab.id);
-  } else {
-    browser.pageAction.show(tab.id);
-  }
+  browser.pageAction.show(tab.id);
 };
 
 /**
  * Fetch and cache robots.txt for host
  */
-wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
+wappalyzer.driver.getRobotsTxt = async (host, secure = false) => {
   if (robotsTxtQueue[host]) {
     return robotsTxtQueue[host];
   }
 
-  robotsTxtQueue[host] = new Promise((resolve) => {
-    getOption('tracking', true)
-      .then((tracking) => {
-        if (!tracking) {
-          resolve([]);
+  const tracking = await getOption('tracking', true);
+  const robotsTxtCache = await getOption('robotsTxtCache', {});
 
-          return;
-        }
+  robotsTxtQueue[host] = new Promise(async (resolve) => {
+    if (!tracking) {
+      return resolve([]);
+    }
 
-        getOption('robotsTxtCache')
-          .then((robotsTxtCache) => {
-            robotsTxtCache = robotsTxtCache || {};
+    if (host in robotsTxtCache) {
+      return resolve(robotsTxtCache[host]);
+    }
 
-            if (host in robotsTxtCache) {
-              resolve(robotsTxtCache[host]);
+    const timeout = setTimeout(() => resolve([]), 3000);
 
-              return;
-            }
+    let response;
 
-            const timeout = setTimeout(() => resolve([]), 3000);
+    try {
+      response = await fetch(`http${secure ? 's' : ''}://${host}/robots.txt`, { redirect: 'follow' });
+    } catch (error) {
+      wappalyzer.log(error, 'driver', 'error');
 
-            fetch(`http${secure ? 's' : ''}://${host}/robots.txt`, { redirect: 'follow' })
-              .then((response) => {
-                clearTimeout(timeout);
+      return resolve([]);
+    }
 
-                return response.ok ? response.text() : '';
-              })
-              .then((robotsTxt) => {
-                robotsTxtCache[host] = Wappalyzer.parseRobotsTxt(robotsTxt);
+    clearTimeout(timeout);
 
-                setOption('robotsTxtCache', robotsTxtCache);
+    const robotsTxt = response.ok ? await response.text() : '';
 
-                resolve(robotsTxtCache[host]);
-              })
-              .catch(() => resolve([]));
-          });
-      });
-  })
-    .finally(() => delete robotsTxtQueue[host]);
+    robotsTxtCache[host] = Wappalyzer.parseRobotsTxt(robotsTxt);
+
+    await setOption('robotsTxtCache', robotsTxtCache);
+
+    delete robotsTxtQueue[host];
+
+    return resolve(robotsTxtCache[host]);
+  });
 
   return robotsTxtQueue[host];
 };
@@ -342,19 +293,72 @@ wappalyzer.driver.getRobotsTxt = (host, secure = false) => {
 /**
  * Anonymously track detected applications for research purposes
  */
-wappalyzer.driver.ping = (hostnameCache = {}, adCache = []) => {
-  getOption('tracking', true)
-    .then((tracking) => {
-      if (tracking) {
-        if (Object.keys(hostnameCache).length) {
-          post('https://api.wappalyzer.com/ping/v1/', hostnameCache);
-        }
+wappalyzer.driver.ping = async (hostnameCache = {}, adCache = []) => {
+  const tracking = await getOption('tracking', true);
 
-        if (adCache.length) {
-          post('https://ad.wappalyzer.com/log/wp/', adCache);
-        }
+  if (tracking) {
+    if (Object.keys(hostnameCache).length) {
+      post('https://api.wappalyzer.com/ping/v1/', hostnameCache);
+    }
 
-        setOption('robotsTxtCache', {});
-      }
-    });
+    if (adCache.length) {
+      post('https://ad.wappalyzer.com/log/wp/', adCache);
+    }
+
+    await setOption('robotsTxtCache', {});
+  }
 };
+
+// Init
+(async () => {
+  // Technologies
+  try {
+    const response = await fetch('../apps.json');
+    const json = await response.json();
+
+    wappalyzer.apps = json.apps;
+    wappalyzer.categories = json.categories;
+  } catch (error) {
+    wappalyzer.log(`GET apps.json: ${error.message}`, 'driver', 'error');
+  }
+
+  wappalyzer.parseJsPatterns();
+
+  categoryOrder = Object.keys(wappalyzer.categories)
+    .map(categoryId => parseInt(categoryId, 10))
+    .sort((a, b) => wappalyzer.categories[a].priority - wappalyzer.categories[b].priority);
+
+  // Version check
+  const { version } = browser.runtime.getManifest();
+  const previousVersion = await getOption('version');
+  const upgradeMessage = await getOption('upgradeMessage', true);
+
+  if (previousVersion === null) {
+    openTab({
+      url: `${wappalyzer.config.websiteURL}installed`,
+    });
+  } else if (version !== previousVersion && upgradeMessage) {
+    openTab({
+      url: `${wappalyzer.config.websiteURL}upgraded?v${version}`,
+      background: true,
+    });
+  }
+
+  await setOption('version', version);
+
+  // Hostname cache
+  wappalyzer.hostnameCache = await getOption('hostnameCache', {});
+
+  // Run content script on all tabs
+  try {
+    const tabs = await browser.tabs.query({ url: ['http://*/*', 'https://*/*'] });
+
+    tabs.forEach((tab) => {
+      browser.tabs.executeScript(tab.id, {
+        file: '../js/content.js',
+      });
+    });
+  } catch (error) {
+    wappalyzer.log(error, 'driver', 'error');
+  }
+})();

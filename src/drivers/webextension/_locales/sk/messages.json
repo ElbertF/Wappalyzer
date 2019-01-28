@@ -69,5 +69,9 @@
   "categoryName56":           { "message": "Cryptominer" },
   "categoryName57":           { "message": "Static Site Generator" },
 	"categoryName58":           { "message": "User Onboarding" },
-	"categoryName59":           { "message": "JavaScript Libraries" }
+	"categoryName59":           { "message": "JavaScript Libraries" },
+	"categoryName60":           { "message": "Containers" },
+	"categoryName61":           { "message": "SaaS" },
+	"categoryName62":           { "message": "PaaS" },
+	"categoryName63":           { "message": "IaaS" }
 }

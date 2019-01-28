@@ -27,9 +27,9 @@ node index.js [url] [options]
 ### Options
 
 ```
-	--password           Password to be used for basic HTTP authentication
-	--proxy              Proxy URL, e.g. 'http://user:pass@proxy:8080'
-	--username           Username to be used for basic HTTP authentication
+  --password           Password to be used for basic HTTP authentication
+  --proxy              Proxy URL, e.g. 'http://user:pass@proxy:8080'
+  --username           Username to be used for basic HTTP authentication
   --chunk-size=num     Process links in chunks.
   --debug=0|1          Output debug messages.
   --delay=ms           Wait for ms milliseconds between requests.
@@ -46,6 +46,11 @@ node index.js [url] [options]
 ## Run from a script
 
 ```javascript
+const Wappalyzer = require('./driver');
+const Browser = require('./browsers/zombie');
+
+const url = 'https://www.wappalyzer.com;
+
 const options = {
   debug: false,
   delay: 500,
@@ -58,16 +63,26 @@ const options = {
   htmlMaxRows: 2000,
 };
 
-const wappalyzer = new Wappalyzer('https://www.wappalyzer.com', options);
+const wappalyzer = new Wappalyzer(Browser, url, options);
+
+// Optional: capture log output
+// wappalyzer.on('log', params => {
+//   const { message, source, type } = params;
+// });
+
+// Optional: do something on page visit
+// wappalyzer.on('visit', params => {
+//   const { browser, pageUrl } = params;
+// });
 
 wappalyzer.analyze()
   .then(json => {
-    process.stdout.write(JSON.stringify(json, null, 2) + '\n')
+    process.stdout.write(`${JSON.stringify(json, null, 2)}\n`);
 
     process.exit(0);
   })
   .catch(error => {
-    process.stderr.write(error + '\n')
+    process.stderr.write(`${error}\n`);
 
     process.exit(1);
 });

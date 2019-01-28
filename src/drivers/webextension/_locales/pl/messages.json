@@ -69,5 +69,9 @@
 	"categoryName56":           { "message": "Koparka kryptowalut" },
 	"categoryName57":           { "message": "Generator stron statycznych" },
 	"categoryName58":           { "message": "Wdrażanie użytkownika" },
-	"categoryName59":           { "message": "Biblioteki JavaScript" }
+	"categoryName59":           { "message": "Biblioteki JavaScript" },
+	"categoryName60":           { "message": "Containers" },
+	"categoryName61":           { "message": "SaaS" },
+	"categoryName62":           { "message": "PaaS" },
+	"categoryName63":           { "message": "IaaS" }
 }

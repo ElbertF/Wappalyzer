@@ -1,26 +1,51 @@
 /** global: browser */
 /** global: Wappalyzer */
-/* globals browser chrome Wappalyzer */
+/* globals browser Wappalyzer */
 /* eslint-env browser */
 
 const wappalyzer = new Wappalyzer();
 
-function getOption(name, defaultValue, callback) {
-  browser.storage.local.get(name)
-    .then((item) => {
-      callback(item.hasOwnProperty(name) ? item[name] : defaultValue);
-    });
-}
+/**
+ * Get a value from localStorage
+ */
+function getOption(name, defaultValue = null) {
+  return new Promise(async (resolve, reject) => {
+    let value = defaultValue;
 
-function setOption(name, value) {
-  (chrome || browser).runtime.sendMessage({
-    id: 'set_option',
-    key: name,
-    value,
+    try {
+      const option = await browser.storage.local.get(name);
+
+      if (option[name] !== undefined) {
+        value = option[name];
+      }
+    } catch (error) {
+      wappalyzer.log(error.message, 'driver', 'error');
+
+      return reject(error.message);
+    }
+
+    return resolve(value);
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/**
+ * Set a value in localStorage
+ */
+function setOption(name, value) {
+  return new Promise(async (resolve, reject) => {
+    try {
+      await browser.storage.local.set({ [name]: value });
+    } catch (error) {
+      wappalyzer.log(error.message, 'driver', 'error');
+
+      return reject(error.message);
+    }
+
+    return resolve();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', async () => {
   const nodes = document.querySelectorAll('[data-i18n]');
 
   Array.prototype.forEach.call(nodes, (node) => {
@@ -39,33 +64,33 @@ document.addEventListener('DOMContentLoaded', () => {
     window.open(wappalyzer.config.websiteURL);
   });
 
-  getOption('upgradeMessage', true, (value) => {
-    const el = document.querySelector('#option-upgrade-message');
+  let el;
+  let value;
 
-    el.checked = value;
+  // Upgrade message
+  value = await getOption('upgradeMessage', true);
 
-    el.addEventListener('change', () => {
-      setOption('upgradeMessage', el.checked);
-    });
-  });
+  el = document.querySelector('#option-upgrade-message');
 
-  getOption('dynamicIcon', true, (value) => {
-    const el = document.querySelector('#option-dynamic-icon');
+  el.checked = value;
 
-    el.checked = value;
+  el.addEventListener('change', e => setOption('upgradeMessage', e.target.checked));
 
-    el.addEventListener('change', () => {
-      setOption('dynamicIcon', el.checked);
-    });
-  });
+  // Dynamic icon
+  value = await getOption('dynamicIcon', true);
 
-  getOption('tracking', true, (value) => {
-    const el = document.querySelector('#option-tracking');
+  el = document.querySelector('#option-dynamic-icon');
 
-    el.checked = value;
+  el.checked = value;
 
-    el.addEventListener('change', () => {
-      setOption('tracking', el.checked);
-    });
-  });
+  el.addEventListener('change', e => setOption('dynamicIcon', e.target.checked));
+
+  // Tracking
+  value = await getOption('tracking', true);
+
+  el = document.querySelector('#option-tracking');
+
+  el.checked = value;
+
+  el.addEventListener('change', e => setOption('tracking', e.target.checked));
 });

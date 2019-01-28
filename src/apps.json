@@ -537,6 +537,7 @@
         "X-Amz-Cf-Id": ""
       },
       "icon": "Amazon-Cloudfront.svg",
+      "implies": "Amazon Web Services",
       "website": "http://aws.amazon.com/cloudfront/"
     },
     "Amazon EC2": {
@@ -547,16 +548,39 @@
         "Server": "\\(Amazon\\)"
       },
       "icon": "aws-ec2.svg",
+      "implies": "Amazon Web Services",
       "website": "http://aws.amazon.com/ec2/"
+    },
+    "Amazon Web Services": {
+      "cats": [
+        62
+      ],
+      "icon": "aws.svg",
+      "website": "https://aws.amazon.com/"
+    },
+    "Amazon ECS": {
+      "cats": [
+        63
+      ],
+      "headers": {
+        "Server": "^ECS"
+      },
+      "icon": "aws.svg",
+      "implies": [
+        "Amazon Web Services",
+        "Docker"
+      ],
+      "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
     "Amazon ELB": {
       "cats": [
-        31
+        63
       ],
       "cookies": {
         "AWSELB": ""
       },
       "icon": "aws-elb.png",
+      "implies": "Amazon Web Services",
       "website": "https://aws.amazon.com/elasticloadbalancing/"
     },
     "Amazon S3": {
@@ -567,6 +591,7 @@
         "Server": "^AmazonS3$"
       },
       "icon": "aws-s3.svg",
+      "implies": "Amazon Web Services",
       "website": "http://aws.amazon.com/s3/"
     },
     "Amber": {
@@ -2548,9 +2573,9 @@
     },
     "Docker": {
       "cats": [
-        28
+        60
       ],
-      "icon": "docker.png",
+      "icon": "Docker.svg",
       "implies": "Linux",
       "html": "<!-- This comment is expected by the docker HEALTHCHECK  -->",
       "website": "https://www.docker.com/"
@@ -2695,7 +2720,7 @@
         "X-Drupal-Cache": "",
         "X-Generator": "^Drupal(?:\\s([\\d.]+))?\\;version:\\1"
       },
-      "html": "<(?:link|style)[^>]+sites/(?:default|all)/(?:themes|modules)/",
+      "html": "<(?:link|style)[^>]+\"/sites/(?:default|all)/(?:themes|modules)/",
       "icon": "Drupal.svg",
       "implies": "PHP",
       "js": {
@@ -13040,6 +13065,22 @@
     "59": {
       "name": "JavaScript Libraries",
       "priority": 9
+    },
+    "60": {
+      "name": "Containers",
+      "priority": 8
+    },
+    "61": {
+      "name": "SaaS",
+      "priority": 8
+    },
+    "62": {
+      "name": "PaaS",
+      "priority": 8
+    },
+    "63": {
+      "name": "IaaS",
+      "priority": 8
     }
   }
 }

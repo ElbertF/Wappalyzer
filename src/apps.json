@@ -11700,6 +11700,13 @@
         "Zone.root": ""
       },
       "website": "https://github.com/angular/zone.js/"
+    },    
+    "Zoho SalesIQ": {
+      "cats": [
+        52
+      ],
+      "html":"zsiqwidget",
+      "website": "https://www.zoho.com/salesiq/"
     },
     "Zope": {
       "cats": [

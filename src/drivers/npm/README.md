@@ -49,7 +49,7 @@ node index.js [url] [options]
 const Wappalyzer = require('./driver');
 const Browser = require('./browsers/zombie');
 
-const url = 'https://www.wappalyzer.com;
+const url = 'https://www.wappalyzer.com';
 
 const options = {
   debug: false,

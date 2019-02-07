@@ -66,7 +66,7 @@ if (typeof browser !== 'undefined' && typeof document.body !== 'undefined') {
           postMessage({
             id: 'patterns',
             patterns: response.patterns,
-          }, '*');
+          }, window.location.href);
         }
       });
     };

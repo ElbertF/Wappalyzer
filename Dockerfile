@@ -1,6 +1,6 @@
 FROM alpine
 
-MAINTAINER Elbert Alias <elbert@alias.io>
+LABEL maintainer="elbert@alias.io"
 
 ENV WAPPALYZER_DIR=/opt/wappalyzer
 

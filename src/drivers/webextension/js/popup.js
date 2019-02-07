@@ -6,9 +6,18 @@
 /** global: jsonToDOM */
 
 let pinnedCategory = null;
+let termsAccepted = false;
 
 function slugify(string) {
   return string.toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/--+/g, '-').replace(/(?:^-|-$)/, '');
+}
+
+function i18n() {
+  const nodes = document.querySelectorAll('[data-i18n]');
+
+  Array.prototype.forEach.call(nodes, (node) => {
+    node.innerHTML = browser.i18n.getMessage(node.dataset.i18n);
+  });
 }
 
 function replaceDom(domTemplate) {
@@ -20,11 +29,7 @@ function replaceDom(domTemplate) {
 
   container.appendChild(jsonToDOM(domTemplate, document, {}));
 
-  const nodes = document.querySelectorAll('[data-i18n]');
-
-  Array.prototype.forEach.call(nodes, (node) => {
-    node.childNodes[0].nodeValue = browser.i18n.getMessage(node.dataset.i18n);
-  });
+  i18n();
 
   Array.from(document.querySelectorAll('.detected__category-pin-wrapper')).forEach((pin) => {
     pin.addEventListener('click', () => {
@@ -188,8 +193,29 @@ const func = (tabs) => {
     source: 'popup.js',
   }, (response) => {
     pinnedCategory = response.pinnedCategory;
+    termsAccepted = response.termsAccepted;
 
-    replaceDomWhenReady(appsToDomTemplate(response));
+    if (termsAccepted) {
+      replaceDomWhenReady(appsToDomTemplate(response));
+    } else {
+      i18n();
+
+      const wrapper = document.querySelector('.terms__wrapper');
+
+      document.querySelector('.terms__accept').addEventListener('click', () => {
+        (chrome || browser).runtime.sendMessage({
+          id: 'set_option',
+          key: 'termsAccepted',
+          value: true,
+        });
+
+        wrapper.classList.remove('terms__wrapper--active');
+
+        func(tabs);
+      });
+
+      wrapper.classList.add('terms__wrapper--active');
+    }
   });
 };
 

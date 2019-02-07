@@ -2,7 +2,7 @@
   "name": "wappalyzer",
   "description": "Uncovers the technologies used on websites",
   "homepage": "https://github.com/AliasIO/Wappalyzer",
-  "version": "5.6.3",
+  "version": "5.7.2",
   "author": "Elbert Alias",
   "license": "GPL-3.0",
   "repository": {

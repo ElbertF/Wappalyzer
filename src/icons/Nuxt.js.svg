@@ -1,0 +1,10 @@
+<svg width="486px" height="346px" viewBox="0 0 486 346" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Nuxt Logo</title>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g fill-rule="nonzero">
+            <polygon id="Shape" fill="#42B883" points="200 0 400 346 0 346"></polygon>
+            <polygon id="Shape" fill="#3C8171" points="311 43 486 346 136 346"></polygon>
+            <polygon id="Shape" fill="#35495E" points="267.945522 117 400 345.454247 136 345.454247"></polygon>
+        </g>
+    </g>
+</svg>

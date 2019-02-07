@@ -2954,6 +2954,17 @@
       "icon": "ensighten.png",
       "website": "https://success.ensighten.com/hc/en-us"
     },
+    "Envoy": {
+      "cats": [
+        22
+      ],
+      "icon": "Envoy.png",
+      "headers": {
+        "Server": "^envoy$",
+        "x-envoy-upstream-service-time" : ""
+      },
+      "website": "https://www.envoyproxy.io/"
+    },
     "Enyo": {
       "cats": [
         12,
@@ -4629,6 +4640,21 @@
       ],
       "website": "https://www.inspectlet.com/"
     },
+		"Instabot": {
+		  "cats": [ 
+				5,
+				10,
+				32,
+				52,
+				58
+			 ],
+			 "icon": "Instabot.png",
+			 "js": { 
+				 "Instabot": ""
+			 },
+			 "script": "/rokoInstabot\\.js",
+			 "website": "https://instabot.io/"
+		},
     "InstantCMS": {
       "cats": [
         1
@@ -4703,6 +4729,18 @@
       "script": "https?://cdn\\.inwemo\\.com/inwemo\\.min\\.js",
       "website": "https://inwemo.com/"
     },
+    "Ionic": {
+      "cats": [
+        18
+      ],
+      "icon": "ionic.png",
+      "implies": "Angular",
+      "js": {
+        "Ionic.config": "",
+        "Ionic.version": "^(.+)$\\;version:\\1"
+      },
+      "website": "https://ionicframework.com"
+    },
     "Ionicons": {
       "cats": [
         17
@@ -4773,7 +4811,7 @@
       "js": {
         "jseMine": ""
       },
-      "script": "^(?:https):?//load\\.jsecoin\\.com/server/load/",
+      "script": "^(?:https):?//load\\.jsecoin\\.com/load/",
       "website": "https://jsecoin.com/"
     },
     "JTL Shop": {
@@ -5763,6 +5801,9 @@
       "cookies": {
         "botble_session": ""
       },
+      "headers": {
+        "CMS-Version": "^(.+)$\\;version:\\1;confidence:0"
+      },
       "icon": "mypage-platform.png",
       "implies": "Laravel",
       "website": "https://www.mypage.vn"
@@ -6291,6 +6332,14 @@
       },
       "script": "mint/\\?js",
       "website": "https://haveamint.com"
+    },
+    "Mithril": {
+      "cats": [
+        12
+      ],
+      "icon": "Mithril.svg",
+      "script": "mithril/\\?js",
+      "website": "https://mithril.js.org"
     },
     "Mixpanel": {
       "cats": [
@@ -9513,6 +9562,16 @@
       "script": "strapdown\\.js",
       "website": "http://strapdownjs.com"
     },
+    "Strapi": {
+      "cats": [
+        1
+      ],
+      "headers": {
+        "X-Powered-By": "^Strapi"
+      },
+      "icon": "Strapi.png",
+      "website": "https://strapi.io"
+    },
     "Strato": {
       "cats": [
         6
@@ -9795,7 +9854,7 @@
         "TEALIUMENABLED": ""
       },
       "script": [
-        "^//tags\\.tiqcdn\\.com/",
+        "^(?:https?:)?//tags\\.tiqcdn\\.com/",
         "/tealium/utag\\.js$"
       ],
       "website": "http://tealium.com"
@@ -10667,7 +10726,7 @@
         "<div [^>]*id=\"__nuxt\"",
         "<script [^>]*>window\\.__NUXT__"
       ],
-      "icon": "Nuxt.js.png",
+      "icon": "Nuxt.js.svg",
       "js": {
         "$nuxt": ""
       },
@@ -10931,6 +10990,20 @@
       },
       "script": "cdn\\d+\\.editmysite\\.com",
       "website": "https://www.weebly.com"
+    },
+    "Weglot": {
+      "cats": [
+        19
+      ],
+      "headers": {
+        "Weglot-Translated": ""
+      },
+      "icon": "Weglot.png",
+      "script": [
+        "cdn\\.weglot\\.com",
+        "wp-content/plugins/weglot"
+      ],
+      "website": "https://www.weglot.com"
     },
     "Wikinggruppen": {
       "cats": [
@@ -12781,7 +12854,7 @@
       "js": {
         "webpackJsonp": ""
       },
-      "website": "https://webpack.github.io"
+      "website": "https://webpack.js.org/"
     },
     "parcel": {
       "cats": [
@@ -12845,6 +12918,19 @@
       },
       "icon": "Convertize.png",
       "website": "http://www.convertize.com.br"
+    }, 
+    "Halo": {
+      "cats": [
+        1,
+        11
+      ],
+      "html": [
+        "<link rel=[\"']stylesheet[\"'] [^>]+/halo-(?:backend|frontend|common)/"
+      ],
+      "icon": "Halo.svg",
+      "implies": "Java",
+      "script": "/halo-(?:backend|frontend|common)/",
+      "website": "https://github.com/ruibaby/halo"
     }
   },
   "categories": {

@@ -53,7 +53,7 @@
         }
       }
 
-      postMessage({ id: 'js', js }, '*');
+      postMessage({ id: 'js', js }, window.location.href);
     };
 
     addEventListener('message', onMessage);

@@ -11,6 +11,8 @@
 	"twitter":                  { "message": "Suivre Wappalyzer sur Twitter" },
 	"website":                  { "message": "Aller sur wappalyzer.com" },
 	"categoryPin":              { "message": " Toujours afficher l'icône" },
+  "termsAccept":              { "message": "Accept" },
+  "termsContent":             { "message": "This extension sends anonymous information about websites you visit, including domain name and identified technologies, to <a href='https://www.wappalyzer.com'>wappalyzer.com</a>. This can be disabled in the settings." },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Forum" },
 	"categoryName3":            { "message": "Gestionnaire de base de données" },

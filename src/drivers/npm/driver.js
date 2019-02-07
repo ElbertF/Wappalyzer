@@ -17,6 +17,53 @@ function sleep(ms) {
   return ms ? new Promise(resolve => setTimeout(resolve, ms)) : Promise.resolve();
 }
 
+function processJs(window, patterns) {
+  const js = {};
+
+  Object.keys(patterns).forEach((appName) => {
+    js[appName] = {};
+
+    Object.keys(patterns[appName]).forEach((chain) => {
+      js[appName][chain] = {};
+
+      patterns[appName][chain].forEach((pattern, index) => {
+        const properties = chain.split('.');
+
+        let value = properties
+          .reduce((parent, property) => (parent && parent[property]
+            ? parent[property] : null), window);
+
+        value = typeof value === 'string' || typeof value === 'number' ? value : !!value;
+
+        if (value) {
+          js[appName][chain][index] = value;
+        }
+      });
+    });
+  });
+
+  return js;
+}
+
+function processHtml(html, maxCols, maxRows) {
+  if (maxCols || maxRows) {
+    const chunks = [];
+    const rows = html.length / maxCols;
+
+    let i;
+
+    for (i = 0; i < rows; i += 1) {
+      if (i < maxRows / 2 || i > rows - maxRows / 2) {
+        chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
+      }
+    }
+
+    html = chunks.join('\n');
+  }
+
+  return html;
+}
+
 class Driver {
   constructor(Browser, pageUrl, options) {
     this.options = Object.assign({}, {
@@ -182,8 +229,8 @@ class Driver {
 
     const { cookies, headers, scripts } = browser;
 
-    const html = this.processHtml(browser.html);
-    const js = this.processJs(browser.js);
+    const html = processHtml(browser.html, this.options.htmlMaxCols, this.options.htmlMaxRows);
+    const js = processJs(browser.js, this.wappalyzer.jsPatterns);
 
     await this.wappalyzer.analyze(pageUrl, {
       cookies,
@@ -208,56 +255,6 @@ class Driver {
     this.emit('visit', { browser, pageUrl });
 
     return resolve(reducedLinks);
-  }
-
-  processHtml(html) {
-    if (this.options.htmlMaxCols || this.options.htmlMaxRows) {
-      const chunks = [];
-      const maxCols = this.options.htmlMaxCols;
-      const maxRows = this.options.htmlMaxRows;
-      const rows = html.length / maxCols;
-
-      let i;
-
-      for (i = 0; i < rows; i += 1) {
-        if (i < maxRows / 2 || i > rows - maxRows / 2) {
-          chunks.push(html.slice(i * maxCols, (i + 1) * maxCols));
-        }
-      }
-
-      html = chunks.join('\n');
-    }
-
-    return html;
-  }
-
-  processJs(window) {
-    const patterns = this.wappalyzer.jsPatterns;
-    const js = {};
-
-    Object.keys(patterns).forEach((appName) => {
-      js[appName] = {};
-
-      Object.keys(patterns[appName]).forEach((chain) => {
-        js[appName][chain] = {};
-
-        patterns[appName][chain].forEach((pattern, index) => {
-          const properties = chain.split('.');
-
-          let value = properties
-            .reduce((parent, property) => (parent && parent[property]
-              ? parent[property] : null), window);
-
-          value = typeof value === 'string' || typeof value === 'number' ? value : !!value;
-
-          if (value) {
-            js[appName][chain][index] = value;
-          }
-        });
-      });
-    });
-
-    return js;
   }
 
   crawl(pageUrl, index = 1, depth = 1) {
@@ -320,3 +317,5 @@ class Driver {
 }
 
 module.exports = Driver;
+module.exports.processJs = processJs;
+module.exports.processHtml = processHtml;

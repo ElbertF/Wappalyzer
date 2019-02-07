@@ -3,9 +3,10 @@
  */
 
 /* eslint-env browser */
-/* global browser, fetch, Wappalyzer */
+/* global browser, chrome, fetch, Wappalyzer */
 
 /** global: browser */
+/** global: chrome */
 /** global: fetch */
 /** global: Wappalyzer */
 
@@ -19,6 +20,22 @@ let categoryOrder = [];
 browser.tabs.onRemoved.addListener((tabId) => {
   tabCache[tabId] = null;
 });
+
+function userAgent() {
+  const url = chrome.extension.getURL('/');
+
+  if (url.match(/^chrome-/)) {
+    return 'chrome';
+  }
+
+  if (url.match(/^moz-/)) {
+    return 'firefox';
+  }
+
+  if (url.match(/^ms-browser-/)) {
+    return 'edge';
+  }
+}
 
 /**
  * Get a value from localStorage
@@ -160,6 +177,7 @@ browser.runtime.onMessage.addListener(async (message, sender) => {
         apps: wappalyzer.apps,
         categories: wappalyzer.categories,
         pinnedCategory,
+        termsAccepted: userAgent() === 'chrome' || await getOption('termsAccepted', false),
       };
 
       break;
@@ -295,8 +313,9 @@ wappalyzer.driver.getRobotsTxt = async (host, secure = false) => {
  */
 wappalyzer.driver.ping = async (hostnameCache = {}, adCache = []) => {
   const tracking = await getOption('tracking', true);
+  const termsAccepted = userAgent() === 'chrome' || await getOption('termsAccepted', false);
 
-  if (tracking) {
+  if (tracking && termsAccepted) {
     if (Object.keys(hostnameCache).length) {
       post('https://api.wappalyzer.com/ping/v1/', hostnameCache);
     }

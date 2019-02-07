@@ -882,7 +882,7 @@
       let win = window;
       while (win !== win.top) {
         win = win.parent;
-        win.postMessage(adData, '*');
+        win.postMessage(adData, win.location.href);
       }
     }
 
@@ -998,7 +998,7 @@
       }
 
       if (!adData) return;
-      
+
       if (adData.postMessageId === POST_MSG_ID) {
         delete adData.postMessageId;
 

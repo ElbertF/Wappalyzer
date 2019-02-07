@@ -155,3 +155,48 @@ body {
 
 .empty__text {
 }
+
+.terms {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.terms__wrapper {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.terms__wrapper--active {
+  display: block;
+}
+
+.terms__content {
+  font-size: .9rem;
+  line-height: 150%;
+  text-align: center;
+  margin-bottom: 1rem;
+  width: 80%;
+}
+
+.terms__accept {
+  background-color: #4608ad;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+  font-size: .9rem;
+  padding: .8rem 3rem;
+}
+
+.terms__accept:hover {
+  background-color: #4107a1;
+}
+
+.terms__privacy {
+  margin-top: 1rem;
+}

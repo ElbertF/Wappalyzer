@@ -11,6 +11,8 @@
 	"nothingToDo":              { "message": "這裡什麼也沒有。" },
 	"noAppsDetected":           { "message": "未識別到技術。" },
 	"categoryPin":              { "message": "永遠顯示圖示" },
+  "termsAccept":              { "message": "Accept" },
+  "termsContent":             { "message": "This extension sends anonymous information about websites you visit, including domain name and identified technologies, to <a href='https://www.wappalyzer.com'>wappalyzer.com</a>. This can be disabled in the settings." },
 	"categoryName1":            { "message": "內容管理系統（CMS）" },
 	"categoryName2":            { "message": "留言板/討論區" },
 	"categoryName3":            { "message": "資料庫管理" },
@@ -70,8 +72,8 @@
 	"categoryName57":           { "message": "靜態網站產生器" },
 	"categoryName58":           { "message": "使用者指引" },
 	"categoryName59":           { "message": "JavaScript 函式庫" },
-	"categoryName60":           { "message": "Containers" },
-	"categoryName61":           { "message": "SaaS" },
-	"categoryName62":           { "message": "PaaS" },
-	"categoryName63":           { "message": "IaaS" }
+	"categoryName60":           { "message": "容器" },
+	"categoryName61":           { "message": "軟體即服務（SaaS）" },
+	"categoryName62":           { "message": "平台即服務（PaaS）" },
+	"categoryName63":           { "message": "基礎設施即服務（IaaS）" }
 }

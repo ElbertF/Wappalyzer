@@ -1232,6 +1232,21 @@
       "url": "^https?://[^/]+\\.blogspot\\.com",
       "website": "http://www.blogger.com"
     },
+    "Bludit": {
+      "cats": [
+	1,
+	11
+      ],
+      "icon": "Bludit.svg",
+      "implies": "PHP",
+      "meta": {
+        "generator": "^Bludit$"
+      },
+      "headers": {
+        "X-Powered-By": "^Bludit$"
+      },
+      "website": "https://www.bludit.com"
+    },
     "Bluefish": {
       "cats": [
         20

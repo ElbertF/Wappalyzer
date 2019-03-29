@@ -13120,6 +13120,21 @@
       },
       "icon": "Zipkin.png",
       "website": "https://zipkin.io/"
+    },
+    "SmartStore.NET": {
+      "cats": [
+        "6"
+      ],
+      "headers": {
+        "Set-Cookie": "SMARTSTORE\\.VISITOR="
+      },
+      "html": "(<!--Powered by SmartStore.net - http://www.smartstore.com-->)",
+      "icon": "smartstore.net.png",
+      "implies": "Microsoft ASP.NET",
+      "meta": {
+        "generator": "^SmartStore.NET$"
+      },
+      "website": "http://www.smartstore.net"
     }
   },
   "categories": {

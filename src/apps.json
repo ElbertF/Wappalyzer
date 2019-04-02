@@ -13120,6 +13120,16 @@
       },
       "icon": "Zipkin.png",
       "website": "https://zipkin.io/"
+    },
+    "MasterkinG Framework": {
+      "cats": [
+        18
+      ],
+      "headers": {
+        "X-Powered-Framework": "^MasterkinG"
+      },
+      "icon": "Masterking32.png",
+      "website": "http://masterking32.com"
     }
   },
   "categories": {

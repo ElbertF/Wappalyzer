@@ -1,4 +1,6 @@
 {
+  "name": "wappalyzer",
+	"version": "5.7.4",
   "dependencies": {
     "file-type": "7.4.*",
     "is-svg": "2.1.*",

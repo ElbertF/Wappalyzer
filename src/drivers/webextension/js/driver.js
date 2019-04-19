@@ -148,7 +148,7 @@ browser.runtime.onConnect.addListener((port) => {
 
     const url = wappalyzer.parseUrl(port.sender.tab ? port.sender.tab.url : '');
 
-    const cookies = await browser.cookies.getAll({ domain: `.${url.hostname}` });
+    const cookies = await browser.cookies.getAll({ domain: `.${url.domain}` });
 
     let response;
 

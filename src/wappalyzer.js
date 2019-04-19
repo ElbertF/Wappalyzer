@@ -285,10 +285,13 @@ class Wappalyzer {
    */
   parseUrl(url) {
     const a = this.driver.document.createElement('a');
+    const u = tldts.parse(url);
 
     a.href = url;
 
     a.canonical = `${a.protocol}//${a.host}${a.pathname}`;
+
+    a.domain = u.domain;
 
     return a;
   }

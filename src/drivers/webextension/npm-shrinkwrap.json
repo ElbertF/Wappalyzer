@@ -2,6 +2,11 @@
   "requires": true,
   "lockfileVersion": 1,
   "dependencies": {
+    "tldts": {
+      "version": "4.0.6",
+      "resolved": "https://registry.npmjs.org/tldts/-/tldts-4.0.6.tgz",
+      "integrity": "sha512-Or/FylLxfHc/vXMN0XTrY3MDlGqyeUIB1AYTN2QV2fnKJ3ZEpM4iTTofv8AdA09UbZtsPmvcSk841kpDqbM6bg=="
+    },
     "webextension-polyfill": {
       "version": "0.4.0",
       "resolved": "https://registry.npmjs.org/webextension-polyfill/-/webextension-polyfill-0.4.0.tgz",

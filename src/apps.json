@@ -8181,7 +8181,7 @@
       "script": "prefixfree\\.js",
       "website": "https://leaverou.github.io/prefixfree/"
     },
-    "PrestaShop": {
+    "PrestaShop 1.5": {
       "cats": [
         6
       ],
@@ -8202,9 +8202,70 @@
         "MySQL"
       ],
       "js": {
-        "freeProductTranslation": "\\;confidence:25",
+        "baseUri": "\\;confidence:25",
+        "baseDirTheme": "\\confidence:25",
+        "baseDir": "\\;confidence:25"
+      },
+      "meta": {
+        "generator": "PrestaShop"
+      },
+      "website": "http://www.prestashop.com"
+    },
+    "PrestaShop 1.6": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "PrestaShop": ""
+      },
+      "headers": {
+        "Powered-By": "^Prestashop$"
+      },
+      "html": [
+        "Powered by <a\\s+[^>]+>PrestaShop",
+        "<!-- /Block [a-z ]+ module (?:HEADER|TOP)?\\s?-->",
+        "<!-- /Module Block [a-z ]+ -->"
+      ],
+      "icon": "PrestaShop.svg",
+      "implies": [
+        "PHP",
+        "MySQL"
+      ],
+      "js": {
         "priceDisplayMethod": "\\;confidence:25",
-        "priceDisplayPrecision": "\\;confidence:25"
+        "priceDisplayPrecision": "\\;confidence:25",
+        "ps_round": "\\;confidence:25"
+      },
+      "meta": {
+        "generator": "PrestaShop"
+      },
+      "website": "http://www.prestashop.com"
+    },
+    "PrestaShop 1.7": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "PrestaShop": ""
+      },
+      "headers": {
+        "Powered-By": "^Prestashop$"
+      },
+      "html": [
+        "Powered by <a\\s+[^>]+>PrestaShop",
+        "<!-- /Block [a-z ]+ module (?:HEADER|TOP)?\\s?-->",
+        "<!-- /Module Block [a-z ]+ -->"
+      ],
+      "icon": "PrestaShop.svg",
+      "implies": [
+        "PHP",
+        "MySQL"
+      ],
+      "js": {
+        "prestashop.cart": "\\;confidence:25",
+        "prestashop.configuration": "\\;confidence:25",
+        "prestashop.currency": "\\;confidence:25",
+        "prestashop.shop": "\\;confidence:25"
       },
       "meta": {
         "generator": "PrestaShop"

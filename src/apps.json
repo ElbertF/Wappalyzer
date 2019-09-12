@@ -13667,6 +13667,19 @@
       "icon": "TencentWaterproofWall.png",
       "script": "/TCaptcha\\.js",
       "website": "https://007.qq.com/"
+    },
+    "Onshop": {
+      "cats": [
+        6
+      ],
+      "excludes": "OpenCart",
+      "icon": "Onshop.svg",
+      "implies": "PHP",
+      "meta": {
+        "generator": "Onshop Ecommerce"
+      },
+      "script": "catalog/view/theme/fashion_luvibee/js/opencart_custom.js",
+      "website": "https://onshop.asia"
     }
   },
   "categories": {

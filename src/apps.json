@@ -13673,7 +13673,7 @@
         6
       ],
       "excludes": "OpenCart",
-      "icon": "Onshop.svg",
+      "icon": "Onshop.png",
       "implies": "PHP",
       "meta": {
         "generator": "Onshop Ecommerce"

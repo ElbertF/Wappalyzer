@@ -1348,6 +1348,7 @@
         "<link[^>]+?href=\"[^\"]_framework/blazor.server.js"
       ],
       "icon": "Blazor.png",
+      "implies": "CSharp",
       "website": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"
     },
     "Blesta": {
@@ -6597,6 +6598,7 @@
       },
       "html": "<input[^>]+name=\"__VIEWSTATE",
       "icon": "dotnet.png",
+      "implies": "CSharp",
       "url": "\\.aspx?(?:$|\\?)",
       "website": "https://www.asp.net"
     },

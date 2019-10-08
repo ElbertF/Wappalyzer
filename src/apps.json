@@ -2464,6 +2464,13 @@
       ],
       "website": "https://crypto-loot.com/"
     },
+    "CSharp": {
+      "cats": [
+        27
+      ],
+      "icon": "dotnet.png",
+      "website": "https://dotnet.microsoft.com/"
+    },
     "CubeCart": {
       "cats": [
         6

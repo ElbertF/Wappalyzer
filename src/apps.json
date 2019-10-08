@@ -6598,7 +6598,7 @@
         20
       ],
       "html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:excel\"|<!--\\s*(?:START|END) OF OUTPUT FROM EXCEL PUBLISH AS WEB PAGE WIZARD\\s*-->|<div [^>]*x:publishsource=\"?Excel\"?)",
-      "icon": "Microsoft Excel.svg",
+      "icon": "MSExcel.png",
       "meta": {
         "ProgId": "^Excel\\.",
         "generator": "Microsoft Excel( [\\d.]+)?\\;version:\\1"

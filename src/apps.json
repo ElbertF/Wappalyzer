@@ -3361,19 +3361,6 @@
       "icon": "FAST ESP.png",
       "website": "http://microsoft.com/enterprisesearch"
     },
-    "FAST Search for SharePoint": {
-      "cats": [
-        29
-      ],
-      "html": "<input[^>]+ name=\"ParametricSearch",
-      "icon": "FAST Search for SharePoint.png",
-      "implies": [
-        "Microsoft SharePoint",
-        "Microsoft ASP.NET"
-      ],
-      "url": "Pages/SearchResults\\.aspx\\?k=",
-      "website": "http://sharepoint.microsoft.com/en-us/product/capabilities/search/Pages/Fast-Search.aspx"
-    },
     "FWP": {
       "cats": [
         6
@@ -5486,7 +5473,7 @@
       "implies": [
         "Microsoft ASP.NET"
       ],
-      "icon": "kestrel.svg",
+      "icon": "dotnet.png",
       "website": "https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel"
     },
     "KeyCDN": {
@@ -6602,7 +6589,7 @@
         "X-Powered-By": "^ASP\\.NET"
       },
       "html": "<input[^>]+name=\"__VIEWSTATE",
-      "icon": "Microsoft ASP.NET.png",
+      "icon": "dotnet.png",
       "url": "\\.aspx?(?:$|\\?)",
       "website": "https://www.asp.net"
     },
@@ -6625,7 +6612,7 @@
       "headers": {
         "Server": "Microsoft-HTTPAPI(?:/([\\d.]+))?\\;version:\\1"
       },
-      "icon": "Microsoft.png",
+      "icon": "dotnet.png",
       "website": "http://microsoft.com"
     },
     "Microsoft PowerPoint": {
@@ -6633,7 +6620,7 @@
         20
       ],
       "html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:powerpoint\"|<link rel=\"?Presentation-XML\"? href=\"?[^\"]+\\.xml\"?>|<o:PresentationFormat>[^<]+</o:PresentationFormat>[^!]+<o:Slides>\\d+</o:Slides>(?:[^!]+<o:Version>([\\d.]+)</o:Version>)?)\\;version:\\1",
-      "icon": "Microsoft PowerPoint.svg",
+      "icon": "MSPowerPoint.png",
       "meta": {
         "ProgId": "^PowerPoint\\.",
         "generator": "Microsoft PowerPoint ( [\\d.]+)?\\;version:\\1"
@@ -6645,39 +6632,19 @@
         20
       ],
       "html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:publisher\"|<!--[if pub]><xml>)",
-      "icon": "Microsoft Publisher.svg",
+      "icon": "MSPublisher.png",
       "meta": {
         "ProgId": "^Publisher\\.",
         "generator": "Microsoft Publisher( [\\d.]+)?\\;version:\\1"
       },
       "website": "https://office.microsoft.com/publisher"
     },
-    "Microsoft SharePoint": {
-      "cats": [
-        1
-      ],
-      "headers": {
-        "MicrosoftSharePointTeamServices": "^(.+)$\\;version:\\1",
-        "SPRequestGuid": "",
-        "SharePointHealthScore": "",
-        "X-SharePointHealthScore": ""
-      },
-      "icon": "Microsoft SharePoint.png",
-      "js": {
-        "SPDesignerProgID": "",
-        "_spBodyOnLoadCalled": ""
-      },
-      "meta": {
-        "generator": "Microsoft SharePoint"
-      },
-      "website": "https://sharepoint.microsoft.com"
-    },
     "Microsoft Word": {
       "cats": [
         20
       ],
       "html": "(?:<html [^>]*xmlns:w=\"urn:schemas-microsoft-com:office:word\"|<w:WordDocument>|<div [^>]*class=\"?WordSection1[\" >]|<style[^>]*>[^>]*@page WordSection1)",
-      "icon": "Microsoft Word.svg",
+      "icon": "MSWord.png",
       "meta": {
         "ProgId": "^Word\\.",
         "generator": "Microsoft Word( [\\d.]+)?\\;version:\\1"

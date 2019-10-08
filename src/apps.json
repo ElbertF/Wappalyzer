@@ -1340,6 +1340,16 @@
       "implies": "Java",
       "website": "https://lets-blade.com"
     },
+    "Blazor": {
+      "cats": [
+        12
+      ],
+      "html": [
+        "<link[^>]+?href=\"[^\"]_framework/blazor.server.js"
+      ],
+      "icon": "Blazor.png",
+      "website": "https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor"
+    },
     "Blesta": {
       "cats": [
         6

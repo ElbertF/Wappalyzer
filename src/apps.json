@@ -11702,6 +11702,29 @@
       "implies": "WordPress",
       "website": "http://wp-rocket.me"
     },
+    "wpJet": {
+      "cats": [
+        23,
+        62
+      ],
+      "headers": {
+        "X-Powered-By": "wpJet(?:/([\\d.]+))?\\;version:\\1",
+        "X-wpJet-Nginx-Bypass": ""
+        "wpj-backend": ""
+      },
+      "html": "<!--[^>]+wpJet",
+      "icon": "wpJet.png",
+      "implies": [
+        "WordPress",
+        "PHP"
+      ],
+      "meta": {
+        "generator": "wpJet",
+        "keywords": "wpJet"
+      },
+      "url": "^https?://[^/]+\\.wpjet\\.xyz",
+      "website": "https://wpjet.xyz"
+    },
     "WP Engine": {
       "cats": [
         62

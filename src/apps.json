@@ -11710,7 +11710,6 @@
       "headers": {
         "X-Powered-By": "wpJet(?:/([\\d.]+))?\\;version:\\1",
         "X-wpJet-Nginx-Bypass": ""
-        "wpj-backend": ""
       },
       "html": "<!--[^>]+wpJet",
       "icon": "wpJet.png",

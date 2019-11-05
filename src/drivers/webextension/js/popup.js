@@ -205,6 +205,29 @@ async function getApps() {
   }
 }
 
+/**
+ * Async function to update body class based on option.
+ */
+async function getThemeMode() {
+  try { 
+    port.postMessage({
+      id: 'update_theme_mode'
+    });
+  } catch (error) {
+    console.error(error); // eslint-disable-line no-console
+  }
+}
+
+/**
+ * Update theme mode based on browser option.
+ * @param {object} res Response from port listener.
+ */
+function updateThemeMode(res) {
+  if (res.hasOwnProperty('themeMode') && res.themeMode !== false) {
+    document.body.classList.add('theme-mode-sync');
+  }
+}
+
 function displayApps(response) {
   pinnedCategory = response.pinnedCategory; // eslint-disable-line prefer-destructuring
   termsAccepted = response.termsAccepted; // eslint-disable-line prefer-destructuring
@@ -236,11 +259,17 @@ port.onMessage.addListener((message) => {
   switch (message.id) {
     case 'get_apps':
       displayApps(message.response);
-
       break;
+    
+    case 'update_theme_mode':
+      updateThemeMode(message.response);
+      
+      break;
+
     default:
       // Do nothing
   }
 });
 
+getThemeMode();
 getApps();

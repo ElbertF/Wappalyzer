@@ -203,21 +203,24 @@ body {
 
 /* Add alternative color palette for Dark mode theme. */
 @media (prefers-color-scheme: dark) {
-  .container {
+  .theme-mode-sync .container {
     background:  #333;
     color: white;
   }
-  .detected__category-link, .detected__app {
+  .theme-mode-sync .detected__category-link, 
+  .theme-mode-sync .detected__app {
     color: white;
   }
-  .detected__category-link:hover {
+  .theme-mode-sync .detected__category-link:hover {
     color: #A48EDE;
   }
-  .detected__app-icon {
-    -webkit-filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
-    filter: drop-shadow(0px 0px 1px rgba(255,255,255,1));
+  .theme-mode-sync .detected__app-icon {
+    /* Disabling the drop shadow for icons until we have an alternative solution. */
+    /* -webkit-filter: drop-shadow(0px 0px 1px rgba(255,255,255,1)); */
+    /* filter: drop-shadow(0px 0px 1px rgba(255,255,255,1)); */
   }
-  .detected__app-version, .detected__app-confidence {
+  .theme-mode-sync .detected__app-version, 
+  .theme-mode-sync .detected__app-confidence {
     background-color: #555;
   }
 }

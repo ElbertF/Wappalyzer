@@ -8,6 +8,7 @@
 	"optionUpgradeMessage":     { "message": "Avisar-me quan hi hagi una actualització disponible" },
 	"optionDynamicIcon":        { "message": "Utilitzar la icona de la tecnologia enlloc del logotip de Wappalyzer" },
 	"optionTracking":           { "message": "Enviar les tecnologies identificades de forma anònima a wappalyzer.com" },
+	"optionThemeMode":           { "message": "Habilitar la compatibilitat de la manera fosc." },
 	"nothingToDo":              { "message": "Res a fer aquí." },
 	"noAppsDetected":           { "message": "No s'ha detectat cap tecnologia." },
   "categoryPin":              { "message": "Mostrar sempre la icona" },

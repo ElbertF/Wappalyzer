@@ -8,6 +8,7 @@
 	"optionUpgradeMessage":     { "message": "Parlami dell'upgrade" },
 	"optionDynamicIcon":        { "message": "Use application icon instead of Wappalyzer logo" },
 	"optionTracking":           { "message": "Inviare anonimamente un report sulle applicazioni rilevate a wappalyzer.com per l'analisi" },
+	"optionThemeMode":           { "message": "Abilita compatibilità con la modalità scura." },
 	"nothingToDo":              { "message": "Niente da fare qui." },
 	"noAppsDetected":           { "message": "Nessuna applicazione rilevata." },
   "categoryPin":              { "message": "Always show icon" },

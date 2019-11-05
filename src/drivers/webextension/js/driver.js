@@ -191,6 +191,13 @@ browser.runtime.onConnect.addListener((port) => {
         };
 
         break;
+      case 'update_theme_mode':
+          // Sync theme mode to popup.
+          response = {
+            themeMode: await getOption('themeMode', false)
+          };
+
+        break;
       default:
         // Do nothing
     }

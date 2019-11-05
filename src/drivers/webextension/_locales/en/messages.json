@@ -8,6 +8,7 @@
 	"optionUpgradeMessage":     { "message": "Tell me about upgrades" },
 	"optionDynamicIcon":        { "message": "Use technology icon instead of Wappalyzer logo" },
 	"optionTracking":           { "message": "Anonymously send identified technologies to wappalyzer.com" },
+	"optionThemeMode":           { "message": "Enable dark mode compatibility." },
 	"nothingToDo":              { "message": "Nothing to do here." },
 	"noAppsDetected":           { "message": "No technologies detected." },
   "categoryPin":              { "message": "Always show icon" },

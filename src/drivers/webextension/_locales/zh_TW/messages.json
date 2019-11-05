@@ -8,6 +8,7 @@
   "optionUpgradeMessage":     { "message": "通知我更新內容" },
   "optionDynamicIcon":        { "message": "使用網頁中使用技術的圖示取代 Wappalyzer 的標誌" },
   "optionTracking":           { "message": "匿名傳送已識別的技術至 wappalyzer.com" },
+  "optionThemeMode":          { "message": "啟用暗模式的兼容性。" },
   "nothingToDo":              { "message": "這裡什麼也沒有。" },
   "noAppsDetected":           { "message": "未識別到技術。" },
   "categoryPin":              { "message": "永遠顯示圖示" },

@@ -8,6 +8,7 @@
 	"optionUpgradeMessage":     { "message": "Atualizações automáticas" },
 	"optionDynamicIcon":        { "message": "Utilizar o ícone da tecnologia ao invés da logo do Wappalyzer" },
 	"optionTracking":           { "message": "Enviar relatórios anônimos para wappalyzer.com sobre tecnologias identificadas" },
+	"optionThemeMode":          { "message": "Permitir a compatibilidade modo escuro." },
 	"nothingToDo":              { "message": "Nada a fazer aqui." },
 	"noAppsDetected":           { "message": "Nenhuma tecnologia identificada." },
   "categoryPin":              { "message": "Sempre mostrar ícone" },

@@ -8,6 +8,7 @@
   "optionUpgradeMessage":     { "message": "Povedzte mi o upgradoch" },
   "optionDynamicIcon":        { "message": "Použiť ikonu aplikácie namiesto loga Wappalyzer" },
   "optionTracking":           { "message": "Anonymne posielať správy o zistených aplikáciách na wappalyzer.com pre výskum" },
+  "optionThemeMode":          { "message": "Povoliť kompatibilitu tmavú režim." },
   "nothingToDo":              { "message": "Nie je tu čo robiť." },
   "noAppsDetected":           { "message": "Žiadne aplikácie neboli zistené." },
   "categoryPin":              { "message": "Always show icon" },

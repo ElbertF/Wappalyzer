@@ -58,6 +58,7 @@
   "optionTracking":           { "message": "Анонимно отправлять статистику распознанных данных на сервер (для исследований)" },
   "optionDynamicIcon":        { "message": "Использовать значок приложения вместо логотипа Wappalyzer" },
   "optionUpgradeMessage":     { "message": "Оповещать меня об обновлениях" },
+  "optionThemeMode":          { "message": "Включить совместимость темного режима." },
   "options":                  { "message": "Настройки" },
   "optionsSave":              { "message": "Сохранить" },
   "optionsSaved":             { "message": "Успешно сохранено!" },

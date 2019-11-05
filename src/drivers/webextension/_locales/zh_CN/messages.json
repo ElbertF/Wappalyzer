@@ -8,6 +8,7 @@
   "optionUpgradeMessage":     { "message": "通知我更新详情" },
   "optionDynamicIcon":        { "message": "使用应用程序而非 Wappalyzer 的标志" },
   "optionTracking":           { "message": "发送匿名的应用报告到 wappalyzer.com 供研究使用" },
+  "optionThemeMode":          { "message": "启用暗模式的兼容性。" },
   "nothingToDo":              { "message": "这儿啥也没有。" },
   "noAppsDetected":           { "message": "未检测到任何应用。" },
   "categoryPin":              { "message": "Always show icon" },

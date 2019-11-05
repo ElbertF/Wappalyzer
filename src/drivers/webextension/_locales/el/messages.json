@@ -8,6 +8,7 @@
 	"optionUpgradeMessage":     { "message": "Ενημερώστε με για αναβαθμίσεις" },
 	"optionDynamicIcon":        { "message": "Use application icon instead of Wappalyzer logo" },
 	"optionTracking":           { "message": "Ανώνυμη αποστολή αναφορών για εντοπισμένες εφαρμογές στο wappalyzer.com για έρευνα" },
+	"optionThemeMode":           { "message": "Ενεργοποίηση συμβατότητας σκοτεινό τρόπο." },
 	"nothingToDo":              { "message": "Καμία ενέργεια." },
 	"noAppsDetected":           { "message": "Δεν ανιχνεύθηκαν εφαρμογές." },
   "categoryPin":              { "message": "Always show icon" },

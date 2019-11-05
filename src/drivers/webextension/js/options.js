@@ -93,4 +93,13 @@ document.addEventListener('DOMContentLoaded', async () => {
   el.checked = value;
 
   el.addEventListener('change', e => setOption('tracking', e.target.checked));
+
+  // Theme Mode
+  value = await getOption('themeMode', false);
+
+  el = document.querySelector('#option-theme-mode');
+
+  el.checked = value;
+
+  el.addEventListener('change', e => setOption('themeMode', e.target.checked));
 });

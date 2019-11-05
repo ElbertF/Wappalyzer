@@ -8,6 +8,7 @@
 	"optionUpgradeMessage":     { "message": "Anunță-mă dacă sunt actualizări" },
 	"optionDynamicIcon":        { "message": "Foloseşte icon-ul aplicaţiei în locul logo-ului Wappalyzer" },
 	"optionTracking":           { "message": "Trimite rapoarte anonime despre aplicațiile detectate către wappalyzer.com pentru cercetare" },
+	"optionThemeMode":          { "message": "Activează modul de compatibilitate întuneric." },
 	"nothingToDo":              { "message": "Nimic de făcut pe pagina curentă." },
 	"noAppsDetected":           { "message": "Nici o aplicație detectată." },
   "categoryPin":              { "message": "Afișează icon tot timpul" },

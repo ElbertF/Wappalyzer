@@ -8,6 +8,7 @@
 	"optionUpgradeMessage":     { "message": "Powiadamiaj mnie o aktualizacjach" },
 	"optionDynamicIcon":        { "message": "Używaj loga aplikacji zamiast Wappalyzer" },
 	"optionTracking":           { "message": "Przesyłaj anonimowe statystyki aplikacji wykrytych przez Wappalyzer do twórców" },
+	"optionThemeMode":           { "message": "Włącz ciemną kompatybilność trybu." },
 	"nothingToDo":              { "message": "Nic tu nie ma." },
 	"noAppsDetected":           { "message": "Nie wykryto żadnych aplikacji." },
   "categoryPin":              { "message": "Zawsze pokazuj tą ikonę" },

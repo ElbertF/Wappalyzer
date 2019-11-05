@@ -4,6 +4,7 @@
   "nothingToDo":              { "message": "Nada a fazer aqui." },
   "optionDynamicIcon":        { "message": "Utilizar o ícone da tecnologia em vez do logótipo do Wappalyzer" },
   "optionTracking":           { "message": "Envie anonimamente tecnologias identificadas para wappalyzer.com" },
+  "optionThemeMode":          { "message": "Permitir a compatibilidade modo escuro." },
   "optionUpgradeMessage":     { "message": "Fale-me sobre actualizações" },
   "options":                  { "message": "Opções" },
   "optionsSave":              { "message": "Opções de Guardar" },

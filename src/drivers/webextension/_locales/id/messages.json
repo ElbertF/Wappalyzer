@@ -8,6 +8,7 @@
 	"optionUpgradeMessage":     { "message": "Beritahu Tentang Peningkatan Versi" },
 	"optionDynamicIcon":        { "message": "Gunakan ikon aplikasi dan bukan logo Wappalyzer" },
 	"optionTracking":           { "message": "Secara anonim kirimkan laporan tentang aplikasi yang terdeteksi ke wappalyzer.com untuk penelitian" },
+	"optionThemeMode":           { "message": "Aktifkan kompatibilitas modus gelap." },
 	"nothingToDo":              { "message": "Tak ada yang dilakukan disini." },
 	"noAppsDetected":           { "message": "Tidak ada aplikasi yang terdeteksi." },
   "categoryPin":              { "message": "Always show icon" },

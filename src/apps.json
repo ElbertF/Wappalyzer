@@ -8142,7 +8142,8 @@
       "implies": [
         "PHP",
         "Nginx",
-        "MariaDB"
+        "MariaDB",
+        "Fastly"
       ],
       "icon": "pantheon.svg",
       "website": "https://pantheon.io/"

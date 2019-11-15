@@ -11681,6 +11681,27 @@
       "implies": "WordPress",
       "website": "http://www.w3-edge.com/wordpress-plugins/w3-total-cache"
     },
+    "wpJet": {
+      "cats": [
+        23
+      ],
+      "headers": {
+        "X-Powered-By": "wpJet(?:/([\\d.]+))?\\;version:\\1",
+        "X-wpJet-Nginx-Bypass": ""
+      },
+      "html": "<!--[^>]+wpJet",
+      "icon": "wpJet.png",
+      "implies": [
+        "WordPress",
+        "PHP"
+      ],
+      "meta": {
+        "generator": "wpJet",
+        "keywords": "wpJet"
+      },
+      "url": "^https?://[^/]+\\.wpjet\\.xyz",
+      "website": "https://wpjet.xyz"
+    },
     "W3Counter": {
       "cats": [
         10

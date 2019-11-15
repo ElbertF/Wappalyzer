@@ -13977,26 +13977,6 @@
       },
       "website": "https://parceljs.org/"
     },
-    "wpCache": {
-      "cats": [
-        23
-      ],
-      "headers": {
-        "X-Powered-By": "wpCache(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "html": "<!--[^>]+wpCache",
-      "icon": "wpCache.png",
-      "implies": [
-        "WordPress",
-        "PHP"
-      ],
-      "meta": {
-        "generator": "wpCache",
-        "keywords": "wpCache"
-      },
-      "url": "^https?://[^/]+\\.wpcache\\.co",
-      "website": "https://wpcache.co"
-    },
     "xCharts": {
       "cats": [
         25

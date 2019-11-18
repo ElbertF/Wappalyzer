@@ -3417,6 +3417,15 @@
       "script": "exhibit.*\\.js",
       "website": "http://simile-widgets.org/exhibit/"
     },
+    "ExpertRec Site Search": {
+      "cats": [
+        29
+      ],
+      "icon": "ExpertRec Site Search.png",
+      "html": "<ci-search>",
+      "script": "^ci_common.js",
+      "website": "http://expertrec.com/"
+    },
     "Express": {
       "cats": [
         18,

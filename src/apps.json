@@ -11999,6 +11999,16 @@
       "script": "cdn\\.6th\\.ir",
       "website": "https://webzi.ir"
     },
+        "see5": {
+      "cats": [
+        1
+      ],
+      "html": [
+        "<[^>]see5"
+      ],
+      "icon": "see5.png",
+      "website": "http://see5.ir/"
+    },
     "Whooshkaa": {
       "cats": [
         5

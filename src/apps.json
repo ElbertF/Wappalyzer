@@ -2417,6 +2417,24 @@
       "implies": "PHP",
       "website": "http://coppermine-gallery.net"
     },
+    "CoreMedia": {
+      "cats": [
+        1
+      ],
+      "cookies": {
+        "CM_SESSIONID": "",
+        "CMSESSIONID": ""
+      },
+      "html": [
+        "coremedia",
+        "/blueprint/",
+        "/resource/(image|css|js|blob|crblob)/[\\d.]+/[^\"]*\\.(jpg|jpeg|png|gif|ico|css|js|json)\"",
+        "/(image|blob|crblob)/[\\d.]+/[\\D]*[\\d]+x\\d[^\"]*\\.(jpg|jpeg|png|gif)\""
+      ],
+      "icon": "CoreMedia.png",
+      "implies": "Java",
+      "website": "http://www.coremedia.com"
+    },
     "Cosmoshop": {
       "cats": [
         6

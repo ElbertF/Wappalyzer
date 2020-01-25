@@ -7399,6 +7399,21 @@
       },
       "website": "http://www.netcap-creation.fr"
     },
+    "MyWebsite": {
+      "cats": [
+        1
+      ],
+      "cookies": {
+        "dm_last_visit": "\\;confidence:10"
+      },
+      "js": {
+        "Parameters": "\\;confidence:10",
+        "version": "^(.+)$\\;version:\\1\\;confidence:0"
+      },
+      "icon": "Ionos-by-1and1-logo.svg",
+      "script": "\\/\\/integration.mywebsite-editor.com.*\\.js\\;confidence:100",
+      "website": "https://www.ionos.com"
+    },
     "NEO - Omnichannel Commerce Platform": {
       "cats": [
         6

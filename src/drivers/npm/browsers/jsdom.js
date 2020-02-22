@@ -39,7 +39,7 @@ function Browser (opts) {
     contentType,
     document: dom.window.document,
     window: dom.window,
-    headers: {},
+    headers,
     js: dom.window,
     scripts: uniq(
       Array.prototype.slice

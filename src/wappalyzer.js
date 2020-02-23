@@ -607,7 +607,7 @@ class Wappalyzer {
           headerName = headerName.toLowerCase();
 
           if (headerName in headers) {
-            headers[headerName].forEach((headerValue) => {
+            [].concat(headers[headerName]).compact(Boolean).forEach((headerValue) => {
               if (pattern.regex.test(headerValue)) {
                 addDetected(app, pattern, 'headers', headerValue, headerName);
               }

@@ -7389,7 +7389,7 @@
       "meta": {
         "generator": "^.*MyWebsite.*$\\;confidence:100"
       },
-      "icon": "Ionos-by-1and1-logo.svg",
+      "icon": "IONOS_by_1u1_square_dark.jpg",
       "website": "https://www.ionos.com"
     },
     "MyWebsite 9": {
@@ -7400,7 +7400,7 @@
         "SystemID": "^.*1AND1.*$\\;confidence:100",
         "version": "^(.*)$\\;version:\\1\\;confidence:0"
       },
-      "icon": "Ionos-by-1and1-logo.svg",
+      "icon": "IONOS_by_1u1_square_dark.jpg",
       "script": "\\/\\/integration.mywebsite-editor.com.*\\.js\\;confidence:100",
       "website": "https://www.ionos.com"
     },
@@ -7668,6 +7668,9 @@
       "cats": [
         1
       ],
+      "meta": {
+        "generator": "OctoberCMS"
+      },
       "cookies": {
         "october_session": ""
       },
@@ -11834,7 +11837,7 @@
       "cats": [
         6
       ],
-      "cookies": {
+      "js": {
         "WHMCS": ""
       },
       "icon": "WHMCS.png",

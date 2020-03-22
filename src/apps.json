@@ -11143,6 +11143,16 @@
       "script": "/js/ushahidi\\.js$",
       "website": "http://www.ushahidi.com"
     },
+    "VHosting Solution": {
+      "cats": [
+        62
+      ],
+      "headers": {
+        "X-Hosted-By": "VHosting Solution"
+      },
+      "icon": "VHosting.svg",
+      "website": "https://www.vhosting-it.com"
+    },
     "VIVVO": {
       "cats": [
         1

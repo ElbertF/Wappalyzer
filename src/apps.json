@@ -4420,6 +4420,17 @@
       "script": "apis\\.google\\.com/js/[a-z]*\\.js",
       "website": "http://plus.google.com"
     },
+    "Google Shield Project": {
+      "cats": [
+        63
+      ],
+      "headers": {
+        "via": "^([0-9]\\.[0-9])\\;version:\\1 google",
+        "x-shield-request-id": ""
+      },
+      "icon": "Google Shield Project.svg",
+      "website": "https://projectshield.withgoogle.com"
+    },
     "Google Sites": {
       "cats": [
         1

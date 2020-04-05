@@ -4425,7 +4425,7 @@
         63
       ],
       "headers": {
-        "via": "^([0-9]\\.[0-9])\\;version:\\1 google",
+        "via": "^([0-9]\\.[0-9])\\;version:\\1",
         "x-shield-request-id": ""
       },
       "icon": "Google Shield Project.svg",

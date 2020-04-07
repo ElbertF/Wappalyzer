@@ -7257,7 +7257,7 @@
         "version": "^(.*)$\\;version:\\1\\;confidence:0"
       },
       "script": "\\/\\/integration.mywebsite-editor.com.*\\.js\\;confidence:100\\;version:9",
-      "icon": "Ionos-by-1and1-logo.svg",
+      "icon": "ionos.svg",
       "website": "https://www.ionos.com"
     },
     "NEO - Omnichannel Commerce Platform": {

@@ -6016,6 +6016,14 @@
       "script": "//platform\\.linkedin\\.com/in\\.js",
       "website": "http://linkedin.com"
     },
+    "Linx": {
+      "cats": [
+        6
+      ],
+      "html": "(suite\\.linximpulse\\.net)",
+      "icon": "linx.png",
+      "website": "https://www.linx.com.br/"
+    },
     "Liquid Web": {
       "cats": [
         62

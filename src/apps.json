@@ -11058,7 +11058,7 @@
       "cats": [
         11
       ],
-      "icon": "typecho.svg",
+      "icon": "typecho.png",
       "implies": "PHP",
       "js": {
         "TypechoComment": ""
@@ -11067,7 +11067,7 @@
         "generator": "Typecho( [\\d.]+)?\\;version:\\1"
       },
       "url": "/admin/login\\.php?referer=http%3A%2F%2F",
-      "website": "http://typecho.org/"
+      "website": "https://typecho.org/"
     },
     "Typekit": {
       "cats": [

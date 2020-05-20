@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="124px" height="124px" viewBox="0 0 124 124" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 3.8.1 (29687) - http://www.bohemiancoding.com/sketch -->
+    <title>Page 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-1" transform="translate(-13.000000, -14.000000)">
+            <g id="Page-1" transform="translate(15.000000, 15.000000)">
+                <polygon id="Fill-1" fill="#000000" points="63.4941 53.9491 63.4941 97.0171 55.0341 97.0171 55.0341 50.9491"></polygon>
+                <g id="Group-6" transform="translate(0.000000, 0.831000)">
+                    <path d="M31.04,49.3213 C30.704,38.0813 36.636,32.3493 44.356,32.3493 C49.057,32.3493 52.638,33.8103 60.247,37.4073 C65.843,40.1043 69.983,42.1283 74.124,42.1283 C78.153,42.1283 80.056,38.8683 80.167,32.6863 L86.77,32.6863 C87.329,45.1633 80.95,49.6593 74.013,49.6593 C69.536,49.6593 65.507,48.3113 57.786,44.7143 C52.526,42.1283 48.386,39.7683 44.356,39.7683 C40.328,39.7683 37.866,42.5783 37.754,49.3213 L31.04,49.3213 Z" id="Fill-2" fill="#000000"></path>
+                    <path d="M119.83,60.0849 C119.83,93.1749 93.007,119.9999 59.915,119.9999 C26.825,119.9999 0,93.1749 0,60.0849 C0,26.9939 26.825,0.1689 59.915,0.1689 C93.007,0.1689 119.83,26.9939 119.83,60.0849 L119.83,60.0849 Z" id="Stroke-4" stroke="#000000" stroke-width="4"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

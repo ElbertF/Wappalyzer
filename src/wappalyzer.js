@@ -237,6 +237,15 @@ class Wappalyzer {
       resolveExcludes(apps, this.detected[url]);
       this.resolveImplies(apps, url.canonical);
 
+      // Resolve confidence again, required for implied apps
+      Object.keys(apps).forEach((appName) => {
+        const app = apps[appName];
+
+        if (!app.getConfidence()) {
+          delete apps[app.name];
+        }
+      });
+
       this.cacheDetectedApps(apps, url.canonical);
       this.trackDetectedApps(apps, url, language);
 

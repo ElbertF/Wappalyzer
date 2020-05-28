@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="147px" height="147px" viewBox="0 0 147 147" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="">
+    <!-- Generator: Sketch 43.1 (39012) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="50.8313239%" cy="50%" fx="50.8313239%" fy="50%" r="48.8954829%" gradientTransform="translate(0.508313,0.500000),scale(0.466321,1.000000),rotate(89.343200),translate(-0.508313,-0.500000)" id="radialGradient-1">
+            <stop stop-color="#FFFFFF" offset="0%"/>
+            <stop stop-color="#F2F2F2" offset="100%"/>
+        </radialGradient>
+        <linearGradient x1="0%" y1="50%" x2="100%" y2="50%" id="linearGradient-2">
+            <stop stop-color="#FF593D" offset="0%"/>
+            <stop stop-color="#FF7751" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <rect id="Rectangle" fill="url(#radialGradient-1)" x="-120" y="-16" width="386" height="180"/>
+            <g id="1559836068-datoicon" transform="translate(29.000000, 29.000000)" fill-rule="nonzero" fill="url(#linearGradient-2)">
+                <path d="M44.5007946,0.113633929 L0.397321429,0.113633929 L0.397321429,88.8863661 L44.5007946,88.8863661 C66.5576964,88.8863661 88.6026786,69.0131429 88.6026786,44.5063571 C88.6026786,19.9995714 66.5576964,0.113633929 44.5007946,0.113633929 Z M44.5007946,64.6688304 C33.3614911,64.6648571 24.3351429,55.6305625 24.3391161,44.4912589 C24.3430893,33.3519554 33.3773839,24.3256071 44.5166875,24.3295804 C55.6551964,24.3335536 64.6823393,33.3670536 64.6783661,44.5055625 C64.6791607,55.6408929 55.6528125,64.6680357 44.5174821,64.6680357 C44.5119196,64.6688304 44.5063571,64.6688304 44.5007946,64.6688304 Z" id="Shape"/>
+            </g>
+        </g>
+    </g>
+</svg>

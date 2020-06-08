@@ -14291,19 +14291,17 @@
       "icon": "RebelMouse.svg",
       "html": "<!-- Powered by RebelMouse.",
       "website": "https://www.rebelmouse.com/"
-    }
-  },
-  "FaraPy": {
+    },
+    "FaraPy": {
       "cats": [
-        1,
-        11
+        1
       ],
       "icon": "FaraPy.png",
       "html": "<!-- Powered by FaraPy.",
       "implies": "Python",
       "website": "https://faral.tech",
+    }
   },
-
 
   "categories": {
     "1": {

@@ -14294,14 +14294,14 @@
     }
   },
   "FaraPy": {
-  "cats": [
-    1,
-    11
-  ],
-  "icon": "FaraPy.png",
-  "html": "<!-- Powered by FaraPy.",
-  "implies": "Python",
-  "website": "https://faral.tech",
+      "cats": [
+        1,
+        11
+      ],
+      "icon": "FaraPy.png",
+      "html": "<!-- Powered by FaraPy.",
+      "implies": "Python",
+      "website": "https://faral.tech",
   },
 
 

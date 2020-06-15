@@ -375,7 +375,12 @@ class Site {
     ).jsonValue()
 
     // JavaScript
-    const win = await page.evaluate(getJs)
+    const win = await Promise.race([
+      page.evaluate(getJs),
+      new Promise((resolve, reject) =>
+        setTimeout(() => reject(new Error('Timeout')), this.options.maxWait)
+      )
+    ])
 
     const js = Wappalyzer.technologies
       .filter(({ js }) => Object.keys(js).length)

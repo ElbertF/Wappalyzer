@@ -3677,6 +3677,7 @@
       ],
       "html": "<!-- Powered by FaraPy.",
       "icon": "FaraPy.png",
+      "implies": "Python",
       "website": "https://faral.tech"
     },
     "Fat-Free Framework": {

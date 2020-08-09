@@ -3609,6 +3609,21 @@
       "script": "elementor/assets/js/[^/]+\\.js\\?ver=([\\d.]+)$\\;version:\\1",
       "website": "https://elementor.com"
     },
+    "Eleventy": {
+      "cats": [
+        57
+      ],
+      "html": [
+        "<a [^>]*href=\"https://www\\.11ty\\.dev",
+        "<a [^>]*href=\"https://11ty\\.dev",
+        "<a [^>]*href=\"https://11ty\\.io"
+      ],
+      "icon": "Eleventy.png",
+      "meta": {
+        "generator": "Eleventy(?: v?([\\d.]+))?\\;version:\\1"
+      },
+      "website": "https://www.11ty.dev"
+    },
     "Elm": {
       "cats": [
         27,

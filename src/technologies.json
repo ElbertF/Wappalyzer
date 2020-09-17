@@ -16161,6 +16161,16 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
+    },
+    "yottaa": {
+      "cats": [
+        31
+      ],
+      "scripts": [
+        "^https\\:\/\/cdn-fsly\\.yottaa\\.net",
+        "^https\\:\/\/cdn\\.yottaa\\.com"
+      ],
+      "website": "https://www.yottaa.com/"
     }
   }
 }

@@ -8249,7 +8249,7 @@
       "icon": "MobX.svg",
       "js": {
         "__mobxGlobal": "",
-        "__mobxGlobals": "",
+        "__mobxGlobals.version.toString()": "([\\d.]+)\\;version:\\1",
         "__mobxInstanceCount": ""
       },
       "scripts": "(?:/([\\d\\.]+))?/mobx(?:\\.[a-z]+){0,2}\\.js(?:$|\\?)\\;version:\\1",

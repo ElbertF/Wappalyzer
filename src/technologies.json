@@ -396,6 +396,17 @@
       "icon": "AOLserver.png",
       "website": "http://aolserver.com"
     },
+    "AOS": {
+      "cats": [
+        19
+      ],
+      "scripts": [
+        "/aos@([a-z-.0-9]+)/([a-z]+)/aos\\.js",
+        "/aos@([0-9.]+)/([a-z]+)/aos\\.js\\;version:\\1"
+      ],
+      "website": "https://michalsnik.github.io/aos/",
+      "describe": "AOS is an Animate On Scroll Library"
+    },
     "AT Internet Analyzer": {
       "cats": [
         10

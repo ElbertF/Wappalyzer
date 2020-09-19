@@ -15479,6 +15479,17 @@
       "scripts": "jquery\\.sparkline.*\\.js",
       "website": "http://omnipotent.net/jquery.sparkline/"
     },
+    "jQuery Transit": {
+      "cats": [
+        19
+      ],
+      "implies": "jQuery",
+      "icon": "jQuery.svg",
+      "scripts": [
+        "/jquery\\.transit/([0-9.]+)/jquery\\.transit(?:.min)\\.js\\;version:\\1"
+      ],
+      "website": "https://ricostacruz.com/jquery.transit/#top"
+    },
     "jQuery UI": {
       "cats": [
         59

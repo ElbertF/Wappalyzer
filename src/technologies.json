@@ -4614,6 +4614,17 @@
       "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
       "website": "https://flickity.metafizzy.co/"
     },
+    "Flowvy": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "NHsect": ""
+      },
+      "html": "<a href='https://www.flowvy.com' target='_blank'>",
+      "icon": "flowvy.png",
+      "website": "https://www.flowvy.com"
+    },
     "FluxBB": {
       "cats": [
         2

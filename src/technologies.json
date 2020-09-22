@@ -12580,7 +12580,7 @@
         "sf_redirect": ""
       },
       "description": "Symfony is a PHP web application framework and a set of reusable PHP components/libraries.",
-      "html": "(?:<div class=\"sf-toolbar[^>]+?>[^]+<span class=\"sf-toolbar-value\">([\\d.])+|<div id=\"sfwdt[^\"]+\" class=\"[^\"]*sf-toolbar)\\;version:\\1",
+      "html": "(?:<div class=\"sf-toolbar[^>]+?>.*?<span class=\"sf-toolbar-value\">|<div id=\"sfwdt[^\"]+\" class=\"[^\"]*sf-toolbar)",
       "icon": "Symfony.svg",
       "implies": "PHP",
       "js": {

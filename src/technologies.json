@@ -10558,8 +10558,7 @@
       "icon": "Rangedslider.png",
       "implies": "jQuery",
       "scripts": [
-        "/rangeslider.js/([\\d.]+)/rangeslider(?:.min)?\\.(js|css)\\;version:\\1",
-        "/rangeslider.js@([\\d.]+)/([a-z]+)/rangeslider(?:.min)?\\.(js|css)\\;version:\\1"
+        "/rangeslider.js(@|/)([\\d.]+)(?:/([a-z]+))?/rangeslider(?:.min)?\\.(js|css)\\;version:\\2"
       ],
       "website": "https://rangeslider.js.org/"
     },

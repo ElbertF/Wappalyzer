@@ -10550,6 +10550,19 @@
       "scripts": "ramda.*\\.js",
       "website": "http://ramdajs.com"
     },
+    "Rangeslider.js": {
+      "cats": [
+        19
+      ],
+      "description": "HTML5 input range slider element polyfill ",
+      "icon": "Rangedslider.png",
+      "implies": "jQuery",
+      "scripts": [
+        "/rangeslider.js/([\\d.]+)/rangeslider(?:.min)?\\.(js|css)\\;version:\\1",
+        "/rangeslider.js@([\\d.]+)/([a-z]+)/rangeslider(?:.min)?\\.(js|css)\\;version:\\1"
+      ],
+      "website": "https://rangeslider.js.org/"
+    },
     "Raphael": {
       "cats": [
         25

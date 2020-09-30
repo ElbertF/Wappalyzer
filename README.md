@@ -46,3 +46,4 @@ node src/drivers/npm/cli.js https://example.com
 * Go go `about:debugging#/runtime/this-firefox`
 * Click 'Load Temporary Add-on'
 * Select `src/drivers/webextension/manifest.json`
+### Thanks.

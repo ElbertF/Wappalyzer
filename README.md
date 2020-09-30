@@ -1,3 +1,4 @@
+#logr - An Amazing Project
 # Wappalyzer [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
 
 [Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites.

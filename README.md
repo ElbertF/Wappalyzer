@@ -17,7 +17,7 @@ analytics tools and [much more](https://www.wappalyzer.com/technologies).
 
 Please read the [developer documentation](https://www.wappalyzer.com/docs).
 
-## Quick start
+## Quick Start
 
 ```sh
 git clone https://github.com/aliasio/wappalyzer
@@ -34,14 +34,14 @@ yarn run link
 node src/drivers/npm/cli.js https://example.com
 ```
 
-### Chrome extension
+### Chrome Extension
 
 * Go go `about:extensions`
 * Enable 'Developer mode'
 * Click 'Load unpacked'
 * Select `src/drivers/webextension`
 
-### Firefox extension
+### Firefox Extension
 
 * Go go `about:debugging#/runtime/this-firefox`
 * Click 'Load Temporary Add-on'

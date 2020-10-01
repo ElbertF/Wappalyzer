@@ -2,7 +2,7 @@
 
 [Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites.
 It detects content management systems, ecommerce platforms, JavaScript frameworks, 
-analytics tools and [much more](https://www.wappalyzer.com/technologies).
+analytical tools and [much more](https://www.wappalyzer.com/technologies).
 
 * [wappalyzer on NPM](https://www.npmjs.com/package/wappalyzer)
 * [wappalyzer-core on NPM](https://www.npmjs.com/package/wappalyzer-core)
@@ -15,7 +15,7 @@ analytics tools and [much more](https://www.wappalyzer.com/technologies).
 
 ## Documentation
 
-Please read the [developer documentation](https://www.wappalyzer.com/docs).
+Please read the [developer documents](https://www.wappalyzer.com/docs).
 
 ## Quick start
 

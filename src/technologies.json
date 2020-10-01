@@ -7703,6 +7703,15 @@
       },
       "website": "https://www.luigisbox.com"
     },
+    "Lunr": {
+      "cats": [
+        29
+      ],
+      "scripts": [
+        "lunr[@|/]([\\d.]+)/lunr(?:\\.min)?\\.js\\;version:\\1"
+      ],
+      "website": "https://lunrjs.com"
+    },
     "MODX": {
       "cats": [
         1

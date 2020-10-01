@@ -1,4 +1,4 @@
-# Wappalyzer [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
+# Wappalyzer = An Amazing project [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
 
 [Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites.
 It detects content management systems, ecommerce platforms, JavaScript frameworks, 

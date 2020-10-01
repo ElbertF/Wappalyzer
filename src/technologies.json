@@ -3723,6 +3723,25 @@
       "scripts": "disqus_url",
       "website": "https://disqus.com"
     },
+    "Divi": {
+      "cats": [
+        51
+      ],
+      "description": "Divi is an Wordpress Page Builder",
+      "icon": "Divi.png",
+      "implies": [
+        "WordPress"
+      ],
+      "html": [
+        "<[script|link][^>]+wp-content/themes/Divi/",
+        "<body [^>]+et_divi_theme"
+      ],
+      "scripts": [
+        "wp-content/themes/Divi/",
+        "wp-content/plugins/divi-overlays/"
+      ],
+      "website": "https://www.elegantthemes.com/gallery/divi/"
+    },
     "Django": {
       "cats": [
         18

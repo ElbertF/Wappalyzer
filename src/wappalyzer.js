@@ -5,7 +5,7 @@ const Wappalyzer = {
   categories: [],
 
   slugify(string) {
-    return string
+    return string;
       .toLowerCase()
       .replace(/[^a-z0-9-]/g, '-')
       .replace(/--+/g, '-')
@@ -31,8 +31,8 @@ const Wappalyzer = {
           ({ technology: { name } }) => name === technology.name
         ) === -1
       ) {
-        let version = ''
-        let confidence = 0
+        let version = '';
+        let confidence = 0;
 
         detections
           .filter(({ technology }) => technology)
@@ -88,10 +88,10 @@ const Wappalyzer = {
    * @param {Promise} resolved
    */
   resolveVersion({ version, regex }, match) {
-    let resolved = version
+    let resolved = version;
 
     if (version) {
-      const matches = regex.exec(match)
+      const matches = regex.exec(match);
 
       if (matches) {
         matches.forEach((match, index) => {
@@ -145,11 +145,11 @@ const Wappalyzer = {
    * @param {Promise} resolved
    */
   resolveImplies(resolved) {
-    let done = false
+    let done = false;
 
     while (resolved.length && !done) {
       resolved.forEach(({ technology, confidence }) => {
-        done = true
+        done = true;
 
         technology.implies.forEach(({ name, confidence: _confidence }) => {
           const implied = Wappalyzer.getTechnology(name)
@@ -169,7 +169,7 @@ const Wappalyzer = {
               version: '',
             })
 
-            done = false
+            done = false;
           }
         })
       })
@@ -275,7 +275,7 @@ const Wappalyzer = {
         cpe: cpe || null,
       })
 
-      return technologies
+      return technologies;
     }, [])
   },
 
@@ -305,7 +305,7 @@ const Wappalyzer = {
    */
   transformPatterns(patterns, caseSensitive = false) {
     if (!patterns) {
-      return []
+      return [];
     }
 
     const toArray = (value) => (Array.isArray(value) ? value : [value])

@@ -1,4 +1,4 @@
-# Wappalyzer [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
+# Wappalyzer An Amazing Project  [![Travis](https://travis-ci.org/aliasio/wappalyzer.svg?branch=master)](https://travis-ci.org/aliasio/wappalyzer/)
 
 [Wappalyzer](https://www.wappalyzer.com) identifies technologies on websites.
 It detects content management systems, ecommerce platforms, JavaScript frameworks, 
@@ -15,7 +15,7 @@ analytics tools and [much more](https://www.wappalyzer.com/technologies).
 
 ## Documentation
 
-Please read the [developer documentation](https://www.wappalyzer.com/docs).
+Please read the [developer documentation] through refrence(https://www.wappalyzer.com/docs).
 
 ## Quick start
 
@@ -40,6 +40,13 @@ node src/drivers/npm/cli.js https://example.com
 * Enable 'Developer mode'
 * Click 'Load unpacked'
 * Select `src/drivers/webextension`
+
+How to Start?
+So here are the simple steps for you to start with Wappalyzer.
+
+For you to start with Wappalyzer, Just go to your Mozilla Firefox browser and search the Wappalyzer addon on google.
+
+Once you are on the said site, Click the Add to Firefox button.
 
 ### Firefox extension
 

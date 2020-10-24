@@ -16,7 +16,6 @@
     "jest": "^26.6.1",
     "jsdom": "^16.4.0",
     "lodash": "^4.17.20",
-    "prettier": "^1.16.4",
     "tough-cookie": "^4.0.0"
   },
   "scripts": {

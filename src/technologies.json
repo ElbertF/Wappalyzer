@@ -16567,8 +16567,8 @@
         "Telerik": ""
       },
       "html": [
-        "Telerik\\.Web\\.UI\\.WebResource\\.axd",
-        "Telerik\\.Web\\.UI\\.WebResource\\.axd\\?.*?Telerik\\.Web\\.UI%2c\\+Version%3d(20.*?)%2c\\;version:\\1",
+        "[<link|<script].*?Telerik\\.Web\\.UI\\.WebResource\\.axd",
+        "[<link|<script].*?Telerik\\.Web\\.UI\\.WebResource\\.axd\\?.*?Telerik\\.Web\\.UI%2c\\+Version%3d(20.*?)%2c\\;version:\\1",
         "<!-- (\\d{4}\\.\\d\\.\\d{3}\\.\\d{2}) -->\\;version:\\1"
       ],
       "website": "https://www.telerik.com/products/aspnet-ajax.aspx",
@@ -16585,7 +16585,7 @@
         },
         {
           "name": "with version in comment",
-          "html": "\r\n\t<!-- 2016.1.113.45 --><ul",
+          "html": "\t<!-- 2016.1.113.45 --><ul",
           "version": "2016.1.113.45"
         }
       ]

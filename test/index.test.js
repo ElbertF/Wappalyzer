@@ -1,10 +1,12 @@
 const { chain, mapValues } = require('lodash')
 const { JSDOM, VirtualConsole } = require('jsdom')
-const { apps: technologies, categories } = require('../src/apps.json');
-
+const { technologies, categories } = require('../src/technologies.json');
 const { setTechnologies, setCategories, analyze } = require('../src/wappalyzer');
-setTechnologies(technologies);
-setCategories(categories);
+
+beforeAll(() => {
+    setTechnologies(technologies);
+    setCategories(categories);
+});
 
 const parseCookie = str => Cookie.parse(str).toJSON()
 

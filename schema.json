@@ -4,6 +4,17 @@
 		"non-empty-non-blank-string": {
 			"type": "string",
 			"pattern": "^(?!\\s*$).+"
+		},
+		"headers": {
+			"type": "object",
+			"additionalProperties": false,
+			"patternProperties": {
+				"^.+$": {
+				},
+				"additionalProperties": {
+					"type": "string"
+				}
+			}
 		}
 	},
 	"type": "object",
@@ -90,15 +101,7 @@
 						}
 					},
 					"headers": {
-						"type": "object",
-						"additionalProperties": false,
-						"patternProperties": {
-							"^.+$": {
-							},
-							"additionalProperties": {
-								"type": "string"
-							}
-						}
+						"$ref": "#/definitions/headers"
 					},
 					"html": {
 						"oneOf": [
@@ -210,6 +213,24 @@
 					},
 					"icon": {
 						"$ref": "#/definitions/non-empty-non-blank-string"
+					},
+					"examples": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"url": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								},
+								"headers": {
+									"$ref": "#/definitions/headers"
+								},
+								"html": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							}
+							
+						}
 					}
 				}
 			}

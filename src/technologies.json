@@ -12207,11 +12207,27 @@
         1
       ],
       "icon": "Sitefinity.svg",
+      "cpe": "cpe:/a:progress:sitefinity",
       "implies": "Microsoft ASP.NET",
-      "meta": {
-        "generator": "^Sitefinity (.+)$\\;version:\\1"
+      "js": {
+        "Telerik.Sitefinity": ""
       },
-      "website": "http://www.sitefinity.com"
+      "meta": {
+        "generator": "^Sitefinity (\\S+)\\;version:\\1"
+      },
+      "website": "https://www.progress.com/sitefinity-cms",
+      "examples": [
+        {
+          "name": "with version and suffix",
+          "html": "</script><meta name=\"Generator\" content=\"Sitefinity 11.0.6700.0 PE\" /><link",
+          "version": "11.0.6700.0"
+        },
+        {
+          "name": "with version and no suffix",
+          "html": "</script><meta name=\"Generator\" content=\"Sitefinity 11.0.6700.0\" /><link",
+          "version": "11.0.6700.0"
+        }
+      ]
     },
     "Siteglide": {
       "cats": [
@@ -15886,7 +15902,17 @@
         "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
         "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
       ],
-      "website": "https://jquery.com"
+      "website": "https://jquery.com",
+      "examples": [
+        {
+          "html": "<script src=\"jquery.min.js\">",
+          "version": ""
+        },
+        {
+          "html": "<script src=\"jquery-1.10.2.js\">",
+          "version": "1.10.2"
+        }
+      ]
     },
     "jQuery DevBridge Autocomplete": {
       "cats": [
@@ -16521,6 +16547,265 @@
       "icon": "sIFR.png",
       "scripts": "sifr\\.js",
       "website": "https://www.mikeindustries.com/blog/sifr"
+    },
+    "sNews": {
+      "cats": [
+        1
+      ],
+      "icon": "sNews.png",
+      "meta": {
+        "generator": "sNews"
+      },
+      "website": "https://snewscms.com"
+    },
+    "script.aculo.us": {
+      "cats": [
+        59
+      ],
+      "icon": "script.aculo.us.png",
+      "js": {
+        "Scriptaculous.Version": "^(.+)$\\;version:\\1"
+      },
+      "script": "/(?:scriptaculous|protoaculous)(?:\\.js|/)",
+      "website": "https://script.aculo.us"
+    },
+    "scrollreveal": {
+      "cats": [
+        59
+      ],
+      "html": "<[^>]+data-sr(?:-id)",
+      "icon": "scrollreveal.svg",
+      "js": {
+        "ScrollReveal().version": "^(.+)$\\;version:\\1"
+      },
+      "script": "scrollreveal(?:\\.min)(?:\\.js)",
+      "website": "https://scrollrevealjs.org"
+    },
+    "shine.js": {
+      "cats": [
+        25
+      ],
+      "js": {
+        "Shine": ""
+      },
+      "script": "shine(?:\\.min)?\\.js",
+      "website": "https://bigspaceship.github.io/shine.js/"
+    },
+    "shoperfa": {
+      "cats": [
+        6
+      ],
+      "headers": {
+        "X-Powered-By": "^Shoperfa$"
+      },
+      "icon": "Shoperfa.png",
+      "url": "^https?://(?:www\\.)?shoperfa\\.com",
+      "website": "https://shoperfa.com"
+    },
+    "styled-components": {
+      "cats": [
+        12,
+        47
+      ],
+      "html": [
+        "<style[^>]*data-styled(?:-components)?[\\s\"]",
+        "<style[^>]+data-styled-version=\"([0-9]+)\"\\;version:\\1",
+        "<[^>]+sc-component-id: sc-"
+      ],
+      "icon": "styled-components.png",
+      "implies": "React",
+      "js": {
+        "styled": ""
+      },
+      "website": "https://styled-components.com"
+    },
+    "swift.engine": {
+      "cats": [
+        1
+      ],
+      "headers": {
+        "X-Powered-By": "swift\\.engine"
+      },
+      "icon": "swift.engine.png",
+      "website": "http://mittec.ru/default"
+    },
+    "tailwindcss": {
+      "cats": [
+        66
+      ],
+      "html": [
+        "<link[^>]+?href=\"[^\"]+tailwindcss(?:\\.min)?\\.css"
+      ],
+      "icon": "tailwindcss.svg",
+      "website": "https://tailwindcss.com/"
+    },
+    "Telerik UI for ASP.NET AJAX": {
+      "cats": [
+        59
+      ],
+      "cpe": "telerik:ui_for_asp.net_ajax",
+      "js": {
+        "Telerik": ""
+      },
+      "html": [
+        "Telerik\\.Web\\.UI\\.WebResource\\.axd",
+        "Telerik\\.Web\\.UI\\.WebResource\\.axd\\?.*?Telerik\\.Web\\.UI%2c\\+Version%3d(20.*?)%2c\\;version:\\1",
+        "<!-- (\\d{4}\\.\\d\\.\\d{3}\\.\\d{2}) -->\\;version:\\1"
+      ],
+      "website": "https://www.telerik.com/products/aspnet-ajax.aspx",
+      "examples": [
+        {
+          "name": "with version",
+          "html": "<head><link href=\"/Telerik.Web.UI.WebResource.axd?compress=1&amp;_TSM_CombinedScripts_=%3b%3bTelerik.Web.UI%2c+Version%3d2014.2.724.40%2c+Culture%3dneutral%2c+PublicKeyToken%3d7a3d4%3aen-US%3af-7b88-4e1e-8026-2b8c288%3aed2942d4\" type=\"text/css\" rel=\"stylesheet\" /></head>",
+          "version": "2014.2.724.40"
+        },
+        {
+          "name": "with no version",
+          "html": "<script src=\"/Telerik.Web.UI.WebResource.axd?_TSM_HiddenField_=ctl02_TSM&amp;compress=0&amp;_TSM_CombinedScripts_=%3b%3bSystem.Web.Extensions%2c+Version%3d4.0.0.0%2c+Culture%3dneutral%2c+PublicKeyToken%3d7a3d4%3aen-US%3af-7b88-4e1e-8026-2b8c288%3aed2942d4\" type=\"text/javascript\"></script>",
+          "version": ""
+        },
+        {
+          "name": "with version in comment",
+          "html": "\r\n\t<!-- 2016.1.113.45 --><ul",
+          "version": "2016.1.113.45"
+        }
+      ]
+    },
+    "three.js": {
+      "cats": [
+        25
+      ],
+      "icon": "three.js.png",
+      "js": {
+        "THREE.REVISION": "^(.+)$\\;version:\\1"
+      },
+      "script": "three(?:\\.min)?\\.js",
+      "website": "https://threejs.org"
+    },
+    "thttpd": {
+      "cats": [
+        22
+      ],
+      "cpe": "cpe:/a:acme:thttpd",
+      "headers": {
+        "Server": "\\bthttpd(?:/([\\d.]+))?\\;version:\\1"
+      },
+      "icon": "thttpd.png",
+      "website": "https://acme.com/software/thttpd"
+    },
+    "total.js": {
+      "cats": [
+        18
+      ],
+      "headers": {
+        "X-Powered-By": "^total\\.js"
+      },
+      "icon": "total.js.png",
+      "implies": "Node.js",
+      "website": "https://totaljs.com"
+    },
+    "uCoz": {
+      "cats": [
+        1
+      ],
+      "cookies": {
+        "uCoz": ""
+      },
+      "icon": "uCoz.svg",
+      "website": "https://ucoz.ru"
+    },
+    "uKnowva": {
+      "cats": [
+        1,
+        2,
+        50
+      ],
+      "headers": {
+        "X-Content-Encoded-By": "uKnowva ([\\d.]+)\\;version:\\1"
+      },
+      "html": "<a[^>]+>Powered by uKnowva</a>",
+      "icon": "uKnowva.png",
+      "implies": "PHP",
+      "meta": {
+        "generator": "uKnowva (?: ([\\d.]+))?\\;version:\\1"
+      },
+      "script": "/media/conv/js/jquery\\.js",
+      "website": "https://uknowva.com"
+    },
+    "uRemediate": {
+      "cats": [
+        68
+      ],
+      "icon": "User1st.png",
+      "script": "fecdn\\.user1st\\.info/Loader/head",
+      "website": "https://www.user1st.com/uremediate/"
+    },
+    "user.com": {
+      "cats": [
+        10
+      ],
+      "html": "<div[^>]+/id=\"ue_widget\"",
+      "icon": "user.com.svg",
+      "js": {
+        "UserEngage": ""
+      },
+      "website": "https://user.com"
+    },
+    "vBulletin": {
+      "cats": [
+        2
+      ],
+      "cookies": {
+        "bblastactivity": "",
+        "bblastvisit": "",
+        "bbsessionhash": ""
+      },
+      "cpe": "cpe:/a:vbulletin:vbulletin",
+      "html": "<div id=\"copyright\">Powered by vBulletin",
+      "icon": "vBulletin.png",
+      "implies": "PHP",
+      "js": {
+        "vBulletin": ""
+      },
+      "meta": {
+        "generator": "vBulletin ?([\\d.]+)?\\;version:\\1"
+      },
+      "website": "https://www.vbulletin.com"
+    },
+    "vibecommerce": {
+      "cats": [
+        6
+      ],
+      "excludes": "PrestaShop",
+      "icon": "vibecommerce.png",
+      "implies": "PHP",
+      "meta": {
+        "designer": "vibecommerce",
+        "generator": "vibecommerce"
+      },
+      "website": "http://vibecommerce.com.br"
+    },
+    "webEdition": {
+      "cats": [
+        1
+      ],
+      "cpe": "cpe:/a:webedition:webedition_cms",
+      "icon": "webEdition.png",
+      "meta": {
+        "DC.title": "webEdition",
+        "generator": "webEdition"
+      },
+      "website": "http://webedition.de/en"
+    },
+    "webpack": {
+      "cats": [
+        19
+      ],
+      "icon": "webpack.svg",
+      "js": {
+        "webpackJsonp": ""
+      },
+      "website": "https://webpack.js.org/"
     },
     "sNews": {
       "cats": [

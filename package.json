@@ -12,12 +12,18 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.0"
+    "prettier": "^2.1.0",
+    "jest": "^26.6.1",
+    "jsdom": "^16.4.0",
+    "lodash": "^4.17.20",
+    "prettier": "^1.16.4",
+    "tough-cookie": "^4.0.0"
   },
   "scripts": {
     "link": "node ./bin/link.js",
     "lint": "eslint --fix src/**/*.js",
     "validate": "yarn run lint && jsonlint -qV ./schema.json ./src/technologies.json && node ./bin/validate.js",
+    "test": "jest",
     "convert": "cd ./src/drivers/webextension/images/icons ; cp *.svg converted ; cd converted ; convert-svg-to-png *.svg --width 32 --height 32 ; rm *.svg",
     "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/technologies.json",
     "build": "yarn run link && yarn run validate && yarn run prettify && yarn run convert && node ./bin/build.js",

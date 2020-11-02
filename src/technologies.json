@@ -1262,10 +1262,6 @@
         12
       ],
       "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google.",
-      "excludes": [
-        "AngularDart",
-        "AngularJS"
-      ],
       "dom": {
         "[ng-version]": {
           "attributes": {
@@ -1273,6 +1269,10 @@
           }
         }
       },
+      "excludes": [
+        "AngularDart",
+        "AngularJS"
+      ],
       "icon": "Angular.svg",
       "js": {
         "ng.coreTokens": "",
@@ -1472,16 +1472,6 @@
       "scripts": "adnxs\\.(?:net|com)",
       "website": "http://appnexus.com"
     },
-    "Appointy": {
-      "cats": [
-        72,
-        61
-      ],
-      "description": "Appointy’s online scheduling software.",
-      "html": "<iframe[^>]+src=\"?https://[\\w\\d\\-]+\\.appointy\\.com",
-      "icon": "Appointy.png",
-      "website": "https://www.appointy.com/"
-    },
     "Apple Pay": {
       "cats": [
         41
@@ -1506,6 +1496,16 @@
       "icon": "Apple.svg",
       "scripts": "appleid.auth.js",
       "website": "https://developer.apple.com/sign-in-with-apple/"
+    },
+    "Appointy": {
+      "cats": [
+        72,
+        61
+      ],
+      "description": "Appointy’s online scheduling software.",
+      "html": "<iframe[^>]+src=\"?https://[\\w\\d\\-]+\\.appointy\\.com",
+      "icon": "Appointy.png",
+      "website": "https://www.appointy.com/"
     },
     "Arastta": {
       "cats": [
@@ -2157,55 +2157,6 @@
       "scripts": "boba(?:\\.min)?\\.js",
       "website": "http://boba.space150.com"
     },
-    "BookDinners": {
-      "cats": [
-        5,
-        61,
-        72
-      ],
-      "description": "BookDinners is a restaurant table booking widget.",
-      "icon": "BookDinners.svg",
-      "scripts": "bookdinners\\.nl/widget\\.js",
-      "website": "https://www.bookdinners.nl"
-    },
-    "Bookatable": {
-      "cats": [
-        5,
-        61,
-        72
-      ],
-      "description": "Bookatable is a restaurant table booking widget.",
-      "icon": "Bookatable.svg",
-      "scripts": "bda\\.bookatable\\.com/deploy/lbui\\.direct\\.min\\.js",
-      "website": "https://www.bookatable.co.uk"
-    },
-    "Bookingkit": {
-      "cats": [
-        5,
-        61,
-        72
-      ],
-      "description": "Bookingkit is an online booking management solution. Bookingkit helps its users generate PDF invoices, manage day-to-day scheduling operations, and automatically sync availabilities in real time.",
-      "icon": "Bookingkit.svg",
-      "js": {
-        "BookingKitApp": ""
-      },
-      "website": "https://bookingkit.net/"
-    },
-    "Booksy": {
-      "cats": [
-        5,
-        61,
-        72
-      ],
-      "description": "Booksy is a booking system for people looking to schedule appointments for health and beauty services.",
-      "icon": "Booksy.svg",
-      "js": {
-        "booksy": ""
-      },
-      "scripts": "booksy\\.com/widget/code\\.js",
-      "website": "https://booksy.com/"
-    },
     "Bokeh": {
       "cats": [
         25
@@ -2266,6 +2217,55 @@
       "icon": "Bonfire.png",
       "implies": "CodeIgniter",
       "website": "http://cibonfire.com"
+    },
+    "BookDinners": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "BookDinners is a restaurant table booking widget.",
+      "icon": "BookDinners.svg",
+      "scripts": "bookdinners\\.nl/widget\\.js",
+      "website": "https://www.bookdinners.nl"
+    },
+    "Bookatable": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Bookatable is a restaurant table booking widget.",
+      "icon": "Bookatable.svg",
+      "scripts": "bda\\.bookatable\\.com/deploy/lbui\\.direct\\.min\\.js",
+      "website": "https://www.bookatable.co.uk"
+    },
+    "Bookingkit": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Bookingkit is an online booking management solution. Bookingkit helps its users generate PDF invoices, manage day-to-day scheduling operations, and automatically sync availabilities in real time.",
+      "icon": "Bookingkit.svg",
+      "js": {
+        "BookingKitApp": ""
+      },
+      "website": "https://bookingkit.net/"
+    },
+    "Booksy": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Booksy is a booking system for people looking to schedule appointments for health and beauty services.",
+      "icon": "Booksy.svg",
+      "js": {
+        "booksy": ""
+      },
+      "scripts": "booksy\\.com/widget/code\\.js",
+      "website": "https://booksy.com/"
     },
     "Bootstrap": {
       "cats": [
@@ -2981,6 +2981,25 @@
       },
       "website": "http://www.clicktale.com"
     },
+    "Clickbank": {
+      "cats": [
+        71
+      ],
+      "dom": {
+        "a[href*='pay.clickbank.net?cbfid']": {
+          "text": ""
+        },
+        "img[width='1'][src*='hop.clickbank.net?affiliate']": {
+          "text": ""
+        }
+      },
+      "icon": "Clickbank.svg",
+      "js": {
+        "cbtb": ""
+      },
+      "scripts": "r\\.wdfl\\.co",
+      "website": "https://www.getrewardful.com/"
+    },
     "Clicky": {
       "cats": [
         10
@@ -3076,6 +3095,16 @@
       },
       "website": "http://www.cloudflare.com"
     },
+    "Cloudinary": {
+      "cats": [
+        31
+      ],
+      "html": [
+        "<img[^>]+\\.cloudinary\\.com\\;confidence:80"
+      ],
+      "icon": "Cloudinary.svg",
+      "website": "https://cloudinary.com"
+    },
     "Coaster CMS": {
       "cats": [
         1
@@ -3094,14 +3123,13 @@
         61,
         72
       ],
-      "icon": "CoconutSoftware.svg",
-      "description": "Coconut is a cloud-based appointment scheduling solution designed for enterprise financial services organizations such as credit unions, retail banks and more.",
       "cookies": {
         "coconut_calendar": ""
       },
+      "description": "Coconut is a cloud-based appointment scheduling solution designed for enterprise financial services organizations such as credit unions, retail banks and more.",
+      "icon": "CoconutSoftware.svg",
       "website": "https://www.coconutsoftware.com/"
     },
-
     "CodeIgniter": {
       "cats": [
         18
@@ -3447,8 +3475,8 @@
         72
       ],
       "description": "CoverManager is a restaurant table booking widget.",
-      "icon": "CoverManager.svg",
       "html": "<iframe[^>]*covermanager\\.com/reservation",
+      "icon": "CoverManager.svg",
       "website": "https://www.covermanager.com"
     },
     "Cowboy": {
@@ -4618,10 +4646,10 @@
         5,
         72
       ],
-      "implies": "PHP",
       "description": "Eveve is a restaurant table booking widget.",
-      "icon": "Eveve.svg",
       "html": "<iframe[^>]*[\\w]+\\.eveve\\.com",
+      "icon": "Eveve.svg",
+      "implies": "PHP",
       "website": "https://www.eveve.com"
     },
     "Exhibit": {
@@ -4791,6 +4819,18 @@
       "icon": "FaraPy.png",
       "implies": "Python",
       "website": "https://faral.tech"
+    },
+    "FareHarbor": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "FareHarbor is an booking and schedule management solution intended for tour and activity companies.",
+      "html": "<iframe[^>]+fareharbor",
+      "icon": "FareHarbor.svg",
+      "scripts": "fareharbor\\.com/embeds/api/",
+      "website": "https://fareharbor.com"
     },
     "Fastcommerce": {
       "cats": [
@@ -5811,6 +5851,18 @@
         "//maps\\.google(?:apis)?\\.com/maps/api/js"
       ],
       "website": "http://maps.google.com"
+    },
+    "Google Optimize": {
+      "cats": [
+        74
+      ],
+      "description": "Google Optimize allows you to test variants of web pages and see how they perform.",
+      "icon": "Google Optimize.svg",
+      "js": {
+        "google_optimize": ""
+      },
+      "scripts": "googleoptimize\\.com/optimize\\.js",
+      "website": "https://optimize.google.com"
     },
     "Google PageSpeed": {
       "cats": [
@@ -7051,7 +7103,6 @@
       "website": "http://www.eclipse.org/jetty"
     },
     "Jibres": {
-      "description": "Jibres is an ecommerce solution with an online store builder and Point-of-Sale (PoS) software.",
       "cats": [
         6,
         55
@@ -7059,17 +7110,18 @@
       "cookies": {
         "jibres": ""
       },
-      "js": {
-        "jibres": ""
-      },
+      "description": "Jibres is an ecommerce solution with an online store builder and Point-of-Sale (PoS) software.",
       "headers": {
         "X-Powered-By": "Jibres"
+      },
+      "icon": "Jibres.svg",
+      "js": {
+        "jibres": ""
       },
       "meta": {
         "generator": "Jibres"
       },
       "scripts": "/jibres\\.js",
-      "icon": "Jibres.svg",
       "website": "https://jibres.com"
     },
     "Jimdo": {
@@ -7684,7 +7736,6 @@
       "cats": [
         10
       ],
-      "icon": "Linkedin.svg",
       "dom": {
         "noscript > img[src*='dc.ads.linkedin.com']": {
           "attributes": {
@@ -7692,6 +7743,7 @@
           }
         }
       },
+      "icon": "Linkedin.svg",
       "js": {
         "_linkedin_data_partner_id": ""
       },
@@ -8216,15 +8268,15 @@
       "cats": [
         2
       ],
-      "website": "https://joinmastodon.org",
-      "description": "Mastodon is a free and open-source self-hosted social networking service.",
-      "icon": "Mastodon.svg",
       "cookies": {
         "_mastodon_session": ""
       },
+      "description": "Mastodon is a free and open-source self-hosted social networking service.",
       "headers": {
         "Server": "^Mastodon$"
-      }
+      },
+      "icon": "Mastodon.svg",
+      "website": "https://joinmastodon.org"
     },
     "Material Design Lite": {
       "cats": [
@@ -8694,12 +8746,12 @@
         2
       ],
       "description": "Misskey is a distributed microblogging platform.",
-      "website": "https://join.misskey.page/",
+      "html": "<!-- Thank you for using Misskey! @syuilo -->",
       "icon": "Misskey.svg",
       "meta": {
         "application-name": "Misskey"
       },
-      "html": "<!-- Thank you for using Misskey! @syuilo -->"
+      "website": "https://join.misskey.page/"
     },
     "Miva": {
       "cats": [
@@ -9805,16 +9857,6 @@
       "scripts": "optimizely\\.com.*\\.js",
       "website": "https://www.optimizely.com"
     },
-    "Google Optimize": {
-      "cats": [
-        74
-      ],
-      "icon": "Google Optimize.svg",
-      "description": "Google Optimize allows you to test variants of web pages and see how they perform.",
-      "scripts": "googleoptimize\\.com/optimize\\.js",
-      "js": "^google_optimize$",
-      "website": "https://optimize.google.com"
-    },
     "Oracle Application Server": {
       "cats": [
         22
@@ -10047,6 +10089,20 @@
       ],
       "website": "http://phpdebugbar.com/"
     },
+    "PIXIjs": {
+      "cats": [
+        25
+      ],
+      "description": "PixiJS - The HTML5 Creation Engine. 2D WebGL renderer.",
+      "icon": "pixijs.png",
+      "js": {
+        "PIXI": "",
+        "PIXI.VERSION": "^(.+)$\\;version:\\1"
+      },
+      "scripts": "pixi\\.(min\\.)?js$",
+      "url": ".+\\.pixijs\\.com",
+      "website": "https://www.pixijs.com/"
+    },
     "PageFly": {
       "cats": [
         51
@@ -10192,16 +10248,16 @@
         2
       ],
       "description": "PeerTube is a free and open-source, decentralized, federated video platform powered by ActivityPub and WebTorrent.",
-      "icon": "PeerTube.svg",
-      "website": "https://joinpeertube.org/",
-      "meta": {
-        "og:platform": "^PeerTube$"
-      },
       "dom": {
         "p": {
           "text": "^We are sorry but it seems that PeerTube is not compatible with your web browser\\.$"
         }
-      }
+      },
+      "icon": "PeerTube.svg",
+      "meta": {
+        "og:platform": "^PeerTube$"
+      },
+      "website": "https://joinpeertube.org/"
     },
     "Pelican": {
       "cats": [
@@ -10418,8 +10474,6 @@
         2
       ],
       "description": "PixelFed is an activitypub based image sharing platform.",
-      "website": "https://pixelfed.org",
-      "icon": "PixelFed.svg",
       "dom": {
         "a[href='https://pixelfed.org'][title*='version']": {
           "attributes": {
@@ -10428,35 +10482,11 @@
           "text": "^Powered by Pixelfed$"
         }
       },
+      "icon": "PixelFed.svg",
       "implies": [
         "Laravel"
-      ]
-    },
-    "PIXIjs": {
-      "cats": [
-        25
       ],
-      "description": "PixiJS - The HTML5 Creation Engine. 2D WebGL renderer.",
-      "icon": "pixijs.png",
-      "js": {
-        "PIXI": "",
-        "PIXI.VERSION": "^(.+)$\\;version:\\1"
-      },
-      "url": ".+\\.pixijs\\.com",
-      "scripts": "pixi\\.(min\\.)?js$",
-      "website": "https://www.pixijs.com/"
-    },
-    "Emarsys": {
-      "cats": [
-        32,
-        61
-      ],
-      "description": "Emarsys is a cloud-based B2C marketing platform.",
-      "icon": "Emarsys.svg",
-      "js": {
-        "ScarabQueue": ""
-      },
-      "website": "https://emarsys.com/"
+      "website": "https://pixelfed.org"
     },
     "Planet": {
       "cats": [
@@ -10510,16 +10540,16 @@
         2
       ],
       "description": "Pleroma is a free, federated social networking server built on open protocols.",
-      "website": "https://pleroma.social/",
-      "icon": "Pleroma.svg",
       "dom": {
-        "title": {
-          "text": "^Pleroma$"
-        },
         "noscript": {
           "text": "^To use Pleroma, please enable JavaScript.$"
+        },
+        "title": {
+          "text": "^Pleroma$"
         }
-      }
+      },
+      "icon": "Pleroma.svg",
+      "website": "https://pleroma.social/"
     },
     "Plesk": {
       "cats": [
@@ -11404,27 +11434,6 @@
       "scripts": "r\\.wdfl\\.co",
       "website": "https://www.getrewardful.com/"
     },
-    "Clickbank": {
-      "cats": [
-        71
-      ],
-      "description": "",
-      "icon": "",
-      "js": {
-        "cbtb": ""
-      },
-      "dom": {
-        "img[width='1'][src*='hop.clickbank.net?affiliate']": {
-          "text": ""
-        },
-        "a[href*='pay.clickbank.net?cbfid']": {
-          "text": ""
-        }
-      },
-      "icon": "Clickbank.svg",
-      "scripts": "r\\.wdfl\\.co",
-      "website": "https://www.getrewardful.com/"
-    },
     "Rickshaw": {
       "cats": [
         25
@@ -12294,18 +12303,6 @@
       ],
       "website": "http://shopery.com"
     },
-    "Shoppy": {
-      "cats": [
-        6
-      ],
-      "description" : "Shoppy is an all-in-one payment processing and ecommerce solution.",
-      "icon": "Shoppy.svg",
-      "js": {
-        "Shoppy": ""
-      },
-      "scripts": "\\.shoppy\\.gg",
-      "website": "https://shoppy.gg"
-    },
     "Shopfa": {
       "cats": [
         6
@@ -12348,6 +12345,18 @@
         "og:image": "https\\:\\/\\/img\\.shoplineapp\\.com"
       },
       "website": "https://shoplineapp.com/"
+    },
+    "Shoppy": {
+      "cats": [
+        6
+      ],
+      "description": "Shoppy is an all-in-one payment processing and ecommerce solution.",
+      "icon": "Shoppy.svg",
+      "js": {
+        "Shoppy": ""
+      },
+      "scripts": "\\.shoppy\\.gg",
+      "website": "https://shoppy.gg"
     },
     "Shoptet": {
       "cats": [
@@ -13056,8 +13065,8 @@
       "headers": {
         "Server": "^statically$"
       },
-      "icon": "Statically.svg",
       "html": "<link [^>]*?href=\"?[a-z]*?:?//cdn\\.statically\\.io/",
+      "icon": "Statically.svg",
       "website": "https://statically.io"
     },
     "Stimulus": {
@@ -14027,12 +14036,12 @@
         17
       ],
       "description": "Typekit is an online service which offers a subscription library of fonts.",
+      "html": "<link [^>]*href=\"[^\"]+use\\.typekit\\.(?:net|com)",
       "icon": "Typekit.png",
       "js": {
         "Typekit.config.js": "^(.+)$\\;version:\\1"
       },
       "scripts": "use\\.typekit\\.com",
-      "html": "<link [^>]*href=\"[^\"]+use\\.typekit\\.(?:net|com)",
       "website": "http://typekit.com"
     },
     "UIKit": {
@@ -15445,6 +15454,19 @@
       "scripts": "https?://an\\.yandex\\.ru/",
       "website": "http://partner.yandex.com"
     },
+    "Yandex.Messenger": {
+      "cats": [
+        5,
+        52
+      ],
+      "description": "Yandex.Messenger is an instant messaging application.",
+      "icon": "Yandex.Messenger.svg",
+      "js": {
+        "yandexChatWidget": ""
+      },
+      "scripts": "chat\\.s3\\.yandex\\.net/widget\\.js",
+      "website": "https://dialogs.yandex.ru"
+    },
     "Yandex.Metrika": {
       "cats": [
         10
@@ -15459,19 +15481,6 @@
         "cdn\\.jsdelivr\\.net/npm/yandex\\-metrica\\-watch/watch\\.js"
       ],
       "website": "http://metrika.yandex.com"
-    },
-    "Yandex.Messenger": {
-      "cats": [
-        5,
-        52
-      ],
-      "description": "Yandex.Messenger is an instant messaging application.",
-      "icon": "Yandex.Messenger.svg",
-      "js": {
-        "yandexChatWidget": ""
-      },
-      "scripts": "chat\\.s3\\.yandex\\.net/widget\\.js",
-      "website": "https://dialogs.yandex.ru"
     },
     "Yaws": {
       "cats": [
@@ -15501,16 +15510,6 @@
       "icon": "Yieldlab.png",
       "scripts": "^https?://(?:[^/]+\\.)?yieldlab\\.net/",
       "website": "http://yieldlab.de"
-    },
-    "Cloudinary": {
-      "cats": [
-        31
-      ],
-      "html": [
-        "<img[^>]+\\.cloudinary\\.com\\;confidence:80"
-      ],
-      "icon": "Cloudinary.svg",
-      "website": "https://cloudinary.com"
     },
     "Yii": {
       "cats": [

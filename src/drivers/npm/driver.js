@@ -167,7 +167,11 @@ class Driver {
         this.log('Browser disconnected')
 
         if (!this.destroyed) {
-          await this.init()
+          try {
+            await this.init()
+          } catch (error) {
+            this.log(error.toString())
+          }
         }
       })
     } catch (error) {

@@ -431,7 +431,7 @@ const Wappalyzer = {
 
       patterns.forEach((_pattern) => {
         const pattern = (subtypes || []).reduce(
-          (pattern, subtype) => pattern[subtype],
+          (pattern, subtype) => pattern[subtype] || {},
           _pattern
         )
 

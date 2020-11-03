@@ -3273,7 +3273,7 @@
       },
       "icon": "commercejs.png",
       "scripts": [
-        "https?:/cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version=\\1",
+        "https?:/cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version:\\1",
         "chec/commerce\\.js"
       ],
       "url": "^https?//.+\\.spaces.chec\\.io",
@@ -6105,6 +6105,24 @@
       "icon": "GrowingIO.png",
       "scripts": "assets\\.growingio\\.com/([\\d.]+)/gio\\.js\\;version:\\1",
       "website": "https://www.growingio.com/"
+    },
+    "Guestonline": {
+      "cats": [
+        5,
+        61,
+        72
+      ],
+      "description": "Guestonline is a restaurant table booking widget.",
+      "icon": "Guestonline.svg",
+      "dom": { 
+        "iframe[src*='guestonline']": { 
+          "attributes": {
+            "src": "ib\\.guestonline\\.\\w+"
+          } 
+        } 
+      },
+      "scripts": "ib\\.guestonline\\.\\w+",
+      "website": "https://www.guestonline.io"
     },
     "HCL Digital Experience": {
       "cats": [
@@ -16944,11 +16962,19 @@
         47
       ],
       "description": "Styled components is a CSS-in-JS styling framework that uses tagged template literals in JavaScript.",
-      "html": [
-        "<style[^>]*data-styled(?:-components)?[\\s\"]",
-        "<style[^>]+data-styled-version=\"([0-9]+)\"\\;version:\\1",
-        "<[^>]+sc-component-id: sc-"
-      ],
+      "dom": {
+        "style[data-styled], style[data-styled-components], [sc-component-id]": {
+          "text": ""
+        },
+        "style[data-styled-version]": {
+          "attributes": {
+            "data-styled-version": "(^.+$)\\;version:\\1"
+          }
+        },
+        "[sc-component-id]": {
+          "text": ""
+        }
+      },
       "icon": "styled-components.png",
       "implies": "React",
       "js": {
@@ -17127,6 +17153,21 @@
         "generator": "^wisy CMS[ v]{0,3}([0-9.,]*)\\;version:\\1"
       },
       "website": "https://wisy.3we.de"
+    },
+    "wpBakery": {
+      "cats": [
+        51
+      ],
+      "description": "WPBakery is a drag and drop visual page builder plugin for WordPress.",
+      "icon": "wpBakery.svg",
+      "implies": [
+        "WordPress",
+        "PHP"
+      ],
+      "meta": {
+        "generator": "WPBakery"
+      },
+      "website": "https://wpbakery.com"
     },
     "wpCache": {
       "cats": [

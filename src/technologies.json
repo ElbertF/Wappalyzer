@@ -516,6 +516,17 @@
       ],
       "website": "https://adocean-global.com"
     },
+    "Moat": {
+      "cats": [
+        10
+      ],
+      "icon": "Moat.svg",
+      "scripts": [
+        "moatads\\.com"
+      ],
+      "description": "Moat is a digital ad analytics tool.",
+      "website": "https://moat.com/"
+    },
     "AdRiver": {
       "cats": [
         36
@@ -873,6 +884,10 @@
       "cpe": "cpe:/a:afterpay:afterpay",
       "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
       "icon": "afterpay.png",
+      "js": {
+        "Afterpay": "",
+        "afterpay_product": ""
+      },
       "scripts": [
         "portal\\.afterpay\\.com",
         "static\\.afterpay\\.com"
@@ -2998,7 +3013,7 @@
         "cbtb": ""
       },
       "scripts": "r\\.wdfl\\.co",
-      "website": "https://www.getrewardful.com/"
+      "website": "https://www.clickbank.com/"
     },
     "Clicky": {
       "cats": [
@@ -4489,6 +4504,48 @@
       "scripts": "elqCfg\\.js",
       "website": "http://eloqua.com"
     },
+    "Klaviyo": {
+      "cats": [
+        32,
+        61
+      ],
+      "description": "Klaviyo is an email marketing platform for online businesses.",
+      "icon": "Klaviyo.svg",
+      "js": {
+        "klaviyo": "",
+        "KlaviyoSubscribe": ""
+      },
+      "scripts": "klaviyo\\.com",
+      "website": "https://www.klaviyo.com/"
+    },
+    "Recart": {
+      "cats": [
+        32,
+        61
+      ],
+      "description": "Recart is a tool to engage users who abandoned their shopping cart via Facebook Messenger.",
+      "icon": "Recart.svg",
+      "js": {
+        "recart": "",
+        "__recart": ""
+      },
+      "scripts": "api\\.recart\\.com",
+      "website": "https://recart.com/"
+    },
+    "ManyChat": {
+      "cats": [
+        32,
+        52,
+        61
+      ],
+      "description": "ManyChat is a service that allows you to create chatbots for Facebook Messenger.",
+      "icon": "ManyChat.svg",
+      "js": {
+        "mcwidget": ""
+      },
+      "scripts": "widget\\.manychat\\.com",
+      "website": "https://manychat.com/"
+    },
     "Emarsys": {
       "cats": [
         32,
@@ -5101,6 +5158,21 @@
         "generator": "^Fork CMS$"
       },
       "website": "http://www.fork-cms.com/"
+    },
+    "Formitable": {
+      "cats": [
+        5,
+        6,
+        61,
+        72
+      ],
+      "description": "Formitable is an reservation management system for restaurants.",
+      "icon": "Formitable.svg",
+      "scripts": [
+        "formitable\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+        "cdn\\.formitable\\.com"       
+      ],
+      "website": "https://formitable.com"
     },
     "ForoshGostar": {
       "cats": [
@@ -5768,6 +5840,18 @@
       "scripts": "google-analytics\\.com/(?:ga|urchin|analytics)\\.js",
       "website": "http://google.com/analytics"
     },
+    "Snowplow": {
+      "cats": [
+        10
+      ],
+      "description": "Snowplow is an open-source data collection platform.",
+      "icon": "Snowplow.svg",
+      "js": {
+        "GlobalSnowplowNamespace": "",
+        "Snowplow": ""
+      },
+      "website": "https://snowplowanalytics.com/"
+    },
     "Google Analytics Enhanced eCommerce": {
       "cats": [
         10,
@@ -6114,12 +6198,12 @@
       ],
       "description": "Guestonline is a restaurant table booking widget.",
       "icon": "Guestonline.svg",
-      "dom": { 
-        "iframe[src*='guestonline']": { 
+      "dom": {
+        "iframe[src*='guestonline']": {
           "attributes": {
             "src": "ib\\.guestonline\\.\\w+"
-          } 
-        } 
+          }
+        }
       },
       "scripts": "ib\\.guestonline\\.\\w+",
       "website": "https://www.guestonline.io"
@@ -6423,6 +6507,17 @@
       ],
       "website": "https://twitter.github.io/hogan.js/"
     },
+    "Hostmeapp": {
+      "cats": [
+        5,
+        61,
+        72        
+      ],
+      "description": "Hostmeapp is an restaurant software. Includes reservation, waitlist, guestbook and marketing tools.",
+      "icon": "Hostmeapp.svg",
+      "scripts":"tables\\.hostmeapp\\.com",
+      "website": "https://www.hostmeapp.com"
+    },
     "Hotaru CMS": {
       "cats": [
         1
@@ -6448,7 +6543,7 @@
         "HotleadController": "",
         "hj.apiUrlBase": ""
       },
-      "scripts": "//static\\.hotjar\\.com/c/hotjar-",
+      "scripts": "//static\\.hotjar\\.com/",
       "website": "https://www.hotjar.com"
     },
     "HubSpot": {
@@ -11439,6 +11534,84 @@
       "scripts": "/revslider/[/\\w-]+/js",
       "website": "https://revolution.themepunch.com/"
     },
+    "Impact": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Impact helps businesses contract and pay partners.",
+      "icon": "Impact.svg",
+      "js": {
+        "ImpactRadiusEvent": "",
+        "irEvent": ""
+      },
+      "scripts": "d\\.impactradius-event\\.com",
+      "website": "https://impact.com/"
+    },
+    "Tradedoubler": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Tradedoubler is a global affiliate marketing network.",
+      "icon": "Tradedoubler.svg",
+      "dom": {
+        "a[href*='clk.tradedoubler.com/click']": {
+          "text": ""
+        },
+        "img[src*='impes.tradedoubler.com/imp']": {
+          "text": ""
+        }
+      },
+      "website": "https://www.tradedoubler.com/"
+    },
+    "Webgains": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Webgains is an affiliate marketing network.",
+      "icon": "Webgains.svg",
+      "script": "analytics\\.webgains\\.io",
+      "js": {
+        "ITCLKQ": ""
+      },
+      "website": "https://www.webgains.com/"
+    },
+    "Rakuten": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "Rakuten (formerly Ebates) allows you to earn cash-back rewards.",
+      "icon": "Rakuten.svg",
+      "script": "tag\\.rmp\\.rakuten\\.com",
+      "js": {
+        "rakutenSource": "",
+        "rakutenRanMID": ""
+      },
+      "cookies": {
+        "rakuten-source": ""
+      },
+      "website": "https://www.rakuten.com/"
+    },
+    "AWIN": {
+      "cats": [
+        71,
+        61
+      ],
+      "description": "AWIN is a global affiliate marketing network.",
+      "icon": "AWIN.svg",
+      "js": {
+        "AWIN.Tracking": ""
+      },
+      "cookies": {
+        "_aw_xid": "",
+        "BAGawin": ""
+      },
+      "scripts": "dwin1\\.com",
+      "website": "https://www.awin.com"
+    },
     "Rewardful": {
       "cats": [
         71,
@@ -12348,7 +12521,8 @@
       "html": "<link[^>]+=['\"]//cdn\\.shopify\\.com\\;confidence:25",
       "icon": "Shopify.svg",
       "js": {
-        "Shopify": "\\;confidence:25"
+        "Shopify": "\\;confidence:25",
+        "ShopifyAPI": ""
       },
       "scripts": "sdks\\.shopifycdn\\.com",
       "url": "^https?//.+\\.myshopify\\.com",
@@ -13985,6 +14159,9 @@
       "description": "Twitter is a 'microblogging' system that allows you to send and receive short posts called tweets.",
       "icon": "Twitter.svg",
       "scripts": "//platform\\.twitter\\.com/widgets\\.js",
+      "js": {
+        "twttr": ""
+      },
       "website": "http://twitter.com"
     },
     "Twitter Emoji (Twemoji)": {
@@ -15963,6 +16140,20 @@
         "generator": "^eSyndiCat "
       },
       "website": "http://esyndicat.com"
+    },
+    "Square": {
+      "cats": [
+        41,
+        61
+      ],
+      "description": "Square is a mobile payment company that offers business software, payment hardware products and small business services.",
+      "icon": "Square.svg",
+      "scripts": "js\\.squareup\\.com",
+      "js": {
+        "Square.Analytics": "",
+        "SqPaymentForm": ""
+      },
+      "website": "https://squareup.com/"
     },
     "eWAY Payments": {
       "cats": [

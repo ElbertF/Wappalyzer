@@ -59,10 +59,10 @@ const Driver = {
 
     chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
 
-    chrome.webRequest.onHeadersReceived.addListener(
-      Driver.onHeadersReceived,
+    chrome.webRequest.onCompleted.addListener(
+      Driver.onWebRequestComplete,
       { urls: ['http://*/*', 'https://*/*'], types: ['main_frame'] },
-      ['responseHeaders' /*, 'blocking' */]
+      ['responseHeaders']
     )
 
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
@@ -241,7 +241,7 @@ const Driver = {
    * Analyse response headers
    * @param {Object} request
    */
-  async onHeadersReceived(request) {
+  async onWebRequestComplete(request) {
     if (await Driver.isDisabledDomain(request.url)) {
       return
     }
@@ -250,6 +250,8 @@ const Driver = {
       const headers = {}
 
       try {
+        await new Promise((resolve) => setTimeout(resolve, 500))
+
         const [tab] = await promisify(chrome.tabs, 'query', {
           url: [request.url],
         })

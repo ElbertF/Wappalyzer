@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2500" height="2338" viewBox="-1.7 -1.8 285.6 266.9">
+  <linearGradient id="a" x1="1766.9" x2="1944" y1="-11285.7" y2="-11462.8" gradientTransform="matrix(.5 0 0 -.5 -710.3 -5458.2)" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#212121" stop-opacity=".2"/>
+    <stop offset="1" stop-color="#212121" stop-opacity="0"/>
+  </linearGradient>
+  <radialGradient id="b" cx="1452.8" cy="-10980.2" r="680.4" gradientTransform="matrix(.5 0 0 -.5 -710.3 -5458.2)" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#fff" stop-opacity=".1"/>
+    <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+  </radialGradient>
+  <path fill="#e1e1e1" d="M272.7 37.2V217a18.6 18.6 0 01-18.5 18.6H18.7A18.6 18.6 0 010 216.9V37.2z"/>
+  <path fill="#c2c2c2" d="M18.6 0h235.6a18.6 18.6 0 0118.5 18.6v18.6H.1V18.6A18.6 18.6 0 0118.6 0z"/>
+  <path fill="#fff" fill-opacity=".2" d="M254.2 0H18.7A18.6 18.6 0 000 18.6V20A18.6 18.6 0 0118.6 1.5h235.6a18.6 18.6 0 0118.5 18.6v-1.5A18.6 18.6 0 00254.2 0z"/>
+  <path fill="#212121" fill-opacity=".1" d="M0 37.2h272.7v1.5H.1z"/>
+  <path fill="#4285f4" d="M136.3 93a99 99 0 00-99 99v6.3h43.3a54.9 54.9 0 010-6.2 55.8 55.8 0 0185-47.5l31.1-31a98.8 98.8 0 00-60.4-20.7z"/>
+  <path fill="#f44336" d="M196.7 113.5l-31.1 31.1a55.7 55.7 0 0126.5 47.5 54.9 54.9 0 010 6.2h43.4c.2-1.5 0-4.2 0-6.3a99 99 0 00-38.8-78.5z"/>
+  <circle cx="24.9" cy="18.6" r="6.2" fill="#eee"/>
+  <circle cx="49.6" cy="18.6" r="6.2" fill="#eee"/>
+  <path fill="#212121" fill-opacity=".1" d="M254.2 234H18.6A18.6 18.6 0 010 215.2v1.5a18.6 18.6 0 0018.6 18.6h235.6a18.6 18.6 0 0018.5-18.6v-1.5a18.6 18.6 0 01-18.5 18.6z"/>
+  <path fill="#9e9e9e" d="M197 117.2a3 3 0 00.6-1.8 3.1 3.1 0 00-3.1-3 3 3 0 00-2 .6L125 165a18.6 18.6 0 1027.3 24.3l44.7-72z"/>
+  <path fill="#fff" d="M125 166.6l67.6-52a3 3 0 014.9 1.6 2.9 2.9 0 000-.8 3.1 3.1 0 00-3-3 3 3 0 00-2 .6L125 165a18.5 18.5 0 00-7.2 14.7v.9a18.6 18.6 0 017.2-14z" opacity=".2"/>
+  <path fill="#212121" d="M197 117.2l-44.7 72.2a18.6 18.6 0 01-34.4-8.8v.7a18.6 18.6 0 0034.4 9.6l44.8-72.1a3 3 0 00.5-1.8 2.7 2.7 0 000-.8 3.3 3.3 0 01-.6 1z" opacity=".2"/>
+  <path fill="url(#a)" d="M206.2 141.3a3 3 0 010 3.7l-44.7 72.1a18.6 18.6 0 01-28 4.5l41.7 41.6h88.2a18.6 18.6 0 0018.6-18.5V217z" transform="translate(-9.3 -27.8)"/>
+  <path fill="url(#b)" d="M282 46.4a18.6 18.6 0 00-18.6-18.6H28A18.6 18.6 0 009.3 46.4v198.3A18.6 18.6 0 0028 263.1h235.5a18.6 18.6 0 0018.6-18.5z" transform="translate(-9.3 -27.8)"/>
+</svg>

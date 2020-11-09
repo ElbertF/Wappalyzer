@@ -62,6 +62,15 @@ a:hover {
   white-space: nowrap;
 }
 
+.header__cta a {
+  border-bottom: 1px solid var(--color-secondary);
+  text-decoration: none;
+}
+
+.header__cta a:hover {
+  border-bottom: 1px solid var(--color-primary);
+}
+
 .header__open-in-new {
   color: var(--color-primary);
   height: 1.1rem;
@@ -84,6 +93,15 @@ a:hover {
 
 .alerts {
   white-space: nowrap;
+}
+
+.alerts__link {
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.alerts__link:hover {
+  border-bottom: 1px solid var(--color-primary);
+  text-decoration: none;
 }
 
 .alerts--hidden {
@@ -201,19 +219,6 @@ a:hover {
   margin-bottom: .2rem;
 }
 
-.technology__open-in-new {
-  color: var(--color-primary);
-  visibility: hidden;
-  height: 1.1rem;
-  margin-left: .1rem;
-  vertical-align: middle;
-  width: 1.1rem;
-}
-
-.technology__heading:hover .technology__open-in-new {
-  visibility: visible;
-}
-
 .technology__icon {
   height: 16px;
   margin-right: .5rem;
@@ -225,6 +230,10 @@ a:hover {
   color: var(--color-text);
   display: block;
   width: 100%;
+}
+
+.technology__link .technology__name {
+  border-bottom: 1px solid var(--color-secondary);
 }
 
 .technology__link:hover {

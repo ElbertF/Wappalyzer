@@ -131,11 +131,17 @@ const Wappalyzer = {
           throw new Error(`Excluded technology does not exist: ${name}`)
         }
 
-        const index = resolved.findIndex(({ name }) => name === excluded.name)
+        let index
 
-        if (index !== -1) {
-          resolved.splice(index, 1)
-        }
+        do {
+          index = resolved.findIndex(
+            ({ technology: { name } }) => name === excluded.name
+          )
+
+          if (index !== -1) {
+            resolved.splice(index, 1)
+          }
+        } while (index !== -1)
       })
     })
   },

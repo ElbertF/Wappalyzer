@@ -1481,7 +1481,7 @@
         1
       ],
       "html": "<[^>]+data-apos-refreshable[^>]",
-      "icon": "apostrophecms.svg",
+      "icon": "ApostropheCMS.svg",
       "implies": "Node.js",
       "website": "http://apostrophecms.org"
     },
@@ -2974,6 +2974,20 @@
       },
       "website": "https://www.classy.org/"
     },
+    "ClearSale": {
+      "cats": [
+        10
+      ],
+      "description": "ClearSale offers fraud management and chargeback protection services.",
+      "icon": "ClearSale.svg",
+      "js": {
+        "window.csdm": "\\;confidence:50"
+      },
+      "scripts": [
+        "device\\.clearsale\\.com\\.br"
+      ],
+      "website": "https://www.clear.sale/"
+    },
     "Clearbit Reveal": {
       "cats": [
         10
@@ -2984,20 +2998,6 @@
         "reveal\\.clearbit\\.com/v[(0-9)]/"
       ],
       "website": "https://clearbit.com/reveal"
-    },    
-    "ClearSale": {
-      "cats": [
-        10
-      ],
-      "description": "ClearSale offers fraud management and chargeback protection services.",
-      "js": {
-        "window.csdm": "\\;confidence:50"
-      },
-      "scripts": [
-        "device\\.clearsale\\.com\\.br"
-      ],
-      "icon": "ClearSale.svg",
-      "website": "https://www.clear.sale/"
     },
     "ClickFunnels": {
       "cats": [
@@ -5180,6 +5180,21 @@
       },
       "website": "https://www.foroshgostar.com"
     },
+    "Forter": {
+      "cats": [
+        10
+      ],
+      "cookies": {
+        "forterToken": ""
+      },
+      "description": "Forter provides fraud prevention technology for online retailers and marketplaces.",
+      "icon": "Forter.svg",
+      "js": {
+        "window.ftr__startScriptLoad": ""
+      },
+      "scripts": "forter\\.com",
+      "website": "https://www.forter.com/"
+    },
     "Fortune3": {
       "cats": [
         6
@@ -5188,21 +5203,6 @@
       "icon": "Fortune3.png",
       "scripts": "cartjs\\.php\\?(?:.*&)?s=[^&]*myfortune3cart\\.com",
       "website": "http://fortune3.com"
-    },
-    "Forter": {
-      "cats": [
-        10
-      ],
-      "description": "Forter provides fraud prevention technology for online retailers and marketplaces.",
-      "scripts": "forter\\.com",
-      "cookies": {
-        "forterToken": ""
-      },
-      "js": {
-        "window.ftr__startScriptLoad": ""
-      },
-      "icon": "Forter.svg",
-      "website": "https://www.forter.com/"
     },
     "Foswiki": {
       "cats": [
@@ -7643,21 +7643,6 @@
       },
       "website": "http://alias.io"
     },
-    "Kount": {
-      "cats": [
-        10
-      ],
-      "description": "Kount is a suite of fraud detection and prevention solutions for ecommerce businesses.",
-      "scripts": [
-        "shopify\\.kount\\.net/js"
-      ],
-      "js": {
-        "ka.ClientSDK": "",
-        "ka.collectData": ""
-      },
-      "icon": "Kount.svg",
-      "website": "https://kount.com/"
-    },
     "Komodo CMS": {
       "cats": [
         1
@@ -7699,6 +7684,21 @@
       "icon": "Kotisivukone.png",
       "scripts": "kotisivukone(?:\\.min)?\\.js",
       "website": "http://www.kotisivukone.fi"
+    },
+    "Kount": {
+      "cats": [
+        10
+      ],
+      "description": "Kount is a suite of fraud detection and prevention solutions for ecommerce businesses.",
+      "icon": "Kount.svg",
+      "js": {
+        "ka.ClientSDK": "",
+        "ka.collectData": ""
+      },
+      "scripts": [
+        "shopify\\.kount\\.net/js"
+      ],
+      "website": "https://kount.com/"
     },
     "Kubernetes Dashboard": {
       "cats": [
@@ -10453,17 +10453,20 @@
       ],
       "cpe": "cpe:/a:paypal:paypal",
       "description": "PayPal is an online payments system that supports online money transfers and serves as an electronic alternative to traditional paper methods like checks and money orders.",
-      "html": [
-        "<input[^>]+_s-xclick",
-        "<img [^>]*src=\"[^/]*//[^/]*paypal\\.com",
-        "<img [^>]*src=\"[^/]*//[^/]*paypalobjects\\.com"
-      ],
+      "dom": {
+        "button": {
+          "text": "PayPal"
+        },
+        "img[src*='paypal.com'], img[src*='paypalobjects.com']": {
+          "text": ""
+        }
+      },
+      "html": "<input[^>]+_s-xclick",
       "icon": "PayPal.svg",
       "js": {
         "PAYPAL": ""
       },
       "scripts": "paypalobjects\\.com",
-      "url": "paypal\\.com",
       "website": "https://paypal.com"
     },
     "Peek": {

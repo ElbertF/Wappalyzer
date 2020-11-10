@@ -13,7 +13,7 @@ const { agent, promisify, getOption, setOption, open } = Utils
 
 const expiry = 1000 * 60 * 60 * 24
 
-const hostnameIgnoreList = /((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube|\/admin|\.local|\.test|\.dev|127\.|0\.)/
+const hostnameIgnoreList = /((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube|\/admin|\.local|\.test|\.dev|^[0-9.]$)/
 
 const Driver = {
   lastPing: Date.now(),
@@ -54,7 +54,7 @@ const Driver = {
       ),
       tabs: {},
       robots: await getOption('robots', {}),
-      ads: await getOption('ads', []),
+      ads: {},
     }
 
     chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})
@@ -460,8 +460,6 @@ const Driver = {
    */
   async onAd(ad) {
     Driver.cache.ads.push(ad)
-
-    await setOption('ads', Driver.cache.ads)
   },
 
   /**
@@ -699,8 +697,6 @@ const Driver = {
 
       if (Driver.cache.ads.length > 50) {
         await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
-
-        await setOption('ads', (Driver.cache.ads = []))
       }
     }
   },

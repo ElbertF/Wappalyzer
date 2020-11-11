@@ -639,7 +639,7 @@ class Site {
       }
 
       // DNS
-      if (!this.dns.length) {
+      if (!Object.keys(this.dns).length) {
         const records = {}
         const resolve = (func, hostname) => {
           return this.promiseTimeout(
@@ -722,9 +722,8 @@ class Site {
             ) &&
             link.protocol &&
             link.protocol.match(/https?:/) &&
-            link.rel !== 'nofollow' &&
             link.hostname === url.hostname &&
-            extensions.test(link.pathname)
+            extensions.test(link.pathname.slice(-5))
           ) {
             results.push(new URL(link.href.split('#')[0]))
           }

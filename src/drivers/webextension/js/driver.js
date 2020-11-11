@@ -458,7 +458,7 @@ const Driver = {
    * Callback for onAd listener
    * @param {Object} ad
    */
-  async onAd(ad) {
+  onAd(ad) {
     Driver.cache.ads.push(ad)
   },
 

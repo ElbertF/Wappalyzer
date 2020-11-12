@@ -3476,6 +3476,25 @@
       "implies": "PHP",
       "website": "http://coppermine-gallery.net"
     },
+    "CoreMedia CMS": {
+      "cats": [
+        1
+      ],
+      "cookies": {
+        "CM_SESSIONID": "",
+        "CMSESSIONID": ""
+      },
+      "description": "CoreMedia CMS is a web content management system with many of integration connectors for ecommerce shop systems and others.",
+      "html": [
+        "/blueprint/",
+        "/resources/cae/.*\"",
+        "/resource/(image|css|js|blob|crblob)/[\\d]+/[0-9a-z]+/[^\"]*\\.(jpg|jpeg|png|gif|ico|css|js|json)\"",
+        "/(image|blob|crblob)/[0-9]+/[\\D]*[\\d]+x\\d[^\"]*\\.(jpg|jpeg|png|gif)\""
+      ],
+      "icon": "CoreMedia.png",
+      "implies": "Java",
+      "website": "https://www.coremedia.com"
+    },
     "Cosmoshop": {
       "cats": [
         6

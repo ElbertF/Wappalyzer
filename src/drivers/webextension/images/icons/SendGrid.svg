@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300.001" height="300" viewBox="0 0 300.001 300">
+  <g id="logo-sendgrid-pages" transform="translate(-1374 -211)">
+    <rect id="Rectangle_323" data-name="Rectangle 323" width="300" height="300" transform="translate(1374.001 211)" fill="none"/>
+    <g id="sendgrid-vector-logo" transform="translate(1353.7 -57.9)">
+      <path id="Path_2967" data-name="Path 2967" d="M120.3,268.9v100H20.3v200h200v-100h100v-200Z" transform="translate(0 0)" fill="#fff"/>
+      <path id="Path_2968" data-name="Path 2968" d="M20.3,303.6v0Zm0,0h0Z" transform="translate(0 65.3)" fill="#aee1f3"/>
+      <path id="Path_2969" data-name="Path 2969" d="M20.3,303.6v100h100v100h100v-100h-100v-100Z" transform="translate(0 65.3)" fill="#fff"/>
+      <path id="Path_2970" data-name="Path 2970" d="M20.3,303.6v100h100v100h100v-100h-100v-100Z" transform="translate(0 65.3)" fill="#aee1f3"/>
+      <g id="Group_66" data-name="Group 66" transform="translate(20.3 268.9)">
+        <rect id="Rectangle_334" data-name="Rectangle 334" width="100" height="100" transform="translate(0 200)" fill="#2e7bbf"/>
+        <path id="Path_2972" data-name="Path 2972" d="M155,268.9h0Zm100,200h0v0" transform="translate(45 -268.9)" fill="#00b3e3"/>
+        <path id="Path_2973" data-name="Path 2973" d="M255,468.9H155v-100H55v-100H155v100H255Z" transform="translate(45 -268.9)" fill="#fff"/>
+        <path id="Path_2974" data-name="Path 2974" d="M255,468.9H155v-100H55v-100H155v100H255Z" transform="translate(45 -268.9)" fill="#00b3e3"/>
+        <rect id="Rectangle_335" data-name="Rectangle 335" width="100" height="100" transform="translate(100 100)" fill="#fff"/>
+        <rect id="Rectangle_336" data-name="Rectangle 336" width="101.682" height="101.682" transform="translate(100 98.598)" fill="#00b3e3"/>
+        <rect id="Rectangle_337" data-name="Rectangle 337" width="100" height="100" transform="translate(200)" fill="#2e7bbf"/>
+      </g>
+    </g>
+  </g>
+</svg>

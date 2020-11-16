@@ -12,7 +12,11 @@
     "19": "images/icon_19.png",
     "32": "images/icon_32.png",
     "38": "images/icon_38.png",
-    "128": "images/icon_128.png"
+    "64": "images/icon_64.png",
+    "128": "images/icon_128.png",
+    "256": "images/icon_256.png",
+    "512": "images/icon_512.png",
+    "1024": "images/icon_1024.png"
   },
   "browser_action": {
     "default_icon": {
@@ -20,7 +24,11 @@
       "19": "images/icon_19.png",
       "32": "images/icon_32.png",
       "38": "images/icon_38.png",
-      "128": "images/icon_128.png"
+      "64": "images/icon_64.png",
+      "128": "images/icon_128.png",
+      "256": "images/icon_256.png",
+      "512": "images/icon_512.png",
+      "1024": "images/icon_1024.png"
     },
     "default_title": "Wappalyzer",
     "default_popup": "html/popup.html"

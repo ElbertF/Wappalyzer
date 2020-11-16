@@ -8,15 +8,17 @@
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.7.0",
-    "eslint-config-prettier": "^6.11.0",
+    "eslint": "^7.13.0",
+    "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.0"
+    "prettier": "^2.1.2"
   },
   "scripts": {
     "link": "node ./bin/link.js",
-    "lint": "eslint --fix src/**/*.js",
+    "lint": "eslint src/**/*.{js,json}",
+    "lint:fix": "eslint --fix src/**/*.{js,json}",
     "validate": "yarn run lint && jsonlint -qV ./schema.json ./src/technologies.json && node ./bin/validate.js",
     "convert": "cd ./src/drivers/webextension/images/icons ; cp *.svg converted ; cd converted ; convert-svg-to-png *.svg --width 32 --height 32 ; rm *.svg",
     "prettify": "jsonlint -si --trim-trailing-commas --enforce-double-quotes ./src/technologies.json",

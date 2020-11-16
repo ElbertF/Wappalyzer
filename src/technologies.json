@@ -806,7 +806,8 @@
         18
       ],
       "cookies": {
-        "cookie_name": "adonis-session"
+        "adonis-session": "",
+        "adonis-session-values": ""
       },
       "icon": "AdonisJS.png",
       "implies": "Node.js",
@@ -2547,7 +2548,10 @@
         "_bsap": "",
         "_bsap_serving_callback": ""
       },
-      "scripts": "^https?://s\\d\\.buysellads\\.com/",
+      "scripts": [
+        "^https?://s\\d\\.buysellads\\.com/",
+        "servedby-buysellads\\.com/monetization(?:\\.[\\w\\d]+)?\\.js"
+      ],
       "website": "http://buysellads.com"
     },
     "CCV Shop": {
@@ -6683,6 +6687,15 @@
       },
       "website": "https://www.hubspot.com"
     },
+    "HubSpot Analytics": {
+      "cats": [
+        10
+      ],
+      "description": "HubSpot is a marketing and sales software that helps companies attract visitors, convert leads, and close customers.",
+      "icon": "HubSpot.png",
+      "scripts": "js\\.hs-analytics\\.net/analytics",
+      "website": "https://www.hubspot.com/products/marketing/analytics"
+    },
     "Hugo": {
       "cats": [
         57
@@ -9675,7 +9688,7 @@
       "headers": {
         "powered": "jet-neo"
       },
-      "icon": "plataforma_neo.svg",
+      "icon": "Plataforma NEO.svg",
       "url": "\\.plataformaneo\\.com",
       "website": "https://www.jetecommerce.com.br"
     },
@@ -9960,6 +9973,18 @@
         "oxTopMenu": ""
       },
       "website": "https://en.oxid-esales.com/en/home.html"
+    },
+    "Ochanoko": {
+      "cats": [
+        6
+      ],
+      "description": "Ochanoko is a ecommerce online shopping cart solutions, ecommerce web site hosting.",
+      "icon": "Ochanoko.svg",
+      "js": {
+        "ocnkProducts": ""
+      },
+      "scripts": "ocnk-min\\.js",
+      "website": "https://www.ocnk.com"
     },
     "October CMS": {
       "cats": [
@@ -10453,6 +10478,17 @@
       },
       "url": "/owa/auth/log(?:on|off)\\.aspx",
       "website": "http://help.outlook.com"
+    },
+    "Oxatis": {
+      "cats": [
+        6
+      ],
+      "description": "Oxatis is a cloud-based ecommerce solution which enables users to create and manage their own online store websites.",
+      "icon": "Oxatis.svg",
+      "meta": {
+        "generator": "^Oxatis\\s\\(www\\.oxatis\\.com\\)$"
+      },
+      "website": "https://www.oxatis.com/"
     },
     "Oxygen": {
       "cats": [
@@ -11257,6 +11293,16 @@
       },
       "scripts": "prism\\.js",
       "website": "http://prismjs.com"
+    },
+    "Profitwell": {
+      "cats": [
+        10
+      ],
+      "icon": "Profitwell.svg",
+      "scripts": [
+        "public\\.profitwell\\.com/js/profitwell\\.js"
+      ],
+      "website": "https://www.profitwell.com/"
     },
     "Project Wonderful": {
       "cats": [
@@ -12712,6 +12758,11 @@
       "js": {
         "analytics": ""
       },
+      "dns": {
+        "TXT": [
+          "segment-site-verification"
+        ]
+      },
       "scripts": "cdn\\.segment\\.com/analytics\\.js",
       "website": "https://segment.com"
     },
@@ -13368,7 +13419,7 @@
         "SMARTSTORE.VISITOR": ""
       },
       "html": "<!--Powered by SmartStore\\.NET - https://www\\.smartstore\\.com-->",
-      "icon": "smartstore.png",
+      "icon": "Smartstore.png",
       "implies": "Microsoft ASP.NET",
       "meta": {
         "generator": "^SmartStore.NET (.+)$\\;version:\\1"
@@ -14517,6 +14568,18 @@
       "implies": "PHP",
       "website": "http://www.thinkphp.cn"
     },
+    "ThriveCart": {
+      "cats": [
+        6
+      ],
+      "description": "ThriveCart is a sales cart solution that lets you create checkout pages for your online products and services.",
+      "icon": "ThriveCart.svg",
+      "js": {
+        "ThriveCart": ""
+      },
+      "scripts": "thrivecart\\.js",
+      "website": "https://thrivecart.com"
+    },
     "Ticimax": {
       "cats": [
         6
@@ -15341,6 +15404,21 @@
       "icon": "visa.png",
       "scripts": "secure\\.checkout\\.visa\\.com",
       "website": "https://checkout.visa.com"
+    },
+    "Visualsoft": {
+      "cats": [
+        6
+      ],
+      "description": "Visualsoft is an ecommerce agency that delivers web design, development and marketing services to online retailers.",
+      "icon": "Visualsoft.svg",
+      "cookies": {
+        "vscommerce": ""
+      },
+      "meta": {
+        "vs_status_checker_version": "\\d+",
+        "vsvatprices": ""
+      },
+      "website": "https://www.visualsoft.co.uk/"
     },
     "Visual Website Optimizer": {
       "cats": [

@@ -54,7 +54,7 @@ const Driver = {
       ),
       tabs: {},
       robots: await getOption('robots', {}),
-      ads: {},
+      ads: [],
     }
 
     chrome.browserAction.setBadgeBackgroundColor({ color: '#6B39BD' }, () => {})

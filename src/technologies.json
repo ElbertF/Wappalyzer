@@ -1241,6 +1241,17 @@
       "icon": "aws.svg",
       "website": "https://aws.amazon.com/"
     },
+    "Amazon Webstore": {
+      "cats": [
+        6
+      ],
+      "description": "Amazon Webstore is an all-in-one hosted ecommerce website solution.",
+      "icon": "Amazon Webstore.svg",
+      "js": {
+        "amzn": ""
+      },
+      "website": "https://aws.amazon.com/marketplace/pp/Amazon-Web-Services-Amazon-Webstore/B007NLVI2S"
+    },
     "Amber": {
       "cats": [
         18,
@@ -4018,6 +4029,19 @@
       "certIssuer": "DigiCert",
       "icon": "DigiCert.svg",
       "website": "https://www.digicert.com/"
+    },
+    "DigitalRiver": {
+      "cats": [
+        6
+      ],
+      "description": "Digital River provides global ecommerce, payments and marketing services.",
+      "icon": "DigitalRiver.svg",
+      "cookies": {
+        "X-DR-SHOPPER-ets": "",
+        "X-DR-THEME": "^\\d+$"
+      },
+      "scripts": "/drh\\.img\\.digitalriver\\.\\w+/DRHM/",
+      "website": "https://www.digitalriver.com"
     },
     "DirectAdmin": {
       "cats": [
@@ -7467,6 +7491,21 @@
       },
       "url": "option=com_",
       "website": "https://www.joomla.org"
+    },
+    "Jumpseller": {
+      "cats": [
+        6
+      ],
+      "description": "Jumpseller is a cloud ecommerce solution for small businesses.",
+      "icon": "Jumpseller.svg",
+      "js": {
+        "Jumpseller": ""
+      },
+      "scripts": [
+        "assets\\.jumpseller\\.\\w+/",
+        "jumpseller-apps\\.herokuapp\\.\\w+/"
+      ],
+      "website": "https://jumpseller.com"
     },
     "K2": {
       "cats": [
@@ -13026,6 +13065,19 @@
       },
       "website": "http://shopcada.com"
     },
+    "ShopGold": {
+      "cats": [
+        6
+      ],
+      "description": "ShopGold is an all-in-one payment processing and ecommerce solution.",
+      "icon": "ShopGold.svg",
+      "cookies": {
+        "eGold": "^\\w+$",
+        "popup_shopGold": "",
+        "popup_shopGold_time": ""
+      },
+      "website": "https://www.shopgold.pl"
+    },
     "Shoper": {
       "cats": [
         6
@@ -13094,6 +13146,18 @@
         "og:image": "https\\:\\/\\/img\\.shoplineapp\\.com"
       },
       "website": "https://shoplineapp.com/"
+    },
+    "Shoplo": {
+      "cats": [
+        6
+      ],
+      "description": "Shoplo is an all-in-one ecommerce platform.",
+      "icon": "Shoplo.svg",
+      "js": {
+        "SHOPLOAJAX": ""
+      },
+      "scripts": "cdn\\.shoplo\\.\\w+/",
+      "website": "https://www.shoplo.com"
     },
     "Shoppy": {
       "cats": [
@@ -13622,6 +13686,18 @@
       },
       "scripts": "^/js/bundles/sonar\\.js?v=([\\d.]+)$\\;version:\\1",
       "website": "https://www.sonarqube.org/"
+    },
+    "SoteShop": {
+      "cats": [
+        6
+      ],
+      "description": "SoteShop is an e-shop management software.",
+      "icon": "SoteShop.svg",
+      "implies": "PHP",
+      "cookies": {
+        "soteshop": "^\\w+$"
+      },
+      "website": "https://www.soteshop.com/"
     },
     "Sotel": {
       "cats": [

@@ -13826,7 +13826,7 @@
       "scripts": [
         "js\\.squareup\\.com",
         "js\\.squareupsandbox\\.com",
-        "cdn\\.sq-api\\.com/market/embed\\.js"
+        "cdn\\.sq-api\\.com"
       ],
       "website": "https://squareup.com/"
     },

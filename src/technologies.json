@@ -13823,7 +13823,11 @@
         "SqPaymentForm": "",
         "Square.Analytics": ""
       },
-      "scripts": "js\\.squareup\\.com",
+      "scripts": [
+        "js\\.squareup\\.com",
+        "js\\.squareupsandbox\\.com",
+        "cdn\\.sq-api\\.com/market/embed\\.js"
+      ],
       "website": "https://squareup.com/"
     },
     "Squarespace": {

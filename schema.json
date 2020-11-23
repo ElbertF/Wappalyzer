@@ -41,6 +41,19 @@
 						"type": "string",
             "pattern": "^.{0,500}$"
 					},
+					"oss": {
+						"type": "boolean"
+					},
+					"saas": {
+						"type": "boolean"
+					},
+          "pricing": {
+						"type": "array",
+						"items": {
+							"type": "string",
+              "pattern": "^(low|mid|high|freemium|poa|onetime|recurring)$"
+						}
+          },
 					"cats": {
 						"type": "array",
 						"items": {

@@ -3,7 +3,11 @@
 /* globals chrome */
 
 const Utils = {
-  agent: chrome.extension.getURL('/').startsWith('moz-') ? 'firefox' : 'chrome',
+  agent: chrome.extension.getURL('/').startsWith('moz-')
+    ? 'firefox'
+    : chrome.extension.getURL('/').startsWith('safari-')
+    ? 'safari'
+    : 'chrome',
 
   /**
    * Use promises instead of callbacks

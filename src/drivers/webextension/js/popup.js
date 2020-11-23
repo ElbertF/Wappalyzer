@@ -70,14 +70,29 @@ const Popup = {
       document.querySelector('.detections').classList.add('detections--hidden')
       document.querySelector('.empty').classList.add('empty--hidden')
 
-      document.querySelector('.terms').addEventListener('click', async () => {
-        await setOption('termsAccepted', true)
+      document
+        .querySelector('.terms__button--accept')
+        .addEventListener('click', async () => {
+          await setOption('termsAccepted', true)
+          await setOption('tracking', true)
 
-        document.querySelector('.terms').classList.add('terms--hidden')
-        document.querySelector('.empty').classList.remove('empty--hidden')
+          document.querySelector('.terms').classList.add('terms--hidden')
+          document.querySelector('.empty').classList.remove('empty--hidden')
 
-        Popup.onGetDetections(await Popup.driver('getDetections'))
-      })
+          Popup.onGetDetections(await Popup.driver('getDetections'))
+        })
+
+      document
+        .querySelector('.terms__button--decline')
+        .addEventListener('click', async () => {
+          await setOption('termsAccepted', true)
+          await setOption('tracking', false)
+
+          document.querySelector('.terms').classList.add('terms--hidden')
+          document.querySelector('.empty').classList.remove('empty--hidden')
+
+          Popup.onGetDetections(await Popup.driver('getDetections'))
+        })
     }
 
     // Alert

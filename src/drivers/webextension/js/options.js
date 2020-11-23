@@ -2,7 +2,7 @@
 /* eslint-env browser */
 /* globals Utils, chrome */
 
-const { i18n, getOption, setOption } = Utils
+const { agent, i18n, getOption, setOption } = Utils
 
 const Options = {
   /**
@@ -15,6 +15,9 @@ const Options = {
     if (themeMode) {
       document.querySelector('body').classList.add('theme-mode')
     }
+
+    const termsAccepted =
+      agent === 'chrome' || (await getOption('termsAccepted', false))
 
     ;[
       ['upgradeMessage', true],
@@ -31,7 +34,9 @@ const Options = {
         )
         .parentNode.querySelector('input')
 
-      el.checked = !!(await getOption(option, defaultValue))
+      el.checked =
+        !!(await getOption(option, defaultValue)) &&
+        (option !== 'tracking' || termsAccepted)
 
       el.addEventListener('click', async () => {
         await setOption(option, !!el.checked)

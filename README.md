@@ -212,6 +212,7 @@ Plus any of:
   <li><code>onetime</code> One-time payments accepted</li>
   <li><code>recurring</code> Subscriptions available</li>
   <li><code>poa</code> Price on asking</li>
+  <li><code>payg</code> Pay as you go</li>
 </ul>
       </td>
       <td><code>["low", "freemium"]</code></td>

@@ -51,7 +51,7 @@
 						"type": "array",
 						"items": {
 							"type": "string",
-              "pattern": "^(low|mid|high|freemium|poa|onetime|recurring)$"
+              "pattern": "^(low|mid|high|freemium|poa|payg|onetime|recurring)$"
 						}
           },
 					"cats": {

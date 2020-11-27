@@ -1013,9 +1013,12 @@
       "description": "Algolia offers a hosted web search product delivering real-time results.",
       "icon": "Algolia.svg",
       "js": {
+        "__algolia": "",
         "AlgoliaSearch": "",
         "algoliasearch.version": "^(.+)$\\;version:\\1"
       },
+      "saas": true,
+      "pricing": ["freemium", "payg"],
       "website": "http://www.algolia.com"
     },
     "All in One SEO Pack": {
@@ -1697,7 +1700,11 @@
       "headers": {
         "X-Confluence-Request-Time": ""
       },
-      "html": "Powered by <a href=[^>]+atlassian\\.com/software/confluence(?:[^>]+>Atlassian Confluence</a> ([\\d.]+))?\\;version:\\1",
+      "dom": {
+        "li.print-only": {
+          "text": "Atlassian Confluence ([\\d.]+)\\;version:\\1"
+        }
+      },
       "icon": "Atlassian Confluence.svg",
       "implies": "Java",
       "meta": {
@@ -1722,15 +1729,19 @@
         13
       ],
       "cpe": "cpe:/a:atlassian:jira",
-      "html": "Powered by\\s+<a href=[^>]+atlassian\\.com/(?:software/jira|jira-bug-tracking/)[^>]+>Atlassian\\s+JIRA(?:[^v]*v(?:ersion: )?(\\d+\\.\\d+(?:\\.\\d+)?))?\\;version:\\1",
       "icon": "Atlassian Jira.svg",
       "implies": "Java",
       "js": {
-        "jira": ""
+        "jira.id": ""
+      },
+      "dom": {
+        "#jira": {
+          "text": ""
+        }
       },
       "meta": {
-        "ajs-version-number": "^(.+)$\\;version:\\1",
-        "application-name": "JIRA"
+        "application-name": "JIRA",
+        "data-version": ([\\d.]+)\\;version:\\1\\;confidence:0
       },
       "website": "http://www.atlassian.com/software/jira/overview/"
     },
@@ -2434,9 +2445,10 @@
     },
     "Bubble": {
       "cats": [
-        1,
+        51,
         18
       ],
+      "description": "Bubble is a no-code platform that lets anyone build web apps without writing any code.",
       "headers": {
         "x-bubble-capacity-limit": "",
         "x-bubble-capacity-used": "",
@@ -2450,7 +2462,9 @@
         "bubble_hostname_modifier": "",
         "bubble_version": ""
       },
-      "website": "http://bubble.is"
+      "saas": true,
+      "pricing": ["low", "freemium", "subscription"],
+      "website": "http://bubble.io"
     },
     "BugSnag": {
       "cats": [
@@ -2574,6 +2588,22 @@
       "description": "ColdFusion Markup Language (CFML), is a scripting language for web development that runs on the JVM, the .NET framework, and Google App Engine.",
       "icon": "CFML.png",
       "website": "http://adobe.com/products/coldfusion-family.html"
+    },
+    "Borlabs Cookie": {
+      "cats": [
+        67
+      ],
+      "description": "Borlabs Cookie is a GDPR cookie consent plugin for WordPress.",
+      "icon": "Borlabs Cookie.svg",
+      "js": { "borlabsCookieConfig": "" },
+      "dom": {
+        "#BorlabsCookieBox": {
+          "text": ""
+        }
+      },
+      "pricing": ["low", "onetime"],
+      "implies": "WordPress",
+      "website": "https://borlabs.io/borlabs-cookie/"
     },
     "CIVIC": {
       "cats": [
@@ -3201,6 +3231,18 @@
       "js": {
         "CloudFlare": ""
       },
+      "website": "http://www.cloudflare.com"
+    },
+    "Cloudflare Browser Insights": {
+      "cats": [
+        10
+      ],
+      "description": "Cloudflare Browser Insights is a tool tool that measures the performance of websites from the perspective of users.",
+      "icon": "CloudFlare.svg",
+      "js": {
+        "__cfBeaconCustomTag": "",
+      },
+      "scripts": "static\\.cloudflareinsights\\.com/beacon(?:\\.min)?\\.js",
       "website": "http://www.cloudflare.com"
     },
     "Cloudinary": {
@@ -10734,6 +10776,8 @@
         "PAYPAL": ""
       },
       "scripts": "paypalobjects\\.com",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "https://paypal.com"
     },
     "Peek": {
@@ -14024,6 +14068,8 @@
         "Stripe.version": "^(.+)$\\;version:\\1"
       },
       "scripts": "js\\.stripe\\.com",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "http://stripe.com"
     },
     "Paddle": {
@@ -18269,6 +18315,18 @@
         "generator": "vibecommerce"
       },
       "website": "http://vibecommerce.com.br"
+    },
+    "WebAssembly": {
+      "cats": [
+        27
+      ],
+      "description": "WebAssembly (abbreviated Wasm) is a binary instruction format for a stack-based virtual machine. Wasm is designed as a portable compilation target for programming languages, enabling deployment on the web for client and server applications.",
+      "icon": "WebAssembly.svg",
+      "oss": true,
+      "headers": {
+        "Content-Type": "application/wasm"
+      },
+      "website": "https://webassembly.org/"
     },
     "webEdition": {
       "cats": [

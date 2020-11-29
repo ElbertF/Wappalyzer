@@ -1741,7 +1741,7 @@
       },
       "meta": {
         "application-name": "JIRA",
-        "data-version": ([\\d.]+)\\;version:\\1\\;confidence:0
+        "data-version": "([\\d.]+)\\;version:\\1\\;confidence:0"
       },
       "website": "http://www.atlassian.com/software/jira/overview/"
     },
@@ -2463,7 +2463,7 @@
         "bubble_version": ""
       },
       "saas": true,
-      "pricing": ["low", "freemium", "subscription"],
+      "pricing": ["low", "freemium", "recurring"],
       "website": "http://bubble.io"
     },
     "BugSnag": {
@@ -3240,7 +3240,7 @@
       "description": "Cloudflare Browser Insights is a tool tool that measures the performance of websites from the perspective of users.",
       "icon": "CloudFlare.svg",
       "js": {
-        "__cfBeaconCustomTag": "",
+        "__cfBeaconCustomTag": ""
       },
       "scripts": "static\\.cloudflareinsights\\.com/beacon(?:\\.min)?\\.js",
       "website": "http://www.cloudflare.com"

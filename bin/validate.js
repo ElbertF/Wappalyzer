@@ -164,7 +164,8 @@ fs.readdirSync(iconPath).forEach((file) => {
 
     if (
       !Object.values(technologies).some(({ icon }) => icon === file) &&
-      file !== 'default.svg'
+      file !== 'default.svg' &&
+      file !== 'default-safari.svg'
     ) {
       throw new Error(`Extraneous file: ${filePath}}`)
     }

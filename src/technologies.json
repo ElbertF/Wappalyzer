@@ -2778,6 +2778,18 @@
       "scripts": "https://assets\\.calendly\\.com/assets/external/widget\\.js",
       "website": "https://calendly.com/"
     },
+    "Skedify": {
+      "cats": [
+        72
+      ],
+      "description": "Skedify is an appointment booking solution created for enterprises.",
+      "icon": "Skedify.svg",
+      "js": {
+        "Skedify.Plugin.version": "^(.+)$\\;version:\\1"
+      },
+      "scripts": "plugin\\.skedify\\.io",
+      "website": "https://calendly.com/"
+    },
     "Captch Me": {
       "cats": [
         16,

@@ -13,7 +13,7 @@
     "software"
   ],
   "homepage": "https://www.wappalyzer.com/",
-  "version": "6.5.19",
+  "version": "6.5.20",
   "author": "Wappalyzer",
   "license": "MIT",
   "repository": {
@@ -25,7 +25,7 @@
       "url": "https://github.com/sponsors/aliasio"
     },
     {
-      "url": "https://paypal.me/aliasio"
+      "url": "https://paypal.me/elbertalias"
     }
   ],
   "main": "wappalyzer.js",

@@ -79,10 +79,10 @@ const Driver = {
         'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
       )
     } else if (version !== previous && upgradeMessage) {
-      // open(
-      //  `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
-      //  false
-      // )
+      open(
+        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+        false
+      )
     }
 
     await setOption('version', version)
@@ -551,7 +551,7 @@ const Driver = {
       !(await getOption('tracking', true)) ||
       hostnameIgnoreList.test(hostname)
     ) {
-      return
+      return []
     }
 
     if (typeof Driver.cache.robots[hostname] !== 'undefined') {
@@ -703,6 +703,8 @@ const Driver = {
 
       if (Driver.cache.ads.length > 1) {
         await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
+
+        Driver.cache.ads = []
       }
     }
   },

@@ -18601,14 +18601,14 @@
       "icon": "swift.engine.png",
       "website": "http://mittec.ru/default"
     },
-    "tailwindcss": {
+    "Tailwind CSS": {
       "cats": [
         66
       ],
       "description": "Tailwind is a utility-first CSS framework.",
       "html": [
-        "<link[^>]+?href=\"[^\"]+tailwindcss[@|/][a-z]+/tailwind(?:.min)?.css",
-        "<link[^>]+?href=\"[^\"]+tailwindcss[@|/]([0-9.]+)(?:/[a-z]+)?/[tailwind|base|components|utilities](?:.min)?.css\\;version:\\1"
+        "<link [^>]*href=\"[^\"]+tailwindcss(?:\\.min)?\\.css",
+        "<(?:div|button|a) [^>]*class=\"[^\"]*(?:sm:|md:|lg:|xl:|hover:|active:|focus:|disabled:|visited:|first:|last:|odd:|even:|group-hover:|focus-within:)"
       ],
       "icon": "tailwindcss.svg",
       "website": "https://tailwindcss.com/"

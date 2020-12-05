@@ -2870,6 +2870,21 @@
       "icon": "Cart-generic.svg",
       "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
     },
+    "CartStack": {
+      "cats": [
+        6,
+        10
+      ],
+      "description": "CartStack is a SaaS solution that allows any company with an ecommerce site or reservation system to increase revenue through reminding/encouraging consumers to return to their abandoned cart and complete their purchase.",
+      "icon": "CartStack.svg",
+      "js": {
+        "_cartstack": ""
+      },
+      "scripts": "api\\.cartstack\\.\\w+",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.cartstack.com"
+    },
     "Catberry.js": {
       "cats": [
         12,
@@ -3324,7 +3339,7 @@
       "description": "ClustrMaps widget is a visitor tracker, designed for general web and blog use.",
       "icon": "ClustrMaps.svg",
       "dom": {
-        "img[src*=clustrmaps.com]": {
+        "img[src*='clustrmaps.com']": {
           "attributes": {
             "src": ""
           }
@@ -3515,6 +3530,20 @@
       },
       "icon": "HP.svg",
       "website": "http://www.hp.com"
+    },
+    "Conekta": {
+      "cats": [
+        41
+      ],
+      "description": "Conekta is a Mexican payment platform.",
+      "icon": "Conekta.svg",
+      "scripts": [
+        "conektaapi/v([\\d.]+)\\;version:\\1",
+        "cdn\\.conekta\\.\\w+/js/(?:v([\\d.]+)|)\\;version:\\1"
+      ],
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://conekta.com"
     },
     "Concrete5": {
       "cats": [
@@ -7011,11 +7040,14 @@
       "cats": [
         6
       ],
+      "description": "Ideasoft is a Turkish software company providing web-based software solutions, software design, ecommerce solutions, and other services.",
       "icon": "Ideasoft.png",
       "scripts": [
-        "\\.myideasoft\\.com/"
+        "\\.myideasoft\\.com/([\\d.]+)\\;version:\\1"
       ],
-      "website": "https://www.ideasoft.com"
+      "saas": true,
+      "pricing": ["mid","recurring"],
+      "website": "https://www.ideasoft.com.tr"
     },
     "Identrust": {
       "cats": [
@@ -9183,6 +9215,20 @@
       "url": "^https?//.+\\.memberstack\\.io",
       "website": "https://www.memberstack.io"
     },
+    "Mercado Shops": {
+      "cats": [
+        6
+      ],
+      "description": "Mercado Shops is an all-in-one ecommerce platform.",
+      "icon": "Mercado Shops.svg",
+      "cookies": {
+        "_mshops_ga_gid": ""
+      },
+      "scripts": "frontend-assets/mshops-web-home/vendor",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.mercadoshops.com"
+    },
     "Mermaid": {
       "cats": [
         25
@@ -10575,8 +10621,10 @@
       "description": "OpenStreetMap is a free, editable map of the whole world that is being built by volunteers largely from scratch and released with an open-content license.",
       "icon": "OpenStreetMap.svg",
       "dom": {
-        "iframe[src=*openstreetmap.org],iframe[data-lazy-src=*openstreetmap.org]": {
-          "text": ""
+        "iframe[src*='openstreetmap.org'],iframe[data-lazy-src*='openstreetmap.org']": {
+          "attributes": {
+            "src": ""
+          }
         }
       },
       "oss": true,
@@ -15330,6 +15378,22 @@
       "icon": "TrustArc.svg",
       "scripts": "consent\\.trustarc\\.com",
       "website": "http://trustarc.com"
+    },
+    "TrustYou": {
+      "cats": [
+        5
+      ],
+      "description": "TrustYou is guest feedback and hotel reputation software company located in Germany.",
+      "icon": "TrustYou.svg",
+      "dom": {
+        "iframe[src*='api.trustyou.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "saas": true,
+      "website": "https://www.trustyou.com"
     },
     "Tumblr": {
       "cats": [

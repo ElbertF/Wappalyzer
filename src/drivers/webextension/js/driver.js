@@ -701,7 +701,7 @@ const Driver = {
         Driver.lastPing = Date.now()
       }
 
-      if (Driver.cache.ads.length > 1) {
+      if (Driver.cache.ads.length > 50) {
         await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
 
         Driver.cache.ads = []

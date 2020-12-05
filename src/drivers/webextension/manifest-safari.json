@@ -20,15 +20,15 @@
   },
   "browser_action": {
     "default_icon": {
-      "16": "images/icon_16.png",
-      "19": "images/icon_19.png",
-      "32": "images/icon_32.png",
-      "38": "images/icon_38.png",
-      "64": "images/icon_64.png",
-      "128": "images/icon_128.png",
-      "256": "images/icon_256.png",
-      "512": "images/icon_512.png",
-      "1024": "images/icon_1024.png"
+      "16": "images/safari.svg",
+      "19": "images/safari.svg",
+      "32": "images/safari.svg",
+      "38": "images/safari.svg",
+      "64": "images/safari.svg",
+      "128": "images/safari.svg",
+      "256": "images/safari.svg",
+      "512": "images/safari.svg",
+      "1024": "images/safari.svg"
     },
     "default_title": "Wappalyzer",
     "default_popup": "html/popup.html"

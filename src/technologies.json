@@ -2039,6 +2039,21 @@
       },
       "website": "https://backdropcms.org"
     },
+    "BagelDB": {
+      "cats": [
+        1,
+        34
+      ],
+      "saas": true,
+      "pricing": ["low", "freemium"],
+      "js": {
+        "bagelDB": "",
+        "BagelDB": ""
+      },
+      "html": "<[^>]+(src=\"https://)*-devil-263810*",
+      "icon": "BagelDB.png",
+      "website": "https://bageldb.com"
+    },
     "Baidu Analytics (百度统计)": {
       "cats": [
         10

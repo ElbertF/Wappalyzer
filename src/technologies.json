@@ -14186,6 +14186,11 @@
           "attributes": {
             "id": ""
           }
+        },
+        "link[class*='smsbump']": {
+          "attributes": {
+            "class": ""
+          }
         }
       },
       "js": {

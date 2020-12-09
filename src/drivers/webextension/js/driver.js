@@ -693,7 +693,7 @@ const Driver = {
 
       const count = Object.keys(hostnames).length
 
-      if (count && (count >= 50 || Driver.lastPing < Date.now() - expiry)) {
+      if (count && (count >= 25 || Driver.lastPing < Date.now() - expiry)) {
         await Driver.post('https://api.wappalyzer.com/ping/v2/', hostnames)
 
         await setOption('hostnames', (Driver.cache.hostnames = {}))
@@ -701,7 +701,7 @@ const Driver = {
         Driver.lastPing = Date.now()
       }
 
-      if (Driver.cache.ads.length > 50) {
+      if (Driver.cache.ads.length > 25) {
         await Driver.post('https://ad.wappalyzer.com/log/wp/', Driver.cache.ads)
 
         Driver.cache.ads = []

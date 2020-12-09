@@ -86,6 +86,7 @@ const Wappalyzer = {
   /**
    * Resolve promises for version of technology.
    * @param {Promise} resolved
+   * @param match
    */
   resolveVersion({ version, regex }, match) {
     let resolved = version
@@ -230,7 +231,7 @@ const Wappalyzer = {
 
   /**
    * Extract technologies from data collected.
-   * @param {*object} data
+   * @param {object} data
    */
   setTechnologies(data) {
     const transform = Wappalyzer.transformPatterns
@@ -312,6 +313,7 @@ const Wappalyzer = {
   /**
    * Transform patterns for internal use.
    * @param {string|array} patterns
+   * @param {boolean} caseSensitive
    */
   transformPatterns(patterns, caseSensitive = false) {
     if (!patterns) {
@@ -425,7 +427,7 @@ const Wappalyzer = {
   /**
    *
    * @param {Object} technology
-   * @param {String} type
+   * @param {string} types
    * @param {Array} items
    */
   analyzeManyToMany(technology, types, items = {}) {

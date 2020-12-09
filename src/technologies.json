@@ -448,6 +448,27 @@
       "scripts": "xiti\\.com/hit\\.xiti",
       "website": "http://atinternet.com/en"
     },
+    "ATSHOP": {
+      "cats": [
+        6
+      ],
+      "description": "ATSHOP is an all-in-one ecommerce platform.",
+      "dom": {
+        "link[href*='cdn\\.atshop\\.io']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "icon": "ATSHOP.png",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.atshop\\.io",
+      "website": "https://atshop.io"
+    },
     "AWIN": {
       "cats": [
         71
@@ -461,9 +482,11 @@
       "js": {
         "AWIN.Tracking": ""
       },
-      "scripts": "dwin1\\.com",
+      "pricing": [
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["payg"],
+      "scripts": "dwin1\\.com",
       "website": "https://www.awin.com"
     },
     "AWS Certificate Manager": {
@@ -1509,12 +1532,14 @@
       "js": {
         "aplazame": ""
       },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
       "scripts": [
         "cdn\\.aplazame\\.com/aplazame\\.js",
         "aplazame\\.com/static/aplazame\\.js"
       ],
-      "saas": true,
-      "pricing": ["payg"],
       "website": "https://aplazame.com"
     },
     "Apollo": {
@@ -1594,8 +1619,12 @@
       "description": "Appointy’s online scheduling software.",
       "html": "<iframe[^>]+src=\"?https://[\\w\\d\\-]+\\.appointy\\.com",
       "icon": "Appointy.png",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
       "website": "https://www.appointy.com/"
     },
     "Arastta": {
@@ -2370,8 +2399,11 @@
       "js": {
         "BookingKitApp": ""
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://bookingkit.net/"
     },
     "Booksy": {
@@ -2384,8 +2416,11 @@
       "js": {
         "booksy": ""
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "scripts": "booksy\\.com/widget/code\\.js",
-      "pricing": ["low", "recurring"],
       "website": "https://booksy.com/"
     },
     "Bootstrap": {
@@ -2584,6 +2619,25 @@
         "generator": "Bugzilla ?([\\d.]+)?\\;version:\\1"
       },
       "website": "http://www.bugzilla.org"
+    },
+    "Buildertrend": {
+      "cats": [
+        19
+      ],
+      "dom": {
+        "iframe[src*='buildertrend.net'], script[src*='buildertrend.net']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "icon": "Buildertrend.svg",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://buildertrend.com"
     },
     "Bulma": {
       "cats": [
@@ -2880,9 +2934,12 @@
       "js": {
         "_cartstack": ""
       },
-      "scripts": "api\\.cartstack\\.\\w+",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "api\\.cartstack\\.\\w+",
       "website": "https://www.cartstack.com"
     },
     "Catberry.js": {
@@ -3006,9 +3063,13 @@
       ],
       "description": "Checkfront is a cloud-based booking management application and ecommerce platform.",
       "icon": "Checkfront.svg",
-      "scripts": "\\.checkfront\\.com/",
+      "pricing": [
+        "low",
+        "recurring",
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["low","recurring","poa"],
+      "scripts": "\\.checkfront\\.com/",
       "website": "https://www.checkfront.com"
     },
     "Cherokee": {
@@ -3337,7 +3398,6 @@
         35
       ],
       "description": "ClustrMaps widget is a visitor tracker, designed for general web and blog use.",
-      "icon": "ClustrMaps.svg",
       "dom": {
         "img[src*='clustrmaps.com']": {
           "attributes": {
@@ -3345,8 +3405,33 @@
           }
         }
       },
+      "icon": "ClustrMaps.svg",
       "scripts": "clustrmaps\\.com",
       "website": "https://clustrmaps.com/"
+    },
+    "CoConstruct": {
+      "cats": [
+        19
+      ],
+      "dom": {
+        "a[href*='co-construct.com/skins']": {
+          "attributes": {
+            "href": ""
+          }
+        },
+        "iframe[src*='co-construct.com']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "icon": "CoConstruct.png",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://www.coconstruct.com"
     },
     "Coaster CMS": {
       "cats": [
@@ -3531,20 +3616,6 @@
       "icon": "HP.svg",
       "website": "http://www.hp.com"
     },
-    "Conekta": {
-      "cats": [
-        41
-      ],
-      "description": "Conekta is a Mexican payment platform.",
-      "icon": "Conekta.svg",
-      "scripts": [
-        "conektaapi/v([\\d.]+)\\;version:\\1",
-        "cdn\\.conekta\\.\\w+/js/(?:v([\\d.]+)|)\\;version:\\1"
-      ],
-      "saas": true,
-      "pricing": ["payg"],
-      "website": "https://conekta.com"
-    },
     "Concrete5": {
       "cats": [
         1
@@ -3563,6 +3634,22 @@
       },
       "scripts": "/concrete/js/",
       "website": "https://concrete5.org"
+    },
+    "Conekta": {
+      "cats": [
+        41
+      ],
+      "description": "Conekta is a Mexican payment platform.",
+      "icon": "Conekta.svg",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": [
+        "conektaapi/v([\\d.]+)\\;version:\\1",
+        "cdn\\.conekta\\.\\w+/js/(?:v([\\d.]+)|)\\;version:\\1"
+      ],
+      "website": "https://conekta.com"
     },
     "Contao": {
       "cats": [
@@ -4293,9 +4380,9 @@
       "description": "DocFX is a tool for building and publishing API documentation for .NET projects.",
       "icon": "DocFX.svg",
       "meta": {
-        "generator": "docfx\\s([\\d\\.]+)\\;version:\\1",
         "docfx:navrel": "toc.html",
-        "docfx:tocrel": "toc.html"
+        "docfx:tocrel": "toc.html",
+        "generator": "docfx\\s([\\d\\.]+)\\;version:\\1"
       },
       "oss": true,
       "website": "https://github.com/dotnet/docfx"
@@ -4312,7 +4399,8 @@
     },
     "Docusaurus": {
       "cats": [
-        4
+        4,
+        57
       ],
       "description": "Docusaurus is a tool for teams to publish documentation websites.",
       "icon": "docusaurus.svg",
@@ -4694,8 +4782,11 @@
       "meta": {
         "generator": "^Easy Digital Downloads v(.*)$\\;version:\\1"
       },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid", "recurring"],
       "website": "https://easydigitaldownloads.com"
     },
     "EasyEngine": {
@@ -4980,9 +5071,12 @@
       ],
       "description": "Estore Shopserve is an all-in-one payment processing and ecommerce solution.",
       "icon": "EstoreShopserve.svg",
-      "scripts": "cart\\d+\\.shopserve\\.jp/",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid","recurring"],
+      "scripts": "cart\\d+\\.shopserve\\.jp/",
       "website": "https://estore.co.jp/shopserve"
     },
     "Etherpad": {
@@ -5014,8 +5108,11 @@
       "html": "<iframe[^>]*[\\w]+\\.eveve\\.com",
       "icon": "Eveve.svg",
       "implies": "PHP",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid", "recurring"],
       "website": "https://www.eveve.com"
     },
     "Exhibit": {
@@ -5194,9 +5291,11 @@
       "description": "FareHarbor is an booking and schedule management solution intended for tour and activity companies.",
       "html": "<iframe[^>]+fareharbor",
       "icon": "FareHarbor.svg",
-      "scripts": "fareharbor\\.com/embeds/api/",
+      "pricing": [
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["payg"],
+      "scripts": "fareharbor\\.com/embeds/api/",
       "website": "https://fareharbor.com"
     },
     "Fastcommerce": {
@@ -5455,6 +5554,9 @@
         "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
       ],
       "icon": "font-awesome.svg",
+      "js": {
+        "___FONT_AWESOME___": ""
+      },
       "scripts": [
         "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)",
         "kit\\.fontawesome\\.com/([0-9a-z]+).js"
@@ -5481,12 +5583,15 @@
       ],
       "description": "Formitable is an reservation management system for restaurants.",
       "icon": "Formitable.svg",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "formitable\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
         "cdn\\.formitable\\.com"
       ],
-      "saas": true,
-      "pricing": ["mid","recurring"],
       "website": "https://formitable.com"
     },
     "ForoshGostar": {
@@ -5509,9 +5614,11 @@
       ],
       "description": "Forte, a CSG Company offers merchants and partners a broad range of payment solutions.",
       "icon": "Forte.svg",
-      "scripts": "checkout\\.forte\\.net",
+      "pricing": [
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["payg"],
+      "scripts": "checkout\\.forte\\.net",
       "website": "https://www.forte.net"
     },
     "Forter": {
@@ -6531,9 +6638,12 @@
         }
       },
       "icon": "Guestonline.svg",
-      "scripts": "ib\\.guestonline\\.\\w+",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low","recurring"],
+      "scripts": "ib\\.guestonline\\.\\w+",
       "website": "https://www.guestonline.io"
     },
     "HCL Digital Experience": {
@@ -6710,9 +6820,13 @@
       ],
       "description": "Heartland Payment Systems is a US-based payment processing and technology provider.",
       "icon": "Heartland Payment Systems.svg",
-      "scripts": "\\.heartlandportico\\.com",
+      "pricing": [
+        "payg",
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["payg","low","recurring"],
+      "scripts": "\\.heartlandportico\\.com",
       "website": "https://www.heartlandpaymentsystems.com"
     },
     "Hello Bar": {
@@ -6858,9 +6972,12 @@
       ],
       "description": "Hostmeapp is an restaurant software. Includes reservation, waitlist, guestbook and marketing tools.",
       "icon": "Hostmeapp.svg",
-      "scripts": "tables\\.hostmeapp\\.com",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "tables\\.hostmeapp\\.com",
       "website": "https://www.hostmeapp.com"
     },
     "Hotaru CMS": {
@@ -7042,11 +7159,14 @@
       ],
       "description": "Ideasoft is a Turkish software company providing web-based software solutions, software design, ecommerce solutions, and other services.",
       "icon": "Ideasoft.png",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "\\.myideasoft\\.com/([\\d.]+)\\;version:\\1"
       ],
-      "saas": true,
-      "pricing": ["mid","recurring"],
       "website": "https://www.ideasoft.com.tr"
     },
     "Identrust": {
@@ -7364,7 +7484,11 @@
         "init_isotope": ""
       },
       "oss": true,
-      "pricing": ["low", "freemium", "onetime"],
+      "pricing": [
+        "low",
+        "freemium",
+        "onetime"
+      ],
       "website": "https://isotope.metafizzy.co"
     },
     "Iubenda": {
@@ -7454,6 +7578,18 @@
       },
       "scripts": "^(?:https):?//load\\.jsecoin\\.com/load/",
       "website": "https://jsecoin.com/"
+    },
+    "JShop": {
+      "cats": [
+        6
+      ],
+      "description": "JShop is the ecommerce database solution marketed by Whorl Ltd. worldwide.",
+      "icon": "JShop.svg",
+      "js": {
+        "jss_1stepDeliveryType": "",
+        "jss_1stepFillShipping": ""
+      },
+      "website": "http://www.whorl.co.uk"
     },
     "JTL Shop": {
       "cats": [
@@ -7711,18 +7847,6 @@
       "url": "option=com_",
       "website": "https://www.joomla.org"
     },
-    "JShop": {
-      "cats": [
-        6
-      ],
-      "description": "JShop is the ecommerce database solution marketed by Whorl Ltd. worldwide.",
-      "icon": "JShop.svg",
-      "js": {
-        "jss_1stepFillShipping": "",
-        "jss_1stepDeliveryType": ""
-      },
-      "website": "http://www.whorl.co.uk"
-    },
     "Jumpseller": {
       "cats": [
         6
@@ -7732,12 +7856,15 @@
       "js": {
         "Jumpseller": ""
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "assets\\.jumpseller\\.\\w+/",
         "jumpseller-apps\\.herokuapp\\.\\w+/"
       ],
-      "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://jumpseller.com"
     },
     "K2": {
@@ -8594,17 +8721,6 @@
       "icon": "Logitech Media Server.png",
       "website": "http://www.mysqueezebox.com"
     },
-    "Loja2": {
-      "cats": [
-        6
-      ],
-      "description": "Loja2 is an all-in-one ecommerce platform from Brazil.",
-      "icon": "Loja2.svg",
-      "scripts": "loja2\\.com\\.br",
-      "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
-      "website": "https://www.loja2.com.br"
-    },
     "Loja Integrada": {
       "cats": [
         6
@@ -8618,6 +8734,23 @@
       },
       "website": "https://lojaintegrada.com.br/"
     },
+    "Loja Mestre": {
+      "cats": [
+        6
+      ],
+      "description": "Loja Mestre is an all-in-one ecommerce platform from Brazil.",
+      "icon": "Loja Mestre.svg",
+      "meta": {
+        "webmaster": "www\\.lojamestre\\.\\w+\\.br"
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "lojamestre\\.\\w+\\.br",
+      "website": "https://www.lojamestre.com.br/"
+    },
     "Loja Virtual": {
       "cats": [
         6
@@ -8629,27 +8762,49 @@
         "link_loja_virtual": "",
         "loja_sem_dominio": ""
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "/js/ljvt_v(\\d+)/\\;version:\\1\\;confidence:20",
         "cdn1\\.solojavirtual\\.com"
       ],
-      "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://www.lojavirtual.com.br"
     },
-    "Loja Mestre": {
+    "Loja2": {
       "cats": [
         6
       ],
-      "description": "Loja Mestre is an all-in-one ecommerce platform from Brazil.",
-      "icon": "Loja Mestre.svg",
-      "meta": {
-        "webmaster": "www\\.lojamestre\\.\\w+\\.br"
-      },
-      "scripts": "lojamestre\\.\\w+\\.br",
+      "description": "Loja2 is an all-in-one ecommerce platform from Brazil.",
+      "icon": "Loja2.svg",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
-      "website": "https://www.lojamestre.com.br/"
+      "scripts": "loja2\\.com\\.br",
+      "website": "https://www.loja2.com.br"
+    },
+    "Loox": {
+      "cats": [
+        5,
+        6
+      ],
+      "description": "Loox is a reviews app for Shopify that helps you gather reviews and user-generated photos from your customers.",
+      "icon": "Loox.svg",
+      "js": {
+        "loox_global_hash": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "loox\\.io/widget",
+      "website": "https://loox.app"
     },
     "Lotus Domino": {
       "cats": [
@@ -8889,6 +9044,25 @@
       "icon": "ManyContacts.png",
       "scripts": "\\/assets\\/js\\/manycontacts\\.min\\.js",
       "website": "http://www.manycontacts.com"
+    },
+    "Mapbox GL JS": {
+      "cats": [
+        35
+      ],
+      "description": "Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps from vector tiles and Mapbox styles.",
+      "dom": {
+        "link[href*='mapbox-gl.css']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "icon": "Mapbogljs.png",
+      "js": {
+        "mapboxgl.version": "^(.+)$\\;version:\\1\\;confidence:0"
+      },
+      "scripts": "mapbox-gl.js",
+      "website": "https://github.com/mapbox/mapbox-gl-js"
     },
     "MariaDB": {
       "cats": [
@@ -9219,14 +9393,16 @@
       "cats": [
         6
       ],
-      "description": "Mercado Shops is an all-in-one ecommerce platform.",
-      "icon": "Mercado Shops.svg",
       "cookies": {
         "_mshops_ga_gid": ""
       },
-      "scripts": "frontend-assets/mshops-web-home/vendor",
+      "description": "Mercado Shops is an all-in-one ecommerce platform.",
+      "icon": "Mercado Shops.svg",
+      "pricing": [
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["payg"],
+      "scripts": "frontend-assets/mshops-web-home/vendor",
       "website": "https://www.mercadoshops.com"
     },
     "Mermaid": {
@@ -9424,8 +9600,11 @@
       "js": {
         "HealcodeWidget": ""
       },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid","recurring"],
       "scripts": "\\w+\\.healcode\\.com",
       "website": "https://www.mindbodyonline.com"
     },
@@ -10297,9 +10476,12 @@
       "js": {
         "ocnkProducts": ""
       },
-      "scripts": "ocnk-min\\.js",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "ocnk-min\\.js",
       "website": "https://www.ocnk.com"
     },
     "October CMS": {
@@ -10371,8 +10553,10 @@
         "Omise": "",
         "OmiseCard": ""
       },
+      "pricing": [
+        "payg"
+      ],
       "scripts": "cdn\\.omise\\.co",
-      "pricing": ["payg"],
       "website": "https://www.omise.co"
     },
     "OneAPM": {
@@ -10619,7 +10803,6 @@
         35
       ],
       "description": "OpenStreetMap is a free, editable map of the whole world that is being built by volunteers largely from scratch and released with an open-content license.",
-      "icon": "OpenStreetMap.svg",
       "dom": {
         "iframe[src*='openstreetmap.org'],iframe[data-lazy-src*='openstreetmap.org']": {
           "attributes": {
@@ -10627,6 +10810,7 @@
           }
         }
       },
+      "icon": "OpenStreetMap.svg",
       "oss": true,
       "website": "https://www.openstreetmap.org"
     },
@@ -10838,8 +11022,11 @@
       "meta": {
         "generator": "^Oxatis\\s\\(www\\.oxatis\\.com\\)$"
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://www.oxatis.com/"
     },
     "Oxygen": {
@@ -12269,8 +12456,11 @@
       "js": {
         "RC_SHOP_ID": ""
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://redcart.pl"
     },
     "Redaxscript": {
@@ -12353,9 +12543,12 @@
       ],
       "description": "Regiondo is a online booking system for tour and activity providers.",
       "icon": "Regiondo.svg",
-      "scripts": "cdn\\.regiondo\\.net",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "cdn\\.regiondo\\.net",
       "website": "https://www.regiondo.com"
     },
     "Reinvigorate": {
@@ -12394,9 +12587,12 @@
         }
       },
       "icon": "ResDiary.svg",
-      "scripts": "\\.resdiary\\.\\w+/",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid", "recurring"],
+      "scripts": "\\.resdiary\\.\\w+/",
       "website": "https://www.resdiary.com"
     },
     "Resengo": {
@@ -12441,9 +12637,14 @@
       "js": {
         "ResmioButton": ""
       },
-      "scripts": "static\\.resmio\\.\\w+/static/",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring",
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["low", "freemium", "recurring", "payg"],
+      "scripts": "static\\.resmio\\.\\w+/static/",
       "website": "https://www.resmio.com"
     },
     "Resy": {
@@ -12456,9 +12657,12 @@
       "js": {
         "resyWidget": ""
       },
-      "scripts": "widgets\\.resy\\.\\w+",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid", "recurring"],
+      "scripts": "widgets\\.resy\\.\\w+",
       "website": "https://resy.com"
     },
     "Reveal.js": {
@@ -12485,6 +12689,15 @@
       "implies": "Go",
       "website": "https://revel.github.io"
     },
+    "RevolverMaps": {
+      "cats": [
+        35
+      ],
+      "description": "RevolverMaps is a collection of real-time visitor statistics widgets for website or blog. Interactive visitor mappings to a globe rendered by the Revolver Engine.",
+      "icon": "RevolverMaps.svg",
+      "scripts": "\\.revolvermaps\\.com",
+      "website": "https://www.revolvermaps.com"
+    },
     "Revslider": {
       "cats": [
         19
@@ -12496,15 +12709,6 @@
       "icon": "revslider.png",
       "scripts": "/revslider/[/\\w-]+/js",
       "website": "https://revolution.themepunch.com/"
-    },
-    "RevolverMaps": {
-      "cats": [
-        35
-      ],
-      "description": "RevolverMaps is a collection of real-time visitor statistics widgets for website or blog. Interactive visitor mappings to a globe rendered by the Revolver Engine.",
-      "icon": "RevolverMaps.svg",
-      "scripts": "\\.revolvermaps\\.com",
-      "website": "https://www.revolvermaps.com"
     },
     "Rewardful": {
       "cats": [
@@ -12526,9 +12730,12 @@
       ],
       "description": "Rezdy is an online booking software for tours and attractions.",
       "icon": "Rezdy.svg",
-      "scripts": "rezdy\\.\\w+/pluginJs",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "rezdy\\.\\w+/pluginJs",
       "website": "https://www.rezdy.com"
     },
     "Rezgo": {
@@ -12551,8 +12758,10 @@
         }
       },
       "icon": "Rezgo.svg",
+      "pricing": [
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["payg"],
       "website": "https://www.rezgo.com"
     },
     "Rickshaw": {
@@ -13216,9 +13425,13 @@
       ],
       "description": "Sellix is an ecommerce payment processor. It accepts PayPal, PerfectMoney and popular cryptocurrencies.",
       "icon": "Sellix.svg",
-      "scripts": "cdn\\.sellix\\.io/static/js/embed\\.js",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
+      "scripts": "cdn\\.sellix\\.io/static/js/embed\\.js",
       "website": "https://sellix.io/"
     },
     "Selly": {
@@ -13227,9 +13440,13 @@
       ],
       "description": "Selly is an ecommerce payment processor. It accepts PayPal, Bitcoin, Ethereum, Litecoin, Stripe and more.",
       "icon": "Selly.svg",
-      "scripts": "embed\\.selly\\.(?:gg|io)",
+      "pricing": [
+        "low",
+        "poa",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "poa", "recurring"],
+      "scripts": "embed\\.selly\\.(?:gg|io)",
       "website": "https://selly.io/"
     },
     "Semantic UI": {
@@ -13339,12 +13556,16 @@
       "js": {
         "setmorePopup": ""
       },
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
       "scripts": [
         "my\\.setmore\\.\\w+/",
         "/setmore-appointments/script/"
       ],
-      "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
       "website": "https://www.setmore.com"
     },
     "SevenRooms": {
@@ -13574,9 +13795,12 @@
       "js": {
         "SHOPLOAJAX": ""
       },
-      "scripts": "cdn\\.shoplo\\.\\w+/",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "cdn\\.shoplo\\.\\w+/",
       "website": "https://www.shoplo.com"
     },
     "Shoppy": {
@@ -13588,9 +13812,13 @@
       "js": {
         "Shoppy": ""
       },
-      "scripts": "\\.shoppy\\.gg",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
+      "scripts": "\\.shoppy\\.gg",
       "website": "https://shoppy.gg"
     },
     "Shoptet": {
@@ -13721,6 +13949,20 @@
       },
       "website": "http://example.com"
     },
+    "Simplo7": {
+      "cats": [
+        6
+      ],
+      "description": "Simplo7 is an all-in-one ecommerce product.",
+      "icon": "Simplo7.svg",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.simplo7\\.\\w+/",
+      "website": "https://www.simplo7.com.br"
+    },
     "Simplébo": {
       "cats": [
         1
@@ -13730,17 +13972,6 @@
       },
       "icon": "Simplebo.png",
       "website": "https://www.simplebo.fr"
-    },
-    "Simplo7": {
-      "cats": [
-        6
-      ],
-      "description": "Simplo7 is an all-in-one ecommerce product.",
-      "icon": "Simplo7.svg",
-      "scripts": "cdn\\.simplo7\\.\\w+/",
-      "saas": true,
-      "pricing": ["low", "recurring"],
-      "website": "https://www.simplo7.com.br"
     },
     "Site Meter": {
       "cats": [
@@ -13856,8 +14087,10 @@
       },
       "icon": "SlickStack.png",
       "implies": "WordPress",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
       "website": "https://slickstack.io"
     },
     "Slimbox": {
@@ -14307,8 +14540,11 @@
         "Squarespace": "",
         "Static.SQUARESPACE_CONTEXT": ""
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "http://www.squarespace.com"
     },
     "Squarespace Commerce": {
@@ -14322,9 +14558,12 @@
         "SQUARESPACE_ROLLUPS.squarespace-commerce": "",
         "SquarespaceCommerceCartBundle": ""
       },
-      "scripts": "assets\\.squarespace\\.\\w+/universal/scripts-compressed/commerce-\\w+-min\\.[\\w+\\-]+\\.js",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "assets\\.squarespace\\.\\w+/universal/scripts-compressed/commerce-\\w+-min\\.[\\w+\\-]+\\.js",
       "website": "https://www.squarespace.com/ecommerce-website"
     },
     "SquirrelMail": {
@@ -14568,8 +14807,11 @@
         "SC": "\\;confidence:10",
         "SCEvents": "\\;confidence:40"
       },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid", "recurring"],
       "website": "http://www.summercart.com"
     },
     "SumoMe": {
@@ -14848,9 +15090,12 @@
         }
       },
       "icon": "TableBooker.svg",
-      "scripts": "reservations\\.tablebooker\\.\\w+/",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
+      "scripts": "reservations\\.tablebooker\\.\\w+/",
       "website": "https://www.tablebooker.com"
     },
     "TableCheck": {
@@ -15108,8 +15353,12 @@
         }
       },
       "icon": "Thefork.svg",
+      "pricing": [
+        "mid",
+        "freemium",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid", "freemium", "recurring"],
       "website": "https://www.thefork.com"
     },
     "Thelia": {
@@ -15145,9 +15394,12 @@
       "js": {
         "ThriveCart": ""
       },
-      "scripts": "thrivecart\\.js",
+      "pricing": [
+        "mid",
+        "onetime"
+      ],
       "saas": true,
-      "pricing": ["mid", "onetime"],
+      "scripts": "thrivecart\\.js",
       "website": "https://thrivecart.com"
     },
     "Ticimax": {
@@ -15231,8 +15483,12 @@
       ],
       "description": "The Online Scheduling and Resource Management Software.",
       "icon": "Timify.svg",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
       "scripts": "https://widget\\.timify\\.com/js/widget\\.js",
-      "pricing": ["low", "freemium", "recurring"],
       "website": "https://www.timify.com/"
     },
     "TinyMCE": {
@@ -15384,7 +15640,6 @@
         5
       ],
       "description": "TrustYou is guest feedback and hotel reputation software company located in Germany.",
-      "icon": "TrustYou.svg",
       "dom": {
         "iframe[src*='api.trustyou.com']": {
           "attributes": {
@@ -15392,6 +15647,7 @@
           }
         }
       },
+      "icon": "TrustYou.svg",
       "saas": true,
       "website": "https://www.trustyou.com"
     },
@@ -15537,8 +15793,12 @@
       "js": {
         "Typekit.config.js": "^(.+)$\\;version:\\1"
       },
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
       "scripts": "use\\.typekit\\.com",
-      "pricing": ["low", "freemium", "recurring"],
       "website": "http://typekit.com"
     },
     "UIKit": {
@@ -15663,6 +15923,27 @@
       "icon": "Uniconsent.png",
       "scripts": "cmp\\.uniconsent\\.mgr\\.consensu\\.org/dfp\\.js",
       "website": "https://www.uniconsent.com/"
+    },
+    "Upvoty": {
+      "cats": [
+        47
+      ],
+      "dom": {
+        "div.upvotyContainer": {
+          "text": ""
+        }
+      },
+      "icon": "upvoty.png",
+      "implies": "PHP",
+      "js": {
+        "upvoty": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://upvoty.com"
     },
     "Usabilla": {
       "cats": [
@@ -15907,9 +16188,11 @@
         "vl_cB": "",
         "vl_disable": ""
       },
-      "scripts": "(?:^[^/]*//[^/]*viglink\\.com/api/|vglnk\\.js)",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
+      "scripts": "(?:^[^/]*//[^/]*viglink\\.com/api/|vglnk\\.js)",
       "website": "http://viglink.com"
     },
     "Vigbo": {
@@ -16034,8 +16317,11 @@
         "vs_status_checker_version": "\\d+",
         "vsvatprices": ""
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://www.visualsoft.co.uk/"
     },
     "Volusion": {
@@ -16067,6 +16353,25 @@
       "icon": "Voog.png",
       "scripts": "voog\\.com/tracker\\.js",
       "website": "https://www.voog.com/"
+    },
+    "Voracio": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "voracio_csrf_token": "",
+        "voracio_sessionid": ""
+      },
+      "description": "Voracio is a cloud SaaS ecommerce platform powered by Microsoft .NET and built on the Microsoft Azure cloud framework.",
+      "icon": "Voracio.svg",
+      "js": {
+        "voracio": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://www.voracio.co.uk"
     },
     "Vue.js": {
       "cats": [
@@ -17064,8 +17369,10 @@
       "js": {
         "yandexChatWidget": ""
       },
+      "pricing": [
+        "payg"
+      ],
       "scripts": "chat\\.s3\\.yandex\\.net/widget\\.js",
-      "pricing": ["payg"],
       "website": "https://dialogs.yandex.ru"
     },
     "Yandex.Metrika": {
@@ -18840,7 +19147,10 @@
       "meta": {
         "generator": "WPBakery"
       },
-      "pricing": ["low", "onetime"],
+      "pricing": [
+        "low",
+        "onetime"
+      ],
       "website": "https://wpbakery.com"
     },
     "wpCache": {

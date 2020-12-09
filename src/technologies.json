@@ -14175,6 +14175,27 @@
       },
       "website": "https://www.smartstore.com"
     },
+    "SMSBump": {
+      "cats": [
+        32
+      ],
+      "description": "SMSBump is a text marketing automation app available for Shopify, BigCommerce and OpenCart.",
+      "icon": "SMSBump.svg",
+      "dom": {
+        "div[id*='smsbump-form']": {
+          "attributes": {
+            "id": ""
+          }
+        }
+      },
+      "js": {
+        "SMSBumpForm": ""
+      },
+      "scripts": "smsbump\\.com",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://smsbump.com"
+    },
     "Snap": {
       "cats": [
         18,

@@ -14182,12 +14182,12 @@
       "description": "SMSBump is a text marketing automation app available for Shopify, BigCommerce and OpenCart.",
       "icon": "SMSBump.svg",
       "dom": {
-        "div[id*='smsbump-form']": {
+        "div#smsbump-form": {
           "attributes": {
             "id": ""
           }
         },
-        "link[class*='smsbump']": {
+        "link.smsbump": {
           "attributes": {
             "class": ""
           }

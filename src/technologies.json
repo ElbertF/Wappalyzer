@@ -953,6 +953,22 @@
       },
       "website": "https://github.com/ankane/ahoy"
     },
+    "Aimtell": {
+      "cats": [
+        32
+      ],
+      "description": "Aimtell is a cloud-hosted marketing platform that allows digital marketers and businesses to deliver web-based push notifications.",
+      "icon": "Aimtell.png",
+      "js": {
+        "_aimtellPushToken": "",
+        "_aimtellLoad": "",
+        "_aimtellWebhook": ""
+      },
+      "scripts": "cdn\\.aimtell\\.\\w+/",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://aimtell.com"
+    },
     "Aircall": {
       "cats": [
         52
@@ -982,6 +998,18 @@
       ],
       "icon": "Airform.svg",
       "website": "https://airform.io"
+    },
+    "Airship": {
+      "cats": [
+        32,
+        10
+      ],
+      "description": "Airship is an American company that provides marketing and branding services. Airship allows companies to generate custom messages to consumers via push notifications, SMS messaging, and similar, and provides customer analytics services.",
+      "icon": "Airship.svg",
+      "scripts": "urbanairship\\.\\w+/notify/v([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.airship.com"
     },
     "Akamai": {
       "cats": [
@@ -1604,12 +1632,22 @@
         69
       ],
       "description": "Apple Sign-in is based on OAuth 2.0 and OpenID Connect, and provides a privacy-friendly way for users to sign in to websites and apps.",
-      "html": [
-        "<meta[ˆ>]*appleid-signin-client-id",
-        "<a[ˆ>]*appleid\\.apple\\.com/auth/authorize"
-      ],
+      "dom": {
+        "a[href*='appleid.apple.com/auth/authorize']": {
+          "attributes": {
+            "href": ""
+          }
+        },
+        "button": {
+          "text": "(Sign (in|up)|Log in|Continue) with Apple"
+        }
+      },
+      "html": "<meta[ˆ>]*appleid-signin-client-id",
+      "js": {
+        "AppleID": ""
+      },
+      "scripts": "appleid\\.auth\\.js",
       "icon": "Apple.svg",
-      "scripts": "appleid.auth.js",
       "website": "https://developer.apple.com/sign-in-with-apple/"
     },
     "Appointy": {
@@ -1894,6 +1932,22 @@
       "implies": "WordPress",
       "website": "https://automattic.com/"
     },
+    "Autopilot": {
+      "cats": [
+        32,
+        74,
+        75
+      ],
+      "description": "Autopilot is a visual marketing software that enables users to create marketing campaigns and manage lead conversions. ",
+      "icon": "Autopilot.png",
+      "js": {
+        "AutopilotAnywhere": "",
+        "Autopilot": "\\;confidence:50"
+      },
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.autopilothq.com"
+    },
     "Avangate": {
       "cats": [
         6
@@ -2166,6 +2220,24 @@
       "implies": "PHP",
       "url": "(?:\\?|&)bigWAdminID=",
       "website": "http://bigware.de"
+    },
+    "Birdeye": {
+      "cats": [
+        32,
+        5
+      ],
+      "description": "Birdeye is an all-in-one customer experience platform.",
+      "icon": "Birdeye.svg",
+      "scripts": [
+        "birdeye\\.com/embed",
+        "birdeye\\.com"
+      ],
+      "js": {
+        "bfiframe": ""
+      },
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://birdeye.com"
     },
     "BittAds": {
       "cats": [
@@ -2519,6 +2591,22 @@
       },
       "scripts": "js\\.braintreegateway\\.com",
       "website": "https://www.braintreepayments.com"
+    },
+    "Braze": {
+      "cats": [
+        32,
+        10
+      ],
+      "description": "Braze is a customer engagement platform that delivers messaging experiences across push, email, in-product, and more.",
+      "icon": "Braze.svg",
+      "js": {
+        "appboy": "",
+        "appboyQueue": ""
+      },
+      "scripts": "js\\.appboycdn\\.com/web-sdk/([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.braze.com"
     },
     "Brightspot": {
       "cats": [
@@ -3212,6 +3300,24 @@
       ],
       "website": "https://clearbit.com/reveal"
     },
+    "Clerk.io": {
+      "cats": [
+        10,
+        6
+      ],
+      "description": "Clerk.io is an all-in-one ecommerce personalization platform.",
+      "icon": "Clerk.io.svg",
+      "js": {
+        "__clerk_cb_0": "",
+        "__clerk_q": ""
+      },
+      "scripts": [
+        "\\.clerk\\.io/"
+      ],
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://clerk.io"
+    },
     "Cleverbridge": {
       "cats": [
         6
@@ -3225,6 +3331,20 @@
         "static-cf\\.cleverbridge\\.\\w+/js/Shop\\.js"
       ],
       "website": "https://www.cleverbridge.com"
+    },
+    "CleverTap": {
+      "cats": [
+        32,
+        10
+      ],
+      "description": "CleverTap is a SaaS based customer lifecycle management and mobile marketing company headquartered in Mountain View, California.",
+      "icon": "CleverTap.png",
+      "js": {
+        "clevertap": ""
+      },
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://clevertap.com"
     },
     "ClickFunnels": {
       "cats": [
@@ -4412,7 +4532,7 @@
         "search.indexName": ""
       },
       "meta": {
-        "generator": "^Docusaurus$"
+        "generator": "^Docusaurus(?: v(.+))?$\\;version:\\1"
       },
       "website": "https://docusaurus.io/"
     },
@@ -4469,6 +4589,23 @@
         "generator": "^DokuWiki( Release [\\d-]+)?\\;version:\\1"
       },
       "website": "https://www.dokuwiki.org"
+    },
+    "Dotdigital": {
+      "cats": [
+        32,
+        10
+      ],
+      "description": "Dotdigital is an all-in-one cloud-based customer engagement multichannel marketing platform.",
+      "icon": "Dotdigital.svg",
+      "js": {
+        "dmPt": "\\;confidence:25",
+        "dmtrackingobjectname": "\\;confidence:75",
+        "dm_insight_id": ""
+      },
+      "scripts": "js/_dmptv([\\d.]+)\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://dotdigital.com"
     },
     "Dotclear": {
       "cats": [
@@ -5429,6 +5566,24 @@
       },
       "icon": "Fireblade.png",
       "website": "http://fireblade.com"
+    },
+    "Firepush": {
+      "cats": [
+        32
+      ],
+      "description": "Firepush is an omnichannel marketing app that helps Shopify stores to drive sales with automated web push, email and SMS campaigns.",
+      "icon": "Firepush.svg",
+      "dom": {
+        "link[href*='cdn.firepush.net']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "cdn\\.firepush\\.\\w+",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://getfirepush.com"
     },
     "Flarum": {
       "cats": [
@@ -6421,6 +6576,11 @@
         69
       ],
       "description": "Google Sign-In is a secure authentication system that reduces the burden of login for users, by enabling them to sign in with their Google account.",
+      "dom": {
+        "button": {
+          "text": "(Sign|Log) in with Google"
+        }
+      },
       "html": [
         "<meta[^>]*google-signin-client_id",
         "<meta[^>]*google-signin-scope",
@@ -7333,6 +7493,20 @@
       "icon": "infusionsoft.svg",
       "website": "http://infusionsoft.com"
     },
+    "Insider": {
+      "cats": [
+        32
+      ],
+      "description": "Insider is the first integrated Growth Management Platform helping digital marketers drive growth across the funnel, from Acquisition to Activation, Retention, and Revenue from a unified platform powered by Artificial Intelligence and Machine Learning.",
+      "icon": "Insider.svg",
+      "js": {
+        "Insider": "\\;confidence:20"
+      },
+      "scripts": "api\\.useinsider\\.\\w+/",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://useinsider.com"
+    },
     "Inspectlet": {
       "cats": [
         10
@@ -7500,6 +7674,22 @@
         "iubenda\\.com/cookie-solution/confs/js/"
       ],
       "website": "https://www.iubenda.com/"
+    },
+    "Izooto": {
+      "cats": [
+        32,
+        5
+      ],
+      "description": "iZooto is a user engagement and retention tool that leverages web push notifications to help business to drive repeat traffic, leads and sales.",
+      "icon": "Izooto.png",
+      "js": {
+        "_izooto": "",
+        "Izooto": ""
+      },
+      "scripts": "cdn\\.izooto\\.\\w+",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.izooto.com"
     },
     "J2Store": {
       "cats": [
@@ -8345,6 +8535,21 @@
       "scripts": "leaflet.{0,32}\\.js",
       "website": "http://leafletjs.com"
     },
+    "Leanplum": {
+      "cats": [
+        32,
+        74
+      ],
+      "description": "Leanplum is a multi-channel messaging and campaign orchestration platform.",
+      "icon": "Leanplum.svg",
+      "js": {
+        "Leanplum": ""
+      },
+      "scripts": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.leanplum.com"
+    },
     "Less": {
       "cats": [
         19
@@ -8943,6 +9148,53 @@
         "s3\\.amazonaws\\.com/downloads\\.mailchimp\\.com/js/mc-validate\\.js",
         "cdn-images\\.mailchimp\\.com/[^>]*\\.css"
       ],
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "http://mailchimp.com"
+    },
+    "MailChimp for WooCommerce": {
+      "cats": [
+        32,
+        75
+      ],
+      "includes": "MailChimp",  
+      "description": "Mailchimp is a marketing automation platform and email marketing service.",
+      "icon": "mailchimp.svg",
+      "scripts": "mailchimp-woocommerce-public\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "http://mailchimp.com"
+    },
+    "MailChimp for WordPress": {
+      "cats": [
+        32,
+        75
+      ],
+      "includes": "MailChimp",  
+      "description": "Mailchimp is a marketing automation platform and email marketing service.",
+      "icon": "mailchimp.svg",
+      "js": {
+        "mc4wp": "\\;confidence:50"
+      },
+      "scripts": "mailchimp-for-wp/assets/js/forms\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "http://mailchimp.com"
+    },
+    "MailChimp for Shopify": {
+      "cats": [
+        32,
+        75
+      ],
+      "includes": "MailChimp",  
+      "description": "Mailchimp is a marketing automation platform and email marketing service.",
+      "icon": "mailchimp.svg",
+      "js": {
+        "$mcSite": "\\;confidence:50"
+      },
+      "scripts": "chimpstatic\\.com/mcjs-connected",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
       "website": "http://mailchimp.com"
     },
     "Mailgun": {
@@ -9111,7 +9363,26 @@
       "js": {
         "Munchkin": ""
       },
-      "scripts": "munchkin\\.marketo\\.net/munchkin\\.js",
+      "scripts": "munchkin\\.marketo\\.\\w+/(?:([\\d.]+)/)?munchkin\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.marketo.com"
+    },
+    "Marketo Forms": {
+      "cats": [
+        5
+      ],
+      "description": "Marketo Forms help create web forms without programming knowledge. Forms can reside on Marketo landing pages and also be embedded on any page of website.",
+      "icon": "Marketo.png",
+      "js": {
+        "formatMarketoForm": ""
+      },
+      "scripts": [
+        "marketo\\.\\w+/js/forms(?:[\\d.]+)/js/forms([\\d.]+)\\.min\\.js\\;version:\\1",
+        "v([\\d.]+)/js/marketo-alt-form\\.min\\.js\\;version:\\1"
+      ],
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.marketo.com"
     },
     "Mastercard": {
@@ -10383,6 +10654,25 @@
       "scripts": "^/nodebb\\.min\\.js\\?",
       "website": "https://nodebb.org"
     },
+    "Nosto": {
+      "cats": [
+        32,
+        74
+      ],
+      "description": "Nosto is an ecommerce platform providing product recommendations based on individual behavioral data.",
+      "icon": "Nosto.svg",
+      "js": {
+        "nostojs": "\\;confidence:50",
+        "nosto": "\\;confidence:50"
+      },
+      "meta": {
+        "nosto-version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "connect\\.nosto\\.\\w+/",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.nosto.com"
+    },
     "Nuvemshop": {
       "cats": [
         6
@@ -10394,8 +10684,12 @@
     },
     "Nuxt.js": {
       "cats": [
-        12
+        12,
+        18,
+        22,
+        57
       ],
+      "description": "Nuxt is a Vue framework for developing modern web applications.",
       "html": [
         "<div [^>]*id=\"__nuxt\"",
         "<script [^>]*>window\\.__NUXT__"
@@ -10559,6 +10853,27 @@
       "scripts": "cdn\\.omise\\.co",
       "website": "https://www.omise.co"
     },
+    "Omnisend": {
+      "cats": [
+        32,
+        6
+      ],
+      "description": "Omnisend is an ecommerce marketing automation platform that provides an omnichannel marketing strategy for businesses.",
+      "icon": "Omnisend.svg",
+      "js": {
+        "_omnisend": ""
+      },
+      "meta": {
+        "omnisend-site-verification": ""
+      },
+      "cookies": {
+        "omnisendSessionID": ""
+      },
+      "scripts": "omnisrc\\.com",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://www.omnisend.com"
+    },
     "OneAPM": {
       "cats": [
         10
@@ -10568,6 +10883,22 @@
         "BWEUM": ""
       },
       "website": "http://www.oneapm.com"
+    },
+    "OneSignal": {
+      "cats": [
+        32,
+        74
+      ],
+      "description": "OneSignal is a customer engagement messaging solution.",
+      "icon": "OneSignal.svg",
+      "js": {
+        "OneSignal": "",
+        "__oneSignalSdkLoadCount": ""
+      },
+      "scripts": "cdn\\.onesignal\\.com",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://onesignal.com"
     },
     "OneStat": {
       "cats": [
@@ -12020,6 +12351,17 @@
       "icon": "Pure CSS.png",
       "website": "http://purecss.io"
     },
+    "PushEngage": {
+      "cats": [
+        32
+      ],
+      "description": "PushEngage is a browser push notification platform that helps content website managers engage visitors by automatically segmenting and sending web push messages.",
+      "icon": "PushEngage.png",
+      "scripts": "clientcdn\\.pushengage\\.\\w+/core",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://www.pushengage.com"
+    },
     "Pushnami": {
       "cats": [
         32
@@ -12028,6 +12370,17 @@
       "icon": "Pushnami.svg",
       "scripts": "api\\.pushnami\\.com",
       "website": "https://pushnami.com"
+    },
+    "PushOwl": {
+      "cats": [
+        32
+      ],
+      "description": " PushOwl is a push notification platform for ecommerce stores.",
+      "icon": "PushOwl.svg",
+      "scripts": "cdn\\.pushowl\\.com",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://pushowl.com"
     },
     "Pygments": {
       "cats": [
@@ -14067,6 +14420,21 @@
       "scripts": "plugin\\.skedify\\.io",
       "website": "https://calendly.com/"
     },
+    "SkyVerge": {
+      "cats": [
+        41
+      ],
+      "description": "SkyVerge  is a company which develop extension tools for WooCommerce stores.",
+      "implies": "WooCommerce",
+      "icon": "SkyVerge.svg",
+      "js": {
+        "sv_wc_payment_gateway_payment_form_param": ""
+      },
+      "scripts": "sv-wc-payment-gateway-payment-form\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.skyverge.com"
+    },
     "Slick": {
       "cats": [
         59
@@ -15132,8 +15500,10 @@
         5
       ],
       "icon": "Taggbox.svg",
-      "scripts": "web\\.taggbox\\.com",
-      "url": "web\\.taggbox\\.com",
+      "script": "(widget|web)\\.taggbox\\.com",
+      "url": "(widget|web)\\.taggbox\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring", "freemium"],
       "website": "https://taggbox.com/"
     },
     "Taiga": {
@@ -16279,23 +16649,6 @@
       "scripts": "secure\\.checkout\\.visa\\.com",
       "website": "https://checkout.visa.com"
     },
-    "Visual Website Optimizer": {
-      "cats": [
-        10
-      ],
-      "html": [
-        "<!-- (?:Start|End) Visual Website Optimizer A?Synchronous Code -->"
-      ],
-      "icon": "vwo.svg",
-      "js": {
-        "VWO": "",
-        "__vwo": ""
-      },
-      "scripts": [
-        "dev\\.visualwebsiteoptimizer\\.com"
-      ],
-      "website": "https://vwo.com/"
-    },
     "VisualPath": {
       "cats": [
         10
@@ -16410,6 +16763,38 @@
       "icon": "Vuetify.svg",
       "implies": "Vue.js",
       "website": "https://vuetifyjs.com"
+    },
+    "VWO": {
+      "cats": [
+        10,
+        74
+      ],
+      "description": "VWO is a website testing and conversion optimization platform.",
+      "icon": "VWO.svg",
+      "js": {
+        "VWO": "",
+        "__vwo": ""
+      },
+      "scripts": [
+        "dev\\.visualwebsiteoptimizer\\.com/?([\\d.]+)\\;version:\\1"
+      ],
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://vwo.com/"
+    },
+    "VWO Engage": {
+      "cats": [
+        32
+      ],
+      "description": "VWO Engage is a part of the VWO Platform, which is a web-based push notification platform used by SaaS and B2B marketers, online content publishers, and ecommerce store owners.",
+      "icon": "VWO.svg",
+      "js": {
+        "_pushcrewDebuggingQueue": ""
+      },
+      "scripts": "cdn\\.pushcrew\\.\\w+",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://vwo.com/engage"
     },
     "W3 Total Cache": {
       "cats": [

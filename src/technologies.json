@@ -9131,6 +9131,7 @@
       ],
       "cpe": "cpe:/a:thinkshout:mailchimp",
       "description": "Mailchimp is a marketing automation platform and email marketing service.",
+      "icon": "mailchimp.svg",
       "dns": {
         "TXT": [
           "spf\\.mandrillapp\\.com"
@@ -9142,57 +9143,17 @@
         "<form [^>]*name=\"mc-embedded-subscribe-form\"",
         "<input [^>]*id=\"mc-email\"\\;confidence:20",
         "<!-- Begin MailChimp Signup Form -->"
-      ],
-      "icon": "mailchimp.svg",
-      "scripts": [
-        "s3\\.amazonaws\\.com/downloads\\.mailchimp\\.com/js/mc-validate\\.js",
-        "cdn-images\\.mailchimp\\.com/[^>]*\\.css"
-      ],
-      "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
-      "website": "http://mailchimp.com"
-    },
-    "MailChimp for WooCommerce": {
-      "cats": [
-        32,
-        75
-      ],
-      "includes": "MailChimp",  
-      "description": "Mailchimp is a marketing automation platform and email marketing service.",
-      "icon": "mailchimp.svg",
-      "scripts": "mailchimp-woocommerce-public\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
-      "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
-      "website": "http://mailchimp.com"
-    },
-    "MailChimp for WordPress": {
-      "cats": [
-        32,
-        75
-      ],
-      "includes": "MailChimp",  
-      "description": "Mailchimp is a marketing automation platform and email marketing service.",
-      "icon": "mailchimp.svg",
+      ],     
       "js": {
         "mc4wp": "\\;confidence:50"
       },
-      "scripts": "mailchimp-for-wp/assets/js/forms\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
-      "saas": true,
-      "pricing": ["low", "freemium", "recurring"],
-      "website": "http://mailchimp.com"
-    },
-    "MailChimp for Shopify": {
-      "cats": [
-        32,
-        75
+      "scripts": [
+        "s3\\.amazonaws\\.com/downloads\\.mailchimp\\.com/js/mc-validate\\.js",
+        "cdn-images\\.mailchimp\\.com/[^>]*\\.css",
+        "mailchimp-woocommerce-public\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+        "mailchimp-for-wp/assets/js/forms\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1",
+        "chimpstatic\\.com/mcjs-connected"
       ],
-      "includes": "MailChimp",  
-      "description": "Mailchimp is a marketing automation platform and email marketing service.",
-      "icon": "mailchimp.svg",
-      "js": {
-        "$mcSite": "\\;confidence:50"
-      },
-      "scripts": "chimpstatic\\.com/mcjs-connected",
       "saas": true,
       "pricing": ["low", "freemium", "recurring"],
       "website": "http://mailchimp.com"
@@ -15499,9 +15460,15 @@
       "cats": [
         5
       ],
+      "description": "Taggbox is an UGC platform to collect, curate, manage rights, and publish user-generated content marketing campaigns across multiple channels.",
       "icon": "Taggbox.svg",
-      "script": "(widget|web)\\.taggbox\\.com",
-      "url": "(widget|web)\\.taggbox\\.com",
+      "js": {
+        "taggboxAjaxurl": ""
+      },
+      "scripts": [
+        "(?:widget|web)\\.taggbox\\.com",
+        "taggbox\\.com/app/js/embed\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
+      ],
       "saas": true,
       "pricing": ["low", "recurring", "freemium"],
       "website": "https://taggbox.com/"

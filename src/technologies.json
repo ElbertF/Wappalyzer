@@ -3813,8 +3813,8 @@
       "meta": {
         "generator": "^Contao Open Source CMS$"
       },
-      "description": "Contao is an open source CMS that allows you to create websites and scalable web applications."
-      "oss" true,
+      "description": "Contao is an open source CMS that allows you to create websites and scalable web applications.",
+      "oss": true,
       "website": "http://contao.org"
     },
     "Contenido": {
@@ -4009,12 +4009,6 @@
       "implies": "Yii",
       "oss": true,
       "pricing": ["low", "freemium", "recurring", "onetime"],
-      "pricing": [
-        "low",
-        "freemium",
-        "recurring",
-        "onetime"
-      ],
       "website": "https://craftcms.com"
     },
     "Craft Commerce": {
@@ -5341,7 +5335,7 @@
       "icon": "ExpressionEngine.svg",
       "implies": "PHP",
       "description": "ExpressionEngine is a free and open-source CMS.",
-      "oss" true,
+      "oss": true,
       "website": "http://expressionengine.com"
     },
     "ExtJS": {
@@ -5471,10 +5465,6 @@
       "description": "FareHarbor is an booking and schedule management solution intended for tour and activity companies.",
       "html": "<iframe[^>]+fareharbor",
       "icon": "FareHarbor.svg",
-      "pricing": [
-        "payg"
-      ],
-      "saas": true,
       "scripts": "fareharbor\\.com/embeds/api/",
       "saas": true,
       "pricing": ["poa"],
@@ -8652,9 +8642,9 @@
       "js": {
         "Liferay": ""
       },
-      "description": "Liferay is an open-source company that provides free documentation and paid professional service to users of its software."
+      "description": "Liferay is an open-source company that provides free documentation and paid professional service to users of its software.",
       "oss": true,
-      "pricing": ["poa],
+      "pricing": ["poa"],
       "website": "https://www.liferay.com"
     },
     "Lift": {
@@ -9916,14 +9906,9 @@
       "js": {
         "HealcodeWidget": ""
       },
-      "pricing": [
-        "mid",
-        "recurring"
-      ],
-      "saas": true,
       "scripts": "\\w+\\.healcode\\.com",
       "saas": true,
-      "pricing": ["mid"],
+      "pricing": ["mid", "recurring"],
       "website": "https://www.mindbodyonline.com"
     },
     "Minero.cc": {
@@ -12208,15 +12193,13 @@
         "PREBID_TIMEOUT": "",
         "pbjs": ""
       },
-      "oss": true,
-      "pricing": [
-        "freemium"
-      ],
+    
       "scripts": [
         "/prebid\\.js",
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
       ],
       "oss": true,
+      "pricing": ["freemium"],
       "website": "http://prebid.org"
     },
     "Prefix-Free": {
@@ -15322,18 +15305,18 @@
       "cats": [
         59
       ],
+      "description": "SweetAlert is a beautiful replacement for JavaScript's alert.",
       "html": "<link[^>]+?href=\"[^\"]+sweet-alert(?:\\.min)?\\.css",
       "icon": "SweetAlert.png",
-      "scripts": [
-        "sweet-alert(?:\\.min)?\\.js",
-        "sweetalert/([\\d.]+)/sweetalert(?:\\.min)\\.js"
-      ],
-      "website": "https://t4t5.github.io/sweetalert/"
+      "scripts": "sweet(?:-)?alert(?:\\.min)?\\.js",
+      "oss": true,
+      "website": "https://sweetalert.js.org"
     },
     "SweetAlert2": {
       "cats": [
         59
       ],
+      "description": "SweetAlert2 is a beautiful, responsive, customizable, accessible replacement for JavaScript's popup boxes.",
       "excludes": "SweetAlert",
       "html": "<link[^>]+?href=\"[^\"]+sweetalert2(?:\\.min)?\\.css",
       "icon": "SweetAlert2.png",
@@ -15346,6 +15329,7 @@
         "sweetalert2@([\\d.]+)/dist/sweetalert2(?:\\.all)(?:\\.min)\\.js",
         "limonte-sweetalert2/([\\d.]+)/sweetalert2(?:\\.all)(?:\\.min)\\.js"
       ],
+      "oss": true,
       "website": "https://sweetalert2.github.io/"
     },
     "Swell": {

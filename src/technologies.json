@@ -903,6 +903,22 @@
       ],
       "website": "http://blogengine.ru"
     },
+    "Affiliate Future": {
+      "cats": [
+        71
+      ],
+      "description": "Affiliate Future is a provider of advertisers with marketing solution through its affiliate network and tools.",
+      "icon": "Affiliate Future.png",
+      "dom": {
+        "img[src*='banners.affiliatefuture.com']": {
+          "attributes": {
+            "src": "banners\\.affiliatefuture\\.com"
+          }
+        }
+      },
+      "scripts": "tags\\.affiliatefuture\\.com",
+      "website": "http://affiliatefuture.com"
+    },
     "Afosto": {
       "cats": [
         6
@@ -1777,6 +1793,24 @@
       },
       "scripts": "asciinema\\.org/",
       "website": "https://asciinema.org/"
+    },
+    "Athena Search": {
+      "cats": [
+        29
+      ],
+      "description": "Athena Search is a customizable autocomplete, feature-rich dashboard, smart predictions, real-time reports search engine developed from scratch by Syncit Group’s.",
+      "icon": "Athena Search.svg",
+      "dom": {
+        "link[href*='athena/autocomplete/css/autocomplete.css']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "wp-content/plugins/athena-search",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.athenasearch.io"
     },
     "Atlassian Bitbucket": {
       "cats": [
@@ -3137,6 +3171,21 @@
         "generator": "Chamilo ([\\d.]+)\\;version:\\1"
       },
       "website": "http://www.chamilo.org"
+    },
+    "Chargebee": {
+      "cats": [
+        41
+      ],
+      "description": "Chargebee is a PCI Level 1 certified recurring billing platform for SaaS and subscription-based businesses.",
+      "icon": "Chargebee.svg",
+      "js": {
+        "Chargebee": "",
+        "chargebeeTrackFunc": ""
+      },
+      "scripts": "js\\.chargebee\\.com/v([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["mid","recurring"],
+      "website": "https://www.chargebee.com"
     },
     "Chart.js": {
       "cats": [
@@ -5559,6 +5608,23 @@
       "icon": "feedback-fish.svg",
       "scripts": "^https://feedback\\.fish/ff\\.js",
       "website": "https://feedback.fish"
+    },
+    "Financeads": {
+      "cats": [
+        71
+      ],
+      "description": "FinanceAds is a performance marketing agency that has grown affiliate network for the financial sector.",
+      "icon": "Financeads.png",
+      "dom": {
+        "link[href*='js.financeads.net'], link[href*='js.financeads.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.financeads.com"
     },
     "FingerprintJS": {
       "cats": [
@@ -8341,6 +8407,23 @@
       },
       "scripts": "klaviyo\\.com",
       "website": "https://www.klaviyo.com/"
+    },
+    "Klevu": {
+      "cats": [
+        29,
+        6
+      ],
+      "description": "Klevu is a highly advanced AI-Powered search solution for ecommerce platforms.",
+      "icon": "Klevu.png",
+      "js": {
+        "klevu_apiKey": "",
+        "klevu_layout": "",
+        "klevu_sessionId": ""
+      },
+      "scripts": "js\\.klevu\\.\\w+/klevu-js-v([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.klevu.com"
     },
     "Knockout.js": {
       "cats": [
@@ -11232,6 +11315,19 @@
       ],
       "website": "http://openx.com"
     },
+    "Optimise": {
+      "cats": [
+        71,
+        36
+      ],
+      "description": "Optimise Media Group is a UK-based performance advertising network.",
+      "icon": "Optimise.svg",
+      "js": {
+        "OMID": "^[0-9]+$"
+      },
+      "scripts": "track\\.omguk\\.com",
+      "website": "https://www.optimisemedia.com"
+    },
     "Optimizely": {
       "cats": [
         74
@@ -13769,6 +13865,23 @@
         "generator": "^Seamless\\.?CMS"
       },
       "website": "http://www.seamlesscms.com"
+    },
+    "Searchspring": {
+      "cats": [
+        6,
+        29
+      ],
+      "description": "Searchspring is a highly advanced search solution for ecommerce platforms.",
+      "icon": "Searchspring.svg",
+      "js": {
+        "SearchSpring": "",
+        "SearchSpringInit": "",
+        "SearchSpringConf": ""
+      },
+      "scripts": "cdn\\.searchspring\\.net",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://searchspring.com"
     },
     "Sectigo": {
       "cats": [

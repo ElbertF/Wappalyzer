@@ -340,6 +340,27 @@
       },
       "website": "https://github.com/sulu/web-js"
     },
+    "A8.net": {
+      "cats": [
+        71
+      ],
+      "description": " A8.net is an affiliate marketing network.",
+      "icon": "A8.net.png",
+      "dom": {
+        "img[src*='.a8.net']": {
+          "attributes": {
+            "src": "\\.a8\\.net"
+          }
+        }
+      },
+      "js": {
+        "a8sales": "",
+        "A8salesCookieRepository": "",
+        "map_A8": ""
+      },
+      "scripts": "statics\\.a8\\.net",
+      "website": "https://www.a8.net"
+    },
     "A-Frame": {
       "cats": [
         25
@@ -516,9 +537,15 @@
         68
       ],
       "description": "AccessiBe is an automated web accessibility solution for ADA and WCAG compliance. The system scans and analyzes a website using AI technology, and applies all the required adjustments to become ADA and WCAG 2.1 compliant.",
-      "icon": "Accessibe.svg",
-      "scripts": "acsbap\\.com/.*/acsb\\.js",
-      "website": "https://accessibe.com/"
+      "icon": "AccessiBe.svg",
+      "js": {
+        "acsb": "\\;confidence:50",
+        "acsbJS": "\\;confidence:50"
+      },
+      "scripts": "acsbapp?\\.com/.*/acsb\\.js",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://accessibe.com"
     },
     "Accesso": {
       "cats": [
@@ -532,6 +559,21 @@
       },
       "scripts": "/embed/accesso\\.js",
       "website": "https://accesso.com/"
+    },
+    "AccessTrade": {
+      "cats": [
+        71
+      ],
+      "description": "AccessTrade is an affiliate marketing platform based on the CPA model developed by Interspace Co.",
+      "icon": "AccessTrade.png",
+      "dom": {
+        "img[src*='.accesstrade.net'],img[data-src*='.accesstrade.net']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "website": "https://www.accesstrade.ne.jp"
     },
     "Act-On": {
       "cats": [
@@ -903,6 +945,23 @@
       ],
       "website": "http://blogengine.ru"
     },
+    "Affiliate B": {
+      "cats": [
+        71,
+        36
+      ],
+      "description": "Affiliate B is an advertising system that allows site operators (HP, blogs, e-mail newsletters, etc.) to place advertiser advertisements on their own sites.",
+      "icon": "Affiliate B.svg",
+      "dom": {
+        "img[src*='www.afi-b.com']": {
+          "attributes": {
+            "src": "www\\.afi-b\\.com"
+          }
+        }
+      },
+      "scripts": "t\\.afi-b\\.com",
+      "website": "https://affiliate-b.com"
+    },
     "Affiliate Future": {
       "cats": [
         71
@@ -1038,6 +1097,8 @@
         "X-Akamai-Transformed": ""
       },
       "icon": "akamai.svg",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://akamai.com"
     },
     "Akamai Bot Manager": {
@@ -1052,7 +1113,48 @@
       "description": "Akamai Bot Manager detect bots using device fingerprinting bot signatures.",
       "icon": "akamai.svg",
       "implies": "Akamai",
-      "website": "http://akamai.com/bot-manager"
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.akamai.com/us/en/products/security/bot-manager.jsp"
+    },
+    "Akamai mPulse": {
+      "cats": [
+        13,
+        10
+      ],
+      "description": "Akamai mPulse is a real user monitoring (RUM) solution that enables companies to monitor, find, and fix website and application performance issues.",
+      "icon": "akamai.svg",
+      "cookies": {
+        "akaas_AB-Testing": ""
+      },
+      "js": {
+        "BOOMR_mq": "",
+        "BOOMR_API_key": "",
+        "BOOMR": "",
+        "BOOMR_lstart": ""
+      },
+      "implies": "Akamai",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.akamai.com/uk/en/products/performance/mpulse-real-user-monitoring.jsp"
+    },
+    "Akamai Web Application Protector": {
+      "cats": [
+        16
+      ],
+      "description": "Akamai Web Application Protector is designed for companies looking for a more automated approach to web application firewall (WAF) and distributed denial-of-service (DDoS) security.",
+      "icon": "akamai.svg",
+      "js": {
+        "AKSB": "\\;confidence:50"
+      },
+      "scripts": [
+        "ds-aksb-a\\.akamaihd\\.net/aksb.min.js",
+        "aksb\\.min\\.js\\;confidence:50"
+      ],
+      "implies": "Akamai",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.akamai.com/us/en/products/security/web-application-protector-enterprise-waf-firewall-ddos-protection.jsp"
     },
     "Akaunting": {
       "cats": [
@@ -1257,7 +1359,13 @@
       "html": "<meta id=\"amazon-payments",
       "icon": "Amazon Pay.svg",
       "js": {
-        "AmazonPayments": ""
+        "AmazonPayments": "",
+        "enableAmazonPay": ""
+      },
+      "dom": {
+        "img[src*='amazonpay']": {
+          "text": ""
+        }
       },
       "scripts": [
         "/amazonpayments(?:\\.min)?\\.js",
@@ -1642,6 +1750,10 @@
         "<[^>]+aria-labelledby=\"pi-apple_pay",
         "<script id=\"apple-pay"
       ],
+      "js": {
+        "enableApplePay": "",
+        "ApplePay": ""
+      },
       "icon": "Apple.svg",
       "website": "https://www.apple.com/apple-pay"
     },
@@ -2624,18 +2736,6 @@
       "icon": "Botble-CMS.png",
       "implies": "Laravel",
       "website": "https://botble.com"
-    },
-    "Bounce Exchange": {
-      "cats": [
-        32
-      ],
-      "description": "Bounce Exchange is a software for behavioural marketing technologies, created to de-anonymise site visitors, analyse their digital behaviour and create relevant digital experiences regardless of channel or device.",
-      "icon": "Bounce Exchange.svg",
-      "js": {
-        "bouncex": ""
-      },
-      "scripts": "^https?://tag\\.bounceexchange\\.com/",
-      "website": "http://www.bounceexchange.com"
     },
     "Braintree": {
       "cats": [
@@ -5609,6 +5709,20 @@
       "scripts": "^https://feedback\\.fish/ff\\.js",
       "website": "https://feedback.fish"
     },
+      "FilePond": {
+      "cats": [
+        59
+      ],
+      "description": "FilePond is a JavaScript library for file uploads.",
+      "icon": "filepond.svg",
+      "js": {
+        "FilePond": "",
+        "FilePond.create": "",
+        "FilePond.setOptions": "",
+      },
+      "scripts": "filepond.js",
+      "website": "https://pqina.nl/filepond/"
+    },
     "Financeads": {
       "cats": [
         71
@@ -5806,17 +5920,18 @@
       "description": "Font Awesome is a font and icon toolkit based on CSS and Less.",
       "html": [
         "<link[^>]* href=[^>]+(?:([\\d.]+)/)?(?:css/)?font-awesome(?:\\.min)?\\.css\\;version:\\1",
-        "<link[^>]* href=[^>]*?(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:[^>]*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)\\;version:\\1",
         "<link[^>]* href=[^>]*kit\\-pro\\.fontawesome\\.com/releases/v([0-9.]+)/\\;version:\\1"
       ],
       "icon": "font-awesome.svg",
       "js": {
-        "___FONT_AWESOME___": ""
+        "___FONT_AWESOME___": "",
+        "FontAwesomeCdnConfig": ""
       },
       "scripts": [
         "(?:F|f)o(?:n|r)t-?(?:A|a)wesome(?:.*?([0-9a-fA-F]{7,40}|[\\d]+(?:.[\\d]+(?:.[\\d]+)?)?)|)",
-        "kit\\.fontawesome\\.com/([0-9a-z]+).js"
+        "\\.fontawesome\\.com/([0-9a-z]+).js"
       ],
+      "pricing": ["low", "freemium", "recurring"],
       "website": "https://fontawesome.com/"
     },
     "Fork CMS": {
@@ -6535,7 +6650,8 @@
       "js": {
         "Goog_AdSense_": "",
         "__google_ad_urls": "",
-        "google_ad_": ""
+        "google_ad_": "",
+        "Goog_AdSense_OsdAdapter": ""
       },
       "saas": true,
       "scripts": [
@@ -6692,6 +6808,18 @@
       "icon": "Google Plus.svg",
       "scripts": "apis\\.google\\.com/js/[a-z]*\\.js",
       "website": "http://plus.google.com"
+    },
+    "Google Publisher Tag": {
+      "cats": [
+        36
+      ],
+      "description": "Google Publisher Tag (GPT) is an ad tagging library for Google Ad Manager which is used to dynamically build ad requests.",
+      "icon": "Google Publisher Tag.svg",
+      "scripts": [
+        "googletagservices\\.com/tag/js/gpt\\.js",
+        "securepubads\\.g\\.doubleclick\\.net/gpt"
+      ],
+      "website": "https://developers.google.com/publisher-tag/guides/get-started"
     },
     "Google Sign-in": {
       "cats": [
@@ -7662,6 +7790,21 @@
       "scripts": "/rokoInstabot\\.js",
       "website": "https://instabot.io/"
     },
+    "Instana": {
+      "cats": [
+        10,
+        13
+      ],
+      "description": "Instana is a Kubernetes-native APM tool which is built for new-stack including Microservices and lately Serverless but also supports the existing VM based stacks  including several supported technologies.",
+      "icon": "Instana.svg",
+      "js": {
+        "ineum": ""
+      },
+      "scripts": "eum\\.instana\\.io",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.instana.com"
+    },
     "InstantCMS": {
       "cats": [
         1
@@ -7932,6 +8075,21 @@
         "generator": "Jalios"
       },
       "website": "http://www.jalios.com"
+    },
+    "JANet": {
+      "cats": [
+        71
+      ],
+      "description": "JANet is an affiliate marketing network.​",
+      "icon": "JANet.png",
+      "dom": {
+        "img[src*='.j-a-net.jp'],img[data-src*='.j-a-net.jp']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "website": "https://j-a-net.jp"
     },
     "Java": {
       "cats": [
@@ -8841,6 +8999,24 @@
       },
       "scripts": "^list\\.(?:min\\.)?js$",
       "website": "http://listjs.com"
+    },
+    "Listrak": {
+      "cats": [
+        32
+      ],
+      "description": "Listrak is a AI-based marketing automation and CRM solutions that unify, interpret and personalize data to engage customer across channels and devices.",
+      "icon": "Listrak.png",
+      "js": {
+        "_LTKSubscriber": "",
+        "_LTKSignup": ""
+      },
+      "scripts": [
+        "(?:cdn|s1)\\.listrakbi\\.com",
+        "services\\.listrak\\.com"
+      ],
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.listrak.com"
     },
     "LiteSpeed": {
       "cats": [
@@ -9859,6 +10035,26 @@
       "icon": "Microsoft 365.svg",
       "website": "https://www.microsoft.com/microsoft-365"
     },
+    "Microsoft Advertising": {
+      "cats": [
+        10,
+        36
+      ],
+      "description": "Microsoft Advertising is a service that provides pay per click advertising on both the Bing and Yahoo! search engines.",
+      "icon": "Microsoft.png",
+      "js": {
+        "uetq": "",
+        "UET": ""
+      },
+      "cookies": {
+        "_uetsid": "\\w+",
+        "_uetvid": "\\w+"
+      },
+      "saas": true,
+      "pricing": ["payg"],
+      "scripts": "bat\\.bing\\.com/bat\\.js",
+      "website": "https://about.ads.microsoft.com"
+    },
     "Microsoft ASP.NET": {
       "cats": [
         18
@@ -9968,6 +10164,20 @@
         "generator": "Microsoft Word( [\\d.]+)?\\;version:\\1"
       },
       "website": "https://office.microsoft.com/word"
+    },
+    "Miestro": {
+      "cats": [
+        6
+      ],
+      "description": "Miestro is an all-in-one ecommerce platform wich allow create online course and membership sites.",
+      "icon": "Miestro.svg",
+      "meta": {
+        "base_url": ".+\\.miestro\\.com"
+      },
+      "scripts": "\\.miestro\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://miestro.com"
     },
     "Milligram": {
       "cats": [
@@ -11761,6 +11971,18 @@
       "scripts": "paths(?:\\.min)?\\.js",
       "website": "https://github.com/andreaferretti/paths-js"
     },
+    "PayKickStart": {
+      "cats": [
+        5,
+        71
+      ],
+      "description": "PayKickstart is an online shopping cart and affiliate management platform with built-in conversion enhancing features like one-click upsells for credit card/paypal, order bumps, custom checkout pages/widgets/embed forms, coupon management, auto-complete shipping fields, subscription saver sequences, and more.",
+      "icon": "PayKickStart.png",
+      "scripts": "app\\.paykickstart\\.com",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://paykickstart.com"
+    },
     "PayPal": {
       "cats": [
         41
@@ -11778,7 +12000,10 @@
       "html": "<input[^>]+_s-xclick",
       "icon": "PayPal.svg",
       "js": {
-        "PAYPAL": ""
+        "PAYPAL": "",
+        "paypalClientId": "",
+        "paypalJs": "",
+        "enablePaypal": ""
       },
       "pricing": [
         "payg"
@@ -12048,6 +12273,21 @@
       ],
       "website": "https://pixelfed.org"
     },
+    "Pixlee": {
+      "cats": [
+        32
+      ],
+      "description": "Pixlee is a visual marketing platform that helps brands leverage user-generated content to improve their marketing performance.",
+      "icon": "Pixlee.png",
+      "js": {
+        "Pixlee_Analytics": "",
+        "Pixlee": ""
+      },
+      "scripts": "assets\\.pixlee\\.com",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://pixlee.com"
+    },
     "Planet": {
       "cats": [
         49
@@ -12237,6 +12477,26 @@
         "/popper\\.js/([0-9.]+)\\;version:\\1"
       ],
       "website": "https://popper.js.org"
+    },
+    "Post Affiliate Pro": {
+      "cats": [
+        71
+      ],
+      "description": "Post Affiliate Pro is a software built for online stores and ecommerce websites that need to track and monitor their affiliate network.",
+      "icon": "Post Affiliate Pro.svg",
+      "js": {
+        "PostAffAction": "",
+        "PostAffTracker": "",
+        "PostAffCookie": "",
+        "PostAffInfo": ""
+      },
+      "scripts": [
+        "postaffiliatepro\\.com/scripts/trackjs\\.js",
+        "(?:affiliate|associate)\\..+/scripts/trackjs\\.js"
+      ],
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.postaffiliatepro.com"
     },
     "Posterous": {
       "cats": [
@@ -13040,6 +13300,30 @@
         "/redux(@|/)([\\d.]+)(?:/[a-z]+)?/redux(?:.min)?\\.js\\;version:\\2"
       ],
       "website": "https://redux.js.org/"
+    },
+    "Refersion": {
+      "cats": [
+        71,
+        36
+      ],
+      "description": "Refersion is an affiliate management app.",
+      "icon": "Refersion.svg",
+      "dom": {
+        "a[href*='.refersion.com']": {
+          "attributes": {
+            "href": ""
+          }
+        },
+        "img[src*='cdn.refersion.com'],img[src*='s3.amazonaws.com/refersion_client/']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "scripts": "\\.refersion\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "http://refersion.com"
     },
     "Regiondo": {
       "cats": [
@@ -13986,6 +14270,20 @@
       "icon": "Semantic-ui.png",
       "scripts": "/semantic(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://semantic-ui.com/"
+    },
+    "SEMrush": {
+      "cats": [
+        32
+      ],
+      "description": "SEMrush is an all-in-one tool suite for improving online visibility and discovering marketing insights.",
+      "icon": "SEMrush.svg",
+      "js": {
+        "SEMRUSH": ""
+      },
+      "scripts": "www\\.semrush\\.com",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.semrush.com"
     },
     "Sencha Touch": {
       "cats": [
@@ -16649,6 +16947,27 @@
       "scripts": "vaadinBootstrap\\.js(?:\\?v=([\\d.]+))?\\;version:\\1",
       "website": "https://vaadin.com"
     },
+    "ValueCommerce": {
+      "cats": [
+        71
+      ],
+      "description": "ValueCommerce is a pay-per-performance advertising affiliate marketing network.",
+      "icon": "ValueCommerce.png",
+      "dom": {
+        "img[src*='ap.valuecommerce.com'],img[data-src*='ap.valuecommerce.com']": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "a[href*='ap.valuecommerce.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "\\.valuecommerce\\.com",
+      "website": "https://www.valuecommerce.co.jp"
+    },
     "Vanilla": {
       "cats": [
         2
@@ -16832,6 +17151,11 @@
       ],
       "html": "<[^>]+aria-labelledby=\"pi-visa",
       "icon": "Visa.svg",
+      "js": {
+        "visaApi": "",
+        "visaSrc": "",
+        "visaImage": ""
+      },
       "website": "https://www.visa.com"
     },
     "Visa Checkout": {
@@ -17656,6 +17980,20 @@
       "html": "<title>Wowza Media Server \\d+ ((?:\\w+ Edition )?\\d+\\.[\\d\\.]+(?: build\\d+)?)?\\;version:\\1",
       "icon": "Wowza Media Server.png",
       "website": "http://www.wowza.com"
+    },
+    "Wunderkind": {
+      "cats": [
+        32
+      ],
+      "description": "Wunderkind (Formerly BounceX) is a software for behavioural marketing technologies, created to de-anonymise site visitors, analyse their digital behaviour and create relevant digital experiences regardless of channel or device.",
+      "icon": "Wunderkind.svg",
+      "js": {
+        "bouncex": ""
+      },
+      "saas": true,
+      "pricing": ["poa"],
+      "scripts": "\\.bounceexchange\\.com",
+      "website": "https://www.wunderkind.co"
     },
     "X-Cart": {
       "cats": [

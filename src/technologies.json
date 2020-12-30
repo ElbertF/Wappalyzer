@@ -14901,6 +14901,37 @@
       "scripts": "plugin\\.skedify\\.io",
       "website": "https://calendly.com/"
     },
+    "SkyfallenSecureForms":{
+      "cats": [
+        73
+      ],
+      "description": "SkyfallenSecureForms allows you to collet form responses wth RSA and AES encryption.",
+      "implies": ["PHP"],
+      "icon": "Skyfallen.png",
+      "cookies": {
+        "SecureFormSession":""
+      },
+      "headers": {
+         "X-Powered-By": "SkyfallenSecureForms"
+      },
+      "oss": true,
+      "website": "https://www.theskyfallen.com"
+
+    },
+    "SkyMake":{
+      "cats": [
+        21
+      ],
+      "description": "SkyMake provides you easy-to-use learning services with minimalism.",
+      "implies": ["PHP"],
+      "icon": "Skyfallen.png",
+      "cookies": {
+        "SkyMakeSessionStorage":""
+      },
+      "oss": true,
+      "website": "https://www.theskyfallen.com"
+
+    },
     "SkyVerge": {
       "cats": [
         41

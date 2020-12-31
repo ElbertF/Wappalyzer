@@ -5718,7 +5718,7 @@
       "js": {
         "FilePond": "",
         "FilePond.create": "",
-        "FilePond.setOptions": "",
+        "FilePond.setOptions": ""
       },
       "scripts": "filepond.js",
       "website": "https://pqina.nl/filepond/"

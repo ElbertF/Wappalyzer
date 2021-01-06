@@ -77,7 +77,7 @@ Options:
 }
 
 ;(async function () {
-  const wappalyzer = await new Wappalyzer(options)
+  const wappalyzer = new Wappalyzer(options)
 
   try {
     await wappalyzer.init()

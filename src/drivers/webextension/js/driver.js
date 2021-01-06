@@ -267,41 +267,11 @@ const Driver = {
             )
           })
 
-          /*
-          let certIssuer = ''
-
-          if (
-            browser &&
-            browser.webRequest &&
-            browser.webRequest.getSecurityInfo
-          ) {
-            // Currently only works in Firefox
-            // See https://stackoverflow.com/a/50484642
-            const { certificates } = await browser.webRequest.getSecurityInfo(
-              request.requestId,
-              {
-                certificateChain: false,
-                rawDER: false,
-              }
-            )
-
-            if (certificates && certificates.length) {
-              certIssuer = certificates[0].issuer.replace(
-                /^.*CN=([^,]+).*$/,
-                '$1'
-              )
-            }
-          }
-          */
-
           if (
             headers['content-type'] &&
             /\/x?html/.test(headers['content-type'][0])
           ) {
-            await Driver.onDetect(
-              request.url,
-              analyze({ headers /*, certIssuer */ })
-            )
+            await Driver.onDetect(request.url, analyze({ headers }))
           }
         }
       } catch (error) {

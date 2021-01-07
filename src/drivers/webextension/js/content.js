@@ -92,7 +92,14 @@ const Content = {
         language,
       ])
 
-      Content.onGetTechnologies(await Content.driver('getTechnologies'))
+      const technologies = await Content.driver('getTechnologies')
+
+      Content.onGetTechnologies(technologies)
+
+      // Delayed second pass to capture async JS
+      await new Promise((resolve) => setTimeout(resolve, 5000))
+
+      Content.onGetTechnologies(technologies)
     } catch (error) {
       Content.driver('error', error)
     }

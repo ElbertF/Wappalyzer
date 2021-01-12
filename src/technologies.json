@@ -7590,20 +7590,19 @@
       "icon": "IBM.svg",
       "website": "http://ibm.com/software/webservers/httpservers"
     },
-    "IBM WebSphere Commerce": {
+    "HCL Commerce": {
       "cats": [
         6
       ],
-      "cpe": "cpe:/a:ibm:websphere_commerce_suite",
       "html": "<(?:a|link|script)[^>]*(?:href|src)=\".*(?:/wcsstore/|webapp\\/wcs)",
-      "icon": "IBM.svg",
+      "icon": "HCL Commerce.svg",
       "implies": "Java",
       "pricing": [
         "poa"
       ],
       "saas": true,
       "url": "/wcs/",
-      "website": "http://ibm.com/software/genservers/commerceproductline"
+      "website": "https://www.hcltechsw.com/products/commerce"
     },
     "IIS": {
       "cats": [

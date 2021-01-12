@@ -66,9 +66,9 @@ const options = {
   htmlMaxRows: 2000,
 };
 
-;(async function() {
-  const wappalyzer = new Wappalyzer(options)
+const wappalyzer = new Wappalyzer(options)
 
+;(async function() {
   try {
     await wappalyzer.init()
 
@@ -98,9 +98,9 @@ const Wappalyzer = require('wappalyzer');
 
 const urls = ['https://www.wappalyzer.com', 'https://www.example.com']
 
-;(async function() {
-  const wappalyzer = await new Wappalyzer()
+const wappalyzer = new Wappalyzer()
 
+;(async function() {
   try {
     await wappalyzer.init()
 

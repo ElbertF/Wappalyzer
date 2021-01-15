@@ -374,6 +374,22 @@
       "scripts": "statics\\.a8\\.net",
       "website": "https://www.a8.net"
     },
+    "AB Tasty": {
+      "cats": [
+        74
+      ],
+      "description": "AB Tasty is a customer experience optimization company. AB Tasty offers AI-driven experimentation, personalization, and product optimization platforms for user testing.",
+      "icon": "AB Tasty.svg",
+      "js": {
+        "_abtasty": "",
+        "ABTasty": "",
+        "loadABTasty": ""
+      },
+      "scripts": "try\\.abtasty\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.abtasty.com"
+    },
     "AD EBiS": {
       "cats": [
         10
@@ -672,10 +688,14 @@
     },
     "AddShoppers": {
       "cats": [
-        5
+        5,
+        10
       ],
+      "description": "AddShoppers is the social media marketing command center for small-medium online retailers.",
       "icon": "AddShoppers.png",
-      "scripts": "cdn\\.shop\\.pe/widget/",
+      "scripts": "(?:cdn\\.)?shop\\.pe/widget/",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "http://www.addshoppers.com"
     },
     "AddThis": {
@@ -861,7 +881,8 @@
     },
     "Adobe Target": {
       "cats": [
-        32
+        32,
+        74
       ],
       "description": "Adobe Target is an A/B testing, multi-variate testing, personalisation, and optimisation application",
       "icon": "Adobe.svg",
@@ -869,6 +890,8 @@
         "adobe.target": "",
         "adobe.target.VERSION": "^(.+)$\\;version:\\1"
       },
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.adobe.com/marketing/target.html"
     },
     "AdonisJS": {
@@ -1745,6 +1768,16 @@
       "scripts": "adrum",
       "website": "https://appdynamics.com"
     },
+    "Appian": {
+      "cats": [
+        62
+      ],
+      "description": "Appian is an enterprise low-code application platform.",
+      "icon": "Appian.png",
+      "saas": true,
+      "scripts": "\/suite\/tempo\/ui\/sail-client\/embeddedBootstrap.nocache.js",
+      "website": "https://www.appian.com"
+    },
     "AppNexus": {
       "cats": [
         36
@@ -2551,6 +2584,45 @@
       "icon": "Bloomreach.png",
       "website": "https://developers.bloomreach.com"
     },
+    "Bloomreach Search & Merchandising": {
+      "cats": [
+        29,
+        10,
+        32,
+        74
+      ],
+      "description": "Bloomreach Search & Merchandising (brSM) is an AI-driven platform for ecommerce.",
+      "icon": "Bloomreach.png",
+      "js": {
+        "br_data": "",
+        "BrTrk": ""
+      },
+      "scripts": [
+        "cdns\\.brsrvr\\.com/v([\\d.]+)\\;version:\\1",
+        "cdn\\.brcdn\\.com/v([\\d.]+)\\;version:\\1"
+      ],
+      "saas": true,
+      "pricing": ["high", "recurring"],
+      "website": "https://developers.bloomreach.com/products/personalization/dev-studio"
+    },
+    "Bluecore": {
+      "cats": [
+        32,
+        75
+      ],
+      "description": "Bluecore is a retail marketing technology that uses data gained from direct marketing like email, social media, site activity.",
+      "icon": "Bluecore.svg",
+      "js": {
+        "triggermail": "",
+        "triggermail_email_address": "",
+        "bluecore_action_trigger": "",
+        "_bluecoreTrack": ""
+      },
+      "scripts": "\\.bluecore\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.bluecore.com"
+    },
     "Bluefish": {
       "cats": [
         20
@@ -2780,6 +2852,25 @@
       "scripts": "js\\.braintreegateway\\.com",
       "website": "https://www.braintreepayments.com"
     },
+    "Branch": {
+      "cats": [
+        32,
+        10
+      ],
+      "description": "Branch is a mobile deep linking system to increase engagement and retention.",
+      "icon": "Branch.png",
+      "js": {
+        "branch.setBranchViewData": "",
+        "branch_callback__0": ""
+      },
+      "scripts": [
+        "cdn\\.branch\\.io",
+        "app\\.link/_r\\?sdk=web([\\d.]+)\\;version:\\1"
+      ],
+      "saas": true,
+      "pricing": ["poa", "freemium"],
+      "website": "https://branch.io"
+    },
     "Braze": {
       "cats": [
         32,
@@ -2808,6 +2899,23 @@
       "icon": "Brightspot.svg",
       "implies": "Java",
       "website": "https://www.brightspot.com"
+    },
+    "Bronto": {
+      "cats": [
+        32,
+        75
+      ],
+      "description": "Bronto is a cloud-based email marketing automation software.",
+      "icon": "Bronto.svg",
+      "js": {
+        "bronto.versions.sca": "(.+)\\;version:\\1",
+        "BrontoShopify": "",
+        "brontoCookieConsent": ""
+      },
+      "scripts": "(?:snip|cdn)\\.bronto\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://bronto.com"
     },
     "BrowserCMS": {
       "cats": [
@@ -3438,6 +3546,17 @@
       "scripts": "scripts\\.chitika\\.net/",
       "website": "http://chitika.com"
     },
+    "Choices": {
+      "description": "Choices.js is a lightweight, configurable select box/text input plugin.",
+      "cats": [
+        19
+      ],
+      "icon": "Choices.png",
+      "scripts": [
+        "choices\\.js/|@([\\d.]+)(?:/assets)?(?:/scripts)?(?:/styles)?(?:/dist)?/choices(?:\\.min)?\\.js|css\\;version:\\1"
+      ],
+      "website": "https://joshuajohnson.co.uk/Choices/"
+    },
     "Chorus": {
       "cats": [
         1
@@ -3647,11 +3766,11 @@
       "scripts": "clipboard(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://clipboardjs.com/"
     },
-    "Cloud Platform": {
+    "Acquia Cloud Platform": {
       "cats": [
         62
       ],
-      "description": "Cloud Platform (formally Acquia Cloud) is a Drupal-tuned application lifecycle management suite with an infrastructure to support Drupal deployment workflow processes.",
+      "description": "Acquia Cloud Platform is a Drupal-tuned application lifecycle management suite with an infrastructure to support Drupal deployment workflow processes.",
       "headers": {
         "X-AH-Environment": "^\\w+$"
       },
@@ -5276,7 +5395,7 @@
       "cats": [
         51
       ],
-      "description": "WordPress is a free and open-source content management system used to create a website or blog.",
+      "description": "Elementor is a website builder platform for professionals on WordPress.",
       "html": [
         "<div class=(?:\"|')[^\"']*elementor",
         "<section class=(?:\"|')[^\"']*elementor",
@@ -5284,7 +5403,6 @@
         "<link [^>]*href=(?:\"|')[^\"']*uploads/elementor/css"
       ],
       "icon": "Elementor.png",
-      "implies": "WordPress",
       "js": {
         "elementorFrontend.getElements": ""
       },
@@ -6002,6 +6120,20 @@
       "implies": "WordPress",
       "website": "https://getflywheel.com"
     },
+    "Fomo": {
+      "cats": [
+        32
+      ],
+      "description": "Fomo is a social proof marketing platform.",
+      "icon": "Fomo.png",
+      "js": {
+        "fomo.version": "(.+)\\;version:\\1"
+      },
+      "scripts": "fomo\\.com/api/v",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://fomo.com"
+    },
     "Font Awesome": {
       "cats": [
         17
@@ -6508,6 +6640,21 @@
       },
       "website": "http://get-simple.info"
     },
+    "GetSocial": {
+      "cats": [
+        69,
+        10
+      ],
+      "description": "GetSocial is a social analytics and publishing platform.",
+      "icon": "GetSocial.png",
+      "js": {
+        "GETSOCIAL_VERSION": "(.+)\\;version:\\1"
+      },
+      "scripts": "api\\.at\\.getsocial\\.io",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://getsocial.io"
+    },
     "Ghost": {
       "cats": [
         11
@@ -6825,6 +6972,18 @@
       },
       "icon": "google_cloud.svg",
       "website": "https://cloud.google.com"
+    },
+    "Google Cloud Storage": {
+      "cats": [
+        19
+      ],
+      "description": "Google Cloud Storage allows world-wide storage and retrieval of any amount of data at any time.",
+      "headers": {
+        "x-goog-storage-class": "^\\w+$"
+      },
+      "icon": "google-cloud-storage.svg",
+      "implies": "Google Cloud",
+      "website": "https://cloud.google.com/storage"
     },
     "Google Code Prettify": {
       "cats": [
@@ -7922,6 +8081,30 @@
       },
       "website": "http://www.instantcms.ru"
     },
+    "Instapage": {
+      "cats": [
+        51,
+        74,
+        10
+      ],
+      "description": "Instapage is a cloud-based landing page platform designed for marketing teams and agencies.",
+      "icon": "Instapage.svg",
+      "implies": [
+        "Lua",
+        "Node.js"
+      ],
+      "js": {
+        "instapageSp": "",
+        "_instapageSnowplow": ""
+      },
+      "scripts": [
+        "cdn\\.instapagemetrics\\.com",
+        "heatmap-events-collector\\.instapage\\.com"
+      ],
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://instapage.com"
+    },
     "Intel Active Management Technology": {
       "cats": [
         22,
@@ -8509,6 +8692,32 @@
       "saas": true,
       "website": "https://newkajabi.com"
     },
+    "Kameleoon": {
+      "cats": [
+        74
+      ],
+      "description": "Kameleoon is a personalization technology platform for real-time omnichannel optimization and conversion.",
+      "icon": "Kameleoon.svg",
+      "dom": {
+        "link[href*='.kameleoon.eu/kameleoon.js']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "cookies": {
+        "kameleoonVisitorCode": ""
+      },
+      "js": {
+        "Kameleoon.Gatherer.SCRIPT_VERSION": "(.+)\\;version:\\1",
+        "kameleoonEndLoadTime": "",
+        "kameleoonS": ""
+      },
+      "scripts": "\\.kameleoon\\.\\w+/kameleoon\\.js",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://kameleoon.com/"
+    },
     "Kampyle": {
       "cats": [
         10,
@@ -8627,6 +8836,33 @@
       "implies": "Node.js",
       "url": "kibana#/dashboard/",
       "website": "http://www.elastic.co/products/kibana"
+    },
+    "Kibo Commerce": {
+      "cats": [
+        6
+      ],
+      "description": "Kibo Commerce is a enterprise ecommerce platform  that offers a cloud-based, end-to-end commerce solution for retailers and branded manufacturers.",
+      "icon": "Kibo.png",
+      "scripts": "cdn-tp\\d+\\.mozu\\.com",
+      "pricing": ["poa"],
+      "website": "https://kibocommerce.com"
+    },
+    "Kibo Personalization": {
+      "cats": [
+        10,
+        74
+      ],
+      "description": "Kibo Personalization is a omnichannel personalization software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
+      "icon": "Kibo.png",
+      "js": {
+        "monetateT": "",
+        "monetateQ": "",
+        "monetate": ""
+      },
+      "scripts": "\\.monetate\\.net",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://kibocommerce.com/personalization-software"
     },
     "KineticJS": {
       "cats": [
@@ -9112,9 +9348,12 @@
       ],
       "icon": "List.js.png",
       "js": {
-        "List": ""
+        "List": "\\;confidence:50"
       },
-      "scripts": "^list\\.(?:min\\.)?js$",
+      "scripts": [
+        "list\\.js/\\;confidence:50",
+        "@([\\d.]+)/(?:/dist)?list\\.(?:min\\.)?js\\;version:\\1"
+      ],
       "website": "http://listjs.com"
     },
     "Listrak": {
@@ -9276,13 +9515,12 @@
         10
       ],
       "html": [
-        "<script[^<>]*>[^]{0,128}?src\\s*=\\s*['\"]//counter\\.yadro\\.ru/hit(?:;\\S+)?\\?(?:t\\d+\\.\\d+;)?r",
+        "<script [^>]*>[\\s\\S]*//counter\\.yadro\\.ru/hit",
         "<!--LiveInternet counter-->",
         "<!--/LiveInternet-->",
         "<a href=\"http://www\\.liveinternet\\.ru/click\""
       ],
       "icon": "Liveinternet.png",
-      "scripts": "/js/al/common\\.js\\?[0-9_]+",
       "website": "http://liveinternet.ru/rating/"
     },
     "Livewire": {
@@ -11806,7 +12044,6 @@
       "headers": {
         "X-ATG-Version": "(?:ATGPlatform/([\\d.]+))?\\;version:\\1"
       },
-      "html": "<[^>]+_dyncharset",
       "icon": "Oracle.png",
       "website": "http://www.oracle.com/applications/customer-experience/commerce/products/commerce-platform/index.html"
     },
@@ -12143,7 +12380,7 @@
       "cats": [
         62
       ],
-      "description": "Pantheon is a Website Management Platform for WordPress and Drupal.",
+      "description": "Pantheon is a WebOps (Website Operations) and Management Platform for WordPress and Drupal.",
       "headers": {
         "Server": "^Pantheon",
         "x-pantheon-styx-hostname": "",
@@ -12153,7 +12390,8 @@
       "implies": [
         "PHP",
         "Nginx",
-        "MariaDB"
+        "MariaDB",
+        "Fastly"
       ],
       "website": "https://pantheon.io/"
     },
@@ -13118,6 +13356,21 @@
       "scripts": "\\.quantserve\\.com/quant\\.js",
       "website": "https://www.quantcast.com/products/measure-audience-insights/"
     },
+    "Qubit": {
+      "cats": [
+        74
+      ],
+      "description": "Qubit is a SaaS based persuasive personalization at scale services.",
+      "icon": "Qubit.png",
+      "js": {
+        "__qubit": "",
+        "onQubitReady": ""
+      },
+      "scripts": "static\\.goqubit\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.qubit.com"
+    },
     "Question2Answer": {
       "cats": [
         15
@@ -13207,7 +13460,7 @@
       "html": [
         "<link[^>]+href=\"[^\"]*rdoc-style\\.css",
         "Generated by <a[^>]+href=\"https?://rdoc\\.rubyforge\\.org[^>]+>RDoc</a> ([\\d.]*\\d)\\;version:\\1",
-        "<footer(?:(?!<\\/footer>)[^]){1,500}<p>\\s*Generated by <a href=\"https:\\/\\/ruby\\.github\\.io\\/rdoc\\/\">RDoc<\\/a> ([\\d.]*\\d)\\;version:\\1"
+        "Generated by <a href=\"https:\\/\\/ruby\\.github\\.io\\/rdoc\\/\">RDoc<\\/a> ([\\d.]*\\d)\\;version:\\1"
       ],
       "icon": "RDoc.png",
       "implies": "Ruby",
@@ -14313,6 +14566,25 @@
       "scripts": "service\\.force\\.com",
       "website": "https://www.salesforce.com/au/products/service-cloud/"
     },
+    "Sanity": {
+      "cats": [
+        1
+      ],
+      "description": "Sanity is a platform for structured content. It comes with an open-source, headless CMS that can be customized with Javascript, a real-time hosted data store and an asset delivery pipeline.",
+      "dom": {
+        "img[src*='cdn.sanity.io'],img[srcset*='cdn.sanity.io'],video[src*='cdn.sanity.io'],source[src*='cdn.sanity.io'],source[srcset*='cdn.sanity.io'],track[src*='cdn.sanity.io']": {
+          "attributes": { "src": "", "srcset": "" }
+        }
+      },
+      "icon": "Sanity.svg",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://www.sanity.io"
+    },
     "Sapper": {
       "cats": [
         18
@@ -14501,11 +14773,16 @@
           "segment-site-verification"
         ]
       },
-      "icon": "Segment.png",
+      "icon": "Segment.svg",
       "js": {
-        "analytics": ""
+        "analytics.VERSION": "(.+)\\;version:\\1"
       },
-      "scripts": "cdn\\.segment\\.com/analytics\\.js",
+      "scripts": [
+        "cdn\\.segment\\.com/analytics\\.js",
+        "/segment-wrapper\\.min\\.js"
+      ],
+      "saas": true,
+      "pricing": ["mid", "freemium", "recurring"],
       "website": "https://segment.com"
     },
     "Select2": {
@@ -15555,6 +15832,32 @@
       },
       "website": "http://www.schillmania.com/projects/soundmanager2"
     },
+    "Service Provider Pro": {
+      "cats": [
+        41,
+        53
+      ],
+      "description": "Service Provider Pro is a client management & billing software for productized service agencies.",
+      "icon": "Service Provider Pro.svg",
+      "meta": {
+        "server": "app.spp.co"
+      },
+      "cookies": {
+        "spp_session": "\\;confidence:25",
+        "spp_csrf": "\\;confidence:25",
+        "spp_orderform": ""
+      },
+      "js": {
+        "sppOrderform": ""
+      },
+      "scripts": [
+        "js/spp_clients\\.js\\;confidence:50",
+        "\\.spp\\.io/js/"
+      ],
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://spp.co"
+    },
     "SparkPost": {
       "cats": [
         75
@@ -16121,13 +16424,15 @@
         "sf_redirect": ""
       },
       "description": "Symfony is a PHP web application framework and a set of reusable PHP components/libraries.",
-      "html": "(?:<div class=\"sf-toolbar[^>]+?>[^]+<span class=\"sf-toolbar-value\">([\\d.])+|<div id=\"sfwdt[^\"]+\" class=\"[^\"]*sf-toolbar)\\;version:\\1",
+      "html": [
+        "<div id=\"sfwdt[^\"]+\" class=\"[^\"]*sf-toolbar"
+      ],
       "icon": "Symfony.svg",
       "implies": "PHP",
       "js": {
         "Sfjs": ""
       },
-      "website": "http://symfony.com"
+      "website": "https://symfony.com"
     },
     "Sympa": {
       "cats": [
@@ -17551,6 +17856,21 @@
       "saas": true,
       "website": "https://www.visualsoft.co.uk/"
     },
+    "Vizury": {
+      "cats": [
+        32
+      ],
+      "description": "Vizury is a commerce marketing platform.",
+      "icon": "Vizury.png",
+      "js": {
+        "vizury_data": "",
+        "safariVizury": ""
+      },
+      "scripts": "\\.vizury\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.vizury.com"
+    },
     "Volusion": {
       "cats": [
         6
@@ -17858,6 +18178,20 @@
         "generator": "^WebGUI ([\\d.]+)\\;version:\\1"
       },
       "website": "http://www.webgui.org"
+    },
+    "WebMetric":{
+      "cats": [
+        10
+      ],
+      "icon": "WebMetric.svg",
+      "cookies": {
+        "_wmuid": ""
+      },
+      "js": {
+        "_wmid": ""
+      },
+      "scripts": "cdn\\.webmetric\\.ir",
+      "website": "https://webmetric.ir/"
     },
     "WebPublisher": {
       "cats": [
@@ -19844,6 +20178,26 @@
       },
       "oss": true,
       "website": "http://www.nopcommerce.com"
+    },
+    "NSW Design System": {
+      "cats": [
+        66
+      ],
+      "dom": {
+        "link[href*='nsw-design-system']": {
+          "attributes": {
+            "href": ""
+          }
+        },
+        ".nsw-container, .nsw-header, .nsw-icon": {
+          "text": ""
+        }
+      },
+      "website": "https://www.digital.nsw.gov.au/digital-design-system",
+      "icon": "NSW Design System.svg",
+      "js": {
+        "NSW.initSite": ""
+      }
     },
     "osCommerce": {
       "cats": [

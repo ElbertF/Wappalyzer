@@ -175,6 +175,7 @@ class Driver {
         }
       })
     } catch (error) {
+      console.log('a', error)
       throw new Error(error.toString())
     }
   }
@@ -190,6 +191,7 @@ class Driver {
 
         this.log('Browser closed')
       } catch (error) {
+        console.log('b', error)
         throw new Error(error.toString())
       }
     }
@@ -225,6 +227,7 @@ class Site {
     try {
       this.originalUrl = new URL(url)
     } catch (error) {
+      console.log('c', error)
       throw new Error(error.toString())
     }
 
@@ -345,6 +348,7 @@ class Site {
           request.continue({ headers })
         }
       } catch (error) {
+        console.log('d', error)
         this.error(error)
       }
     })
@@ -387,6 +391,7 @@ class Site {
           }
         }
       } catch (error) {
+        console.log('e', error)
         this.error(error)
       }
     })
@@ -690,7 +695,11 @@ class Site {
       }
 
       // Validate response
-      if (url.protocol !== 'file:' && !this.analyzedUrls[url.href].status) {
+      if (
+        url.protocol !== 'file:' &&
+        this.analyzedUrls[url.href] &&
+        !!this.analyzedUrls[url.href].status
+      ) {
         await page.close()
 
         this.log('Page closed')
@@ -751,8 +760,13 @@ class Site {
 
       return reducedLinks
     } catch (error) {
+      console.log('f', error)
       if (error.constructor.name === 'TimeoutError') {
         throw new Error('The website took too long to respond')
+      }
+
+      if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
+        throw new Error('Hostname could not be resolved')
       }
 
       throw new Error(error.message)
@@ -775,6 +789,7 @@ class Site {
         await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
       }
     } catch (error) {
+      console.log('g', error)
       this.analyzedUrls[url.href] = {
         status: 0,
         error: error.message || error.toString(),

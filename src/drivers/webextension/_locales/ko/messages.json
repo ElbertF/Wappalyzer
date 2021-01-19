@@ -20,7 +20,7 @@
 	"termsContent":             { "message": "이 확장 기능은 사이트의 도메인과 식별된 기술을 포함한 익명 정보를 <a href='https://www.wappalyzer.com'>wappalyzer.com</a>에 전송합니다. 이 기능은 설정에서 비활성화 할 수 있습니다." },
 	"privacyPolicy":            { "message": "개인정보처리방침" },
 	"createAlert":              { "message": "이 웹 사이트에 대한 알림 받기" },
-  "leadLists":                { "message": "Website & contact lists" },
+  "leadLists":                { "message": "Lead generation tools" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "포럼 소프트웨어" },
 	"categoryName3":            { "message": "데이터베이스 관리 도구" },

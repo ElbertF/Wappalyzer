@@ -55,6 +55,7 @@ const Popup = {
     if (themeMode) {
       document.querySelector('body').classList.add('theme-mode')
     }
+    document.querySelector('body').classList.add('theme-mode')
 
     // Terms
     const termsAccepted =
@@ -95,7 +96,6 @@ const Popup = {
         })
     }
 
-    // Alert
     const tabs = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true,
@@ -105,14 +105,6 @@ const Popup = {
       const [{ url }] = tabs
 
       if (url.startsWith('http')) {
-        document.querySelector('.alerts').classList.remove('alerts--hidden')
-
-        document.querySelector(
-          '.alerts__link'
-        ).href = `https://www.wappalyzer.com/alerts/?url=${encodeURIComponent(
-          `${url}`
-        )}&utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
-
         const { hostname } = new URL(url)
 
         setDisabledDomain(disabledDomains.includes(hostname))
@@ -146,8 +138,6 @@ const Popup = {
         for (const el of document.querySelectorAll('.footer__switch')) {
           el.classList.add('footer__switch--hidden')
         }
-
-        document.querySelector('.alerts').classList.add('alerts--hidden')
       }
     }
 

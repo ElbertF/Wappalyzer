@@ -20,6 +20,7 @@
   "termsContent":             { "message": "這個擴充功能將你所造訪網站的網域名稱和識別到的技術等資訊，匿名傳送至 <a href='https://www.wappalyzer.com'>wappalyzer.com</a>。你可以在選項中停用。" },
   "privacyPolicy":            { "message": "Privacy policy" },
   "createAlert":              { "message": "Create an alert for this website" },
+  "leadLists":                { "message": "Lead generation tools" },
   "categoryName1":            { "message": "內容管理系統（CMS）" },
   "categoryName2":            { "message": "留言板/討論區" },
   "categoryName3":            { "message": "資料庫管理" },

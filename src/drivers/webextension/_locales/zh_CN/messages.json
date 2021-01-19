@@ -20,7 +20,7 @@
   "termsContent":             { "message": "此扩展程序会匿名发送您访问的网站信息至 <a href='https://www.wappalyzer.com'>wappalyzer.com</a>，包含域名和检测到的技术。这可以在设置中禁用。" },
   "privacyPolicy":            { "message": "隐私政策" },
   "createAlert":              { "message": "为该网站创建提醒" },
-  "leadLists":                { "message": "Website & contact lists" },
+  "leadLists":                { "message": "Lead generation tools" },
   "categoryName1":            { "message": "内容管理系统（CMS）" },
   "categoryName2":            { "message": "信息板" },
   "categoryName3":            { "message": "数据库管理器" },

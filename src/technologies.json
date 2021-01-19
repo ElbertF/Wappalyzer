@@ -15043,8 +15043,7 @@
       "scripts": [
         "cdn\\.shopify\\.com/shopifycloud/shopify_pay/"
       ],
-      "url": "^https://pay.shopify.com",
-      "website": "https://pay.google.com"
+      "website": "https://shop.app"
     },
     "ShopGold": {
       "cats": [

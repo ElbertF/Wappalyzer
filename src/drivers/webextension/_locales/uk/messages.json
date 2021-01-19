@@ -20,7 +20,7 @@
   "termsContent":             { "message": "Це розширення надсилає на <a href=\"https://wappalyzer.com\">Wapplayzer.com</a> анонімну інформацію про відвідувані вами веб-сайти, включаючи доменні імена та визначені технології. Це можна відключити в налаштуваннях." },
   "privacyPolicy":            { "message": "Політика приватності" },
   "createAlert":              { "message": "Поскаржитись на цей сайт" },
-  "leadLists":                { "message": "Website & contact lists" },
+  "leadLists":                { "message": "Lead generation tools" },
 	"categoryName1":            { "message": "CMS" },
 	"categoryName2":            { "message": "Форум" },
 	"categoryName3":            { "message": "Менеджер БД" },

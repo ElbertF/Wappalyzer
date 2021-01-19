@@ -20,7 +20,7 @@
   "termsContent":             { "message": "Diese Erweiterung sendet anonyme Informationen über Websites, die Sie besuchen, einschließlich der Domain und der identifizierten Technologien, an <a href='https://www.wappalyzer.com'>wappalyzer.com</a>. Dies kann in den Einstellungen deaktiviert werden." },
   "privacyPolicy":            { "message": "Datenschutzerklärung" },
   "createAlert":              { "message": "Alarm für diese Website erstellen" },
-  "leadLists":                { "message": "Website & contact lists" },
+  "leadLists":                { "message": "Lead generation tools" },
   "categoryName1":            { "message": "CMS" },
   "categoryName2":            { "message": "Nachrichten Board" },
   "categoryName3":            { "message": "Datenbankverwaltung" },

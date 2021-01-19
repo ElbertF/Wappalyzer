@@ -20,7 +20,7 @@
 	"termsContent":             { "message": "این افزونه اطلاعات وب‌سایت‌های بازدید شده توسط شما را به صورت ناشناس ارسال می‌کند، مانند آدرس سایت و تکنولوژی‌های استفاده شده در آن سایت را ارسال می‌کند. اطلاعات بیشتر در <a href='https://www.wappalyzer.com'>wappalyzer.com</a>. شما می‌توانید این افزونه را غیرفعال کنید." },
   "privacyPolicy":            { "message": "سیاست حفظ حریم خصوصی" },
   "createAlert":              { "message": "ساخت یک هشدار برای این وبسایت" },
-  "leadLists":                { "message": "Website & contact lists" },
+  "leadLists":                { "message": "Lead generation tools" },
 	"categoryName1":            { "message": "سیستم مدیریت محتوا" },
 	"categoryName2":            { "message": "انجمن پیام" },
 	"categoryName3":            { "message": "مدیریت پایگاه داده" },

@@ -267,12 +267,7 @@ const Driver = {
             )
           })
 
-          if (
-            headers['content-type'] &&
-            /\/x?html/.test(headers['content-type'][0])
-          ) {
-            await Driver.onDetect(request.url, analyze({ headers }))
-          }
+          await Driver.onDetect(request.url, analyze({ headers }))
         }
       } catch (error) {
         Driver.error(error)

@@ -5839,7 +5839,8 @@
         "Fastly-Debug-Digest": "",
         "Vary": "Fastly-SSL",
         "X-Fastly-Request-ID": "",
-        "x-via-fastly:": ""
+        "x-via-fastly:": "",
+        "x-fastly-origin": ""
       },
       "icon": "Fastly.svg",
       "website": "https://www.fastly.com"
@@ -16919,6 +16920,21 @@
       },
       "website": "http://tiddlywiki.com"
     },
+    "Tidio": {
+      "cats": [
+       32,
+       5
+      ],
+      "description": "Tidio is a customer communication product. It provides multi-channel support so users can communicate with customers on the go. Live chat, messenger, or email are all supported.",
+      "icon": "Tidio.svg",
+      "js": {
+        "tidioChatApi": ""
+      },
+      "scripts": "code\\.tidio\\.co",
+      "saas": true,
+      "pricing": ["low", "freemium", "recurring"],
+      "website": "https://www.tidio.com"
+    },
     "Tiki Wiki CMS Groupware": {
       "cats": [
         1,
@@ -17449,6 +17465,27 @@
       "icon": "UsableNet.png",
       "scripts": "\\.usablenet\\.com/pt/",
       "website": "https://usablenet.com/"
+    },
+    "Uscreen": {
+      "cats": [
+        1
+      ],
+      "description": "Uscreen is a CMS to monetize VOD and live content. They provide site hosting, video hosting, and a payment gateway for selling video based content.",
+      "dom": {
+        ".powered-by-uscreen": {
+          "text": ""
+        }
+      },
+      "js": {
+        "analyticsHost": "stats\\.uscreen\\.io" 
+      },
+      "icon": "Uscreen.svg",
+      "website": "https://uscreen.tv/",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true
     },
     "UserLike": {
       "cats": [

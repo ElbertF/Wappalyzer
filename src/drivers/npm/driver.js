@@ -698,7 +698,7 @@ class Site {
       if (
         url.protocol !== 'file:' &&
         this.analyzedUrls[url.href] &&
-        !!this.analyzedUrls[url.href].status
+        !this.analyzedUrls[url.href].status
       ) {
         await page.close()
 

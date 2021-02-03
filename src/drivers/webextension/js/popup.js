@@ -15,18 +15,18 @@ const {
 function setDisabledDomain(enabled) {
   if (enabled) {
     document
-      .querySelector('.footer__switch--enabled')
-      .classList.add('footer__switch--hidden')
+      .querySelector('.header__switch--enabled')
+      .classList.add('header__switch--hidden')
     document
-      .querySelector('.footer__switch--disabled')
-      .classList.remove('footer__switch--hidden')
+      .querySelector('.header__switch--disabled')
+      .classList.remove('header__switch--hidden')
   } else {
     document
-      .querySelector('.footer__switch--enabled')
-      .classList.remove('footer__switch--hidden')
+      .querySelector('.header__switch--enabled')
+      .classList.remove('header__switch--hidden')
     document
-      .querySelector('.footer__switch--disabled')
-      .classList.add('footer__switch--hidden')
+      .querySelector('.header__switch--disabled')
+      .classList.add('header__switch--hidden')
   }
 }
 
@@ -110,7 +110,7 @@ const Popup = {
         setDisabledDomain(disabledDomains.includes(hostname))
 
         document
-          .querySelector('.footer__switch--disabled')
+          .querySelector('.header__switch--disabled')
           .addEventListener('click', async () => {
             disabledDomains = disabledDomains.filter(
               (_hostname) => _hostname !== hostname
@@ -124,7 +124,7 @@ const Popup = {
           })
 
         document
-          .querySelector('.footer__switch--enabled')
+          .querySelector('.header__switch--enabled')
           .addEventListener('click', async () => {
             disabledDomains.push(hostname)
 
@@ -135,14 +135,14 @@ const Popup = {
             Popup.onGetDetections(await Popup.driver('getDetections'))
           })
       } else {
-        for (const el of document.querySelectorAll('.footer__switch')) {
-          el.classList.add('footer__switch--hidden')
+        for (const el of document.querySelectorAll('.header__switch')) {
+          el.classList.add('header__switch--hidden')
         }
       }
     }
 
     document
-      .querySelector('.footer__settings')
+      .querySelector('.header__settings')
       .addEventListener('click', () => chrome.runtime.openOptionsPage())
 
     // Apply internationalization

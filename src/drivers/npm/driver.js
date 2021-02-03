@@ -175,7 +175,6 @@ class Driver {
         }
       })
     } catch (error) {
-      console.log('a', error)
       throw new Error(error.toString())
     }
   }
@@ -191,7 +190,6 @@ class Driver {
 
         this.log('Browser closed')
       } catch (error) {
-        console.log('b', error)
         throw new Error(error.toString())
       }
     }
@@ -227,7 +225,6 @@ class Site {
     try {
       this.originalUrl = new URL(url)
     } catch (error) {
-      console.log('c', error)
       throw new Error(error.toString())
     }
 
@@ -348,7 +345,6 @@ class Site {
           request.continue({ headers })
         }
       } catch (error) {
-        console.log('d', error)
         this.error(error)
       }
     })
@@ -372,8 +368,6 @@ class Site {
             ]
           })
 
-          this.contentType = headers['content-type'] || null
-
           if (response.status() >= 300 && response.status() < 400) {
             if (headers.location) {
               url = new URL(headers.location.slice(-1), url)
@@ -391,7 +385,6 @@ class Site {
           }
         }
       } catch (error) {
-        console.log('e', error)
         this.error(error)
       }
     })
@@ -760,7 +753,6 @@ class Site {
 
       return reducedLinks
     } catch (error) {
-      console.log('f', error)
       if (error.constructor.name === 'TimeoutError') {
         throw new Error('The website took too long to respond')
       }
@@ -789,7 +781,6 @@ class Site {
         await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
       }
     } catch (error) {
-      console.log('g', error)
       this.analyzedUrls[url.href] = {
         status: 0,
         error: error.message || error.toString(),

@@ -7,6 +7,8 @@
 * [Chrome extension](https://chrome.google.com/webstore/detail/wappalyzer/gppongmhjkpfnbhagpmjfkannfbllamg)
 * [Firefox add-on](https://addons.mozilla.org/en-US/firefox/addon/wappalyzer/)
 * [Edge extension](https://microsoftedge.microsoft.com/addons/detail/mnbndgmknlpdjdnjfmfcdjoegcckoikn)
+* [Safari extension](https://apps.apple.com/app/wappalyzer/id1520333300)
+* [All apps and integrations](https://www.wappalyzer.com/api/download)
 * [Wappalyzer REST APIs](https://www.wappalyzer.com/api/)
 
 ## Prerequisites

@@ -4,7 +4,7 @@
   "author": "Wappalyzer",
   "homepage_url": "https://www.wappalyzer.com/",
   "description": "Identify web technologies",
-  "version": "6.5.22",
+  "version": "6.5.25",
   "default_locale": "en",
   "manifest_version": 2,
   "icons": {

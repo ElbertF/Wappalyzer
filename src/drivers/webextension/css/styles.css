@@ -45,57 +45,19 @@ a:hover {
   display: flex;
   height: 4.5rem;
   justify-content: space-between;
+  padding: 0 1.5rem;
 }
 
 .header__logo {
   height: 2.5rem;
-  margin: .5rem 1.5rem 0 1.5rem;
+  margin-top: .5rem;
 }
 
 .header__logo--dark {
   display: none;
 }
 
-.footer {
-  align-items: center;
-	background: #fff;
-  bottom: 0;
-  border-top: 1px solid var(--color-secondary);
-  height: 3rem;
-  display: flex;
-  padding: 0 1.5rem;
-  position: fixed;
-  width: 100%;
-}
-
-.footer__cta {
-  text-align: right;
-  margin-right: 1.5rem;
-  white-space: nowrap;
-}
-
-.footer__cta a {
-  border-bottom: 1px solid var(--color-secondary);
-  text-decoration: none;
-}
-
-.footer__cta a:hover {
-  border-bottom: 1px solid var(--color-primary);
-}
-
-.footer__open-in-new {
-  color: var(--color-primary);
-  height: 1.1rem;
-  margin-left: .1rem;
-  vertical-align: middle;
-  width: 1.1rem;
-}
-
-.spacer {
-  flex-grow:1;
-}
-
-.footer__icon {
+.header__icon {
   color: var(--color-primary);
   cursor: pointer;
   height: 1.1rem;
@@ -104,17 +66,56 @@ a:hover {
   width: 1.1rem;
 }
 
-.footer__switch {
+.header__switch {
   height: 1.5rem;
   width: 1.5rem;
 }
 
-.footer__switch--hidden {
+.header__switch--hidden {
   display: none;
 }
 
-.footer__switch--disabled {
+.header__switch--disabled {
   color: var(--color-text);
+}
+
+.spacer {
+  flex-grow:1;
+}
+
+.footer {
+  align-items: center;
+	background: #fff;
+  bottom: 0;
+  border-top: 1px solid var(--color-secondary);
+  font-size: .8rem;
+  height: 3rem;
+  display: flex;
+  padding: 0 1.5rem;
+  position: fixed;
+  width: 100%;
+}
+
+.footer__links {
+  white-space: nowrap;
+}
+
+.footer__link {
+  display: inline-block;
+  padding: 0 .3rem;
+}
+
+.footer__link:first-child {
+  padding-left: 0;
+}
+
+.footer__link a {
+  border-bottom: 1px solid var(--color-secondary);
+  text-decoration: none;
+}
+
+.footer__link a:hover {
+  border-bottom: 1px solid var(--color-primary);
 }
 
 .detections {
@@ -327,6 +328,14 @@ a:hover {
     display: inline-block;
   }
 
+  .theme-mode .header__settings {
+    color: var(--color-text-dark);
+  }
+
+  .theme-mode .header__icon {
+    color: #fff;
+  }
+
   .theme-mode .category__link {
     color: #fff;
   }
@@ -350,14 +359,6 @@ a:hover {
   .theme-mode .footer {
     background: var(--color-primary-darken);
     border-color: var(--color-secondary-dark)
-  }
-
-  .theme-mode .footer__settings {
-    color: var(--color-text-dark);
-  }
-
-  .theme-mode .footer__icon {
-    color: #fff;
   }
 
   .theme-mode .footer__open-in-new {

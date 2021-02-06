@@ -55,7 +55,6 @@ const Popup = {
     if (themeMode) {
       document.querySelector('body').classList.add('theme-mode')
     }
-    document.querySelector('body').classList.add('theme-mode')
 
     // Terms
     const termsAccepted =

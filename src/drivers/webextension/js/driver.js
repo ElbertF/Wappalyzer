@@ -79,10 +79,10 @@ const Driver = {
         'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
       )
     } else if (version !== previous && upgradeMessage) {
-      open(
-        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
-        false
-      )
+      // open(
+      //   `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+      //   false
+      // )
     }
 
     await setOption('version', version)

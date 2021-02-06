@@ -1387,7 +1387,7 @@
       ],
       "description": "Amazon CloudFront is a fast content delivery network (CDN) service that securely delivers data, videos, applications, and APIs to customers globally with low latency, high transfer speeds.",
       "dns": {
-        "CNAME": "^[a-z0-9]+\\.cloudfront.net$"
+        "CNAME": "^[a-z0-9]+\\.cloudfront.net\\.?$"
       },
       "headers": {
         "Via": "\\(CloudFront\\)$",
@@ -2265,6 +2265,25 @@
         "/axios(@|/)([\\d.]+)(?:/[a-z]+)?/axios(?:.min)?\\.js\\;version:\\2"
       ],
       "website": "https://github.com/axios/axios"
+    },
+    "Azion": {
+      "cats": [
+        31
+      ],
+      "description": "",
+      "dns": {
+        "CNAME": "azioncdn\\.net\\.?$"
+      },
+      "headers": {
+        "Server": "^Azion "
+      },
+      "icon": "Azion.svg",
+      "pricing": [
+        "poa",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://www.azion.com/"
     },
     "Azure": {
       "cats": [

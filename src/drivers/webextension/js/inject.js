@@ -3,11 +3,11 @@
 ;(function () {
   try {
     const onMessage = ({ data }) => {
-      if (!data.wappalyzer) {
+      if (!data.wappalyzer || !data.wappalyzer.technologies) {
         return
       }
 
-      const { technologies } = data.wappalyzer || {}
+      const { technologies } = data.wappalyzer
 
       removeEventListener('message', onMessage)
 

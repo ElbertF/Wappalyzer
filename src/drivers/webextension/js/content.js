@@ -231,6 +231,29 @@ const Content = {
         return technologies
       }, [])
 
+    // Detect Google Ads
+    if (/^(www\.)?google(\.[a-z]{2,3}){1,2}$/.test(location.hostname)) {
+      const ads = document.querySelectorAll('#tads [data-text-ad] a[data-pcu]')
+
+      for (const ad of ads) {
+        Content.driver('detectTechnology', [ad.href, 'Google Ads'])
+      }
+    }
+
+    // Detect Microsoft Ads
+    if (/^(www\.)?bing\.com$/.test(location.hostname)) {
+      const ads = document.querySelectorAll('.b_ad .b_adurl cite')
+
+      for (const ad of ads) {
+        const url = ad.textContent.split(' ')[0].trim()
+
+        Content.driver('detectTechnology', [
+          url.startsWith('http') ? url : `http://${url}`,
+          'Microsoft Advertising',
+        ])
+      }
+    }
+
     Content.driver('analyzeDom', [location.href, dom])
   },
 }

@@ -98,7 +98,7 @@ Patterns (regular expressions) are kept in [`src/technologies.json`](https://git
   "url": ".+\\.example\\.com",
   "oss": true,
   "saas": true,
-  "pricing": ["low", "medium", "high", "freemium", "onetime", "recurring", "poa"],
+  "pricing": ["medium", "freemium", "recurring"],
   "website": "https://example.com",
 }
 ```

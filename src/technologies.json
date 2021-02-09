@@ -6997,6 +6997,26 @@
       "scripts": "js/gogs\\.js",
       "website": "http://gogs.io"
     },
+    "Microsoft Advertising": {
+      "cats": [
+        36
+      ],
+      "description": "Microsoft Advertising is an online advertising platform developed by Microsoft.",
+      "icon": "Microsoft.svg",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://ads.microsoft.com"
+    },
+    "Google Ads": {
+      "cats": [
+        36
+      ],
+      "description": "Google Ads is an online advertising platform developed by Google.",
+      "icon": "Google Ads.svg",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://ads.google.com"
+    },
     "Google AdSense": {
       "cats": [
         36

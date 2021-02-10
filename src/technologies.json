@@ -322,14 +322,6 @@
       "scripts": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
       "website": "http://www.3dcart.com"
     },
-    "91App": {
-      "cats": [
-        6
-      ],
-      "icon": "91app.png",
-      "scripts": "https\\:\\/\\/track\\.91app\\.io\\/track\\.js\\?",
-      "website": "https://www.91app.com/"
-    },
     "@sulu/web": {
       "cats": [
         59
@@ -1169,7 +1161,9 @@
       ],
       "description": "Akamai is global content delivery network (CDN) services provider for media and software delivery, and cloud security solutions.",
       "headers": {
-        "X-Akamai-Transformed": ""
+        "X-Akamai-Transformed": "",
+        "X-EdgeConnect-MidMile-RTT": "",
+        "X-EdgeConnect-Origin-MEX-Latency": ""
       },
       "icon": "akamai.svg",
       "pricing": [
@@ -1218,26 +1212,28 @@
     },
     "Akamai mPulse": {
       "cats": [
-        13,
-        10
+        10,
+        47
       ],
       "cookies": {
         "akaas_AB-Testing": ""
       },
       "description": "Akamai mPulse is a real user monitoring (RUM) solution that enables companies to monitor, find, and fix website and application performance issues.",
+      "html": [
+        "<script>[\\s\\S]*?go-mpulse\\.net\\/boomerang[\\s\\S]*?</script>"
+      ],
       "icon": "akamai.svg",
-      "implies": "Akamai",
+      "implies": [
+        "Boomerang"
+      ],
       "js": {
-        "BOOMR": "",
-        "BOOMR_API_key": "",
-        "BOOMR_lstart": "",
-        "BOOMR_mq": ""
+        "BOOMR_API_key": ""
       },
       "pricing": [
         "poa"
       ],
       "saas": true,
-      "website": "https://www.akamai.com/uk/en/products/performance/mpulse-real-user-monitoring.jsp"
+      "website": "https://developer.akamai.com/akamai-mpulse-real-user-monitoring-solution"
     },
     "Akaunting": {
       "cats": [
@@ -2449,17 +2445,6 @@
       "scripts": "thebase\\.in/js",
       "website": "https://thebase.in"
     },
-    "BaseHTTP": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "BaseHTTP\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "BaseHTTP.png",
-      "implies": "Python",
-      "website": "http://docs.python.org/2/library/basehttpserver.html"
-    },
     "Big Cartel": {
       "cats": [
         6
@@ -2700,16 +2685,6 @@
       },
       "website": "http://sourceforge.net/projects/bluefish"
     },
-    "Boa": {
-      "cats": [
-        22
-      ],
-      "cpe": "cpe:/a:boa:boa",
-      "headers": {
-        "Server": "Boa\\/?([\\d\\.a-z]+)?\\;version:\\1"
-      },
-      "website": "http://www.boa.org"
-    },
     "Boba.js": {
       "cats": [
         59
@@ -2832,6 +2807,20 @@
       ],
       "scripts": "booksy\\.com/widget/code\\.js",
       "website": "https://booksy.com/"
+    },
+    "Boomerang": {
+      "cats": [
+        59
+      ],
+      "description": "boomerang is a JavaScript library that measures the page load time experienced by real users, commonly called RUM (Real User Measurement).",
+      "icon": "boomerang.svg",
+      "js": {
+        "BOOMR": "",
+        "BOOMR_lstart": "",
+        "BOOMR_mq": ""
+      },
+      "oss": true,
+      "website": "https://akamai.github.io/boomerang"
     },
     "Bootstrap": {
       "cats": [
@@ -3103,17 +3092,6 @@
       "html": "<link[^>]+?href=\"[^\"]+bulma(?:\\.min)?\\.css",
       "icon": "Bulma.png",
       "website": "http://bulma.io"
-    },
-    "Burning Board": {
-      "cats": [
-        2
-      ],
-      "icon": "Burning Board.png",
-      "implies": [
-        "PHP",
-        "Woltlab Community Framework"
-      ],
-      "website": "http://www.woltlab.com"
     },
     "Business Catalyst": {
       "cats": [
@@ -4115,34 +4093,6 @@
       "implies": "Microsoft ASP.NET",
       "website": "http://commerceserver.net"
     },
-    "Commerce.js": {
-      "cats": [
-        6
-      ],
-      "description": "Commerce.js is an API-first eCommerce platform for developers & businesses.",
-      "headers": {
-        "Chec-Version": ".*",
-        "X-Support": "support@commercejs\\.com"
-      },
-      "icon": "commercejs.png",
-      "scripts": [
-        "https?:/cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version:\\1",
-        "chec/commerce\\.js"
-      ],
-      "url": "^https?//.+\\.spaces.chec\\.io",
-      "website": "https://www.commercejs.com"
-    },
-    "CompaqHTTPServer": {
-      "cats": [
-        22
-      ],
-      "cpe": "cpe:/a:hp:compaqhttpserver",
-      "headers": {
-        "Server": "CompaqHTTPServer\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "HP.svg",
-      "website": "http://www.hp.com"
-    },
     "Concrete5": {
       "cats": [
         1
@@ -4248,14 +4198,6 @@
       ],
       "saas": true,
       "website": "http://www.contentful.com"
-    },
-    "ConversionLab": {
-      "cats": [
-        10
-      ],
-      "icon": "ConversionLab.png",
-      "scripts": "conversionlab\\.trackset\\.com/track/tsend\\.js",
-      "website": "http://www.trackset.it/conversionlab"
     },
     "Convert": {
       "cats": [
@@ -5124,16 +5066,6 @@
       "scripts": "googletagservices\\.com/tag/js/gpt(?:_mobile)?\\.js",
       "website": "http://www.google.com/dfp"
     },
-    "DovetailWRP": {
-      "cats": [
-        1
-      ],
-      "html": "<link[^>]* href=\"\\/DovetailWRP\\/",
-      "icon": "DovetailWRP.png",
-      "implies": "Microsoft ASP.NET",
-      "scripts": "\\/DovetailWRP\\/",
-      "website": "http://www.dovetailinternet.com"
-    },
     "Doxygen": {
       "cats": [
         4
@@ -5203,9 +5135,28 @@
         6
       ],
       "cpe": "cpe:/a:commerceguys:commerce",
-      "html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
       "icon": "Drupal Commerce.png",
+      "description": "Drupal Commerce is open-source ecommerce software that augments the content management system Drupal.",
+      "html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
+      "dom": {
+        "form.commerce-order-item-add-to-cart-form,form.commerce-add-to-cart": {
+          "attributes": {
+            "class": ""
+          }
+        },
+        "aside#cart-offcanvas": {
+          "attributes": {
+            "id": ""
+          }
+        }
+      },
+      "scripts": [
+        "/modules/(?:contrib/)?commerce/js/conditions\\.js\\;confidence:50",
+        "/profiles/commerce_kickstart/modules/contrib/commerce/modules/checkout/commerce_checkout\\.js\\;confidence:50",
+        "/sites/(?:all|default)/modules/(?:contrib/)?commerce/modules/checkout/commerce_checkout\\.js\\;confidence:50"
+      ],
       "implies": "Drupal",
+      "oss": true,
       "website": "http://drupalcommerce.org"
     },
     "Duda": {
@@ -5702,6 +5653,21 @@
       ],
       "website": "https://etherpad.org"
     },
+    "Etracker": {
+      "cats": [
+        10,
+        74
+      ],
+      "description": "Etracker is a web optimization solution.",
+      "icon": "Etracker.png",
+      "js": {
+        "_etracker": ""
+      },
+      "scripts": "\\.etracker\\.com",
+      "saas": true,
+      "pricing": ["low","recurring"],
+      "website": "https://www.etracker.com"
+    },
     "Eveve": {
       "cats": [
         5,
@@ -5736,8 +5702,13 @@
       ],
       "description": "ExpertRec is a collaborative Web search engine, which allows users share search histories through a web browser.",
       "icon": "ExpertRec.png",
-      "scripts": "cse\\.expertrec\\.com/api/js/ci_common\\.js\\?id=.*$",
-      "website": "https://expertrec.com"
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "expertrec\\.com/api/js/ci_common\\.js\\?id=.*",
+      "website": "https://www.expertrec.com"
     },
     "Express": {
       "cats": [
@@ -6441,6 +6412,39 @@
       ],
       "website": "http://froala.com/wysiwyg-editor"
     },
+    "Frontity": {
+      "cats": [
+        12,
+        18
+      ],
+      "description": "Frontity is a React open-source framework focused on WordPress.",
+      "icon": "frontity.png",
+      "implies": [
+        "React",
+        "webpack",
+        "WordPress"
+      ],
+      "meta": {
+        "generator": "^Frontity(.*)"
+      },
+      "website": "https://frontity.org
+    },
+    "Frosmo": {
+      "cats": [
+        32,
+        74
+      ],
+      "description": "Frosmo is a SaaS company wich provides AI-driven personalization products.",
+      "icon": "Frosmo.png",
+      "js": {
+        "frosmo": "",
+        "_frosmo": ""
+      },
+      "scripts": "frosmo\\.easy\\.js",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://frosmo.com"
+    },
     "FrontPage": {
       "cats": [
         20
@@ -6997,16 +7001,6 @@
       "scripts": "js/gogs\\.js",
       "website": "http://gogs.io"
     },
-    "Microsoft Advertising": {
-      "cats": [
-        36
-      ],
-      "description": "Microsoft Advertising is an online advertising platform developed by Microsoft.",
-      "icon": "Microsoft.svg",
-      "saas": true,
-      "pricing": ["payg"],
-      "website": "https://ads.microsoft.com"
-    },
     "Google Ads": {
       "cats": [
         36
@@ -7472,15 +7466,6 @@
       "url": "/wps/",
       "website": "https://www.hcltechsw.com/products/dx"
     },
-    "HERE": {
-      "cats": [
-        35
-      ],
-      "description": "HERE provides mapping and location data to individuals and companies.",
-      "icon": "HERE.png",
-      "scripts": "https?://js\\.cit\\.api\\.here\\.com/se/([\\d.]+)\\/\\;version:\\1",
-      "website": "http://developer.here.com"
-    },
     "HHVM": {
       "cats": [
         22
@@ -7492,16 +7477,6 @@
       "icon": "HHVM.png",
       "implies": "PHP\\;confidence:75",
       "website": "http://hhvm.com"
-    },
-    "HP ChaiServer": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "HP-Chai(?:Server|SOE)(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "HP.svg",
-      "website": "http://hp.com"
     },
     "HP Compact Server": {
       "cats": [
@@ -7651,6 +7626,20 @@
       },
       "scripts": "hellobar\\.js",
       "website": "http://hellobar.com"
+    },
+    "Helpscout": {
+      "cats": [
+        52
+      ],
+      "description": "Helpscout is a customer service platform including email, a knowledge base tool and live chat.",
+      "icon": "Helpscout.svg",
+      "js": {
+        "Beacon": "\\;confidence:25"
+      },
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "scripts": "beacon-v2\\.helpscout\\.net",
+      "website": "https://www.helpscout.com/"
     },
     "Heroku": {
       "cats": [
@@ -7935,15 +7924,6 @@
       },
       "scripts": "^https?://(?:[^/]+\\.)?i(?:oam|v)wbox\\.de/",
       "website": "https://www.infonline.de"
-    },
-    "INTI": {
-      "cats": [
-        6,
-        53
-      ],
-      "icon": "byINTI.svg",
-      "url": "\\.byinti\\.com",
-      "website": "https://byinti.com"
     },
     "IPB": {
       "cats": [
@@ -9362,6 +9342,30 @@
       "scripts": "npm/leanplum-sdk\\@([\\d.]+)\\;version:\\1",
       "website": "https://www.leanplum.com"
     },
+    "Lede": {
+      "cats": [
+        1
+      ],
+      "description": "Lede is a publishing platform and growth program designed to support journalism startups and news media.",
+      "html": [
+        "<a [^>]*href=\"[^\"]+joinlede.com"
+      ],
+      "icon": "lede.png",
+      "implies": [
+        "WordPress",
+        "WordPress VIP"
+      ],
+      "js": {
+        "ledeChartbeatViews": "",
+        "ledeEngagement": "",
+        "ledeEngagementReset": ""
+      },
+      "meta": {
+        "og:image": "https?\\:\\/\\/lede-admin"
+      },
+      "saas": true,
+      "website": "https://joinlede.com/"
+    },
     "Less": {
       "cats": [
         19
@@ -10128,14 +10132,6 @@
       "scripts": "widget\\.manychat\\.com",
       "website": "https://manychat.com/"
     },
-    "ManyContacts": {
-      "cats": [
-        5
-      ],
-      "icon": "ManyContacts.png",
-      "scripts": "\\/assets\\/js\\/manycontacts\\.min\\.js",
-      "website": "http://www.manycontacts.com"
-    },
     "Mapbox GL JS": {
       "cats": [
         35
@@ -10608,14 +10604,13 @@
     },
     "Microsoft Advertising": {
       "cats": [
-        10,
         36
       ],
       "cookies": {
         "_uetsid": "\\w+",
         "_uetvid": "\\w+"
       },
-      "description": "Microsoft Advertising is a service that provides pay per click advertising on both the Bing and Yahoo! search engines.",
+      "description": "Microsoft Advertising is an online advertising platform developed by Microsoft.",
       "icon": "Microsoft.png",
       "js": {
         "UET": "",
@@ -10626,7 +10621,21 @@
       ],
       "saas": true,
       "scripts": "bat\\.bing\\.com/bat\\.js",
-      "website": "https://about.ads.microsoft.com"
+      "website": "https://ads.microsoft.com"
+    },
+    "Microsoft Clarity": {
+      "cats": [
+        10
+      ],
+      "description": "Microsoft's Clarity is a analytics tool which provides website usage statistics, session recording, and heatmaps.",
+      "icon": "Microsoft.png",
+      "js": {
+        "clarity": ""
+      },
+      "scripts": "www\\.clarity\\.ms/.+/([\\d.]+)/clarity\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": ["freemium"],
+      "website": "https://clarity.microsoft.com"
     },
     "Microsoft Excel": {
       "cats": [
@@ -10774,24 +10783,6 @@
         "//minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
       ],
       "website": "http://minero.cc/"
-    },
-    "MiniBB": {
-      "cats": [
-        2
-      ],
-      "cpe": "cpe:/a:minibb:minibb",
-      "html": "<a href=\"[^\"]+minibb[^<]+</a>[^<]+\\n<!--End of copyright link",
-      "icon": "MiniBB.png",
-      "website": "http://www.minibb.com"
-    },
-    "MiniServ": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "MiniServ\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "website": "http://sourceforge.net/projects/miniserv"
     },
     "Mint": {
       "cats": [
@@ -12917,6 +12908,24 @@
       "icon": "Phusion Passenger.png",
       "website": "https://phusionpassenger.com"
     },
+    "Pico": {
+      "cats": [
+        53
+      ],
+      "icon": "pico.svg",
+      "js": {
+        "Pico": ""
+      },
+      "scripts": [
+        "widget\\.pico\\.tools"
+      ],
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://trypico.com"
+    },
     "Pimcore": {
       "cats": [
         1,
@@ -13981,17 +13990,6 @@
       "saas": true,
       "website": "https://redcart.pl"
     },
-    "Redaxscript": {
-      "cats": [
-        1
-      ],
-      "icon": "Redaxscript.svg",
-      "implies": "PHP",
-      "meta": {
-        "generator": "^Redaxscript ([\\d\\.]+)\\;version:\\1"
-      },
-      "website": "https://redaxscript.com"
-    },
     "Reddit": {
       "cats": [
         2
@@ -14512,16 +14510,6 @@
       "scripts": "rx(?:\\.\\w+)?(?:\\.compat|\\.global)?(?:\\.min)?\\.js",
       "website": "http://reactivex.io"
     },
-    "S.Builder": {
-      "cats": [
-        1
-      ],
-      "icon": "S.Builder.png",
-      "meta": {
-        "generator": "S\\.Builder"
-      },
-      "website": "http://www.sbuilder.ru"
-    },
     "SAP": {
       "cats": [
         22
@@ -14871,29 +14859,6 @@
       "icon": "Scala.png",
       "website": "http://www.scala-lang.org"
     },
-    "Scaleway": {
-      "cats": [
-        19
-      ],
-      "icon": "Scaleway.png",
-      "website": "https://www.scaleway.com/"
-    },
-    "Scenari": {
-      "cats": [
-        1,
-        11
-      ],
-      "icon": "Scenari.png",
-      "implies": [
-        "Roadiz CMS",
-        "PHP",
-        "Symfony"
-      ],
-      "meta": {
-        "generator": "^Roadiz ?(?:master|develop)? v?[0-9\\.]+ - Scenari v?([0-9\\.]+)\\;version:\\1"
-      },
-      "website": "https://demo.scenari.site"
-    },
     "Schedule Engine": {
       "cats": [
         52
@@ -14902,17 +14867,6 @@
       "icon": "Schedule Engine.svg",
       "scripts": "webchat.scheduleengine.net",
       "website": "https://www.scheduleengine.com/"
-    },
-    "Scholica": {
-      "cats": [
-        21
-      ],
-      "description": "Scholica is a Virtual Learning Platform (VLP).",
-      "headers": {
-        "X-Scholica-Version": ""
-      },
-      "icon": "Scholica.svg",
-      "website": "http://scholica.com"
     },
     "Scientific Linux": {
       "cats": [
@@ -15424,16 +15378,6 @@
       "url": "^https?//.+\\.myshopify\\.com",
       "website": "http://shopify.com"
     },
-    "Shopline": {
-      "cats": [
-        6
-      ],
-      "icon": "shopline.png",
-      "meta": {
-        "og:image": "https\\:\\/\\/img\\.shoplineapp\\.com"
-      },
-      "website": "https://shoplineapp.com/"
-    },
     "Shoplo": {
       "cats": [
         6
@@ -15548,16 +15492,6 @@
       ],
       "website": "https://www.signal.co/"
     },
-    "Silva": {
-      "cats": [
-        1
-      ],
-      "headers": {
-        "X-Powered-By": "SilvaCMS"
-      },
-      "icon": "Silva.png",
-      "website": "http://silvacms.org"
-    },
     "SilverStripe": {
       "cats": [
         1
@@ -15581,14 +15515,6 @@
       },
       "icon": "simbel.svg",
       "website": "http://simbel.com.ar/"
-    },
-    "Simple Analytics": {
-      "cats": [
-        10
-      ],
-      "icon": "SimpleAnalytics.svg",
-      "scripts": "^https:\\/\\/cdn\\.simpleanalytics\\.io\\/hello\\.js",
-      "website": "https://simpleanalytics.com"
     },
     "SimpleHTTP": {
       "cats": [
@@ -16955,14 +16881,6 @@
       },
       "website": "https://www.jetbrains.com/teamcity/"
     },
-    "Tebex": {
-      "cats": [
-        6
-      ],
-      "icon": "Tebex.png",
-      "scripts": "https://server\\.tebex\\.io/tebexAccounts/tebexaccounts\\.js",
-      "website": "https://www.tebex.io/"
-    },
     "Telescope": {
       "cats": [
         1
@@ -17388,6 +17306,20 @@
       "icon": "TrustArc.svg",
       "scripts": "consent\\.trustarc\\.com",
       "website": "http://trustarc.com"
+    },
+    "Trustpilot": {
+      "cats": [
+        5
+      ],
+      "description": "Trustpilot is a Danish consumer review website which provide embed stand-alone applications in your website to show your most recent reviews, TrustScore, and star ratings.",
+      "icon": "Trustpilot.svg",
+      "js": {
+        "Trustpilot": ""
+      },
+      "saas": true,
+      "pricing": ["mid","freemium","recurring"],
+      "scripts": "\\.trustpilot\\.com",
+      "website": "https://business.trustpilot.com"
     },
     "TrustYou": {
       "cats": [
@@ -18144,14 +18076,6 @@
       "scripts": "secure\\.checkout\\.visa\\.com",
       "website": "https://checkout.visa.com"
     },
-    "VisualPath": {
-      "cats": [
-        10
-      ],
-      "icon": "VisualPath.png",
-      "scripts": "visualpath[^/]*\\.trackset\\.it/[^/]+/track/include\\.js",
-      "website": "http://www.trackset.com/web-analytics-software/visualpath"
-    },
     "Visualsoft": {
       "cats": [
         6
@@ -18511,16 +18435,6 @@
       "scripts": "cdn\\.webmetric\\.ir",
       "website": "https://webmetric.ir/"
     },
-    "WebPublisher": {
-      "cats": [
-        1
-      ],
-      "icon": "WebPublisher.png",
-      "meta": {
-        "generator": "WEB\\|Publisher"
-      },
-      "website": "http://scannet.dk"
-    },
     "WebSite X5": {
       "cats": [
         20
@@ -18569,15 +18483,6 @@
       },
       "scripts": "\\bwebix\\.js",
       "website": "http://webix.com"
-    },
-    "Webmine": {
-      "cats": [
-        56
-      ],
-      "description": "Webmine is a cryptocurrency mining service.",
-      "html": "<iframe[^>]+src=[\\'\"]https://webmine\\.cz/miner\\?key=",
-      "icon": "webmine.png",
-      "website": "https://webmine.cz/"
     },
     "WebsPlanet": {
       "cats": [
@@ -18953,17 +18858,11 @@
         "x-powered-by": "^WordPress\\.com VIP"
       },
       "icon": "wpvip.svg",
-      "implies": "WordPress",
-      "website": "https://wpvip.com"
-    },
-    "Wowza Media Server": {
-      "cats": [
-        38
+      "implies": [
+        "WordPress",
+        "Automattic"
       ],
-      "description": "Wowza is a live video streaming platform.",
-      "html": "<title>Wowza Media Server \\d+ ((?:\\w+ Edition )?\\d+\\.[\\d\\.]+(?: build\\d+)?)?\\;version:\\1",
-      "icon": "Wowza Media Server.png",
-      "website": "http://www.wowza.com"
+      "website": "https://wpvip.com"
     },
     "Wunderkind": {
       "cats": [
@@ -19581,7 +19480,6 @@
         41
       ],
       "description": "Zip is a payment service that lets you receive your purchase now and spread the total cost over a interest-free payment schedule.",
-      "html": "<img [^>]*src=\"[^/]*//[^/]*eway\\.com",
       "icon": "zip_pay.svg",
       "scripts": [
         "static\\.zipmoney\\.com\\.au",
@@ -19791,16 +19689,6 @@
       "scripts": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
       "website": "http://comscore.com"
     },
-    "debut": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "debut\\/?([\\d\\.]+)?\\;version:\\1"
-      },
-      "icon": "debut.png",
-      "website": "http://www.brother.com"
-    },
     "decimal.js": {
       "cats": [
         59
@@ -19941,16 +19829,6 @@
         "generator": "^experiencedCMS$"
       },
       "website": "https://experiencedcms.berkearas.de"
-    },
-    "gRPC": {
-      "cats": [
-        18
-      ],
-      "headers": {
-        "Content-Type": "^application\\/grpc"
-      },
-      "icon": "gRPC.png",
-      "website": "https://grpc.io"
     },
     "git": {
       "cats": [
@@ -20100,16 +19978,6 @@
       },
       "url": "imperia/md/",
       "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
-    },
-    "io4 CMS": {
-      "cats": [
-        1
-      ],
-      "icon": "io4 CMS.png",
-      "meta": {
-        "generator": "GO[ |]+CMS Enterprise"
-      },
-      "website": "http://notenbomer.nl/Producten/Content_management/io4_|_cms"
     },
     "ip-label": {
       "cats": [
@@ -20271,23 +20139,6 @@
       "icon": "jsdelivr-icon.svg",
       "scripts": "//cdn\\.jsdelivr\\.net/",
       "website": "https://www.jsdelivr.com/"
-    },
-    "kolors4u": {
-      "cats": [
-        1,
-        11,
-        23,
-        6
-      ],
-      "headers": {
-        "X-Content-Encoded-By": "kolors4u ([\\d.]+)\\;version:\\1"
-      },
-      "icon": "kolors4u.png",
-      "implies": "WordPress",
-      "meta": {
-        "generator": "kolors4u (?: ([\\d.]+))?\\;version:\\1"
-      },
-      "website": "http://kolors4u.com"
     },
     "libwww-perl-daemon": {
       "cats": [
@@ -20841,17 +20692,6 @@
       "scripts": "shine(?:\\.min)?\\.js",
       "website": "https://bigspaceship.github.io/shine.js/"
     },
-    "shoperfa": {
-      "cats": [
-        6
-      ],
-      "headers": {
-        "X-Powered-By": "^Shoperfa$"
-      },
-      "icon": "Shoperfa.png",
-      "url": "^https?://(?:www\\.)?shoperfa\\.com",
-      "website": "https://shoperfa.com"
-    },
     "styled-components": {
       "cats": [
         12,
@@ -20934,15 +20774,41 @@
       "implies": "Node.js",
       "website": "https://totaljs.com"
     },
-    "uCoz": {
+    "TwicPics": {
+      "description": "TwicPics offers on-demand responsive image generation.",
       "cats": [
-        1
+        31,
+        59
       ],
-      "cookies": {
-        "uCoz": ""
+      "headers": {
+        "server": "^TwicPics/\\d+\\.\\d+\\.\\d+$"
       },
-      "icon": "uCoz.svg",
-      "website": "https://ucoz.ru"
+      "scripts": ".+\\.twic\\.pics",
+      "dom": {
+        "[data-twic-src]": {
+          "attributes": {
+            "data-twic-src": ""
+          }
+        },
+        "data-twic-background": {
+          "attributes": {
+            "data-twic-background": ""
+          }
+        },
+        ".twic": {
+          "attributes": {
+            "data-src": ""
+          }
+        }
+      },
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
+      "icon": "TwicPics.svg",
+      "website": "https://www.twicpics.com"
     },
     "uKnowva": {
       "cats": [

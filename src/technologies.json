@@ -6425,9 +6425,9 @@
         "WordPress"
       ],
       "meta": {
-        "generator": "^Frontity(.*)"
+        "generator": "^Frontity"
       },
-      "website": "https://frontity.org
+      "website": "https://frontity.org"
     },
     "Frosmo": {
       "cats": [
@@ -16353,6 +16353,31 @@
       "html": "<!-- Powered by Strikingly\\.com",
       "icon": "Strikingly.png",
       "website": "https://strikingly.com"
+    },
+    "Bread": {
+      "cats": [
+        41
+      ],
+      "description": "Bread is a buy now, pay later platform for ecommerce websites.",
+      "icon": "Bread.svg",
+      "scripts": "\\.getbread\\.com",
+      "dom": {
+        "#bread-mini-cart-btn": {
+          "text": ""
+        }
+      },
+      "js": {
+        "bread.appHost": "",
+        "BreadError": "",
+        "BreadShopify": "",
+        "BreadLoaded": "",
+        "BreadCalc": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://www.breadpayments.com"
     },
     "Stripe": {
       "cats": [

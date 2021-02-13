@@ -16627,6 +16627,32 @@
       "scripts": "swiper(?:\\.min)?\\.js",
       "website": "https://swiperjs.com"
     },
+    "Sylius": {
+      "cats": [
+        6
+      ],
+      "description": "Sylius is an open source ecommerce framework based on Symfony full stack.",
+      "icon": "Sylius.svg",
+      "implies": "Symfony",
+      "dom": {
+        "body.sylius_homepage": {
+          "attributes": {
+            "class": ""
+          }
+        },
+        "div#sylius-cart-button": {
+          "attributes": {
+            "id": ""
+          }
+        }
+      },
+      "scripts": [
+        "syliusshop/script\\.js",
+        "syliusgtmenhancedecommerceplugin"
+      ],
+      "oss": true,
+      "website": "https://sylius.com"
+    },
     "Symfony": {
       "cats": [
         18

@@ -5696,6 +5696,22 @@
       "scripts": "exhibit.*\\.js",
       "website": "http://simile-widgets.org/exhibit/"
     },
+    "ExitIntel": {
+      "cats": [
+        32
+      ],
+      "description": "ExitIntel is a full service conversion optimization agency that focuses on ecommerce companies.",
+      "icon": "ExitIntel.png",
+      "js": {
+        "exitintel.VERSION": "(.+)$\\;version:\\1",
+        "exitintelAccount": "",
+        "exitintelConfig": ""
+      },
+      "scripts": "(?:get.)?exitintel\\.com",
+      "saas": true,
+      "pricing": ["high", "recurring", "payg"],
+      "website": "https://exitintelligence.com"
+    },
     "ExpertRec": {
       "cats": [
         29

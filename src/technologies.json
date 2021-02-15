@@ -19279,13 +19279,6 @@
       ],
       "description": "Yelp Review Badges showcase business reviews from Yelp on websites.",
       "icon": "Yelp.svg",
-      "dom": {
-        "img[src*='dyn.yelpcdn.com']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
       "scripts": "yelp\\.com/biz_badge_js",
       "website": "http://yelp.com"
     },

@@ -97,4 +97,8 @@ const Utils = {
       )
     })
   },
+
+  globEscape(string) {
+    return string.replace(/\*/g, '\\*')
+  },
 }

@@ -95,7 +95,8 @@ Patterns (regular expressions) are kept in [`src/technologies.json`](https://git
     "generator": "(?:Example|Another Example)"
   },
   "script": "example-([0-9.]+)\\.js\\;confidence:50\\;version:\\1",
-  "url": ".+\\.example\\.com",
+  "url": "example\\.com",
+  "xhr": "example\\.com",
   "oss": true,
   "saas": true,
   "pricing": ["medium", "freemium", "recurring"],
@@ -353,6 +354,12 @@ Plus any of:
       <td>String</td>
       <td>Full URL of the page.</td>
       <td><code>"^https?//.+\\.wordpress\\.com"</code></td>
+    </tr>
+    <tr>
+      <td><code>xhr</code></td>
+      <td>String</td>
+      <td>Hostnames of XHR requests.</td>
+      <td><code>"cdn\\.netlify\\.com"</code></td>
     </tr>
     <tr>
       <td><code>meta</code></td>

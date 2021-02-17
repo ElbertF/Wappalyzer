@@ -189,6 +189,7 @@ const Wappalyzer = {
    */
   analyze({
     url,
+    xhr,
     html,
     css,
     robots,
@@ -210,6 +211,7 @@ const Wappalyzer = {
         Wappalyzer.technologies.map((technology) =>
           flatten([
             oo(technology, 'url', url),
+            oo(technology, 'xhr', xhr),
             oo(technology, 'html', html),
             oo(technology, 'css', css),
             oo(technology, 'robots', robots),
@@ -240,6 +242,7 @@ const Wappalyzer = {
       const {
         cats,
         url,
+        xhr,
         dom,
         html,
         css,
@@ -263,6 +266,7 @@ const Wappalyzer = {
         categories: cats || [],
         slug: Wappalyzer.slugify(name),
         url: transform(url),
+        xhr: transform(xhr),
         headers: transform(headers),
         dns: transform(dns),
         cookies: transform(cookies),

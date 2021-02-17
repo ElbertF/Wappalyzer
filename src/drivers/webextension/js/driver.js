@@ -16,6 +16,8 @@ const expiry = 1000 * 60 * 60 * 24
 
 const hostnameIgnoreList = /((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|preview|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube|\/admin|\.local|\.test|\.dev|^[0-9.]$)/
 
+const xhrDebounce = []
+
 const Driver = {
   lastPing: Date.now(),
 
@@ -66,6 +68,11 @@ const Driver = {
       ['responseHeaders']
     )
 
+    chrome.webRequest.onCompleted.addListener(Driver.onXhrRequestComplete, {
+      urls: ['http://*/*', 'https://*/*'],
+      types: ['xmlhttprequest'],
+    })
+
     chrome.tabs.onRemoved.addListener((id) => (Driver.cache.tabs[id] = null))
 
     // Enable messaging between scripts
@@ -80,10 +87,10 @@ const Driver = {
         'https://www.wappalyzer.com/installed/?utm_source=installed&utm_medium=extension&utm_campaign=wappalyzer'
       )
     } else if (version !== previous && upgradeMessage) {
-      // open(
-      //   `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
-      //   false
-      // )
+      open(
+        `https://www.wappalyzer.com/upgraded/?utm_source=upgraded&utm_medium=extension&utm_campaign=wappalyzer`,
+        false
+      )
     }
 
     await setOption('version', version)
@@ -256,11 +263,11 @@ const Driver = {
    * @param {Object} request
    */
   async onWebRequestComplete(request) {
-    if (await Driver.isDisabledDomain(request.url)) {
-      return
-    }
-
     if (request.responseHeaders) {
+      if (await Driver.isDisabledDomain(request.url)) {
+        return
+      }
+
       const headers = {}
 
       try {
@@ -281,11 +288,41 @@ const Driver = {
             )
           })
 
-          await Driver.onDetect(request.url, analyze({ headers }))
+          Driver.onDetect(request.url, analyze({ headers })).catch(Driver.error)
         }
       } catch (error) {
         Driver.error(error)
       }
+    }
+  },
+
+  /**
+   * Analyse XHR request hostnames
+   * @param {Object} request
+   */
+  async onXhrRequestComplete(request) {
+    if (await Driver.isDisabledDomain(request.url)) {
+      return
+    }
+
+    let hostname
+
+    try {
+      ;({ hostname } = new URL(request.url))
+    } catch (error) {
+      return
+    }
+
+    if (!xhrDebounce.includes(hostname)) {
+      xhrDebounce.push(hostname)
+
+      setTimeout(() => {
+        xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
+
+        Driver.onDetect(request.originUrl, analyze({ xhr: hostname })).catch(
+          Driver.error
+        )
+      }, 1000)
     }
   },
 

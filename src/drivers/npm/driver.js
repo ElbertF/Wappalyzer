@@ -51,6 +51,8 @@ const { technologies, categories } = JSON.parse(
 setTechnologies(technologies)
 setCategories(categories)
 
+const xhrDebounce = []
+
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
@@ -328,6 +330,26 @@ class Site {
 
     page.on('request', async (request) => {
       try {
+        if (request.resourceType() === 'xhr') {
+          let hostname
+
+          try {
+            ;({ hostname } = new URL(request.url()))
+          } catch (error) {
+            return
+          }
+
+          if (!xhrDebounce.includes(hostname)) {
+            xhrDebounce.push(hostname)
+
+            setTimeout(() => {
+              xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
+
+              this.onDetect(analyze({ xhr: hostname }))
+            }, 1000)
+          }
+        }
+
         if (
           (responseReceived && request.isNavigationRequest()) ||
           request.frame() !== page.mainFrame() ||

@@ -223,6 +223,9 @@
 					},
 					"icon": {
 						"$ref": "#/definitions/non-empty-non-blank-string"
+					},
+					"xhr": {
+						"$ref": "#/definitions/non-empty-non-blank-string"
 					}
 				}
 			}

@@ -288,6 +288,10 @@
     "75": {
       "name": "Email",
       "priority": 9
+    },
+    "76": {
+      "name": "Personalization",
+      "priority": 9
     }
   },
   "technologies": {
@@ -3713,8 +3717,7 @@
     },
     "Clerk.io": {
       "cats": [
-        10,
-        6
+        76
       ],
       "description": "Clerk.io is an all-in-one ecommerce personalization platform.",
       "icon": "Clerk.io.svg",
@@ -5135,6 +5138,19 @@
       },
       "website": "https://www.drift.com/"
     },
+    "AquilaCMS": {
+      "cats": [
+        1
+      ],
+      "description": "AquilaCMS is a fullstack, headless CMS written in JavaScript.",
+      "implies": ["Next.js", "Node.js", "React", "MongoDB", "Amazon Web Services"],
+      "meta": {
+        "powered-by": "AquilaCMS"
+      },
+      "oss": true,
+      "icon": "AquilaCMS.svg",
+      "website": "https://www.aquila-cms.com/"
+    },
     "Drupal": {
       "cats": [
         1
@@ -5219,7 +5235,8 @@
     },
     "Dynamic Yield": {
       "cats": [
-        74
+        74,
+        76
       ],
       "cookies": {
         "_dy_geo": "",
@@ -9065,7 +9082,7 @@
     },
     "Kibo Personalization": {
       "cats": [
-        10,
+        76,
         74
       ],
       "description": "Kibo Personalization is a omnichannel personalization software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
@@ -11693,7 +11710,7 @@
     },
     "Nosto": {
       "cats": [
-        32,
+        76,
         74
       ],
       "description": "Nosto is an ecommerce platform providing product recommendations based on individual behavioral data.",
@@ -13715,7 +13732,8 @@
     },
     "Qubit": {
       "cats": [
-        74
+        74,
+        76
       ],
       "description": "Qubit is a SaaS based persuasive personalization at scale services.",
       "icon": "Qubit.png",
@@ -15493,7 +15511,7 @@
         6
       ],
       "pricing": [
-        "medium",
+        "mid",
         "recurring"
       ],
       "saas": true,

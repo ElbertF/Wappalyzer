@@ -87,11 +87,12 @@
 	"categoryName66":           { "message": "UI Фреймворк" },
 	"categoryName67":           { "message": "Соответствие cookie" },
 	"categoryName68":           { "message": "Доступность" },
-	"categoryName69":           { "message": "Social logins" },
+	"categoryName69":           { "message": "Логин через социальные сети" },
 	"categoryName70":           { "message": "SSL/TLS certificate authorities" },
-	"categoryName71":           { "message": "Affiliate programs" },
-	"categoryName72":           { "message": "Appointment scheduling" },
-	"categoryName73":           { "message": "Surveys" },
-	"categoryName74":           { "message": "A/B testing" },
-	"categoryName75":           { "message": "Email" }
+	"categoryName71":           { "message": "Партнерская программы" },
+	"categoryName72":           { "message": "Сервисы расписания и бронирования" },
+	"categoryName73":           { "message": "Опросы" },
+	"categoryName74":           { "message": "A/B тестирование" },
+	"categoryName75":           { "message": "Email" },
+	"categoryName76":           { "message": "Персонализация" }
 }

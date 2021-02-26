@@ -188,6 +188,10 @@ const Popup = {
    * @param {Array} detections
    */
   async onGetDetections(detections = []) {
+    detections = detections
+      .filter(({ confidence }) => confidence >= 50)
+      .filter(({ slug }) => slug !== 'cart-functionality')
+
     if (!detections || !detections.length) {
       document.querySelector('.empty').classList.remove('empty--hidden')
       document.querySelector('.detections').classList.add('detections--hidden')
@@ -241,9 +245,8 @@ const Popup = {
         })
       )
 
-      technologies
-        .filter(({ confidence }) => confidence >= 50)
-        .forEach(({ name, slug, confidence, version, icon, website }) => {
+      technologies.forEach(
+        ({ name, slug, confidence, version, icon, website }) => {
           const technologyNode = Popup.templates.technology.cloneNode(true)
 
           const image = technologyNode.querySelector('.technology__icon')
@@ -279,7 +282,8 @@ const Popup = {
           categoryNode
             .querySelector('.technologies')
             .appendChild(technologyNode)
-        })
+        }
+      )
 
       document.querySelector('.detections').appendChild(categoryNode)
     })

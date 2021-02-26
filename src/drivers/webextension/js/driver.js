@@ -499,14 +499,18 @@ const Driver = {
 
     let icon = 'default.svg'
 
+    const _technologies = technologies.filter(
+      ({ slug }) => slug !== 'cart-functionality'
+    )
+
     if (dynamicIcon) {
       const pinnedCategory = parseInt(await getOption('pinnedCategory'), 10)
 
-      const pinned = technologies.find(({ categories }) =>
+      const pinned = _technologies.find(({ categories }) =>
         categories.some(({ id }) => id === pinnedCategory)
       )
 
-      ;({ icon } = pinned || technologies[0] || { icon })
+      ;({ icon } = pinned || _technologies[0] || { icon })
     }
 
     if (!url) {
@@ -528,7 +532,9 @@ const Driver = {
         {
           tabId,
           text:
-            badge && technologies.length ? technologies.length.toString() : '',
+            badge && _technologies.length
+              ? _technologies.length.toString()
+              : '',
         },
         () => {}
       )

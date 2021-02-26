@@ -7127,6 +7127,20 @@
       "saas": true,
       "website": "https://ads.google.com"
     },
+    "Stack Analytix": {
+      "cats": [
+        10
+      ],
+      "description": "Stack Analytix offers heatmaps, session recording, conversion analysis and user engagement tools.",
+      "icon": "Stack Analytix.svg",
+      "js": {
+        "stackAnalysis": ""
+      },
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "scripts": "api\\.stackanalytix\\.com",
+      "website": "https://www.stackanalytix.com"
+    },
     "Google Analytics": {
       "cats": [
         10
@@ -13176,7 +13190,7 @@
         10
       ],
       "cookies": {},
-      "description": "Plausible is an open-source  alternative to Google Analytics.",
+      "description": "Plausible is an open-source alternative to Google Analytics.",
       "icon": "Plausible.svg",
       "js": {
         "plausible": ""

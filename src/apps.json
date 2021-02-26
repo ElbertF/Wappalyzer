@@ -11552,8 +11552,8 @@
         5
       ],
       "icon": "Taggbox.svg",
-      "script": "(widget|web)\\.taggbox\\.com",
-      "url": "(widget|web)\\.taggbox\\.com",
+      "script": "socialwall\\.taggbox\\.com",
+      "url": "socialwall\\.taggbox\\.com",
       "website": "https://taggbox.com/"
     },
     "Taiga": {

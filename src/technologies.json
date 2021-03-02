@@ -1565,6 +1565,30 @@
       ],
       "website": "https://amplitude.com/"
     },
+    "Emergency System": {
+      "cats": [
+        10
+      ],
+      "cookies": {
+      "cookie_name": "EMS"
+      },
+     "headers": {
+        "X-Powered-By": "Emergency System(?:/([\\d.]+))?\\;version:\\1"
+      },
+      "meta": {
+        "generator": "Emergency System WordPress Plugin",
+        "keywords": "Emergency System"
+      },
+      "description": "Emergency System WordPress Plugin. Helping people stay alert in the event of a biological hazard.",
+      "html": "<!--[^>]+ems,
+      "icon": "Emergency-System.svg",
+      "implies": [
+        "WordPress"
+      ],
+      "pricing": ["low", "freemium"],
+      "url": "^https?://[^/]+\\.dmitrys\\.xyz",
+      "website": "https://dmitrys.xyz"
+    },
     "Analysys Ark": {
       "cats": [
         10

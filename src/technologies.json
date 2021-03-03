@@ -1580,10 +1580,10 @@
         "keywords": "Emergency System"
       },
       "description": "Emergency System WordPress Plugin. Helping people stay alert in the event of a biological hazard.",
-      "html": "<!--[^>]+ems,
+      "html": "<!--[^>]+ems",
       "icon": "Emergency-System.svg",
       "implies": [
-        "WordPress"
+        "WordPress",
       ],
       "pricing": ["low", "freemium"],
       "url": "^https?://[^/]+\\.dmitrys\\.xyz",

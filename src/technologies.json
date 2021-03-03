@@ -1583,9 +1583,9 @@
       "html": "<!--[^>]+ems",
       "icon": "Emergency-System.svg",
       "implies": [
-        "WordPress",
+        "WordPress"
       ],
-      "pricing": ["low", "freemium"],
+      "pricing": ["freemium"],
       "url": "^https?://[^/]+\\.dmitrys\\.xyz",
       "website": "https://dmitrys.xyz"
     },

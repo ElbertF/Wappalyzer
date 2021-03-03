@@ -1581,7 +1581,7 @@
       },
       "description": "Emergency System WordPress Plugin. Helping people stay alert in the event of a biological hazard.",
       "html": "<!--[^>]+ems",
-      "icon": "Emergency-System.svg",
+      "icon": "Emergency-System.svg"
       "implies": [
         "WordPress",
       ],

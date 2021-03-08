@@ -290,7 +290,7 @@
       "priority": 9
     },
     "76": {
-      "name": "Personalization",
+      "name": "Personalisation",
       "priority": 9
     }
   },
@@ -374,7 +374,7 @@
       "cats": [
         74
       ],
-      "description": "AB Tasty is a customer experience optimization company. AB Tasty offers AI-driven experimentation, personalization, and product optimization platforms for user testing.",
+      "description": "AB Tasty is a customer experience optimization company. AB Tasty offers AI-driven experimentation, personalisation, and product optimization platforms for user testing.",
       "icon": "AB Tasty.svg",
       "js": {
         "ABTasty": "",
@@ -1444,17 +1444,22 @@
           "text": ""
         }
       },
-      "html": "<meta id=\"amazon-payments",
       "icon": "Amazon Pay.svg",
       "js": {
         "AmazonPayments": "",
-        "enableAmazonPay": ""
+        "OffAmazonPayments": "",
+        "enableAmazonPay": "",
+        "onAmazonPaymentsReady": ""
       },
+      "pricing": [
+        "payg"
+      ],
       "scripts": [
         "/amazonpayments(?:\\.min)?\\.js",
-        "static-[^.]\\.payments-amazon\\.com/OffAmazonPayments"
+        "\\.payments-amazon\\.com/OffAmazonPayments"
       ],
-      "website": "https://pay.amazon.com"
+      "website": "https://pay.amazon.com",
+      "xhr": "payments\\.amazon\\.com"
     },
     "Amazon S3": {
       "cats": [
@@ -1888,6 +1893,25 @@
       "saas": true,
       "website": "https://www.appointy.com/"
     },
+    "AquilaCMS": {
+      "cats": [
+        1
+      ],
+      "description": "AquilaCMS is a fullstack, headless CMS written in JavaScript.",
+      "icon": "AquilaCMS.svg",
+      "implies": [
+        "Next.js",
+        "Node.js",
+        "React",
+        "MongoDB",
+        "Amazon Web Services"
+      ],
+      "meta": {
+        "powered-by": "AquilaCMS"
+      },
+      "oss": true,
+      "website": "https://www.aquila-cms.com/"
+    },
     "Arastta": {
       "cats": [
         6
@@ -2116,6 +2140,25 @@
       "html": "<a[^>]*href=\"https?://(?:www\\.)?statuspage\\.io/powered-by[^>]+>",
       "icon": "Atlassian Statuspage.svg",
       "website": "https://www.statuspage.io/"
+    },
+    "Attentive": {
+      "cats": [
+        76,
+        5
+      ],
+      "description": "Attentive is a personalized mobile messaging platform that helps retail & ecommerce brands acquire, retain, and interact with mobile shoppers.",
+      "icon": "Attentive.svg",
+      "js": {
+        "__attentive": "",
+        "__attentive_domain": "",
+        "attn_email_save": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.attn\\.tv",
+      "website": "https://www.attentivemobile.com"
     },
     "AudioEye": {
       "cats": [
@@ -2464,6 +2507,14 @@
         6
       ],
       "description": "BigCommerce is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
+      "dom": {
+        "img[data-src*='.bigcommerce.com'],img[src*='.bigcommerce.com']": {
+          "attributes": {
+            "data-src": "",
+            "src": ""
+          }
+        }
+      },
       "html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/",
       "icon": "BigCommerce.svg",
       "pricing": [
@@ -2976,6 +3027,26 @@
       "scripts": "\\.getbread\\.com",
       "website": "https://www.breadpayments.com"
     },
+    "BrightInfo": {
+      "cats": [
+        32,
+        74
+      ],
+      "description": "BrightInfo is an automated content personalization solution.",
+      "icon": "BrightInfo.png",
+      "js": {
+        "_BI_": "\\;confidence:50",
+        "_biq": "\\;confidence:50",
+        "biJsUrl": "//app\\.brightinfo\\.com"
+      },
+      "pricing": [
+        "poa",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "app\\.brightinfo\\.com",
+      "website": "https://www.brightinfo.com"
+    },
     "Brightspot": {
       "cats": [
         1
@@ -3382,14 +3453,11 @@
         6
       ],
       "description": "Websites that have a shopping cart or checkout page, either using a known ecommerce platform or a custom solution.",
-      "html": [
-        "<a[^>]*href=[^>]*/Cart",
-        "<a[^>]*href=[^>]*/Basket",
-        "<a[^>]*href=[^>]*/Trolley",
-        "<a[^>]*href=[^>]*/Bag",
-        "<a[^>]*href=[^>]*/ShoppingBag",
-        "<a[^>]*href=[^>]*/Checkout"
-      ],
+      "dom": {
+        "a[href*='/cart'], a[href*='/basket'], a[href*='/trolley'], a[href*='/bag'], a[href*='/shoppingbag'], a[href*='/checkout'], [aria-controls='cart']": {
+          "text": ""
+        }
+      },
       "icon": "Cart-generic.svg",
       "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
     },
@@ -3719,7 +3787,7 @@
       "cats": [
         76
       ],
-      "description": "Clerk.io is an all-in-one ecommerce personalization platform.",
+      "description": "Clerk.io is an all-in-one ecommerce personalisation platform.",
       "icon": "Clerk.io.svg",
       "js": {
         "__clerk_cb_0": "",
@@ -4121,6 +4189,26 @@
       "implies": "Microsoft ASP.NET",
       "website": "http://commerceserver.net"
     },
+    "Commerce.js": {
+      "cats": [
+        6
+      ],
+      "description": "Commerce.js is an API-first ecommerce platform for developers and businesses.",
+      "headers": {
+        "Chec-Version": ".*",
+        "X-Powered-By": "Commerce.js"
+      },
+      "icon": "commercejs.png",
+      "js": {
+        "CommercejsSpace": ""
+      },
+      "scripts": [
+        "cdn\\.chec\\.io/v(\\d+)/commerce\\.js\\;version=\\1",
+        "chec/commerce\\.js"
+      ],
+      "url": "\\.spaces.chec\\.io",
+      "website": "https://www.commercejs.com"
+    },
     "Concrete5": {
       "cats": [
         1
@@ -4217,25 +4305,25 @@
         1
       ],
       "description": "Contentful is an API-first content management platform to create, manage and publish content on any digital channel.",
-      "html": "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.(?:ct?fassets\\.net|contentful\\.com)",
-      "icon": "Contentful.svg",
       "headers": {
         "x-contentful-request-id": ""
       },
-      "xhr": "cdn\\.contentful\\.com",
+      "html": "<[^>]+(?:https?:)?//(?:assets|downloads|images|videos)\\.(?:ct?fassets\\.net|contentful\\.com)",
+      "icon": "Contentful.svg",
       "pricing": [
         "mid",
         "freemium",
         "recurring"
       ],
       "saas": true,
-      "website": "http://www.contentful.com"
+      "website": "http://www.contentful.com",
+      "xhr": "cdn\\.contentful\\.com"
     },
     "Convert": {
       "cats": [
         74
       ],
-      "description": "Convert Experiences is an enterprise A/B testing and personalization solution for conversion optimization and data-driven decisions in high-traffic websites.",
+      "description": "Convert Experiences is an enterprise A/B testing and personalisation solution for conversion optimization and data-driven decisions in high-traffic websites.",
       "icon": "Convert.png",
       "js": {
         "convert": "\\;confidence:34",
@@ -4449,7 +4537,7 @@
       "cats": [
         36
       ],
-      "description": "Criteo provides personalized retargeting that works with Internet retailers to serve personalized online display advertisements to consumers who have previously visited the advertiser's website.",
+      "description": "Criteo provides personalised retargeting that works with Internet retailers to serve personalised online display advertisements to consumers who have previously visited the advertiser's website.",
       "icon": "Criteo.svg",
       "js": {
         "Criteo": "",
@@ -4951,6 +5039,25 @@
       "icon": "Docker.svg",
       "website": "https://www.docker.com/"
     },
+    "DocuSign": {
+      "cats": [
+        19
+      ],
+      "description": "DocuSign allows organizations to manage electronic agreements.",
+      "dns": {
+        "TXT": [
+          "docusign"
+        ]
+      },
+      "icon": "DocuSign.svg",
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://www.docusign.com",
+      "xhr": "docusign\\.net"
+    },
     "Docusaurus": {
       "cats": [
         4,
@@ -5137,19 +5244,6 @@
         "driftt": ""
       },
       "website": "https://www.drift.com/"
-    },
-    "AquilaCMS": {
-      "cats": [
-        1
-      ],
-      "description": "AquilaCMS is a fullstack, headless CMS written in JavaScript.",
-      "implies": ["Next.js", "Node.js", "React", "MongoDB", "Amazon Web Services"],
-      "meta": {
-        "powered-by": "AquilaCMS"
-      },
-      "oss": true,
-      "icon": "AquilaCMS.svg",
-      "website": "https://www.aquila-cms.com/"
     },
     "Drupal": {
       "cats": [
@@ -5527,13 +5621,16 @@
     },
     "Emarsys": {
       "cats": [
-        32
+        32,
+        76
       ],
       "description": "Emarsys is a cloud-based B2C marketing platform.",
       "icon": "Emarsys.svg",
       "js": {
+        "Scarab": "",
         "ScarabQueue": ""
       },
+      "scripts": "(?:static|cdn)\\.scarabresearch\\.com",
       "website": "https://emarsys.com/"
     },
     "EmbedThis Appweb": {
@@ -5895,6 +5992,24 @@
       "description": "Facebook is an online social media and social networking service.",
       "icon": "Facebook.svg",
       "scripts": "//connect\\.facebook\\.([a-z]+)/[^/]*/[a-z]*\\.js",
+      "website": "http://facebook.com"
+    },
+    "Facebook Pixel": {
+      "cats": [
+        10
+      ],
+      "description": "Facebook pixel is an analytics tool that allows you to measure the effectiveness of your advertising.",
+      "dom": {
+        "img[src*='facebook.com/tr']": {
+          "attributes": {
+            "src": ""
+          }
+        }
+      },
+      "icon": "Facebook.svg",
+      "js": {
+        "_fbq": ""
+      },
       "website": "http://facebook.com"
     },
     "Facebook Sign-in": {
@@ -6538,7 +6653,7 @@
         32,
         74
       ],
-      "description": "Frosmo is a SaaS company wich provides AI-driven personalization products.",
+      "description": "Frosmo is a SaaS company wich provides AI-driven personalisation products.",
       "icon": "Frosmo.png",
       "js": {
         "_frosmo": "",
@@ -7127,20 +7242,6 @@
       "saas": true,
       "website": "https://ads.google.com"
     },
-    "Stack Analytix": {
-      "cats": [
-        10
-      ],
-      "description": "Stack Analytix offers heatmaps, session recording, conversion analysis and user engagement tools.",
-      "icon": "Stack Analytix.svg",
-      "js": {
-        "stackAnalysis": ""
-      },
-      "saas": true,
-      "pricing": ["low", "recurring"],
-      "scripts": "api\\.stackanalytix\\.com",
-      "website": "https://www.stackanalytix.com"
-    },
     "Google Analytics": {
       "cats": [
         10
@@ -7635,7 +7736,7 @@
         1,
         11
       ],
-      "icon": "Halo.svg",
+      "icon": "Halo.png",
       "implies": "Java",
       "meta": {
         "generator": "Halo ([\\d.]+)?\\;version:\\1"
@@ -7703,12 +7804,21 @@
       "cats": [
         10
       ],
+      "description": "Heap is an analytics platform.",
       "icon": "Heap.svg",
       "js": {
-        "heap": ""
+        "heap.version.heapJsVersion": "([\\d.]+)\\;version:\\1"
       },
-      "scripts": "heap-\\d+\\.js",
-      "website": "http://heapanalytics.com"
+      "pricing": [
+        "freemium",
+        "high"
+      ],
+      "saas": true,
+      "scripts": [
+        "cdn\\.heapanalytics\\.com",
+        "heap-\\d+\\.js"
+      ],
+      "website": "https://heap.io"
     },
     "Heartland Payment Systems": {
       "cats": [
@@ -7767,9 +7877,6 @@
         "Via": "[\\d.-]+ vegur$"
       },
       "icon": "heroku.svg",
-      "implies": [
-        "Amazon Web Services"
-      ],
       "url": "\\.herokuapp\\.com",
       "website": "https://www.heroku.com/"
     },
@@ -8412,6 +8519,23 @@
       "icon": "Invenio.png",
       "website": "http://invenio-software.org"
     },
+    "Inveon": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "INV.Customer": "\\;confidence:50",
+        "inveonSessionId": ""
+      },
+      "description": "Inveon is a technology company that has been delivering ecommerce infrastructure software and mcommerce applications.",
+      "icon": "Inveon.svg",
+      "js": {
+        "InvApp": "\\;confidence:50",
+        "invTagManagerParams": ""
+      },
+      "scripts": "Scripts/_app/Inv(?:\\w+)\\.js\\?v=(.+)$\\;version:\\1",
+      "website": "https://www.inveon.com"
+    },
     "Ionic": {
       "cats": [
         18
@@ -8457,16 +8581,6 @@
         "onetime"
       ],
       "website": "https://isotope.metafizzy.co"
-    },
-    "Iubenda": {
-      "cats": [
-        67
-      ],
-      "icon": "iubenda.png",
-      "scripts": [
-        "iubenda\\.com/cookie-solution/confs/js/"
-      ],
-      "website": "https://www.iubenda.com/"
     },
     "Izooto": {
       "cats": [
@@ -8942,7 +9056,7 @@
       "cookies": {
         "kameleoonVisitorCode": ""
       },
-      "description": "Kameleoon is a personalization technology platform for real-time omnichannel optimization and conversion.",
+      "description": "Kameleoon is a personalisation technology platform for real-time omnichannel optimization and conversion.",
       "dom": {
         "link[href*='.kameleoon.eu/kameleoon.js']": {
           "attributes": {
@@ -9099,9 +9213,11 @@
         76,
         74
       ],
-      "description": "Kibo Personalization is a omnichannel personalization software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
+      "description": "Kibo Personalization is a omnichannel personalisation software powered by machine learning to deliver individualized customer experiences and powered by Monetate and Certona.",
       "icon": "Kibo.png",
       "js": {
+        "BaynoteAPI": "",
+        "BaynoteJSVersion": "",
         "monetate": "",
         "monetateQ": "",
         "monetateT": ""
@@ -9110,7 +9226,10 @@
         "poa"
       ],
       "saas": true,
-      "scripts": "\\.monetate\\.net",
+      "scripts": [
+        "\\.monetate\\.net",
+        "\\.baynote\\.net"
+      ],
       "website": "https://kibocommerce.com/personalization-software"
     },
     "KineticJS": {
@@ -9423,6 +9542,28 @@
       "scripts": "https?://connectormwi\\.laterpay\\.net/([0-9.]+)[a-zA-z-]*/live/[\\w-]+\\.js\\;version:\\1",
       "website": "https://www.laterpay.net/"
     },
+    "Launchrock": {
+      "cats": [
+        74,
+        51
+      ],
+      "description": "Launchrock is an online tool designed to help capture email addresses and create online product launching events.",
+      "icon": "Launchrock.svg",
+      "js": {
+        "lrIgnition": "\\;confidence:25",
+        "lrLoadedJs": "\\;confidence:25",
+        "lrSiteSettingAsBoolean": "\\;confidence:25",
+        "lrignition": "\\;confidence:25"
+      },
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "js/ignition-current\\.min\\.js\\;confidence:50",
+      "website": "https://www.launchrock.com"
+    },
     "Leaflet": {
       "cats": [
         35
@@ -9633,7 +9774,7 @@
       "cats": [
         32
       ],
-      "description": "Listrak is a AI-based marketing automation and CRM solutions that unify, interpret and personalize data to engage customer across channels and devices.",
+      "description": "Listrak is a AI-based marketing automation and CRM solutions that unify, interpret and personalise data to engage customer across channels and devices.",
       "icon": "Listrak.png",
       "js": {
         "_LTKSignup": "",
@@ -10977,6 +11118,11 @@
         10
       ],
       "description": "Mixpanel provides a business analytics service. It tracks user interactions with web and mobile applications and provides tools for targeted communication with them. Its toolset contains in-app A/B tests and user survey forms.",
+      "dns": {
+        "TXT": [
+          "mixpanel-domain-verify"
+        ]
+      },
       "icon": "Mixpanel.png",
       "js": {
         "mixpanel": ""
@@ -11575,8 +11721,8 @@
       },
       "icon": "Netlify.svg",
       "url": "^https?://[^/]+\\.netlify\\.(?:com|app)/",
-      "xhr": "cdn\\.netlify\\.com",
-      "website": "https://www.netlify.com/"
+      "website": "https://www.netlify.com/",
+      "xhr": "cdn\\.netlify\\.com"
     },
     "Neto": {
       "cats": [
@@ -11899,6 +12045,33 @@
       "oss": true,
       "scripts": "/web/js/(?:web\\.assets_common/|website\\.assets_frontend/)\\;confidence:25",
       "website": "http://odoo.com"
+    },
+    "Okendo": {
+      "cats": [
+        5,
+        76
+      ],
+      "description": "Okendo is a customer marketing platform with product ratings and reviews, customer photos and videos to help personalise experiences.",
+      "dom": {
+        "div.okeReviews": {
+          "attributes": {
+            "data-oke-reviews-version": "^([\\d.]+)$\\;version:\\1"
+          }
+        }
+      },
+      "icon": "Okendo.svg",
+      "js": {
+        "okeReviewsWidgetOnInit": "",
+        "okeWidgetControlInit": "",
+        "okendoReviews": ""
+      },
+      "pricing": [
+        "low",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://www.okendo.io"
     },
     "Okta": {
       "cats": [
@@ -13037,6 +13210,26 @@
       "icon": "Phusion Passenger.png",
       "website": "https://phusionpassenger.com"
     },
+    "Piano": {
+      "cats": [
+        76
+      ],
+      "description": "Piano is a enterprise SaaS company which specializing in advanced media business processes and ecommerce optimization.",
+      "icon": "Piano.png",
+      "js": {
+        "PianoESPConfig": "",
+        "gciDataPiano": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "\\.tinypass\\.com",
+        "\\.piano\\.io"
+      ],
+      "website": "https://piano.io"
+    },
     "Pico": {
       "cats": [
         53
@@ -13749,7 +13942,7 @@
         74,
         76
       ],
-      "description": "Qubit is a SaaS based persuasive personalization at scale services.",
+      "description": "Qubit is a SaaS based persuasive personalisation at scale services.",
       "icon": "Qubit.png",
       "js": {
         "__qubit": "",
@@ -13950,6 +14143,27 @@
       },
       "scripts": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://dmitrybaranovskiy.github.io/raphael/"
+    },
+    "Raptor": {
+      "cats": [
+        76
+      ],
+      "description": "Raptor is a personalization engine based on machine learning that analyses and learns about the user's behavior and unique browser history.",
+      "icon": "Raptor.png",
+      "js": {
+        "Raptor": "",
+        "onRaptorLoaded": "",
+        "raptorBase64": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "api\\.raptorsmartadvisor\\.com",
+        "msecnd\\.net/script/raptor-([\\d.]+)\\.js\\;version:\\1"
+      ],
+      "website": "https://raptorsmartadvisor.com"
     },
     "Raspbian": {
       "cats": [
@@ -14355,6 +14569,50 @@
       "saas": true,
       "scripts": "widgets\\.resy\\.\\w+",
       "website": "https://resy.com"
+    },
+    "Retail Rocket": {
+      "cats": [
+        76
+      ],
+      "cookies": {
+        "rr-testCookie": "testvalue",
+        "rrpvid": "^\\d+$"
+      },
+      "description": "Retail Rocket is a big data-based personalisation platform for ecommerce websites.",
+      "icon": "Retail Rocket.png",
+      "js": {
+        "retailrocket": "",
+        "rrAddToBasket": "\\;confidence:25",
+        "rrApiOnReady": "\\;confidence:25",
+        "rrLibrary": "\\;confidence:25",
+        "rrPartnerId": "\\;confidence:25"
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.retailrocket\\.net",
+      "website": "https://retailrocket.net"
+    },
+    "RevLifter": {
+      "cats": [
+        76
+      ],
+      "cookies": {
+        "REVLIFTER": ""
+      },
+      "description": "RevLifter is an AI-powered coupon technology which allows brands to offer personalised incentives to their customers based on real-time basket data.",
+      "icon": "RevLifter.png",
+      "js": {
+        "RevLifterObject": "",
+        "revlifter": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "assets\\.revlifter\\.io",
+      "website": "https://www.revlifter.com"
     },
     "Reveal.js": {
       "cats": [
@@ -14867,6 +15125,41 @@
       "implies": "Express",
       "website": "http://sailsjs.org"
     },
+    "Sailthru": {
+      "cats": [
+        32,
+        75,
+        76
+      ],
+      "cookies": {
+        "sailthru_pageviews": ""
+      },
+      "description": "Sailthru is a marketing automation software and multi-channel personalization tool that serves ecommerce and media brands.",
+      "dom": {
+        "link[href*='ak.sail-horizon.com'],link[href*='api.sail-personalize.com'],link[href*='api.sail-track.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "icon": "Sailthru.svg",
+      "js": {
+        "Sailthru": "",
+        "sailthruIdentify": "",
+        "sailthruNewsletterRegistration": "",
+        "trackSailthruUser": ""
+      },
+      "meta": {
+        "sailthru.image.full": "",
+        "sailthru.title": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "ak\\.sail-horizon\\.com",
+      "website": "https://www.sailthru.com"
+    },
     "SaleCycle": {
       "cats": [
         6
@@ -14966,6 +15259,9 @@
           }
         }
       },
+      "headers": {
+        "x-sanity-shard": ""
+      },
       "icon": "Sanity.svg",
       "pricing": [
         "freemium",
@@ -14973,7 +15269,8 @@
         "payg"
       ],
       "saas": true,
-      "website": "https://www.sanity.io"
+      "website": "https://www.sanity.io",
+      "xhr": "api(?:cdn)?\\.sanity\\.io"
     },
     "Sapper": {
       "cats": [
@@ -15520,19 +15817,6 @@
       },
       "website": "https://shopfa.com"
     },
-    "commercelayer": {
-      "cats": [
-        6
-      ],
-      "pricing": [
-        "mid",
-        "recurring"
-      ],
-      "saas": true,
-      "xhr": "\\.commercelayer\\.io",
-      "icon": "commercelayer.svg",
-      "website": "https://commercelayer.io"
-    },
     "Shopify": {
       "cats": [
         6
@@ -15755,6 +16039,22 @@
       },
       "icon": "siteground.svg",
       "website": "https://www.siteground.com"
+    },
+    "SiteMinder": {
+      "cats": [
+        5,
+        72
+      ],
+      "description": "SiteMinder is a appointment booking solution designed for hotels.",
+      "icon": "SiteMinder.svg",
+      "pricing": [
+        "low",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "widget\\.siteminder\\.com",
+      "website": "https://www.siteminder.com"
     },
     "SiteSpect": {
       "cats": [
@@ -16262,7 +16562,7 @@
       "cats": [
         10
       ],
-      "description": "Spinnakr is a startup with a platform designed to personalize messages on blogs and websites.",
+      "description": "Spinnakr is a startup with a platform designed to personalise messages on blogs and websites.",
       "icon": "Spinnakr.png",
       "js": {
         "_spinnakr_site_id": ""
@@ -16425,6 +16725,23 @@
         "generator": "Squiz Matrix"
       },
       "website": "http://squiz.net"
+    },
+    "Stack Analytix": {
+      "cats": [
+        10
+      ],
+      "description": "Stack Analytix offers heatmaps, session recording, conversion analysis and user engagement tools.",
+      "icon": "Stack Analytix.svg",
+      "js": {
+        "stackAnalysis": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "api\\.stackanalytix\\.com",
+      "website": "https://www.stackanalytix.com"
     },
     "Stackla": {
       "cats": [
@@ -17015,9 +17332,10 @@
       ],
       "saas": true,
       "scripts": [
-        "(?:widget|web)\\.taggbox\\.com",
+        "\\.taggbox\\.com",
         "taggbox\\.com/app/js/embed\\.min\\.js(?:\\?ver=([\\d.]+))?\\;version:\\1"
       ],
+      "url": "\\.taggbox\\.com",
       "website": "https://taggbox.com/"
     },
     "Taiga": {
@@ -17508,6 +17826,29 @@
       "scripts": "tcdn\\.com\\.br",
       "website": "https://www.tray.com.br"
     },
+    "Trbo": {
+      "cats": [
+        74,
+        76
+      ],
+      "cookies": {
+        "trbo_session": "^(?:[\\d]+)$",
+        "trbo_usr": "^(?:[\\d\\w]+)$"
+      },
+      "description": "Trbo is a personalization, recommendations, A/B testing platform from Germany.",
+      "icon": "Trbo.svg",
+      "js": {
+        "_trbo": "",
+        "_trbo_start": "",
+        "_trboq": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.trbo\\.com",
+      "website": "https://www.trbo.com"
+    },
     "Tripadviser.Widget": {
       "cats": [
         5
@@ -17895,6 +18236,26 @@
       "scripts": "cmp\\.uniconsent\\.mgr\\.consensu\\.org/dfp\\.js",
       "website": "https://www.uniconsent.com/"
     },
+    "UpSellit": {
+      "cats": [
+        76
+      ],
+      "description": "UpSellit is a performance based lead and cart abandonment recovery solutions.",
+      "icon": "UpSellit.png",
+      "js": {
+        "usi_analytics": "\\;confidence:25",
+        "usi_app": "\\;confidence:25",
+        "usi_commons": "\\;confidence:25",
+        "usi_cookies": "\\;confidence:25"
+      },
+      "pricing": [
+        "poa",
+        "mid"
+      ],
+      "saas": true,
+      "scripts": "www\\.upsellit\\.com/active",
+      "website": "https://us.upsellit.com"
+    },
     "Upvoty": {
       "cats": [
         47
@@ -18210,6 +18571,29 @@
       },
       "icon": "vercel.svg",
       "website": "https://vercel.com"
+    },
+    "VerifyPass": {
+      "cats": [
+        5,
+        76
+      ],
+      "description": "VerifyPass is a company which provide secure identity proofing, authentication, and group affiliation verification for teachers and students.",
+      "icon": "VerifyPass.png",
+      "js": {
+        "verifypass_api_instantiator": "",
+        "verifypass_is_loaded": "",
+        "verifypass_popup": ""
+      },
+      "pricing": [
+        "payg",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": [
+        "cdn\\.id\\.services",
+        "cdn\\.verifypass\\.com"
+      ],
+      "website": "https://verifypass.com"
     },
     "VideoJS": {
       "cats": [
@@ -19508,6 +19892,23 @@
       },
       "website": "https://www.yepcomm.com.br"
     },
+    "Yieldify": {
+      "cats": [
+        76
+      ],
+      "description": "Yieldify is a customer journey optimization platform that brings personalization to the full customer journey.",
+      "icon": "Yieldify.svg",
+      "js": {
+        "_yieldify": ""
+      },
+      "pricing": [
+        "poa",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.yieldify\\.com",
+      "website": "https://www.yieldify.com"
+    },
     "Yieldlab": {
       "cats": [
         36
@@ -19681,10 +20082,14 @@
         "x-zendesk-user-id": ""
       },
       "icon": "Zendesk.png",
+      "js": {
+        "Zendesk": ""
+      },
       "pricing": [
         "low"
       ],
       "saas": true,
+      "scripts": "static\\.zdassets\\.com",
       "website": "https://zendesk.com"
     },
     "Zendesk Chat": {
@@ -19972,6 +20377,19 @@
       },
       "scripts": "\\.scorecardresearch\\.com/beacon\\.js|COMSCORE\\.beacon",
       "website": "http://comscore.com"
+    },
+    "commercelayer": {
+      "cats": [
+        6
+      ],
+      "icon": "commercelayer.svg",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://commercelayer.io",
+      "xhr": "\\.commercelayer\\.io"
     },
     "decimal.js": {
       "cats": [
@@ -20273,6 +20691,16 @@
       },
       "scripts": "clobs\\.js",
       "website": "http://www.ip-label.com"
+    },
+    "iubenda": {
+      "cats": [
+        67
+      ],
+      "icon": "iubenda.png",
+      "scripts": [
+        "iubenda\\.com/cookie-solution/confs/js/"
+      ],
+      "website": "https://www.iubenda.com/"
     },
     "jComponent": {
       "cats": [

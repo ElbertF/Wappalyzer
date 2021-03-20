@@ -12355,6 +12355,17 @@
       },
       "website": "https://man.openbsd.org/httpd.8"
     },
+    "Flow": {
+      "cats": [
+        6
+      ],
+      "icon": "flow.png",
+      "scripts": [
+        "shopify-cdn\\.flow\\.io",
+        "flow\\.min\\.js"
+      ],
+      "website": "https://www.flow.io/"
+    },
     "OpenCart": {
       "cats": [
         6
@@ -12979,6 +12990,25 @@
       ],
       "scripts": "paths(?:\\.min)?\\.js",
       "website": "https://github.com/andreaferretti/paths-js"
+    },
+    "PayBright": {
+      "cats": [
+        41
+      ],
+      "description": "PayBright is a Canadian fintech company that offers short-term interest-free installment loans for online shopping to consumers at checkout.",
+      "icon": "PayBright.png",
+      "dom": {
+        "link[href*='app.paybright.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "js": {
+        "_paybright_config": ""
+      },
+      "scripts": "app\\.paybright\\.com",
+      "website": "https://paybright.com"
     },
     "PayKickStart": {
       "cats": [

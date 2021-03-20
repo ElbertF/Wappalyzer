@@ -19345,6 +19345,20 @@
       "icon": "Whooshkaa.svg",
       "website": "https://www.whooshkaa.com"
     },
+    "Wiki.js": {
+      "cats": [
+        4
+      ],
+      "description": "Wiki.js is a wiki engine running on Node.js and written in JavaScript.",
+      "implies": "Node.js",
+      "icon": "Wiki.js.png",
+      "js": {
+        "WIKI.$_apolloInitData": "",
+        "WIKI.$apolloProvider": ""
+      },
+      "oss": true,
+      "website": "https://js.wiki"
+    },
     "Wikinggruppen": {
       "cats": [
         6

@@ -3331,7 +3331,7 @@
       ],
       "description": "Builder.io is a headless CMS with a powerful drag-and-drop visual editor that lets you build and optimize digital experiences with speed and flexibility. ",
       "dom": {
-        "[data-builder-content-id], img[src*=cdn.builder.io]": {
+        "[data-builder-content-id], img[src*='cdn.builder.io']": {
           "text": ""
         }
       },

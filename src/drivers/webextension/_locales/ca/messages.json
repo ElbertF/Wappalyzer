@@ -95,5 +95,7 @@
 	"categoryName72":           { "message": "Programacions de cites" },
 	"categoryName73":           { "message": "Enquestes" },
 	"categoryName74":           { "message": "Testeigs A/B" },
-	"categoryName75":           { "message": "Correus electrònics" }
+	"categoryName75":           { "message": "Correus electrònics" },
+	"categoryName76":           { "message": "Personalisation" },
+	"categoryName77":           { "message": "Retargeting" }
 }

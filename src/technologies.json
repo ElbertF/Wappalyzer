@@ -292,6 +292,10 @@
     "76": {
       "name": "Personalisation",
       "priority": 9
+    },
+    "77": {
+      "name": "Retargeting",
+      "priority": 9
     }
   },
   "technologies": {
@@ -325,6 +329,27 @@
       "icon": "3dCart.png",
       "scripts": "(?:twlh(?:track)?\\.asp|3d_upsell\\.js)",
       "website": "http://www.3dcart.com"
+    },
+    "4-Tell": {
+      "cats": [
+        76
+      ],
+      "cookies": {
+        "4Tell": "",
+        "4TellCart": "",
+        "4TellSession": ""
+      },
+      "description": "4-Tell is an ecommerce software company for retailers with AI-powered personalization and recommendations products.",
+      "icon": "4-Tell.png",
+      "js": {
+        "_4TellBoost": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "4tellcdn\\.azureedge\\.net",
+      "website": "https://4-tell.com"
     },
     "@sulu/web": {
       "cats": [
@@ -632,12 +657,43 @@
       "cats": [
         32
       ],
-      "description": "Act-On is a Software-as-a-Service (SaaS) product for marketing automation.",
-      "icon": "ActOn.png",
+      "description": "Act-On is a cloud-based SaaS product for marketing automation.",
+      "icon": "Act-On.svg",
       "js": {
         "ActOn": ""
       },
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "/cdnr/\\d+/acton/bn/tracker/\\d+",
       "website": "http://act-on.com"
+    },
+    "Actito": {
+      "cats": [
+        32,
+        76
+      ],
+      "cookies": {
+        "SmartFocus": ""
+      },
+      "description": "Actito is an agile SaaS marketing automation platform.",
+      "icon": "Actito.png",
+      "js": {
+        "_actGoal": "",
+        "smartFocus": ""
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": [
+        "cdn\\.actito\\.be",
+        "\\.advisor\\.smartfocus\\.com"
+      ],
+      "website": "https://www.actito.com"
     },
     "AdInfinity": {
       "cats": [
@@ -1494,6 +1550,16 @@
       "dns": {
         "NS": "\\.awsdns-"
       },
+      "headers": {
+        "x-amz-delete-marker": "",
+        "x-amz-err-code": "",
+        "x-amz-err-message": "",
+        "x-amz-id-2": "",
+        "x-amz-req-time-micros": "",
+        "x-amz-request-id": "",
+        "x-amz-rid": "",
+        "x-amz-version-id": ""
+      },
       "icon": "aws.svg",
       "website": "https://aws.amazon.com/"
     },
@@ -1892,6 +1958,28 @@
       ],
       "saas": true,
       "website": "https://www.appointy.com/"
+    },
+    "Apptus": {
+      "cats": [
+        76
+      ],
+      "cookies": {
+        "apptus.customerKey": "",
+        "apptus.sessionKey": ""
+      },
+      "description": "Apptus is an AI-powered ecommerce optimisation software provider.",
+      "icon": "Apptus.svg",
+      "js": {
+        "ApptusEsales": "",
+        "apptusConfig": "",
+        "apptusDebug": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.esales\\.apptus\\.com.+(?:apptus-esales-api-([\\d.]+))\\.min\\.js\\;version:\\1",
+      "website": "https://www.apptus.com"
     },
     "AquilaCMS": {
       "cats": [
@@ -2492,6 +2580,38 @@
       "scripts": "thebase\\.in/js",
       "website": "https://thebase.in"
     },
+    "Basic": {
+      "cats": [
+        16
+      ],
+      "description": "Basic is an authetication method used by some web servers.",
+      "headers": {
+        "WWW-Authenticate": "^Basic"
+      },
+      "website": "https://tools.ietf.org/html/rfc7617"
+    },
+    "Beyable": {
+      "cats": [
+        76
+      ],
+      "cookies": {
+        "beyable-cart": "",
+        "beyable-cartd": ""
+      },
+      "description": "Beyable is a suite of tools that analyze website traffic to understand visitors' behaviors in real-time, through multi-channel in order to optimise conversion rate.",
+      "icon": "Beyable.png",
+      "js": {
+        "BEYABLE": "",
+        "beYableDomain": "",
+        "beYableKey": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "msecnd\\.net/api/beYableJSv(\\d+)\\;version:\\1",
+      "website": "https://beyable.com"
+    },
     "Big Cartel": {
       "cats": [
         6
@@ -2740,6 +2860,23 @@
       },
       "website": "http://sourceforge.net/projects/bluefish"
     },
+    "Blueknow": {
+      "cats": [
+        76
+      ],
+      "description": "Blueknow is a ecommerce personalization software designed to serve enterprises, SMEs.",
+      "icon": "Blueknow.png",
+      "js": {
+        "Blueknow": "",
+        "BlueknowTracker": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.blueknow\\.com",
+      "website": "https://www.blueknow.com"
+    },
     "Boba.js": {
       "cats": [
         59
@@ -2948,6 +3085,28 @@
       "icon": "Botble-CMS.png",
       "implies": "Laravel",
       "website": "https://botble.com"
+    },
+    "BrainSINS": {
+      "cats": [
+        76
+      ],
+      "description": "BrainSINS is a personalization technology and ecommerce analytics services to online retailers.",
+      "icon": "BrainSINS.png",
+      "js": {
+        "BrainSINS": "",
+        "BrainSINSRecommender": "",
+        "brainsins_token": "",
+        "launchBrainSINS": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "mw\\.brainsins\\.com",
+        "cloudfront\\.net/brainsins(?:_v)?(\\d+)\\.js\\;version:\\1"
+      ],
+      "website": "http://brainsins.com"
     },
     "Braintree": {
       "cats": [
@@ -3165,6 +3324,26 @@
         "generator": "Bugzilla ?([\\d.]+)?\\;version:\\1"
       },
       "website": "http://www.bugzilla.org"
+    },
+    "Builder": {
+      "cats": [
+        1
+      ],
+      "description": "Builder.io is a headless CMS with a powerful drag-and-drop visual editor that lets you build and optimize digital experiences with speed and flexibility. ",
+      "dom": {
+        "[data-builder-content-id], img[src*=cdn.builder.io]": {
+          "text": ""
+        }
+      },
+      "icon": "Builder.svg",
+      "pricing": [
+        "low",
+        "freemium",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://builder.io",
+      "xhr": "cdn\\.builder\\.io"
     },
     "Buildertrend": {
       "cats": [
@@ -3905,14 +4084,6 @@
       "scripts": "static\\.getclicky\\.com",
       "website": "http://getclicky.com"
     },
-    "Clientexec": {
-      "cats": [
-        6
-      ],
-      "html": "clientexec\\.[^>]*\\s?=\\s?[^>]*;",
-      "icon": "Clientexec.png",
-      "website": "http://www.clientexec.com"
-    },
     "Clipboard.js": {
       "cats": [
         19
@@ -4380,7 +4551,12 @@
       "cats": [
         67
       ],
-      "icon": "cookieyes.png",
+      "dom": {
+        "#cookie-law-info-bar": {
+          "text": ""
+        }
+      },
+      "icon": "cookieyes.svg",
       "scripts": "app\\.cookieyes\\.com/client_data/",
       "website": "https://www.cookieyes.com/"
     },
@@ -4913,6 +5089,16 @@
       "icon": "didomi.png",
       "scripts": "sdk\\.privacy-center\\.org/.*/loader\\.js",
       "website": "https://www.didomi.io/en/consent-preference-management"
+    },
+    "Digest": {
+      "cats": [
+        16
+      ],
+      "description": "Digest is an authentication method based on a MD5 hash used by web servers.",
+      "headers": {
+        "WWW-Authenticate": "^Digest"
+      },
+      "website": "https://tools.ietf.org/html/rfc7616"
     },
     "DigiCert": {
       "cats": [
@@ -6343,6 +6529,17 @@
       },
       "scripts": "/flickity(?:\\.pkgd)?(?:\\.min)?\\.js",
       "website": "https://flickity.metafizzy.co/"
+    },
+    "Flow": {
+      "cats": [
+        6
+      ],
+      "icon": "flow.png",
+      "scripts": [
+        "shopify-cdn\\.flow\\.io",
+        "flow\\.min\\.js"
+      ],
+      "website": "https://www.flow.io/"
     },
     "FluxBB": {
       "cats": [
@@ -7846,6 +8043,27 @@
       "scripts": "hellobar\\.js",
       "website": "http://hellobar.com"
     },
+    "HelpDocs": {
+      "cats": [
+        4,
+        19
+      ],
+      "description": "HelpDocs is an knowledge management system.",
+      "icon": "HelpDocs.svg",
+      "js": {
+        "HDAnalytics": "\\;confidence:25",
+        "HDUtils": "\\;confidence:25",
+        "hd_instant_search": "\\;confidence:50"
+      },
+      "pricing": [
+        "low",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.helpdocs\\.io",
+      "website": "https://www.helpdocs.io"
+    },
     "Helpscout": {
       "cats": [
         52
@@ -9156,6 +9374,16 @@
       "saas": true,
       "scripts": "/CMSPages/GetResource\\.ashx",
       "website": "http://www.kentico.com"
+    },
+    "Kerberos": {
+      "cats": [
+        16
+      ],
+      "description": "Kerberos is an authentication method commonly used by Windows servers",
+      "headers": {
+        "WWW-Authenticate": "^Kerberos"
+      },
+      "website": "https://tools.ietf.org/html/rfc4559"
     },
     "Kestrel": {
       "cats": [
@@ -11641,6 +11869,16 @@
       },
       "website": "https://www.digital.nsw.gov.au/digital-design-system"
     },
+    "NTLM": {
+      "cats": [
+        16
+      ],
+      "description": "NTLM is an authentication method commonly used by Windows servers",
+      "headers": {
+        "WWW-Authenticate": "^NTLM"
+      },
+      "website": "https://docs.microsoft.com/en-us/openspecs/windows_protocols/ms-ntht/"
+    },
     "NVD3": {
       "cats": [
         25
@@ -12355,17 +12593,6 @@
       },
       "website": "https://man.openbsd.org/httpd.8"
     },
-    "Flow": {
-      "cats": [
-        6
-      ],
-      "icon": "flow.png",
-      "scripts": [
-        "shopify-cdn\\.flow\\.io",
-        "flow\\.min\\.js"
-      ],
-      "website": "https://www.flow.io/"
-    },
     "OpenCart": {
       "cats": [
         6
@@ -12847,6 +13074,25 @@
       "url": ".+\\.pixijs\\.com",
       "website": "https://www.pixijs.com/"
     },
+    "POWR": {
+      "cats": [
+        5
+      ],
+      "description": "POWR is a cloud-based system of plugins that work on almost any website.",
+      "icon": "POWR.svg",
+      "js": {
+        "POWR_RECEIVERS": "",
+        "loadPowr": ""
+      },
+      "pricing": [
+        "low",
+        "recurring",
+        "freemium"
+      ],
+      "saas": true,
+      "scripts": "www\\.powr\\.io/powr\\.js",
+      "website": "https://www.powr.io"
+    },
     "Paddle": {
       "cats": [
         41
@@ -12996,7 +13242,6 @@
         41
       ],
       "description": "PayBright is a Canadian fintech company that offers short-term interest-free installment loans for online shopping to consumers at checkout.",
-      "icon": "PayBright.png",
       "dom": {
         "link[href*='app.paybright.com']": {
           "attributes": {
@@ -13004,6 +13249,7 @@
           }
         }
       },
+      "icon": "PayBright.png",
       "js": {
         "_paybright_config": ""
       },
@@ -13037,6 +13283,11 @@
         },
         "img[src*='paypal.com'], img[src*='paypalobjects.com']": {
           "text": ""
+        },
+        "link": {
+          "attributes": {
+            "href": "paypal-express-checkout"
+          }
         }
       },
       "html": "<input[^>]+_s-xclick",
@@ -13152,6 +13403,23 @@
       },
       "icon": "Perl.png",
       "website": "http://perl.org"
+    },
+    "PersonaClick": {
+      "cats": [
+        76
+      ],
+      "description": "PersonaClick is a provide personalization, recommandation and multi channel services.",
+      "icon": "PersonaClick.png",
+      "js": {
+        "personaclick": "",
+        "personaclick_callback": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.personaclick\\.com/v([\\d.]+)\\.js\\;version:\\1",
+      "website": "https://www.personaclick.com"
     },
     "Phabricator": {
       "cats": [
@@ -13646,6 +13914,24 @@
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
       ],
       "website": "http://prebid.org"
+    },
+    "Prediggo": {
+      "cats": [
+        76,
+        32
+      ],
+      "description": "Prediggo is an ecommerce personalisation and marketing automation software provider.",
+      "icon": "Prediggo.png",
+      "js": {
+        "Prediggo": "",
+        "PrediggoSearchFormExternalAc": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "js/prediggo/(?:[\\w]+)\\.js",
+      "website": "https://prediggo.com"
     },
     "Prefix-Free": {
       "cats": [
@@ -14252,7 +14538,7 @@
     },
     "React": {
       "cats": [
-        12
+        59
       ],
       "cpe": "cpe:/a:facebook:react",
       "description": "React is an open-source JavaScript library for building user interfaces or UI components.",
@@ -15086,6 +15372,16 @@
       },
       "website": "http://www.spip.net"
     },
+    "SPNEGO": {
+      "cats": [
+        16
+      ],
+      "description": "SPNEGO is an authentication method commonly used in Windows servers to allow NTLM or Kerberos authentication",
+      "headers": {
+        "WWW-Authenticate": "^Negotiate"
+      },
+      "website": "https://tools.ietf.org/html/rfc4559"
+    },
     "SQL Buddy": {
       "cats": [
         3
@@ -15446,6 +15742,24 @@
       ],
       "website": "http://www.seersco.com"
     },
+    "Segmanta": {
+      "cats": [
+        73
+      ],
+      "description": "Segmanta is a mobile-first survey platform designed for product feedback, brand awareness and concept testing research.",
+      "icon": "Segmanta.png",
+      "js": {
+        "SEGMANTA__DYNAMIC_EMBED_CONFIG": "",
+        "SEGMANTA__USER_METADATA": ""
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "pge\\.segmanta\\.com/widget_embed_js(?:/widgetEmbed-v([\\d.]+)\\.min\\.js)?\\;version:\\1",
+      "website": "https://segmanta.com"
+    },
     "Segment": {
       "cats": [
         10
@@ -15471,6 +15785,24 @@
         "/segment-wrapper\\.min\\.js"
       ],
       "website": "https://segment.com"
+    },
+    "SegmentStream": {
+      "cats": [
+        10
+      ],
+      "description": "SegmentStream is a AI-powered marketing analytics platform built for data-driven CMOs, web analysts and performance marketing teams.",
+      "icon": "SegmentStream.svg",
+      "js": {
+        "segmentstream.VERSION": "(.+)\\;version:\\1"
+      },
+      "pricing": [
+        "low",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.segmentstream\\.com",
+      "website": "https://segmentstream.com"
     },
     "Select2": {
       "cats": [
@@ -16644,6 +16976,25 @@
       "icon": "Splunk.png",
       "website": "http://splunk.com"
     },
+    "SpotX": {
+      "cats": [
+        36
+      ],
+      "description": "SpotX is a video advertising platform.",
+      "dom": {
+        "link[href*='.spotxchange.com']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "icon": "SpotX.png",
+      "js": {
+        "SpotX.VERSION": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "js\\.spotx\\.tv",
+      "website": "https://www.spotx.tv"
+    },
     "Spree": {
       "cats": [
         6
@@ -16832,7 +17183,7 @@
       "cats": [
         6
       ],
-      "html": "Shopsystem von <a href=[^>]+store-systems\\.de\"|\\.mws_boxTop",
+      "html": "Shopsystem von <a href=[^>]+store-systems\\.de\"",
       "icon": "Store Systems.png",
       "website": "http://store-systems.de"
     },
@@ -18097,6 +18448,21 @@
       "scripts": "(?:typeahead|bloodhound)\\.(?:jquery|bundle)?(?:\\.min)?\\.js",
       "website": "https://twitter.github.io/typeahead.js"
     },
+    "TypeDoc": {
+      "cats": [
+        4
+      ],
+      "description": "TypeDoc is an API documentation generator for TypeScript projects.",
+      "dom": {
+        "a[href*='typedoc.org']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "icon": "TypeDoc.png",
+      "website": "https://typedoc.org"
+    },
     "TypePad": {
       "cats": [
         11
@@ -19029,6 +19395,24 @@
       "implies": "Django",
       "website": "https://wagtail.io/"
     },
+    "Wair": {
+      "cats": [
+        76,
+        5
+      ],
+      "description": "Wair is the widget to personalized fit.",
+      "icon": "Wair.png",
+      "js": {
+        "PredictV3.default.version": "([\\d.]+)\\;version:\\1",
+        "predictWidget": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "getwair\\.com",
+      "website": "https://getwair.com"
+    },
     "Warp": {
       "cats": [
         22
@@ -19318,6 +19702,24 @@
       "scripts": "uscesL10n",
       "website": "https://www.welcart.com"
     },
+    "Whatfix": {
+      "cats": [
+        19
+      ],
+      "description": "Whatfix is a SaaS based platform which provides in-app guidance and performance support for web applications and software products.",
+      "icon": "Whatfix.png",
+      "js": {
+        "_wfx_add_logger": "",
+        "_wfx_settings": "",
+        "wfx_is_playing__": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "whatfix\\.com",
+      "website": "https://whatfix.com"
+    },
     "Whooshkaa": {
       "cats": [
         5
@@ -19325,6 +19727,20 @@
       "html": "<iframe src=\"[^>]+whooshkaa\\.com",
       "icon": "Whooshkaa.svg",
       "website": "https://www.whooshkaa.com"
+    },
+    "Wiki.js": {
+      "cats": [
+        4
+      ],
+      "description": "Wiki.js is a wiki engine running on Node.js and written in JavaScript.",
+      "icon": "Wiki.js.png",
+      "implies": "Node.js",
+      "js": {
+        "WIKI.$_apolloInitData": "",
+        "WIKI.$apolloProvider": ""
+      },
+      "oss": true,
+      "website": "https://js.wiki"
     },
     "Wikinggruppen": {
       "cats": [
@@ -19392,6 +19808,26 @@
         "X-Powered-By": "Winstone(?:\\/([\\d.]+))?\\;version:\\1"
       },
       "website": "http://winstone.sourceforge.net"
+    },
+    "Wistia": {
+      "cats": [
+        14
+      ],
+      "description": "Wistia is designed exclusively to serve companies using video on their websites for marketing, support, and sales.",
+      "icon": "Wistia.svg",
+      "js": {
+        "Wistia": "",
+        "wistiaEmbeds": "",
+        "wistiaUtils": ""
+      },
+      "pricing": [
+        "freemium",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.wistia\\.com",
+      "website": "https://wistia.com"
     },
     "Wix": {
       "cats": [
@@ -19674,7 +20110,7 @@
       },
       "description": "XenForo is a PHP-based forum hosting program for communities that is designed to be deployed on a remote web server.",
       "html": [
-        "(?:jQuery\\.extend\\(true, XenForo|Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
+        "(?:jQuery\\.extend\\(true, XenForo|<a[^>]+>Forum software by XenForo™|<!--XF:branding|<html[^>]+id=\"XenForo\")",
         "<html id=\"XF\" "
       ],
       "icon": "XenForo.png",
@@ -21475,8 +21911,14 @@
         66
       ],
       "description": "Tailwind is a utility-first CSS framework.",
+      "dom": {
+        "link[rel='stylesheet'][href*='tailwind']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
       "html": [
-        "<link[^>]+?href=\"[^\"]+tailwindcss[@|/][a-z]+/tailwind(?:.min)?.css",
         "<link[^>]+?href=\"[^\"]+tailwindcss[@|/](?:\\^)?([\\d.]+)(?:/[a-z]+)?/(?:tailwind|base|components|utilities)(?:\\.min)?\\.css\\;version:\\1"
       ],
       "icon": "tailwindcss.svg",

@@ -93,5 +93,7 @@
 	"categoryName72":           { "message": "Appointment scheduling" },
 	"categoryName73":           { "message": "Surveys" },
 	"categoryName74":           { "message": "A/B testing" },
-	"categoryName75":           { "message": "Email" }
+	"categoryName75":           { "message": "Email" },
+	"categoryName76":           { "message": "Personalisation" },
+	"categoryName77":           { "message": "Retargeting" }
 }

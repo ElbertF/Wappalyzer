@@ -22131,21 +22131,10 @@
       "cats": [
         18
       ],
-      "description": "Helix Ultimate is an advanced, functional and ready to use template framework for Joomla. It’s a user-friendly, modern, and highly customizable tool to build Joomla templates easily.",
+      "description": "Helix Ultimate is an advanced, functional and ready to use template framework for Joomla. It's a user-friendly, modern, and highly customizable tool to build Joomla templates easily.",
       "icon": "HelixUltimate.svg",
-      "dom": {
-        "#sp-header":{
-          "text": ""
-        }
-      },
-      "js": {
-        "template": "shaper_helixultimate\\;confidence:99"
-      },
+      "html": "<body[^>]class=\".*?\\bhelix-ultimate\\b.*?",
       "implies": "Joomla",
-      "scripts": [
-        "templates\\/shaper_helixultimate\\/js\/main\\.js$",
-        "cache\\/com_templates\\/templates\\/shaper_helixultimate\\/.+\\.js"
-      ],
       "oss": true,
       "website": "https://joomshaper.com"
     }

@@ -16700,7 +16700,7 @@
       "js": {
         "window.Snowplow": ""
       },
-      "html": ".*GlobalSnowplowNamespace.*",
+      "html": "<script.*GlobalSnowplowNamespace.*",
       "scripts": [
         "sp\\.js",
         "d1fc8wv8zag5ca\\.cloudfront\\.net\/.+\/sp\\.js",

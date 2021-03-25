@@ -274,7 +274,7 @@ const Driver = {
         await new Promise((resolve) => setTimeout(resolve, 500))
 
         const [tab] = await promisify(chrome.tabs, 'query', {
-          url: [globEscape(request.url)],
+          url: globEscape(request.url),
         })
 
         if (tab) {

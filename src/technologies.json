@@ -3406,6 +3406,18 @@
       "scripts": "/website/JavaScript/Vertoshop\\.js",
       "website": "https://ccvshop.be"
     },
+    "StackPath": {
+      "cats": [
+        31
+      ],
+      "description": "StackPath is a cloud computing and services provider.",
+      "headers": {
+        "x-provided-by": "^StackCDN(?: ([\\d.]+))?\\;version:\\1",
+        "x-backend-server": "hosting\\.stackcp\\.net$"
+      },
+      "icon": "StackPath.svg",
+      "website": "https://www.stackpath.com"
+    },
     "CDN77": {
       "cats": [
         31

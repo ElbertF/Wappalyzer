@@ -16687,17 +16687,32 @@
       "scripts": "snoobi\\.com/snoop\\.php",
       "website": "http://www.snoobi.com"
     },
-    "Snowplow": {
-      "cats": [
-        10
-      ],
-      "description": "Snowplow is an open-source data collection platform.",
+    "Snowplow Analytics": {
+      "description": "Snowplow collects the best behavioral data, for operationalizing in your data warehouse, data lake and event streams",
       "icon": "Snowplow.svg",
-      "js": {
-        "GlobalSnowplowNamespace": "",
-        "Snowplow": ""
+      "cats": [
+        10, 63
+      ],
+      "cookies": {
+        "_sp_id": "",
+        "sp": ""
       },
-      "website": "https://snowplowanalytics.com/"
+      "js": {
+        "window.Snowplow": ""
+      },
+      "html": ".*GlobalSnowplowNamespace.*",
+      "scripts": [
+        "sp\\.js",
+        "d1fc8wv8zag5ca\\.cloudfront\\.net\/.+\/sp\\.js",
+        "cdn\\.jsdelivr\\.net\/gh\/snowplow\/sp-js-assets@(.+)\/sp\\.js",
+        "cdnjs\\.cloudflare\\.com\/ajax\/libs\/snowplow\/(.+)\/sp.*\\.js",
+        "unpkg.com\/@snowplow\/javascript-tracker@(.+)\/dist\/sp.*\\.js",
+        "cdn\\.jsdelivr\\.net\/npm\/@snowplow\/javascript-tracker@(.+)\/dist\/sp\\.js"
+      ],
+      "oss": true,
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://snowplowanalytics.com"
     },
     "SobiPro": {
       "cats": [

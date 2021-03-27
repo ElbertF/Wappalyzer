@@ -8563,19 +8563,6 @@
       },
       "website": "https://infernojs.org"
     },
-    "Infusionsoft": {
-      "cats": [
-        32
-      ],
-      "cpe": "cpe:/a:infusionsoft_project:infusionsoft",
-      "description": "Infusionsoft is a cloud-based email marketing platform and customer relationship management (CRM) system.",
-      "html": [
-        "<input [^>]*name=\"infusionsoft_version\" [^>]*value=\"([^>]*)\" [^>]*\\/>\\;version:\\1",
-        "<input [^>]*value=\"([^>]*)\" [^>]*name=\"infusionsoft_version\" [^>]*\\/>\\;version:\\1"
-      ],
-      "icon": "infusionsoft.svg",
-      "website": "http://infusionsoft.com"
-    },
     "Insider": {
       "cats": [
         32
@@ -9644,18 +9631,6 @@
       "scripts": "koken(?:\\.js\\?([\\d.]+)|/storage)\\;version:\\1",
       "website": "http://koken.me"
     },
-    "Kolibri CMS": {
-      "cats": [
-        1
-      ],
-      "headers": {
-        "X-Powered-By": "Kolibri"
-      },
-      "meta": {
-        "generator": "Kolibri"
-      },
-      "website": "http://alias.io"
-    },
     "Komodo CMS": {
       "cats": [
         1
@@ -10278,18 +10253,6 @@
         "\\.lrcontent\\.com"
       ],
       "website": "https://www.loginradius.com"
-    },
-    "Logitech Media Server": {
-      "cats": [
-        22,
-        38
-      ],
-      "description": "Logitech Media Server is a streaming audio server.",
-      "headers": {
-        "Server": "Logitech Media Server(?: \\(([\\d\\.]+))?\\;version:\\1"
-      },
-      "icon": "Logitech Media Server.png",
-      "website": "http://www.mysqueezebox.com"
     },
     "Loja Integrada": {
       "cats": [
@@ -12079,22 +12042,6 @@
         "generator": "NitroPack"
       },
       "website": "https://nitropack.io/"
-    },
-    "NivCMS": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "cookie_name": "NivCMSPro"
-      },
-      "headers": {
-        "X-Powered-By": "NivCMS"
-      },
-      "icon": "nivsoft.png",
-      "meta": {
-        "generator": "^NivCMS"
-      },
-      "website": "https://NivSoft.ir"
     },
     "Node.js": {
       "cats": [

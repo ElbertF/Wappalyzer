@@ -3406,18 +3406,6 @@
       "scripts": "/website/JavaScript/Vertoshop\\.js",
       "website": "https://ccvshop.be"
     },
-    "StackPath": {
-      "cats": [
-        31
-      ],
-      "description": "StackPath is a cloud computing and services provider.",
-      "headers": {
-        "x-provided-by": "^StackCDN(?: ([\\d.]+))?\\;version:\\1",
-        "x-backend-server": "hosting\\.stackcp\\.net$"
-      },
-      "icon": "StackPath.svg",
-      "website": "https://www.stackpath.com"
-    },
     "CDN77": {
       "cats": [
         31
@@ -16142,6 +16130,7 @@
       "cats": [
         6
       ],
+      "description": "Shopify is a subscription-based software that allows anyone to set up an online store and sell their products. Shopify store owners can also sell in physical locations using Shopify POS, a point-of-sale app and accompanying hardware.",
       "headers": {
         "x-shopid": "\\;confidence:50",
         "x-shopify-stage": "\\;confidence:50"
@@ -17097,6 +17086,18 @@
       "saas": true,
       "scripts": "api\\.stackanalytix\\.com",
       "website": "https://www.stackanalytix.com"
+    },
+    "StackPath": {
+      "cats": [
+        31
+      ],
+      "description": "StackPath is a cloud computing and services provider.",
+      "headers": {
+        "x-backend-server": "hosting\\.stackcp\\.net$",
+        "x-provided-by": "^StackCDN(?: ([\\d.]+))?\\;version:\\1"
+      },
+      "icon": "StackPath.svg",
+      "website": "https://www.stackpath.com"
     },
     "Stackla": {
       "cats": [

@@ -16182,13 +16182,12 @@
       "cats": [
         6
       ],
-      "icon": "Shoporama.png",
+      "icon": "Shoporama.svg",
       "meta": {
         "generator": "Shoporama"
       },
       "pricing": [
         "low",
-        "mid",
         "recurring"
       ],
       "robots": "# Powered by Shoporama",

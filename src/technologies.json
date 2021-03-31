@@ -16178,6 +16178,22 @@
       "scripts": "cdn\\.shoplo\\.\\w+/",
       "website": "https://www.shoplo.com"
     },
+    "Shoporama": {
+      "cats": [
+        6
+      ],
+      "icon": "Shoporama.png",
+      "meta": {
+        "generator": "Shoporama"
+      },
+      "pricing": [
+        "low",
+        "mid",
+        "recurring"
+      ],
+      "robots": "# Powered by Shoporama",
+      "website": "https://www.shoporama.dk"
+    },
     "Shoppy": {
       "cats": [
         6

@@ -222,7 +222,7 @@
       "priority": 1
     },
     "58": {
-      "name": "User Onboarding",
+      "name": "User onboarding",
       "priority": 8
     },
     "59": {
@@ -10879,7 +10879,7 @@
         "<(?:a|img)[^>]+>Powered by MediaWiki</a>",
         "<a[^>]+/Special:WhatLinksHere/"
       ],
-      "icon": "MediaWiki.png",
+      "icon": "MediaWiki.svg",
       "implies": "PHP",
       "js": {
         "mw.util.toggleToc": "",

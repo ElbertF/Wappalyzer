@@ -16150,6 +16150,28 @@
       "url": "^https?//.+\\.myshopify\\.com",
       "website": "http://shopify.com"
     },
+    "Dealer Spike": {
+      "cats": [
+        6,
+        32
+      ],
+      "description": "Dealer Spike is a digital marketing and advertising company focused that helps dealers grow their business.",
+      "xhr": "\\.dealerspike\\.com",
+      "dom": {
+        "meta[name='author'][content*='Dealer Spike']": {
+          "attributes": {
+            "content": ""
+          }
+        }
+      },
+      "script": "cdn\\.dealerspike\\.com",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "icon": "Dealer Spike.svg",
+      "website": "https://www.dealerspike.com"
+    },
     "Shoplo": {
       "cats": [
         6

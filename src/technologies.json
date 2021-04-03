@@ -16164,7 +16164,7 @@
           }
         }
       },
-      "script": "cdn\\.dealerspike\\.com",
+      "scripts": "cdn\\.dealerspike\\.com",
       "pricing": [
         "poa"
       ],

@@ -222,7 +222,7 @@
       "priority": 1
     },
     "58": {
-      "name": "User Onboarding",
+      "name": "User onboarding",
       "priority": 8
     },
     "59": {
@@ -3331,7 +3331,7 @@
       ],
       "description": "Builder.io is a headless CMS with a powerful drag-and-drop visual editor that lets you build and optimize digital experiences with speed and flexibility. ",
       "dom": {
-        "[data-builder-content-id], img[src*=cdn.builder.io]": {
+        "[data-builder-content-id], img[src*='cdn.builder.io']": {
           "text": ""
         }
       },
@@ -8551,19 +8551,6 @@
       },
       "website": "https://infernojs.org"
     },
-    "Infusionsoft": {
-      "cats": [
-        32
-      ],
-      "cpe": "cpe:/a:infusionsoft_project:infusionsoft",
-      "description": "Infusionsoft is a cloud-based email marketing platform and customer relationship management (CRM) system.",
-      "html": [
-        "<input [^>]*name=\"infusionsoft_version\" [^>]*value=\"([^>]*)\" [^>]*\\/>\\;version:\\1",
-        "<input [^>]*value=\"([^>]*)\" [^>]*name=\"infusionsoft_version\" [^>]*\\/>\\;version:\\1"
-      ],
-      "icon": "infusionsoft.svg",
-      "website": "http://infusionsoft.com"
-    },
     "Insider": {
       "cats": [
         32
@@ -9632,18 +9619,6 @@
       "scripts": "koken(?:\\.js\\?([\\d.]+)|/storage)\\;version:\\1",
       "website": "http://koken.me"
     },
-    "Kolibri CMS": {
-      "cats": [
-        1
-      ],
-      "headers": {
-        "X-Powered-By": "Kolibri"
-      },
-      "meta": {
-        "generator": "Kolibri"
-      },
-      "website": "http://alias.io"
-    },
     "Komodo CMS": {
       "cats": [
         1
@@ -10266,18 +10241,6 @@
         "\\.lrcontent\\.com"
       ],
       "website": "https://www.loginradius.com"
-    },
-    "Logitech Media Server": {
-      "cats": [
-        22,
-        38
-      ],
-      "description": "Logitech Media Server is a streaming audio server.",
-      "headers": {
-        "Server": "Logitech Media Server(?: \\(([\\d\\.]+))?\\;version:\\1"
-      },
-      "icon": "Logitech Media Server.png",
-      "website": "http://www.mysqueezebox.com"
     },
     "Loja Integrada": {
       "cats": [
@@ -10916,7 +10879,7 @@
         "<(?:a|img)[^>]+>Powered by MediaWiki</a>",
         "<a[^>]+/Special:WhatLinksHere/"
       ],
-      "icon": "MediaWiki.png",
+      "icon": "MediaWiki.svg",
       "implies": "PHP",
       "js": {
         "mw.util.toggleToc": "",
@@ -12067,22 +12030,6 @@
         "generator": "NitroPack"
       },
       "website": "https://nitropack.io/"
-    },
-    "NivCMS": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "cookie_name": "NivCMSPro"
-      },
-      "headers": {
-        "X-Powered-By": "NivCMS"
-      },
-      "icon": "nivsoft.png",
-      "meta": {
-        "generator": "^NivCMS"
-      },
-      "website": "https://NivSoft.ir"
     },
     "Node.js": {
       "cats": [
@@ -16183,6 +16130,7 @@
       "cats": [
         6
       ],
+      "description": "Shopify is a subscription-based software that allows anyone to set up an online store and sell their products. Shopify store owners can also sell in physical locations using Shopify POS, a point-of-sale app and accompanying hardware.",
       "headers": {
         "x-shopid": "\\;confidence:50",
         "x-shopify-stage": "\\;confidence:50"
@@ -16202,6 +16150,28 @@
       "url": "^https?//.+\\.myshopify\\.com",
       "website": "http://shopify.com"
     },
+    "Dealer Spike": {
+      "cats": [
+        6,
+        32
+      ],
+      "description": "Dealer Spike is a digital marketing and advertising company focused that helps dealers grow their business.",
+      "xhr": "\\.dealerspike\\.com",
+      "dom": {
+        "meta[name='author'][content*='Dealer Spike']": {
+          "attributes": {
+            "content": ""
+          }
+        }
+      },
+      "script": "cdn\\.dealerspike\\.com",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "icon": "Dealer Spike.svg",
+      "website": "https://www.dealerspike.com"
+    },
     "Shoplo": {
       "cats": [
         6
@@ -16218,6 +16188,21 @@
       "saas": true,
       "scripts": "cdn\\.shoplo\\.\\w+/",
       "website": "https://www.shoplo.com"
+    },
+    "Shoporama": {
+      "cats": [
+        6
+      ],
+      "icon": "Shoporama.svg",
+      "meta": {
+        "generator": "Shoporama"
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "robots": "# Powered by Shoporama",
+      "website": "https://www.shoporama.dk"
     },
     "Shoppy": {
       "cats": [
@@ -16702,17 +16687,33 @@
       "scripts": "snoobi\\.com/snoop\\.php",
       "website": "http://www.snoobi.com"
     },
-    "Snowplow": {
-      "cats": [
-        10
-      ],
-      "description": "Snowplow is an open-source data collection platform.",
+    "Snowplow Analytics": {
+      "description": "Snowplow is an open-source behavioral data management platform for businesses.",
       "icon": "Snowplow.svg",
-      "js": {
-        "GlobalSnowplowNamespace": "",
-        "Snowplow": ""
+      "cats": [
+        10,
+        63
+      ],
+      "cookies": {
+        "_sp_id": "",
+        "sp": "\\;confidence:50"
       },
-      "website": "https://snowplowanalytics.com/"
+      "js": {
+        "Snowplow": "",
+        "GlobalSnowplowNamespace": ""        
+      },
+      "scripts": [
+        "sp\\.js\\;confidence:50",
+        "d1fc8wv8zag5ca\\.cloudfront\\.net\/.+\/sp\\.js",
+        "cdn\\.jsdelivr\\.net\/gh\/snowplow\/sp-js-assets@(?:.+)\/sp\\.js",
+        "cdnjs\\.cloudflare\\.com\/ajax\/libs\/snowplow\/(?:.+)\/sp.*\\.js",
+        "unpkg.com\/@snowplow\/javascript-tracker@(?:.+)\/dist\/sp.*\\.js",
+        "cdn\\.jsdelivr\\.net\/npm\/@snowplow\/javascript-tracker@(?:.+)\/dist\/sp\\.js"
+      ],
+      "oss": true,
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://snowplowanalytics.com"
     },
     "SobiPro": {
       "cats": [
@@ -17123,6 +17124,18 @@
       "saas": true,
       "scripts": "api\\.stackanalytix\\.com",
       "website": "https://www.stackanalytix.com"
+    },
+    "StackPath": {
+      "cats": [
+        31
+      ],
+      "description": "StackPath is a cloud computing and services provider.",
+      "headers": {
+        "x-backend-server": "hosting\\.stackcp\\.net$",
+        "x-provided-by": "^StackCDN(?: ([\\d.]+))?\\;version:\\1"
+      },
+      "icon": "StackPath.svg",
+      "website": "https://www.stackpath.com"
     },
     "Stackla": {
       "cats": [

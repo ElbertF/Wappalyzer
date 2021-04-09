@@ -2936,12 +2936,12 @@
       "scripts": "/wp-content/plugins/post-and-page-builder",
       "website": "https://boldgrid.com"
     },
-    "Bolt": {
+    "Bolt CMS": {
       "cats": [
         1
       ],
       "cpe": "cpe:/a:bolt:bolt",
-      "icon": "Bolt.png",
+      "icon": "Bolt CMS.png",
       "implies": "PHP",
       "meta": {
         "generator": "Bolt"
@@ -5878,6 +5878,20 @@
         "Ember.VERSION": "^(.+)$\\;version:\\1"
       },
       "website": "http://emberjs.com"
+    },
+    "Emotion": {
+      "description": "Emotion is a library designed for writing CSS styles with JavaScript.",
+      "cats": [
+        12,
+        47
+      ],
+      "dom": {
+        "style[data-emotion], style[data-emotion-css]": {
+          "text": ""
+        }
+      },
+      "icon": "Emotion.png",
+      "website": "http://emotion.sh"
     },
     "Engagio": {
       "cats": [
@@ -10950,6 +10964,23 @@
       "html": "(?:<iframe id=\"meebo-iframe\"|Meebo\\('domReady'\\))",
       "icon": "Meebo.png",
       "website": "http://www.meebo.com"
+    },
+    "Meeting Scheduler": {
+      "cats": [
+        5,
+        72
+      ],
+      "description": "Meeting Scheduler is a schedule appointments widget.",
+      "icon": "Meeting Scheduler.png",
+      "dom": {
+        "a[href*='bookmenow.info/book']": {
+          "attributes": {
+            "href": ""
+          }
+        }
+      },
+      "scripts": "bookmenow\\.info/(?:runtime|main).+\\.js",
+      "website": "https://bookmenow.info"
     },
     "Melis Platform": {
       "cats": [
@@ -16734,8 +16765,8 @@
       "description": "Snowplow is an open-source behavioral data management platform for businesses.",
       "icon": "Snowplow.svg",
       "js": {
-        "GlobalSnowplowNamespace": "",
-        "Snowplow": ""
+        "Snowplow": "",
+        "GlobalSnowplowNamespace": ""
       },
       "oss": true,
       "pricing": [
@@ -17318,6 +17349,28 @@
       "saas": true,
       "scripts": "js\\.stripe\\.com",
       "website": "http://stripe.com"
+    },
+    "Bolt Payments": {
+      "cats": [
+        41
+      ],
+      "description": "Bolt powers a checkout experience designed to convert shoppers.",
+      "icon": "Bolt.svg",
+      "xhr": "connect\\.bolt\\.com",
+      "dom": {
+        "bolt-checkout-button": {
+          "text": ""
+        }
+      },
+      "js": {
+        "BoltCheckout": "",
+        "bolt_callbacks": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://www.bolt.com/"
     },
     "SublimeVideo": {
       "cats": [

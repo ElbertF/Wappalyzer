@@ -204,9 +204,9 @@ Cost indicator (based on a typical plan or average monthly price) and available 
 
 One of:
 <ul>
-  <li><code>low</code> Up to US 100 / mo</li>
-  <li><code>mid</code> Up US 1,000 / mo</li>
-  <li><code>high</code> More than 10,000 / mo</li>
+  <li><code>low</code>Less than US $100 / mo</li>
+  <li><code>mid</code>Between US $100 - $1,000 / mo</li>
+  <li><code>high</code>More than US $1,000 / mo</li>
 </ul>
 
 Plus any of:

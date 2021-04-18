@@ -13369,6 +13369,21 @@
       "scripts": "paypalobjects\\.com",
       "website": "https://paypal.com"
     },
+    "Pazila": {
+      "cats": [
+        51
+      ],
+      "description": "Pazila is Software-as-a-Service (Saas) for website building and hosting.",
+      "html": "<html[^>]+data-pz-domain",
+      "icon": "pazila.svg",
+      "js": {
+        "Pazila": ""
+      },
+      "meta": {
+        "generator": "^Pazila"
+      },
+      "website": "https://pazila.ir"
+    },
     "Peek": {
       "cats": [
         5,

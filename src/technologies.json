@@ -3013,7 +3013,7 @@
         "cdns\\.brsrvr\\.com/v([\\d.]+)\\;version:\\1",
         "cdn\\.brcdn\\.com/v([\\d.]+)\\;version:\\1"
       ],
-      "website": "https://developers.bloomreach.com/products/personalisation/dev-studio"
+      "website": "https://developers.bloomreach.com/products/personalization/dev-studio"
     },
     "Bluecore": {
       "cats": [
@@ -21037,7 +21037,7 @@
             "class": ""
           }
         }
-      ],
+      },
       "icon": "Yoast SEO.png",
       "website": "https://yoast.com"
     },
@@ -22786,22 +22786,6 @@
         "generator": "xt:Commerce"
       },
       "website": "https://www.xt-commerce.com"
-    },
-    "uPortal": {
-      "cats": [
-        21
-      ],
-      "description": "uPortal is an open source enterprise portal framework built by and for higher education institutions.",
-      "implies": "Java",
-      "icon": "uPortal.png",
-      "meta": {
-        "description": " uPortal "
-      },
-      "js": {
-        "uportal": ""
-      },
-      "oss": true,
-      "website": "https://www.apereo.org/projects/uportal"
     },
     "Helix Ultimate": {
       "cats": [

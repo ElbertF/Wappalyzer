@@ -1,24 +1,24 @@
 'use strict'
 
+function toArray(value) {
+  return Array.isArray(value) ? value : [value]
+}
+
 const Wappalyzer = {
   technologies: [],
   categories: [],
 
-  slugify(string) {
-    return string
+  slugify: (string) =>
+    string
       .toLowerCase()
       .replace(/[^a-z0-9-]/g, '-')
       .replace(/--+/g, '-')
-      .replace(/(?:^-|-$)/g, '')
-  },
+      .replace(/(?:^-|-$)/g, ''),
 
-  getTechnology(name) {
-    return Wappalyzer.technologies.find(({ name: _name }) => name === _name)
-  },
+  getTechnology: (name) =>
+    Wappalyzer.technologies.find(({ name: _name }) => name === _name),
 
-  getCategory(id) {
-    return Wappalyzer.categories.find(({ id: _id }) => id === _id)
-  },
+  getCategory: (id) => Wappalyzer.categories.find(({ id: _id }) => id === _id),
 
   /**
    * Resolve promises for implied technology.
@@ -270,7 +270,19 @@ const Wappalyzer = {
         headers: transform(headers),
         dns: transform(dns),
         cookies: transform(cookies),
-        dom: transform(dom, true),
+        dom: transform(
+          typeof dom === 'string' || Array.isArray(dom)
+            ? toArray(dom).reduce(
+                (dom, selector) => ({
+                  ...dom,
+                  [selector]: { exists: '' },
+                }),
+                {}
+              )
+            : dom,
+          false,
+          false
+        ),
         html: transform(html),
         css: transform(css),
         certIssuer: transform(certIssuer),
@@ -319,12 +331,10 @@ const Wappalyzer = {
    * @param {string|array} patterns
    * @param {boolean} caseSensitive
    */
-  transformPatterns(patterns, caseSensitive = false) {
+  transformPatterns(patterns, caseSensitive = false, isRegex = true) {
     if (!patterns) {
       return []
     }
-
-    const toArray = (value) => (Array.isArray(value) ? value : [value])
 
     if (typeof patterns === 'string' || Array.isArray(patterns)) {
       patterns = { main: patterns }
@@ -333,7 +343,7 @@ const Wappalyzer = {
     const parsed = Object.keys(patterns).reduce((parsed, key) => {
       parsed[caseSensitive ? key : key.toLowerCase()] = toArray(
         patterns[key]
-      ).map((pattern) => Wappalyzer.parsePattern(pattern))
+      ).map((pattern) => Wappalyzer.parsePattern(pattern, isRegex))
 
       return parsed
     }, {})
@@ -345,7 +355,7 @@ const Wappalyzer = {
    * Extract information from regex pattern.
    * @param {string|object} pattern
    */
-  parsePattern(pattern) {
+  parsePattern(pattern, isRegex = true) {
     if (typeof pattern === 'object') {
       return Object.keys(pattern).reduce(
         (parsed, key) => ({
@@ -369,7 +379,10 @@ const Wappalyzer = {
             attrs.value = attr
 
             // Escape slashes in regular expression
-            attrs.regex = new RegExp(attr.replace(/\//g, '\\/'), 'i')
+            attrs.regex = new RegExp(
+              isRegex ? attr.replace(/\//g, '\\/') : '',
+              'i'
+            )
           }
 
           return attrs

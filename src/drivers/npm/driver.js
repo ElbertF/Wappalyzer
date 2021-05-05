@@ -73,22 +73,30 @@ function analyzeJs(js) {
 function analyzeDom(dom) {
   return Array.prototype.concat.apply(
     [],
-    dom.map(({ name, selector, text, property, attribute, value }) => {
+    dom.map(({ name, selector, exists, text, property, attribute, value }) => {
       const technology = Wappalyzer.technologies.find(
         ({ name: _name }) => name === _name
       )
 
-      if (text) {
-        return analyzeManyToMany(technology, 'dom.text', { [selector]: [text] })
+      if (typeof exists !== 'undefined') {
+        return analyzeManyToMany(technology, 'dom.exists', {
+          [selector]: [''],
+        })
       }
 
-      if (property) {
+      if (typeof text !== 'undefined') {
+        return analyzeManyToMany(technology, 'dom.text', {
+          [selector]: [text],
+        })
+      }
+
+      if (typeof property !== 'undefined') {
         return analyzeManyToMany(technology, `dom.properties.${property}`, {
           [selector]: [value],
         })
       }
 
-      if (attribute) {
+      if (typeof attribute !== 'undefined') {
         return analyzeManyToMany(technology, `dom.attributes.${attribute}`, {
           [selector]: [value],
         })
@@ -424,7 +432,7 @@ class Site {
 
       await sleep(1000)
 
-      // page.on('console', (message) => this.log(message.text()))
+      page.on('console', (message) => this.log(message.text())) // TODO
 
       // Links
       const links = await this.promiseTimeout(
@@ -560,68 +568,84 @@ class Site {
                   : !!value
 
               Object.keys(dom).forEach((selector) => {
-                const nodes = document.querySelectorAll(selector)
+                let nodes = []
+
+                try {
+                  nodes = document.querySelectorAll(selector)
+                } catch (error) {
+                  // Continue
+                }
 
                 if (!nodes.length) {
                   return
                 }
 
-                dom[selector].forEach(({ text, properties, attributes }) => {
-                  nodes.forEach((node) => {
-                    if (text) {
-                      const value = node.textContent.trim()
-
-                      if (value) {
+                dom[selector].forEach(
+                  ({ exists, text, properties, attributes }) => {
+                    nodes.forEach((node) => {
+                      if (exists) {
                         technologies.push({
                           name,
                           selector,
-                          text: value,
+                          exists: '',
                         })
                       }
-                    }
 
-                    if (properties) {
-                      Object.keys(properties).forEach((property) => {
-                        if (
-                          Object.prototype.hasOwnProperty.call(node, property)
-                        ) {
-                          const value = node[property]
+                      if (text) {
+                        const value = node.textContent.trim()
 
-                          if (typeof value !== 'undefined') {
-                            technologies.push({
-                              name,
-                              selector,
-                              property,
-                              value: toScalar(value),
-                            })
-                          }
-                        }
-                      })
-                    }
-
-                    if (attributes) {
-                      Object.keys(attributes).forEach((attribute) => {
-                        if (node.hasAttribute(attribute)) {
-                          const value = node.getAttribute(attribute)
-
+                        if (value) {
                           technologies.push({
                             name,
                             selector,
-                            attribute,
-                            value: toScalar(value),
+                            text: value,
                           })
                         }
-                      })
-                    }
-                  })
-                })
+                      }
+
+                      if (properties) {
+                        Object.keys(properties).forEach((property) => {
+                          if (
+                            Object.prototype.hasOwnProperty.call(node, property)
+                          ) {
+                            const value = node[property]
+
+                            if (typeof value !== 'undefined') {
+                              technologies.push({
+                                name,
+                                selector,
+                                property,
+                                value: toScalar(value),
+                              })
+                            }
+                          }
+                        })
+                      }
+
+                      if (attributes) {
+                        Object.keys(attributes).forEach((attribute) => {
+                          if (node.hasAttribute(attribute)) {
+                            const value = node.getAttribute(attribute)
+
+                            technologies.push({
+                              name,
+                              selector,
+                              attribute,
+                              value: toScalar(value),
+                            })
+                          }
+                        })
+                      }
+                    })
+                  }
+                )
               })
 
               return technologies
             }, [])
           },
           Wappalyzer.technologies
-            .filter(({ dom }) => dom)
+            .filter(({ dom }) => dom && dom.constructor === Object)
             .map(({ name, dom }) => ({ name, dom }))
         )
       ).catch(() => [])

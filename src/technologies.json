@@ -320,18 +320,7 @@
         36
       ],
       "description": "33Across is a technology company focused on solving the challenge of consumer attention for automated advertising.",
-      "dom": {
-        "iframe[src*='.33across.com]": {
-          "attributes": {
-            "src": ""
-          }
-        },
-        "link[href*='.33across.com']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='.33across.com'], link[href*='.33across.com']",
       "icon": "33Across.png",
       "saas": true,
       "website": "https://www.33across.com",
@@ -401,13 +390,7 @@
         71
       ],
       "description": " A8.net is an affiliate marketing network.",
-      "dom": {
-        "img[src*='.a8.net']": {
-          "attributes": {
-            "src": "\\.a8\\.net"
-          }
-        }
-      },
+      "dom": "img[src*='.a8.net']",
       "icon": "A8.net.png",
       "js": {
         "A8salesCookieRepository": "",
@@ -535,13 +518,7 @@
         6
       ],
       "description": "ATSHOP is an all-in-one ecommerce platform.",
-      "dom": {
-        "link[href*='cdn.atshop.io']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[href*='cdn.atshop.io']",
       "icon": "ATSHOP.png",
       "pricing": [
         "low",
@@ -618,13 +595,7 @@
         71
       ],
       "description": "AccessTrade is an affiliate marketing platform based on the CPA model developed by Interspace Co.",
-      "dom": {
-        "img[src*='.accesstrade.net'],img[data-src*='.accesstrade.net']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "img[src*='.accesstrade.net'],img[data-src*='.accesstrade.net']",
       "icon": "AccessTrade.png",
       "website": "https://www.accesstrade.ne.jp"
     },
@@ -664,14 +635,7 @@
         10
       ],
       "description": "Ackee is a self-hosted, Node.js based analytics tool with a focus on privacy.",
-      "dom": {
-        "[data-ackee-domain-id]": {
-          "attributes": {
-            "data-ackee-domain-id": "",
-            "data-ackee-server": ""
-          }
-        }
-      },
+      "dom": "[data-ackee-domain-id], [data-ackee-server]",
       "icon": "Ackee.png",
       "js": {
         "ackeeTracker": ""
@@ -1166,13 +1130,7 @@
         36
       ],
       "description": "Affiliate B is an advertising system that allows site operators (HP, blogs, e-mail newsletters, etc.) to place advertiser advertisements on their own sites.",
-      "dom": {
-        "img[src*='www.afi-b.com']": {
-          "attributes": {
-            "src": "www\\.afi-b\\.com"
-          }
-        }
-      },
+      "dom": "img[src*='www.afi-b.com']",
       "icon": "Affiliate B.svg",
       "scripts": "t\\.afi-b\\.com",
       "website": "https://affiliate-b.com"
@@ -1182,13 +1140,7 @@
         71
       ],
       "description": "Affiliate Future is a provider of advertisers with marketing solution through its affiliate network and tools.",
-      "dom": {
-        "img[src*='banners.affiliatefuture.com']": {
-          "attributes": {
-            "src": "banners\\.affiliatefuture\\.com"
-          }
-        }
-      },
+      "dom": "img[src*='banners.affiliatefuture.com']",
       "icon": "Affiliate Future.png",
       "scripts": "tags\\.affiliatefuture\\.com",
       "website": "http://affiliatefuture.com"
@@ -1569,7 +1521,7 @@
         },
         "a[href*='amzn.to']": {
           "attributes": {
-            "href": "^https?://amzn.to"
+            "href": ""
           }
         }
       },
@@ -1640,11 +1592,7 @@
         41
       ],
       "description": "Amazon Pay is an online payments processing service that is owned by Amazon. It lets you use the payment methods associated with your Amazon account to make payments for goods and services.",
-      "dom": {
-        "img[src*='amazonpay']": {
-          "text": ""
-        }
-      },
+      "dom": "img[src*='amazonpay']",
       "icon": "Amazon Pay.svg",
       "js": {
         "AmazonPayments": "",
@@ -1830,6 +1778,7 @@
           }
         }
       },
+      "implies": "TypeScript",
       "excludes": [
         "AngularDart",
         "AngularJS"
@@ -1839,6 +1788,7 @@
         "ng.coreTokens": "",
         "ng.probe": ""
       },
+      "oss": true,
       "website": "https://angular.io"
     },
     "Angular Material": {
@@ -1913,18 +1863,7 @@
         36
       ],
       "description": "AnyClip is a video engagement platform that uses an AI-driven content analysis engine to analyze and categorize video content in real-time to create personalized video feeds.",
-      "dom": {
-        "img[src*='.anyclip.com']": {
-          "attributes": {
-            "src": ""
-          }
-        },
-        "video[poster*='.anyclip.com']": {
-          "attributes": {
-            "poster": ""
-          }
-        }
-      },
+      "dom": "img[src*='.anyclip.com'], video[poster*='.anyclip.com']",
       "icon": "AnyClip.svg",
       "js": {
         "anyclip": ""
@@ -2074,18 +2013,7 @@
         36
       ],
       "description": "AppNexus is a cloud-based software platform that enables and optimizes programmatic online advertising.",
-      "dom": {
-        "iframe[src*='.adnxs.com']": {
-          "attributes": {
-            "src": ""
-          }
-        },
-        "img[src*='.adnxs.com']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='.adnxs.com'], img[src*='.adnxs.com']",
       "icon": "AppNexus.svg",
       "js": {
         "appnexus": "",
@@ -2132,9 +2060,7 @@
       "description": "Apple Sign-in is based on OAuth 2.0 and OpenID Connect, and provides a privacy-friendly way for users to sign in to websites and apps.",
       "dom": {
         "a[href*='appleid.apple.com/auth/authorize']": {
-          "attributes": {
-            "href": ""
-          }
+          "exists": ""
         },
         "button": {
           "text": "(Sign (in|up)|Log in|Continue) with Apple"
@@ -2225,13 +2151,7 @@
         31
       ],
       "description": "Arc is a peer-to-peer CDN that pays site owners for using it. Instead of expensive servers in distant datacenters, Arc's network is comprised of browsers.",
-      "dom": {
-        "#arc-widget": {
-          "attributes": {
-            "id": ""
-          }
-        }
-      },
+      "dom": "#arc-widget",
       "icon": "Arc.svg",
       "js": {
         "arc.p2pClient": "",
@@ -2346,18 +2266,7 @@
         53
       ],
       "description": "Astute Solutions is a customer engagement software.",
-      "dom": {
-        "iframe[src*='.iperceptions.com]": {
-          "attributes": {
-            "src": ""
-          }
-        },
-        "link[href*='.iperceptions.com']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='.iperceptions.com'], link[href*='.iperceptions.com']",
       "icon": "Astute Solutions.svg",
       "pricing": [
         "poa"
@@ -2371,13 +2280,7 @@
         29
       ],
       "description": "Athena Search is a customizable autocomplete, feature-rich dashboard, smart predictions, real-time reports search engine developed from scratch by Syncit Group’s.",
-      "dom": {
-        "link[href*='athena/autocomplete/css/autocomplete.css']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[href*='athena/autocomplete/css/autocomplete.css']",
       "icon": "Athena Search.svg",
       "pricing": [
         "payg"
@@ -2441,11 +2344,7 @@
         13
       ],
       "cpe": "cpe:/a:atlassian:jira",
-      "dom": {
-        "#jira": {
-          "text": ""
-        }
-      },
+      "dom": "#jira",
       "icon": "Atlassian Jira.svg",
       "implies": "Java",
       "js": {
@@ -2607,13 +2506,7 @@
         75
       ],
       "description": "AWeber is an email marketing service.",
-      "dom": {
-        "form[action*='aweber.com']": {
-          "attributes": {
-            "action": "www\\.aweber\\.com"
-          }
-        }
-      },
+      "dom": "form[action*='aweber.com']",
       "icon": "Aweber.svg",
       "js": {
         "awt_analytics": ""
@@ -2894,14 +2787,7 @@
         6
       ],
       "description": "BigCommerce is a hosted ecommerce platform that allows business owners to set up an online store and sell their products online.",
-      "dom": {
-        "img[data-src*='.bigcommerce.com'],img[src*='.bigcommerce.com']": {
-          "attributes": {
-            "data-src": "",
-            "src": ""
-          }
-        }
-      },
+      "dom": "img[data-src*='.bigcommerce.com'], img[src*='.bigcommerce.com']",
       "html": "<link href=[^>]+cdn\\d+\\.bigcommerce\\.com/",
       "icon": "BigCommerce.svg",
       "pricing": [
@@ -3101,13 +2987,7 @@
         77
       ],
       "description": "Blue is a ecommerce data marketing, lead generation, real time bidding and recommendation solutions.",
-      "dom": {
-        "iframe[src*='.getblue.io']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='.getblue.io']",
       "icon": "Blue.svg",
       "js": {
         "blueProductId": "",
@@ -3230,11 +3110,7 @@
         41
       ],
       "description": "Bolt powers a checkout experience designed to convert shoppers.",
-      "dom": {
-        "bolt-checkout-button": {
-          "text": ""
-        }
-      },
+      "dom": "bolt-checkout-button",
       "icon": "Bolt.svg",
       "js": {
         "BoltCheckout": "",
@@ -3387,11 +3263,7 @@
         67
       ],
       "description": "Borlabs Cookie is a GDPR cookie consent plugin for WordPress.",
-      "dom": {
-        "#BorlabsCookieBox": {
-          "text": ""
-        }
-      },
+      "dom": "#BorlabsCookieBox",
       "icon": "Borlabs Cookie.svg",
       "implies": "WordPress",
       "js": {
@@ -3498,11 +3370,7 @@
         41
       ],
       "description": "Bread is a buy now, pay later platform for ecommerce websites.",
-      "dom": {
-        "#bread-mini-cart-btn": {
-          "text": ""
-        }
-      },
+      "dom": "#bread-mini-cart-btn",
       "icon": "Bread.svg",
       "js": {
         "BreadCalc": "",
@@ -3679,11 +3547,7 @@
         1
       ],
       "description": "Builder.io is a headless CMS with a powerful drag-and-drop visual editor that lets you build and optimize digital experiences with speed and flexibility. ",
-      "dom": {
-        "[data-builder-content-id], img[src*='cdn.builder.io']": {
-          "text": ""
-        }
-      },
+      "dom": "[data-builder-content-id], img[src*='cdn.builder.io']",
       "icon": "Builder.svg",
       "pricing": [
         "low",
@@ -3698,13 +3562,7 @@
       "cats": [
         19
       ],
-      "dom": {
-        "iframe[src*='buildertrend.net'], script[src*='buildertrend.net']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='buildertrend.net'], script[src*='buildertrend.net']",
       "icon": "Buildertrend.svg",
       "pricing": [
         "mid",
@@ -4000,11 +3858,7 @@
         6
       ],
       "description": "Websites that have a shopping cart or checkout page, either using a known ecommerce platform or a custom solution.",
-      "dom": {
-        "a[href*='/cart'], a[href*='/basket'], a[href*='/trolley'], a[href*='/bag'], a[href*='/shoppingbag'], a[href*='/checkout'], [aria-controls='cart']": {
-          "text": ""
-        }
-      },
+      "dom": "a[href*='/cart'], a[href*='/basket'], a[href*='/trolley'], a[href*='/bag'], a[href*='/shoppingbag'], a[href*='/checkout'], [aria-controls='cart']",
       "icon": "Cart-generic.svg",
       "website": "https://www.wappalyzer.com/technologies/ecommerce/cart-functionality"
     },
@@ -4107,6 +3961,21 @@
         "generator": "Chamilo ([\\d.]+)\\;version:\\1"
       },
       "website": "http://www.chamilo.org"
+    },
+    "Chaport": {
+      "cats": [
+        5
+      ],
+      "description": "Chaport is a multi-channel live chat and chatbot software for business.",
+      "icon": "Chaport.png",
+      "js": {
+        "chaport": "",
+        "chaportConfig": ""
+      },
+      "scripts": "\\.chaport\\.com",
+      "saas": true,
+      "pricing": ["freemium", "low", "recurring"],
+      "website": "https://www.chaport.com"
     },
     "Chargebee": {
       "cats": [
@@ -4426,14 +4295,7 @@
       "cats": [
         71
       ],
-      "dom": {
-        "a[href*='pay.clickbank.net?cbfid']": {
-          "text": ""
-        },
-        "img[width='1'][src*='hop.clickbank.net?affiliate']": {
-          "text": ""
-        }
-      },
+      "dom": "a[href*='pay.clickbank.net?cbfid'], img[width='1'][src*='hop.clickbank.net?affiliate']",
       "icon": "Clickbank.svg",
       "js": {
         "cbtb": ""
@@ -4538,13 +4400,7 @@
         35
       ],
       "description": "ClustrMaps widget is a visitor tracker, designed for general web and blog use.",
-      "dom": {
-        "img[src*='clustrmaps.com']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "img[src*='clustrmaps.com']",
       "icon": "ClustrMaps.svg",
       "scripts": "clustrmaps\\.com",
       "website": "https://clustrmaps.com/"
@@ -4553,18 +4409,7 @@
       "cats": [
         19
       ],
-      "dom": {
-        "a[href*='co-construct.com/skins']": {
-          "attributes": {
-            "href": ""
-          }
-        },
-        "iframe[src*='co-construct.com']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "a[href*='co-construct.com/skins'], iframe[src*='co-construct.com']",
       "icon": "CoConstruct.png",
       "pricing": [
         "mid",
@@ -4656,13 +4501,7 @@
         41
       ],
       "description": "Coinbase Commerce is a platform that enables merchants to accept cryptocurrency payments.",
-      "dom": {
-        "a[href^='https://commerce.coinbase.com/checkout/']": {
-          "attributes": {
-            "href": "^https://commerce\\.coinbase\\.com/checkout/[a-z0-9-]+$"
-          }
-        }
-      },
+      "dom": "a[href^='https://commerce.coinbase.com/checkout/']",
       "icon": "Coinbase.svg",
       "website": "https://commerce.coinbase.com/"
     },
@@ -4902,18 +4741,7 @@
         75
       ],
       "description": "ConvertKit is an email marketing tool built for content creators.",
-      "dom": {
-        "form[action*='.convertkit.com']": {
-          "attributes": {
-            "action": ""
-          }
-        },
-        "link[href*='.convertkit.com']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "form[action*='.convertkit.com'], link[href*='.convertkit.com']",
       "icon": "ConvertKit.svg",
       "pricing": [
         "low",
@@ -4947,11 +4775,7 @@
       "cats": [
         67
       ],
-      "dom": {
-        "#cookie-law-info-bar": {
-          "text": ""
-        }
-      },
+      "dom": "#cookie-law-info-bar",
       "icon": "cookieyes.svg",
       "scripts": "app\\.cookieyes\\.com/client_data/",
       "website": "https://www.cookieyes.com/"
@@ -5446,13 +5270,7 @@
         32
       ],
       "description": "Dealer Spike is a digital marketing and advertising company focused that helps dealers grow their business.",
-      "dom": {
-        "meta[name='author'][content*='Dealer Spike']": {
-          "attributes": {
-            "content": ""
-          }
-        }
-      },
+      "dom": "meta[name='author'][content*='Dealer Spike']",
       "icon": "Dealer Spike.svg",
       "pricing": [
         "poa"
@@ -5611,13 +5429,7 @@
         36
       ],
       "description": "District M is a programmatic advertising exchange.",
-      "dom": {
-        "iframe[src*='.districtm.io']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='.districtm.io']",
       "icon": "District M.svg",
       "saas": true,
       "website": "https://districtm.net",
@@ -5907,18 +5719,7 @@
       ],
       "cpe": "cpe:/a:commerceguys:commerce",
       "description": "Drupal Commerce is open-source ecommerce software that augments the content management system Drupal.",
-      "dom": {
-        "aside#cart-offcanvas": {
-          "attributes": {
-            "id": ""
-          }
-        },
-        "form.commerce-order-item-add-to-cart-form,form.commerce-add-to-cart": {
-          "attributes": {
-            "class": ""
-          }
-        }
-      },
+      "dom": "aside#cart-offcanvas, form.commerce-order-item-add-to-cart-form,form.commerce-add-to-cart",
       "html": "<[^>]+(?:id=\"block[_-]commerce[_-]cart[_-]cart|class=\"commerce[_-]product[_-]field)",
       "icon": "Drupal Commerce.png",
       "implies": "Drupal",
@@ -6310,17 +6111,28 @@
       },
       "website": "http://emberjs.com"
     },
+    "emBlue": {
+      "cats": [
+        32,
+        75
+      ],
+      "description": "emBlue is an email and marketing automation platform.",
+      "icon": "emBlue.svg",
+      "js": {
+        "emblueOnSiteApp": ""
+      },
+      "scripts": "\\.embluemail\\.com\/(?:library\/([\\d.]+))?\\;version:\\1",
+      "saas": true,
+      "pricing": ["freemium", "mid", "recurring"],
+      "website": "https://www.embluemail.com/en"
+    },
     "Emotion": {
       "cats": [
         12,
         47
       ],
       "description": "Emotion is a library designed for writing CSS styles with JavaScript.",
-      "dom": {
-        "style[data-emotion], style[data-emotion-css]": {
-          "text": ""
-        }
-      },
+      "dom": "style[data-emotion], style[data-emotion-css]",
       "icon": "Emotion.png",
       "website": "http://emotion.sh"
     },
@@ -6672,18 +6484,24 @@
       },
       "website": "https://developers.facebook.com/docs/facebook-login/"
     },
+    "Pinterest Conversion Tag": {
+      "cats": [
+        10
+      ],
+      "description": "Pinterest Conversion Tag allows you to track actions people take on your website after viewing your Promoted Pin.",
+      "icon": "Pinterest.svg",
+      "dom": "img[src*='ct.pinterest.com/v3/?tid']",
+      "js": {
+        "pintrk": ""
+      },
+      "website": "https://www.pinterest.com.au/business/"
+    },
     "Facebook Pixel": {
       "cats": [
         10
       ],
       "description": "Facebook pixel is an analytics tool that allows you to measure the effectiveness of your advertising.",
-      "dom": {
-        "img[src*='facebook.com/tr']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "img[src*='facebook.com/tr']",
       "icon": "Facebook.svg",
       "js": {
         "_fbq": ""
@@ -6861,13 +6679,7 @@
         71
       ],
       "description": "FinanceAds is a performance marketing agency that has grown affiliate network for the financial sector.",
-      "dom": {
-        "link[href*='js.financeads.net'], link[href*='js.financeads.com'], a[href*='www.financeads.net/tc.php']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[href*='js.financeads.net'], link[href*='js.financeads.com'], a[href*='www.financeads.net/tc.php']",
       "icon": "Financeads.png",
       "pricing": [
         "payg"
@@ -6922,13 +6734,7 @@
         32
       ],
       "description": "Firepush is an omnichannel marketing app that helps Shopify stores to drive sales with automated web push, email and SMS campaigns.",
-      "dom": {
-        "link[href*='cdn.firepush.net']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[href*='cdn.firepush.net']",
       "icon": "Firepush.svg",
       "pricing": [
         "low",
@@ -8078,14 +7884,7 @@
         41
       ],
       "description": "Google Pay is a digital wallet platform and online payment system developed by Google to power in-app and tap-to-pay purchases on mobile devices, enabling users to make payments with Android phones, tablets or watches.",
-      "dom": {
-        "[aria-labelledby='pi-google_pay']": {
-          "text": ""
-        },
-        "ul[data-shopify-buttoncontainer] li": {
-          "text": "GooglePay"
-        }
-      },
+      "dom": "[aria-labelledby='pi-google_pay'], ul[data-shopify-buttoncontainer] li",
       "icon": "Google.svg",
       "scripts": [
         "pay\\.google\\.com/([a-z/]+)/pay\\.js"
@@ -8350,13 +8149,7 @@
         72
       ],
       "description": "Guestonline is a restaurant table booking widget.",
-      "dom": {
-        "iframe[src*='guestonline']": {
-          "attributes": {
-            "src": "ib\\.guestonline\\.\\w+"
-          }
-        }
-      },
+      "dom": "iframe[src*='ib.guestonline.']",
       "icon": "Guestonline.svg",
       "pricing": [
         "low",
@@ -8371,18 +8164,7 @@
         36
       ],
       "description": "GumGum is a technology and media company specializing in contextual intelligence.",
-      "dom": {
-        "iframe[src*='gumgum.com']": {
-          "attributes": {
-            "src": ""
-          }
-        },
-        "img[src*='gumgum.com']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='gumgum.com'], img[src*='gumgum.com']",
       "icon": "GumGum.png",
       "pricing": [
         "low",
@@ -8584,11 +8366,7 @@
         18
       ],
       "description": "Helix Ultimate a free template framework for Joomla.",
-      "dom": {
-        "header#sp-header, body.helix-ultimate": {
-          "text": ""
-        }
-      },
+      "dom": "header#sp-header, body.helix-ultimate",
       "icon": "HelixUltimate.svg",
       "implies": "Joomla",
       "oss": true,
@@ -9410,14 +9188,8 @@
       "cats": [
         71
       ],
-      "description": "JANet is an affiliate marketing network.​",
-      "dom": {
-        "img[src*='.j-a-net.jp'],img[data-src*='.j-a-net.jp']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "description": "JANet is an affiliate marketing network.",
+      "dom": "img[src*='.j-a-net.jp'],img[data-src*='.j-a-net.jp']",
       "icon": "JANet.png",
       "website": "https://j-a-net.jp"
     },
@@ -9516,13 +9288,7 @@
         14
       ],
       "description": "JW Player is a online video player with video engagement analytics, custom video player skins, and live video streaming capability.",
-      "dom": {
-        "div[data-video-provider*=jwplayer]": {
-          "attributes": {
-            "data-video-provider": ""
-          }
-        }
-      },
+      "dom": "div[data-video-provider*=jwplayer]",
       "icon": "JW Player.svg",
       "js": {
         "jwDefaults": "",
@@ -9884,13 +9650,7 @@
         "kameleoonVisitorCode": ""
       },
       "description": "Kameleoon is a personalisation technology platform for real-time omnichannel optimisation and conversion.",
-      "dom": {
-        "link[href*='.kameleoon.eu/kameleoon.js']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[href*='.kameleoon.eu/kameleoon.js']",
       "icon": "Kameleoon.svg",
       "js": {
         "Kameleoon.Gatherer.SCRIPT_VERSION": "(.+)\\;version:\\1",
@@ -9955,13 +9715,7 @@
         53
       ],
       "description": "Keap offers an email marketing and sales platform for small businesses, including products to manage customers, customer relationship management, marketing, and ecommerce.",
-      "dom": {
-        "form[action*='property.infusionsoft.com']": {
-          "attributes": {
-            "action": ""
-          }
-        }
-      },
+      "dom": "form[action*='property.infusionsoft.com']",
       "icon": "Keap.svg",
       "pricing": [
         "low",
@@ -10316,13 +10070,7 @@
         6
       ],
       "description": "Kooomo is a SaaS ecommerce platform with a focus on localisation and internationalisation.",
-      "dom": {
-        "img[src*='.kooomo-cloud.com']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "img[src*='.kooomo-cloud.com']",
       "icon": "Kooomo.svg",
       "implies": [
         "PHP",
@@ -10338,6 +10086,22 @@
       ],
       "saas": true,
       "website": "https://www.kooomo.com"
+    },
+    "Konduto": {
+      "cats": [
+        16
+      ],
+      "description": "Konduto is a fraud detection service for ecommerce.",
+      "icon": "Konduto.png",
+      "dom": "link[href*='.konduto.com']",
+      "js": {
+        "Konduto": "",
+        "getKondutoID": ""
+      },
+      "scripts": "\\.k-analytix\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.konduto.com"
     },
     "Kotisivukone": {
       "cats": [
@@ -10388,13 +10152,7 @@
         36
       ],
       "description": "LKQD is a video advertising platform that enables publishers to serve video ads across multiple devices and formats.",
-      "dom": {
-        "iframe[src*='.lkqd.net']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='.lkqd.net']",
       "icon": "LKQD.svg",
       "js": {
         "lkqdCall": "",
@@ -10635,13 +10393,7 @@
       "cats": [
         10
       ],
-      "dom": {
-        "noscript > img[src*='dc.ads.linkedin.com']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "noscript > img[src*='dc.ads.linkedin.com']",
       "icon": "Linkedin.svg",
       "js": {
         "_linkedin_data_partner_id": ""
@@ -10833,13 +10585,7 @@
         67
       ],
       "description": "LiveRamp PCM is a preference and consent management platform that enables comply with the ePrivacy Directive, GDPR, CCPA, and other data protection and privacy laws and regulations.",
-      "dom": {
-        "iframe[src*='gdpr-consent-tool\\.privacymanager\\.io']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='gdpr-consent-tool\\.privacymanager\\.io']",
       "icon": "LiveRamp.svg",
       "js": {
         "wpJsonpLiverampGdprCmp": ""
@@ -11345,13 +11091,7 @@
         35
       ],
       "description": "Mapbox GL JS is a JavaScript library that uses WebGL to render interactive maps from vector tiles and Mapbox styles.",
-      "dom": {
-        "link[href*='mapbox-gl.css']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[href*='mapbox-gl.css']",
       "icon": "Mapbogljs.png",
       "js": {
         "mapboxgl.version": "^(.+)$\\;version:\\1\\;confidence:0"
@@ -11669,13 +11409,7 @@
         72
       ],
       "description": "Meeting Scheduler is a schedule appointments widget.",
-      "dom": {
-        "a[href*='bookmenow.info/book']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "a[href*='bookmenow.info/book']",
       "icon": "Meeting Scheduler.png",
       "scripts": "bookmenow\\.info/(?:runtime|main).+\\.js",
       "website": "https://bookmenow.info"
@@ -12567,11 +12301,7 @@
         6
       ],
       "description": "NEO is an ecommerce software that manages multiple online stores.",
-      "dom": {
-        "#svr[value^=\"NEOWEBV\"]": {
-          "text": ""
-        }
-      },
+      "dom": "#svr[value^=\"NEOWEBV\"]",
       "headers": {
         "powered": "jet-neo"
       },
@@ -12583,16 +12313,7 @@
       "cats": [
         66
       ],
-      "dom": {
-        ".nsw-container, .nsw-header, .nsw-icon": {
-          "text": ""
-        },
-        "link[href*='nsw-design-system']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": ".nsw-container, .nsw-header, .nsw-icon, link[href*='nsw-design-system']",
       "icon": "NSW Design System.svg",
       "js": {
         "NSW.initSite": ""
@@ -12730,12 +12451,15 @@
       "cats": [
         10
       ],
-      "description": "New Relic is a Software-as-a-Service offering that focuses on performance and availability monitoring.",
+      "description": "New Relic is a SaaS offering that focuses on performance and availability monitoring.",
       "icon": "New Relic.svg",
+      "dom": "link[.newrelic.com']",
       "js": {
         "NREUM": "",
         "newrelic": ""
       },
+      "saas": true,
+      "pricing": ["freemium","payg","low", "mid", "recurring"],
       "website": "https://newrelic.com"
     },
     "Next.js": {
@@ -13061,13 +12785,7 @@
         "ometria": ""
       },
       "description": "Ometria is a customer insight and marketing automation platform.",
-      "dom": {
-        "form[action*='api.ometria.com']": {
-          "attributes": {
-            "action": "api\\.ometria\\.com"
-          }
-        }
-      },
+      "dom": "form[action*='api.ometria.com']",
       "icon": "Ometria.svg",
       "js": {
         "AddOmetriaBasket": "",
@@ -13102,13 +12820,7 @@
         74
       ],
       "description": "Omniconvert is an award-winning conversion rate optimisation (CRO) software that can be used for A/B testing, online surveys, traffic segmentation.",
-      "dom": {
-        "link[href*='app.omniconvert.com']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[href*='app.omniconvert.com']",
       "icon": "Omniconvert.png",
       "js": {
         "_omni": ""
@@ -13426,13 +13138,7 @@
         35
       ],
       "description": "OpenStreetMap is a free, editable map of the whole world that is being built by volunteers largely from scratch and released with an open-content license.",
-      "dom": {
-        "iframe[src*='openstreetmap.org'],iframe[data-lazy-src*='openstreetmap.org']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='openstreetmap.org'],iframe[data-lazy-src*='openstreetmap.org']",
       "icon": "OpenStreetMap.svg",
       "oss": true,
       "website": "https://www.openstreetmap.org"
@@ -13463,18 +13169,7 @@
       ],
       "cpe": "cpe:/a:openx:openx",
       "description": "OpenX is a programmatic advertising technology company.",
-      "dom": {
-        "iframe[src*='.openx.net']": {
-          "attributes": {
-            "src": ""
-          }
-        },
-        "img[src*='.openx.net']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='.openx.net'], img[src*='.openx.net']",
       "icon": "OpenX.png",
       "js": {
         "openx.name": "openx"
@@ -13973,13 +13668,7 @@
         41
       ],
       "description": "PayBright is a Canadian fintech company that offers short-term interest-free installment loans for online shopping to consumers at checkout.",
-      "dom": {
-        "link[href*='app.paybright.com']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "dom": "link[href*='app.paybright.com']",
       "icon": "PayBright.png",
       "js": {
         "_paybright_config": ""
@@ -14012,18 +13701,8 @@
         "button": {
           "text": "PayPal"
         },
-        "iframe[src*='paypal.com']": {
-          "attributes": {
-            "src": ""
-          }
-        },
-        "img[src*='paypal.com'], img[src*='paypalobjects.com']": {
-          "text": ""
-        },
-        "link": {
-          "attributes": {
-            "href": "paypal-express-checkout"
-          }
+        "iframe[src*='paypal.com'], img[src*='paypal.com'], img[src*='paypalobjects.com'], link[href*='paypal-express-checkout']": {
+          "exists": ""
         }
       },
       "html": "<input[^>]+_s-xclick",
@@ -14305,13 +13984,7 @@
         5
       ],
       "description": "Picreel is a conversion optimisation software.",
-      "dom": {
-        "iframe[src*='app.picreel.com']": {
-          "attributes": {
-            "src": ""
-          }
-        }
-      },
+      "dom": "iframe[src*='app.picreel.com']",
       "icon": "Picreel.svg",
       "js": {
         "picreel": ""
@@ -14333,6 +14006,7 @@
       "headers": {
         "X-Powered-By": "^pimcore$"
       },
+      "dom": ".pimcore_area_content",
       "icon": "pimcore.svg",
       "implies": "PHP",
       "website": "http://pimcore.org"
@@ -14370,7 +14044,7 @@
       "cats": [
         36
       ],
-      "description": "Pinterest Ads is an online advertising platform developed by Pinterest. The Pinterest tag allows you to track actions people take on your website after viewing your Promoted Pin.",
+      "description": "Pinterest Ads is an online advertising platform developed by Pinterest.",
       "icon": "Pinterest.svg",
       "website": "https://ads.pinterest.com/",
       "xhr": "ct\\.pinterest\\.com"
@@ -17081,6 +16755,30 @@
       },
       "website": "https://shopfa.com"
     },
+    "Sellacious": {
+      "cats": [
+        6
+      ],
+      "description": "Sellacious is an open-source ecommerce and marketplace platform for integrated POS and online stores.",
+      "dom": {
+        ".mod-sellacious-cart": {
+          "text": ""
+        }
+      },
+      "js": {
+        "SellaciousViewCartAIO": ""
+      },
+      "pricing": [
+        "low",
+        "recurring",
+        "freemium"
+      ],
+      "implies": "Joomla",
+      "saas": true,
+      "oss": true,
+      "icon": "Sellacious.png",
+      "website": "https://www.sellacious.com"
+    },
     "Shopify": {
       "cats": [
         6
@@ -17662,13 +17360,19 @@
       "cookies": {
         "snipcart-cart": ""
       },
-      "html": [
-        "<link [^>]*href=\".*snipcart\\.css\"",
-        "<div [^>]*id=\".*snipcart.*\""
-      ],
+      "dom": {
+        "link[href*='snipcart.css']": {
+          "attributes": {
+            "href": ""
+          }
+        },
+        "div#snipcart": {
+          "text": ""
+        }
+      },
       "icon": "Snipcart.png",
       "scripts": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1",
-      "website": "https://snipcart.com/"
+      "website": "https://snipcart.com"
     },
     "Snoobi": {
       "cats": [
@@ -19612,13 +19316,8 @@
         4
       ],
       "description": "TypeDoc is an API documentation generator for TypeScript projects.",
-      "dom": {
-        "a[href*='typedoc.org']": {
-          "attributes": {
-            "href": ""
-          }
-        }
-      },
+      "implies": "TypeScript",
+      "oss": true,
       "icon": "TypeDoc.png",
       "website": "https://typedoc.org"
     },
@@ -21084,6 +20783,18 @@
       "scripts": "static\\.woopra\\.com",
       "website": "http://www.woopra.com"
     },
+    "Site Kit": {
+      "cats": [
+        10
+      ],
+      "icon": "Google.svg",
+      "implies": "WordPress",
+      "meta": {
+        "generator": "^Site Kit by Google ?([\\d.]+)?\\;version:\\1"
+      },
+      "website": "https://sitekit.withgoogle.com/",
+      "description": "Site Kit is a one-stop solution for WordPress users to use everything Google has to offer to make them successful on the web."
+    },
     "WordPress": {
       "cats": [
         1,
@@ -22217,6 +21928,43 @@
       },
       "scripts": "static/gitweb\\.js$",
       "website": "http://git-scm.com"
+    },
+    "GraphCMS": {
+      "cats": [
+        1
+      ],
+      "icon": "GraphCMS.svg",
+      "description": "GraphCMS is a GraphQL headless CMS for content federation and omnichannel headless content management.",
+      "xhr": "\\.graphcms\\.com",
+      "dom": {
+        ".graphcms-image-wrapper": {
+          "text": ""
+        },
+        "img[src*='media.graphcms.com']": {
+          "text": ""
+        }
+      },
+      "implies": ["GraphQL", "PostgreSQL", "Go", "TypeScript"],
+      "pricing": ["mid", "recurring", "freemium"],
+      "website": "https://graphcms.com"
+    },
+    "GraphQL": {
+      "cats": [
+        27
+      ],
+      "description": "GraphQL is a query language for APIs and a runtime for fulfilling those queries with your existing data.",
+      "oss": true,
+      "icon": "GraphQL.svg",
+      "website": "https://graphql.org"
+    },
+    "TypeScript": {
+      "cats": [
+        27
+      ],
+      "description": "TypeScript is an open-source language which builds on JavaScript  by adding static type definitions.",
+      "oss": true,
+      "icon": "TypeScript.svg",
+      "website": "https://www.typescriptlang.org"
     },
     "govCMS": {
       "cats": [

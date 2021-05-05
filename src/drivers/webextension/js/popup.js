@@ -47,6 +47,13 @@ const Popup = {
     }, {})
 
     // Disabled domains
+    const dynamicIcon = await getOption('dynamicIcon', false)
+
+    if (dynamicIcon) {
+      document.querySelector('body').classList.add('dynamic-icon')
+    }
+
+    // Disabled domains
     let disabledDomains = await getOption('disabledDomains', [])
 
     // Theme mode
@@ -249,7 +256,7 @@ const Popup = {
         ({ name, slug, confidence, version, icon, website }) => {
           const technologyNode = Popup.templates.technology.cloneNode(true)
 
-          const image = technologyNode.querySelector('.technology__icon')
+          const image = technologyNode.querySelector('.technology__icon img')
 
           image.src = `../images/icons/${icon}`
 

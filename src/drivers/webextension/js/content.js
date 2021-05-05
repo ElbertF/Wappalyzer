@@ -115,7 +115,11 @@ const Content = {
         },
         (response) => {
           chrome.runtime.lastError
-            ? reject(new Error(chrome.runtime.lastError.message))
+            ? reject(
+                new Error(
+                  `${chrome.runtime.lastError}: Driver.${func}(${args})`
+                )
+              )
             : resolve(response)
         }
       )
@@ -164,7 +168,7 @@ const Content = {
 
     // DOM
     const dom = technologies
-      .filter(({ dom }) => dom)
+      .filter(({ dom }) => dom && dom.constructor === Object)
       .map(({ name, dom }) => ({ name, dom }))
       .reduce((technologies, { name, dom }) => {
         const toScalar = (value) =>
@@ -173,14 +177,29 @@ const Content = {
             : !!value
 
         Object.keys(dom).forEach((selector) => {
-          const nodes = document.querySelectorAll(selector)
+          let nodes = []
+
+          try {
+            nodes = document.querySelectorAll(selector)
+          } catch (error) {
+            // eslint-disable-next-line no-console
+            console.error(error)
+          }
 
           if (!nodes.length) {
             return
           }
 
-          dom[selector].forEach(({ text, properties, attributes }) => {
+          dom[selector].forEach(({ exists, text, properties, attributes }) => {
             nodes.forEach((node) => {
+              if (exists) {
+                technologies.push({
+                  name,
+                  selector,
+                  exists: '',
+                })
+              }
+
               if (text) {
                 const value = node.textContent.trim()
 

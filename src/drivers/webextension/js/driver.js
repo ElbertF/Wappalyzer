@@ -14,7 +14,7 @@ const { agent, promisify, getOption, setOption, open, globEscape } = Utils
 
 const expiry = 1000 * 60 * 60 * 24
 
-const hostnameIgnoreList = /((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|preview|test(ing)?|demo(shop)?|admin|cache)[.-]|localhost|wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube|\/admin|\.local|\.test|\.dev|\.netlify\.app|\.shopifypreview\.com|^[0-9.]+$)/
+const hostnameIgnoreList = /((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|preview|test(ing)?|[^a-z]demo(shop)?|admin|cache)[.-]|localhost|wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube|\/admin|\.local|\.test|\.dev|\.netlify\.app|\.shopifypreview\.com|^[0-9.]+$)/
 
 const xhrDebounce = []
 
@@ -186,35 +186,50 @@ const Driver = {
       url,
       Array.prototype.concat.apply(
         [],
-        dom.map(({ name, selector, text, property, attribute, value }) => {
-          const technology = Wappalyzer.technologies.find(
-            ({ name: _name }) => name === _name
-          )
-
-          if (text) {
-            return analyzeManyToMany(technology, 'dom.text', {
-              [selector]: [text],
-            })
-          }
-
-          if (property) {
-            return analyzeManyToMany(technology, `dom.properties.${property}`, {
-              [selector]: [value],
-            })
-          }
-
-          if (attribute) {
-            return analyzeManyToMany(
-              technology,
-              `dom.attributes.${attribute}`,
-              {
-                [selector]: [value],
-              }
+        dom.map(
+          (
+            { name, selector, exists, text, property, attribute, value },
+            index
+          ) => {
+            const technology = Wappalyzer.technologies.find(
+              ({ name: _name }) => name === _name
             )
-          }
 
-          return []
-        })
+            if (typeof exists !== 'undefined') {
+              return analyzeManyToMany(technology, 'dom.exists', {
+                [selector]: [''],
+              })
+            }
+
+            if (typeof text !== 'undefined') {
+              return analyzeManyToMany(technology, 'dom.text', {
+                [selector]: [text],
+              })
+            }
+
+            if (typeof property !== 'undefined') {
+              return analyzeManyToMany(
+                technology,
+                `dom.properties.${property}`,
+                {
+                  [selector]: [value],
+                }
+              )
+            }
+
+            if (typeof attribute !== 'undefined') {
+              return analyzeManyToMany(
+                technology,
+                `dom.attributes.${attribute}`,
+                {
+                  [selector]: [value],
+                }
+              )
+            }
+
+            return []
+          }
+        )
       )
     )
   },

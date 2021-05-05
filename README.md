@@ -66,6 +66,7 @@ Patterns (regular expressions) are kept in [`src/technologies.json`](https://git
   },
   "dom": {
     "#example-id": {
+      "exists": "",
       "attributes": {
         "class": "example-class"
       },
@@ -277,7 +278,7 @@ Plus any of:
     </tr>
     <tr>
       <td><code>dom</code></td>
-      <td>Object</td>
+      <td>String | Array | Object</td>
       <td>
         Uses a
         <a

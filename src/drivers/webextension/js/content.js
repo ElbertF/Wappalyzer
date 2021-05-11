@@ -111,7 +111,14 @@ const Content = {
         {
           source: 'content.js',
           func,
-          args: args ? (Array.isArray(args) ? args : [args]) : [],
+          args:
+            args instanceof Error
+              ? [args.toString()]
+              : args
+              ? Array.isArray(args)
+                ? args
+                : [args]
+              : [],
         },
         (response) => {
           chrome.runtime.lastError
@@ -182,8 +189,7 @@ const Content = {
           try {
             nodes = document.querySelectorAll(selector)
           } catch (error) {
-            // eslint-disable-next-line no-console
-            console.error(error)
+            Content.driver('error', error)
           }
 
           if (!nodes.length) {

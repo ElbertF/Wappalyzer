@@ -12453,7 +12453,7 @@
       ],
       "description": "New Relic is a SaaS offering that focuses on performance and availability monitoring.",
       "icon": "New Relic.svg",
-      "dom": "link[.newrelic.com']",
+      "dom": "link['.newrelic.com']",
       "js": {
         "NREUM": "",
         "newrelic": ""
@@ -16778,6 +16778,27 @@
       "oss": true,
       "icon": "Sellacious.png",
       "website": "https://www.sellacious.com"
+    },
+    "Sky-Shop": {
+      "cats": [
+        6
+      ],
+      "description": "Sky-Shop.pl is a platform for dropshipping an online sales on Allegro, eBay and Amazon.",
+      "icon": "Sky-Shop.svg",
+      "dom": ".skyshop-container",
+      "meta": {
+        "generator": "Sky-Shop"
+      },
+      "js": {
+        "L.CONTINUE_SHOPPING": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "implies": ["PHP", "Bootstrap", "jQuery"],
+      "website": "https://sky-shop.pl"
     },
     "Shopify": {
       "cats": [

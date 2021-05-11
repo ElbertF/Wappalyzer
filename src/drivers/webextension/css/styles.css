@@ -82,6 +82,10 @@ a, a:focus, a:hover {
   width: 100%;
 }
 
+.footer--hidden {
+  display: none;
+}
+
 .footer__heading {
   font-weight: bold;
 }
@@ -124,7 +128,7 @@ a, a:focus, a:hover {
 
 .empty {
   opacity: .8;
-  padding: 5rem 1.5rem 4.5rem 1.5rem;
+  padding: 4.5rem 1.5rem 4.5rem 1.5rem;
   text-align: center;
 }
 
@@ -201,6 +205,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   display: inline-flex;
   height: 32px;
   margin-right: .5rem;
+  overflow: hidden;
   width: 32px;
 }
 
@@ -238,7 +243,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   border-radius: 3px;
   font-size: .7rem;
   padding: .2rem .3rem .1rem .3rem;
-  margin-left: .5rem;
+  margin-left: .3rem;
   vertical-align: middle;
 }
 
@@ -247,8 +252,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 1.5rem 1.5rem 1rem 1.5rem;
-  height: 14rem;
+  height: 16rem;
   width: 36rem;
 }
 
@@ -272,9 +276,6 @@ body.dynamic-icon .category__heading:hover .category__pin {
   text-align: center;
   margin-bottom: 1rem;
   width: 80%;
-}
-
-.terms__buttons {
 }
 
 .terms__button {
@@ -342,5 +343,16 @@ body.dynamic-icon .category__heading:hover .category__pin {
 
   body.theme-mode .footer__button {
     color: var(--color-text-dark);
+  }
+
+  body.theme-mode .terms__button {
+    background-color: white;
+    color: var(--color-primary);
+  }
+
+  body.theme-mode .terms__button--decline {
+    background-color: var(--color-primary-darken);
+    border: 1px solid white;
+    color: white;
   }
 }

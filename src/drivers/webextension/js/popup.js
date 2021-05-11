@@ -70,12 +70,14 @@ const Popup = {
     if (termsAccepted) {
       document.querySelector('.terms').classList.add('terms--hidden')
       document.querySelector('.empty').classList.remove('empty--hidden')
+      document.querySelector('.footer').classList.remove('footer--hidden')
 
       Popup.onGetDetections(await Popup.driver('getDetections'))
     } else {
       document.querySelector('.terms').classList.remove('terms--hidden')
       document.querySelector('.detections').classList.add('detections--hidden')
       document.querySelector('.empty').classList.add('empty--hidden')
+      document.querySelector('.footer').classList.add('footer--hidden')
 
       document
         .querySelector('.terms__button--accept')
@@ -85,6 +87,7 @@ const Popup = {
 
           document.querySelector('.terms').classList.add('terms--hidden')
           document.querySelector('.empty').classList.remove('empty--hidden')
+          document.querySelector('.footer').classList.remove('footer--hidden')
 
           Popup.onGetDetections(await Popup.driver('getDetections'))
         })
@@ -97,6 +100,7 @@ const Popup = {
 
           document.querySelector('.terms').classList.add('terms--hidden')
           document.querySelector('.empty').classList.remove('empty--hidden')
+          document.querySelector('.footer').classList.remove('footer--hidden')
 
           Popup.onGetDetections(await Popup.driver('getDetections'))
         })
@@ -202,11 +206,13 @@ const Popup = {
     if (!detections || !detections.length) {
       document.querySelector('.empty').classList.remove('empty--hidden')
       document.querySelector('.detections').classList.add('detections--hidden')
+      document.querySelector('.footer').classList.add('footer--hidden')
 
       return
     }
 
     document.querySelector('.empty').classList.add('empty--hidden')
+    document.querySelector('.footer').classList.remove('footer--hidden')
 
     const el = document.querySelector('.detections')
 

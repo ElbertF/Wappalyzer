@@ -678,6 +678,21 @@
       "scripts": "/cdnr/\\d+/acton/bn/tracker/\\d+",
       "website": "http://act-on.com"
     },
+    "Acuity Scheduling": {
+      "cats": [
+        72
+      ],
+      "description": "Acuity Scheduling is a cloud-based appointment scheduling software solution.",
+      "icon": "Acuity Scheduling.png",
+      "dom": "a[href*='app.acuityscheduling.com']",
+      "js": {
+        "ACUITY_MODAL_INIT": ""
+      },
+      "scripts": "\\.acuityscheduling\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://acuityscheduling.com"
+    },
     "Actito": {
       "cats": [
         32,

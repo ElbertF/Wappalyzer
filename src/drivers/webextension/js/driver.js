@@ -14,7 +14,8 @@ const { agent, promisify, getOption, setOption, open, globEscape } = Utils
 
 const expiry = 1000 * 60 * 60 * 24
 
-const hostnameIgnoreList = /((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|preview|test(ing)?|[^a-z]demo(shop)?|admin|cache)[.-]|localhost|wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube|\/admin|\.local|\.test|\.dev|\.netlify\.app|\.shopifypreview\.com|^[0-9.]+$)/
+const hostnameIgnoreList =
+  /((local|dev(elop(ment)?)?|stag(e|ing)?|preprod|preview|test(ing)?|[^a-z]demo(shop)?|admin|cache)[.-]|localhost|wappalyzer|google|facebook|twitter|reddit|yahoo|wikipedia|amazon|youtube|\/admin|\.local|\.test|\.dev|\.netlify\.app|\.shopifypreview\.com|^[0-9.]+$)/
 
 const xhrDebounce = []
 
@@ -712,9 +713,8 @@ const Driver = {
       const hostnames = Object.keys(Driver.cache.hostnames).reduce(
         (hostnames, hostname) => {
           // eslint-disable-next-line standard/computed-property-even-spacing
-          const { url, language, detections, hits } = Driver.cache.hostnames[
-            hostname
-          ]
+          const { url, language, detections, hits } =
+            Driver.cache.hostnames[hostname]
 
           if (!hostnameIgnoreList.test(hostname) && hits >= 3) {
             hostnames[url] = hostnames[url] || {

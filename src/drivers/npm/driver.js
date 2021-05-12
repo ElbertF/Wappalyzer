@@ -6,19 +6,11 @@ const http = require('http')
 const https = require('https')
 const Wappalyzer = require('./wappalyzer')
 
-const {
-  setTechnologies,
-  setCategories,
-  analyze,
-  analyzeManyToMany,
-  resolve,
-} = Wappalyzer
+const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
+  Wappalyzer
 
-const {
-  AWS_LAMBDA_FUNCTION_NAME,
-  CHROMIUM_BIN,
-  CHROMIUM_DATA_DIR,
-} = process.env
+const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN, CHROMIUM_DATA_DIR } =
+  process.env
 
 let puppeteer
 let chromiumArgs = [
@@ -702,19 +694,14 @@ class Site {
 
         const domain = url.hostname.replace(/^www\./, '')
 
-        ;[
-          records.cname,
-          records.ns,
-          records.mx,
-          records.txt,
-          records.soa,
-        ] = await Promise.all([
-          resolve(dns.resolveCname, url.hostname),
-          resolve(dns.resolveNs, domain),
-          resolve(dns.resolveMx, domain),
-          resolve(dns.resolveTxt, domain),
-          resolve(dns.resolveSoa, domain),
-        ])
+        ;[records.cname, records.ns, records.mx, records.txt, records.soa] =
+          await Promise.all([
+            resolve(dns.resolveCname, url.hostname),
+            resolve(dns.resolveNs, domain),
+            resolve(dns.resolveMx, domain),
+            resolve(dns.resolveTxt, domain),
+            resolve(dns.resolveSoa, domain),
+          ])
 
         this.dns = Object.keys(records).reduce((dns, type) => {
           dns[type] = dns[type] || []

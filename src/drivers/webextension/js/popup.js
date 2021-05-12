@@ -2,15 +2,8 @@
 /* eslint-env browser */
 /* globals chrome, Utils */
 
-const {
-  agent,
-  open,
-  i18n,
-  getOption,
-  setOption,
-  promisify,
-  sendMessage,
-} = Utils
+const { agent, open, i18n, getOption, setOption, promisify, sendMessage } =
+  Utils
 
 function setDisabledDomain(enabled) {
   if (enabled) {

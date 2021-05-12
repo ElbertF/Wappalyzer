@@ -452,6 +452,8 @@
         "<link rel=\"amphtml\""
       ],
       "icon": "Accelerated-Mobile-Pages.svg",
+      "oss": true,
+      "xhr": "cdn\\.ampproject\\.org",
       "website": "https://www.amp.dev"
     },
     "AMP Plugin": {
@@ -678,6 +680,21 @@
       "scripts": "/cdnr/\\d+/acton/bn/tracker/\\d+",
       "website": "http://act-on.com"
     },
+    "Acuity Scheduling": {
+      "cats": [
+        72
+      ],
+      "description": "Acuity Scheduling is a cloud-based appointment scheduling software solution.",
+      "icon": "Acuity Scheduling.png",
+      "dom": "a[href*='app.acuityscheduling.com']",
+      "js": {
+        "ACUITY_MODAL_INIT": ""
+      },
+      "scripts": "\\.acuityscheduling\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://acuityscheduling.com"
+    },
     "Actito": {
       "cats": [
         32,
@@ -785,6 +802,21 @@
       "saas": true,
       "scripts": "ads\\.adthrive\\.com",
       "website": "https://www.adthrive.com"
+    },
+    "Ada": {
+      "cats": [
+        52
+      ],
+      "description": "Ada is an automated customer experience company that provides chat bots used in customer support.",
+      "icon": "Ada.svg",
+      "js": {
+        "adaEmbed": "",
+        "__AdaEmbedConstructor": ""
+      },
+      "scripts": "\\.ada\\.support",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.ada.cx"
     },
     "Adally": {
       "cats": [
@@ -3076,6 +3108,8 @@
       "description": "BoldChat is a live chat platform.",
       "icon": "BoldChat.png",
       "scripts": "^https?://vmss\\.boldchat\\.com/aid/\\d{18}/bc\\.vms4/vms\\.js",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.boldchat.com/"
     },
     "BoldGrid": {
@@ -3964,7 +3998,7 @@
     },
     "Chaport": {
       "cats": [
-        5
+        52
       ],
       "description": "Chaport is a multi-channel live chat and chatbot software for business.",
       "icon": "Chaport.png",
@@ -4025,6 +4059,18 @@
       },
       "scripts": "chartbeat\\.js",
       "website": "http://chartbeat.com"
+    },
+    "Chatango": {
+      "cats": [
+        5
+      ],
+      "description": "Chatango is a website used for connecting to a large selection of users.",
+      "icon": "Chatango.png",
+      "dom": "iframe[src*='st.chatango.com']",
+      "scripts": "st\\.chatango\\.com",
+      "saas": true,
+      "pricing": ["freemium"],
+      "website": "https://chatango.com"
     },
     "Checkfront": {
       "cats": [
@@ -5687,6 +5733,8 @@
         "drift": "",
         "driftt": ""
       },
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.drift.com/"
     },
     "Drupal": {
@@ -6745,6 +6793,20 @@
       "scripts": "cdn\\.firepush\\.\\w+",
       "website": "https://getfirepush.com"
     },
+    "FirstImpression.io": {
+      "cats": [
+        36
+      ],
+      "description": "FirstImpression.io is a customized ad placements for publisher websites on their platform, with zero technical work.",
+      "icon": "FirstImpression.io.png",
+      "js": {
+        "FI.options": "",
+        "fiPrebidAnalyticsHandler": ""
+      },
+      "scripts": "\\.firstimpression\\.io",
+      "xhr": "\\.firstimpression\\.io",
+      "website": "https://www.firstimpression.io"
+    },
     "Flarum": {
       "cats": [
         2
@@ -7425,6 +7487,17 @@
       },
       "scripts": "^gerrit_ui/gerrit_ui",
       "website": "http://www.gerritcodereview.com"
+    },
+    "Getintent": {
+      "cats": [
+        36
+      ],
+      "description": "Getintent is an adtech company that offers AI-powered programmatic suite for agencies, publishers, broadcasters and content owners.",
+      "icon": "Getintent.png",
+      "xhr": "\\.adhigh\\.net",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://getintent.com"
     },
     "Get Satisfaction": {
       "cats": [
@@ -8651,6 +8724,20 @@
       "saas": true,
       "website": "https://www.hubspot.com/products/cms"
     },
+    "HubSpot Chat": {
+      "cats": [
+        52
+      ],
+      "description": "HubSpot Chat is a tool where you can view, manage, and reply to incoming messages from multiple channels.",
+      "icon": "HubSpot.png",
+      "js": {
+        "HubSpotConversations": ""
+      },
+      "scripts": "js\\.usemessages\\.com",
+      "saas": true,
+      "pricing": ["freemium"],
+      "website": "https://www.hubspot.com/products/crm/live-chat"
+    },
     "Hugo": {
       "cats": [
         57
@@ -9524,6 +9611,21 @@
       },
       "icon": "Jive.png",
       "website": "http://www.jivesoftware.com"
+    },
+    "JivoChat": {
+      "cats": [
+        52
+      ],
+      "description": "JivoChat is a live chat solution for websites offering customizable web and mobile chat widgets.",
+      "icon": "JivoChat.png",
+      "js": {
+        "jivo_api": "",
+        "jivo_version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "\\.jivosite\\.com",
+      "saas": true,
+      "pricing": ["freemium","recurring","payg"],
+      "website": "https://www.jivosite.com"
     },
     "JobberBase": {
       "cats": [
@@ -10517,7 +10619,9 @@
       "js": {
         "LiveAgent": ""
       },
-      "website": "https://www.ladesk.com"
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.liveagent.com"
     },
     "LiveChat": {
       "cats": [
@@ -10526,6 +10630,8 @@
       "description": "LiveChat is an online customer service software with online chat, help desk software, and web analytics capabilities.",
       "icon": "LiveChat.png",
       "scripts": "cdn\\.livechatinc\\.com/.*tracking\\.js",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "http://livechatinc.com"
     },
     "LiveHelp": {
@@ -10578,6 +10684,8 @@
       "description": "LivePerson is a tool for conversational chatbots and messaging.",
       "icon": "LivePerson.png",
       "scripts": "^https?://lptag\\.liveperson\\.net/tag/tag\\.js",
+      "saas": true,
+      "pricing": ["poa"],
       "website": "https://www.liveperson.com/"
     },
     "LiveRamp PCM": {
@@ -10649,6 +10757,22 @@
       },
       "scripts": "livewire(?:\\.min)?\\.js",
       "website": "https://laravel-livewire.com"
+    },
+    "LiveZilla": {
+      "cats": [
+        52
+      ],
+      "description": "LiveZilla is a web-based live support platform.",
+      "icon": "LiveZilla.png",
+      "dom": "#lz_overlay_chat",
+      "js": {
+        "lz_chat_execute": "",
+        "lz_tracking_set_widget_visibility": "",
+        "lz_code_id": "(?:[\\w\\d]+)"
+      },
+      "saas": false,
+      "pricing": ["onetime", "mid"],
+      "website": "https://www.livezilla.net"
     },
     "LocalFocus": {
       "cats": [
@@ -12296,6 +12420,20 @@
       },
       "website": "http://www.netcap-creation.fr"
     },
+    "MyLiveChat": {
+      "cats": [
+        52
+      ],
+      "description": "MyLiveChat is a live chat developed by CuteSoft.",
+      "icon": "MyLiveChat.png",
+      "js": {
+        "MyLiveChat.Version": "(.+)$\\;version:\\1"
+      },
+      "scripts": "mylivechat\\.com/",
+      "saas": true,
+      "pricing": ["freemium", "payg"],
+      "website": "https://mylivechat.com"
+    },
     "NEO - Omnichannel Commerce Platform": {
       "cats": [
         6
@@ -12775,6 +12913,8 @@
       "description": "Olark is a cloud-based live chat solution.",
       "icon": "Olark.png",
       "scripts": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "https://www.olark.com/"
     },
     "Ometria": {
@@ -14642,7 +14782,7 @@
     },
     "Pure Chat": {
       "cats": [
-        5
+        52
       ],
       "description": "Pure Chat is a live chat solution for small to mid-sized teams.",
       "icon": "Pure Chat.png",
@@ -15680,6 +15820,17 @@
         "roundcube": ""
       },
       "website": "http://roundcube.net"
+    },
+    "RTB House": {
+      "cats": [
+        77
+      ],
+      "description": "RTB House is a company that provides learning-powered retargeting solutions for brands and agencies.",
+      "icon": "RTB House.png",
+      "xhr": "\\.creativecdn\\.com",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.rtbhouse.com"
     },
     "Rubicon Project": {
       "cats": [
@@ -17313,6 +17464,21 @@
       "scripts": "smjslib\\.js",
       "website": "http://smartstore.com"
     },
+    "Smartsupp": {
+      "cats": [
+        52
+      ],
+      "description": "Smartsupp is a live chat tool that offers visitor recording feature.",
+      "icon": "Smartsupp.svg",
+      "js": {
+        "$smartsupp.options.widgetVersion": "([\\d.]+)\\;version:\\1",
+        "smartsupp": ""
+      },
+      "scripts": "\\.smartsuppchat\\.com",
+      "saas": true,
+      "pricing": ["freemium", "payg"],
+      "website": "https://www.smartsupp.com"
+    },
     "SmugMug": {
       "cats": [
         7
@@ -17372,6 +17538,8 @@
         "SnapEngageChat": "",
         "snapengage_mobile": ""
       },
+      "saas": true,
+      "pricing": ["payg"],
       "website": "https://snapengage.com/"
     },
     "Snipcart": {
@@ -17757,7 +17925,9 @@
       "js": {
         "SpotX.VERSION": "([\\d.]+)\\;version:\\1"
       },
+      "xhr": "\\.spotx(?:change|cdn)\\.com",
       "scripts": "js\\.spotx\\.tv",
+      "saas": true,
       "website": "https://www.spotx.tv"
     },
     "Spree": {
@@ -18585,6 +18755,8 @@
       "description": "Tawk.to is a free messaging app to monitor and chat with the visitors to a website, mobile app.",
       "icon": "TawkTo.png",
       "scripts": "//embed\\.tawk\\.to",
+      "saas": true,
+      "pricing": ["freemium", "payg"],
       "website": "http://tawk.to"
     },
     "Teads": {
@@ -19600,10 +19772,18 @@
       ],
       "description": "Userlike is a cloud-based live chat solution that can be integrated with existing websites.",
       "icon": "UserLike.svg",
+      "js": {
+        "userlike": "",
+        "userlikeInit": ""
+      },
       "scripts": [
         "userlike\\.min\\.js",
-        "userlikelib\\.min\\.js"
+        "userlikelib\\.min\\.js",
+        "//userlike-cdn-widgets\\.",
+        "api\\.userlike\\.com"
       ],
+      "saas": true,
+      "pricing": ["freemium", "payg"],
       "website": "http://userlike.com"
     },
     "UserRules": {
@@ -21478,6 +21658,8 @@
       "description": "Zendesk Chat is a live chat and communication widget.",
       "icon": "Zendesk Chat.png",
       "scripts": "v2\\.zopim\\.com",
+      "saas": true,
+      "pricing": ["freemium","payg"],
       "website": "http://zopim.com"
     },
     "Zenfolio": {

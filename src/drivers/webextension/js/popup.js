@@ -63,7 +63,6 @@ const Popup = {
     if (termsAccepted) {
       document.querySelector('.terms').classList.add('terms--hidden')
       document.querySelector('.empty').classList.remove('empty--hidden')
-      document.querySelector('.footer').classList.remove('footer--hidden')
 
       Popup.onGetDetections(await Popup.driver('getDetections'))
     } else {

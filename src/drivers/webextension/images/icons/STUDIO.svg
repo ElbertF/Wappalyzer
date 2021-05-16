@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard 39</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0%" y1="100%" x2="100%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#FF0055" offset="0%"/>
+            <stop stop-color="#F94CFF" offset="100%"/>
+        </linearGradient>
+    </defs>
+    <g id="Pages" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard-39" fill="url(#linearGradient-1)">
+            <g id="Group">
+                <path d="M3.83776341,25.6166644 L25.6166522,3.83777557 C25.8509668,3.60346099 26.2308658,3.60346099 26.4651804,3.83777557 L28.1622366,5.53483175 C28.3965512,5.76914633 28.3965512,6.14904533 28.1622366,6.38335992 L6.38334776,28.1622487 C6.14903317,28.3965633 5.76913417,28.3965633 5.53481959,28.1622487 L3.83776341,26.4651926 C3.60344883,26.230878 3.60344883,25.850979 3.83776341,25.6166644 Z" id="c3"/>
+            </g>
+        </g>
+    </g>
+</svg>

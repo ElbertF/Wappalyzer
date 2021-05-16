@@ -94,7 +94,7 @@ a, a:focus, a:hover {
   font-size: .85rem;
   letter-spacing: .5px;
   flex: 1 0 auto;
-  opacity: .7;
+  opacity: .8;
   max-width: 400px;
 }
 
@@ -222,7 +222,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   display: flex;
   padding: .1rem 0;
   text-decoration: none;
-  width: 100%;
+  width: 200px;
 }
 
 .technology__name {
@@ -232,9 +232,13 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .technology__confidence {
-  opacity: .5;
+  background: var(--color-primary-lighten);
+  color: var(--color-primary);
+  border-radius: 3px;
   font-size: .7rem;
-  margin-left: .4rem;
+  padding: .1rem .3rem;
+  margin-left: .3rem;
+  vertical-align: middle;
 }
 
 .technology__version {
@@ -242,7 +246,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   color: var(--color-text);
   border-radius: 3px;
   font-size: .7rem;
-  padding: .2rem .3rem .1rem .3rem;
+  padding: .1rem .3rem;
   margin-left: .3rem;
   vertical-align: middle;
 }
@@ -319,7 +323,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
     color: var(--color-text-dark);
   }
 
-  body.theme-mode .category__link, .category__link:active, .category__link:hover {
+  body.theme-mode .category__link, body.theme-mode .category__link:active, body.theme-mode .category__link:hover {
     color: var(--color-text-dark);
   }
 
@@ -332,6 +336,11 @@ body.dynamic-icon .category__heading:hover .category__pin {
   }
 
   body.theme-mode .technology__version {
+    background: var(--color-primary);
+    color: var(--color-text-dark);
+  }
+
+  body.theme-mode .technology__confidence {
     background: var(--color-primary);
     color: var(--color-text-dark);
   }

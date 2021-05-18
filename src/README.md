@@ -25,16 +25,16 @@ const { technologies, categories } = JSON.parse(
 Wappalyzer.setTechnologies(technologies)
 Wappalyzer.setCategories(categories)
 
-const detections = Wappalyzer.analyze({
+Wappalyzer.analyze({
   url: 'https://example.github.io/',
   meta: { generator: ['WordPress'] },
   headers: { server: ['Nginx'] },
   scripts: ['jquery-3.0.0.js'],
   cookies: { awselb: [''] },
   html: '<div ng-app="">'
+}).then((detections) => {
+  const results = Wappalyzer.resolve(detections)
+
+  console.log(results)
 })
-
-const results = Wappalyzer.resolve(detections)
-
-console.log(results)
 ```

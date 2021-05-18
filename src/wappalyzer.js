@@ -1,5 +1,13 @@
 'use strict'
 
+function next() {
+  return new Promise((resolve) =>
+    (typeof setImmediate !== 'undefined'
+      ? setImmediate
+      : requestAnimationFrame)(resolve)
+  )
+}
+
 function toArray(value) {
   return Array.isArray(value) ? value : [value]
 }
@@ -187,7 +195,7 @@ const Wappalyzer = {
    * Initialize analyzation.
    * @param {*} param0
    */
-  analyze({
+  async analyze({
     url,
     xhr,
     html,
@@ -208,20 +216,24 @@ const Wappalyzer = {
 
     try {
       const detections = flatten(
-        Wappalyzer.technologies.map((technology) =>
-          flatten([
-            oo(technology, 'url', url),
-            oo(technology, 'xhr', xhr),
-            oo(technology, 'html', html),
-            oo(technology, 'css', css),
-            oo(technology, 'robots', robots),
-            oo(technology, 'certIssuer', certIssuer),
-            om(technology, 'scripts', scripts),
-            mm(technology, 'cookies', cookies),
-            mm(technology, 'meta', meta),
-            mm(technology, 'headers', headers),
-            mm(technology, 'dns', dns),
-          ])
+        await Promise.all(
+          Wappalyzer.technologies.map(async (technology) => {
+            await next()
+
+            return flatten([
+              oo(technology, 'url', url),
+              oo(technology, 'xhr', xhr),
+              oo(technology, 'html', html),
+              oo(technology, 'css', css),
+              oo(technology, 'robots', robots),
+              oo(technology, 'certIssuer', certIssuer),
+              om(technology, 'scripts', scripts),
+              mm(technology, 'cookies', cookies),
+              mm(technology, 'meta', meta),
+              mm(technology, 'headers', headers),
+              mm(technology, 'dns', dns),
+            ])
+          })
         )
       ).filter((technology) => technology)
 

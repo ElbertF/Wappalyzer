@@ -5,6 +5,23 @@
 const { agent, open, i18n, getOption, setOption, promisify, sendMessage } =
   Utils
 
+const footers = [
+  {
+    heading: 'Generate sales leads',
+    body: 'Find new prospects by the technologies they use. Reach out to customers of Shopify, Magento, Salesforce and others.',
+    buttonText: 'Create a lead list',
+    buttonLink:
+      'https://www.wappalyzer.com/lists/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer',
+  },
+  {
+    heading: 'Connect Wappalyzer to your CRM',
+    body: 'See the technology stacks of your leads without leaving your CRM. Connect to HubSpot, Pipedrive and many others.',
+    buttonText: 'See all apps',
+    buttonLink:
+      'https://www.wappalyzer.com/lists/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer',
+  },
+]
+
 function setDisabledDomain(enabled) {
   if (enabled) {
     document
@@ -147,6 +164,42 @@ const Popup = {
       .querySelector('.header__settings')
       .addEventListener('click', () => chrome.runtime.openOptionsPage())
 
+    // Footer
+    const item = footers[Math.round(Math.random() * (footers.length - 1))]
+
+    document.querySelector('.footer__heading-text').textContent = item.heading
+    document.querySelector('.footer__content-body').textContent = item.body
+    document.querySelector('.footer__button-text').textContent = item.buttonText
+    document.querySelector('.footer__button-link').href = item.buttonLink
+
+    const collapseFooter = await getOption('collapseFooter', false)
+
+    const footer = document.querySelector('.footer')
+    const footerClose = document.querySelector('.footer__toggle--close')
+    const footerOpen = document.querySelector('.footer__toggle--open')
+
+    if (collapseFooter) {
+      footer.classList.add('footer--collapsed')
+      footerClose.classList.add('footer__toggle--hidden')
+      footerOpen.classList.remove('footer__toggle--hidden')
+    }
+
+    document
+      .querySelector('.footer__heading')
+      .addEventListener('click', async () => {
+        const collapsed = footer.classList.contains('footer--collapsed')
+
+        footer.classList[collapsed ? 'remove' : 'add']('footer--collapsed')
+        footerClose.classList[collapsed ? 'remove' : 'add'](
+          'footer__toggle--hidden'
+        )
+        footerOpen.classList[collapsed ? 'add' : 'remove'](
+          'footer__toggle--hidden'
+        )
+
+        await setOption('collapseFooter', !collapsed)
+      })
+
     // Apply internationalization
     i18n()
   },
@@ -191,7 +244,7 @@ const Popup = {
    * @param {Array} detections
    */
   async onGetDetections(detections = []) {
-    detections = detections
+    detections = (detections || [])
       .filter(({ confidence }) => confidence >= 50)
       .filter(({ slug }) => slug !== 'cart-functionality')
 

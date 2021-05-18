@@ -3711,7 +3711,7 @@
       "icon": "Bulma.png",
       "website": "http://bulma.io"
     },
-    "Bumb": {
+    "Bump": {
       "cats": [
         4
       ],
@@ -10725,7 +10725,7 @@
         "x-litespeed-cache": ""
       },
       "icon": "litespeed-cache.png",
-      "implies": "WordPress",
+      "implies": "LiteSpeed",
       "website": "https://wordpress.org/plugins/litespeed-cache/"
     },
     "Lithium": {
@@ -12952,6 +12952,25 @@
       "icon": "OXID eShop.svg",
       "implies": "PHP",
       "website": "https://www.oxid-esales.com"
+    },
+    "Occasion": {
+      "cats": [
+        72
+      ],
+      "description": "Occasion is an online booking system.",
+      "icon": "Occasion.png",
+      "dom": [
+        "iframe[src*='app.getoccasion.com']",
+        "a[href*='app.getoccasion.com']"
+      ],
+      "js": {
+        "occsnMerchantToken": "",
+        "OCCSN.stack": ""
+      },
+      "scripts": "app\\.getoccasion\\.com",
+      "saas": true,
+      "pricing": ["low", "payg", "recurring"],
+      "website": "https://www.getoccasion.com"
     },
     "Ochanoko": {
       "cats": [
@@ -15665,6 +15684,22 @@
       },
       "scripts": "www\\.resengo\\.\\w+",
       "website": "https://wwc.resengo.com"
+    },
+    "Reservio": {
+      "cats": [
+        72
+      ],
+      "description": "Reservio is a cloud-based appointment scheduling and online booking solution.",
+      "icon": "Reservio.svg",
+      "dom": [
+        ".reservio-booking-button",
+        "a[href*='.reservio.com'][target='_blank']",
+        "a[href*='bookings.reservio.com']"
+      ],
+      "scripts": "static\\.reservio\.com",
+      "saas": true,
+      "pricing": ["freemium", "recurring","low"],
+      "website": "https://www.reservio.com"
     },
     "Resin": {
       "cats": [
@@ -21819,6 +21854,18 @@
       "implies": "Java",
       "scripts": "zkau/",
       "website": "http://zkoss.org"
+    },
+    "Zocdoc": {
+      "cats": [
+        72
+      ],
+      "description": "Zocdoc is a New York City-based company offering an online service that allows people to find and book in-person or telemedicine appointments for medical or dental care.",
+      "icon": "Zocdoc.svg",
+      "dom": "a[href*='www.zocdoc.com'][target='_blank']",
+      "scripts": "offsiteschedule\\.zocdoc\\.com",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.zocdoc.com"
     },
     "ZURB Foundation": {
       "cats": [

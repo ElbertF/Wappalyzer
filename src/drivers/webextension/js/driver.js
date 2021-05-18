@@ -1,6 +1,6 @@
 'use strict'
 /* eslint-env browser */
-/* globals chrome, Wappalyzer, Utils */
+/* globals chrome, Wappalyzer, Utils, next */
 
 const {
   setTechnologies,
@@ -161,17 +161,21 @@ const Driver = {
    * @param {String} url
    * @param {Array} js
    */
-  analyzeJs(url, js) {
+  async analyzeJs(url, js) {
     return Driver.onDetect(
       url,
       Array.prototype.concat.apply(
         [],
-        js.map(({ name, chain, value }) =>
-          analyzeManyToMany(
-            Wappalyzer.technologies.find(({ name: _name }) => name === _name),
-            'js',
-            { [chain]: [value] }
-          )
+        await Promise.all(
+          js.map(async ({ name, chain, value }) => {
+            await next()
+
+            return analyzeManyToMany(
+              Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+              'js',
+              { [chain]: [value] }
+            )
+          })
         )
       )
     )
@@ -182,54 +186,58 @@ const Driver = {
    * @param {String} url
    * @param {Array} dom
    */
-  analyzeDom(url, dom) {
+  async analyzeDom(url, dom) {
     return Driver.onDetect(
       url,
       Array.prototype.concat.apply(
         [],
-        dom.map(
-          (
-            { name, selector, exists, text, property, attribute, value },
-            index
-          ) => {
-            const technology = Wappalyzer.technologies.find(
-              ({ name: _name }) => name === _name
-            )
+        await Promise.all(
+          dom.map(
+            async (
+              { name, selector, exists, text, property, attribute, value },
+              index
+            ) => {
+              await next()
 
-            if (typeof exists !== 'undefined') {
-              return analyzeManyToMany(technology, 'dom.exists', {
-                [selector]: [''],
-              })
-            }
-
-            if (typeof text !== 'undefined') {
-              return analyzeManyToMany(technology, 'dom.text', {
-                [selector]: [text],
-              })
-            }
-
-            if (typeof property !== 'undefined') {
-              return analyzeManyToMany(
-                technology,
-                `dom.properties.${property}`,
-                {
-                  [selector]: [value],
-                }
+              const technology = Wappalyzer.technologies.find(
+                ({ name: _name }) => name === _name
               )
-            }
 
-            if (typeof attribute !== 'undefined') {
-              return analyzeManyToMany(
-                technology,
-                `dom.attributes.${attribute}`,
-                {
-                  [selector]: [value],
-                }
-              )
-            }
+              if (typeof exists !== 'undefined') {
+                return analyzeManyToMany(technology, 'dom.exists', {
+                  [selector]: [''],
+                })
+              }
 
-            return []
-          }
+              if (typeof text !== 'undefined') {
+                return analyzeManyToMany(technology, 'dom.text', {
+                  [selector]: [text],
+                })
+              }
+
+              if (typeof property !== 'undefined') {
+                return analyzeManyToMany(
+                  technology,
+                  `dom.properties.${property}`,
+                  {
+                    [selector]: [value],
+                  }
+                )
+              }
+
+              if (typeof attribute !== 'undefined') {
+                return analyzeManyToMany(
+                  technology,
+                  `dom.attributes.${attribute}`,
+                  {
+                    [selector]: [value],
+                  }
+                )
+              }
+
+              return []
+            }
+          )
         )
       )
     )
@@ -304,7 +312,9 @@ const Driver = {
             )
           })
 
-          Driver.onDetect(request.url, analyze({ headers })).catch(Driver.error)
+          Driver.onDetect(request.url, await analyze({ headers })).catch(
+            Driver.error
+          )
         }
       } catch (error) {
         Driver.error(error)
@@ -332,12 +342,13 @@ const Driver = {
     if (!xhrDebounce.includes(hostname)) {
       xhrDebounce.push(hostname)
 
-      setTimeout(() => {
+      setTimeout(async () => {
         xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
 
-        Driver.onDetect(request.originUrl, analyze({ xhr: hostname })).catch(
-          Driver.error
-        )
+        Driver.onDetect(
+          request.originUrl,
+          await analyze({ xhr: hostname })
+        ).catch(Driver.error)
       }, 1000)
     }
   },
@@ -364,7 +375,12 @@ const Driver = {
         {}
       )
 
-      await Driver.onDetect(url, analyze({ url, ...items }), language, true)
+      await Driver.onDetect(
+        url,
+        await analyze({ url, ...items }),
+        language,
+        true
+      )
     } catch (error) {
       Driver.error(error)
     }

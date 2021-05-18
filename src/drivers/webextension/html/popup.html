@@ -40,7 +40,7 @@
 
     <div class="detections detections--hidden"></div>
 
-    <div class="terms">
+    <div class="terms terms--hidden">
       <div class="terms__content" data-i18n="termsContent"></div>
 
       <div class="terms__buttons">
@@ -89,22 +89,33 @@
 
     <div class="footer footer--hidden">
       <div class="footer__heading">
-        Generate sales leads
+        <div class="footer__heading-text">&nbsp;</div>
+
+        <div class="footer__toggle footer__toggle--close">
+          <svg class="footer__icon" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M7.41,15.41L12,10.83L16.59,15.41L18,14L12,8L6,14L7.41,15.41Z" />
+          </svg>
+        </div>
+        <div class="footer__toggle footer__toggle--open footer__toggle--hidden">
+          <svg class="footer__icon"viewBox="0 0 24 24">
+            <path fill="currentColor" d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+          </svg>
+        </div>
       </div>
 
       <div class="footer__content">
-        <p>
-        Find new prospects by the technologies they use. Reach out to customers of Shopify, Magento, Salesforce and others.
-        </p>
+        <p class="footer__content-body">&nbsp;</p>
       </div>
 
-      <a class="footer__button" href="https://www.wappalyzer.com/lists/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer">
-        <svg class="footer__icon" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M6,13H18V11H6M3,6V8H21V6M10,18H14V16H10V18Z" />
-        </svg>
+      <div class="footer__button">
+        <a class="footer__button-link" href="#">
+          <span class="footer__button-text">&nbsp;</span>
 
-        Create a lead list
-      </a>
+          <svg class="footer__icon" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" />
+          </svg>
+        </a>
+      </div>
     </div>
 	</body>
 </html>

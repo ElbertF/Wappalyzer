@@ -9,6 +9,10 @@ const Wappalyzer = require('./wappalyzer')
 const { setTechnologies, setCategories, analyze, analyzeManyToMany, resolve } =
   Wappalyzer
 
+function next() {
+  return new Promise((resolve) => setImmediate(resolve))
+}
+
 const { AWS_LAMBDA_FUNCTION_NAME, CHROMIUM_BIN, CHROMIUM_DATA_DIR } =
   process.env
 
@@ -49,53 +53,75 @@ function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms))
 }
 
-function analyzeJs(js) {
+async function analyzeJs(js) {
   return Array.prototype.concat.apply(
     [],
-    js.map(({ name, chain, value }) =>
-      analyzeManyToMany(
-        Wappalyzer.technologies.find(({ name: _name }) => name === _name),
-        'js',
-        { [chain]: [value] }
-      )
+    await Promise.all(
+      js.map(async ({ name, chain, value }) => {
+        await next()
+
+        return analyzeManyToMany(
+          Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+          'js',
+          { [chain]: [value] }
+        )
+      })
     )
   )
 }
 
-function analyzeDom(dom) {
+async function analyzeDom(dom) {
   return Array.prototype.concat.apply(
     [],
-    dom.map(({ name, selector, exists, text, property, attribute, value }) => {
-      const technology = Wappalyzer.technologies.find(
-        ({ name: _name }) => name === _name
+    await Promise.all(
+      dom.map(
+        async ({
+          name,
+          selector,
+          exists,
+          text,
+          property,
+          attribute,
+          value,
+        }) => {
+          await next()
+
+          const technology = Wappalyzer.technologies.find(
+            ({ name: _name }) => name === _name
+          )
+
+          if (typeof exists !== 'undefined') {
+            return analyzeManyToMany(technology, 'dom.exists', {
+              [selector]: [''],
+            })
+          }
+
+          if (typeof text !== 'undefined') {
+            return analyzeManyToMany(technology, 'dom.text', {
+              [selector]: [text],
+            })
+          }
+
+          if (typeof property !== 'undefined') {
+            return analyzeManyToMany(technology, `dom.properties.${property}`, {
+              [selector]: [value],
+            })
+          }
+
+          if (typeof attribute !== 'undefined') {
+            return analyzeManyToMany(
+              technology,
+              `dom.attributes.${attribute}`,
+              {
+                [selector]: [value],
+              }
+            )
+          }
+
+          return []
+        }
       )
-
-      if (typeof exists !== 'undefined') {
-        return analyzeManyToMany(technology, 'dom.exists', {
-          [selector]: [''],
-        })
-      }
-
-      if (typeof text !== 'undefined') {
-        return analyzeManyToMany(technology, 'dom.text', {
-          [selector]: [text],
-        })
-      }
-
-      if (typeof property !== 'undefined') {
-        return analyzeManyToMany(technology, `dom.properties.${property}`, {
-          [selector]: [value],
-        })
-      }
-
-      if (typeof attribute !== 'undefined') {
-        return analyzeManyToMany(technology, `dom.attributes.${attribute}`, {
-          [selector]: [value],
-        })
-      }
-
-      return []
-    })
+    )
   )
 }
 
@@ -343,10 +369,10 @@ class Site {
           if (!xhrDebounce.includes(hostname)) {
             xhrDebounce.push(hostname)
 
-            setTimeout(() => {
+            setTimeout(async () => {
               xhrDebounce.splice(xhrDebounce.indexOf(hostname), 1)
 
-              this.onDetect(analyze({ xhr: hostname }))
+              this.onDetect(await analyze({ xhr: hostname }))
             }, 1000)
           }
         }
@@ -402,7 +428,7 @@ class Site {
               ? response.securityDetails().issuer()
               : ''
 
-            this.onDetect(analyze({ headers, certIssuer }))
+            this.onDetect(await analyze({ headers, certIssuer }))
 
             await this.emit('response', { page, response, headers, certIssuer })
           }
@@ -720,7 +746,7 @@ class Site {
           return dns
         }, {})
 
-        this.onDetect(analyze({ dns: this.dns }))
+        this.onDetect(await analyze({ dns: this.dns }))
       }
 
       // Validate response
@@ -736,10 +762,10 @@ class Site {
         throw new Error('No response from server')
       }
 
-      this.onDetect(analyzeDom(dom))
-      this.onDetect(analyzeJs(js))
+      this.onDetect(await analyzeDom(dom))
+      this.onDetect(await analyzeJs(js))
       this.onDetect(
-        analyze({
+        await analyze({
           url,
           cookies,
           html,
@@ -874,7 +900,7 @@ class Site {
 
         this.log(`get ${path}: ok`)
 
-        this.onDetect(analyze({ [file]: body }))
+        this.onDetect(await analyze({ [file]: body }))
       } catch (error) {
         this.error(`get ${path}: ${error.message || error}`)
       }

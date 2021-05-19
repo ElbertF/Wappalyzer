@@ -619,20 +619,6 @@
       "scripts": "acsbapp?\\.com/.*/acsb\\.js",
       "website": "https://accessibe.com"
     },
-    "Bookero": {
-      "cats": [
-        72
-      ],
-      "description": "Bookero is online booking system for you website or Facebook page.",
-      "icon": "Bookero.svg",
-      "scripts": "cdn\\.bookero\\.pl",
-      "js": {
-        "bookero_config": ""
-      },
-      "url": "\\.bookero\\.(?:org|pl)",
-      "pricing": ["low", "recurring"],
-      "website": "https://www.bookero.org"
-    },
     "Accesso": {
       "cats": [
         6,
@@ -676,34 +662,6 @@
       ],
       "saas": true,
       "website": "https://www.acquia.com/"
-    },
-    "Elasticsearch": {
-      "cats": [
-        29
-      ],
-      "description": "Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.",
-      "icon": "Elasticsearch.svg",
-      "website": "https://www.elastic.co"
-    },
-    "Adabra": {
-      "cats": [
-        32
-      ],
-      "description": "Adabra is a SaaS omnichannel marketing automation platform to help boost sales. Adabra allows you to manage user segmentation, create workflow and campaigns through email, social, SMS and more.",
-      "icon": "Adabra.svg",
-      "pricing": [
-        "poa",
-        "recurring"
-      ],
-      "xhr": "my\\.adabra\\.com",
-      "js": {
-        "adabra_version_track": "(^.+$)\\;version:\\1",
-        "adabra_version_panel": "(^.+$)\\;version:\\1",
-        "adabraPreview": ""
-      },
-      "scripts": "track\\.adabra\\.com",
-      "saas": true,
-      "website": "https://www.adabra.com"
     },
     "Act-On": {
       "cats": [
@@ -864,6 +822,26 @@
       "saas": true,
       "scripts": "\\.ada\\.support",
       "website": "https://www.ada.cx"
+    },
+    "Adabra": {
+      "cats": [
+        32
+      ],
+      "description": "Adabra is a SaaS omnichannel marketing automation platform to help boost sales. Adabra allows you to manage user segmentation, create workflow and campaigns through email, social, SMS and more.",
+      "icon": "Adabra.svg",
+      "js": {
+        "adabraPreview": "",
+        "adabra_version_panel": "(^.+$)\\;version:\\1",
+        "adabra_version_track": "(^.+$)\\;version:\\1"
+      },
+      "pricing": [
+        "poa",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "track\\.adabra\\.com",
+      "website": "https://www.adabra.com",
+      "xhr": "my\\.adabra\\.com"
     },
     "Adally": {
       "cats": [
@@ -2015,27 +1993,6 @@
         "Wicket": ""
       },
       "website": "http://wicket.apache.org"
-    },
-    "STUDIO": {
-      "description": "STUDIO is a Japan-based company and SaaS application for designing and hosting websites. The service includes a visual editor with built-in CMS and analytics.",
-      "cats": [
-        51
-      ],
-      "icon": "STUDIO.svg",
-      "dom": ".StudioCanvas, .publish-studio-style",
-      "meta": {
-        "generator": "^STUDIO$"
-      },
-      "saas": true,
-      "pricing": ["low", "recurring", "freemium"],
-      "implies": [
-        "Vue.js",
-        "Nuxt.js",
-        "Firebase",
-        "Google Cloud",
-        "Google Tag Manager"
-      ],
-      "website": "https://studio.design"
     },
     "ApexPages": {
       "cats": [
@@ -3258,6 +3215,23 @@
       "icon": "Bookatable.svg",
       "scripts": "bda\\.bookatable\\.com/deploy/lbui\\.direct\\.min\\.js",
       "website": "https://www.bookatable.co.uk"
+    },
+    "Bookero": {
+      "cats": [
+        72
+      ],
+      "description": "Bookero is online booking system for you website or Facebook page.",
+      "icon": "Bookero.svg",
+      "js": {
+        "bookero_config": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "scripts": "cdn\\.bookero\\.pl",
+      "url": "\\.bookero\\.(?:org|pl)",
+      "website": "https://www.bookero.org"
     },
     "Bookingkit": {
       "cats": [
@@ -4737,6 +4711,22 @@
       "url": "\\.spaces.chec\\.io",
       "website": "https://www.commercejs.com"
     },
+    "Commerce7": {
+      "cats": [
+        6
+      ],
+      "description": "Commerce7 is an ecommerce platform for wineries.",
+      "icon": "Commerce7.svg",
+      "pricing": [
+        "mid",
+        "recurring",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.commerce7\\.com",
+      "website": "https://commerce7.com",
+      "xhr": "api\\.commerce7\\.com"
+    },
     "Concrete5": {
       "cats": [
         1
@@ -6135,6 +6125,14 @@
       "icon": "EdgeCast.png",
       "url": "https?://(?:[^/]+\\.)?edgecastcdn\\.net/",
       "website": "http://www.edgecast.com"
+    },
+    "Elasticsearch": {
+      "cats": [
+        29
+      ],
+      "description": "Elasticsearch is a search engine based on the Lucene library. It provides a distributed, multitenant-capable full-text search engine with an HTTP web interface and schema-free JSON documents.",
+      "icon": "Elasticsearch.svg",
+      "website": "https://www.elastic.co"
     },
     "Elcodi": {
       "cats": [
@@ -10063,7 +10061,10 @@
       },
       "html": "<title>Kibana</title>",
       "icon": "kibana.svg",
-      "implies": ["Node.js", "Elasticsearch"],
+      "implies": [
+        "Node.js",
+        "Elasticsearch"
+      ],
       "url": "kibana#/dashboard/",
       "website": "http://www.elastic.co/products/kibana"
     },
@@ -12958,18 +12959,22 @@
         72
       ],
       "description": "Occasion is an online booking system.",
-      "icon": "Occasion.png",
       "dom": [
         "iframe[src*='app.getoccasion.com']",
         "a[href*='app.getoccasion.com']"
       ],
+      "icon": "Occasion.png",
       "js": {
-        "occsnMerchantToken": "",
-        "OCCSN.stack": ""
+        "OCCSN.stack": "",
+        "occsnMerchantToken": ""
       },
-      "scripts": "app\\.getoccasion\\.com",
+      "pricing": [
+        "low",
+        "payg",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "payg", "recurring"],
+      "scripts": "app\\.getoccasion\\.com",
       "website": "https://www.getoccasion.com"
     },
     "Ochanoko": {
@@ -15690,15 +15695,19 @@
         72
       ],
       "description": "Reservio is a cloud-based appointment scheduling and online booking solution.",
-      "icon": "Reservio.svg",
       "dom": [
         ".reservio-booking-button",
         "a[href*='.reservio.com'][target='_blank']",
         "a[href*='bookings.reservio.com']"
       ],
-      "scripts": "static\\.reservio\.com",
+      "icon": "Reservio.svg",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "low"
+      ],
       "saas": true,
-      "pricing": ["freemium", "recurring","low"],
+      "scripts": "static\\.reservio\\.com",
       "website": "https://www.reservio.com"
     },
     "Resin": {
@@ -16278,6 +16287,31 @@
       ],
       "icon": "SQLite.png",
       "website": "http://www.sqlite.org"
+    },
+    "STUDIO": {
+      "cats": [
+        51
+      ],
+      "description": "STUDIO is a Japan-based company and SaaS application for designing and hosting websites. The service includes a visual editor with built-in CMS and analytics.",
+      "dom": ".StudioCanvas, .publish-studio-style",
+      "icon": "STUDIO.svg",
+      "implies": [
+        "Vue.js",
+        "Nuxt.js",
+        "Firebase",
+        "Google Cloud",
+        "Google Tag Manager"
+      ],
+      "meta": {
+        "generator": "^STUDIO$"
+      },
+      "pricing": [
+        "low",
+        "recurring",
+        "freemium"
+      ],
+      "saas": true,
+      "website": "https://studio.design"
     },
     "SUSE": {
       "cats": [
@@ -21855,18 +21889,6 @@
       "scripts": "zkau/",
       "website": "http://zkoss.org"
     },
-    "Zocdoc": {
-      "cats": [
-        72
-      ],
-      "description": "Zocdoc is a New York City-based company offering an online service that allows people to find and book in-person or telemedicine appointments for medical or dental care.",
-      "icon": "Zocdoc.svg",
-      "dom": "a[href*='www.zocdoc.com'][target='_blank']",
-      "scripts": "offsiteschedule\\.zocdoc\\.com",
-      "saas": true,
-      "pricing": ["payg"],
-      "website": "https://www.zocdoc.com"
-    },
     "ZURB Foundation": {
       "cats": [
         66
@@ -22047,6 +22069,20 @@
       },
       "icon": "Zipkin.png",
       "website": "https://zipkin.io/"
+    },
+    "Zocdoc": {
+      "cats": [
+        72
+      ],
+      "description": "Zocdoc is a New York City-based company offering an online service that allows people to find and book in-person or telemedicine appointments for medical or dental care.",
+      "dom": "a[href*='www.zocdoc.com'][target='_blank']",
+      "icon": "Zocdoc.svg",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "offsiteschedule\\.zocdoc\\.com",
+      "website": "https://www.zocdoc.com"
     },
     "Zoey": {
       "cats": [
@@ -22631,11 +22667,7 @@
       "js": {
         "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
       },
-      "scripts": [
-        "jquery[.-]([\\d.]*\\d)[^/]*\\.js\\;version:\\1",
-        "/([\\d.]+)/jquery(?:\\.min)?\\.js\\;version:\\1",
-        "jquery.*\\.js(?:\\?ver(?:sion)?=([\\d.]+))?\\;version:\\1"
-      ],
+      "scripts": "jquery",
       "website": "https://jquery.com"
     },
     "jQuery DevBridge Autocomplete": {
@@ -23560,18 +23592,6 @@
       },
       "scripts": "xcharts\\.js",
       "website": "https://tenxer.github.io/xcharts/"
-    },
-    "Commerce7": {
-      "cats": [
-        6
-      ],
-      "description": "Commerce7 is an ecommerce platform for wineries.",
-      "icon": "Commerce7.svg",
-      "xhr": "api\\.commerce7\\.com",
-      "pricing": ["mid", "recurring", "payg"],
-      "scripts": "cdn\\.commerce7\\.com",
-      "saas": true,
-      "website": "https://commerce7.com"
     },
     "xtCommerce": {
       "cats": [

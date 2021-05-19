@@ -1,6 +1,6 @@
 const fs = require('fs')
 const path = require('path')
-const { convertFile } = require('convert-svg-to-png')
+const { createConverter } = require('convert-svg-to-png')
 
 const appPaths = () => {
   const fileDir = path.dirname(require.main.filename).split('/')
@@ -77,52 +77,85 @@ function dateDiff(file) {
   return Math.round(Math.abs((then - now) / 86400000))
 }
 
-// Main script
-fs.readdirSync(appPaths().iconPath).forEach((fileName) => {
-  const image = {
-    id: fileName,
-    path: `${appPaths().iconPath}/${fileName}`,
-    convertPath: `${appPaths().convertPath}/${fileName}`,
-    async convertAndCopy() {
-      await convertFile(this.path, {
-        height: 32,
-        width: 32,
-        outputFilePath: this.convertPath,
-      }).then((outputFile) => {
-        console.log(`SVG Converted: ${outputFile}`)
+const converter = createConverter()
+
+;(async () => {
+  // Main script
+  const files = fs.readdirSync(appPaths().iconPath)
+
+  const totalFiles = files.length
+
+  do {
+    await Promise.all(
+      files.splice(0, 50).map(async (fileName) => {
+        const image = {
+          id: fileName,
+          path: `${appPaths().iconPath}/${fileName}`,
+          convertPath: `${appPaths().convertPath}/${fileName}`,
+          async convertAndCopy() {
+            for (let attempt = 1; attempt <= 3; attempt++) {
+              try {
+                await converter
+                  .convertFile(this.path, {
+                    height: 32,
+                    width: 32,
+                    outputFilePath: this.convertPath,
+                  })
+                  .catch((error) => {
+                    throw new Error(`${error} (${fileName})`)
+                  })
+              } catch (error) {
+                if (attempt >= 3) {
+                  throw error
+                } else {
+                  await new Promise((resolve) =>
+                    setTimeout(resolve, 500 * attempt)
+                  )
+                }
+              }
+
+              break
+            }
+          },
+          async processFile() {
+            // Setup variables.
+            const ext = getFileExtension(this.path)
+
+            // If SVG, run checks.
+            if (ext === '.svg') {
+              // Check if converted file exists.
+              const convertFilePath = getConvertFileName(this.path)
+              if (checkFileExists(convertFilePath)) {
+                // If file has changed in past 7 days.
+                if (dateDiff(this.path) > 8) {
+                  return null
+                }
+              }
+              // Convert and copy file.
+              await this.convertAndCopy()
+            } else {
+              // If PNG or other, just copy the file as-is.
+              // eslint-disable-next-line no-lonely-if
+              if (checkIfFile(this.path)) {
+                copyFiles(this.path, this.convertPath)
+              }
+            }
+          },
+        }
+
+        await image.processFile()
       })
-    },
-    processFile() {
-      // Setup variables.
-      const ext = getFileExtension(this.path)
+    )
 
-      // If SVG, run checks.
-      if (ext === '.svg') {
-        // Check if converted file exists.
-        const convertFilePath = getConvertFileName(this.path)
-        if (checkFileExists(convertFilePath)) {
-          // If file has changed in past 7 days.
-          if (dateDiff(this.path) > 8) {
-            console.log(`File exists, skipping: ${this.id}`)
-            return null
-          }
-        }
-        // Convert and copy file.
-        this.convertAndCopy()
-      } else {
-        // If PNG or other, just copy the file as-is.
-        // eslint-disable-next-line no-lonely-if
-        if (checkIfFile(this.path)) {
-          copyFiles(this.path, this.convertPath)
-        } else {
-          console.info('Not a file, skipping...')
-        }
-      }
-    },
-  }
+    console.log(`${100 - Math.round((100 / totalFiles) * files.length)}%`)
+  } while (files.length)
 
-  image.processFile()
-})
+  await converter.destroy()
+
+  console.log(`Converted ${totalFiles.toLocaleString()} files.`)
+
+  process.exit()
+})()
 
 /**
 

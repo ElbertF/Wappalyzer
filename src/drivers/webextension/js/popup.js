@@ -5,20 +5,39 @@
 const { agent, open, i18n, getOption, setOption, promisify, sendMessage } =
   Utils
 
+const baseUrl = 'https://www.wappalyzer.com'
+const utm = '?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer'
+
 const footers = [
   {
     heading: 'Generate sales leads',
     body: 'Find new prospects by the technologies they use. Reach out to customers of Shopify, Magento, Salesforce and others.',
     buttonText: 'Create a lead list',
-    buttonLink:
-      'https://www.wappalyzer.com/lists/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer',
+    buttonLink: `${baseUrl}/lists/${utm}`,
   },
   {
     heading: 'Connect Wappalyzer to your CRM',
     body: 'See the technology stacks of your leads without leaving your CRM. Connect to HubSpot, Pipedrive and many others.',
     buttonText: 'See all apps',
-    buttonLink:
-      'https://www.wappalyzer.com/lists/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer',
+    buttonLink: `${baseUrl}/apps/${utm}`,
+  },
+  {
+    heading: 'Enrich your data with tech stacks',
+    body: 'Upload a list of websites to get a report of the technologies in use, such as CMS or ecommerce platforms.',
+    buttonText: 'Upload a list',
+    buttonLink: `${baseUrl}/lookup/${utm}#bulk`,
+  },
+  {
+    heading: 'Automate technology lookups',
+    body: 'Our APIs provide instant access to website technology stacks, contact details and social media profiles.',
+    buttonText: 'Compare APIs',
+    buttonLink: `${baseUrl}/api/${utm}`,
+  },
+  {
+    heading: 'Wappalyzer for businesses',
+    body: 'Sign up for a plan to get monthly credits to spend on any product, including lead lists and technology lookups.',
+    buttonText: 'Compare plans',
+    buttonLink: `${baseUrl}/pricing/${utm}`,
   },
 ]
 

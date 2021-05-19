@@ -122,11 +122,14 @@ const Content = {
         },
         (response) => {
           chrome.runtime.lastError
-            ? reject(
-                new Error(
-                  `${chrome.runtime.lastError}: Driver.${func}(${args})`
+            ? func === 'error'
+              ? resolve()
+              : Content.driver(
+                  'error',
+                  new Error(
+                    `${chrome.runtime.lastError}: Driver.${func}(${args})`
+                  )
                 )
-              )
             : resolve(response)
         }
       )

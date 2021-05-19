@@ -1,11 +1,7 @@
 'use strict'
 
 function next() {
-  return new Promise((resolve) =>
-    (typeof setImmediate !== 'undefined'
-      ? setImmediate
-      : requestAnimationFrame)(resolve)
-  )
+  return new Promise((resolve) => setTimeout(resolve, 0))
 }
 
 function toArray(value) {

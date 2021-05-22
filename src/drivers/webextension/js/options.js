@@ -9,13 +9,6 @@ const Options = {
    * Initialise options
    */
   async init() {
-    // Theme mode
-    const themeMode = await getOption('themeMode', false)
-
-    if (themeMode) {
-      document.querySelector('body').classList.add('theme-mode')
-    }
-
     const termsAccepted =
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
@@ -24,7 +17,6 @@ const Options = {
       ['dynamicIcon', false],
       ['badge', true],
       ['tracking', true],
-      ['themeMode', false],
     ].map(async ([option, defaultValue]) => {
       const el = document
         .querySelector(

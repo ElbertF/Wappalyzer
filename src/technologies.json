@@ -4554,6 +4554,20 @@
       },
       "website": "https://www.coastercms.org"
     },
+    "Cococart": {
+      "cats": [
+        6
+      ],
+      "description": "Cococart is an ecommerce platform.",
+      "icon": "Cococart.png",
+      "dom": [
+        "meta[property='og:image'][content*='static.cococart.co']",
+        "div[style*='static.cococart.co']"
+      ],
+      "saas": true,
+      "pricing": ["freemium", "recurring", "payg"],
+      "website": "https://www.cococart.co"
+    },
     "CoconutSoftware": {
       "cats": [
         5,
@@ -5458,6 +5472,21 @@
       },
       "icon": "Detectify.svg",
       "website": "https://detectify.com/"
+    },
+    "Devisto": {
+      "cats": [
+        1
+      ],
+      "description": "Devisto is a website development platform.",
+      "icon": "Devisto.svg",
+      "implies":["Laravel", "PHP", "Amazon Web Services"],
+      "js": {
+        "Shuttle.FrontApp": ""
+      },
+      "scripts": "shuttle(?:-assets-new|-storage)\\.s3\\.amazonaws\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.devisto.com"
     },
     "Didomi": {
       "cats": [
@@ -14891,6 +14920,17 @@
       "icon": "ProvenExpert.svg",
       "scripts": "provenexpert\\.\\w+/widget",
       "website": "https://www.provenexpert.com"
+    },
+    "Provide Support": {
+      "cats": [
+       52
+      ],
+      "description": "Provide Support is a SaaS for customer service that includes live chat, real-time website monitoring, chat statistics.",
+      "icon": "Provide Support.svg",
+      "scripts": "\\.providesupport\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring", "payg"],
+      "website": "https://www.providesupport.com"
     },
     "Proximis": {
       "cats": [

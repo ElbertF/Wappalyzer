@@ -85,11 +85,17 @@ const Popup = {
     // Disabled domains
     let disabledDomains = await getOption('disabledDomains', [])
 
-    // Theme mode
-    const themeMode = await getOption('themeMode', false)
+    // Dark mode
+    const theme = await getOption('theme', 'light')
 
-    if (themeMode) {
-      document.querySelector('body').classList.add('theme-mode')
+    if (theme === 'dark') {
+      document.querySelector('body').classList.add('dark')
+      document
+        .querySelector('.header__theme--light')
+        .classList.remove('header__icon--hidden')
+      document
+        .querySelector('.header__theme--dark')
+        .classList.add('header__icon--hidden')
     }
 
     // Terms
@@ -182,6 +188,28 @@ const Popup = {
     document
       .querySelector('.header__settings')
       .addEventListener('click', () => chrome.runtime.openOptionsPage())
+
+    // Theme
+    const body = document.querySelector('body')
+    const dark = document.querySelector('.header__theme--dark')
+    const light = document.querySelector('.header__theme--light')
+
+    document.querySelectorAll('.header__theme').forEach((el) =>
+      el.addEventListener('click', async () => {
+        const theme = await getOption('theme', 'light')
+
+        body.classList[theme === 'dark' ? 'remove' : 'add']('dark')
+        body.classList[theme === 'dark' ? 'add' : 'remove']('light')
+        dark.classList[theme === 'dark' ? 'remove' : 'add'](
+          'header__icon--hidden'
+        )
+        light.classList[theme === 'dark' ? 'add' : 'remove'](
+          'header__icon--hidden'
+        )
+
+        await setOption('theme', theme === 'dark' ? 'light' : 'dark')
+      })
+    )
 
     // Footer
     const item = footers[Math.round(Math.random() * (footers.length - 1))]

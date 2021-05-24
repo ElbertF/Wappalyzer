@@ -450,7 +450,7 @@ class Site {
 
       await sleep(1000)
 
-      page.on('console', (message) => this.log(message.text())) // TODO
+      // page.on('console', (message) => this.log(message.text()))
 
       // Links
       const links = await this.promiseTimeout(

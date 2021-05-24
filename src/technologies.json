@@ -5473,11 +5473,11 @@
       "icon": "Detectify.svg",
       "website": "https://detectify.com/"
     },
-    "Devisto": {
+    "Shuttle": {
       "cats": [
         1
       ],
-      "description": "Devisto is a website development platform.",
+      "description": "Shuttle is a website development platform.",
       "icon": "Devisto.svg",
       "implies":["Laravel", "PHP", "Amazon Web Services"],
       "js": {
@@ -23559,6 +23559,21 @@
         "generator": "webEdition"
       },
       "website": "http://webedition.de/en"
+    },
+    "WebEngage": {
+      "cats": [
+        32,
+        76
+      ],
+      "description": "WebEngage is a customer data platform and marketing automation suite.",
+      "icon": "WebEngage.png",
+      "js": {
+        "webengage.__v": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "\\.webengage\\.co(?:m)?/",
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://webengage.com"
     },
     "webpack": {
       "cats": [

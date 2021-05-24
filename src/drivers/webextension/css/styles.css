@@ -198,8 +198,12 @@ a, a:focus, a:hover {
 .empty {
 	background: #fff;
   height: calc(100% - 4.5rem);
-  padding: 4.5rem 1.5rem 5rem 1.5rem;
+  padding: 2.5rem;
   text-align: center;
+}
+
+.empty__text {
+  margin-bottom: 1.5rem;
 }
 
 .empty--hidden {
@@ -377,6 +381,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .options {
+  background: white;
   padding: 1.5rem 1.5rem 1rem 1.5rem;
 }
 
@@ -387,6 +392,52 @@ body.dynamic-icon .category__heading:hover .category__pin {
 
 .options__cache {
   margin-top: 1rem;
+}
+
+.ttt-grid {
+  background: var(--color-primary-lighten);
+  border-radius: 4px;
+  line-height: 0;
+  margin: auto;
+  width: calc(6rem + 2px);
+}
+
+.ttt-cell {
+  border: 1px solid var(--color-primary);
+  border-width: 1px 0 0 1px;
+  display: inline-block;
+  padding: .2rem;
+  width: 2rem;
+  height: 2rem;
+}
+
+.ttt-row:first-child .ttt-cell {
+  border-top: none;
+}
+
+.ttt-cell:first-child {
+  border-left: none;
+}
+
+.ttt-icon {
+  display: none;
+  height: 100%;
+  width: 100%;
+}
+
+.ttt-cell .ttt-icon {
+  color: var(--color-primary);
+  display: block;
+}
+
+.ttt-blink .ttt-icon {
+  animation: blink 250ms step-end 0s 3;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 /* Dark mode */

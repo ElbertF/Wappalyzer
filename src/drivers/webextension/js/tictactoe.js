@@ -2,12 +2,26 @@
 /* eslint-env browser */
 /* eslint-disable no-labels */
 
-const grid = document.body.querySelector('.ttt-grid')
+const game = document.body.querySelector('.ttt-game')
 
 const icons = {
-  x: document.body.querySelector('.ttt-icon-x'),
-  o: document.body.querySelector('.ttt-icon-o'),
+  x: game.querySelector('.ttt-icon-x'),
+  o: game.querySelector('.ttt-icon-o'),
 }
+
+const scores = {
+  x: {
+    el: game.querySelector('.ttt-score-x'),
+    score: 0,
+  },
+  o: {
+    el: game.querySelector('.ttt-score-o'),
+    score: 0,
+  },
+}
+
+const ahead = game.querySelector('.ttt-player-icon--ahead')
+const behind = game.querySelector('.ttt-player-icon--behind')
 
 let paused = true
 
@@ -22,6 +36,16 @@ function fill(cell, player) {
 }
 
 function reset() {
+  scores.x.el.textContent = scores.x.score.toLocaleString()
+  scores.o.el.textContent = scores.o.score.toLocaleString()
+
+  ahead.classList[scores.x.score < scores.o.score ? 'add' : 'remove'](
+    'ttt-player-icon--hidden'
+  )
+  behind.classList[scores.x.score < scores.o.score ? 'remove' : 'add'](
+    'ttt-player-icon--hidden'
+  )
+
   for (let y = 1; y <= 3; y++) {
     for (let x = 1; x <= 3; x++) {
       const cell = cells[y][x]
@@ -86,6 +110,8 @@ function check(dryrun) {
 
   if (!dryrun) {
     if (complete.player) {
+      scores[complete.player].score++
+
       complete.cells.forEach(({ el }) => el.classList.add('ttt-blink'))
 
       setTimeout(() => {
@@ -139,7 +165,7 @@ function play(cells) {
 
 for (let y = 1; y <= 3; y++) {
   for (let x = 1; x <= 3; x++) {
-    const el = grid.querySelector(
+    const el = game.querySelector(
       `.ttt-row:nth-child(${y}) .ttt-cell:nth-child(${x})`
     )
 

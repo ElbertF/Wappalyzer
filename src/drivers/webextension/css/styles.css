@@ -394,6 +394,26 @@ body.dynamic-icon .category__heading:hover .category__pin {
   margin-top: 1rem;
 }
 
+.ttt-game {
+  display: flex;
+  align-items: center;
+  margin: auto;
+  width: 13rem;
+}
+
+.ttt-player-icon {
+  color: var(--color-primary);
+  width: 1.2rem;
+  height: 1.2rem;
+}
+
+.ttt-player-icon--hidden {
+  display: none;
+}
+
+.ttt-score {
+}
+
 .ttt-grid {
   background: var(--color-primary-lighten);
   border-radius: 4px;
@@ -503,4 +523,8 @@ body.dynamic-icon .category__heading:hover .category__pin {
   background-color: var(--color-primary-darken);
   border: 1px solid white;
   color: white;
+}
+
+.dark .ttt-player-icon {
+  color: var(--color-primary-lighten);
 }

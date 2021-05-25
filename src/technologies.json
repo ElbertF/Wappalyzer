@@ -5604,6 +5604,20 @@
       "website": "https://districtm.net",
       "xhr": "\\.districtm\\.io"
     },
+    "Divi": {
+      "cats": [
+        51
+      ],
+      "description": "Divi is a WordPress Theme and standalone WordPress plugin from Elegant themes that allows users to build websites using the visual drag-and-drop Divi page builder.",
+      "icon": "Divi.png",
+      "js": {
+        "DIVI": ""
+      },
+      "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
+      "saas": true,
+      "pricing": ["low", "recurring", "onetime"],
+      "website": "https://www.elegantthemes.com/gallery/divi"
+    },
     "Django": {
       "cats": [
         18
@@ -10401,6 +10415,25 @@
         "shopify\\.kount\\.net/js"
       ],
       "website": "https://kount.com/"
+    },
+    "KQS.store": {
+      "cats": [
+        6
+      ],
+      "description": "KQS.store is an ecommerce software.",
+      "icon": "KQS.store.png",
+      "dom": [
+        "a[href*='kqsdesign.pl'][target='_blank']",
+        "a[href*='kqs.pl'][target='_blank']",
+        "#kqs-box,kqs-cookie"
+      ],
+      "js": {
+        "kqs_box": "\\;confidence:50",
+        "kqs_off": "\\;confidence:50"
+      },
+      "saas": false,
+      "pricing": ["onetime"],
+      "website": "https://www.kqs.pl"
     },
     "Kubernetes Dashboard": {
       "cats": [
@@ -19081,6 +19114,20 @@
         "taigaConfig": ""
       },
       "website": "http://taiga.io"
+    },
+    "TakeDrop": {
+      "cats": [
+        6
+      ],
+      "description": "TakeDrop is an ecommerce platform.",
+      "icon": "TakeDrop.png",
+      "dom": "img[src*='main.takedropstorage.com']",
+      "js": {
+        "webpackJsonptakedrop-react": ""
+      },
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://takedrop.pl"
     },
     "Tamago": {
       "cats": [

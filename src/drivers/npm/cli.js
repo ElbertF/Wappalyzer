@@ -17,6 +17,7 @@ const aliases = {
   h: 'help',
   D: 'maxDepth',
   m: 'maxUrls',
+  p: 'probe',
   P: 'pretty',
   r: 'recursive',
   w: 'maxWait',
@@ -68,6 +69,7 @@ Options:
   -D, --max-depth=...      Don't analyse pages more than num levels deep
   -m, --max-urls=...       Exit when num URLs have been analysed
   -w, --max-wait=...       Wait no more than ms milliseconds for page resources to load
+  -p, --probe              Perform a deeper scan by making additional network requests
   -P, --pretty             Pretty-print JSON output
   -r, --recursive          Follow links on pages (crawler)
   -a, --user-agent=...     Set the user agent string

@@ -114,6 +114,11 @@ function check(dryrun) {
 
       complete.cells.forEach(({ el }) => el.classList.add('ttt-blink'))
 
+      if (complete.player === 'o') {
+        ahead.classList.add('ttt-player-icon--hidden')
+        behind.classList.remove('ttt-player-icon--hidden')
+      }
+
       setTimeout(() => {
         reset()
       }, 1200)
@@ -131,8 +136,8 @@ function play(cells) {
   setTimeout(() => {
     let found = false
 
-    search: for (const cell of cells) {
-      for (const player of players) {
+    search: for (const player of players) {
+      for (const cell of cells) {
         cell.value = player
 
         const { winner, empty } = check(true)

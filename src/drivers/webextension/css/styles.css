@@ -95,7 +95,7 @@ a, a:focus, a:hover {
 
 .footer__heading-text {
   flex: 1 0;
-  font-size: 1rem;
+  font-size: .9rem;
   font-weight: bold;
 }
 
@@ -419,7 +419,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   border-radius: 4px;
   line-height: 0;
   margin: auto;
-  width: calc(6rem + 2px);
+  width: 6rem;
 }
 
 .ttt-cell {

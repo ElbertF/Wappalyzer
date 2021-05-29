@@ -1827,6 +1827,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:angularjs:angular.js",
       "description": "Angular is a TypeScript-based open-source web application framework led by the Angular Team at Google.",
       "dom": {
         "[ng-version]": {
@@ -2720,6 +2721,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:backbone_project:backbone",
       "description": "BackboneJS is a JavaScript library that allows to develop and structure the client side applications that run in a web browser.",
       "icon": "Backbone.js.png",
       "implies": "Underscore.js",
@@ -4559,13 +4561,17 @@
         6
       ],
       "description": "Cococart is an ecommerce platform.",
-      "icon": "Cococart.png",
       "dom": [
         "meta[property='og:image'][content*='static.cococart.co']",
         "div[style*='static.cococart.co']"
       ],
+      "icon": "Cococart.png",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["freemium", "recurring", "payg"],
       "website": "https://www.cococart.co"
     },
     "CoconutSoftware": {
@@ -5196,6 +5202,24 @@
       "scripts": "cybersource\\..+\\.js",
       "website": "https://www.cybersource.com/"
     },
+    "Czater": {
+      "cats": [
+        52
+      ],
+      "description": "Czater is an live chat solution with extended CRM and videochat features.",
+      "icon": "Czater.svg",
+      "js": {
+        "$czater": "",
+        "$czaterMethods": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.czater\\.pl",
+      "website": "https://www.czater.pl"
+    },
     "D3": {
       "cats": [
         25
@@ -5473,21 +5497,6 @@
       "icon": "Detectify.svg",
       "website": "https://detectify.com/"
     },
-    "Shuttle": {
-      "cats": [
-        1
-      ],
-      "description": "Shuttle is a website development platform.",
-      "icon": "Devisto.svg",
-      "implies":["Laravel", "PHP", "Amazon Web Services"],
-      "js": {
-        "Shuttle.FrontApp": ""
-      },
-      "scripts": "shuttle(?:-assets-new|-storage)\\.s3\\.amazonaws\\.com",
-      "saas": true,
-      "pricing": ["low", "recurring"],
-      "website": "https://www.devisto.com"
-    },
     "Didomi": {
       "cats": [
         67
@@ -5613,9 +5622,13 @@
       "js": {
         "DIVI": ""
       },
-      "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
+      "pricing": [
+        "low",
+        "recurring",
+        "onetime"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring", "onetime"],
+      "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
       "website": "https://www.elegantthemes.com/gallery/divi"
     },
     "Django": {
@@ -6569,6 +6582,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:sencha:ext_js",
       "icon": "ExtJS.png",
       "js": {
         "Ext": "",
@@ -8518,6 +8532,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:handlebars.js_project:handlebars.js",
       "description": "Handlebars is a JavaScript library used to create reusable webpage templates.",
       "html": "<[^>]*type=[^>]text\\/x-handlebars-template",
       "icon": "Handlebars.png",
@@ -9889,6 +9904,27 @@
       },
       "website": "https://www.kissmetrics.com"
     },
+    "KQS.store": {
+      "cats": [
+        6
+      ],
+      "description": "KQS.store is an ecommerce software.",
+      "dom": [
+        "a[href*='kqsdesign.pl'][target='_blank']",
+        "a[href*='kqs.pl'][target='_blank']",
+        "#kqs-box,kqs-cookie"
+      ],
+      "icon": "KQS.store.png",
+      "js": {
+        "kqs_box": "\\;confidence:50",
+        "kqs_off": "\\;confidence:50"
+      },
+      "pricing": [
+        "onetime"
+      ],
+      "saas": false,
+      "website": "https://www.kqs.pl"
+    },
     "KaTeX": {
       "cats": [
         25
@@ -10415,25 +10451,6 @@
         "shopify\\.kount\\.net/js"
       ],
       "website": "https://kount.com/"
-    },
-    "KQS.store": {
-      "cats": [
-        6
-      ],
-      "description": "KQS.store is an ecommerce software.",
-      "icon": "KQS.store.png",
-      "dom": [
-        "a[href*='kqsdesign.pl'][target='_blank']",
-        "a[href*='kqs.pl'][target='_blank']",
-        "#kqs-box,kqs-cookie"
-      ],
-      "js": {
-        "kqs_box": "\\;confidence:50",
-        "kqs_off": "\\;confidence:50"
-      },
-      "saas": false,
-      "pricing": ["onetime"],
-      "website": "https://www.kqs.pl"
     },
     "Kubernetes Dashboard": {
       "cats": [
@@ -11274,6 +11291,7 @@
         "Mage": "",
         "VarienForm": ""
       },
+      "magento": "Magento/([0-9.]+)\\;version:\\1",
       "oss": true,
       "scripts": [
         "js/mage",
@@ -12362,6 +12380,7 @@
       "cats": [
         59
       ],
+      "cpe": "cpe:/a:momentjs:moment",
       "description": "Moment.js is a free and open-source JavaScript library that removes the need to use the native JavaScript Date object directly.",
       "icon": "Moment.js.svg",
       "js": {
@@ -12927,6 +12946,25 @@
       "saas": true,
       "scripts": "connect\\.nosto\\.\\w+/",
       "website": "https://www.nosto.com"
+    },
+    "Nukeviet CMS": {
+      "cats": [
+        1
+      ],
+      "description": "NukeViet CMS is a Vietnamese content management system.",
+      "icon": "Nukeviet CMS.png",
+      "js": {
+        "nv_DigitalClock": "\\;confidence:50",
+        "nv_is_change_act_confirm": "\\;confidence:50"
+      },
+      "meta": {
+        "generator": "NukeViet v([\\d.]+)\\;version:\\1"
+      },
+      "oss": true,
+      "pricing": [
+        "freemium"
+      ],
+      "website": "https://nukeviet.vn/en/"
     },
     "Nuvemshop": {
       "cats": [
@@ -14920,6 +14958,7 @@
       "cats": [
         12
       ],
+      "cpe": "cpe:/a:prototypejs:prototype",
       "description": "Prototype is a JavaScript Framework that aims to ease development of web applications.",
       "icon": "Prototype.png",
       "js": {
@@ -14956,13 +14995,17 @@
     },
     "Provide Support": {
       "cats": [
-       52
+        52
       ],
       "description": "Provide Support is a SaaS for customer service that includes live chat, real-time website monitoring, chat statistics.",
       "icon": "Provide Support.svg",
-      "scripts": "\\.providesupport\\.com",
+      "pricing": [
+        "low",
+        "recurring",
+        "payg"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring", "payg"],
+      "scripts": "\\.providesupport\\.com",
       "website": "https://www.providesupport.com"
     },
     "Proximis": {
@@ -17414,6 +17457,28 @@
       ],
       "website": "https://www.shopware.com"
     },
+    "Shuttle": {
+      "cats": [
+        1
+      ],
+      "description": "Shuttle is a website development platform.",
+      "icon": "Devisto.svg",
+      "implies": [
+        "Laravel",
+        "PHP",
+        "Amazon Web Services"
+      ],
+      "js": {
+        "Shuttle.FrontApp": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "shuttle(?:-assets-new|-storage)\\.s3\\.amazonaws\\.com",
+      "website": "https://www.devisto.com"
+    },
     "Sift": {
       "cats": [
         10
@@ -17439,6 +17504,24 @@
         "//s\\.thebrighttag\\.com/iframe\\?"
       ],
       "website": "https://www.signal.co/"
+    },
+    "Signifyd": {
+      "cats": [
+        10,
+        16
+      ],
+      "description": "Signifyd is a provider of an enterprise-grade fraud technology solution for ecommerce stores.",
+      "icon": "Signifyd.svg",
+      "js": {
+        "SIGNIFYD_GLOBAL": ""
+      },
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.signifyd\\.com",
+      "website": "https://www.signifyd.com"
     },
     "SilverStripe": {
       "cats": [
@@ -19120,13 +19203,16 @@
         6
       ],
       "description": "TakeDrop is an ecommerce platform.",
-      "icon": "TakeDrop.png",
       "dom": "img[src*='main.takedropstorage.com']",
+      "icon": "TakeDrop.png",
       "js": {
         "webpackJsonptakedrop-react": ""
       },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["low", "recurring"],
       "website": "https://takedrop.pl"
     },
     "Tamago": {
@@ -19514,6 +19600,7 @@
       "cats": [
         24
       ],
+      "cpe": "cpe:/a:tiny:tinymce",
       "description": "TinyMCE is an online rich-text editor released as open-source software. TinyMCE is designed to integrate with JavaScript libraries, Vue.js, and AngularJS as well as content management systems such as Joomla!, and WordPress.",
       "icon": "TinyMCE.png",
       "js": {
@@ -20948,6 +21035,24 @@
       "oss": true,
       "website": "https://webassembly.org/"
     },
+    "WebEngage": {
+      "cats": [
+        32,
+        76
+      ],
+      "description": "WebEngage is a customer data platform and marketing automation suite.",
+      "icon": "WebEngage.png",
+      "js": {
+        "webengage.__v": "([\\d.]+)\\;version:\\1"
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.webengage\\.co(?:m)?/",
+      "website": "https://webengage.com"
+    },
     "WebGUI": {
       "cats": [
         1
@@ -21696,6 +21801,7 @@
       "cats": [
         59
       ],
+      "cpe": "cpe:/a:yahoo:yui",
       "icon": "YUI.png",
       "js": {
         "YAHOO.VERSION": "^(.+)$\\;version:\\1",
@@ -22430,6 +22536,18 @@
       "implies": "PHP",
       "scripts": "[^a-z\\d]e107\\.js",
       "website": "http://e107.org"
+    },
+    "eClass": {
+      "cats": [
+        1
+      ],
+      "description": "eClass is an online learning platform.",
+      "icon": "eClass.png",
+      "js": {
+        "fe_eclass": "\\;confidence:50",
+        "fe_eclass_guest": "\\;confidence:50"
+      },
+      "website": "https://www.eclass.com.hk"
     },
     "eSyndiCat": {
       "cats": [
@@ -23606,21 +23724,6 @@
         "generator": "webEdition"
       },
       "website": "http://webedition.de/en"
-    },
-    "WebEngage": {
-      "cats": [
-        32,
-        76
-      ],
-      "description": "WebEngage is a customer data platform and marketing automation suite.",
-      "icon": "WebEngage.png",
-      "js": {
-        "webengage.__v": "([\\d.]+)\\;version:\\1"
-      },
-      "scripts": "\\.webengage\\.co(?:m)?/",
-      "saas": true,
-      "pricing": ["mid", "recurring"],
-      "website": "https://webengage.com"
     },
     "webpack": {
       "cats": [

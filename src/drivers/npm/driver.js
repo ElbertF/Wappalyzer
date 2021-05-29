@@ -265,6 +265,8 @@ class Site {
 
     this.dnsChecked = false
     this.dns = []
+
+    this.probed = false
   }
 
   log(message, source = 'driver', type = 'log') {
@@ -468,7 +470,7 @@ class Site {
                 })
               )
             )
-          ).catch(() => [])
+          ).catch(() => ({ jsonValue: () => [] }))
         ).jsonValue()
       ).catch(() => [])
 
@@ -499,7 +501,7 @@ class Site {
 
               return css.join('\n')
             }, this.options.htmlMaxRows)
-          ).catch(() => '')
+          ).catch(() => ({ jsonValue: () => '' }))
         ).jsonValue()
       ).catch(() => '')
 
@@ -512,7 +514,7 @@ class Site {
                 .map(({ src }) => src)
                 .filter((src) => src)
             )
-          ).catch(() => [])
+          ).catch(() => ({ jsonValue: () => [] }))
         ).jsonValue()
       ).catch(() => [])
 
@@ -535,7 +537,7 @@ class Site {
                 {}
               )
             )
-          ).catch(() => [])
+          ).catch(() => ({ jsonValue: () => [] }))
         ).jsonValue()
       ).catch(() => [])
 
@@ -833,14 +835,16 @@ class Site {
         await sleep(this.options.delay * index)
       }
 
-      if (this.options.probe) {
-        await this.probe(url)
-      }
-
       const links = await this.goto(url)
 
       if (links && this.options.recursive && depth < this.options.maxDepth) {
         await this.batch(links.slice(0, this.options.maxUrls), depth + 1)
+      }
+
+      if (this.options.probe && !this.probed) {
+        await this.probe(url)
+
+        this.probed = true
       }
     } catch (error) {
       this.analyzedUrls[url.href] = {
@@ -888,6 +892,7 @@ class Site {
   async probe(url) {
     const files = {
       robots: '/robots.txt',
+      magento: '/magento_version',
     }
 
     for (const file of Object.keys(files)) {

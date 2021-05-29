@@ -165,6 +165,19 @@
 							}
 						]
 					},
+					"magento": {
+						"oneOf": [
+							{
+								"type": "array",
+								"items": {
+									"$ref": "#/definitions/non-empty-non-blank-string"
+								}
+							},
+							{
+								"$ref": "#/definitions/non-empty-non-blank-string"
+							}
+						]
+					},
 					"certIssuer": {
 						"oneOf": [
 							{

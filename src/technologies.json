@@ -3572,6 +3572,27 @@
       },
       "website": "http://browsercms.org"
     },
+    "Bsale": {
+      "cats": [
+        6
+      ],
+      "description": "Bsale is an store management solution for retail businesses that sell both in store and online.",
+      "icon": "Bsale.png",
+      "implies": "Nginx",
+      "meta": {
+        "autor": "Bsale",
+        "generator": "Bsale"   
+      },
+      "js": {
+        "Bsale.version": "([\\d.]+)\\;version:\\1"
+      },
+      "cookies": {
+        "_bsalemarket_session": ""
+      },
+      "saas": true,
+      "pricing": ["mid", "recurring"],
+      "website": "https://www.bsale.cl"
+    },
     "Bubble": {
       "cats": [
         51,
@@ -17653,6 +17674,25 @@
       "saas": true,
       "scripts": "/__ssobj/core\\.js",
       "website": "https://www.sitespect.com"
+    },
+    "Sitevision CMS": {
+      "cats": [
+        1
+      ],
+      "description": "Sitevision CMS is a platform for web publishing that consists of flexible and pre-made modules. Available as self-hosed software and Cloud SaaS.",
+      "icon": "Sitevision CMS.png",
+      "scripts": [
+        "sitevision/system-resource/(?:[\\w\\d]+)/js/docready-min\\.js\\;confidence:25",
+        "sitevision/system-resource/(?:[\\w\\d]+)/js/AppRegistry\\.js\\;confidence:25",
+        "sitevision/system-resource/(?:[\\w\\d]+)/webapps/webapp_sdk-min\\.js\\;confidence:50",
+        "sitevision/system-resource/(?:[\\w\\d]+)/envision/envision\\.js\\;confidence:50"
+      ],
+      "cookies": {
+        "SiteVisionLTM": ""
+      },
+      "saas": true,
+      "pricing": ["recurring", "payg"],
+      "website": "https://www.sitevision.se"
     },
     "Sitecore": {
       "cats": [

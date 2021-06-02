@@ -10,6 +10,7 @@
   "optionTracking":           { "message": "匿名傳送已識別的技術至 wappalyzer.com" },
   "optionThemeMode":          { "message": "啟用暗模式的兼容性。" },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
   "nothingToDo":              { "message": "這裡什麼也沒有。" },

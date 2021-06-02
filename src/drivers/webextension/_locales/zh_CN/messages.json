@@ -10,6 +10,7 @@
   "optionTracking":           { "message": "匿名发送检测到的技术至 wappalyzer.com" },
   "optionThemeMode":          { "message": "启用深色模式兼容" },
   "optionBadge":              { "message": "在图标上显示检测到技术的个数" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
   "disableOnDomain":          { "message": "在该网站禁用" },
   "clearCache":               { "message": "清除检测缓存" },
   "nothingToDo":              { "message": "这里无事可做。" },

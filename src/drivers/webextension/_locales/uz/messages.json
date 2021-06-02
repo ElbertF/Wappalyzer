@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Wappalyzer takomillashtirish uchun hisobotlarni maxfiy ravishda serverga jo'natish" },
 	"optionThemeMode":          { "message": "qorong'i rejimi mosligini yoqish." },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
 	"nothingToDo":              { "message": "Bu yerda tekshirib bolmaydi." },

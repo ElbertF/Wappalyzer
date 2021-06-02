@@ -10,6 +10,7 @@
 	"optionsSave":              { "message": "Sauvegarder les options" },
 	"optionsSaved":             { "message": "Sauvegardé" },
 	"optionBadge":              { "message": "Montrer le nombre de technologies identifiées sur l'icône" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Désactiver sur ce site web" },
 	"clearCache":               { "message": "Effacer les détections mises en cache" },
 	"twitter":                  { "message": "Suivre Wappalyzer sur Twitter" },

@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Анонімно надсилати статистику розпізнавань на сервер для досліджень" },
   "optionThemeMode":          { "message": "Включити сумісність темного режиму." },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
 	"nothingToDo":              { "message": "Тут нічого робити." },

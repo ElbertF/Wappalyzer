@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "特定した技術を匿名でwappalyzer.comに送信する" },
   "optionThemeMode":          { "message": "Enable dark mode compatibility." },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
 	"nothingToDo":              { "message": "ここでは特定出来ません。" },

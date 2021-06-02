@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Анонимно отправлять статистику распознанных данных на wappalyzer.com" },
 	"optionThemeMode":          { "message": "Темная тема" },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
 	"nothingToDo":              { "message": "Здесь нечего делать" },

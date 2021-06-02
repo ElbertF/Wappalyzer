@@ -10,6 +10,7 @@
   "optionTracking":           { "message": "Anonymne posielať správy o zistených aplikáciách na wappalyzer.com pre výskum" },
   "optionThemeMode":          { "message": "Povoliť kompatibilitu tmavú režim." },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
   "nothingToDo":              { "message": "Nie je tu čo robiť." },

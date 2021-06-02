@@ -17,6 +17,7 @@ const Options = {
       ['dynamicIcon', false],
       ['badge', true],
       ['tracking', true],
+      ['showCached', true],
     ].map(async ([option, defaultValue]) => {
       const el = document
         .querySelector(

@@ -1053,6 +1053,19 @@
       },
       "website": "https://docs.adobelaunch.com/getting-started"
     },
+    "Adobe Flash": {
+      "cats": [
+        27
+      ],
+      "cpe": "cpe:/a:adobe:flash",
+      "description": "Adobe Flash is a multimedia software platform used for production of animations, rich web applications and embedded web browser video players.",
+      "icon": "Adobe Flash.svg",
+      "dom": [
+        "object[type='application/x-shockwave-flash']",
+        "param[value*='.swf']"
+      ],
+      "website": "https://www.adobe.com/products/flashplayer"
+    },
     "Adobe GoLive": {
       "cats": [
         20
@@ -2040,6 +2053,10 @@
         59
       ],
       "icon": "Apollo.svg",
+      "implies": [
+        "GraphQL",
+        "TypeScript\\;confidence:50"
+      ],
       "js": {
         "__APOLLO_CLIENT__": "",
         "__APOLLO_CLIENT__.version": "^(.+)$\\;version:\\1"
@@ -3581,7 +3598,7 @@
       "implies": "Nginx",
       "meta": {
         "autor": "Bsale",
-        "generator": "Bsale"   
+        "generator": "Bsale"
       },
       "js": {
         "Bsale.version": "([\\d.]+)\\;version:\\1"
@@ -16277,7 +16294,7 @@
     },
     "SAP": {
       "cats": [
-        22
+        53
       ],
       "headers": {
         "Server": "SAP NetWeaver Application Server"
@@ -16466,10 +16483,12 @@
       "cats": [
         19
       ],
+      "description": "SWFObject is an open-source JavaScript library used to embed Adobe Flash content onto web pages.",
       "icon": "SWFObject.png",
       "js": {
         "SWFObject": ""
       },
+      "oss": true,
       "scripts": "swfobject.*\\.js",
       "website": "https://github.com/swfobject/swfobject"
     },
@@ -18878,9 +18897,27 @@
       "cats": [
         12
       ],
+      "description": "Svelte is a free and open-source front end compiler created by Rich Harris and maintained by the Svelte core team members.",
       "html": "<[^>]+class=\\\"[^\\\"]+\\ssvelte-[\\w]*\\\"",
       "icon": "Svelte.svg",
+      "oss": true,
       "website": "https://svelte.dev"
+    },
+    "SvelteKit": {
+      "cats": [
+        66
+      ],
+      "description": "SvelteKit is the official Svelte framework for building web applications with a flexible filesystem-based routing.",
+      "icon": "Svelte.svg",
+      "dom": {
+        "a": {  
+          "attributes": {
+            "sveltekit:prefetch": ""
+          }
+        }
+      },
+      "oss": true,
+      "website": "https://kit.svelte.dev"
     },
     "SweetAlert": {
       "cats": [
@@ -21183,9 +21220,6 @@
         "OpenResty",
         "React"
       ],
-      "js": {
-        "WEBLIUM_DOMAIN": ""
-      },
       "pricing": [
         "low",
         "freemium",
@@ -21597,7 +21631,7 @@
       "saas": true,
       "scripts": [
         "/wp-(?:content|includes)/",
-        "wp-embed\\.min\\.js\\?ver=([\\d.]+)\\;version:\\1"
+        "wp-embed\\.min\\.js"
       ],
       "website": "https://wordpress.org"
     },

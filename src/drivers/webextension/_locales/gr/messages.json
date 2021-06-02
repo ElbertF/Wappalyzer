@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Ανώνυμη αποστολή αναφορών για εντοπισμένες εφαρμογές στο wappalyzer.com για έρευνα" },
   "optionThemeMode":          { "message": "Ενεργοποίηση συμβατότητας σκοτεινό τρόπο." },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
 	"nothingToDo":              { "message": "Καμία ενέργεια." },

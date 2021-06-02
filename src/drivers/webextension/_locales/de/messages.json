@@ -10,6 +10,7 @@
   "optionTracking":           { "message": "Anonyme Statistiken an wappalyzer.com übermitteln" },
   "optionThemeMode":          { "message": "Dunkel-Modus aktivieren" },
   "optionBadge":              { "message": "Anzahl der identifizierten Optionen am Icon anzeigen" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
   "disableOnDomain":          { "message": "Auf dieser Website deaktivieren" },
   "clearCache":               { "message": "Cache leeren" },
   "nothingToDo":              { "message": "Nichts zu tun." },

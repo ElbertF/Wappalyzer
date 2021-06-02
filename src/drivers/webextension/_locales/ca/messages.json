@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Enviar les tecnologies identificades de forma anònima a wappalyzer.com" },
   "optionThemeMode":          { "message": "Habilitar la compatibilitat de l'aspecte fosc" },
 	"optionBadge":              { "message": "Mostrar el nombre de tecnologies identificades en la icona" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Desactivar en aquest web" },
 	"clearCache":               { "message": "Esborrar la memòria cau de les deteccions" },
 	"nothingToDo":              { "message": "Res a fer aquí." },

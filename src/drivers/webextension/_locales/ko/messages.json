@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "익명으로 wappalyzer.com에 식별된 기술 정보 전송" },
 	"optionThemeMode":          { "message": "다크 모드 호환 활성화" },
 	"optionBadge":              { "message": "아이콘에 식별된 기술 갯수 표시" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "이 웹 사이트에서 끄기" },
 	"clearCache":               { "message": "캐시된 식별 정보 지우기" },
 	"nothingToDo":              { "message": "여기에는 할 일이 없네요." },

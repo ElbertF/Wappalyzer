@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Secara anonim kirimkan laporan tentang aplikasi yang terdeteksi ke wappalyzer.com untuk penelitian" },
   "optionThemeMode":          { "message": "Aktifkan kompatibilitas modus gelap." },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
 	"nothingToDo":              { "message": "Tak ada yang dilakukan disini." },

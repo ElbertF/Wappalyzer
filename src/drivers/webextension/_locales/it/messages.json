@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Inviare anonimamente un report sulle applicazioni rilevate a wappalyzer.com per l'analisi" },
   "optionThemeMode":          { "message": "Abilita compatibilità con la modalità scura." },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
 	"nothingToDo":              { "message": "Niente da fare qui." },

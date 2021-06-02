@@ -842,9 +842,9 @@ class Site {
       }
 
       if (this.options.probe && !this.probed) {
-        await this.probe(url)
-
         this.probed = true
+
+        await this.probe(url)
       }
     } catch (error) {
       this.analyzedUrls[url.href] = {

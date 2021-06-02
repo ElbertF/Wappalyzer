@@ -10,6 +10,7 @@
 	"optionTracking":           { "message": "Trimite rapoarte anonime despre aplicațiile detectate către wappalyzer.com pentru cercetare" },
 	"optionThemeMode":          { "message": "Activează modul de compatibilitate întuneric." },
 	"optionBadge":              { "message": "Show the number of identified technologies on the icon" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "Disable on this website" },
 	"clearCache":               { "message": "Clear cached detections" },
 	"nothingToDo":              { "message": "Nimic de făcut pe pagina curentă." },

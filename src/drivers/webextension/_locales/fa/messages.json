@@ -11,6 +11,7 @@
   "optionThemeMode":          { "message": "فعال کردن حالت سازگاری تاریک." },
 	"nothingToDo":              { "message": "هیچ چیز برای انجام اینجا نیست." },
 	"optionBadge":              { "message": "نمایش تعداد فناوری های شناسایی شده روی آیکون" },
+	"optionShowCached":         { "message": "Include cached detections in results" },
 	"disableOnDomain":          { "message": "غیرفعال کردن در این وبسایت" },
 	"clearCache":               { "message": "پاکسازی شناسایی های کش شده" },
 	"noAppsDetected":           { "message": "هیچ فن‌آوری شناسایی نشده است." },

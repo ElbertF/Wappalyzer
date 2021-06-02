@@ -351,7 +351,7 @@ const Popup = {
       )
 
       technologies.forEach(
-        ({ name, slug, confidence, version, icon, website }) => {
+        ({ name, slug, confidence, version, icon, website, current }) => {
           const technologyNode = Popup.templates.technology.cloneNode(true)
 
           const image = technologyNode.querySelector('.technology__icon img')

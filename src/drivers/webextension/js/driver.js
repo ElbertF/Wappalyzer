@@ -84,7 +84,6 @@ const Driver = {
 
         Driver.cache.tabs[id] = cache ? resolve(cache.detections) : []
 
-        console.log('a')
         await Driver.setIcon(url, Driver.cache.tabs[id])
       }
     })
@@ -523,7 +522,6 @@ const Driver = {
       return detection
     })
 
-    console.log('b')
     await Driver.setIcon(url, resolved)
 
     if (url) {
@@ -566,8 +564,6 @@ const Driver = {
     const dynamicIcon = await getOption('dynamicIcon', false)
     const showCached = await getOption('showCached', true)
     const badge = await getOption('badge', true)
-
-    console.log(showCached)
 
     let icon = 'default.svg'
 
@@ -638,7 +634,6 @@ const Driver = {
     })
 
     if (await Driver.isDisabledDomain(url)) {
-      console.log('c')
       await Driver.setIcon(url, [])
 
       return
@@ -650,7 +645,6 @@ const Driver = {
       ({ cached }) => showCached || cached === false
     )
 
-    console.log('d')
     await Driver.setIcon(url, resolved)
 
     return resolved

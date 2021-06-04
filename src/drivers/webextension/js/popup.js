@@ -212,7 +212,12 @@ const Popup = {
     )
 
     // Footer
-    const item = footers[Math.round(Math.random() * (footers.length - 1))]
+    const item =
+      footers[
+        Math.round(Math.random())
+          ? 0
+          : Math.round(Math.random() * (footers.length - 1))
+      ]
 
     document.querySelector('.footer__heading-text').textContent = item.heading
     document.querySelector('.footer__content-body').textContent = item.body
@@ -351,7 +356,7 @@ const Popup = {
       )
 
       technologies.forEach(
-        ({ name, slug, confidence, version, icon, website, current }) => {
+        ({ name, slug, confidence, version, icon, website }) => {
           const technologyNode = Popup.templates.technology.cloneNode(true)
 
           const image = technologyNode.querySelector('.technology__icon img')

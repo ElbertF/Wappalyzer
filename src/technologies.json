@@ -6713,6 +6713,14 @@
       "url": "Pages/SearchResults\\.aspx\\?k=",
       "website": "http://sharepoint.microsoft.com/en-us/product/capabilities/search/Pages/Fast-Search.aspx"
     },
+    "Spaces": {
+      "cats": [
+        5
+      ],
+      "description": "Spaces is an online social media and social networking service.",
+      "icon": "Spaces.svg",
+      "website": "https://spacesbay.com"
+    },
     "Facebook": {
       "cats": [
         5

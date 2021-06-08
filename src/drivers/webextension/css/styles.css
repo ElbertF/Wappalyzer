@@ -322,7 +322,7 @@ body.dynamic-icon .category__heading:hover .category__pin {
   color: var(--color-text);
   border-radius: 3px;
   font-size: .7rem;
-  padding: .1rem .3rem;
+  padding: .3rem .3rem .1rem .3rem;
   margin-left: .3rem;
   vertical-align: middle;
 }

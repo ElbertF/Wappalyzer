@@ -300,16 +300,21 @@ class Site {
 
   promiseTimeout(
     promise,
+    fallback,
     errorMessage = 'The website took too long to respond'
   ) {
     let timeout = null
+
+    if (!(promise instanceof Promise)) {
+      return Promise.resolve(promise)
+    }
 
     return Promise.race([
       new Promise((resolve, reject) => {
         timeout = setTimeout(() => {
           clearTimeout(timeout)
 
-          reject(new Error(errorMessage))
+          fallback ? resolve(fallback) : reject(new Error(errorMessage))
         }, this.options.maxWait)
       }),
       promise.then((value) => {
@@ -469,10 +474,12 @@ class Site {
                   rel,
                 })
               )
-            )
-          ).catch(() => ({ jsonValue: () => [] }))
-        ).jsonValue()
-      ).catch(() => [])
+            ),
+            { jsonValue: () => [] }
+          )
+        ).jsonValue(),
+        []
+      )
 
       // CSS
       const css = await this.promiseTimeout(
@@ -500,10 +507,12 @@ class Site {
               }
 
               return css.join('\n')
-            }, this.options.htmlMaxRows)
-          ).catch(() => ({ jsonValue: () => '' }))
-        ).jsonValue()
-      ).catch(() => '')
+            }, this.options.htmlMaxRows),
+            { jsonValue: () => '' }
+          )
+        ).jsonValue(),
+        ''
+      )
 
       // Script tags
       const scripts = await this.promiseTimeout(
@@ -513,10 +522,12 @@ class Site {
               Array.from(document.getElementsByTagName('script'))
                 .map(({ src }) => src)
                 .filter((src) => src)
-            )
-          ).catch(() => ({ jsonValue: () => [] }))
-        ).jsonValue()
-      ).catch(() => [])
+            ),
+            { jsonValue: () => [] }
+          )
+        ).jsonValue(),
+        []
+      )
 
       // Meta tags
       const meta = await this.promiseTimeout(
@@ -536,10 +547,12 @@ class Site {
                 },
                 {}
               )
-            )
-          ).catch(() => ({ jsonValue: () => [] }))
-        ).jsonValue()
-      ).catch(() => [])
+            ),
+            { jsonValue: () => [] }
+          )
+        ).jsonValue(),
+        []
+      )
 
       // JavaScript
       const js = await this.promiseTimeout(
@@ -574,8 +587,9 @@ class Site {
           Wappalyzer.technologies
             .filter(({ js }) => Object.keys(js).length)
             .map(({ name, js }) => ({ name, chains: Object.keys(js) }))
-        )
-      ).catch(() => [])
+        ),
+        []
+      )
 
       // DOM
       const dom = await this.promiseTimeout(
@@ -667,8 +681,9 @@ class Site {
           Wappalyzer.technologies
             .filter(({ dom }) => dom && dom.constructor === Object)
             .map(({ name, dom }) => ({ name, dom }))
-        )
-      ).catch(() => [])
+        ),
+        []
+      )
 
       // Cookies
       const cookies = (await page.cookies()).reduce(
@@ -716,8 +731,9 @@ class Site {
               }
 
               return []
-            })
-          ).catch(() => [])
+            }),
+            []
+          )
         }
 
         const domain = url.hostname.replace(/^www\./, '')

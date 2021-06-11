@@ -5000,6 +5000,19 @@
       "implies": "PHP",
       "website": "http://coppermine-gallery.net"
     },
+    "Corebine": {
+      "cats": [
+        1
+      ],
+      "description": "Corebine is a content management system designed for Sports",
+      "dom": "#corebine-app",
+      "icon": "Corebine.png",
+      "js": {
+        "corebine": ""
+      },
+      "pricing": ["poa"],
+      "website": "https://corebine.com"
+    },
     "Cosmoshop": {
       "cats": [
         6
@@ -6221,6 +6234,22 @@
       "icon": "EdgeCast.png",
       "url": "https?://(?:[^/]+\\.)?edgecastcdn\\.net/",
       "website": "http://www.edgecast.com"
+    },
+    "eDokan": {
+      "cats": [
+        6
+      ],
+      "description": "eDokan is hosted ecommerce platform with drag-drop template builder and zero programming knowledge.",
+      "icon": "eDokan.png",
+      "implies": [
+        "Node.js",
+        "Angular",
+        "MongoDB"
+      ],
+      "dom": "img[src*='cdn.edokan.co']",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://edokan.co"
     },
     "Elasticsearch": {
       "cats": [
@@ -9374,14 +9403,17 @@
     },
     "Intercom": {
       "cats": [
-        10
+        52,
+        53
       ],
-      "description": "Intercom is a Conversational Relationship Platform that helps businesses build better customer relationships through personalised, messenger-based experiences.",
+      "description": "Intercom is an American software company that produces a messaging platform which allows businesses to communicate with prospective and existing customers within their app, on their website, through social media, or via email.",
       "icon": "Intercom.svg",
       "js": {
         "Intercom": ""
       },
       "scripts": "(?:api\\.intercom\\.io/api|static\\.intercomcdn\\.com/intercom\\.v1)",
+      "saas": true,
+      "pricing": ["mid","recurring"],
       "website": "https://www.intercom.com"
     },
     "Intercom Articles": {
@@ -11078,6 +11110,29 @@
         "D3"
       ],
       "website": "https://www.localfocus.nl/en/"
+    },
+    "Localised": {
+      "cats": [
+        6
+      ],
+      "description": "Localised is local-first ecommerce platform.",
+      "icon": "Localised.png",
+      "dom": {
+        "img[src='.localised.com'": {
+          "attributes": {
+            "src": ""
+          }
+        },
+        "span": {
+          "attributes": {
+            "text": ".+Localised Inc\\..+"
+          }
+        }
+      },
+      "xhr": "api\\.localised\\.com",
+      "saas": true,
+      "pricing": ["poa"],
+      "website": "https://www.localised.com"
     },
     "LocomotiveCMS": {
       "cats": [
@@ -14570,7 +14625,7 @@
       ],
       "description": "PixelFed is an activitypub based image sharing platform.",
       "dom": {
-        "a[href='https://pixelfed.org'][title*='version']": {
+        "a[href='pixelfed.org'][title*='version']": {
           "attributes": {
             "title": "^version ([0-9.]+)$\\;version:\\1"
           },
@@ -18687,6 +18742,24 @@
       "icon": "Starlet.png",
       "implies": "Perl",
       "website": "http://metacpan.org/pod/Starlet"
+    },
+    "Statamic": {
+      "cats": [
+        1
+      ],
+      "description": "Statamic is an open-source and self-hosted content management system based on the PHP programming language.",
+      "icon": "Statamic.svg",
+      "headers": {
+        "x-powered-by": "^Statamic$"
+      },
+      "implies": [
+        "PHP",
+        "Laravel"
+      ],
+      "saas": false,
+      "oss": true,
+      "pricing": ["freemium", "mid", "payg"],
+      "website": "https://statamic.com"
     },
     "Statcounter": {
       "cats": [

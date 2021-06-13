@@ -16499,6 +16499,23 @@
       "scripts": "/sim(?:site|core)/js",
       "website": "http://simgroep.nl/internet/portfolio-contentbeheer_41623/"
     },
+    "Site24x7": {
+      "cats": [
+        78
+      ],
+      "description": "Site24x7 is a cloud-based website and server monitoring platform.",
+      "icon": "Site24x7.png",
+      "js": {
+        "site24x7RumError": "",
+        "site24x7rum": "",
+        "s247RUM": "",
+        "S247RumQueueImpl": ""
+      },
+      "scripts": "\\.site24x7rum\\.com",
+      "saas": true,
+      "pricing": ["low", "recurring"],
+      "website": "https://www.site24x7.com"
+    },
     "SMF": {
       "cats": [
         2

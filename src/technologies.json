@@ -15628,6 +15628,23 @@
       "scripts": "app\\.raychat\\.io/scripts/js",
       "website": "https://raychat.io"
     },
+    "Raygun": {
+      "cats": [
+        78,
+        13
+      ],
+      "description": "Raygun is a cloud-based networking monitoring and bug tracking application.",
+      "icon": "Raygun.svg",
+      "js": {
+        "Raygun": "",
+        "raygunEnabled": "",
+        "raygunFactory": ""
+      },
+      "scripts": "\\.raygun\\.io",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://raygun.com"
+    },
     "Rayo": {
       "cats": [
         1

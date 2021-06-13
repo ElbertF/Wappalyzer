@@ -14573,7 +14573,7 @@
       "icon": "Pingdom.svg",
       "scripts": "\\.pingdom\\.net",
       "saas": true,
-      "pricing": ["payg"],
+      "pricing": ["payg", "recurring"],
       "website": "https://www.pingdom.com"
     },
     "Pin Payments": {
@@ -15642,7 +15642,7 @@
       },
       "scripts": "\\.raygun\\.io",
       "saas": true,
-      "pricing": ["payg"],
+      "pricing": ["payg", "recurring"],
       "website": "https://raygun.com"
     },
     "Rayo": {

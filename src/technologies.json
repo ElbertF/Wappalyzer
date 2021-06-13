@@ -14565,6 +14565,17 @@
       "implies": "PHP",
       "website": "http://pimcore.org"
     },
+    "Pingdom": {
+      "cats": [
+       78
+      ],
+      "description": "Pingdom is a Swedish website monitoring software as a service company.",
+      "icon": "Pingdom.svg",
+      "scripts": "\\.pingdom\\.net",
+      "saas": true,
+      "pricing": ["payg"],
+      "website": "https://www.pingdom.com"
+    },
     "Pin Payments": {
       "cats": [
         41

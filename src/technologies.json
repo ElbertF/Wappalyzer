@@ -5430,6 +5430,22 @@
       ],
       "website": "https://www.dartlang.org"
     },
+    "Datadog": {
+      "cats": [
+        78,
+        10
+      ],
+      "description": "Datadog is a SaaS-based monitoring and analytics platform for large-scale applications and infrastructure.",
+      "icon": "Datadog.svg",
+      "js": {
+        "DD_LOGS": "\\;confidence:1",
+        "DD_RUM": "\\;confidence:99"
+      },
+      "scripts": "www\\.datadoghq-browser-agent\\.com",
+      "saas": true,
+      "pricing": ["low", "payg", "recurring", "freemium"],
+      "website": "https://www.datadoghq.com"
+    },
     "Darwin": {
       "cats": [
         28

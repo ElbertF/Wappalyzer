@@ -96,5 +96,6 @@
 	"categoryName74":           { "message": "A/B тестирование" },
 	"categoryName75":           { "message": "Email" },
 	"categoryName76":           { "message": "Персонализация" },
-	"categoryName77":           { "message": "Ретаргетинг" }
+	"categoryName77":           { "message": "Ретаргетинг" },
+	"categoryName78":           { "message": "RUM" }
 }

@@ -296,6 +296,10 @@
     "77": {
       "name": "Retargeting",
       "priority": 9
+    },
+    "78": {
+      "name": "RUM",
+      "priority": 9
     }
   },
   "technologies": {
@@ -16491,6 +16495,22 @@
       },
       "icon": "SPDY.png",
       "website": "http://chromium.org/spdy"
+    },
+    "SpeedCurve": {
+      "cats": [
+        78
+      ],
+      "description": "SpeedCurve is a front-end performance monitoring service.",
+      "icon": "SpeedCurve.svg",
+      "js": {
+        "LUX.version": "([\\d.]+)\\;version:\\1",
+        "LUX_t_end": "\\d+\\;confidence:50",
+        "LUX_t_start": "\\d+\\;confidence:50"
+      },
+      "scripts": "\\.speedcurve\\.com",
+      "saas": true,
+      "pricing": ["mid", "high", "recurring"],
+      "website": "https://www.speedcurve.com"
     },
     "SPIP": {
       "cats": [

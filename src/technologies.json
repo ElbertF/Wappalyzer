@@ -1392,7 +1392,8 @@
     },
     "Akamai mPulse": {
       "cats": [
-        48
+        10,
+        78
       ],
       "cookies": {
         "akaas_AB-Testing": ""

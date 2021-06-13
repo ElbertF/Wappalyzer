@@ -3131,6 +3131,23 @@
       "scripts": "\\.blueknow\\.com",
       "website": "https://www.blueknow.com"
     },
+    "Blue Triangle": {
+      "cats": [
+        16,
+        78
+      ],
+      
+      "description": "Blue Triangle is a connected view of marketing, web performance, and third-party tag analytics while constantly monitoring website code for security vulnerabilities.",
+      "icon": "Blue Triangle.png",
+      "js": {
+        "_bttUtil.version": "([\\d.]+)\\;version:\\1"
+      },
+      "scripts": "\\.btttag\\.com/btt\\.js",
+      "xhr": "\\.btttag\\.com",
+      "saas": true,
+      "pricing": ["poa", "high", "recurring"],
+      "website": "https://bluetriangle.com"
+    },
     "Boba.js": {
       "cats": [
         59

@@ -1392,8 +1392,7 @@
     },
     "Akamai mPulse": {
       "cats": [
-        10,
-        47
+       48
       ],
       "cookies": {
         "akaas_AB-Testing": ""
@@ -2078,13 +2077,17 @@
     },
     "AppDynamics": {
       "cats": [
-        10
+        10,
+        78
       ],
+      "description": "AppDynamics is an application performance management (APM) and IT operations analytics (ITOA) company based in San Francisco.",
       "icon": "AppDynamics.png",
       "js": {
         "ADRUM.conf.agentVer": "^(.+)$\\;version:\\1"
       },
       "scripts": "adrum",
+      "saas": true,
+      "pricing": ["payg"],
       "website": "https://appdynamics.com"
     },
     "AppNexus": {
@@ -3291,7 +3294,8 @@
     },
     "Boomerang": {
       "cats": [
-        59
+        59,
+        78
       ],
       "description": "boomerang is a JavaScript library that measures the page load time experienced by real users, commonly called RUM (Real User Measurement).",
       "icon": "boomerang.svg",
@@ -4545,7 +4549,8 @@
     },
     "Cloudflare Browser Insights": {
       "cats": [
-        10
+        10,
+        78
       ],
       "description": "Cloudflare Browser Insights is a tool tool that measures the performance of websites from the perspective of users.",
       "icon": "CloudFlare.svg",
@@ -9326,7 +9331,8 @@
     "Instana": {
       "cats": [
         10,
-        13
+        13,
+        78
       ],
       "description": "Instana is a Kubernetes-native APM tool which is built for new-stack including Microservices and lately Serverless but also supports the existing VM based stacks  including several supported technologies.",
       "icon": "Instana.svg",
@@ -12944,7 +12950,8 @@
     },
     "New Relic": {
       "cats": [
-        10
+        10,
+        78
       ],
       "description": "New Relic is a SaaS offering that focuses on performance and availability monitoring.",
       "dom": "link[href*='.newrelic.com']",

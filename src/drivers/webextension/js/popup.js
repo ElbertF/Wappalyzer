@@ -140,13 +140,15 @@ const Popup = {
         })
     }
 
+    let url
+
     const tabs = await promisify(chrome.tabs, 'query', {
       active: true,
       currentWindow: true,
     })
 
     if (tabs && tabs.length) {
-      const [{ url }] = tabs
+      ;[{ url }] = tabs
 
       if (url.startsWith('http')) {
         const { hostname } = new URL(url)
@@ -185,6 +187,23 @@ const Popup = {
       }
     }
 
+    // PRO configuration
+    const apiKey = document.querySelector('.pro-configure__apikey')
+
+    apiKey.value = await getOption('apiKey', '')
+
+    document
+      .querySelector('.pro-configure__save')
+      .addEventListener('click', async (event) => {
+        await setOption(
+          'apiKey',
+          document.querySelector('.pro-configure__apikey').value
+        )
+
+        await Popup.getPro(url)
+      })
+
+    // Header
     document
       .querySelector('.header__settings')
       .addEventListener('click', () => chrome.runtime.openOptionsPage())
@@ -211,6 +230,27 @@ const Popup = {
       })
     )
 
+    // Tabs
+    const tabHeadings = Array.from(document.querySelectorAll('.tab'))
+    const tabItems = Array.from(document.querySelectorAll('.tab-item'))
+    const credits = document.querySelector('.credits')
+
+    tabHeadings.forEach((tab, index) => {
+      tab.addEventListener('click', async () => {
+        tabHeadings.forEach((tab) => tab.classList.remove('tab--active'))
+        tabItems.forEach((item) => item.classList.add('tab-item--hidden'))
+
+        tab.classList.add('tab--active')
+        tabItems[index].classList.remove('tab-item--hidden')
+
+        credits.classList.add('credits--hidden')
+
+        if (index === 1) {
+          await Popup.getPro(url)
+        }
+      })
+    })
+
     // Footer
     const item =
       footers[
@@ -221,8 +261,9 @@ const Popup = {
 
     document.querySelector('.footer__heading-text').textContent = item.heading
     document.querySelector('.footer__content-body').textContent = item.body
-    document.querySelector('.footer__button-text').textContent = item.buttonText
-    document.querySelector('.footer__button-link').href = item.buttonLink
+    document.querySelector('.footer .button__text').textContent =
+      item.buttonText
+    document.querySelector('.footer .button__link').href = item.buttonLink
 
     const collapseFooter = await getOption('collapseFooter', false)
 
@@ -251,6 +292,16 @@ const Popup = {
 
         await setOption('collapseFooter', !collapsed)
       })
+
+    Array.from(document.querySelectorAll('a')).forEach((a) =>
+      a.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        open(a.href)
+
+        return false
+      })
+    )
 
     // Apply internationalization
     i18n()
@@ -405,6 +456,232 @@ const Popup = {
     }
 
     Array.from(document.querySelectorAll('a')).forEach((a) =>
+      a.addEventListener('click', (event) => {
+        event.preventDefault()
+
+        open(a.href)
+
+        return false
+      })
+    )
+
+    i18n()
+  },
+
+  /**
+   * TODO
+   */
+  async getPro(url) {
+    const apiKey = await getOption('apiKey', '')
+
+    const el = {
+      loading: document.querySelector('.loading'),
+      panels: document.querySelector('.panels'),
+      empty: document.querySelector('.pro-empty'),
+      crawl: document.querySelector('.pro-crawl'),
+      error: document.querySelector('.pro-error'),
+      errorMessage: document.querySelector('.pro-error__message'),
+      configure: document.querySelector('.pro-configure'),
+      credits: document.querySelector('.credits'),
+      creditsRemaining: document.querySelector('.credits__remaining'),
+    }
+
+    el.error.classList.add('pro-error--hidden')
+
+    if (apiKey) {
+      el.loading.classList.remove('loading--hidden')
+      el.configure.classList.add('pro-configure--hidden')
+    } else {
+      el.loading.classList.add('loading--hidden')
+      el.configure.classList.remove('pro-configure--hidden')
+
+      return
+    }
+
+    el.panels.classList.add('panels--hidden')
+    el.empty.classList.add('pro-empty--hidden')
+    el.crawl.classList.add('pro-crawl--hidden')
+    el.error.classList.add('pro-error--hidden')
+
+    while (el.panels.lastElementChild) {
+      el.panels.removeChild(el.panels.lastElementChild)
+    }
+
+    try {
+      const response = await fetch(
+        `https://api.wappalyzer.com/pro/v2/${encodeURIComponent(url)}`,
+        {
+          method: 'GET',
+          headers: {
+            'x-api-key': apiKey,
+          },
+        }
+      )
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        const error = new Error()
+
+        error.data = data
+        error.response = response
+
+        throw error
+      }
+
+      const { attributes, creditsRemaining, crawl } = data
+
+      el.creditsRemaining.textContent = parseInt(
+        creditsRemaining || 0,
+        10
+      ).toLocaleString()
+
+      el.credits.classList.remove('credits--hidden')
+
+      el.loading.classList.add('loading--hidden')
+
+      if (crawl) {
+        document
+          .querySelector('.pro-crawl')
+          .classList.remove('pro-crawl--hidden')
+
+        return
+      }
+
+      if (!Object.keys(attributes).length) {
+        el.empty.classList.remove('pro-empty--hidden')
+
+        return
+      }
+
+      Object.keys(attributes).forEach((set) => {
+        const panel = document.createElement('div')
+        const header = document.createElement('div')
+        const content = document.createElement('div')
+        const table = document.createElement('table')
+
+        panel.classList.add('panel')
+        header.classList.add('panel__header')
+        content.classList.add('panel__content')
+
+        header.setAttribute(
+          'data-i18n',
+          `set${set.charAt(0).toUpperCase() + set.slice(1)}`
+        )
+
+        Object.keys(attributes[set]).forEach((key) => {
+          const value = attributes[set][key]
+
+          const tr = document.createElement('tr')
+
+          const th = document.createElement('th')
+          const td = document.createElement('td')
+
+          th.setAttribute(
+            'data-i18n',
+            `attribute${
+              key.charAt(0).toUpperCase() + key.slice(1).replace('.', '_')
+            }`
+          )
+
+          if (Array.isArray(value)) {
+            value.forEach((value) => {
+              const div = document.createElement('div')
+
+              if (typeof value === 'object') {
+                const a = document.createElement('a')
+
+                a.href = value.to
+                a.textContent = value.text
+
+                if (
+                  ['social', 'keywords'].includes(set) ||
+                  ['phone', 'email'].includes(key)
+                ) {
+                  a.classList.add('chip')
+
+                  td.appendChild(a)
+                } else {
+                  div.appendChild(a)
+                  td.appendChild(div)
+                }
+              } else if (key === 'employees') {
+                const [name, title] = value.split(' -- ')
+
+                const strong = document.createElement('strong')
+                const span = document.createElement('span')
+
+                strong.textContent = name
+                span.textContent = title
+
+                div.appendChild(strong)
+                div.appendChild(span)
+                td.appendChild(div)
+              } else {
+                div.textContent = value
+                td.appendChild(div)
+              }
+            })
+          } else if (key === 'companyName') {
+            const strong = document.createElement('strong')
+
+            strong.textContent = value
+
+            td.appendChild(strong)
+          } else {
+            td.textContent = value
+          }
+
+          if (key !== 'keywords') {
+            tr.appendChild(th)
+          }
+
+          tr.appendChild(td)
+          table.appendChild(tr)
+        })
+
+        content.appendChild(table)
+
+        panel.appendChild(header)
+        panel.appendChild(content)
+        el.panels.appendChild(panel)
+      })
+
+      el.panels.classList.remove('panels--hidden')
+    } catch (error) {
+      Popup.log(error.data)
+
+      // eslint-disable-next-line
+      console.log(error)
+
+      el.errorMessage.textContent = `Sorry, something went wrong${
+        error.response ? ` (${error.response.status})` : ''
+      }. Please try again later.`
+
+      if (error.response) {
+        if (error.response.status === 403) {
+          el.errorMessage.textContent =
+            typeof error.data === 'string'
+              ? error.data
+              : 'No access. Please check your API key.'
+
+          el.configure.classList.remove('pro-configure--hidden')
+        } else if (error.response.status === 429) {
+          el.errorMessage.textContent =
+            'Too many requests. Please try again in a few seconds.'
+        } else if (
+          error.response.status === 400 &&
+          typeof error.data === 'string'
+        ) {
+          el.errorMessage.textContent = error.data
+        }
+      }
+
+      el.loading.classList.add('loading--hidden')
+      el.error.classList.remove('pro-error--hidden')
+    }
+
+    Array.from(document.querySelectorAll('.panels a')).forEach((a) =>
       a.addEventListener('click', (event) => {
         event.preventDefault()
 

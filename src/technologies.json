@@ -5010,7 +5010,9 @@
       "js": {
         "corebine": ""
       },
-      "pricing": ["poa"],
+      "pricing": [
+        "poa"
+      ],
       "website": "https://corebine.com"
     },
     "Cosmoshop": {
@@ -6234,22 +6236,6 @@
       "icon": "EdgeCast.png",
       "url": "https?://(?:[^/]+\\.)?edgecastcdn\\.net/",
       "website": "http://www.edgecast.com"
-    },
-    "eDokan": {
-      "cats": [
-        6
-      ],
-      "description": "eDokan is hosted ecommerce platform with drag-drop template builder and zero programming knowledge.",
-      "icon": "eDokan.png",
-      "implies": [
-        "Node.js",
-        "Angular",
-        "MongoDB"
-      ],
-      "dom": "img[src*='cdn.edokan.co']",
-      "saas": true,
-      "pricing": ["low", "recurring"],
-      "website": "https://edokan.co"
     },
     "Elasticsearch": {
       "cats": [
@@ -9411,9 +9397,12 @@
       "js": {
         "Intercom": ""
       },
-      "scripts": "(?:api\\.intercom\\.io/api|static\\.intercomcdn\\.com/intercom\\.v1)",
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
       "saas": true,
-      "pricing": ["mid","recurring"],
+      "scripts": "(?:api\\.intercom\\.io/api|static\\.intercomcdn\\.com/intercom\\.v1)",
       "website": "https://www.intercom.com"
     },
     "Intercom Articles": {
@@ -11116,7 +11105,6 @@
         6
       ],
       "description": "Localised is local-first ecommerce platform.",
-      "icon": "Localised.png",
       "dom": {
         "img[src='.localised.com'": {
           "attributes": {
@@ -11129,10 +11117,13 @@
           }
         }
       },
-      "xhr": "api\\.localised\\.com",
+      "icon": "Localised.png",
+      "pricing": [
+        "poa"
+      ],
       "saas": true,
-      "pricing": ["poa"],
-      "website": "https://www.localised.com"
+      "website": "https://www.localised.com",
+      "xhr": "api\\.localised\\.com"
     },
     "LocomotiveCMS": {
       "cats": [
@@ -17370,7 +17361,6 @@
         }
       },
       "icon": "Shopify.svg",
-      "implies": "Shopify",
       "scripts": [
         "cdn\\.shopify\\.com/shopifycloud/shopify_pay/"
       ],
@@ -18748,17 +18738,21 @@
         1
       ],
       "description": "Statamic is an open-source and self-hosted content management system based on the PHP programming language.",
-      "icon": "Statamic.svg",
       "headers": {
         "x-powered-by": "^Statamic$"
       },
+      "icon": "Statamic.svg",
       "implies": [
         "PHP",
         "Laravel"
       ],
-      "saas": false,
       "oss": true,
-      "pricing": ["freemium", "mid", "payg"],
+      "pricing": [
+        "freemium",
+        "mid",
+        "payg"
+      ],
+      "saas": false,
       "website": "https://statamic.com"
     },
     "Statcounter": {
@@ -19881,7 +19875,6 @@
       "js": {
         "TrackJs": ""
       },
-      "scripts": "tracker\\.js",
       "website": "http://trackjs.com"
     },
     "Tradedoubler": {
@@ -21702,10 +21695,7 @@
         6
       ],
       "description": "WooCommerce is an open-source ecommerce plugin for WordPress.",
-      "html": [
-        "<!-- WooCommerce",
-        "<link rel='[^']+' id='woocommerce-(?:layout|smallscreen|general)-css'  href='https?://[^/]+/wp-content/plugins/woocommerce/assets/css/woocommerce(?:-layout|-smallscreen)?\\.css?ver=([\\d.]+)'\\;version:\\1"
-      ],
+      "dom": ".woocommerce, .woocommerce-no-js, link[rel*='woocommerce']",
       "icon": "WooCommerce.svg",
       "implies": "WordPress",
       "js": {
@@ -21715,7 +21705,10 @@
         "generator": "WooCommerce ([\\d.]+)\\;version:\\1"
       },
       "oss": true,
-      "scripts": "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1",
+      "scripts": [
+        "woocommerce",
+        "/woocommerce(?:\\.min)?\\.js(?:\\?ver=([0-9.]+))?\\;version:\\1"
+      ],
       "website": "https://woocommerce.com"
     },
     "Woopra": {
@@ -22773,6 +22766,25 @@
         "fe_eclass_guest": "\\;confidence:50"
       },
       "website": "https://www.eclass.com.hk"
+    },
+    "eDokan": {
+      "cats": [
+        6
+      ],
+      "description": "eDokan is hosted ecommerce platform with drag-drop template builder and zero programming knowledge.",
+      "dom": "img[src*='cdn.edokan.co']",
+      "icon": "eDokan.png",
+      "implies": [
+        "Node.js",
+        "Angular",
+        "MongoDB"
+      ],
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "website": "https://edokan.co"
     },
     "eSyndiCat": {
       "cats": [

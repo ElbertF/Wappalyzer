@@ -25,7 +25,7 @@
 	"createAlert":                     { "message": "Create an alert for this website" },
   "leadLists":                       { "message": "Lead generation tools" },
   "tabTechnologies":                 { "message": "Technologies" },
-  "tabPro":                          { "message": "Pro" },
+  "tabPro":                          { "message": "More info" },
   "creditBalance":                   { "message": "Credit balance:" },
   "proMessageHeading":               { "message": "Unlock PRO features" },
   "proMessage":                      { "message": "Subscribe to a PRO plan to view company and contact information of the websites you visit." },

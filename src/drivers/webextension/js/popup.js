@@ -184,6 +184,8 @@ const Popup = {
         for (const el of document.querySelectorAll('.header__switch')) {
           el.classList.add('header__switch--hidden')
         }
+
+        document.querySelector('.tab--pro').classList.add('tab--disabled')
       }
     }
 

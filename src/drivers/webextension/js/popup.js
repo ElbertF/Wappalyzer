@@ -112,6 +112,7 @@ const Popup = {
       document.querySelector('.detections').classList.add('detections--hidden')
       document.querySelector('.empty').classList.add('empty--hidden')
       document.querySelector('.footer').classList.add('footer--hidden')
+      document.querySelector('.tab--pro').classList.add('tab--disabled')
 
       document
         .querySelector('.terms__button--accept')
@@ -122,6 +123,7 @@ const Popup = {
           document.querySelector('.terms').classList.add('terms--hidden')
           document.querySelector('.empty').classList.remove('empty--hidden')
           document.querySelector('.footer').classList.remove('footer--hidden')
+          document.querySelector('.tab--pro').classList.remove('tab--disabled')
 
           Popup.onGetDetections(await Popup.driver('getDetections'))
         })
@@ -135,6 +137,7 @@ const Popup = {
           document.querySelector('.terms').classList.add('terms--hidden')
           document.querySelector('.empty').classList.remove('empty--hidden')
           document.querySelector('.footer').classList.remove('footer--hidden')
+          document.querySelector('.tab--pro').classList.remove('tab--disabled')
 
           Popup.onGetDetections(await Popup.driver('getDetections'))
         })
@@ -247,7 +250,7 @@ const Popup = {
 
         credits.classList.add('credits--hidden')
 
-        if (index === 1) {
+        if (tab.classList.contains('tab--pro')) {
           await Popup.getPro(url)
         }
       })
@@ -298,6 +301,7 @@ const Popup = {
     Array.from(document.querySelectorAll('a')).forEach((a) =>
       a.addEventListener('click', (event) => {
         event.preventDefault()
+        event.stopImmediatePropagation()
 
         open(a.href)
 
@@ -356,13 +360,11 @@ const Popup = {
     if (!detections || !detections.length) {
       document.querySelector('.empty').classList.remove('empty--hidden')
       document.querySelector('.detections').classList.add('detections--hidden')
-      document.querySelector('.footer').classList.add('footer--hidden')
 
       return
     }
 
     document.querySelector('.empty').classList.add('empty--hidden')
-    document.querySelector('.footer').classList.remove('footer--hidden')
 
     const el = document.querySelector('.detections')
 
@@ -460,6 +462,7 @@ const Popup = {
     Array.from(document.querySelectorAll('a')).forEach((a) =>
       a.addEventListener('click', (event) => {
         event.preventDefault()
+        event.stopImmediatePropagation()
 
         open(a.href)
 
@@ -471,7 +474,8 @@ const Popup = {
   },
 
   /**
-   * TODO
+   * Show company and contact details
+   * @param {String} url
    */
   async getPro(url) {
     const apiKey = await getOption('apiKey', '')

@@ -24,6 +24,7 @@ body {
   line-height: 1.5rem;
 	margin: 0;
   width: 34rem;
+  overflow-x: hidden;
 }
 
 a, a:focus, a:hover {
@@ -34,6 +35,10 @@ a, a:focus, a:hover {
 
 p {
   margin: 0 0 .5rem 0;
+}
+
+.popup {
+  background: white;
 }
 
 .input[type="text"], .input[type="password"] {
@@ -165,9 +170,9 @@ small {
 .progress__circle {
   color: var(--color-primary);
   fill: transparent;
-  cx: 40;
-  cy: 40;
-  r: 18;
+  cx: 40px;
+  cy: 40px;
+  r: 18px;
   stroke-width: 2;
   stroke: currentColor;
   transition: all .6s ease-in-out;
@@ -646,24 +651,24 @@ body.dynamic-icon .category__heading:hover .category__pin {
 }
 
 .terms__button {
-  background-color: #4608ad;
+  background-color: var(--color-primary);
   border: none;
   border-radius: 4px;
   color: white;
   cursor: pointer;
   font-size: .9rem;
-  padding: 0 2rem;
+  padding: .7rem 1.5rem;
   margin: 0 .2rem;
-  height: 3rem;
 }
 
 .terms__button--decline {
-  background-color: white;
-  border: 1px solid #4608ad;
-  color: #4608ad;
+  background-color: var(--color-primary-lighten);
+  border: none;
+  color: var(--color-primary);
 }
 
 .terms__privacy {
+  font-size: .8rem;
   margin-top: 1.5rem;
 }
 

@@ -296,6 +296,10 @@
     "77": {
       "name": "Retargeting",
       "priority": 9
+    },
+    "78": {
+      "name": "RUM",
+      "priority": 9
     }
   },
   "technologies": {
@@ -1242,6 +1246,7 @@
       ],
       "cpe": "cpe:/a:afterpay:afterpay",
       "description": "Afterpay is a 'buy now, pay later' platform that makes it possible to pay off purchased goods in fortnightly instalments.",
+      "dom": "#afterpay, .afterpay, [aria-label='Afterpay']",
       "icon": "afterpay.png",
       "js": {
         "Afterpay": "",
@@ -1389,7 +1394,7 @@
     "Akamai mPulse": {
       "cats": [
         10,
-        47
+        78
       ],
       "cookies": {
         "akaas_AB-Testing": ""
@@ -2074,12 +2079,18 @@
     },
     "AppDynamics": {
       "cats": [
-        10
+        10,
+        78
       ],
+      "description": "AppDynamics is an application performance management (APM) and IT operations analytics (ITOA) company based in San Francisco.",
       "icon": "AppDynamics.png",
       "js": {
         "ADRUM.conf.agentVer": "^(.+)$\\;version:\\1"
       },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
       "scripts": "adrum",
       "website": "https://appdynamics.com"
     },
@@ -3075,6 +3086,26 @@
       "scripts": "\\.getblue\\.io",
       "website": "https://web.getblue.io/en/"
     },
+    "Blue Triangle": {
+      "cats": [
+        16,
+        78
+      ],
+      "description": "Blue Triangle is a connected view of marketing, web performance, and third-party tag analytics while constantly monitoring website code for security vulnerabilities.",
+      "icon": "Blue Triangle.png",
+      "js": {
+        "_bttUtil.version": "([\\d.]+)\\;version:\\1"
+      },
+      "pricing": [
+        "poa",
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.btttag\\.com/btt\\.js",
+      "website": "https://bluetriangle.com",
+      "xhr": "\\.btttag\\.com"
+    },
     "Bluecore": {
       "cats": [
         32,
@@ -3287,7 +3318,8 @@
     },
     "Boomerang": {
       "cats": [
-        59
+        59,
+        78
       ],
       "description": "boomerang is a JavaScript library that measures the page load time experienced by real users, commonly called RUM (Real User Measurement).",
       "icon": "boomerang.svg",
@@ -3353,6 +3385,33 @@
       "saas": true,
       "scripts": "/bxe_core\\.js",
       "website": "https://www.booxi.com"
+    },
+    "Borderfree": {
+      "cats": [
+        6
+      ],
+      "cookies": {
+        "bfx.apiKey:": "^[\\w\\d-]+$\\;confidence:25",
+        "bfx.country:": "^\\w+$\\;confidence:25",
+        "bfx.language": "^\\w+$\\;confidence:25",
+        "bfx.logLevel": "^\\w+$\\;confidence:25"
+      },
+      "description": "Borderfree is an cross-border ecommerce solutions provider.",
+      "icon": "Borderfree.png",
+      "js": {
+        "bfx._apiKey": "\\;confidence:50",
+        "bfx._brand": "\\;confidence:50"
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "global\\.prd\\.borderfree\\.com",
+        "wm\\.prd\\.borderfree\\.com",
+        "bfx\\.js"
+      ],
+      "website": "https://www.borderfree.com"
     },
     "Borlabs Cookie": {
       "cats": [
@@ -3754,6 +3813,21 @@
       "icon": "Business Catalyst.svg",
       "scripts": "CatalystScripts",
       "website": "http://businesscatalyst.com"
+    },
+    "Buy me a coffee": {
+      "cats": [
+        5,
+        41
+      ],
+      "description": "Buy me a coffee is a service for online content creators that they may use to receive tips and donations to support their work.",
+      "dom": "a[href*='www.buymeacoffee.com/'][target='_blank']",
+      "icon": "Buy me a coffee.svg",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "cdnjs\\.buymeacoffee\\.com/([\\d.]+)\\;version:\\1",
+      "website": "https://www.buymeacoffee.com"
     },
     "BuySellAds": {
       "cats": [
@@ -4541,7 +4615,8 @@
     },
     "Cloudflare Browser Insights": {
       "cats": [
-        10
+        10,
+        78
       ],
       "description": "Cloudflare Browser Insights is a tool tool that measures the performance of websites from the perspective of users.",
       "icon": "CloudFlare.svg",
@@ -4975,9 +5050,16 @@
       "cats": [
         67
       ],
-      "dom": "#cookie-law-info-bar",
+      "dom": {
+        "#cookie-law-info-bar": {
+          "text": ""
+        }
+      },
       "icon": "cookieyes.svg",
-      "scripts": "app\\.cookieyes\\.com/client_data/",
+      "scripts": [
+        "app\\.cookieyes\\.com/client_data/",
+        "cdn-cookieyes\\.com/client_data/"
+      ],
       "website": "https://www.cookieyes.com/"
     },
     "Cookiebot": {
@@ -5460,6 +5542,27 @@
       "implies": "jQuery",
       "scripts": "dataTables.*\\.js",
       "website": "http://datatables.net"
+    },
+    "Datadog": {
+      "cats": [
+        78,
+        10
+      ],
+      "description": "Datadog is a SaaS-based monitoring and analytics platform for large-scale applications and infrastructure.",
+      "icon": "Datadog.svg",
+      "js": {
+        "DD_LOGS": "\\;confidence:1",
+        "DD_RUM": "\\;confidence:99"
+      },
+      "pricing": [
+        "low",
+        "payg",
+        "recurring",
+        "freemium"
+      ],
+      "saas": true,
+      "scripts": "www\\.datadoghq-browser-agent\\.com",
+      "website": "https://www.datadoghq.com"
     },
     "Datadome": {
       "cats": [
@@ -7505,7 +7608,9 @@
       "description": "GSAP is an animation library that allows you to create animations with JavaScript.",
       "icon": "TweenMax.png",
       "js": {
-        "TweenMax": "",
+        "TweenLite.version": "([\\d.]+)\\;version:\\1",
+        "TweenMax.version": "([\\d.]+)\\;version:\\1",
+        "gsap.version": "([\\d.]+)\\;version:\\1",
         "gsapVersions": ""
       },
       "scripts": "TweenMax(?:\\.min)?\\.js",
@@ -7855,11 +7960,23 @@
       "cats": [
         6
       ],
-      "icon": "Globale.png",
-      "scripts": [
-        "web\\.global-e\\.com"
+      "cookies": {
+        "GlobalE_CT_Data": "",
+        "GlobalE_Data": "",
+        "GlobalE_SupportThirdPartCookies": ""
+      },
+      "description": "Global-e is a provider of cross-border ecommerce solutions.",
+      "icon": "Global-e.svg",
+      "js": {
+        "GLOBALE_ENGINE_CONFIG": "",
+        "GlobalE": ""
+      },
+      "pricing": [
+        "poa"
       ],
-      "website": "https://www.global-e.com/"
+      "saas": true,
+      "scripts": "\\.global-e\\.com",
+      "website": "https://www.global-e.com"
     },
     "Glyphicons": {
       "cats": [
@@ -8420,6 +8537,26 @@
       },
       "website": "http://www.greenvalley.nl/Public/Producten/Content_Management/CMS"
     },
+    "Griddo": {
+      "cats": [
+        1
+      ],
+      "description": "Griddo is an Martech Experience Platform for creating custom digital experiences.",
+      "icon": "Griddo.svg",
+      "implies": [
+        "React",
+        "Gatsby"
+      ],
+      "meta": {
+        "generator": "^Griddo$"
+      },
+      "pricing": [
+        "high",
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://griddo.io"
+    },
     "Gridsome": {
       "cats": [
         57
@@ -8905,6 +9042,24 @@
       "scripts": "//static\\.hotjar\\.com/",
       "website": "https://www.hotjar.com"
     },
+    "Howler.js": {
+      "cats": [
+        59
+      ],
+      "description": "Howler.js is an audio library with support for the Web Audio API and a fallback mechanism for HTML5 Audio.",
+      "icon": "Howler.js.svg",
+      "js": {
+        "Howler": "",
+        "HowlerGlobal": ""
+      },
+      "oss": true,
+      "saas": false,
+      "scripts": [
+        "howler@([\\d.]+)/dist/howler\\.min\\.js\\;version:\\1",
+        "howler/([\\d.]+)/howler(?:\\.core)?\\.min\\.js\\;version:\\1"
+      ],
+      "website": "https://howlerjs.com"
+    },
     "HubSpot": {
       "cats": [
         32
@@ -9308,7 +9463,8 @@
     "Instana": {
       "cats": [
         10,
-        13
+        13,
+        78
       ],
       "description": "Instana is a Kubernetes-native APM tool which is built for new-stack including Microservices and lately Serverless but also supports the existing VM based stacks  including several supported technologies.",
       "icon": "Instana.svg",
@@ -10112,6 +10268,25 @@
       "scripts": "karma\\.mdpcdn\\.com",
       "website": "https://karma-runner.github.io"
     },
+    "Kartra": {
+      "cats": [
+        32
+      ],
+      "description": "Kartra is an online business platform that offers marketing and sales tools.",
+      "dom": "form[action*='app.kartra.com']",
+      "icon": "Kartra.png",
+      "js": {
+        "init_kartra_tracking": "",
+        "kartra_tracking_loaded": ""
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "app\\.kartra\\.com",
+      "website": "https://home.kartra.com"
+    },
     "Keap": {
       "cats": [
         53
@@ -10341,6 +10516,26 @@
         "ko.version": "^(.+)$\\;version:\\1"
       },
       "website": "http://knockoutjs.com"
+    },
+    "Ko-fi": {
+      "cats": [
+        5,
+        41
+      ],
+      "description": "Ko-fi is an online platform that helps content creators get the financial support.",
+      "dom": "a[href*='ko-fi.com/'][target='_blank']",
+      "icon": "Ko-fi.svg",
+      "js": {
+        "kofiwidget2": ""
+      },
+      "pricing": [
+        "freemium",
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "ko-fi\\.com/widgets",
+      "website": "https://ko-fi.com"
     },
     "Koa": {
       "cats": [
@@ -10640,6 +10835,24 @@
       "saas": true,
       "scripts": "js/ignition-current\\.min\\.js\\;confidence:50",
       "website": "https://www.launchrock.com"
+    },
+    "Leadinfo": {
+      "cats": [
+        10
+      ],
+      "description": "Leadinfo is a lead generation software that enables you to recognise B2B website visitors.",
+      "icon": "Leadinfo.svg",
+      "js": {
+        "GlobalLeadinfoNamespace": "\\;confidence:50",
+        "leadinfo": "\\;confidence:50"
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.leadinfo\\.net",
+      "website": "https://www.leadinfo.com"
     },
     "Leaflet": {
       "cats": [
@@ -12629,6 +12842,21 @@
       ],
       "website": "https://mouseflow.com/"
     },
+    "Movable Ink": {
+      "cats": [
+        76
+      ],
+      "description": "Movable Ink is a technology company that allows marketers to change emails after they have been sent out.",
+      "icon": "Movable Ink.png",
+      "js": {
+        "MovableInkTrack": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "website": "https://movableink.com"
+    },
     "Movable Type": {
       "cats": [
         1
@@ -14196,6 +14424,27 @@
       "scripts": "paths(?:\\.min)?\\.js",
       "website": "https://github.com/andreaferretti/paths-js"
     },
+    "Patreon": {
+      "cats": [
+        5,
+        41
+      ],
+      "description": "Patreon is an American membership platform that provides business tools for content creators to run a subscription service.",
+      "dom": {
+        "a[href*='www.patreon.com/']": {
+          "attributes": {
+            "href": "patreon\\.com/.+"
+          }
+        }
+      },
+      "icon": "Patreon.svg",
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "patreon-connect/assets/.+ver=([\\d.]+)\\;version:\\1",
+      "website": "https://www.patreon.com"
+    },
     "PayBright": {
       "cats": [
         41
@@ -14553,6 +14802,20 @@
       "scripts": "api\\.pinpayments\\.com",
       "website": "https://www.pinpayments.com/"
     },
+    "Pingdom": {
+      "cats": [
+        78
+      ],
+      "description": "Pingdom is a Swedish website monitoring software as a service company.",
+      "icon": "Pingdom.svg",
+      "pricing": [
+        "payg",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.pingdom\\.net",
+      "website": "https://www.pingdom.com"
+    },
     "Pingoteam": {
       "cats": [
         1
@@ -14796,6 +15059,27 @@
         "pwidget_config": ""
       },
       "website": "http://www.po.st/"
+    },
+    "Podia": {
+      "cats": [
+        21,
+        6
+      ],
+      "cookies": {
+        "_podia_storefront_visitor_id": ""
+      },
+      "description": "Podia is a platform to host and sell online courses, memberships, and digital downloads.",
+      "icon": "Podia.svg",
+      "js": {
+        "Podia.Checkout": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.podia\\.com",
+      "website": "https://www.podia.com"
     },
     "Polyfill": {
       "cats": [
@@ -15308,6 +15592,22 @@
       "icon": "Python.png",
       "website": "http://python.org"
     },
+    "Quadpay": {
+      "cats": [
+        41
+      ],
+      "description": "Quadpay is a payment platform.",
+      "icon": "Quadpay.svg",
+      "js": {
+        "QuadPayShopify": ""
+      },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.quadpay\\.com/quadpay-widget-([\\d.]+)\\.js\\;version:\\1",
+      "website": "https://www.quadpay.com"
+    },
     "Quantcast Choice": {
       "cats": [
         67
@@ -15595,6 +15895,26 @@
       },
       "scripts": "app\\.raychat\\.io/scripts/js",
       "website": "https://raychat.io"
+    },
+    "Raygun": {
+      "cats": [
+        78,
+        13
+      ],
+      "description": "Raygun is a cloud-based networking monitoring and bug tracking application.",
+      "icon": "Raygun.svg",
+      "js": {
+        "Raygun": "",
+        "raygunEnabled": "",
+        "raygunFactory": ""
+      },
+      "pricing": [
+        "payg",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.raygun\\.io",
+      "website": "https://raygun.com"
     },
     "Rayo": {
       "cats": [
@@ -17739,6 +18059,26 @@
       "scripts": "sitemeter\\.com/js/counter\\.js\\?site=",
       "website": "http://www.sitemeter.com"
     },
+    "Site24x7": {
+      "cats": [
+        78
+      ],
+      "description": "Site24x7 is a cloud-based website and server monitoring platform.",
+      "icon": "Site24x7.png",
+      "js": {
+        "S247RumQueueImpl": "",
+        "s247RUM": "",
+        "site24x7RumError": "",
+        "site24x7rum": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.site24x7rum\\.com",
+      "website": "https://www.site24x7.com"
+    },
     "SiteEdit": {
       "cats": [
         1
@@ -18451,6 +18791,26 @@
       },
       "icon": "SparkPost.svg",
       "website": "https://www.sparkpost.com/"
+    },
+    "SpeedCurve": {
+      "cats": [
+        78
+      ],
+      "description": "SpeedCurve is a front-end performance monitoring service.",
+      "icon": "SpeedCurve.svg",
+      "js": {
+        "LUX.version": "([\\d.]+)\\;version:\\1",
+        "LUX_t_end": "\\d+\\;confidence:50",
+        "LUX_t_start": "\\d+\\;confidence:50"
+      },
+      "pricing": [
+        "mid",
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.speedcurve\\.com",
+      "website": "https://www.speedcurve.com"
     },
     "Sphinx": {
       "cats": [
@@ -19441,6 +19801,32 @@
       "scripts": "//embed\\.tawk\\.to",
       "website": "http://tawk.to"
     },
+    "Teachable": {
+      "cats": [
+        21
+      ],
+      "cookies": {
+        "_gat_teachableTracker": "\\d+"
+      },
+      "description": "Teachable is a learning management system or LMS platform.",
+      "icon": "Teachable.png",
+      "js": {
+        "isTeachable": "\\;confidence:50",
+        "teachableIcons": "\\;confidence:50",
+        "trackTeachableGAEvent": ""
+      },
+      "meta": {
+        "asset_host": "\\.teachablecdn\\.com"
+      },
+      "pricing": [
+        "low",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.teachablecdn\\.com",
+      "website": "https://teachable.com"
+    },
     "Teads": {
       "cats": [
         36
@@ -19646,6 +20032,27 @@
       "icon": "ThinkPHP.png",
       "implies": "PHP",
       "website": "http://www.thinkphp.cn"
+    },
+    "Thinkific": {
+      "cats": [
+        21
+      ],
+      "cookies": {
+        "_thinkific_session": ""
+      },
+      "description": "Thinkific is a software platform that enables entrepreneurs to create, market, sell, and deliver their own online courses.",
+      "icon": "Thinkific.svg",
+      "js": {
+        "Thinkific": "",
+        "ThinkificAnalytics": ""
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn(?:-themes)?\\.thinkific\\.com",
+      "website": "https://www.thinkific.com"
     },
     "ThriveCart": {
       "cats": [
@@ -22644,18 +23051,6 @@
       },
       "scripts": "basket.*\\.js\\;confidence:10",
       "website": "https://addyosmani.github.io/basket.js/"
-    },
-    "borderfree": {
-      "cats": [
-        6
-      ],
-      "icon": "borderfree.png",
-      "scripts": [
-        "global\\.prd\\.borderfree\\.com",
-        "wm\\.prd\\.borderfree\\.com",
-        "bfx\\.js"
-      ],
-      "website": "https://www.borderfree.com/"
     },
     "cPanel": {
       "cats": [

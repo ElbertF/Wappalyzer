@@ -4972,6 +4972,20 @@
       "website": "http://www.contentful.com",
       "xhr": "cdn\\.contentful\\.com"
     },
+    "Contentstack": {
+      "cats": [
+        1
+      ],
+      "description": "Contentstack is a headless CMS software designed to help businesses deliver personalised content experiences to audiences via multiple channels.",
+      "icon": "Contentstack.png",
+      "dom": "img[src*='images.contentstack.io']",
+      "saas": true,
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "website": "https://www.contentstack.com"
+    },
     "Convert": {
       "cats": [
         74

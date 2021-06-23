@@ -3,6 +3,12 @@
 /* globals chrome */
 
 const Content = {
+  href: location.href,
+  cache: {},
+  language: '',
+
+  requiresAnalyzed: [],
+
   /**
    * Initialise content script
    */
@@ -32,7 +38,7 @@ const Content = {
       html = chunks.join('\n')
 
       // Determine language based on the HTML lang attribute or content
-      const language =
+      Content.language =
         document.documentElement.getAttribute('lang') ||
         document.documentElement.getAttribute('xml:lang') ||
         (await new Promise((resolve) =>
@@ -86,10 +92,37 @@ const Content = {
         {}
       )
 
+      // Detect Google Ads
+      if (/^(www\.)?google(\.[a-z]{2,3}){1,2}$/.test(location.hostname)) {
+        const ads = document.querySelectorAll(
+          '#tads [data-text-ad] a[data-pcu]'
+        )
+
+        for (const ad of ads) {
+          Content.driver('detectTechnology', [ad.href, 'Google Ads'])
+        }
+      }
+
+      // Detect Microsoft Ads
+      if (/^(www\.)?bing\.com$/.test(location.hostname)) {
+        const ads = document.querySelectorAll('.b_ad .b_adurl cite')
+
+        for (const ad of ads) {
+          const url = ad.textContent.split(' ')[0].trim()
+
+          Content.driver('detectTechnology', [
+            url.startsWith('http') ? url : `http://${url}`,
+            'Microsoft Advertising',
+          ])
+        }
+      }
+
+      Content.cache = { html, css, scripts, meta }
+
       Content.driver('onContentLoad', [
-        location.href,
-        { html, css, scripts, meta },
-        language,
+        Content.href,
+        Content.cache,
+        Content.language,
       ])
 
       const technologies = await Content.driver('getTechnologies')
@@ -103,6 +136,32 @@ const Content = {
     } catch (error) {
       Content.driver('error', error)
     }
+  },
+
+  /**
+   * Enable scripts to call Driver functions through messaging
+   * @param {Object} message
+   * @param {Object} sender
+   * @param {Function} callback
+   */
+  onMessage({ source, func, args }, sender, callback) {
+    if (!func) {
+      return
+    }
+
+    Content.driver('log', { source, func, args })
+
+    if (!Content[func]) {
+      Content.error(new Error(`Method does not exist: Content.${func}`))
+
+      return
+    }
+
+    Promise.resolve(Content[func].call(Content[func], ...(args || [])))
+      .then(callback)
+      .catch(Content.error)
+
+    return !!callback
   },
 
   driver(func, args) {
@@ -133,6 +192,23 @@ const Content = {
             : resolve(response)
         }
       )
+    })
+  },
+
+  analyzeRequires(requires) {
+    Object.keys(requires).forEach((name) => {
+      if (!Content.requiresAnalyzed.includes(name)) {
+        Content.requiresAnalyzed.push(name)
+
+        Content.driver('onContentLoad', [
+          Content.href,
+          Content.cache,
+          Content.language,
+          name,
+        ])
+
+        Content.onGetTechnologies(requires[name].technologies)
+      }
     })
   },
 
@@ -259,32 +335,12 @@ const Content = {
         return technologies
       }, [])
 
-    // Detect Google Ads
-    if (/^(www\.)?google(\.[a-z]{2,3}){1,2}$/.test(location.hostname)) {
-      const ads = document.querySelectorAll('#tads [data-text-ad] a[data-pcu]')
-
-      for (const ad of ads) {
-        Content.driver('detectTechnology', [ad.href, 'Google Ads'])
-      }
-    }
-
-    // Detect Microsoft Ads
-    if (/^(www\.)?bing\.com$/.test(location.hostname)) {
-      const ads = document.querySelectorAll('.b_ad .b_adurl cite')
-
-      for (const ad of ads) {
-        const url = ad.textContent.split(' ')[0].trim()
-
-        Content.driver('detectTechnology', [
-          url.startsWith('http') ? url : `http://${url}`,
-          'Microsoft Advertising',
-        ])
-      }
-    }
-
     Content.driver('analyzeDom', [location.href, dom])
   },
 }
+
+// Enable messaging between scripts
+chrome.runtime.onMessage.addListener(Content.onMessage)
 
 if (/complete|interactive|loaded/.test(document.readyState)) {
   Content.init()

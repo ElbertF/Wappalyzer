@@ -300,6 +300,22 @@
     "78": {
       "name": "RUM",
       "priority": 9
+    },
+    "79": {
+      "name": "Geolocation",
+      "priority": 9
+    },
+    "80": {
+      "name": "WordPress themes",
+      "priority": 9
+    },
+    "81": {
+      "name": "Shopify themes",
+      "priority": 9
+    },
+    "82": {
+      "name": "Drupal themes",
+      "priority": 9
     }
   },
   "technologies": {
@@ -18123,8 +18139,7 @@
       "description": "SiteSpect is the A/B testing and optimisation solution.",
       "icon": "SiteSpect.png",
       "js": {
-        "SS": "\\;confidence:50",
-        "ss_dom_var": "\\;confidence:50"
+        "ss_dom_var": ""
       },
       "pricing": [
         "poa"

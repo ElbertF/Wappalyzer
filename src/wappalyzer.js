@@ -11,6 +11,7 @@ function toArray(value) {
 const Wappalyzer = {
   technologies: [],
   categories: [],
+  requires: {},
 
   slugify: (string) =>
     string
@@ -194,20 +195,23 @@ const Wappalyzer = {
    * Initialize analyzation.
    * @param {*} param0
    */
-  async analyze({
-    url,
-    xhr,
-    html,
-    css,
-    robots,
-    magento,
-    meta,
-    headers,
-    dns,
-    certIssuer,
-    cookies,
-    scripts,
-  }) {
+  async analyze(
+    {
+      url,
+      xhr,
+      html,
+      css,
+      robots,
+      magento,
+      meta,
+      headers,
+      dns,
+      certIssuer,
+      cookies,
+      scripts,
+    },
+    technologies = Wappalyzer.technologies
+  ) {
     const oo = Wappalyzer.analyzeOneToOne
     const om = Wappalyzer.analyzeOneToMany
     const mm = Wappalyzer.analyzeManyToMany
@@ -217,7 +221,7 @@ const Wappalyzer = {
     try {
       const detections = flatten(
         await Promise.all(
-          Wappalyzer.technologies.map(async (technology) => {
+          technologies.map(async (technology) => {
             await next()
 
             return flatten([
@@ -270,6 +274,7 @@ const Wappalyzer = {
         js,
         implies,
         excludes,
+        requires,
         icon,
         website,
         cpe,
@@ -312,6 +317,9 @@ const Wappalyzer = {
         excludes: transform(excludes).map(({ value }) => ({
           name: value,
         })),
+        requires: transform(requires).map(({ value }) => ({
+          name: value,
+        })),
         icon: icon || 'default.svg',
         website: website || null,
         cpe: cpe || null,
@@ -319,6 +327,29 @@ const Wappalyzer = {
 
       return technologies
     }, [])
+
+    Wappalyzer.technologies
+      .filter(({ requires }) => requires.length)
+      .forEach((technology) =>
+        technology.requires.forEach(({ name }) => {
+          if (!Wappalyzer.getTechnology(name)) {
+            throw new Error(`Required technology does not exist: ${name}`)
+          }
+
+          Wappalyzer.requires[name] = Wappalyzer.requires[name] || []
+
+          Wappalyzer.requires[name].push(technology)
+        })
+      )
+
+    Wappalyzer.requires = Object.keys(Wappalyzer.requires).map((name) => ({
+      name,
+      technologies: Wappalyzer.requires[name],
+    }))
+
+    Wappalyzer.technologies = Wappalyzer.technologies.filter(
+      ({ requires }) => !requires.length
+    )
   },
 
   /**

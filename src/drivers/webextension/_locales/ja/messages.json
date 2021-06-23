@@ -30,7 +30,7 @@
 	"proMessageHeading":               { "message": "Pro機能をアンロックする" },
 	"proMessage":                      { "message": "Proプランに加入すると、訪問したウェブサイトの企業情報や連絡先情報を見ることができます。" },
 	"proButton":                       { "message": "プランの比較" },
-	"proFaq":                          { "message": "FAQ" },
+  "proInfo":                         { "message": "Learn more" },
   "proEmpty":                        { "message": "No results found." },
   "proCrawl":                        { "message": "No results found, please check back later." },
 	"formSave":                        { "message": "保存する" },
@@ -162,5 +162,9 @@
 	"categoryName75":                  { "message": "Eメール" },
 	"categoryName76":                  { "message": "パーソナライズ" },
 	"categoryName77":                  { "message": "リターゲッティング" },
-	"categoryName78":                  { "message": "RUM" }
+	"categoryName78":                  { "message": "RUM" },
+	"categoryName79":                  { "message": "Geolocation" },
+	"categoryName80":                  { "message": "WordPress themes" },
+	"categoryName81":                  { "message": "Shopify themes" },
+	"categoryName82":                  { "message": "Drupal themes" }
 }

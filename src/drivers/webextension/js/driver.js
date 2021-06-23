@@ -298,6 +298,38 @@ const Driver = {
     return !!callback
   },
 
+  async content(url, func, args) {
+    const [tab] = await promisify(chrome.tabs, 'query', {
+      url: globEscape(url),
+    })
+
+    if (!tab) {
+      return
+    }
+
+    return new Promise((resolve, reject) => {
+      chrome.tabs.sendMessage(
+        tab.id,
+        {
+          source: 'driver.js',
+          func,
+          args: args ? (Array.isArray(args) ? args : [args]) : [],
+        },
+        (response) => {
+          chrome.runtime.lastError
+            ? func === 'error'
+              ? resolve()
+              : Driver.error(
+                  new Error(
+                    `${chrome.runtime.lastError}: Driver.${func}(${args})`
+                  )
+                )
+            : resolve(response)
+        }
+      )
+    })
+  },
+
   /**
    * Analyse response headers
    * @param {Object} request
@@ -375,7 +407,7 @@ const Driver = {
    * @param {Object} items
    * @param {String} language
    */
-  async onContentLoad(url, items, language) {
+  async onContentLoad(url, items, language, requires) {
     try {
       const { hostname } = new URL(url)
 
@@ -393,7 +425,10 @@ const Driver = {
 
       await Driver.onDetect(
         url,
-        await analyze({ url, ...items }),
+        await analyze(
+          { url, ...items },
+          requires ? Wappalyzer.requires[requires].technologies : undefined
+        ),
         language,
         true
       )
@@ -429,7 +464,13 @@ const Driver = {
    * @param {String} language
    * @param {Boolean} incrementHits
    */
-  async onDetect(url, detections = [], language, incrementHits = false) {
+  async onDetect(
+    url,
+    detections = [],
+    language,
+    incrementHits = false,
+    analyzeRequires = true
+  ) {
     if (!url || !detections.length) {
       return
     }
@@ -525,6 +566,15 @@ const Driver = {
 
       return detection
     })
+
+    const requires = Wappalyzer.requires
+      .filter(({ name, technologies }) =>
+        resolved.some(({ name: _name }) => _name === name)
+      )
+      .map(({ technologies }) => technologies)
+      .flat()
+
+    Driver.content(url, 'analyzeRequires', [requires])
 
     await Driver.setIcon(url, resolved)
 

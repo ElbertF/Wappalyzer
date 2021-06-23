@@ -20494,8 +20494,8 @@
       "description": "TransUnion TruValidate (previously ReputationShield/IDVision from iovation) is an online risk and fraud detection platform.",
       "icon": "TruValidate.svg",
       "scripts": [
-        "//mpsnare\\.iesnare\\.com/snare\\.js",
-        "//ci-mpsnare\\.iovation\\.com/snare\\.js"
+        "mpsnare\\.iesnare\\.com",
+        "ci-mpsnare\\.iovation\\.com"
       ],
       "website": "https://www.transunion.com/solution/truvalidate"
     },

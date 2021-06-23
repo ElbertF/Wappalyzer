@@ -3647,6 +3647,17 @@
       },
       "website": "http://browsercms.org"
     },
+    "Browser Fingerprint": {
+      "cats": [
+        59
+      ],
+      "description": "Browser Fingerprint is an NPM module for uniquely identifying browsers by examining their header and connection information.",
+      "headers": {
+        "x-__browserFingerprint": ""
+      },
+      "oss": true,
+      "website": "https://github.com/actionhero/browser_fingerprint"
+    },
     "Bsale": {
       "cats": [
         6
@@ -4416,7 +4427,8 @@
     },
     "ClearSale": {
       "cats": [
-        10
+        10,
+        16
       ],
       "description": "ClearSale offers fraud management and chargeback protection services.",
       "icon": "ClearSale.svg",
@@ -4553,6 +4565,21 @@
       },
       "scripts": "static\\.getclicky\\.com",
       "website": "http://getclicky.com"
+    },
+    "ClientJS": {
+      "cats": [
+        59
+      ],
+      "description": "ClientJS is a JavaScript library for generating browser fingerprints, exposing all the browser data-points.",
+      "icon": "ClientJS.png",
+      "js": {
+        "ClientJS": ""
+      },
+      "scripts": [
+        "/clientjs@(\\d.*?)/\\;version:\\1",
+        "/ClientJS/(?:(\\d.*?)/)?\\;version:\\1"
+      ],
+      "website": "http://clientjs.org/"
     },
     "Clipboard.js": {
       "cats": [
@@ -7031,6 +7058,7 @@
       "cats": [
         59
       ],
+      "description": "FingerprintJS is a browser fingerprinting library that queries browser attributes and computes a hashed visitor identifier from them.",
       "icon": "FingerprintJS.svg",
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
@@ -7038,9 +7066,15 @@
         "Fingerprint2.VERSION": "^(.+)$\\;version:\\1",
         "FingerprintJS": ""
       },
+      "oss": true,
       "scripts": [
         "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-        "/fingerprintjs@(\\d)\\;version:\\1"
+        "/fingerprintjs/(?:(\\d.*?)/)?\\;version:\\1",
+        "/fingerprintjs@(\\d.*?)/\\;version:\\1",
+        "/fingerprintjs-pro/(?:(\\d.*?)/)?\\;version:\\1",
+        "/fingerprintjs-pro@(\\d.*?)/\\;version:\\1",
+        "/fingerprintjs2/(?:(\\d.*?)/)?\\;version:\\1",
+        "/fingerprintjs2@(\\d.*?)/\\;version:\\1"
       ],
       "website": "https://fingerprintjs.com/"
     },
@@ -7325,7 +7359,8 @@
     },
     "Forter": {
       "cats": [
-        10
+        10,
+        16
       ],
       "cookies": {
         "forterToken": ""
@@ -7495,7 +7530,7 @@
         32,
         74
       ],
-      "description": "Frosmo is a SaaS company wich provides AI-driven personalisation products.",
+      "description": "Frosmo is a SaaS company which provides AI-driven personalisation products.",
       "icon": "Frosmo.png",
       "js": {
         "_frosmo": "",
@@ -10715,7 +10750,8 @@
     },
     "Kount": {
       "cats": [
-        10
+        10,
+        16
       ],
       "description": "Kount is a suite of fraud detection and prevention solutions for ecommerce businesses.",
       "icon": "Kount.svg",
@@ -12421,6 +12457,16 @@
         "//minero\\.cc/lib/minero(?:-miner|-hidden)?\\.min\\.js"
       ],
       "website": "http://minero.cc/"
+    },
+    "minFraud": {
+      "cats": [
+        16,
+        59
+      ],
+      "description": "MaxMind minFraud is a transaction risk API.",
+      "scripts": "//device\\.maxmind\\.com/js/device\\.js",
+      "website": "https://www.maxmind.com/en/solutions/minfraud-services",
+      "xhr": "minfraud\\.maxmind\\.com"
     },
     "Mint": {
       "cats": [
@@ -14587,6 +14633,10 @@
         "_pxvid": ""
       },
       "icon": "perimeterx.svg",
+      "js": {
+        "_pxAppId": ""
+      },
+      "scripts": "client\\.a\\.pxi\\.pub/",
       "website": "https://www.perimeterx.com/"
     },
     "Perl": {
@@ -20053,6 +20103,16 @@
       "scripts": "cdn(?:-themes)?\\.thinkific\\.com",
       "website": "https://www.thinkific.com"
     },
+    "ThreatMetrix": {
+      "cats": [
+        16,
+        59
+      ],
+      "description": "LexisNexis ThreatMetrix is an enterprise solution for online risk and fraud protection ('digital identity intelligence and digital authentication').",
+      "icon": "ThreatMetrix.svg",
+      "website": "https://risk.lexisnexis.com/products/threatmetrix",
+      "scripts": "\\.online-metrix\\.net"
+    },
     "ThriveCart": {
       "cats": [
         6
@@ -20425,6 +20485,19 @@
       "saas": true,
       "scripts": "\\.trustpilot\\.com",
       "website": "https://business.trustpilot.com"
+    },
+    "TruValidate": {
+      "cats": [
+        16,
+        59
+      ],
+      "description": "TransUnion TruValidate (previously ReputationShield/IDVision from iovation) is an online risk and fraud detection platform.",
+      "icon": "TruValidate.svg",
+      "scripts": [
+        "//mpsnare\\.iesnare\\.com/snare\\.js",
+        "//ci-mpsnare\\.iovation\\.com/snare\\.js"
+      ],
+      "website": "https://www.transunion.com/solution/truvalidate"
     },
     "Tumblr": {
       "cats": [

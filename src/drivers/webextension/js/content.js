@@ -2,12 +2,129 @@
 /* eslint-env browser */
 /* globals chrome */
 
+function getJs(technologies) {
+  return new Promise((resolve) => {
+    // Inject a script tag into the page to access methods of the window object
+    const script = document.createElement('script')
+
+    script.onload = () => {
+      const onMessage = ({ data }) => {
+        if (!data.wappalyzer || !data.wappalyzer.js) {
+          return
+        }
+
+        window.removeEventListener('message', onMessage)
+
+        resolve(data.wappalyzer.js)
+
+        script.remove()
+      }
+
+      window.addEventListener('message', onMessage)
+
+      window.postMessage({
+        wappalyzer: {
+          technologies: technologies
+            .filter(({ js }) => Object.keys(js).length)
+            .map(({ name, js }) => ({ name, chains: Object.keys(js) })),
+        },
+      })
+    }
+
+    script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
+
+    document.body.appendChild(script)
+  })
+}
+
+function getDom(technologies) {
+  return technologies
+    .filter(({ dom }) => dom && dom.constructor === Object)
+    .map(({ name, dom }) => ({ name, dom }))
+    .reduce((technologies, { name, dom }) => {
+      const toScalar = (value) =>
+        typeof value === 'string' || typeof value === 'number' ? value : !!value
+
+      Object.keys(dom).forEach((selector) => {
+        let nodes = []
+
+        try {
+          nodes = document.querySelectorAll(selector)
+        } catch (error) {
+          Content.driver('error', error)
+        }
+
+        if (!nodes.length) {
+          return
+        }
+
+        dom[selector].forEach(({ exists, text, properties, attributes }) => {
+          nodes.forEach((node) => {
+            if (exists) {
+              technologies.push({
+                name,
+                selector,
+                exists: '',
+              })
+            }
+
+            if (text) {
+              const value = node.textContent.trim()
+
+              if (value) {
+                technologies.push({
+                  name,
+                  selector,
+                  text: value,
+                })
+              }
+            }
+
+            if (properties) {
+              Object.keys(properties).forEach((property) => {
+                if (Object.prototype.hasOwnProperty.call(node, property)) {
+                  const value = node[property]
+
+                  if (typeof value !== 'undefined') {
+                    technologies.push({
+                      name,
+                      selector,
+                      property,
+                      value: toScalar(value),
+                    })
+                  }
+                }
+              })
+            }
+
+            if (attributes) {
+              Object.keys(attributes).forEach((attribute) => {
+                if (node.hasAttribute(attribute)) {
+                  const value = node.getAttribute(attribute)
+
+                  technologies.push({
+                    name,
+                    selector,
+                    attribute,
+                    value: toScalar(value),
+                  })
+                }
+              })
+            }
+          })
+        })
+      })
+
+      return technologies
+    }, [])
+}
+
 const Content = {
   href: location.href,
   cache: {},
   language: '',
 
-  requiresAnalyzed: [],
+  analyzedRequires: [],
 
   /**
    * Initialise content script
@@ -119,7 +236,7 @@ const Content = {
 
       Content.cache = { html, css, scripts, meta }
 
-      Content.driver('onContentLoad', [
+      await Content.driver('onContentLoad', [
         Content.href,
         Content.cache,
         Content.language,
@@ -127,12 +244,12 @@ const Content = {
 
       const technologies = await Content.driver('getTechnologies')
 
-      Content.onGetTechnologies(technologies)
+      await Content.onGetTechnologies(technologies)
 
       // Delayed second pass to capture async JS
       await new Promise((resolve) => setTimeout(resolve, 5000))
 
-      Content.onGetTechnologies(technologies)
+      await Content.onGetTechnologies(technologies)
     } catch (error) {
       Content.driver('error', error)
     }
@@ -165,7 +282,7 @@ const Content = {
   },
 
   driver(func, args) {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       chrome.runtime.sendMessage(
         {
           source: 'content.js',
@@ -186,7 +303,9 @@ const Content = {
               : Content.driver(
                   'error',
                   new Error(
-                    `${chrome.runtime.lastError}: Driver.${func}(${args})`
+                    `${
+                      chrome.runtime.lastError.message
+                    }: Driver.${func}(${JSON.stringify(args)})`
                   )
                 )
             : resolve(response)
@@ -195,147 +314,42 @@ const Content = {
     })
   },
 
-  analyzeRequires(requires) {
-    Object.keys(requires).forEach((name) => {
-      if (!Content.requiresAnalyzed.includes(name)) {
-        Content.requiresAnalyzed.push(name)
+  async analyzeRequires(requires) {
+    await Promise.all(
+      Object.keys(requires).map(async (name) => {
+        if (!Content.analyzedRequires.includes(name)) {
+          Content.analyzedRequires.push(name)
 
-        Content.driver('onContentLoad', [
-          Content.href,
-          Content.cache,
-          Content.language,
-          name,
-        ])
+          const technologies = requires[name].technologies
 
-        Content.onGetTechnologies(requires[name].technologies)
-      }
-    })
+          await Promise.all([
+            Content.onGetTechnologies(technologies, name),
+            Content.driver('onContentLoad', [
+              Content.href,
+              Content.cache,
+              Content.language,
+              name,
+            ]),
+          ])
+        }
+      })
+    )
   },
 
   /**
    * Callback for getTechnologies
    * @param {Array} technologies
    */
-  onGetTechnologies(technologies = []) {
-    // Inject a script tag into the page to access methods of the window object
-    const script = document.createElement('script')
+  async onGetTechnologies(technologies = [], requires) {
+    const url = location.href.split('#')[0]
 
-    script.onload = () => {
-      const onMessage = ({ data }) => {
-        if (!data.wappalyzer || !data.wappalyzer.js) {
-          return
-        }
+    const js = await getJs(technologies)
+    const dom = getDom(technologies)
 
-        window.removeEventListener('message', onMessage)
-
-        chrome.runtime.sendMessage({
-          source: 'content.js',
-          func: 'analyzeJs',
-          args: [location.href.split('#')[0], data.wappalyzer.js],
-        })
-
-        script.remove()
-      }
-
-      window.addEventListener('message', onMessage)
-
-      window.postMessage({
-        wappalyzer: {
-          technologies: technologies
-            .filter(({ js }) => Object.keys(js).length)
-            .map(({ name, js }) => ({ name, chains: Object.keys(js) })),
-        },
-      })
-    }
-
-    script.setAttribute('src', chrome.extension.getURL('js/inject.js'))
-
-    document.body.appendChild(script)
-
-    // DOM
-    const dom = technologies
-      .filter(({ dom }) => dom && dom.constructor === Object)
-      .map(({ name, dom }) => ({ name, dom }))
-      .reduce((technologies, { name, dom }) => {
-        const toScalar = (value) =>
-          typeof value === 'string' || typeof value === 'number'
-            ? value
-            : !!value
-
-        Object.keys(dom).forEach((selector) => {
-          let nodes = []
-
-          try {
-            nodes = document.querySelectorAll(selector)
-          } catch (error) {
-            Content.driver('error', error)
-          }
-
-          if (!nodes.length) {
-            return
-          }
-
-          dom[selector].forEach(({ exists, text, properties, attributes }) => {
-            nodes.forEach((node) => {
-              if (exists) {
-                technologies.push({
-                  name,
-                  selector,
-                  exists: '',
-                })
-              }
-
-              if (text) {
-                const value = node.textContent.trim()
-
-                if (value) {
-                  technologies.push({
-                    name,
-                    selector,
-                    text: value,
-                  })
-                }
-              }
-
-              if (properties) {
-                Object.keys(properties).forEach((property) => {
-                  if (Object.prototype.hasOwnProperty.call(node, property)) {
-                    const value = node[property]
-
-                    if (typeof value !== 'undefined') {
-                      technologies.push({
-                        name,
-                        selector,
-                        property,
-                        value: toScalar(value),
-                      })
-                    }
-                  }
-                })
-              }
-
-              if (attributes) {
-                Object.keys(attributes).forEach((attribute) => {
-                  if (node.hasAttribute(attribute)) {
-                    const value = node.getAttribute(attribute)
-
-                    technologies.push({
-                      name,
-                      selector,
-                      attribute,
-                      value: toScalar(value),
-                    })
-                  }
-                })
-              }
-            })
-          })
-        })
-
-        return technologies
-      }, [])
-
-    Content.driver('analyzeDom', [location.href, dom])
+    await Promise.all([
+      Content.driver('analyzeJs', [url, js, requires]),
+      Content.driver('analyzeDom', [url, dom, requires]),
+    ])
   },
 }
 

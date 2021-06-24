@@ -316,6 +316,10 @@
     "82": {
       "name": "Drupal themes",
       "priority": 9
+    },
+    "83": {
+      "name": "Browser fingerprinting",
+      "priority": 9
     }
   },
   "technologies": {
@@ -4437,7 +4441,7 @@
       "description": "ClearSale offers fraud management and chargeback protection services.",
       "icon": "ClearSale.svg",
       "js": {
-        "window.csdm": "\\;confidence:50"
+        "csdm": "\\;confidence:50"
       },
       "scripts": [
         "device\\.clearsale\\.com\\.br"
@@ -4569,6 +4573,23 @@
       },
       "scripts": "static\\.getclicky\\.com",
       "website": "http://getclicky.com"
+    },
+    "ClientJS": {
+      "cats": [
+        59,
+        83
+      ],
+      "description": "ClientJS is a JavaScript library for generating browser fingerprints, exposing all the browser data-points.",
+      "icon": "ClientJS.png",
+      "js": {
+        "ClientJS": ""
+      },
+      "scripts": [
+        "/clientjs@(\\d.*?)/\\;version:\\1",
+        "/ClientJS/(?:(\\d.*?)/)?\\;version:\\1"
+      ],
+      "oss": true,
+      "website": "http://clientjs.org"
     },
     "Clipboard.js": {
       "cats": [
@@ -4988,6 +5009,20 @@
       "website": "http://www.contentful.com",
       "xhr": "cdn\\.contentful\\.com"
     },
+    "Contentstack": {
+      "cats": [
+        1
+      ],
+      "description": "Contentstack is a headless CMS software designed to help businesses deliver personalized content experiences to audiences via multiple channels.",
+      "icon": "Contentstack.png",
+      "dom": "img[src*='images.contentstack.io']",
+      "saas": true,
+      "pricing": [
+        "high",
+        "recurring"
+      ],
+      "website": "https://www.contentstack.com"
+    },
     "Convert": {
       "cats": [
         74
@@ -5386,6 +5421,24 @@
       "scripts": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
       "website": "http://d3js.org"
     },
+    "db-ip": {
+      "cats": [
+        79
+      ],
+      "description": "dbip is a geolocation API and database.",
+      "icon": "db-ip.png",
+      "xhr": "api\\.db-ip\\.com",
+      "scripts": "cdn\\.db-ip\\.com",
+      "js": {
+        "ENV.dbip": ""
+      },
+      "saas": true,
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "website": "https://db-ip.com/"
+    },
     "DERAK.CLOUD": {
       "cats": [
         31
@@ -5697,6 +5750,28 @@
       "certIssuer": "DigiCert",
       "icon": "DigiCert.svg",
       "website": "https://www.digicert.com/"
+    },
+    "Digistore24": {
+      "cats": [
+        71
+      ],
+      "description": "Digistore24 is a German digital reselling and affiliate marketing platform.",
+      "icon": "Digistore24.svg",
+      "dom": "a[href*='www.digistore24.com'][target='_blank']",
+      "js": {
+        "getTheSourceForDigistoreLinks": "",
+        "DIGISTORE_VENDORKEY": "",
+        "DIGISTORE_LINK_ID_KEY": ""
+      },
+      "scripts": [
+        "digistore/digistore\\.js",
+        "www\\.digistore24\\.com"
+      ],
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
+      "website": "https://www.digistore24.com"
     },
     "DigitalRiver": {
       "cats": [
@@ -7045,8 +7120,10 @@
     },
     "FingerprintJS": {
       "cats": [
-        59
+        59,
+        83
       ],
+      "description": "FingerprintJS is a browser fingerprinting library that queries browser attributes and computes a hashed visitor identifier from them.",
       "icon": "FingerprintJS.svg",
       "js": {
         "Fingerprint": "(\\d)?$\\;version:\\1",
@@ -7056,9 +7133,18 @@
       },
       "scripts": [
         "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-        "/fingerprintjs@(\\d)\\;version:\\1"
+        "/fingerprintjs@(\\d.*?)/\\;version:\\1",
+        "/fingerprintjs-pro/(?:(\\d.*?)/)?\\;version:\\1",
+        "/fingerprintjs-pro@(\\d.*?)/\\;version:\\1",
+        "/fingerprintjs2/(?:(\\d.*?)/)?\\;version:\\1",
+        "/fingerprintjs2@(\\d.*?)/\\;version:\\1"
       ],
-      "website": "https://fingerprintjs.com/"
+      "saas": true,
+      "oss": true,
+      "pricing": [
+        "payg"
+      ],
+      "website": "https://fingerprintjs.com"
     },
     "Firebase": {
       "cats": [
@@ -7114,6 +7200,24 @@
       "scripts": "\\.firstimpression\\.io",
       "website": "https://www.firstimpression.io",
       "xhr": "\\.firstimpression\\.io"
+    },
+    "Fit Analytics": {
+      "cats": [
+        5,
+        76
+      ],
+      "description": "Fit Analytics is a platform that provides clothing size recommendations for online customers by measuring individual dimensions via webcams.",
+      "icon": "Fit Analytics.png",
+      "js": {
+        "_fitAnalytics": "",
+        "FitAnalyticsWidget": ""
+      },
+      "scripts": "\\.fitanalytics\\.com",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.fitanalytics.com"
     },
     "Flarum": {
       "cats": [
@@ -7341,18 +7445,23 @@
     },
     "Forter": {
       "cats": [
-        10
+        6,
+        16
       ],
       "cookies": {
         "forterToken": ""
       },
-      "description": "Forter provides fraud prevention technology for online retailers and marketplaces.",
+      "description": "Forter is a SaaS company that provides fraud prevention technology for online retailers and marketplaces.",
       "icon": "Forter.svg",
       "js": {
-        "window.ftr__startScriptLoad": ""
+        "ftr__startScriptLoad": ""
       },
       "scripts": "forter\\.com",
-      "website": "https://www.forter.com/"
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.forter.com"
     },
     "Fortune3": {
       "cats": [
@@ -7511,7 +7620,7 @@
         32,
         74
       ],
-      "description": "Frosmo is a SaaS company wich provides AI-driven personalisation products.",
+      "description": "Frosmo is a SaaS company which provides AI-driven personalisation products.",
       "icon": "Frosmo.png",
       "js": {
         "_frosmo": "",
@@ -7853,6 +7962,7 @@
     },
     "Ghost": {
       "cats": [
+        1,
         11
       ],
       "description": "Ghost is a free and open-source blogging platform written in JavaScript, designed to simplify the process of online publishing for individual bloggers as well as online publications.",
@@ -9644,6 +9754,124 @@
       "icon": "Ionicons.png",
       "website": "http://ionicons.com"
     },
+    "ip-api": {
+      "cats": [
+        79
+      ],
+      "icon": "ip-api.png",
+      "xhr": "ip-api\\.com/",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "website": "https://ip-api.com/"
+    },
+    "ipapi.co": {
+      "cats": [
+        79
+      ],
+      "description": "ipapi.co is a web analytics provider with IP address lookup and location API.",
+      "icon": "ipapi.co.png",
+      "xhr": "ipapi\\.co/",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "website": "https://ipapi.co"
+    },
+    "ipapi": {
+      "cats": [
+        79
+      ],
+      "description": "ipapi is a real-time geolocation and reverse IP lookup REST API.",
+      "icon": "ipapi.png",
+      "xhr": "api\\.ipapi\\.com",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "website": "https://ipapi.com"
+    },
+    "ipdata": {
+      "cats": [
+        79
+      ],
+      "description": "ipdata is a JSON IP Address Geolocation API that allows to lookup the location of both IPv4 and IPv6.",
+      "icon": "ipdata.png",
+      "xhr": "api\\.ipdata\\.co",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "recurring",
+        "low"
+      ],
+      "website": "https://ipdata.co/"
+    },
+    "ipgeolocation": {
+      "cats": [
+        79
+      ],
+      "description": "ipgeolocation is an IP Geolocation API and Accurate IP Lookup Database.",
+      "icon": "ipgeolocation.png",
+      "xhr": "api\\.ipgeolocation\\.io",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "recurring",
+        "mid"
+      ],
+      "website": "https://ipgeolocation.co/"
+    },
+    "ipify": {
+      "cats": [
+        79
+      ],
+      "description": "ipify is a service which provide public IP address API, IP geolocation API, VPN and Proxy detection API products.",
+      "icon": "ipify.png",
+      "xhr": "(?:api|api64|geo)\\.ipify\\.org",
+      "scripts": "\\.ipify\\.org",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "payg",
+        "mid",
+        "recurring"
+      ],
+      "website": "https://ipify.org"
+    },
+    "IPInfoDB": {
+      "cats": [
+        79
+      ],
+      "description": "IPInfoDB is the API that returns the location of an IP address.",
+      "icon": "IPInfoDB.png",
+      "xhr": "api\\.ipinfodb\\.com",
+      "saas": true,
+      "website": "https://www.ipinfodb.com/"
+    },
+    "ipstack": {
+      "cats": [
+        79
+      ],
+      "description": "ipstack is a real-time IP to geolocation API capable of looking at location data and assessing security threats originating from risky IP addresses.",
+      "icon": "ipstack.png",
+      "xhr": "api\\.ipstack\\.com",
+      "js": {
+        "ENV.ipStackAccessToken": ""
+      },
+      "saas": true,
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "website": "https://ipstack.com"
+    },
     "Irroba": {
       "cats": [
         6
@@ -10731,7 +10959,8 @@
     },
     "Kount": {
       "cats": [
-        10
+        6,
+        16
       ],
       "description": "Kount is a suite of fraud detection and prevention solutions for ecommerce businesses.",
       "icon": "Kount.svg",
@@ -10742,7 +10971,11 @@
       "scripts": [
         "shopify\\.kount\\.net/js"
       ],
-      "website": "https://kount.com/"
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://kount.com"
     },
     "Kubernetes Dashboard": {
       "cats": [
@@ -12026,6 +12259,25 @@
         "generator": "MaxSite CMS"
       },
       "website": "http://max-3000.com"
+    },
+    "MaxMind": {
+      "cats": [
+        79,
+        83
+      ],
+      "icon": "MaxMind.png",
+      "description": "MaxMind is a provider of geolocation and online fraud detection tools.",
+      "scripts": [
+        "[device|js]\\.maxmind\\.com/",
+        "geoip\\.maxmind\\.min\\.js"
+      ],
+      "xhr": "\\.maxmind\\.com",
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "website": "https://www.maxmind.com"
     },
     "Maxemail": {
       "cats": [
@@ -14596,14 +14848,25 @@
       "cats": [
         16
       ],
+      "icon": "perimeterx.svg",
+      "description": "PerimeterX is a provider of scalable, behavior-based threat protection technology for the web, cloud, and mobile.",
       "cookies": {
         "_px3": "",
         "_pxff_cc": "",
         "_pxhd": "",
         "_pxvid": ""
       },
-      "icon": "perimeterx.svg",
-      "website": "https://www.perimeterx.com/"
+      "js": {
+        "_pxAppId": ""
+      },
+      "scripts": "client\\.a\\.pxi\\.pub/",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "recurring",
+        "poa"
+      ],
+      "website": "https://www.perimeterx.com"
     },
     "Perl": {
       "cats": [
@@ -19598,6 +19861,26 @@
       },
       "website": "https://github.com/syntaxhighlighter"
     },
+    "Syte": {
+      "cats": [
+        76,
+        29
+      ],
+      "description": "Syte is a provider of visual AI technology that aims to improve retailers' site navigation, product discovery, and user experience by powering solutions that engage and convert shoppers.",
+      "icon": "Syte.svg",
+      "dom": "img[src*='cdn.syteapi.com']",
+      "js": {
+        "SyteApi.getBinImageBB": "",
+        "SyteApp.Analytics": "",
+        "SytePixel": ""
+      },
+      "scripts": "cdn\\.syteapi\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.syte.ai"
+    },
     "T-Soft": {
       "cats": [
         6
@@ -20069,6 +20352,20 @@
       "scripts": "cdn(?:-themes)?\\.thinkific\\.com",
       "website": "https://www.thinkific.com"
     },
+    "ThreatMetrix": {
+      "cats": [
+        16,
+        83
+      ],
+      "description": "LexisNexis ThreatMetrix is an enterprise solution for online risk and fraud protection ('digital identity intelligence and digital authentication').",
+      "icon": "ThreatMetrix.svg",
+      "scripts": "\\.online-metrix\\.net",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://risk.lexisnexis.com/products/threatmetrix"
+    },
     "ThriveCart": {
       "cats": [
         6
@@ -20442,6 +20739,23 @@
       "scripts": "\\.trustpilot\\.com",
       "website": "https://business.trustpilot.com"
     },
+    "TruValidate": {
+      "cats": [
+        16,
+        83
+      ],
+      "description": "TransUnion TruValidate (previously ReputationShield/IDVision from iovation) is an online risk and fraud detection platform.",
+      "icon": "TruValidate.svg",
+      "scripts": [
+        "mpsnare\\.iesnare\\.com",
+        "ci-mpsnare\\.iovation\\.com"
+      ],
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.transunion.com/solution/truvalidate"
+    },
     "Tumblr": {
       "cats": [
         11
@@ -20704,6 +21018,17 @@
       },
       "icon": "UNIX.png",
       "website": "http://unix.org"
+    },
+    "Unpkg": {
+      "cats": [
+        31
+      ],
+      "description": "Unpkg is a content delivery network for everything on npm.",
+      "icon": "Unpkg.png",
+      "dom": "link[href*='unpkg.com']",
+      "scripts": "unpkg\\.com/",
+      "oss": true,
+      "website": "https://unpkg.com"
     },
     "Ubercart": {
       "cats": [
@@ -24208,6 +24533,28 @@
         "styled": ""
       },
       "website": "https://styled-components.com"
+    },
+    "Stylitics": {
+      "cats": [
+        5,
+        32
+      ],
+      "description": "Stylitics is a cloud-based SaaS platform for retailers to automate and distribute visual content at scale.",
+      "icon": "Stylitics.svg",
+      "dom": "link[href*='.stylitics.com']",
+      "js": {
+        "Stylitics": "",
+        "stylitics": ""
+      },
+      "scripts": [
+        "\\.stylitics\\.com/v([\\d.]+)\\;version:\\1",
+        "/stylitics/js/stylitics\\.js\\?ver=v([\\d.]+)\\;version:\\1"
+      ],
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://stylitics.com"
     },
     "swift.engine": {
       "cats": [

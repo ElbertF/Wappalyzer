@@ -42,9 +42,7 @@ const Driver = {
                 pattern: { regex, confidence },
                 version,
               }) => ({
-                technology: Wappalyzer.technologies.find(
-                  ({ name: _name }) => name === _name
-                ),
+                technology: getTechnology(name, true),
                 pattern: {
                   regex: new RegExp(regex, 'i'),
                   confidence,
@@ -121,7 +119,7 @@ const Driver = {
    */
   log(message, source = 'driver', type = 'log') {
     // eslint-disable-next-line no-console
-    console[type](`wappalyzer | ${source} |`, message)
+    console[type](message)
   },
 
   /**
@@ -177,7 +175,11 @@ const Driver = {
    * @param {String} url
    * @param {Array} js
    */
-  async analyzeJs(url, js) {
+  async analyzeJs(url, js, requires) {
+    const technologies = requires
+      ? Wappalyzer.requires[requires].technologies
+      : Wappalyzer.technologies
+
     return Driver.onDetect(
       url,
       Array.prototype.concat.apply(
@@ -187,7 +189,7 @@ const Driver = {
             await next()
 
             return analyzeManyToMany(
-              Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+              technologies.find(({ name: _name }) => name === _name),
               'js',
               { [chain]: [value] }
             )
@@ -202,7 +204,11 @@ const Driver = {
    * @param {String} url
    * @param {Array} dom
    */
-  async analyzeDom(url, dom) {
+  async analyzeDom(url, dom, requires) {
+    const technologies = requires
+      ? Wappalyzer.requires[requires].technologies
+      : Wappalyzer.technologies
+
     return Driver.onDetect(
       url,
       Array.prototype.concat.apply(
@@ -215,7 +221,7 @@ const Driver = {
             ) => {
               await next()
 
-              const technology = Wappalyzer.technologies.find(
+              const technology = technologies.find(
                 ({ name: _name }) => name === _name
               )
 
@@ -283,7 +289,9 @@ const Driver = {
       return
     }
 
-    Driver.log({ source, func, args })
+    if (func !== 'log') {
+      Driver.log({ source, func, args })
+    }
 
     if (!Driver[func]) {
       Driver.error(new Error(`Method does not exist: Driver.${func}`))
@@ -307,6 +315,10 @@ const Driver = {
       return
     }
 
+    if (tab.status !== 'complete') {
+      throw new Error(`Tab ${tab.id} not ready for sendMessage: ${tab.status}`)
+    }
+
     return new Promise((resolve, reject) => {
       chrome.tabs.sendMessage(
         tab.id,
@@ -321,7 +333,9 @@ const Driver = {
               ? resolve()
               : Driver.error(
                   new Error(
-                    `${chrome.runtime.lastError}: Driver.${func}(${args})`
+                    `${
+                      chrome.runtime.lastError.message
+                    }: Driver.${func}(${JSON.stringify(args)})`
                   )
                 )
             : resolve(response)
@@ -567,14 +581,15 @@ const Driver = {
       return detection
     })
 
-    const requires = Wappalyzer.requires
-      .filter(({ name, technologies }) =>
-        resolved.some(({ name: _name }) => _name === name)
-      )
-      .map(({ technologies }) => technologies)
-      .flat()
+    const requires = Wappalyzer.requires.filter(({ name, technologies }) =>
+      resolved.some(({ name: _name }) => _name === name)
+    )
 
-    Driver.content(url, 'analyzeRequires', [requires])
+    try {
+      await Driver.content(url, 'analyzeRequires', [requires])
+    } catch (error) {
+      // Continue
+    }
 
     await Driver.setIcon(url, resolved)
 

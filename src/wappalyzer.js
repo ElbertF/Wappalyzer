@@ -11,7 +11,7 @@ function toArray(value) {
 const Wappalyzer = {
   technologies: [],
   categories: [],
-  requires: {},
+  requires: [],
 
   slugify: (string) =>
     string
@@ -21,7 +21,10 @@ const Wappalyzer = {
       .replace(/(?:^-|-$)/g, ''),
 
   getTechnology: (name) =>
-    Wappalyzer.technologies.find(({ name: _name }) => name === _name),
+    [
+      ...Wappalyzer.technologies,
+      ...Wappalyzer.requires.map(({ technologies }) => technologies).flat(),
+    ].find(({ name: _name }) => name === _name),
 
   getCategory: (id) => Wappalyzer.categories.find(({ id: _id }) => id === _id),
 

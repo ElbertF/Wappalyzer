@@ -13,6 +13,7 @@
 
 * {
   box-sizing: border-box;
+  scrollbar-width: none;
 }
 
 body {
@@ -23,8 +24,11 @@ body {
   font-size: .9rem;
   line-height: 1.5rem;
 	margin: 0;
-  width: 34rem;
   overflow-x: hidden;
+}
+
+.body__popup {
+  width: 34rem;
 }
 
 a, a:focus, a:hover {

@@ -42,20 +42,17 @@ const footers = [
 ]
 
 function setDisabledDomain(enabled) {
+  const el = {
+    headerSwitchEnabled: document.querySelector('.header__switch--enabled'),
+    headerSwitchDisabled: document.querySelector('.header__switch--disabled'),
+  }
+
   if (enabled) {
-    document
-      .querySelector('.header__switch--enabled')
-      .classList.add('header__switch--hidden')
-    document
-      .querySelector('.header__switch--disabled')
-      .classList.remove('header__switch--hidden')
+    el.headerSwitchEnabled.classList.add('header__switch--hidden')
+    el.headerSwitchDisabled.classList.remove('header__switch--hidden')
   } else {
-    document
-      .querySelector('.header__switch--enabled')
-      .classList.remove('header__switch--hidden')
-    document
-      .querySelector('.header__switch--disabled')
-      .classList.add('header__switch--hidden')
+    el.headerSwitchEnabled.classList.remove('header__switch--hidden')
+    el.headerSwitchDisabled.classList.add('header__switch--hidden')
   }
 }
 
@@ -64,10 +61,39 @@ const Popup = {
    * Initialise popup
    */
   async init() {
+    const el = {
+      body: document.body,
+      terms: document.querySelector('.terms'),
+      detections: document.querySelector('.detections'),
+      empty: document.querySelector('.empty'),
+      footer: document.querySelector('.footer'),
+      tabPro: document.querySelector('.tab--pro'),
+      termsButtonAccept: document.querySelector('.terms__button--accept'),
+      termsButtonDecline: document.querySelector('.terms__button--decline'),
+      headerSwitches: document.querySelectorAll('.header__switch'),
+      headerSwitchEnabled: document.querySelector('.header__switch--enabled'),
+      headerSwitchDisabled: document.querySelector('.header__switch--disabled'),
+      proConfigureApiKey: document.querySelector('.pro-configure__apikey'),
+      proConfigureSave: document.querySelector('.pro-configure__save'),
+      headerSettings: document.querySelector('.header__settings'),
+      headerThemes: document.querySelectorAll('.header__theme'),
+      headerThemeLight: document.querySelector('.header__theme--light'),
+      headerThemeDark: document.querySelector('.header__theme--dark'),
+      templates: document.querySelectorAll('[data-template]'),
+      tabs: document.querySelectorAll('.tab'),
+      tabItems: document.querySelectorAll('.tab-item'),
+      credits: document.querySelector('.credits'),
+      footerHeadingText: document.querySelector('.footer__heading-text'),
+      footerContentBody: document.querySelector('.footer__content-body'),
+      footerButtonText: document.querySelector('.footer .button__text'),
+      footerButtonLink: document.querySelector('.footer .button__link'),
+      footerToggleClose: document.querySelector('.footer__toggle--close'),
+      footerToggleOpen: document.querySelector('.footer__toggle--open'),
+      footerHeading: document.querySelector('.footer__heading'),
+    }
+
     // Templates
-    Popup.templates = Array.from(
-      document.querySelectorAll('[data-template]')
-    ).reduce((templates, template) => {
+    Popup.templates = Array.from(el.templates).reduce((templates, template) => {
       templates[template.dataset.template] = template.cloneNode(true)
 
       template.remove()
@@ -79,7 +105,7 @@ const Popup = {
     const dynamicIcon = await getOption('dynamicIcon', false)
 
     if (dynamicIcon) {
-      document.querySelector('body').classList.add('dynamic-icon')
+      el.body.classList.add('dynamic-icon')
     }
 
     // Disabled domains
@@ -89,13 +115,9 @@ const Popup = {
     const theme = await getOption('theme', 'light')
 
     if (theme === 'dark') {
-      document.querySelector('body').classList.add('dark')
-      document
-        .querySelector('.header__theme--light')
-        .classList.remove('header__icon--hidden')
-      document
-        .querySelector('.header__theme--dark')
-        .classList.add('header__icon--hidden')
+      el.body.classList.add('dark')
+      el.headerThemeLight.classList.remove('header__icon--hidden')
+      el.headerThemeDark.classList.add('header__icon--hidden')
     }
 
     // Terms
@@ -103,44 +125,39 @@ const Popup = {
       agent === 'chrome' || (await getOption('termsAccepted', false))
 
     if (termsAccepted) {
-      document.querySelector('.terms').classList.add('terms--hidden')
-      document.querySelector('.empty').classList.remove('empty--hidden')
+      el.terms.classList.add('terms--hidden')
 
-      Popup.onGetDetections(await Popup.driver('getDetections'))
+      Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
     } else {
-      document.querySelector('.terms').classList.remove('terms--hidden')
-      document.querySelector('.detections').classList.add('detections--hidden')
-      document.querySelector('.empty').classList.add('empty--hidden')
-      document.querySelector('.footer').classList.add('footer--hidden')
-      document.querySelector('.tab--pro').classList.add('tab--disabled')
+      el.terms.classList.remove('terms--hidden')
+      el.detections.classList.add('detections--hidden')
+      el.footer.classList.add('footer--hidden')
+      el.tabPro.classList.add('tab--disabled')
 
-      document
-        .querySelector('.terms__button--accept')
-        .addEventListener('click', async () => {
-          await setOption('termsAccepted', true)
-          await setOption('tracking', true)
+      el.termsButtonAccept.addEventListener('click', async () => {
+        await setOption('termsAccepted', true)
+        await setOption('tracking', true)
 
-          document.querySelector('.terms').classList.add('terms--hidden')
-          document.querySelector('.empty').classList.remove('empty--hidden')
-          document.querySelector('.footer').classList.remove('footer--hidden')
-          document.querySelector('.tab--pro').classList.remove('tab--disabled')
+        el.terms.classList.add('terms--hidden')
+        el.footer.classList.remove('footer--hidden')
+        el.tabPro.classList.remove('tab--disabled')
 
-          Popup.onGetDetections(await Popup.driver('getDetections'))
-        })
+        Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
+      })
 
-      document
-        .querySelector('.terms__button--decline')
-        .addEventListener('click', async () => {
+      el.termsButtonDecline('.terms__button--decline').addEventListener(
+        'click',
+        async () => {
           await setOption('termsAccepted', true)
           await setOption('tracking', false)
 
-          document.querySelector('.terms').classList.add('terms--hidden')
-          document.querySelector('.empty').classList.remove('empty--hidden')
-          document.querySelector('.footer').classList.remove('footer--hidden')
-          document.querySelector('.tab--pro').classList.remove('tab--disabled')
+          el.terms.classList.add('terms--hidden')
+          el.footer.classList.remove('footer--hidden')
+          el.tabPro.classList.remove('tab--disabled')
 
-          Popup.onGetDetections(await Popup.driver('getDetections'))
-        })
+          Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
+        }
+      )
     }
 
     let url
@@ -158,76 +175,61 @@ const Popup = {
 
         setDisabledDomain(disabledDomains.includes(hostname))
 
-        document
-          .querySelector('.header__switch--disabled')
-          .addEventListener('click', async () => {
-            disabledDomains = disabledDomains.filter(
-              (_hostname) => _hostname !== hostname
-            )
+        el.headerSwitchDisabled.addEventListener('click', async () => {
+          disabledDomains = disabledDomains.filter(
+            (_hostname) => _hostname !== hostname
+          )
 
-            await setOption('disabledDomains', disabledDomains)
+          await setOption('disabledDomains', disabledDomains)
 
-            setDisabledDomain(false)
+          setDisabledDomain(false)
 
-            Popup.onGetDetections(await Popup.driver('getDetections'))
-          })
+          Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
+        })
 
-        document
-          .querySelector('.header__switch--enabled')
-          .addEventListener('click', async () => {
-            disabledDomains.push(hostname)
+        el.headerSwitchEnabled.addEventListener('click', async () => {
+          disabledDomains.push(hostname)
 
-            await setOption('disabledDomains', disabledDomains)
+          await setOption('disabledDomains', disabledDomains)
 
-            setDisabledDomain(true)
+          setDisabledDomain(true)
 
-            Popup.onGetDetections(await Popup.driver('getDetections'))
-          })
+          Popup.driver('getDetections').then(Popup.onGetDetections.bind(this))
+        })
       } else {
-        for (const el of document.querySelectorAll('.header__switch')) {
-          el.classList.add('header__switch--hidden')
+        for (const headerSwitch of el.headerSwitches) {
+          headerSwitch.classList.add('header__switch--hidden')
         }
 
-        document.querySelector('.tab--pro').classList.add('tab--disabled')
+        el.tabPro.classList.add('tab--disabled')
       }
     }
 
     // PRO configuration
-    const apiKey = document.querySelector('.pro-configure__apikey')
+    el.proConfigureApiKey.value = await getOption('apiKey', '')
 
-    apiKey.value = await getOption('apiKey', '')
+    el.proConfigureSave.addEventListener('click', async (event) => {
+      await setOption('apiKey', el.proConfigureApiKey.value)
 
-    document
-      .querySelector('.pro-configure__save')
-      .addEventListener('click', async (event) => {
-        await setOption(
-          'apiKey',
-          document.querySelector('.pro-configure__apikey').value
-        )
-
-        await Popup.getPro(url)
-      })
+      await Popup.getPro(url)
+    })
 
     // Header
-    document
-      .querySelector('.header__settings')
-      .addEventListener('click', () => chrome.runtime.openOptionsPage())
+    el.headerSettings.addEventListener('click', () =>
+      chrome.runtime.openOptionsPage()
+    )
 
     // Theme
-    const body = document.querySelector('body')
-    const dark = document.querySelector('.header__theme--dark')
-    const light = document.querySelector('.header__theme--light')
-
-    document.querySelectorAll('.header__theme').forEach((el) =>
-      el.addEventListener('click', async () => {
+    el.headerThemes.forEach((headerTheme) =>
+      headerTheme.addEventListener('click', async () => {
         const theme = await getOption('theme', 'light')
 
-        body.classList[theme === 'dark' ? 'remove' : 'add']('dark')
-        body.classList[theme === 'dark' ? 'add' : 'remove']('light')
-        dark.classList[theme === 'dark' ? 'remove' : 'add'](
+        el.body.classList[theme === 'dark' ? 'remove' : 'add']('dark')
+        el.body.classList[theme === 'dark' ? 'add' : 'remove']('light')
+        el.headerThemeDark.classList[theme === 'dark' ? 'remove' : 'add'](
           'header__icon--hidden'
         )
-        light.classList[theme === 'dark' ? 'add' : 'remove'](
+        el.headerThemeLight.classList[theme === 'dark' ? 'add' : 'remove'](
           'header__icon--hidden'
         )
 
@@ -236,19 +238,16 @@ const Popup = {
     )
 
     // Tabs
-    const tabHeadings = Array.from(document.querySelectorAll('.tab'))
-    const tabItems = Array.from(document.querySelectorAll('.tab-item'))
-    const credits = document.querySelector('.credits')
-
-    tabHeadings.forEach((tab, index) => {
+    el.tabs.forEach((tab, index) => {
       tab.addEventListener('click', async () => {
-        tabHeadings.forEach((tab) => tab.classList.remove('tab--active'))
-        tabItems.forEach((item) => item.classList.add('tab-item--hidden'))
+        el.tabs.forEach((tab) => tab.classList.remove('tab--active'))
+        el.tabItems.forEach((item) => item.classList.add('tab-item--hidden'))
 
         tab.classList.add('tab--active')
-        tabItems[index].classList.remove('tab-item--hidden')
+        el.tabItems[index].classList.remove('tab-item--hidden')
 
-        credits.classList.add('credits--hidden')
+        el.credits.classList.add('credits--hidden')
+        el.footer.classList.remove('footer--hidden')
 
         if (tab.classList.contains('tab--pro')) {
           await Popup.getPro(url)
@@ -264,39 +263,32 @@ const Popup = {
           : Math.round(Math.random() * (footers.length - 1))
       ]
 
-    document.querySelector('.footer__heading-text').textContent = item.heading
-    document.querySelector('.footer__content-body').textContent = item.body
-    document.querySelector('.footer .button__text').textContent =
-      item.buttonText
-    document.querySelector('.footer .button__link').href = item.buttonLink
+    el.footerHeadingText.textContent = item.heading
+    el.footerContentBody.textContent = item.body
+    el.footerButtonText.textContent = item.buttonText
+    el.footerButtonLink.href = item.buttonLink
 
     const collapseFooter = await getOption('collapseFooter', false)
 
-    const footer = document.querySelector('.footer')
-    const footerClose = document.querySelector('.footer__toggle--close')
-    const footerOpen = document.querySelector('.footer__toggle--open')
-
     if (collapseFooter) {
-      footer.classList.add('footer--collapsed')
-      footerClose.classList.add('footer__toggle--hidden')
-      footerOpen.classList.remove('footer__toggle--hidden')
+      el.footer.classList.add('footer--collapsed')
+      el.footerToggleClose.classList.add('footer__toggle--hidden')
+      el.footerToggleOpen.classList.remove('footer__toggle--hidden')
     }
 
-    document
-      .querySelector('.footer__heading')
-      .addEventListener('click', async () => {
-        const collapsed = footer.classList.contains('footer--collapsed')
+    el.footerHeading.addEventListener('click', async () => {
+      const collapsed = el.footer.classList.contains('footer--collapsed')
 
-        footer.classList[collapsed ? 'remove' : 'add']('footer--collapsed')
-        footerClose.classList[collapsed ? 'remove' : 'add'](
-          'footer__toggle--hidden'
-        )
-        footerOpen.classList[collapsed ? 'add' : 'remove'](
-          'footer__toggle--hidden'
-        )
+      el.footer.classList[collapsed ? 'remove' : 'add']('footer--collapsed')
+      el.footerToggleClose.classList[collapsed ? 'remove' : 'add'](
+        'footer__toggle--hidden'
+      )
+      el.footerToggleOpen.classList[collapsed ? 'add' : 'remove'](
+        'footer__toggle--hidden'
+      )
 
-        await setOption('collapseFooter', !collapsed)
-      })
+      await setOption('collapseFooter', !collapsed)
+    })
 
     Array.from(document.querySelectorAll('a')).forEach((a) =>
       a.addEventListener('click', (event) => {
@@ -353,25 +345,27 @@ const Popup = {
    * @param {Array} detections
    */
   async onGetDetections(detections = []) {
+    const el = {
+      empty: document.querySelector('.empty'),
+      detections: document.querySelector('.detections'),
+    }
+
     detections = (detections || [])
       .filter(({ confidence }) => confidence >= 50)
       .filter(({ slug }) => slug !== 'cart-functionality')
 
     if (!detections || !detections.length) {
-      document.querySelector('.empty').classList.remove('empty--hidden')
-      document.querySelector('.detections').classList.add('detections--hidden')
+      el.empty.classList.remove('empty--hidden')
+      el.detections.classList.add('detections--hidden')
 
       return
     }
 
-    document.querySelector('.empty').classList.add('empty--hidden')
+    el.empty.classList.add('empty--hidden')
+    el.detections.classList.remove('detections--hidden')
 
-    const el = document.querySelector('.detections')
-
-    el.classList.remove('detections--hidden')
-
-    while (el.firstChild) {
-      el.removeChild(detections.lastChild)
+    while (el.detections.firstChild) {
+      el.detections.removeChild(detections.firstChild)
     }
 
     const pinnedCategory = await getOption('pinnedCategory')
@@ -381,31 +375,34 @@ const Popup = {
     categorised.forEach(({ id, name, slug: categorySlug, technologies }) => {
       const categoryNode = Popup.templates.category.cloneNode(true)
 
-      const link = categoryNode.querySelector('.category__link')
-
-      link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
-      link.dataset.i18n = `categoryName${id}`
-
-      const pins = categoryNode.querySelectorAll('.category__pin')
-
-      if (pinnedCategory === id) {
-        pins.forEach((pin) => pin.classList.add('category__pin--active'))
+      const el = {
+        detections: document.querySelector('.detections'),
+        link: categoryNode.querySelector('.category__link'),
+        pins: categoryNode.querySelectorAll('.category__pin'),
+        pinsActive: document.querySelectorAll('.category__pin--active'),
       }
 
-      pins.forEach((pin) =>
+      el.link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
+      el.link.dataset.i18n = `categoryName${id}`
+
+      if (pinnedCategory === id) {
+        el.pins.forEach((pin) => pin.classList.add('category__pin--active'))
+      }
+
+      el.pins.forEach((pin) =>
         pin.addEventListener('click', async () => {
           const pinnedCategory = await getOption('pinnedCategory')
 
-          Array.from(
-            document.querySelectorAll('.category__pin--active')
-          ).forEach((pin) => pin.classList.remove('category__pin--active'))
+          el.pinsActive.forEach((pin) =>
+            pin.classList.remove('category__pin--active')
+          )
 
           if (pinnedCategory === id) {
             await setOption('pinnedCategory', null)
           } else {
             await setOption('pinnedCategory', id)
 
-            pins.forEach((pin) => pin.classList.add('category__pin--active'))
+            el.pins.forEach((pin) => pin.classList.add('category__pin--active'))
           }
         })
       )
@@ -414,49 +411,41 @@ const Popup = {
         ({ name, slug, confidence, version, icon, website }) => {
           const technologyNode = Popup.templates.technology.cloneNode(true)
 
-          const image = technologyNode.querySelector('.technology__icon img')
+          const el = {
+            technologies: categoryNode.querySelector('.technologies'),
+            iconImage: technologyNode.querySelector('.technology__icon img'),
+            link: technologyNode.querySelector('.technology__link'),
+            name: technologyNode.querySelector('.technology__name'),
+            version: technologyNode.querySelector('.technology__version'),
+            confidence: technologyNode.querySelector('.technology__confidence'),
+          }
 
-          image.src = `../images/icons/${icon}`
+          el.iconImage.src = `../images/icons/${icon}`
 
-          const link = technologyNode.querySelector('.technology__link')
-          const linkText = technologyNode.querySelector('.technology__name')
-
-          link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
-          linkText.textContent = name
-
-          const confidenceNode = technologyNode.querySelector(
-            '.technology__confidence'
-          )
+          el.link.href = `https://www.wappalyzer.com/technologies/${categorySlug}/${slug}/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer`
+          el.name.textContent = name
 
           if (confidence < 100) {
-            confidenceNode.textContent = `${confidence}% sure`
+            el.confidence.textContent = `${confidence}% sure`
           } else {
-            confidenceNode.remove()
+            el.confidence.remove()
           }
-
-          const versionNode = technologyNode.querySelector(
-            '.technology__version'
-          )
 
           if (version) {
-            versionNode.textContent = version
+            el.version.textContent = version
           } else {
-            versionNode.remove()
+            el.version.remove()
           }
 
-          categoryNode
-            .querySelector('.technologies')
-            .appendChild(technologyNode)
+          el.technologies.appendChild(technologyNode)
         }
       )
 
-      document.querySelector('.detections').appendChild(categoryNode)
+      el.detections.appendChild(categoryNode)
     })
 
     if (categorised.length === 1) {
-      document
-        .querySelector('.detections')
-        .appendChild(Popup.templates.category.cloneNode(true))
+      el.detections.appendChild(Popup.templates.category.cloneNode(true))
     }
 
     Array.from(document.querySelectorAll('a')).forEach((a) =>
@@ -490,6 +479,7 @@ const Popup = {
       configure: document.querySelector('.pro-configure'),
       credits: document.querySelector('.credits'),
       creditsRemaining: document.querySelector('.credits__remaining'),
+      footer: document.querySelector('.footer'),
     }
 
     el.error.classList.add('pro-error--hidden')
@@ -497,9 +487,11 @@ const Popup = {
     if (apiKey) {
       el.loading.classList.remove('loading--hidden')
       el.configure.classList.add('pro-configure--hidden')
+      el.footer.classList.remove('footer--hidden')
     } else {
       el.loading.classList.add('loading--hidden')
       el.configure.classList.remove('pro-configure--hidden')
+      el.footer.classList.add('footer--hidden')
 
       return
     }

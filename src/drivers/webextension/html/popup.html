@@ -11,7 +11,7 @@
     <script src="../js/utils.js"></script>
     <script src="../js/popup.js"></script>
   </head>
-  <body>
+  <body class="body__popup">
     <div class="popup">
       <div class="header">
         <a href="https://www.wappalyzer.com/?utm_source=popup&utm_medium=extension&utm_campaign=wappalyzer" class="header__link">
@@ -46,8 +46,8 @@
       </div>
 
       <div class="tabs">
-        <div class="tab tab--technologies tab--active" data-i18n="tabTechnologies"></div>
-        <div class="tab tab--pro" data-i18n="tabPro"></div>
+        <div class="tab tab--technologies tab--active" data-i18n="tabTechnologies">&nbsp;</div>
+        <div class="tab tab--pro" data-i18n="tabPro">&nbsp;</div>
 
         <div class="credits credits--hidden">
           <span data-i18n="creditBalance">&nbsp;</span>
@@ -57,7 +57,7 @@
       </div>
 
       <div class="tab-item">
-        <div class="empty">
+        <div class="empty empty--hidden">
           <div class="empty__text" data-i18n="noAppsDetected">&nbsp;</div>
 
           <div class="ttt-game">
@@ -103,7 +103,7 @@
           </div>
         </div>
 
-        <div class="detections detections--hidden"></div>
+        <div class="detections"></div>
 
         <div class="terms terms--hidden">
           <div class="terms__content" data-i18n="termsContent"></div>

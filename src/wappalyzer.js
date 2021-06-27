@@ -49,7 +49,9 @@ const Wappalyzer = {
               if (name === technology.name) {
                 confidence = Math.min(100, confidence + pattern.confidence)
                 version =
-                  _version.length > version.length && _version.length <= 10
+                  _version.length > version.length &&
+                  _version.length <= 15 &&
+                  (parseInt(_version, 10) || 0) < 10000 // Ignore long numeric strings like timestamps
                     ? _version
                     : version
               }

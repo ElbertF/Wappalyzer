@@ -830,6 +830,24 @@
       "scripts": "ads\\.adthrive\\.com",
       "website": "https://www.adthrive.com"
     },
+    "Advally": {
+      "cats": [
+        36
+      ],
+      "description": "Advally is an advertising platform for publishers.",
+      "icon": "Advally.png",
+      "js": {
+        "advally": ""
+      },
+      "scripts": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "high",
+        "recurring"
+      ],
+      "website": "https://www.advally.com"
+    },
     "Ada": {
       "cats": [
         52
@@ -2054,6 +2072,23 @@
       "scripts": "/profiles/apigee",
       "website": "https://cloud.google.com/apigee/"
     },
+    "Apisearch": {
+      "cats": [
+        29
+      ],
+      "description": "Apisearch is a real-time search platform for ecommerce.",
+      "icon": "Apisearch.png",
+      "scripts": "static\\.apisearch\\.cloud",
+      "oss": true,
+      "saas": true,
+      "pricing": [
+        "freemium",
+        "low",
+        "mid",
+        "recurring"
+      ],
+      "website": "https://apisearch.io"
+    },
     "Aplazame": {
       "cats": [
         41
@@ -2517,6 +2552,16 @@
       "icon": "AudioEye.svg",
       "scripts": "audioeye\\.com/ae\\.js",
       "website": "https://www.audioeye.com/"
+    },
+    "augmented-ui": {
+      "cats": [
+        66
+      ],
+      "description": "augmented-ui is a UI framework inspired by cyberpunk and sci-fi.",
+      "icon": "augmented-ui.png",
+      "dom": "[data-augmented-ui]",
+      "oss": true,
+      "website": "http://augmented-ui.com"
     },
     "Aurelia": {
       "cats": [
@@ -7132,12 +7177,8 @@
         "FingerprintJS": ""
       },
       "scripts": [
-        "fingerprint(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-        "/fingerprintjs@(\\d.*?)/\\;version:\\1",
-        "/fingerprintjs-pro/(?:(\\d.*?)/)?\\;version:\\1",
-        "/fingerprintjs-pro@(\\d.*?)/\\;version:\\1",
-        "/fingerprintjs2/(?:(\\d.*?)/)?\\;version:\\1",
-        "/fingerprintjs2@(\\d.*?)/\\;version:\\1"
+        "fingerprint(?:\/fp)?(\\d)?(?:\\.min)?\\.js\\;version:\\1",
+        "fingerprintjs(?:\\-pro|2)?(?:@|/)([\\d.]+)(?:\\-)?([\\d.a-z]+)?\\;version:\\1\\2"
       ],
       "saas": true,
       "oss": true,
@@ -7849,6 +7890,20 @@
         "/static/gxtimezone\\.js"
       ],
       "website": "https://www.genexus.com/"
+    },
+    "Genesis theme": {
+      "cats": [
+        80
+      ],
+      "description": "Genesis theme is a WordPress theme that has been developed using the Genesis Framework from Studiopress.",
+      "icon": "Genesis theme.svg",
+      "requires": "WordPress",
+      "js": {
+        "genesisBlocksShare": "",
+        "genesis_responsive_menu": ""
+      },
+      "scripts": "/wp-content/themes/genesis/lib/js/",
+      "website": "https://www.studiopress.com/themes/genesis"
     },
     "Genesys Cloud": {
       "cats": [
@@ -15360,6 +15415,24 @@
       "scripts": "cdn\\.podia\\.com",
       "website": "https://www.podia.com"
     },
+    "Podium": {
+      "cats": [
+        5,
+        52
+      ],
+      "description": "Podium is a customer communication platform for businesses who interact with customers on a local level.",
+      "icon": "Podium.png",
+      "js": {
+        "PodiumWebChat": "",
+        "podiumWebsiteWidgetLoaded": ""
+      },
+      "scripts": "\\.podium\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.podium.com"
+    },
     "Polyfill": {
       "cats": [
         59
@@ -15483,6 +15556,16 @@
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
       ],
       "website": "http://prebid.org"
+    },
+    "Preact": {
+      "cats": [
+        59
+      ],
+      "description": "Preact is a JavaScript library that describes itself as a fast 3kB alternative to React with the same ES6 API.",
+      "icon": "Preact.svg",
+      "dom": "meta[data-preact-helmet='true']",
+      "oss": true,
+      "website": "https://preactjs.com"
     },
     "Prediggo": {
       "cats": [

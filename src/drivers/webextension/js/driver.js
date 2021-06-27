@@ -74,12 +74,12 @@ const Driver = {
 
     chrome.tabs.onRemoved.addListener((id) => delete Driver.cache.tabs[id])
 
-    chrome.tabs.onUpdated.addListener(async (id, { status }) => {
-      delete Driver.cache.tabs[id]
-
+    chrome.tabs.onUpdated.addListener(async (id, { status, url }) => {
       if (status === 'complete') {
-        const { url } = await promisify(chrome.tabs, 'get', id)
+        ;({ url } = await promisify(chrome.tabs, 'get', id))
+      }
 
+      if (url) {
         const { hostname } = new URL(url)
 
         const cache = Driver.cache.hostnames[hostname]
@@ -713,6 +713,8 @@ const Driver = {
     const resolved = (Driver.cache.tabs[id] || []).filter(
       ({ cached }) => showCached || cached === false
     )
+
+    Driver.log({ id, url, resolved })
 
     await Driver.setIcon(url, resolved)
 

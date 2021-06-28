@@ -830,24 +830,6 @@
       "scripts": "ads\\.adthrive\\.com",
       "website": "https://www.adthrive.com"
     },
-    "Advally": {
-      "cats": [
-        36
-      ],
-      "description": "Advally is an advertising platform for publishers.",
-      "icon": "Advally.png",
-      "js": {
-        "advally": ""
-      },
-      "scripts": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
-      "saas": true,
-      "pricing": [
-        "payg",
-        "high",
-        "recurring"
-      ],
-      "website": "https://www.advally.com"
-    },
     "Ada": {
       "cats": [
         52
@@ -1168,6 +1150,24 @@
       "icon": "AdonisJS.png",
       "implies": "Node.js",
       "website": "https://adonisjs.com"
+    },
+    "Advally": {
+      "cats": [
+        36
+      ],
+      "description": "Advally is an advertising platform for publishers.",
+      "icon": "Advally.png",
+      "js": {
+        "advally": ""
+      },
+      "pricing": [
+        "payg",
+        "high",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
+      "website": "https://www.advally.com"
     },
     "Advanced Web Stats": {
       "cats": [
@@ -2078,15 +2078,15 @@
       ],
       "description": "Apisearch is a real-time search platform for ecommerce.",
       "icon": "Apisearch.png",
-      "scripts": "static\\.apisearch\\.cloud",
       "oss": true,
-      "saas": true,
       "pricing": [
         "freemium",
         "low",
         "mid",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "static\\.apisearch\\.cloud",
       "website": "https://apisearch.io"
     },
     "Aplazame": {
@@ -2552,16 +2552,6 @@
       "icon": "AudioEye.svg",
       "scripts": "audioeye\\.com/ae\\.js",
       "website": "https://www.audioeye.com/"
-    },
-    "augmented-ui": {
-      "cats": [
-        66
-      ],
-      "description": "augmented-ui is a UI framework inspired by cyberpunk and sci-fi.",
-      "icon": "augmented-ui.png",
-      "dom": "[data-augmented-ui]",
-      "oss": true,
-      "website": "http://augmented-ui.com"
     },
     "Aurelia": {
       "cats": [
@@ -4629,11 +4619,11 @@
       "js": {
         "ClientJS": ""
       },
+      "oss": true,
       "scripts": [
         "/clientjs@(\\d.*?)/\\;version:\\1",
         "/ClientJS/(?:(\\d.*?)/)?\\;version:\\1"
       ],
-      "oss": true,
       "website": "http://clientjs.org"
     },
     "Clipboard.js": {
@@ -5059,13 +5049,13 @@
         1
       ],
       "description": "Contentstack is a headless CMS software designed to help businesses deliver personalized content experiences to audiences via multiple channels.",
-      "icon": "Contentstack.png",
       "dom": "img[src*='images.contentstack.io']",
-      "saas": true,
+      "icon": "Contentstack.png",
       "pricing": [
         "high",
         "recurring"
       ],
+      "saas": true,
       "website": "https://www.contentstack.com"
     },
     "Convert": {
@@ -5466,24 +5456,6 @@
       "scripts": "/d3(?:\\. v\\d+)?(?:\\.min)?\\.js",
       "website": "http://d3js.org"
     },
-    "db-ip": {
-      "cats": [
-        79
-      ],
-      "description": "dbip is a geolocation API and database.",
-      "icon": "db-ip.png",
-      "xhr": "api\\.db-ip\\.com",
-      "scripts": "cdn\\.db-ip\\.com",
-      "js": {
-        "ENV.dbip": ""
-      },
-      "saas": true,
-      "pricing": [
-        "mid",
-        "recurring"
-      ],
-      "website": "https://db-ip.com/"
-    },
     "DERAK.CLOUD": {
       "cats": [
         31
@@ -5801,20 +5773,20 @@
         71
       ],
       "description": "Digistore24 is a German digital reselling and affiliate marketing platform.",
-      "icon": "Digistore24.svg",
       "dom": "a[href*='www.digistore24.com'][target='_blank']",
+      "icon": "Digistore24.svg",
       "js": {
-        "getTheSourceForDigistoreLinks": "",
+        "DIGISTORE_LINK_ID_KEY": "",
         "DIGISTORE_VENDORKEY": "",
-        "DIGISTORE_LINK_ID_KEY": ""
+        "getTheSourceForDigistoreLinks": ""
       },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
       "scripts": [
         "digistore/digistore\\.js",
         "www\\.digistore24\\.com"
-      ],
-      "saas": true,
-      "pricing": [
-        "payg"
       ],
       "website": "https://www.digistore24.com"
     },
@@ -7176,14 +7148,14 @@
         "Fingerprint2.VERSION": "^(.+)$\\;version:\\1",
         "FingerprintJS": ""
       },
-      "scripts": [
-        "fingerprint(?:\/fp)?(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-        "fingerprintjs(?:\\-pro|2)?(?:@|/)([\\d.]+)(?:\\-)?([\\d.a-z]+)?\\;version:\\1\\2"
-      ],
-      "saas": true,
       "oss": true,
       "pricing": [
         "payg"
+      ],
+      "saas": true,
+      "scripts": [
+        "fingerprint(?:/fp)?(\\d)?(?:\\.min)?\\.js\\;version:\\1",
+        "fingerprintjs(?:\\-pro|2)?(?:@|/)([\\d.]+)(?:\\-)?([\\d.a-z]+)?\\;version:\\1\\2"
       ],
       "website": "https://fingerprintjs.com"
     },
@@ -7250,14 +7222,14 @@
       "description": "Fit Analytics is a platform that provides clothing size recommendations for online customers by measuring individual dimensions via webcams.",
       "icon": "Fit Analytics.png",
       "js": {
-        "_fitAnalytics": "",
-        "FitAnalyticsWidget": ""
+        "FitAnalyticsWidget": "",
+        "_fitAnalytics": ""
       },
-      "scripts": "\\.fitanalytics\\.com",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.fitanalytics\\.com",
       "website": "https://www.fitanalytics.com"
     },
     "Flarum": {
@@ -7497,11 +7469,11 @@
       "js": {
         "ftr__startScriptLoad": ""
       },
-      "scripts": "forter\\.com",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "forter\\.com",
       "website": "https://www.forter.com"
     },
     "Fortune3": {
@@ -7897,11 +7869,11 @@
       ],
       "description": "Genesis theme is a WordPress theme that has been developed using the Genesis Framework from Studiopress.",
       "icon": "Genesis theme.svg",
-      "requires": "WordPress",
       "js": {
         "genesisBlocksShare": "",
         "genesis_responsive_menu": ""
       },
+      "requires": "WordPress",
       "scripts": "/wp-content/themes/genesis/lib/js/",
       "website": "https://www.studiopress.com/themes/genesis"
     },
@@ -9396,6 +9368,16 @@
       "scripts": "jscripts/ips_",
       "website": "https://invisioncommunity.com/"
     },
+    "IPInfoDB": {
+      "cats": [
+        79
+      ],
+      "description": "IPInfoDB is the API that returns the location of an IP address.",
+      "icon": "IPInfoDB.png",
+      "saas": true,
+      "website": "https://www.ipinfodb.com/",
+      "xhr": "api\\.ipinfodb\\.com"
+    },
     "Ideasoft": {
       "cats": [
         6
@@ -9808,124 +9790,6 @@
       "html": "<link[^>]* href=[^>]+ionicons(?:\\.min)?\\.css",
       "icon": "Ionicons.png",
       "website": "http://ionicons.com"
-    },
-    "ip-api": {
-      "cats": [
-        79
-      ],
-      "icon": "ip-api.png",
-      "xhr": "ip-api\\.com/",
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "low",
-        "payg"
-      ],
-      "website": "https://ip-api.com/"
-    },
-    "ipapi.co": {
-      "cats": [
-        79
-      ],
-      "description": "ipapi.co is a web analytics provider with IP address lookup and location API.",
-      "icon": "ipapi.co.png",
-      "xhr": "ipapi\\.co/",
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "low",
-        "payg"
-      ],
-      "website": "https://ipapi.co"
-    },
-    "ipapi": {
-      "cats": [
-        79
-      ],
-      "description": "ipapi is a real-time geolocation and reverse IP lookup REST API.",
-      "icon": "ipapi.png",
-      "xhr": "api\\.ipapi\\.com",
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "low",
-        "payg"
-      ],
-      "website": "https://ipapi.com"
-    },
-    "ipdata": {
-      "cats": [
-        79
-      ],
-      "description": "ipdata is a JSON IP Address Geolocation API that allows to lookup the location of both IPv4 and IPv6.",
-      "icon": "ipdata.png",
-      "xhr": "api\\.ipdata\\.co",
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "recurring",
-        "low"
-      ],
-      "website": "https://ipdata.co/"
-    },
-    "ipgeolocation": {
-      "cats": [
-        79
-      ],
-      "description": "ipgeolocation is an IP Geolocation API and Accurate IP Lookup Database.",
-      "icon": "ipgeolocation.png",
-      "xhr": "api\\.ipgeolocation\\.io",
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "recurring",
-        "mid"
-      ],
-      "website": "https://ipgeolocation.co/"
-    },
-    "ipify": {
-      "cats": [
-        79
-      ],
-      "description": "ipify is a service which provide public IP address API, IP geolocation API, VPN and Proxy detection API products.",
-      "icon": "ipify.png",
-      "xhr": "(?:api|api64|geo)\\.ipify\\.org",
-      "scripts": "\\.ipify\\.org",
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "payg",
-        "mid",
-        "recurring"
-      ],
-      "website": "https://ipify.org"
-    },
-    "IPInfoDB": {
-      "cats": [
-        79
-      ],
-      "description": "IPInfoDB is the API that returns the location of an IP address.",
-      "icon": "IPInfoDB.png",
-      "xhr": "api\\.ipinfodb\\.com",
-      "saas": true,
-      "website": "https://www.ipinfodb.com/"
-    },
-    "ipstack": {
-      "cats": [
-        79
-      ],
-      "description": "ipstack is a real-time IP to geolocation API capable of looking at location data and assessing security threats originating from risky IP addresses.",
-      "icon": "ipstack.png",
-      "xhr": "api\\.ipstack\\.com",
-      "js": {
-        "ENV.ipStackAccessToken": ""
-      },
-      "saas": true,
-      "pricing": [
-        "low",
-        "freemium"
-      ],
-      "website": "https://ipstack.com"
     },
     "Irroba": {
       "cats": [
@@ -11023,12 +10887,12 @@
         "ka.ClientSDK": "",
         "ka.collectData": ""
       },
-      "scripts": [
-        "shopify\\.kount\\.net/js"
-      ],
-      "saas": true,
       "pricing": [
         "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "shopify\\.kount\\.net/js"
       ],
       "website": "https://kount.com"
     },
@@ -12304,6 +12168,25 @@
       "icon": "MaxCDN.png",
       "website": "http://www.maxcdn.com"
     },
+    "MaxMind": {
+      "cats": [
+        79,
+        83
+      ],
+      "description": "MaxMind is a provider of geolocation and online fraud detection tools.",
+      "icon": "MaxMind.png",
+      "pricing": [
+        "freemium",
+        "payg"
+      ],
+      "saas": true,
+      "scripts": [
+        "[device|js]\\.maxmind\\.com/",
+        "geoip\\.maxmind\\.min\\.js"
+      ],
+      "website": "https://www.maxmind.com",
+      "xhr": "\\.maxmind\\.com"
+    },
     "MaxSite CMS": {
       "cats": [
         1
@@ -12314,25 +12197,6 @@
         "generator": "MaxSite CMS"
       },
       "website": "http://max-3000.com"
-    },
-    "MaxMind": {
-      "cats": [
-        79,
-        83
-      ],
-      "icon": "MaxMind.png",
-      "description": "MaxMind is a provider of geolocation and online fraud detection tools.",
-      "scripts": [
-        "[device|js]\\.maxmind\\.com/",
-        "geoip\\.maxmind\\.min\\.js"
-      ],
-      "xhr": "\\.maxmind\\.com",
-      "saas": true,
-      "pricing": [
-        "freemium",
-        "payg"
-      ],
-      "website": "https://www.maxmind.com"
     },
     "Maxemail": {
       "cats": [
@@ -14903,24 +14767,24 @@
       "cats": [
         16
       ],
-      "icon": "perimeterx.svg",
-      "description": "PerimeterX is a provider of scalable, behavior-based threat protection technology for the web, cloud, and mobile.",
       "cookies": {
         "_px3": "",
         "_pxff_cc": "",
         "_pxhd": "",
         "_pxvid": ""
       },
+      "description": "PerimeterX is a provider of scalable, behavior-based threat protection technology for the web, cloud, and mobile.",
+      "icon": "perimeterx.svg",
       "js": {
         "_pxAppId": ""
       },
-      "scripts": "client\\.a\\.pxi\\.pub/",
-      "saas": true,
       "pricing": [
         "payg",
         "recurring",
         "poa"
       ],
+      "saas": true,
+      "scripts": "client\\.a\\.pxi\\.pub/",
       "website": "https://www.perimeterx.com"
     },
     "Perl": {
@@ -15426,11 +15290,11 @@
         "PodiumWebChat": "",
         "podiumWebsiteWidgetLoaded": ""
       },
-      "scripts": "\\.podium\\.com/",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.podium\\.com/",
       "website": "https://www.podium.com"
     },
     "Polyfill": {
@@ -15537,6 +15401,16 @@
       "saas": true,
       "website": "http://powergap.de"
     },
+    "Preact": {
+      "cats": [
+        59
+      ],
+      "description": "Preact is a JavaScript library that describes itself as a fast 3kB alternative to React with the same ES6 API.",
+      "dom": "meta[data-preact-helmet='true']",
+      "icon": "Preact.svg",
+      "oss": true,
+      "website": "https://preactjs.com"
+    },
     "Prebid": {
       "cats": [
         36
@@ -15556,16 +15430,6 @@
         "adnxs\\.com/[^\"]*(?:prebid|/pb\\.js)"
       ],
       "website": "http://prebid.org"
-    },
-    "Preact": {
-      "cats": [
-        59
-      ],
-      "description": "Preact is a JavaScript library that describes itself as a fast 3kB alternative to React with the same ES6 API.",
-      "icon": "Preact.svg",
-      "dom": "meta[data-preact-helmet='true']",
-      "oss": true,
-      "website": "https://preactjs.com"
     },
     "Prediggo": {
       "cats": [
@@ -19612,6 +19476,28 @@
       "scripts": "js\\.stripe\\.com",
       "website": "http://stripe.com"
     },
+    "Stylitics": {
+      "cats": [
+        5,
+        32
+      ],
+      "description": "Stylitics is a cloud-based SaaS platform for retailers to automate and distribute visual content at scale.",
+      "dom": "link[href*='.stylitics.com']",
+      "icon": "Stylitics.svg",
+      "js": {
+        "Stylitics": "",
+        "stylitics": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "\\.stylitics\\.com/v([\\d.]+)\\;version:\\1",
+        "/stylitics/js/stylitics\\.js\\?ver=v([\\d.]+)\\;version:\\1"
+      ],
+      "website": "https://stylitics.com"
+    },
     "SublimeVideo": {
       "cats": [
         14
@@ -19950,18 +19836,18 @@
         29
       ],
       "description": "Syte is a provider of visual AI technology that aims to improve retailers' site navigation, product discovery, and user experience by powering solutions that engage and convert shoppers.",
-      "icon": "Syte.svg",
       "dom": "img[src*='cdn.syteapi.com']",
+      "icon": "Syte.svg",
       "js": {
         "SyteApi.getBinImageBB": "",
         "SyteApp.Analytics": "",
         "SytePixel": ""
       },
-      "scripts": "cdn\\.syteapi\\.com/",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "cdn\\.syteapi\\.com/",
       "website": "https://www.syte.ai"
     },
     "T-Soft": {
@@ -20442,11 +20328,11 @@
       ],
       "description": "LexisNexis ThreatMetrix is an enterprise solution for online risk and fraud protection ('digital identity intelligence and digital authentication').",
       "icon": "ThreatMetrix.svg",
-      "scripts": "\\.online-metrix\\.net",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.online-metrix\\.net",
       "website": "https://risk.lexisnexis.com/products/threatmetrix"
     },
     "ThriveCart": {
@@ -20779,6 +20665,23 @@
       "website": "https://triplelift.com",
       "xhr": "\\.3lift\\.com"
     },
+    "TruValidate": {
+      "cats": [
+        16,
+        83
+      ],
+      "description": "TransUnion TruValidate (previously ReputationShield/IDVision from iovation) is an online risk and fraud detection platform.",
+      "icon": "TruValidate.svg",
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": [
+        "mpsnare\\.iesnare\\.com",
+        "ci-mpsnare\\.iovation\\.com"
+      ],
+      "website": "https://www.transunion.com/solution/truvalidate"
+    },
     "TrustArc": {
       "cats": [
         67
@@ -20821,23 +20724,6 @@
       "saas": true,
       "scripts": "\\.trustpilot\\.com",
       "website": "https://business.trustpilot.com"
-    },
-    "TruValidate": {
-      "cats": [
-        16,
-        83
-      ],
-      "description": "TransUnion TruValidate (previously ReputationShield/IDVision from iovation) is an online risk and fraud detection platform.",
-      "icon": "TruValidate.svg",
-      "scripts": [
-        "mpsnare\\.iesnare\\.com",
-        "ci-mpsnare\\.iovation\\.com"
-      ],
-      "saas": true,
-      "pricing": [
-        "poa"
-      ],
-      "website": "https://www.transunion.com/solution/truvalidate"
     },
     "Tumblr": {
       "cats": [
@@ -21102,17 +20988,6 @@
       "icon": "UNIX.png",
       "website": "http://unix.org"
     },
-    "Unpkg": {
-      "cats": [
-        31
-      ],
-      "description": "Unpkg is a content delivery network for everything on npm.",
-      "icon": "Unpkg.png",
-      "dom": "link[href*='unpkg.com']",
-      "scripts": "unpkg\\.com/",
-      "oss": true,
-      "website": "https://unpkg.com"
-    },
     "Ubercart": {
       "cats": [
         6
@@ -21203,6 +21078,17 @@
       "icon": "Uniconsent.png",
       "scripts": "cmp\\.uniconsent\\.mgr\\.consensu\\.org/dfp\\.js",
       "website": "https://www.uniconsent.com/"
+    },
+    "Unpkg": {
+      "cats": [
+        31
+      ],
+      "description": "Unpkg is a content delivery network for everything on npm.",
+      "dom": "link[href*='unpkg.com']",
+      "icon": "Unpkg.png",
+      "oss": true,
+      "scripts": "unpkg\\.com/",
+      "website": "https://unpkg.com"
     },
     "UpSellit": {
       "cats": [
@@ -23464,6 +23350,16 @@
       ],
       "website": "https://daneden.github.io/animate.css/"
     },
+    "augmented-ui": {
+      "cats": [
+        66
+      ],
+      "description": "augmented-ui is a UI framework inspired by cyberpunk and sci-fi.",
+      "dom": "[data-augmented-ui]",
+      "icon": "augmented-ui.png",
+      "oss": true,
+      "website": "http://augmented-ui.com"
+    },
     "basket.js": {
       "cats": [
         59
@@ -23531,6 +23427,24 @@
       "saas": true,
       "website": "https://commercelayer.io",
       "xhr": "\\.commercelayer\\.io"
+    },
+    "db-ip": {
+      "cats": [
+        79
+      ],
+      "description": "dbip is a geolocation API and database.",
+      "icon": "db-ip.png",
+      "js": {
+        "ENV.dbip": ""
+      },
+      "pricing": [
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "cdn\\.db-ip\\.com",
+      "website": "https://db-ip.com/",
+      "xhr": "api\\.db-ip\\.com"
     },
     "decimal.js": {
       "cats": [
@@ -23872,6 +23786,20 @@
       "url": "imperia/md/",
       "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/imperia-cms"
     },
+    "ip-api": {
+      "cats": [
+        79
+      ],
+      "icon": "ip-api.png",
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://ip-api.com/",
+      "xhr": "ip-api\\.com/"
+    },
     "ip-label": {
       "cats": [
         10
@@ -23882,6 +23810,100 @@
       },
       "scripts": "clobs\\.js",
       "website": "http://www.ip-label.com"
+    },
+    "ipapi": {
+      "cats": [
+        79
+      ],
+      "description": "ipapi is a real-time geolocation and reverse IP lookup REST API.",
+      "icon": "ipapi.png",
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://ipapi.com",
+      "xhr": "api\\.ipapi\\.com"
+    },
+    "ipapi.co": {
+      "cats": [
+        79
+      ],
+      "description": "ipapi.co is a web analytics provider with IP address lookup and location API.",
+      "icon": "ipapi.co.png",
+      "pricing": [
+        "freemium",
+        "low",
+        "payg"
+      ],
+      "saas": true,
+      "website": "https://ipapi.co",
+      "xhr": "ipapi\\.co/"
+    },
+    "ipdata": {
+      "cats": [
+        79
+      ],
+      "description": "ipdata is a JSON IP Address Geolocation API that allows to lookup the location of both IPv4 and IPv6.",
+      "icon": "ipdata.png",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "low"
+      ],
+      "saas": true,
+      "website": "https://ipdata.co/",
+      "xhr": "api\\.ipdata\\.co"
+    },
+    "ipgeolocation": {
+      "cats": [
+        79
+      ],
+      "description": "ipgeolocation is an IP Geolocation API and Accurate IP Lookup Database.",
+      "icon": "ipgeolocation.png",
+      "pricing": [
+        "freemium",
+        "recurring",
+        "mid"
+      ],
+      "saas": true,
+      "website": "https://ipgeolocation.co/",
+      "xhr": "api\\.ipgeolocation\\.io"
+    },
+    "ipify": {
+      "cats": [
+        79
+      ],
+      "description": "ipify is a service which provide public IP address API, IP geolocation API, VPN and Proxy detection API products.",
+      "icon": "ipify.png",
+      "pricing": [
+        "freemium",
+        "payg",
+        "mid",
+        "recurring"
+      ],
+      "saas": true,
+      "scripts": "\\.ipify\\.org",
+      "website": "https://ipify.org",
+      "xhr": "(?:api|api64|geo)\\.ipify\\.org"
+    },
+    "ipstack": {
+      "cats": [
+        79
+      ],
+      "description": "ipstack is a real-time IP to geolocation API capable of looking at location data and assessing security threats originating from risky IP addresses.",
+      "icon": "ipstack.png",
+      "js": {
+        "ENV.ipStackAccessToken": ""
+      },
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "saas": true,
+      "website": "https://ipstack.com",
+      "xhr": "api\\.ipstack\\.com"
     },
     "iubenda": {
       "cats": [
@@ -24616,28 +24638,6 @@
         "styled": ""
       },
       "website": "https://styled-components.com"
-    },
-    "Stylitics": {
-      "cats": [
-        5,
-        32
-      ],
-      "description": "Stylitics is a cloud-based SaaS platform for retailers to automate and distribute visual content at scale.",
-      "icon": "Stylitics.svg",
-      "dom": "link[href*='.stylitics.com']",
-      "js": {
-        "Stylitics": "",
-        "stylitics": ""
-      },
-      "scripts": [
-        "\\.stylitics\\.com/v([\\d.]+)\\;version:\\1",
-        "/stylitics/js/stylitics\\.js\\?ver=v([\\d.]+)\\;version:\\1"
-      ],
-      "saas": true,
-      "pricing": [
-        "poa"
-      ],
-      "website": "https://stylitics.com"
     },
     "swift.engine": {
       "cats": [

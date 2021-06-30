@@ -1169,15 +1169,6 @@
       "scripts": "cdn\\.adligature\\.com/.+/advally-([\\d.]+)\\.js\\;version:\\1",
       "website": "https://www.advally.com"
     },
-    "Advanced Web Stats": {
-      "cats": [
-        10
-      ],
-      "html": "aws\\.src = [^<]+caphyon-analytics",
-      "icon": "Advanced Web Stats.png",
-      "implies": "Java",
-      "website": "http://www.advancedwebstats.com"
-    },
     "Advert Stream": {
       "cats": [
         36
@@ -1543,16 +1534,6 @@
       "icon": "all-in-One-SEO-Pack.png",
       "implies": "WordPress",
       "website": "https://wordpress.org/plugins/all-in-one-seo-pack/"
-    },
-    "Allegro RomPager": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "Allegro-Software-RomPager(?:/([\\d.]+))?\\;version:\\1"
-      },
-      "icon": "Allegro RomPager.png",
-      "website": "http://allegrosoft.com/embedded-web-server-s2"
     },
     "AlloyUI": {
       "cats": [
@@ -1976,7 +1957,7 @@
       "cats": [
         36
       ],
-      "description": "AnyClip is a video engagement platform that uses an AI-driven content analysis engine to analyze and categorize video content in real-time to create personalized video feeds.",
+      "description": "AnyClip is a video engagement platform that uses an AI-driven content analysis engine to analyze and categorize video content in real-time to create personalised video feeds.",
       "dom": "img[src*='.anyclip.com'], video[poster*='.anyclip.com']",
       "icon": "AnyClip.svg",
       "js": {
@@ -2529,7 +2510,7 @@
         76,
         5
       ],
-      "description": "Attentive is a personalized mobile messaging platform that helps retail & ecommerce brands acquire, retain, and interact with mobile shoppers.",
+      "description": "Attentive is a personalised mobile messaging platform that helps retail & ecommerce brands acquire, retain, and interact with mobile shoppers.",
       "icon": "Attentive.svg",
       "js": {
         "__attentive": "",
@@ -5025,6 +5006,22 @@
       },
       "website": "http://www.gocontentbox.org"
     },
+    "ContentSquare": {
+      "cats": [
+        58
+      ],
+      "description": "ContentSquare is an enterprise-level UX optimisation platform.",
+      "icon": "ContentSquare.png",
+      "js": {
+        "CS_CONF.trackerDomain": ""
+      },
+      "pricing": [
+        "poa"
+      ],
+      "saas": true,
+      "scripts": "\\.contentsquare\\.net/",
+      "website": "https://contentsquare.com"
+    },
     "Contentful": {
       "cats": [
         1
@@ -5044,27 +5041,11 @@
       "website": "http://www.contentful.com",
       "xhr": "cdn\\.contentful\\.com"
     },
-    "ContentSquare": {
-      "cats": [
-        58
-      ],
-      "description": "ContentSquare is an enterprise-level UX optimisation platform.",
-      "icon": "ContentSquare.png",
-      "js": {
-        "CS_CONF.trackerDomain": ""
-      },
-      "scripts": "\\.contentsquare\\.net/",
-      "saas": true,
-      "pricing": [
-        "poa"
-      ],
-      "website": "https://contentsquare.com"
-    },
     "Contentstack": {
       "cats": [
         1
       ],
-      "description": "Contentstack is a headless CMS software designed to help businesses deliver personalized content experiences to audiences via multiple channels.",
+      "description": "Contentstack is a headless CMS software designed to help businesses deliver personalised content experiences to audiences via multiple channels.",
       "dom": "img[src*='images.contentstack.io']",
       "icon": "Contentstack.png",
       "pricing": [
@@ -5172,6 +5153,23 @@
       "icon": "Cookiebot.svg",
       "scripts": "consent\\.cookiebot\\.com",
       "website": "http://www.cookiebot.com"
+    },
+    "Cooladata": {
+      "cats": [
+        76,
+        10
+      ],
+      "description": "Cooladata is a data warehouse and behavioral analytics platform designed for gaming, elearning, ecommerce, SaaS, and media companies.",
+      "icon": "Cooladata.png",
+      "js": {
+        "cooladata": ""
+      },
+      "scripts": "cdn\\.cooladata\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.cooladata.com"
     },
     "Coppermine": {
       "cats": [
@@ -5540,17 +5538,6 @@
       ],
       "website": "http://dnnsoftware.com"
     },
-    "DTG": {
-      "cats": [
-        1
-      ],
-      "html": [
-        "<a[^>]+Site Powered by DTG"
-      ],
-      "icon": "DTG.png",
-      "implies": "Mono.net",
-      "website": "https://www.dtg.nl"
-    },
     "Dancer": {
       "cats": [
         18
@@ -5731,6 +5718,24 @@
       "icon": "Debian.png",
       "website": "https://debian.org"
     },
+    "Decibel": {
+      "cats": [
+        10,
+        74
+      ],
+      "description": "Decibel is a behavioral analysis solution that helps users gain actionable insights about their digital audience.",
+      "icon": "Decibel.svg",
+      "js": {
+        "decibelInsightLayer": "",
+        "decibelInsight": ""
+      },
+      "scripts": "cdn\\.decibelinsight\\.net",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://decibel.com"
+    },
     "DedeCMS": {
       "cats": [
         1
@@ -5904,14 +5909,14 @@
       "js": {
         "DIVI": ""
       },
+      "meta": {
+        "generator": "Divi"
+      },
       "pricing": [
         "low",
         "recurring",
         "onetime"
       ],
-      "meta": {
-        "generator": "Divi"
-      },
       "saas": true,
       "scripts": "Divi/js/custom\\.(?:min|unified)\\.js\\?ver=([\\d.]+)\\;version:\\1",
       "website": "https://www.elegantthemes.com/gallery/divi"
@@ -7174,7 +7179,7 @@
       "saas": true,
       "scripts": [
         "fingerprint(?:/fp)?(\\d)?(?:\\.min)?\\.js\\;version:\\1",
-        "fingerprintjs(?:\\-pro|2)?(?:@|/)([\\d.]+)(?:\\-)?([\\d.a-z]+)?\\;version:\\1\\2"
+        "fingerprintjs(?:\\-pro|2)?(?:@|/)(\\d.*?)?/\\;version:\\1"
       ],
       "website": "https://fingerprintjs.com"
     },
@@ -7683,16 +7688,6 @@
       "icon": "futureshop.png",
       "scripts": "future-shop.*\\.js",
       "website": "https://www.future-shop.jp"
-    },
-    "G-WAN": {
-      "cats": [
-        22
-      ],
-      "headers": {
-        "Server": "G-WAN"
-      },
-      "icon": "G-WAN.png",
-      "website": "http://gwan.com"
     },
     "GOV.UK Elements": {
       "cats": [
@@ -12639,22 +12634,6 @@
       "scripts": "mint/\\?js",
       "website": "https://haveamint.com"
     },
-    "Miresoone": {
-      "cats": [
-        6
-      ],
-      "description": "Miresoone is an online ordering site builder.",
-      "icon": "Miresoone.svg",
-      "implies": [
-        "Laravel",
-        "React"
-      ],
-      "meta": {
-        "generator": "^Miresoone"
-      },
-      "saas": true,
-      "website": "https://miresoone.com"
-    },
     "Misskey": {
       "cats": [
         2
@@ -13212,23 +13191,6 @@
       },
       "website": "http://www.netcap-creation.fr"
     },
-    "Najva": {
-      "cats": [
-        32
-      ],
-      "description": "Najva is a retention marketing solution that offers push notification and email marketing.",
-      "icon": "Najva.png",
-      "js": {
-        "Najva.identifyEmailSubscriber": ""
-      },
-      "scripts": "app\\.najva\\.com/",
-      "saas": true,
-      "pricing": [
-        "low",
-        "freemium"
-      ],
-      "website": "https://www.najva.com"
-    },
     "NEO - Omnichannel Commerce Platform": {
       "cats": [
         6
@@ -13277,6 +13239,23 @@
       },
       "scripts": "nv\\.d3(?:\\.min)?\\.js",
       "website": "http://nvd3.org"
+    },
+    "Najva": {
+      "cats": [
+        32
+      ],
+      "description": "Najva is a retention marketing solution that offers push notification and email marketing.",
+      "icon": "Najva.png",
+      "js": {
+        "Najva.identifyEmailSubscriber": ""
+      },
+      "pricing": [
+        "low",
+        "freemium"
+      ],
+      "saas": true,
+      "scripts": "app\\.najva\\.com/",
+      "website": "https://www.najva.com"
     },
     "Navegg": {
       "cats": [
@@ -13523,6 +13502,23 @@
       ],
       "website": "https://nukeviet.vn/en/"
     },
+    "Nuqlium": {
+      "cats": [
+        76,
+        29
+      ],
+      "description": "Nuqlium is an integrated cloud-based online merchandising platform.",
+      "icon": "Nuqlium.png",
+      "js": {
+        "nuqliumObject": ""
+      },
+      "scripts": "\\.nuqlium\\.com/api",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.nuqlium.com"
+    },
     "Nuvemshop": {
       "cats": [
         6
@@ -13759,7 +13755,7 @@
         "payg"
       ],
       "saas": true,
-      "scripts": "^https?:\\/\\/static\\.olark\\.com\\/jsclient\\/loader1\\.js",
+      "scripts": "\\.olark\\.com",
       "website": "https://www.olark.com/"
     },
     "Ometria": {
@@ -14165,6 +14161,24 @@
       ],
       "website": "http://openx.com"
     },
+    "OpinionLab": {
+      "cats": [
+        5,
+        73
+      ],
+      "description": "OpinionLab is a omnichannel customer feedback solution provider.",
+      "icon": "OpinionLab.png",
+      "js": {
+        "OOo.version": "([\\d.]+)\\;version:\\1",
+        "OOo.Browser": ""
+      },
+      "scripts": "\\.foresee\\.com/code/([\\d.]+)-oo/oo_engine\\.min\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.opinionlab.com"
+    },
     "Optimise": {
       "cats": [
         71,
@@ -14266,17 +14280,17 @@
         74,
         76
       ],
-      "description": "Oracle Maxymiser is a real-time behavioral targeting, in-session personalization, and product recommendations platform.",
+      "description": "Oracle Maxymiser is a real-time behavioral targeting, in-session personalisation, and product recommendations platform.",
       "icon": "Oracle.png",
       "js": {
-        "mmsystem.getConfig": "\\;confidence:80",
-        "maxy": "\\;confidence:20"
+        "maxy": "\\;confidence:20",
+        "mmsystem.getConfig": "\\;confidence:80"
       },
-      "scripts": "service\\.maxymiser\\.net",
-      "saas": true,
       "pricing": [
         "poa"
       ],
+      "saas": true,
+      "scripts": "service\\.maxymiser\\.net",
       "website": "https://www.oracle.com/uk/cx/marketing/personalization-testing"
     },
     "Oracle Recommendations On Demand": {
@@ -14349,13 +14363,13 @@
       "js": {
         "Osano": ""
       },
-      "scripts": "cookieconsent\\.min\\.js",
-      "saas": true,
       "pricing": [
         "freemium",
         "mid",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "cookieconsent\\.min\\.js",
       "website": "https://www.osano.com"
     },
     "Outbrain": {
@@ -14366,16 +14380,16 @@
       "description": "Outbrain is a web advertising platform that displays boxes of links, known as chumboxes, to pages within websites.",
       "icon": "Outbrain.svg",
       "js": {
+        "OB_ADV_ID": "",
         "OB_releaseVer": "^(.+)$\\;version:\\1",
         "OutbrainPermaLink": "",
-        "obApi.version": "^[\\d.]+$",
-        "OB_ADV_ID": ""
+        "obApi.version": "^[\\d.]+$"
       },
-      "scripts": "widgets\\.outbrain\\.com/outbrain\\.js",
-      "saas": true,
       "pricing": [
         "payg"
       ],
+      "saas": true,
+      "scripts": "widgets\\.outbrain\\.com/outbrain\\.js",
       "website": "https://www.outbrain.com"
     },
     "Outlook Web App": {
@@ -14824,12 +14838,12 @@
       "js": {
         "pendo.VERSION": "(.+)\\;version:\\1"
       },
-      "scripts": "\\.pendo\\.io/",
-      "saas": true,
       "pricing": [
         "freemium",
         "poa"
       ],
+      "saas": true,
+      "scripts": "\\.pendo\\.io/",
       "website": "https://www.pendo.io"
     },
     "Percona": {
@@ -16165,6 +16179,21 @@
       "scripts": "raphael(?:-([\\d.]+))?(?:\\.min)?\\.js\\;version:\\1",
       "website": "https://dmitrybaranovskiy.github.io/raphael/"
     },
+    "RapidSpike": {
+      "cats": [
+        13,
+        16
+      ],
+      "description": "RapidSpike is an uptime and performance monitoring service for web sites and applications.",
+      "icon": "RapidSpike.svg",
+      "scripts": "\\.rapidspike\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa",
+        "recurring"
+      ],
+      "website": "https://www.rapidspike.com"
+    },
     "Raptor": {
       "cats": [
         76
@@ -16735,7 +16764,6 @@
     "Rezdy": {
       "cats": [
         5,
-        6,
         72
       ],
       "description": "Rezdy is an online booking software for tours and attractions.",
@@ -16751,7 +16779,6 @@
     "Rezgo": {
       "cats": [
         5,
-        6,
         72
       ],
       "description": "Rezgo is a tour operator software that provides online booking system.",
@@ -16773,6 +16800,23 @@
       ],
       "saas": true,
       "website": "https://www.rezgo.com"
+    },
+    "RichRelevance": {
+      "cats": [
+        76
+      ],
+      "description": "RichRelevance is a cloud-based omnichannel personalisation platform built to help Retailers, B2B, financial services, travel and hospitality, and branded manufacturers personalise their customer experiences.",
+      "icon": "RichRelevance.png",
+      "js": {
+        "rr_v": "([\\d.]+)\\;version:\\1\\;confidence:50",
+        "RR.U": "\\;confidence:50"
+      },
+      "scripts": "\\.richrelevance\\.com/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://richrelevance.com"
     },
     "Rickshaw": {
       "cats": [
@@ -16900,15 +16944,6 @@
         "rollbar\\.js/([0-9.]+)\\;version:\\1"
       ],
       "website": "https://rollbar.com/"
-    },
-    "Rotic": {
-      "cats": [
-        52
-      ],
-      "description": "Rotic is a conversion chatbot that answers questions, captures contacts, and books meetings.",
-      "icon": "Rotic.png",
-      "scripts": "https://rotic.ir/api/v1/enterprise/\\S+/widget/\\S+",
-      "website": "https://rotic.ir"
     },
     "RoundCube": {
       "cats": [
@@ -17279,12 +17314,12 @@
         76
       ],
       "description": "SaleCycle is a UK based global behavioral marketing firm.",
-      "icon": "salecycle.svg",
       "dom": "iframe[src*='.salecycle.com'][target='_self']",
-      "saas": true,
+      "icon": "salecycle.svg",
       "pricing": [
         "poa"
       ],
+      "saas": true,
       "website": "https://www.salecycle.com"
     },
     "Salesfloor": {
@@ -17346,6 +17381,23 @@
       "saas": true,
       "scripts": "/demandware\\.static/",
       "website": "http://demandware.com"
+    },
+    "Salesforce Interaction Studio": {
+      "cats": [
+        76
+      ],
+      "description": "Salesforce Interaction Studio (formerly Evergage) is a cloud-based software that allows users to collect, analyze, and respond to user behavior on their websites and web applications in real-time.",
+      "icon": "Salesforce.svg",
+      "js": {
+        "Evergage": "",
+        "evergageHideSections": ""
+      },
+      "scripts": "cdn\\.evgnet\\.com",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.salesforce.com/products/marketing-cloud/customer-interaction"
     },
     "Salesforce Service Cloud": {
       "cats": [
@@ -18266,16 +18318,16 @@
       "description": "Sift is a CA-based fraud prevention company.",
       "icon": "Sift.png",
       "js": {
-        "_sift": "",
-        "__siftFlashCB": ""
+        "__siftFlashCB": "",
+        "_sift": ""
       },
-      "scripts": "cdn\\.sift(?:science)?\\.com/s\\.js",
-      "saas": true,
       "pricing": [
         "mid",
         "high",
         "recurring"
       ],
+      "saas": true,
+      "scripts": "cdn\\.sift(?:science)?\\.com/s\\.js",
       "website": "https://sift.com/"
     },
     "Signal": {
@@ -18804,6 +18856,20 @@
       "implies": "Haskell",
       "website": "http://snapframework.com"
     },
+    "Snap Pixel": {
+      "cats": [
+        36
+      ],
+      "description": "Snap Pixel is a piece of JavaScript code that helps advertisers measure the cross-device impact of campaigns.",
+      "icon": "Snap Pixel.svg",
+      "js": {
+        "__SnapPixel": "",
+        "snaptr.pixelIdList": ""
+      },
+      "saas": true,
+      "scripts": "intg\\.snapchat\\.com/",
+      "website": "https://businesshelp.snapchat.com/s/article/snap-pixel-about"
+    },
     "Snap.svg": {
       "cats": [
         59
@@ -18832,20 +18898,6 @@
       ],
       "saas": true,
       "website": "https://snapengage.com/"
-    },
-    "Snap Pixel": {
-      "cats": [
-        36
-      ],
-      "description": "Snap Pixel is a piece of JavaScript code that helps advertisers measure the cross-device impact of campaigns.",
-      "icon": "Snap Pixel.svg",
-      "js": {
-        "__SnapPixel": "",
-        "snaptr.pixelIdList": ""
-      },
-      "scripts": "intg\\.snapchat\\.com/",
-      "saas": true,
-      "website": "https://businesshelp.snapchat.com/s/article/snap-pixel-about"
     },
     "Snipcart": {
       "cats": [
@@ -19167,17 +19219,6 @@
       },
       "website": "https://www.sphinx-doc.org/"
     },
-    "SpinCMS": {
-      "cats": [
-        1
-      ],
-      "cookies": {
-        "spincms_session": ""
-      },
-      "icon": "SpinCMS.png",
-      "implies": "PHP",
-      "website": "http://www.spin.cw"
-    },
     "Spinnakr": {
       "cats": [
         10
@@ -19192,15 +19233,6 @@
       ],
       "saas": true,
       "website": "https://www.spinnakr.com"
-    },
-    "SplitIt": {
-      "cats": [
-        41
-      ],
-      "description": "Splitit is the only buy-now-pay-later plan that lets shoppers set up payment plans with their existing credit card without interest charges or fees.",
-      "icon": "splitit.png",
-      "scripts": "checkout\\.production\\.splitit\\.com",
-      "website": "https://www.splitit.com/"
     },
     "Splitbee": {
       "cats": [
@@ -19817,23 +19849,6 @@
       },
       "website": "https://www.swell.is/"
     },
-    "Swiftlet": {
-      "cats": [
-        18
-      ],
-      "headers": {
-        "X-Generator": "Swiftlet",
-        "X-Powered-By": "Swiftlet",
-        "X-Swiftlet-Cache": ""
-      },
-      "html": "Powered by <a href=\"[^>]+Swiftlet",
-      "icon": "Swiftlet.png",
-      "implies": "PHP",
-      "meta": {
-        "generator": "Swiftlet"
-      },
-      "website": "http://swiftlet.org"
-    },
     "Swiftype": {
       "cats": [
         29
@@ -20406,24 +20421,6 @@
         "Symfony"
       ],
       "website": "http://thelia.net"
-    },
-    "theTradeDesk": {
-      "cats": [
-       36
-      ],
-      "description": "theTradeDesk is an technology company that markets a software platform used by digital ad buyers to purchase data-driven digital advertising campaigns across various ad formats and devices.",
-      "icon": "theTradeDesk.svg",
-      "js": {
-        "TTDUniversalPixelApi": "",
-        "ttd_dom_ready": ""
-      },
-      "scripts": "\\.adsrvr\\.org/",
-      "xhr": "adsvr\\.org",
-      "saas": true,
-      "pricing": [
-        "payg"
-      ],
-      "website": "https://www.thetradedesk.com"
     },
     "ThinkPHP": {
       "cats": [
@@ -21738,6 +21735,25 @@
       "scripts": "secure\\.checkout\\.visa\\.com",
       "website": "https://checkout.visa.com"
     },
+    "Visual Composer": {
+      "cats": [
+        51
+      ],
+      "description": "Visual Composer is an all-in-one web design tool for anyone who uses WordPress.",
+      "icon": "visualcomposer.svg",
+      "implies": [
+        "WordPress",
+        "PHP"
+      ],
+      "meta": {
+        "generator": "Powered by Visual Composer Website Builder"
+      },
+      "pricing": [
+        "low",
+        "recurring"
+      ],
+      "website": "https://visualcomposer.com"
+    },
     "Visualsoft": {
       "cats": [
         6
@@ -22023,7 +22039,7 @@
         76,
         5
       ],
-      "description": "Wair is the widget to personalized fit.",
+      "description": "Wair is the widget to personalised fit.",
       "icon": "Wair.png",
       "js": {
         "PredictV3.default.version": "([\\d.]+)\\;version:\\1",
@@ -24083,8 +24099,8 @@
       "description": "jQuery is a JavaScript library which is a free, open-source software designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax.",
       "icon": "jQuery.svg",
       "js": {
-        "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1",
-        "$.fn.jquery": "([\\d.]+)\\;version:\\1"
+        "$.fn.jquery": "([\\d.]+)\\;version:\\1",
+        "jQuery.fn.jquery": "([\\d.]+)\\;version:\\1"
       },
       "scripts": [
         "jquery",
@@ -24721,6 +24737,40 @@
       },
       "website": "https://snewscms.com"
     },
+    "snigel AdConsent": {
+      "cats": [
+        67
+      ],
+      "description": "snigel AdConsent is a IAB-registered consent managment platfrom (CMP) which help keep sites speed intact while remaining compliant with GDPR and CCPA.",
+      "icon": "snigel.svg",
+      "js": {
+        "snhb.baseSettings": "\\;confidence:50",
+        "snhb.info.cmpVersion": "",
+        "adconsent.version": "^([\\d.]+)$\\;version:\\1"
+      },
+      "scripts": "(?:staging-)?cdn\\.snigelweb\\.com/(?:snhb|adconsent)/",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.snigel.com/adconsent/"
+    },
+    "snigel AdEngine": {
+      "cats": [
+        36
+      ],
+      "description": "snigel AdEngine is a header bidding solution product from snigel.",
+      "icon": "snigel.svg",
+      "scripts": [
+        "(?:staging-)?cdn\\.snigelweb\\.com/adengine/",
+        "adengine\\.snigelweb\\.com"
+      ],
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://www.snigel.com/adengine/"
+    },
     "script.aculo.us": {
       "cats": [
         59
@@ -24780,16 +24830,6 @@
       },
       "website": "https://styled-components.com"
     },
-    "swift.engine": {
-      "cats": [
-        1
-      ],
-      "headers": {
-        "X-Powered-By": "swift\\.engine"
-      },
-      "icon": "swift.engine.png",
-      "website": "http://mittec.ru/default"
-    },
     "tailwindcss": {
       "cats": [
         66
@@ -24807,6 +24847,24 @@
       ],
       "icon": "tailwindcss.svg",
       "website": "https://tailwindcss.com/"
+    },
+    "theTradeDesk": {
+      "cats": [
+        36
+      ],
+      "description": "theTradeDesk is an technology company that markets a software platform used by digital ad buyers to purchase data-driven digital advertising campaigns across various ad formats and devices.",
+      "icon": "theTradeDesk.svg",
+      "js": {
+        "TTDUniversalPixelApi": "",
+        "ttd_dom_ready": ""
+      },
+      "pricing": [
+        "payg"
+      ],
+      "saas": true,
+      "scripts": "\\.adsrvr\\.org/",
+      "website": "https://www.thetradedesk.com",
+      "xhr": "adsvr\\.org"
     },
     "three.js": {
       "cats": [
@@ -24930,25 +24988,6 @@
         "generator": "vibecommerce"
       },
       "website": "http://vibecommerce.com.br"
-    },
-    "Visual Composer": {
-      "cats": [
-        51
-      ],
-      "description": "Visual Composer is an all-in-one web design tool for anyone who uses WordPress.",
-      "icon": "visualcomposer.svg",
-      "implies": [
-        "WordPress",
-        "PHP"
-      ],
-      "meta": {
-        "generator": "Powered by Visual Composer Website Builder"
-      },
-      "pricing": [
-        "low",
-        "recurring"
-      ],
-      "website": "https://visualcomposer.com"
     },
     "webEdition": {
       "cats": [

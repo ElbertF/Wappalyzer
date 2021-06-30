@@ -348,7 +348,7 @@ class Driver {
   log(message, source = 'driver') {
     if (this.options.debug) {
       // eslint-disable-next-line no-console
-      console.log(`wappalyzer | log | ${source} |`, message)
+      console.log(`log | ${source} |`, message)
     }
   }
 }
@@ -393,7 +393,7 @@ class Site {
   log(message, source = 'driver', type = 'log') {
     if (this.options.debug) {
       // eslint-disable-next-line no-console
-      console[type](`wappalyzer | ${type} | ${source} |`, message)
+      console[type](`${type} | ${source} |`, message)
     }
 
     this.emit(type, { message, source })
@@ -422,7 +422,7 @@ class Site {
   promiseTimeout(
     promise,
     fallback,
-    errorMessage = 'The website took too long to respond'
+    errorMessage = 'Operation took too long to respond'
   ) {
     let timeout = null
 
@@ -435,7 +435,11 @@ class Site {
         timeout = setTimeout(() => {
           clearTimeout(timeout)
 
-          fallback ? resolve(fallback) : reject(new Error(errorMessage))
+          const error = new Error(errorMessage)
+
+          error.code = 'PROMISE_TIMEOUT_ERROR'
+
+          fallback !== undefined ? resolve(fallback) : reject(error)
         }, this.options.maxWait)
       }),
       promise.then((value) => {
@@ -573,7 +577,9 @@ class Site {
 
     try {
       await this.promiseTimeout(
-        page.goto(url.href, { waitUntil: 'domcontentloaded' })
+        page.goto(url.href, { waitUntil: 'domcontentloaded' }),
+        undefined,
+        'Timeout (navigation)'
       )
 
       await sleep(1000)
@@ -596,10 +602,12 @@ class Site {
                 })
               )
             ),
-            { jsonValue: () => [] }
+            { jsonValue: () => [] },
+            'Timeout (links)'
           )
         ).jsonValue(),
-        []
+        [],
+        'Timeout (links)'
       )
 
       // CSS
@@ -629,10 +637,12 @@ class Site {
 
               return css.join('\n')
             }, this.options.htmlMaxRows),
-            { jsonValue: () => '' }
+            { jsonValue: () => '' },
+            'Timeout (css)'
           )
         ).jsonValue(),
-        ''
+        '',
+        'Timeout (css)'
       )
 
       // Script tags
@@ -644,10 +654,12 @@ class Site {
                 .map(({ src }) => src)
                 .filter((src) => src)
             ),
-            { jsonValue: () => [] }
+            { jsonValue: () => [] },
+            'Timeout (scripts)'
           )
         ).jsonValue(),
-        []
+        [],
+        'Timeout (scripts)'
       )
 
       // Meta tags
@@ -669,17 +681,19 @@ class Site {
                 {}
               )
             ),
-            { jsonValue: () => [] }
+            { jsonValue: () => [] },
+            'Timeout (meta)'
           )
         ).jsonValue(),
-        []
+        [],
+        'Timeout (meta)'
       )
 
       // JavaScript
-      const js = await this.promiseTimeout(getJs(page), [])
+      const js = await this.promiseTimeout(getJs(page), [], 'Timeout (js)')
 
       // DOM
-      const dom = await this.promiseTimeout(getDom(page), [])
+      const dom = await this.promiseTimeout(getDom(page), [], 'Timeout (dom)')
 
       // Cookies
       const cookies = (await page.cookies()).reduce(
@@ -728,7 +742,8 @@ class Site {
 
               return []
             }),
-            []
+            [],
+            'Timeout (dns)'
           )
         }
 
@@ -771,9 +786,9 @@ class Site {
       ) {
         await page.close()
 
-        this.log('Page closed')
+        this.log(`Page closed (${url})`)
 
-        throw new Error('No response from server')
+        throw new Error(`No response from server`)
       }
 
       this.cache[url.href] = {
@@ -838,12 +853,37 @@ class Site {
 
       return reducedLinks
     } catch (error) {
-      if (error.constructor.name === 'TimeoutError') {
-        throw new Error('The website took too long to respond')
+      let hostname = url
+
+      try {
+        ;({ hostname } = new URL(url))
+      } catch (error) {
+        // Continue
+      }
+
+      if (
+        error.constructor.name === 'TimeoutError' ||
+        error.code === 'PROMISE_TIMEOUT_ERROR'
+      ) {
+        const newError = new Error(
+          `The website took too long to respond: ${
+            error.message || error
+          } at ${hostname}`
+        )
+
+        newError.code = 'WAPPALYZER_TIMEOUT_ERROR'
+
+        throw newError
       }
 
       if (error.message.includes('net::ERR_NAME_NOT_RESOLVED')) {
-        throw new Error('Hostname could not be resolved')
+        const newError = new Error(
+          `Hostname could not be resolved at ${hostname}`
+        )
+
+        newError.code = 'WAPPALYZER_DNS_ERROR'
+
+        throw newError
       }
 
       throw error
@@ -982,10 +1022,15 @@ class Site {
             const { page, cookies, html, css, scripts, meta } =
               this.cache[url.href]
 
-            const js = await this.promiseTimeout(getJs(page, technologies), [])
+            const js = await this.promiseTimeout(
+              getJs(page, technologies),
+              [],
+              'Timeout (js)'
+            )
             const dom = await this.promiseTimeout(
               getDom(page, technologies),
-              []
+              [],
+              'Timeout (dom)'
             )
 
             await this.onDetect(

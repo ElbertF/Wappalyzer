@@ -86,6 +86,9 @@
   "attributeCompanyType":            { "message": "Company type" },
   "attributeCompanyFounded":         { "message": "Company founded" },
   "attributeKeywords":               { "message": "Keywords" },
+  "attributeDns_spf":                { "message": "SPF record" },
+  "attributeDns_dmarc":              { "message": "DMARC record" },
+  "attributeSchemaOrgTypes":         { "message": "schema.org types" },
 
   "categoryName1":                   { "message": "内容管理系统（CMS）" },
   "categoryName2":                   { "message": "信息板" },

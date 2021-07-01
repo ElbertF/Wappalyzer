@@ -6858,6 +6858,23 @@
       "scripts": "expertrec\\.com/api/js/ci_common\\.js\\?id=.*",
       "website": "https://www.expertrec.com"
     },
+    "Exponea": {
+      "cats": [
+        32
+      ],
+     
+      "description": "Exponea is a cloud-based marketing analysis platform suitable for large and midsize organisations in a variety of industries.",
+      "icon": "Exponea.svg",
+      "js": {
+        "exponea.version": "^v([\\d.]+)$\\;version:\\1"
+      },
+      "scripts": "(?:\\.exponea\\.com)?/js/exponea\\.min\\.js",
+      "saas": true,
+      "pricing": [
+        "poa"
+      ],
+      "website": "https://go.exponea.com"
+    },
     "Express": {
       "cats": [
         18,

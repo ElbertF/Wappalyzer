@@ -6327,7 +6327,7 @@
       "icon": "duda.png",
       "js": {
         "SystemID": "^.*DIRECT.*$",
-        "version": "^(.*)$\\;version:\\1\\;confidence:0"
+        "d_version": "^(.*)$\\;version:\\1\\;confidence:0"
       },
       "pricing": [
         "low"
@@ -13517,7 +13517,7 @@
       "icon": "Ionos-by-1and1-logo.svg",
       "js": {
         "SystemID": "^.*1AND1.*$",
-        "version": "^(.*)$\\;version:\\1\\;confidence:0"
+        "d_version": "^(.*)$\\;version:\\1\\;confidence:0"
       },
       "meta": {
         "generator": "^.*MyWebsite.*$\\;version:8"

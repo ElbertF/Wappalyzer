@@ -2946,7 +2946,8 @@
       "cats": [
         6
       ],
-      "icon": "bigcartel.png",
+      "description": "Big Cartel is a cloud-hosted ecommerce platform.",
+      "icon": "Big Cartel.svg",
       "meta": {
         "generator": "Big Cartel"
       },
@@ -4061,7 +4062,8 @@
         "&nbsp;Powered by (?:<a href=[^>]+cs-cart\\.com|CS-Cart)",
         "\\.cm-noscript[^>]+</style>"
       ],
-      "icon": "CS Cart.png",
+      "description": "CS Cart is a turnkey ecommerce shopping cart software solution.",
+      "icon": "CS Cart.svg",
       "implies": "PHP",
       "js": {
         "fn_compare_strings": ""
@@ -4100,6 +4102,7 @@
       "cats": [
         6
       ],
+      "description": "Cafe24 is a ecommerce hosting platform that provides everything you need to build an online DTC store in one-stop.",
       "icon": "Cafe24.png",
       "js": {
         "EC_GLOBAL_DATETIME": "",
@@ -4192,7 +4195,7 @@
     },
     "CartStack": {
       "cats": [
-        6,
+        75,
         10
       ],
       "description": "CartStack is a SaaS solution that allows any company with an ecommerce site or reservation system to increase revenue through reminding/encouraging consumers to return to their abandoned cart and complete their purchase.",
@@ -4932,6 +4935,7 @@
       "cats": [
         6
       ],
+      "description": "ColorMeShop is an ecommerce platform from Japan.",
       "icon": "colormeshop.png",
       "js": {
         "Colorme": ""
@@ -5781,7 +5785,7 @@
     },
     "Dealer Spike": {
       "cats": [
-        6,
+        36,
         32
       ],
       "description": "Dealer Spike is a digital marketing and advertising company focused that helps dealers grow their business.",
@@ -6390,12 +6394,12 @@
     "Dynamicweb": {
       "cats": [
         1,
-        6,
-        10
+        6
       ],
       "cookies": {
         "Dynamicweb": ""
       },
+      "description": "Dynamicweb is a all-in-one platform for content management, ecommerce, digital marketing​, product information management (PIM) and integration.",
       "icon": "Dynamicweb.svg",
       "implies": "Microsoft ASP.NET",
       "meta": {
@@ -6421,7 +6425,8 @@
         6
       ],
       "cpe": "cpe:/a:lockon:ec-cube",
-      "icon": "ec-cube.png",
+      "description": "EC-CUBE is an open source package used to build ecommerce sites.",
+      "icon": "EC-CUBE.svg",
       "implies": "PHP",
       "oss": true,
       "scripts": [
@@ -6434,13 +6439,19 @@
       "cats": [
         6
       ],
+      "description": "EKM is an all-in-one online store builder, with the company based in the UK.",
+      "icon": "EKM.png",
       "cookies": {
         "ekmpowershop": ""
       },
-      "icon": "EKM.png",
       "js": {
         "_ekmpinpoint": ""
       },
+      "saas": true,
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "website": "https://www.ekm.com"
     },
     "ELOG": {
@@ -6462,14 +6473,15 @@
       "implies": "ELOG",
       "website": "http://midas.psi.ch/elog"
     },
-    "EPages": {
+    "ePages": {
       "cats": [
         6
       ],
+      "description": "ePages is a provider of cloud-based online shop solutions.",
+      "icon": "ePages.svg",
       "headers": {
         "X-epages-RequestId": ""
       },
-      "icon": "epages.png",
       "js": {
         "epages": ""
       },
@@ -6538,6 +6550,7 @@
       ],
       "description": "Easy Digital Downloads is a WordPress ecommerce plugin that focuses purely on digital products.",
       "icon": "EasyDigitalDownloads.svg",
+      "requires": "WordPress",
       "meta": {
         "generator": "^Easy Digital Downloads v(.*)$\\;version:\\1"
       },
@@ -6565,13 +6578,16 @@
       "cats": [
         6
       ],
+      "description": "Ecwid is a shopping cart plugin that turns any existing website into an online store.",
       "icon": "ecwid.svg",
       "js": {
         "Ecwid": "",
         "EcwidCart": ""
       },
       "pricing": [
-        "freemium"
+        "freemium",
+        "low",
+        "recurring"
       ],
       "saas": true,
       "scripts": [
@@ -7615,7 +7631,6 @@
     "Formitable": {
       "cats": [
         5,
-        6,
         72
       ],
       "description": "Formitable is an reservation management system for restaurants.",
@@ -7660,7 +7675,6 @@
     },
     "Forter": {
       "cats": [
-        6,
         16
       ],
       "cookies": {
@@ -8012,6 +8026,7 @@
         6
       ],
       "html": "(?:<link[^>]* href=\"templates/gambio/|<a[^>]content\\.php\\?coID=\\d|<!-- gambio eof -->|<!--[\\s=]+Shopsoftware by Gambio GmbH \\(c\\))",
+      "description": "Gambio is an all-in-one shopping cart solution for small to medium sized businesses.",
       "icon": "Gambio.png",
       "implies": "PHP",
       "js": {
@@ -9163,7 +9178,8 @@
       "cats": [
         6
       ],
-      "icon": "Haravan.png",
+      "description": "Haravan is a multi-channel ecommerce services provider from Vietnam.",
+      "icon": "Haravan.svg",
       "js": {
         "Haravan": ""
       },
@@ -9689,6 +9705,7 @@
       "cats": [
         6
       ],
+      "description": "IdoSell Shop is a fully functional ecommerce software platform.",
       "icon": "idosellshop.png",
       "js": {
         "IAI_Ajax": ""
@@ -10122,8 +10139,9 @@
       "cats": [
         6
       ],
+      "description": "J2Store is a Joomla shopping cart and ecommerce extension.",
       "icon": "j2store.png",
-      "implies": "Joomla",
+      "requires": "Joomla",
       "js": {
         "j2storeURL": ""
       },
@@ -10225,8 +10243,9 @@
         "JTLSHOP": ""
       },
       "html": "(?:<input[^>]+name=\"JTLSHOP|<a href=\"jtl\\.php)",
-      "icon": "JTL Shop.png",
-      "website": "http://www.jtl-software.de/produkte/jtl-shop3"
+      "description": "JTL Shop is an ecommerce product created by JTL Software company.",
+      "icon": "JTL Shop.svg",
+      "website": "https://www.jtl-software.de/online-shopsystem"
     },
     "JW Player": {
       "cats": [
@@ -10946,8 +10965,7 @@
     },
     "Klevu": {
       "cats": [
-        29,
-        6
+        29
       ],
       "description": "Klevu is a highly advanced AI-Powered search solution for ecommerce platforms.",
       "icon": "Klevu.png",
@@ -11172,7 +11190,7 @@
     },
     "Kount": {
       "cats": [
-        6,
+        10,
         16
       ],
       "description": "Kount is a suite of fraud detection and prevention solutions for ecommerce businesses.",
@@ -11982,8 +12000,7 @@
     },
     "Loox": {
       "cats": [
-        5,
-        6
+        5
       ],
       "description": "Loox is a reviews app for Shopify that helps you gather reviews and user-generated photos from your customers.",
       "icon": "Loox.svg",
@@ -12653,8 +12670,7 @@
     },
     "MemberStack": {
       "cats": [
-        6,
-        47
+        1
       ],
       "cookies": {
         "memberstack": ""
@@ -12666,6 +12682,12 @@
       },
       "scripts": "memberstack\\.js",
       "url": "^https?//.+\\.memberstack\\.io",
+      "saas": true,
+      "pricing": [
+        "payg",
+        "low",
+        "recurring"
+      ],
       "website": "https://www.memberstack.io"
     },
     "Mercado Shops": {
@@ -12985,6 +13007,7 @@
       "headers": {
         "content-disposition": "filename=(?:mvga\\.js|MivaEvents\\.js)"
       },
+      "description": "Miva is a privately owned ecommerce shopping cart software and hosting company with headquarters in San Diego.",
       "icon": "miva.png",
       "js": {
         "MivaVM_API": "",
@@ -13694,6 +13717,7 @@
       "cats": [
         6
       ],
+      "description": "Neto is the only Australian B2B and multi-channel ecommerce platform that provides an all-in-one solution for ecommerce, POS, inventory management, order management, and shipping labelling.",
       "icon": "Neto.svg",
       "js": {
         "NETO": ""
@@ -14207,7 +14231,7 @@
     "Omnisend": {
       "cats": [
         32,
-        6
+        75
       ],
       "cookies": {
         "omnisendSessionID": ""
@@ -15499,8 +15523,13 @@
       "headers": {
         "X-Powered-By": "^pimcore$"
       },
+      "description": "Pimcore is an open-source digital platform that aggregates, enriches, and manages enterprise data and provides up-to-date, consistent, and personalised experiences to customers.",
       "icon": "pimcore.svg",
       "implies": "PHP",
+      "oss": true,
+      "pricing": [
+        "poa"
+      ],
       "website": "http://pimcore.org"
     },
     "Pin Payments": {
@@ -17294,7 +17323,8 @@
     },
     "Riskified": {
       "cats": [
-        6
+        10,
+        16
       ],
       "headers": {
         "server": "Riskified Server"
@@ -17303,7 +17333,8 @@
         "<[^>]*beacon\\.riskified\\.com",
         "<[^>]*c\\.riskified\\.com"
       ],
-      "icon": "riskified.png",
+      "description": "Riskified is a privately held company that provides SaaS fraud and chargeback prevention technology.",
+      "icon": "Riskified.svg",
       "js": {
         "RISKX": "",
         "riskifiedBeaconLoad": ""
@@ -17769,7 +17800,6 @@
     },
     "SaleCycle": {
       "cats": [
-        6,
         76
       ],
       "description": "SaleCycle is a UK based global behavioral marketing firm.",
@@ -18720,6 +18750,7 @@
         6
       ],
       "html": "<link [^>]*href=\"https?://cdn\\.myshoptet\\.com/",
+      "description": "Shoptet is an ecommerce solutions from store builder, inventory management of online payments.",
       "icon": "Shoptet.svg",
       "implies": "PHP",
       "js": {
@@ -19027,8 +19058,7 @@
     "Siteglide": {
       "cats": [
         1,
-        53,
-        6
+        53
       ],
       "description": "SiteGlide is a Digital Experience Platform (DEP) for ecommerce stores, membership sites and customer portals.",
       "icon": "Siteglide.svg",
@@ -19381,6 +19411,8 @@
       "cats": [
         6
       ],
+      "description": "Snipcart is a shopping cart platform that can be integrated into any website with simple HTML and JavaScript.",
+      "icon": "Snipcart.svg",
       "cookies": {
         "snipcart-cart": ""
       },
@@ -19394,8 +19426,11 @@
           }
         }
       },
-      "icon": "Snipcart.png",
       "scripts": "https://cdn\\.snipcart\\.com/themes/v([\\w.]+)/default/snipcart\\.js\\;version:\\1",
+      "saas": true,
+      "pricing": [
+        "payg"
+      ],
       "website": "https://snipcart.com"
     },
     "Snoobi": {
@@ -20351,6 +20386,7 @@
       "cats": [
         6
       ],
+      "description": "Swell is a headless ecommerce platform for modern brands, startups, and agencies.",
       "cookies": {
         "swell-session": ""
       },
@@ -20930,6 +20966,7 @@
         6
       ],
       "html": "<(?:link|style|script)[^>]+/assets/frontOffice/",
+      "description": "",
       "icon": "Thelia.png",
       "implies": [
         "PHP",
@@ -21255,8 +21292,14 @@
       "cats": [
         6
       ],
+      "description": "Tray is an all-in-one ecommerce platform from Brazil.",
       "icon": "tray.png",
       "scripts": "tcdn\\.com\\.br",
+      "saas": true,
+      "pricing": [
+        "low",
+        "recurring"
+      ],
       "website": "https://www.tray.com.br"
     },
     "Trbo": {
@@ -22350,6 +22393,7 @@
         "<link [^>]*href=\"[^\"]*/vspfiles/\\;version:1",
         "<body [^>]*data-vn-page-name\\;version:2"
       ],
+      "description": "Volusion is a cloud-based, hosted ecommerce solution.",
       "icon": "Volusion.svg",
       "js": {
         "volusion": ""
@@ -22478,7 +22522,7 @@
     },
     "WHMCS": {
       "cats": [
-        6
+        1
       ],
       "description": "WHMCS is an automation platform that simplifies and automates all aspects of operating an online web hosting and domain registrar business.",
       "icon": "WHMCS.png",
@@ -22925,11 +22969,9 @@
         "<link[^>]+?href=\"[^\"]+usces_default(?:\\.min)?\\.css",
         "<!-- Welcart version : v([\\d.]+)\\;version:\\1"
       ],
-      "icon": "welcart.png",
-      "implies": [
-        "PHP",
-        "WordPress"
-      ],
+      "description": "Welcart is a free ecommerce plugin for WordPress with top market share in Japan.",
+      "icon": "Welcart.svg",
+      "requires": "WordPress",
       "scripts": "uscesL10n",
       "website": "https://www.welcart.com"
     },
@@ -25062,6 +25104,7 @@
         "Nop.customer": ""
       },
       "html": "(?:<!--Powered by nopCommerce|Powered by: <a[^>]+nopcommerce)",
+      "description": "nopCommerce is an open-source ecommerce solution based on Microsoft's ASP​.NET Core framework and MS SQL Server 2012 (or higher) backend database.",
       "icon": "nopCommerce.png",
       "implies": "Microsoft ASP.NET",
       "meta": {
@@ -25082,11 +25125,13 @@
         "<(?:input|a)[^>]+name=\"osCsid\"",
         "<(?:tr|td|table)class=\"[^\"]*infoBoxHeading"
       ],
+      "description": "OsCommerce is an open-source ecommerce and online store-management software program​.",
       "icon": "osCommerce.png",
       "implies": [
         "PHP",
         "MySQL"
       ],
+      "oss": true,
       "website": "https://www.oscommerce.com"
     },
     "osTicket": {
@@ -25297,13 +25342,14 @@
       "implies": "Java",
       "website": "https://www.pirobase-imperia.com/de/produkte/produktuebersicht/pirobase-cms"
     },
-    "plentymarkets": {
+    "Plentymarkets": {
       "cats": [
         6
       ],
       "headers": {
         "X-Plenty-Shop": ""
       },
+      "description": "Plentymarkets is a cloud-based all-in-one ecommerce ERP solution.",
       "icon": "plentymarkets.svg",
       "meta": {
         "generator": "plentymarkets"

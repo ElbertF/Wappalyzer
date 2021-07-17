@@ -172,5 +172,6 @@
 	"categoryName80":                  { "message": "Шаблон для WordPress" },
 	"categoryName81":                  { "message": "Шаблон для Shopify" },
 	"categoryName82":                  { "message": "Шаблон для Drupal" },
-	"categoryName83":                  { "message": "Отпечатки браузера" }
+	"categoryName83":                  { "message": "Отпечатки браузера" },
+	"categoryName84":                  { "message": "Программы лояльности и наград" }
 }

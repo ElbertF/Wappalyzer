@@ -320,6 +320,10 @@
     "83": {
       "name": "Browser fingerprinting",
       "priority": 9
+    },
+    "84": {
+      "name": "Loyalty & rewards",
+      "priority": 9
     }
   },
   "technologies": {
@@ -11962,7 +11966,7 @@
     },
     "Lootly": {
       "cats": [
-        5,
+        84,
         32
       ],
       "description": "Lootly is a loyalty and referral marketing automation software suite for ecommerce businesses.",
@@ -17575,7 +17579,7 @@
     },
     "Smile": {
       "cats": [
-        6
+        84
       ],
       "description": "Smile is a provider of ecommerce loyalty programs.",
       "icon": "Smile.svg",

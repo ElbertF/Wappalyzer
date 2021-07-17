@@ -174,5 +174,6 @@
 	"categoryName80":                  { "message": "Thèmes WordPress" },
 	"categoryName81":                  { "message": "Thèmes Shopify" },
 	"categoryName82":                  { "message": "Thèmes Drupal" },
-	"categoryName83":                  { "message": "Empreinte digitale des navigateurs" }
+	"categoryName83":                  { "message": "Empreinte digitale des navigateurs" },
+	"categoryName84":                  { "message": "Loyalty & rewards" }
 }
